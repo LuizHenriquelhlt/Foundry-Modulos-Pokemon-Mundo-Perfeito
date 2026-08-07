@@ -2,55 +2,139 @@
   "_key": "!items!zPGYQLYTVncNctNT",
   "_id": "zPGYQLYTVncNctNT",
   "name": "Silver Wind",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-bug.png",
   "system": {
-    "moveType": "bug",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 15 pés (4,5 metros)</p><p>Você atinge um alvo com um vento forte de poeira prateada. Faça uma rolagem de ataque à distância contra uma criatura, causando 2d6 + MOVE de dano de inseto em um acerto. Em um resultado natural de 19 ou 20 no acerto, seu Ataque, Defesa, Ataque Especial, Defesa Especial e Velocidade são aumentados em 1 estágio, podendo ser acumulados em até 6 estágios cada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Inseto",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "15 pés (4,5 metros)",
-      "meters": 4.5,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você atinge um alvo com um vento forte de poeira prateada. Faça uma rolagem de ataque à distância contra uma criatura, causando 2d6 + MOVE de dano de inseto em um acerto. Em um resultado natural de 19 ou 20 no acerto, seu Ataque, Defesa, Ataque Especial, Defesa Especial e Velocidade são aumentados em 1 estágio, podendo ser acumulados em até 6 estágios cada.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d6"
-        },
-        {
-          "level": 10,
-          "formula": "3d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "gecsnbJWkA0K04WG": {
+        "_id": "gecsnbJWkA0K04WG",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "bug",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "15 pés (4,5 metros)",
+          "meters": 4.5,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você atinge um alvo com um vento forte de poeira prateada. Faça uma rolagem de ataque à distância contra uma criatura, causando 2d6 + MOVE de dano de inseto em um acerto. Em um resultado natural de 19 ou 20 no acerto, seu Ataque, Defesa, Ataque Especial, Defesa Especial e Velocidade são aumentados em 1 estágio, podendo ser acumulados em até 6 estágios cada.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d6"
+            },
+            {
+              "level": 10,
+              "formula": "3d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

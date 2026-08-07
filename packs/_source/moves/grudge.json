@@ -2,44 +2,70 @@
   "_key": "!items!p5uND5LyV8s7VDLp",
   "_id": "p5uND5LyV8s7VDLp",
   "name": "Grudge",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ghost.png",
   "system": {
-    "moveType": "ghost",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "reaction",
-      "raw": "1 reação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Quando você sofre dano de um Move em alcance que o reduz a zero pontos de vida, você pode usar sua reação, antes de desmaiar, para afetar o atacante. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do atacante. Em um resultado maior ou igual, todos os PP do Move que o fez desmaiar são esgotados.</p><p><strong>Efeito de Poder-Z:</strong> Inimigos a 50 pés (15 metros) de você são forçados a ter você como alvo até o início de seu próximo turno. Se for</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fantasma",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Quando você sofre dano de um Move em alcance que o reduz a zero pontos de vida, você pode usar sua reação, antes de desmaiar, para afetar o atacante. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do atacante. Em um resultado maior ou igual, todos os PP do Move que o fez desmaiar são esgotados.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Inimigos a 50 pés (15 metros) de você são forçados a ter você como alvo até o início de seu próximo turno. Se for"
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ghost",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "reaction",
+          "raw": "1 reação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Quando você sofre dano de um Move em alcance que o reduz a zero pontos de vida, você pode usar sua reação, antes de desmaiar, para afetar o atacante. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do atacante. Em um resultado maior ou igual, todos os PP do Move que o fez desmaiar são esgotados.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Inimigos a 50 pés (15 metros) de você são forçados a ter você como alvo até o início de seu próximo turno. Se for"
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

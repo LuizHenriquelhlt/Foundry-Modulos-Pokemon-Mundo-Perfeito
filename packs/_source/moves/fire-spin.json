@@ -2,55 +2,151 @@
   "_key": "!items!ixg07e608IC096o2",
   "_id": "ixg07e608IC096o2",
   "name": "Fire Spin",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você libera uma série de chamas em movimento rápido que giram ao redor de um alvo. Faça um ataque à distância -2 contra um alvo em alcance, causando 1d8 + MOVE de dado do tipo fogo em um acerto. Ao acertar, um redemoinho flamejante surge abaixo da criatura em um círculo de 5 pés (1,5 metros), mesmo que ela não esteja em contato com o solo. Este redemoinho permanece fixo por 5 rodadas. Toda vez que uma criatura terminar seu turno ocupando total ou parcialmente a área do redemoinho, ela sofre dano sem tipo igual ao próprio nível. Além disso, uma criatura sofre dano do tipo Fogo igual ao ao próprio nível ao entrar, atravessar ou sair voluntariamente da área. Uma mesma criatura só pode sofrer esse dano de movimentação uma vez por turno. Este Move pode descongelar um alvo congelado.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "5 rodadas",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera uma série de chamas em movimento rápido que giram ao redor de um alvo. Faça um ataque à distância -2 contra um alvo em alcance, causando 1d8 + MOVE de dado do tipo fogo em um acerto. Ao acertar, um redemoinho flamejante surge abaixo da criatura em um círculo de 5 pés (1,5 metros), mesmo que ela não esteja em contato com o solo. Este redemoinho permanece fixo por 5 rodadas. Toda vez que uma criatura terminar seu turno ocupando total ou parcialmente a área do redemoinho, ela sofre dano sem tipo igual ao próprio nível. Além disso, uma criatura sofre dano do tipo Fogo igual ao ao próprio nível ao entrar, atravessar ou sair voluntariamente da área. Uma mesma criatura só pode sofrer esse dano de movimentação uma vez por turno. Este Move pode descongelar um alvo congelado.</p>",
-    "higherLevels": "<p>O dado de dano para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d10"
-        },
-        {
-          "level": 10,
-          "formula": "2d8"
-        },
-        {
-          "level": 17,
-          "formula": "3d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "MHLUkXok9sIOpNyV": {
+        "_id": "MHLUkXok9sIOpNyV",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "5 rodadas",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera uma série de chamas em movimento rápido que giram ao redor de um alvo. Faça um ataque à distância -2 contra um alvo em alcance, causando 1d8 + MOVE de dado do tipo fogo em um acerto. Ao acertar, um redemoinho flamejante surge abaixo da criatura em um círculo de 5 pés (1,5 metros), mesmo que ela não esteja em contato com o solo. Este redemoinho permanece fixo por 5 rodadas. Toda vez que uma criatura terminar seu turno ocupando total ou parcialmente a área do redemoinho, ela sofre dano sem tipo igual ao próprio nível. Além disso, uma criatura sofre dano do tipo Fogo igual ao ao próprio nível ao entrar, atravessar ou sair voluntariamente da área. Uma mesma criatura só pode sofrer esse dano de movimentação uma vez por turno. Este Move pode descongelar um alvo congelado.</p>",
+        "higherLevels": "<p>O dado de dano para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d10"
+            },
+            {
+              "level": 10,
+              "formula": "2d8"
+            },
+            {
+              "level": 17,
+              "formula": "3d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

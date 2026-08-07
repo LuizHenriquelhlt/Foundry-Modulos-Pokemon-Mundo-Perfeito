@@ -2,56 +2,140 @@
   "_key": "!items!IAy2RQJcrykuE5zL",
   "_id": "IAy2RQJcrykuE5zL",
   "name": "Gear Grind",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-steel.png",
   "system": {
-    "moveType": "steel",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia com um par de engrenagens de aço que vão em direção a um alvo (ou alvos). Faça dois ataques corpo a corpo - 2, causando 1d10 + MOVE de dano de aço em cada acerto. Este golpe tem um alcance de 10 pés (3 metros).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Aço",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você golpeia com um par de engrenagens de aço que vão em direção a um alvo (ou alvos). Faça dois ataques corpo a corpo - 2, causando 1d10 + MOVE de dano de aço em cada acerto. Este golpe tem um alcance de 10 pés (3 metros).</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d8"
-        },
-        {
-          "level": 10,
-          "formula": "2d10"
-        },
-        {
-          "level": 17,
-          "formula": "4d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "KxKTzLc72ED9eDYm": {
+        "_id": "KxKTzLc72ED9eDYm",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "steel",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você golpeia com um par de engrenagens de aço que vão em direção a um alvo (ou alvos). Faça dois ataques corpo a corpo - 2, causando 1d10 + MOVE de dano de aço em cada acerto. Este golpe tem um alcance de 10 pés (3 metros).</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d8"
+            },
+            {
+              "level": 10,
+              "formula": "2d10"
+            },
+            {
+              "level": 17,
+              "formula": "4d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

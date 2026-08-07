@@ -2,43 +2,126 @@
   "_key": "!items!XKkWFhjdyPFCDI3O",
   "_id": "XKkWFhjdyPFCDI3O",
   "name": "Endeavor",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "SAB/CON",
-    "powerAbilities": [
-      "wis",
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Quando você ativa este Move, selecione uma criatura dentro do alcance. O alvo deve fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, os PV atuais do alvo são reduzidos para serem iguais aos seus próprios. O máximo de pontos de vida que podem ser reduzidos é igual a 5x o seu nível atual. A imunidade de tipo não é ignorada, então Endeavor não afeta Pokémon do tipo Fantasma.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Quando você ativa este Move, selecione uma criatura dentro do alcance. O alvo deve fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, os PV atuais do alvo são reduzidos para serem iguais aos seus próprios. O máximo de pontos de vida que podem ser reduzidos é igual a 5x o seu nível atual. A imunidade de tipo não é ignorada, então Endeavor não afeta Pokémon do tipo Fantasma.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
+    "activities": {
+      "zeZFz1YGnmWJEbwl": {
+        "_id": "zeZFz1YGnmWJEbwl",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "SAB/CON",
+        "powerAbilities": [
+          "wis",
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Quando você ativa este Move, selecione uma criatura dentro do alcance. O alvo deve fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, os PV atuais do alvo são reduzidos para serem iguais aos seus próprios. O máximo de pontos de vida que podem ser reduzidos é igual a 5x o seu nível atual. A imunidade de tipo não é ignorada, então Endeavor não afeta Pokémon do tipo Fantasma.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

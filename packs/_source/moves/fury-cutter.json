@@ -2,56 +2,152 @@
   "_key": "!items!I1xlIdeOO44jNKST",
   "_id": "I1xlIdeOO44jNKST",
   "name": "Fury Cutter",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-bug.png",
   "system": {
-    "moveType": "bug",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desencadeia uma série de cortes contra uma criatura que aumentam em força. Quando você ativa este Move, faça um ataque corpo a corpo -1 em um alvo em alcance, causando 2d4 + MOVE de dano inseto em um acerto. Se você usar este Move em seu turno em rodadas consecutivas, dobre os dados de dano a cada acerto. O multiplicador tem um limite máximo de 4x o dano original. O dano é resetado se algum dos ataques falhar, ou se você estiver incapacitado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Inseto",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você desencadeia uma série de cortes contra uma criatura que aumentam em força. Quando você ativa este Move, faça um ataque corpo a corpo -1 em um alvo em alcance, causando 2d4 + MOVE de dano inseto em um acerto. Se você usar este Move em seu turno em rodadas consecutivas, dobre os dados de dano a cada acerto. O multiplicador tem um limite máximo de 4x o dano original. O dano é resetado se algum dos ataques falhar, ou se você estiver incapacitado.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d6"
-        },
-        {
-          "level": 10,
-          "formula": "2d8"
-        },
-        {
-          "level": 17,
-          "formula": "2d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "1DKRe42nCZrV8TMB": {
+        "_id": "1DKRe42nCZrV8TMB",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "bug",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você desencadeia uma série de cortes contra uma criatura que aumentam em força. Quando você ativa este Move, faça um ataque corpo a corpo -1 em um alvo em alcance, causando 2d4 + MOVE de dano inseto em um acerto. Se você usar este Move em seu turno em rodadas consecutivas, dobre os dados de dano a cada acerto. O multiplicador tem um limite máximo de 4x o dano original. O dano é resetado se algum dos ataques falhar, ou se você estiver incapacitado.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d6"
+            },
+            {
+              "level": 10,
+              "formula": "2d8"
+            },
+            {
+              "level": 17,
+              "formula": "2d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

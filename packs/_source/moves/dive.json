@@ -2,55 +2,139 @@
   "_key": "!items!LLusA2cTnyYrVTmY",
   "_id": "LLusA2cTnyYrVTmY",
   "name": "Dive",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, carga &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 40 pés (12 metros)</p><p>Quando você ativa este Move, você usa 10 pés (3 metros) do seu deslocamento para desaparecer em um espaço mágico abaixo de si, permanecendo em um estado invulnerável até o seu próximo turno. Durante este tempo, você é imune ao dano e efeitos de qualquer Move. Se você não tiver deslocamento restante ou estiver agarrado/impedido antes de ativar este Move, o Move falha. No seu próximo turno, como uma ação, você pode reaparecer em um espaço desocupado dentro do alcance do Move, ou reaparecer sob uma criatura dentro do alcance (a partir do ponto em que usou o Move) e a até 30 pés (9 metros) de altura do solo, realizando um ataque corpo a corpo com vantagem, causando 4d4 + MOVE de dano do tipo água em um acerto bem-sucedido. Caso o alvo saia do alcance estabelecido no momento em que o Move foi ativado, ele ainda pode ser atingido por esse Move, independente da distância que tenha percorrido (exceto em altura).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Dive não pode ser escolhido pelo Move Assist.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "1 rodada, carga",
-    "range": {
-      "raw": "Corpo a corpo / 40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Quando você ativa este Move, você usa 10 pés (3 metros) do seu deslocamento para desaparecer em um espaço mágico abaixo de si, permanecendo em um estado invulnerável até o seu próximo turno. Durante este tempo, você é imune ao dano e efeitos de qualquer Move. Se você não tiver deslocamento restante ou estiver agarrado/impedido antes de ativar este Move, o Move falha. No seu próximo turno, como uma ação, você pode reaparecer em um espaço desocupado dentro do alcance do Move, ou reaparecer sob uma criatura dentro do alcance (a partir do ponto em que usou o Move) e a até 30 pés (9 metros) de altura do solo, realizando um ataque corpo a corpo com vantagem, causando 4d4 + MOVE de dano do tipo água em um acerto bem-sucedido. Caso o alvo saia do alcance estabelecido no momento em que o Move foi ativado, ele ainda pode ser atingido por esse Move, independente da distância que tenha percorrido (exceto em altura).</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
-    "observations": "<p>Dive não pode ser escolhido pelo Move Assist.</p>",
-    "damage": {
-      "baseFormula": "4d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d6"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "4d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "ffDDUF288SQ4AB4f": {
+        "_id": "ffDDUF288SQ4AB4f",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "1 rodada, carga",
+        "range": {
+          "raw": "Corpo a corpo / 40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Quando você ativa este Move, você usa 10 pés (3 metros) do seu deslocamento para desaparecer em um espaço mágico abaixo de si, permanecendo em um estado invulnerável até o seu próximo turno. Durante este tempo, você é imune ao dano e efeitos de qualquer Move. Se você não tiver deslocamento restante ou estiver agarrado/impedido antes de ativar este Move, o Move falha. No seu próximo turno, como uma ação, você pode reaparecer em um espaço desocupado dentro do alcance do Move, ou reaparecer sob uma criatura dentro do alcance (a partir do ponto em que usou o Move) e a até 30 pés (9 metros) de altura do solo, realizando um ataque corpo a corpo com vantagem, causando 4d4 + MOVE de dano do tipo água em um acerto bem-sucedido. Caso o alvo saia do alcance estabelecido no momento em que o Move foi ativado, ele ainda pode ser atingido por esse Move, independente da distância que tenha percorrido (exceto em altura).</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+        "observations": "<p>Dive não pode ser escolhido pelo Move Assist.</p>",
+        "damage": {
+          "baseFormula": "4d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d6"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "4d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

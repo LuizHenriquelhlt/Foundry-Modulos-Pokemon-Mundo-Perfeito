@@ -2,55 +2,151 @@
   "_key": "!items!wf9khe3ep524N2lr",
   "_id": "wf9khe3ep524N2lr",
   "name": "U-turn",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-bug.png",
   "system": {
-    "moveType": "bug",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um golpe rápido antes de se afastar. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano inseto em um acerto. Após este Move ser ativado, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Inseto",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você desfere um golpe rápido antes de se afastar. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano inseto em um acerto. Após este Move ser ativado, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d10"
-        },
-        {
-          "level": 17,
-          "formula": "3d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "yiRwuMgpbHMDn10i": {
+        "_id": "yiRwuMgpbHMDn10i",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "bug",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você desfere um golpe rápido antes de se afastar. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano inseto em um acerto. Após este Move ser ativado, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d10"
+            },
+            {
+              "level": 17,
+              "formula": "3d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -58,7 +154,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6350,
+  "sort": 6360,
   "ownership": {
     "default": 0
   }

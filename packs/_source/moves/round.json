@@ -2,56 +2,146 @@
   "_key": "!items!Qqt5tx2DbBRHddES",
   "_id": "Qqt5tx2DbBRHddES",
   "name": "Round",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação / reação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você solta uma melodia ressonante que toma forma em ondas sonoras coloridas, amplificando-se quando mais vozes se unem ao canto. Selecione um alvo no alcance e force-o a fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, o alvo sofre 2d6 + MOVE de dano normal. Se um aliado ao seu alcance e no alcance do alvo também conhecer este Move, ele pode se juntar à canção como uma reação para dobrar os dados de dano, abrindo mão da ação dele no próximo turno. Não é possível acumular mais de 2 usuários neste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Round é um Move baseado em som.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você solta uma melodia ressonante que toma forma em ondas sonoras coloridas, amplificando-se quando mais vozes se unem ao canto. Selecione um alvo no alcance e force-o a fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, o alvo sofre 2d6 + MOVE de dano normal. Se um aliado ao seu alcance e no alcance do alvo também conhecer este Move, ele pode se juntar à canção como uma reação para dobrar os dados de dano, abrindo mão da ação dele no próximo turno. Não é possível acumular mais de 2 usuários neste Move.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
-    "observations": "<p>Round é um Move baseado em som.</p>",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d6"
-        },
-        {
-          "level": 10,
-          "formula": "3d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "b7VuJexCveorrmrw": {
+        "_id": "b7VuJexCveorrmrw",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação / reação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você solta uma melodia ressonante que toma forma em ondas sonoras coloridas, amplificando-se quando mais vozes se unem ao canto. Selecione um alvo no alcance e force-o a fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, o alvo sofre 2d6 + MOVE de dano normal. Se um aliado ao seu alcance e no alcance do alvo também conhecer este Move, ele pode se juntar à canção como uma reação para dobrar os dados de dano, abrindo mão da ação dele no próximo turno. Não é possível acumular mais de 2 usuários neste Move.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+        "observations": "<p>Round é um Move baseado em som.</p>",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d6"
+            },
+            {
+              "level": 10,
+              "formula": "3d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

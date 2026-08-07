@@ -2,55 +2,145 @@
   "_key": "!items!PL0GgzRZXho78KOS",
   "_id": "PL0GgzRZXho78KOS",
   "name": "Acid",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você cria um fluxo de ácido quente em um cone de 30 pés (9 metros), centrado em você. Criaturas pegas no cone devem fazer um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano venenoso em uma falha, além de reduzir a Defesa Especial do alvo em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17. durante o jogo, em ordem alfabética. O \"Poder do Move\" é o atributo resistência. Se um Poder do Move indicar \"Atributo 1/ Atributo 2\", isso descrições, o termo “Poder de Move”</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 15,
-      "max": 15,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto ativo",
-    "range": {
-      "raw": "Pessoal (cone de 30 pés / 9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você cria um fluxo de ácido quente em um cone de 30 pés (9 metros), centrado em você. Criaturas pegas no cone devem fazer um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano venenoso em uma falha, além de reduzir a Defesa Especial do alvo em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17. durante o jogo, em ordem alfabética. O \"Poder do Move\" é o atributo resistência. Se um Poder do Move indicar \"Atributo 1/ Atributo 2\", isso descrições, o termo “Poder de Move”</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "15",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d6"
-        },
-        {
-          "level": 10,
-          "formula": "2d8"
-        },
-        {
-          "level": 17,
-          "formula": "2d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "c837Op111p7WOrmC": {
+        "_id": "c837Op111p7WOrmC",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 15,
+          "max": 15,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto ativo",
+        "range": {
+          "raw": "Pessoal (cone de 30 pés / 9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você cria um fluxo de ácido quente em um cone de 30 pés (9 metros), centrado em você. Criaturas pegas no cone devem fazer um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano venenoso em uma falha, além de reduzir a Defesa Especial do alvo em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17. durante o jogo, em ordem alfabética. O \"Poder do Move\" é o atributo resistência. Se um Poder do Move indicar \"Atributo 1/ Atributo 2\", isso descrições, o termo “Poder de Move”</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d6"
+            },
+            {
+              "level": 10,
+              "formula": "2d8"
+            },
+            {
+              "level": 17,
+              "formula": "2d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

@@ -2,55 +2,151 @@
   "_key": "!items!hJLrbiBScJP7stAq",
   "_id": "hJLrbiBScJP7stAq",
   "name": "Extrasensory",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "SAB",
-    "powerAbilities": [
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera uma rajada de energia multicolorida contra uma criatura, atingindo sua mente com força psíquica e podendo imobilizá-la momentaneamente. Faça um ataque à distância contra uma criatura dentro do alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera uma rajada de energia multicolorida contra uma criatura, atingindo sua mente com força psíquica e podendo imobilizá-la momentaneamente. Faça um ataque à distância contra uma criatura dentro do alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica atordoado.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d6"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "4d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "wY9uNXzWc7QQMiCt": {
+        "_id": "wY9uNXzWc7QQMiCt",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "wis",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "SAB",
+        "powerAbilities": [
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera uma rajada de energia multicolorida contra uma criatura, atingindo sua mente com força psíquica e podendo imobilizá-la momentaneamente. Faça um ataque à distância contra uma criatura dentro do alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica atordoado.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d6"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "4d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

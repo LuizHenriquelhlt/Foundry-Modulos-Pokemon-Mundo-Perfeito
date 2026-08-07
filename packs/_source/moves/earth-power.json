@@ -2,55 +2,151 @@
   "_key": "!items!m8lGGRy1QDhR40PO",
   "_id": "m8lGGRy1QDhR40PO",
   "name": "Earth Power",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
   "system": {
-    "moveType": "ground",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você faz com que o chão sob uma criatura irrompa, lançando uma grande rajada de poder para o alto. Faça um ataque à distância, causando 3d6 + MOVE de dano de terra em um acerto. Em um resultado natural de 19 ou 20 no acerto, a Defesa Especial do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Este Move atinge criaturas a até 30 pés (9 metros) de altura. Após esse golpe, uma área de 5 pés (1,5 metros) ao redor do alvo se torna terreno difícil.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Terrestre",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você faz com que o chão sob uma criatura irrompa, lançando uma grande rajada de poder para o alto. Faça um ataque à distância, causando 3d6 + MOVE de dano de terra em um acerto. Em um resultado natural de 19 ou 20 no acerto, a Defesa Especial do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Este Move atinge criaturas a até 30 pés (9 metros) de altura. Após esse golpe, uma área de 5 pés (1,5 metros) ao redor do alvo se torna terreno difícil.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d12"
-        },
-        {
-          "level": 17,
-          "formula": "4d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "8cg6vEq13blkTi5O": {
+        "_id": "8cg6vEq13blkTi5O",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ground",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você faz com que o chão sob uma criatura irrompa, lançando uma grande rajada de poder para o alto. Faça um ataque à distância, causando 3d6 + MOVE de dano de terra em um acerto. Em um resultado natural de 19 ou 20 no acerto, a Defesa Especial do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Este Move atinge criaturas a até 30 pés (9 metros) de altura. Após esse golpe, uma área de 5 pés (1,5 metros) ao redor do alvo se torna terreno difícil.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d12"
+            },
+            {
+              "level": 17,
+              "formula": "4d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

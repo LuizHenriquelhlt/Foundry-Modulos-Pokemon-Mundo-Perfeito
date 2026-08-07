@@ -2,58 +2,145 @@
   "_key": "!items!0l0w8T6xSOjcUYOk",
   "_id": "0l0w8T6xSOjcUYOk",
   "name": "Lumina Crash",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "INT/SAB",
-    "powerAbilities": [
-      "int",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você ataca liberando uma luz peculiar que afeta até a mente do alvo. O alvo deve realizar um teste de SAB contra sua CD de Move, sofrendo 4d4 + MOVE de dano do tipo psíquico em uma falha, e metade disso em um sucesso. Em uma falha, o alvo também tem sua Defesa Especial reduzida em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você ataca liberando uma luz peculiar que afeta até a mente do alvo. O alvo deve realizar um teste de SAB contra sua CD de Move, sofrendo 4d4 + MOVE de dano do tipo psíquico em uma falha, e metade disso em um sucesso. Em uma falha, o alvo também tem sua Defesa Especial reduzida em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d6"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "4d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "BLkvch2iB6LR1bcn": {
+        "_id": "BLkvch2iB6LR1bcn",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "int",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "INT/SAB",
+        "powerAbilities": [
+          "int",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você ataca liberando uma luz peculiar que afeta até a mente do alvo. O alvo deve realizar um teste de SAB contra sua CD de Move, sofrendo 4d4 + MOVE de dano do tipo psíquico em uma falha, e metade disso em um sucesso. Em uma falha, o alvo também tem sua Defesa Especial reduzida em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d6"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "4d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

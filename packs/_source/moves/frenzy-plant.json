@@ -2,55 +2,151 @@
   "_key": "!items!GUfqTHfTGf7qbjuF",
   "_id": "GUfqTHfTGf7qbjuF",
   "name": "Frenzy Plant",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
   "system": {
-    "moveType": "grass",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação, recarga"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, recarga &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você convoca um turbilhão de galhos pontiagudos e folhas afiadas que surgem do chão, golpeando um alvo em alcance. Faça um ataque à distância -1, causando 5d6 + MOVE de dano de grama em um acerto. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Grama",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você convoca um turbilhão de galhos pontiagudos e folhas afiadas que surgem do chão, golpeando um alvo em alcance. Faça um ataque à distância -1, causando 5d6 + MOVE de dano de grama em um acerto. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "5d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d8"
-        },
-        {
-          "level": 10,
-          "formula": "6d10"
-        },
-        {
-          "level": 17,
-          "formula": "6d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "LOwnhrH1ggtZqUIX": {
+        "_id": "LOwnhrH1ggtZqUIX",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "grass",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação, recarga"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você convoca um turbilhão de galhos pontiagudos e folhas afiadas que surgem do chão, golpeando um alvo em alcance. Faça um ataque à distância -1, causando 5d6 + MOVE de dano de grama em um acerto. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "5d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d8"
+            },
+            {
+              "level": 10,
+              "formula": "6d10"
+            },
+            {
+              "level": 17,
+              "formula": "6d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

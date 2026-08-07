@@ -2,41 +2,67 @@
   "_key": "!items!lDHnIH3SuPUxv4Vk",
   "_id": "lDHnIH3SuPUxv4Vk",
   "name": "Wide Guard",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
   "system": {
-    "moveType": "rock",
-    "category": "",
-    "power": "Nenhum",
-    "powerAbilities": [],
-    "activation": {
-      "type": "reaction",
-      "raw": "1 reação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Pedra",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Até o início do próximo turno",
-    "range": {
-      "raw": "Pessoal (raio de 20 pés / 6 metros)",
-      "meters": 6.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "rock",
+        "category": "",
+        "power": "Nenhum",
+        "powerAbilities": [],
+        "activation": {
+          "type": "reaction",
+          "raw": "1 reação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Até o início do próximo turno",
+        "range": {
+          "raw": "Pessoal (raio de 20 pés / 6 metros)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -44,7 +70,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6570,
+  "sort": 6580,
   "ownership": {
     "default": 0
   }

@@ -2,44 +2,127 @@
   "_key": "!items!qYYGOk9hb0bLtkGP",
   "_id": "qYYGOk9hb0bLtkGP",
   "name": "Sweet Scent",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "CON/CAR",
-    "powerAbilities": [
-      "con",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você libera um cheiro doce direcionado em um cone de 30 pés (9 metros), na tentativa de distrair os inimigos. Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de CAR contra sua CD de Move, reduzindo a Evasão em 2 estágios em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (cone de 30 pés / 9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você libera um cheiro doce direcionado em um cone de 30 pés (9 metros), na tentativa de distrair os inimigos. Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de CAR contra sua CD de Move, reduzindo a Evasão em 2 estágios em caso de falha, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Precisão em 1 estágio."
+    "activities": {
+      "tFs35SOowD95hD9W": {
+        "_id": "tFs35SOowD95hD9W",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "con",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        }
+      }
+    }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "CON/CAR",
+        "powerAbilities": [
+          "con",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (cone de 30 pés / 9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera um cheiro doce direcionado em um cone de 30 pés (9 metros), na tentativa de distrair os inimigos. Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de CAR contra sua CD de Move, reduzindo a Evasão em 2 estágios em caso de falha, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Precisão em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

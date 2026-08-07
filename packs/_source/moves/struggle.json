@@ -2,56 +2,136 @@
   "_key": "!items!puxgWuHITA1wwldj",
   "_id": "puxgWuHITA1wwldj",
   "name": "Struggle",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 0,
-      "max": 0,
-      "unlimited": true
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo / 60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": true
+    "uses": {
+      "spent": 0,
+      "max": "",
+      "recovery": []
     },
-    "priority": 0,
-    "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
-    "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
-    "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
-    "damage": {
-      "baseFormula": "1d10",
-      "scaling": [
-        {
-          "level": 5,
-          "formula": "2d8"
+    "activities": {
+      "XswP1sziaokq7KFo": {
+        "_id": "XswP1sziaokq7KFo",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
         },
-        {
-          "level": 10,
-          "formula": "2d10"
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
         },
-        {
-          "level": 17,
-          "formula": "4d6"
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
         }
-      ]
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 0,
+          "max": 0,
+          "unlimited": true
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo / 60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
+        "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+        "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+        "damage": {
+          "baseFormula": "1d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d8"
+            },
+            {
+              "level": 10,
+              "formula": "2d10"
+            },
+            {
+              "level": 17,
+              "formula": "4d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

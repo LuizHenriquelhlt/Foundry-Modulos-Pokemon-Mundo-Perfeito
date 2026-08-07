@@ -2,56 +2,146 @@
   "_key": "!items!H5I5DUHwK221miri",
   "_id": "H5I5DUHwK221miri",
   "name": "Relic Song",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você canta uma antiga canção que causa danos em criaturas à sua frente em um cone de 40 pés (12 metros), com a chance de deixá-las Sonolentas. Qualquer criatura pega no cone deve ter sucesso em um teste de CON contra sua CD de Move, sofrendo 2d8 + MOVE de dano normal em uma falha, ou metade do dano em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, fica Sonolenta.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17. Rest amemoriii</p><p><strong>Observações:</strong></p><p>Relic Song é um Move baseado em som.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (cone de 40 pés / 12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você canta uma antiga canção que causa danos em criaturas à sua frente em um cone de 40 pés (12 metros), com a chance de deixá-las Sonolentas. Qualquer criatura pega no cone deve ter sucesso em um teste de CON contra sua CD de Move, sofrendo 2d8 + MOVE de dano normal em uma falha, ou metade do dano em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, fica Sonolenta.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
-    "observations": "<p>Relic Song é um Move baseado em som.</p>",
-    "damage": {
-      "baseFormula": "2d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d10"
-        },
-        {
-          "level": 10,
-          "formula": "5d6"
-        },
-        {
-          "level": 17,
-          "formula": "6d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "w35muOg8hAP0vBJA": {
+        "_id": "w35muOg8hAP0vBJA",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (cone de 40 pés / 12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você canta uma antiga canção que causa danos em criaturas à sua frente em um cone de 40 pés (12 metros), com a chance de deixá-las Sonolentas. Qualquer criatura pega no cone deve ter sucesso em um teste de CON contra sua CD de Move, sofrendo 2d8 + MOVE de dano normal em uma falha, ou metade do dano em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, fica Sonolenta.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17. Rest amemoriii</p>",
+        "observations": "<p>Relic Song é um Move baseado em som.</p>",
+        "damage": {
+          "baseFormula": "2d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d10"
+            },
+            {
+              "level": 10,
+              "formula": "5d6"
+            },
+            {
+              "level": 17,
+              "formula": "6d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

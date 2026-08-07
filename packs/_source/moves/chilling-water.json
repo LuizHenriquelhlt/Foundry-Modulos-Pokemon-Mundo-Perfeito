@@ -2,57 +2,150 @@
   "_key": "!items!z7ux7ATeCk4MDXAR",
   "_id": "z7ux7ATeCk4MDXAR",
   "name": "Chilling Water",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você ataca o alvo com um banho de água gelada que drena suas forças. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo água em um acerto. Em um acerto, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você ataca o alvo com um banho de água gelada que drena suas forças. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo água em um acerto. Em um acerto, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d8"
-        },
-        {
-          "level": 10,
-          "formula": "2d10"
-        },
-        {
-          "level": 17,
-          "formula": "4d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "iJvve7ZCIuhlUv8H": {
+        "_id": "iJvve7ZCIuhlUv8H",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você ataca o alvo com um banho de água gelada que drena suas forças. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo água em um acerto. Em um acerto, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d8"
+            },
+            {
+              "level": 10,
+              "formula": "2d10"
+            },
+            {
+              "level": 17,
+              "formula": "4d6"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

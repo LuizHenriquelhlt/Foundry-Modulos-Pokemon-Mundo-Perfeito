@@ -2,56 +2,146 @@
   "_key": "!items!N6QJ4i5qfNkblen7",
   "_id": "N6QJ4i5qfNkblen7",
   "name": "Core Enforcer",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-dragon.png",
   "system": {
-    "moveType": "dragon",
-    "category": "",
-    "power": "FOR/SAB",
-    "powerAbilities": [
-      "str",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 45 pés (13,5 metros)</p><p>Você envia um laser focado que queima um padrão 'Z' no chão, atingindo uma área com raio de 20 pés (6 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo dragão em caso de falha, e metade em um sucesso. Em caso de falha, e caso o alvo já tenha agido nesta rodada, ele perde todos os efeitos de sua habilidade passiva, até ser trocado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Dragão",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto ativo",
-    "range": {
-      "raw": "45 pés (13,5 metros)",
-      "meters": 13.5,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você envia um laser focado que queima um padrão 'Z' no chão, atingindo uma área com raio de 20 pés (6 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo dragão em caso de falha, e metade em um sucesso. Em caso de falha, e caso o alvo já tenha agido nesta rodada, ele perde todos os efeitos de sua habilidade passiva, até ser trocado.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d6"
-        },
-        {
-          "level": 10,
-          "formula": "5d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "DlkzOg72CGmC94Vd": {
+        "_id": "DlkzOg72CGmC94Vd",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "dragon",
+        "category": "",
+        "power": "FOR/SAB",
+        "powerAbilities": [
+          "str",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto ativo",
+        "range": {
+          "raw": "45 pés (13,5 metros)",
+          "meters": 13.5,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envia um laser focado que queima um padrão 'Z' no chão, atingindo uma área com raio de 20 pés (6 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo dragão em caso de falha, e metade em um sucesso. Em caso de falha, e caso o alvo já tenha agido nesta rodada, ele perde todos os efeitos de sua habilidade passiva, até ser trocado.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d6"
+            },
+            {
+              "level": 10,
+              "formula": "5d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

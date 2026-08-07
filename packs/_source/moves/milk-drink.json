@@ -2,56 +2,140 @@
   "_key": "!items!24HoSpo4ZaVNZSFo",
   "_id": "24HoSpo4ZaVNZSFo",
   "name": "Milk Drink",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "CON",
-    "powerAbilities": [
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 10 pés (3 metros)</p><p>Você cria uma bebida saborosa que cura suas feridas, recuperando 2d6 + MOVE pontos de vida. A cura desta bebida funciona apenas para si.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "10 pés (3 metros)",
-      "meters": 3.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você cria uma bebida saborosa que cura suas feridas, recuperando 2d6 + MOVE pontos de vida. A cura desta bebida funciona apenas para si.</p>",
-    "higherLevels": "<p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d10"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "4d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
     },
-    "zPowerEffect": "Remove todas as Mudanças de Status negativas."
+    "activities": {
+      "k84TO7Ianq3vDove": {
+        "_id": "k84TO7Ianq3vDove",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
+    }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "CON",
+        "powerAbilities": [
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "10 pés (3 metros)",
+          "meters": 3.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você cria uma bebida saborosa que cura suas feridas, recuperando 2d6 + MOVE pontos de vida. A cura desta bebida funciona apenas para si.</p>",
+        "higherLevels": "<p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d10"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "4d12"
+            }
+          ]
+        },
+        "zPowerEffect": "Remove todas as Mudanças de Status negativas."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

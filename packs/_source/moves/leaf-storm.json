@@ -2,56 +2,146 @@
   "_key": "!items!ig4hKgNz4B0C3W51",
   "_id": "ig4hKgNz4B0C3W51",
   "name": "Leaf Storm",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
   "system": {
-    "moveType": "grass",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você levanta uma tempestade poderosa de folhas em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Todas as criaturas na área devem fazer um teste de DES contra sua CD de Move -1, sofrendo 4d6 + MOVE de dano de grama no fracasso, ou a metade no sucesso. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Grama",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você levanta uma tempestade poderosa de folhas em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Todas as criaturas na área devem fazer um teste de DES contra sua CD de Move -1, sofrendo 4d6 + MOVE de dano de grama no fracasso, ou a metade no sucesso. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d20"
-        },
-        {
-          "level": 10,
-          "formula": "5d10"
-        },
-        {
-          "level": 17,
-          "formula": "8d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "uvf4WzZH9VWfUZHW": {
+        "_id": "uvf4WzZH9VWfUZHW",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "grass",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você levanta uma tempestade poderosa de folhas em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Todas as criaturas na área devem fazer um teste de DES contra sua CD de Move -1, sofrendo 4d6 + MOVE de dano de grama no fracasso, ou a metade no sucesso. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d20"
+            },
+            {
+              "level": 10,
+              "formula": "5d10"
+            },
+            {
+              "level": 17,
+              "formula": "8d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

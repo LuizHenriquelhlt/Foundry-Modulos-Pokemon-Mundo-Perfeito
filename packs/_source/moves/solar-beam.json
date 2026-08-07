@@ -2,56 +2,146 @@
   "_key": "!items!USWdGGGlL71vx9y6",
   "_id": "USWdGGGlL71vx9y6",
   "name": "Solar Beam",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
   "system": {
-    "moveType": "grass",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação, carga"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, carga &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Ao usar este Move, você absorve energia solar e se prepara para liberar um raio devastador. No seu próximo turno, se você mantiver a concentração, use uma ação para criar uma linha de energia solar de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 3d8 + MOVE de dano de grama em caso de falha e metade disso em caso de sucesso. Se este Move for usado sob luz solar intensa, ele pode ser executado imediatamente no momento em que for ativado, sem necessidade de concentração.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Grama",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "1 rodada, Concentração",
-    "range": {
-      "raw": "Pessoal (linha de 80 pés / 24 metros)",
-      "meters": 24.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Ao usar este Move, você absorve energia solar e se prepara para liberar um raio devastador. No seu próximo turno, se você mantiver a concentração, use uma ação para criar uma linha de energia solar de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 3d8 + MOVE de dano de grama em caso de falha e metade disso em caso de sucesso. Se este Move for usado sob luz solar intensa, ele pode ser executado imediatamente no momento em que for ativado, sem necessidade de concentração.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "6d6"
-        },
-        {
-          "level": 10,
-          "formula": "6d8"
-        },
-        {
-          "level": 17,
-          "formula": "6d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "lNSiZq9WroLjaDR2": {
+        "_id": "lNSiZq9WroLjaDR2",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "grass",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação, carga"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "1 rodada, Concentração",
+        "range": {
+          "raw": "Pessoal (linha de 80 pés / 24 metros)",
+          "meters": 24.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Ao usar este Move, você absorve energia solar e se prepara para liberar um raio devastador. No seu próximo turno, se você mantiver a concentração, use uma ação para criar uma linha de energia solar de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 3d8 + MOVE de dano de grama em caso de falha e metade disso em caso de sucesso. Se este Move for usado sob luz solar intensa, ele pode ser executado imediatamente no momento em que for ativado, sem necessidade de concentração.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "6d6"
+            },
+            {
+              "level": 10,
+              "formula": "6d8"
+            },
+            {
+              "level": 17,
+              "formula": "6d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

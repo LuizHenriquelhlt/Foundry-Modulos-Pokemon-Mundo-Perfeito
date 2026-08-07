@@ -2,57 +2,150 @@
   "_key": "!items!76AbMfMprKMdpCDQ",
   "_id": "76AbMfMprKMdpCDQ",
   "name": "Snap Trap",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
   "system": {
-    "moveType": "grass",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto agarrado &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você prende o alvo em uma armadilha que se fecha com força. Faça um ataque corpo a corpo, causando 1d8 + MOVE de dano de grama e agarrando o alvo em um acerto. O alvo tem direito a um teste de FOR contra sua CD de Move no início de cada turno para tentar se soltar. Enquanto estiver agarrado, o alvo não pode fugir ou ser substituído, e ao final de cada turno receberá dano sem tipo igual ao nível dele.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Grama",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto agarrado",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você prende o alvo em uma armadilha que se fecha com força. Faça um ataque corpo a corpo, causando 1d8 + MOVE de dano de grama e agarrando o alvo em um acerto. O alvo tem direito a um teste de FOR contra sua CD de Move no início de cada turno para tentar se soltar. Enquanto estiver agarrado, o alvo não pode fugir ou ser substituído, e ao final de cada turno receberá dano sem tipo igual ao nível dele.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d10"
-        },
-        {
-          "level": 10,
-          "formula": "2d8"
-        },
-        {
-          "level": 17,
-          "formula": "3d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "prcM2tz5m5tcghGn": {
+        "_id": "prcM2tz5m5tcghGn",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "grass",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto agarrado",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você prende o alvo em uma armadilha que se fecha com força. Faça um ataque corpo a corpo, causando 1d8 + MOVE de dano de grama e agarrando o alvo em um acerto. O alvo tem direito a um teste de FOR contra sua CD de Move no início de cada turno para tentar se soltar. Enquanto estiver agarrado, o alvo não pode fugir ou ser substituído, e ao final de cada turno receberá dano sem tipo igual ao nível dele.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d10"
+            },
+            {
+              "level": 10,
+              "formula": "2d8"
+            },
+            {
+              "level": 17,
+              "formula": "3d6"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

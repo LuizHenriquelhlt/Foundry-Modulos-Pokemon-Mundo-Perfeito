@@ -2,56 +2,146 @@
   "_key": "!items!7nWWe1xUB2RO5hQq",
   "_id": "7nWWe1xUB2RO5hQq",
   "name": "Moongeist Beam",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ghost.png",
   "system": {
-    "moveType": "ghost",
-    "category": "",
-    "power": "DES/SAB",
-    "powerAbilities": [
-      "dex",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 100 pés / 30 metros)</p><p>Você emite um raio sinistro que explode de você em uma linha de 100 pés (30 metros), com 5 pés (1,5 metros) de largura. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano fantasma em caso de falha ou metade disso em caso de sucesso. Este ataque ignora quaisquer habilidades passivas das criaturas que afetariam a capacidade do usuário de acertar ou causar dano total.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17. por</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fantasma",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (linha de 100 pés / 30 metros)",
-      "meters": 30.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você emite um raio sinistro que explode de você em uma linha de 100 pés (30 metros), com 5 pés (1,5 metros) de largura. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano fantasma em caso de falha ou metade disso em caso de sucesso. Este ataque ignora quaisquer habilidades passivas das criaturas que afetariam a capacidade do usuário de acertar ou causar dano total.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17. por</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d6"
-        },
-        {
-          "level": 10,
-          "formula": "5d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "HUZckSuhgwmp0PQC": {
+        "_id": "HUZckSuhgwmp0PQC",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ghost",
+        "category": "",
+        "power": "DES/SAB",
+        "powerAbilities": [
+          "dex",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (linha de 100 pés / 30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você emite um raio sinistro que explode de você em uma linha de 100 pés (30 metros), com 5 pés (1,5 metros) de largura. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano fantasma em caso de falha ou metade disso em caso de sucesso. Este ataque ignora quaisquer habilidades passivas das criaturas que afetariam a capacidade do usuário de acertar ou causar dano total.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17. por</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d6"
+            },
+            {
+              "level": 10,
+              "formula": "5d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

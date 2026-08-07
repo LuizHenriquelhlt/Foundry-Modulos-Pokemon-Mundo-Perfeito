@@ -2,44 +2,70 @@
   "_key": "!items!0zB1FfWn9h27vs7m",
   "_id": "0zB1FfWn9h27vs7m",
   "name": "Lovely Kiss",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você manda um beijo para uma criatura dentro do alcance, tentando deixá-la sonolenta. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, o alvo fica Sonolento.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você manda um beijo para uma criatura dentro do alcance, tentando deixá-la sonolenta. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, o alvo fica Sonolento.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você manda um beijo para uma criatura dentro do alcance, tentando deixá-la sonolenta. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, o alvo fica Sonolento.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

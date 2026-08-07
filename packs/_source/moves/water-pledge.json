@@ -2,55 +2,151 @@
   "_key": "!items!yfiUbU5osc7HtGNR",
   "_id": "yfiUbU5osc7HtGNR",
   "name": "Water Pledge",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você invoca colunas de água pressurizada que jorram do chão em espiral, envolvendo e atingindo a criatura alvo com força bruta. Faça um ataque à distância, causando 4d4 + MOVE de dano de água em um acerto. Antes de realizar este ataque, se estiver em combate ao lado de um aliado que também esteja em alcance do alvo, você pode anunciar a intenção de formar um combo. Se esse aliado conhecer Fire Pledge ou Grass Pledge, ele pode optar por usar o Move agora, gastando previamente a ação de seu próximo turno para combinar os ataques conforme as opções abaixo. Ao fazer isso, o teste de ataque passará a ser feito pelo aliado. Se o combo for declarado, mas o aliado não puder agir (ex: paralisia) ou errar o ataque, nenhum dos dois Moves será executado. O STAB sempre será contabilizado por ambos os usuários, caso haja (porém cada combinação é de um tipo único).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17. Water Pledge + Fire Pledge (Arco-íris): O Move combinado causa o dobro de dados de dano + MOVE do segundo usuário a utilizar o ataque, com dano do tipo água. Após o ataque, um arco-íris cobre o campo por 4 turnos, em uma área de 20 pés (6 metros) de raio centrada no usuário. Todas as criaturas aliadas dentro desta área têm chance dobrada de causar efeitos secundários com seus Moves (ex: se você causa um efeito em rolagens de 19 e 20, passa a causá-lo em rolagens de 17, 18, 19 e 20). Water Pledge + Grass Pledge (Pântano): O Move combinado causa o dobro de dados de dano + MOVE do segundo usuário a utilizar o ataque, com dano do tipo grama. Após o ataque, um pântano se forma no campo inimigo por 4 turnos, em uma área de 20 pés (6 metros) de raio centrada no alvo, criando raízes e lama que se agarram às criaturas na área. Todas as criaturas a até 10 pés (3 metros) de altura do solo que iniciarem seu turno dentro desta área devem fazer um teste de FOR contra a CD de Move do usuário que lançou o último golpe. Em caso de falha, suas movimentações são reduzidas para um quarto do valor original enquanto estiverem na área. Além disso, para criaturas que entrarem na área ou as que não estiverem afetadas pela lentidão, o terreno é considerado terreno difícil.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você invoca colunas de água pressurizada que jorram do chão em espiral, envolvendo e atingindo a criatura alvo com força bruta. Faça um ataque à distância, causando 4d4 + MOVE de dano de água em um acerto. Antes de realizar este ataque, se estiver em combate ao lado de um aliado que também esteja em alcance do alvo, você pode anunciar a intenção de formar um combo. Se esse aliado conhecer Fire Pledge ou Grass Pledge, ele pode optar por usar o Move agora, gastando previamente a ação de seu próximo turno para combinar os ataques conforme as opções abaixo. Ao fazer isso, o teste de ataque passará a ser feito pelo aliado. Se o combo for declarado, mas o aliado não puder agir (ex: paralisia) ou errar o ataque, nenhum dos dois Moves será executado. O STAB sempre será contabilizado por ambos os usuários, caso haja (porém cada combinação é de um tipo único).</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17. Water Pledge + Fire Pledge (Arco-íris): O Move combinado causa o dobro de dados de dano + MOVE do segundo usuário a utilizar o ataque, com dano do tipo água. Após o ataque, um arco-íris cobre o campo por 4 turnos, em uma área de 20 pés (6 metros) de raio centrada no usuário. Todas as criaturas aliadas dentro desta área têm chance dobrada de causar efeitos secundários com seus Moves (ex: se você causa um efeito em rolagens de 19 e 20, passa a causá-lo em rolagens de 17, 18, 19 e 20). Water Pledge + Grass Pledge (Pântano): O Move combinado causa o dobro de dados de dano + MOVE do segundo usuário a utilizar o ataque, com dano do tipo grama. Após o ataque, um pântano se forma no campo inimigo por 4 turnos, em uma área de 20 pés (6 metros) de raio centrada no alvo, criando raízes e lama que se agarram às criaturas na área. Todas as criaturas a até 10 pés (3 metros) de altura do solo que iniciarem seu turno dentro desta área devem fazer um teste de FOR contra a CD de Move do usuário que lançou o último golpe. Em caso de falha, suas movimentações são reduzidas para um quarto do valor original enquanto estiverem na área. Além disso, para criaturas que entrarem na área ou as que não estiverem afetadas pela lentidão, o terreno é considerado terreno difícil.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d6"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "4d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "9sPfNkvHhM9mDYRx": {
+        "_id": "9sPfNkvHhM9mDYRx",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você invoca colunas de água pressurizada que jorram do chão em espiral, envolvendo e atingindo a criatura alvo com força bruta. Faça um ataque à distância, causando 4d4 + MOVE de dano de água em um acerto. Antes de realizar este ataque, se estiver em combate ao lado de um aliado que também esteja em alcance do alvo, você pode anunciar a intenção de formar um combo. Se esse aliado conhecer Fire Pledge ou Grass Pledge, ele pode optar por usar o Move agora, gastando previamente a ação de seu próximo turno para combinar os ataques conforme as opções abaixo. Ao fazer isso, o teste de ataque passará a ser feito pelo aliado. Se o combo for declarado, mas o aliado não puder agir (ex: paralisia) ou errar o ataque, nenhum dos dois Moves será executado. O STAB sempre será contabilizado por ambos os usuários, caso haja (porém cada combinação é de um tipo único).</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17. Water Pledge + Fire Pledge (Arco-íris): O Move combinado causa o dobro de dados de dano + MOVE do segundo usuário a utilizar o ataque, com dano do tipo água. Após o ataque, um arco-íris cobre o campo por 4 turnos, em uma área de 20 pés (6 metros) de raio centrada no usuário. Todas as criaturas aliadas dentro desta área têm chance dobrada de causar efeitos secundários com seus Moves (ex: se você causa um efeito em rolagens de 19 e 20, passa a causá-lo em rolagens de 17, 18, 19 e 20). Water Pledge + Grass Pledge (Pântano): O Move combinado causa o dobro de dados de dano + MOVE do segundo usuário a utilizar o ataque, com dano do tipo grama. Após o ataque, um pântano se forma no campo inimigo por 4 turnos, em uma área de 20 pés (6 metros) de raio centrada no alvo, criando raízes e lama que se agarram às criaturas na área. Todas as criaturas a até 10 pés (3 metros) de altura do solo que iniciarem seu turno dentro desta área devem fazer um teste de FOR contra a CD de Move do usuário que lançou o último golpe. Em caso de falha, suas movimentações são reduzidas para um quarto do valor original enquanto estiverem na área. Além disso, para criaturas que entrarem na área ou as que não estiverem afetadas pela lentidão, o terreno é considerado terreno difícil.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d6"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "4d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -58,7 +154,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6480,
+  "sort": 6490,
   "ownership": {
     "default": 0
   }

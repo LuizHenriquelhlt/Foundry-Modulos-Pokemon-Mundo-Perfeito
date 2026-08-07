@@ -2,44 +2,70 @@
   "_key": "!items!ymcqvwpB5OaMdyn5",
   "_id": "ymcqvwpB5OaMdyn5",
   "name": "Encore",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "reaction",
-      "raw": "1 reação/ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação/ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você dispara uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara que a força a repetir o último Move que utilizou. Quando uma criatura dentro do alcance usar um Move, você pode gastar sua reação para rolar 1d20 + MOVE + 9 e comparar o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, nenhum outro Move além do que ativou esta reação pode ser ativado pela criatura alvo pelas próximas 3 rodadas. Fazer isso consome sua ação em seu próximo turno. Você pode usar este Move como uma ação em seu turno para fazer o mesmo efeito com o último Move utilizado pelo alvo naquele combate.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute. Se o Pokémon afetado por Encore ficar sem PP para o Move bloqueado, o efeito de Encore termina imediatamente. Se o Move estiver impedido por Disable, Gravity, Heal Block, Imprison, Taunt, Throat Chop ou Torment, o Pokémon será forçado a usar Struggle. Encore não pode ser utilizado contra os Moves Encore, Mimic, Mirror Move, Sketch, Struggle ou Transform.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "3 rodadas",
-    "range": {
-      "raw": "100 pés (30 metros)",
-      "meters": 30.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você dispara uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara que a força a repetir o último Move que utilizou. Quando uma criatura dentro do alcance usar um Move, você pode gastar sua reação para rolar 1d20 + MOVE + 9 e comparar o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, nenhum outro Move além do que ativou esta reação pode ser ativado pela criatura alvo pelas próximas 3 rodadas. Fazer isso consome sua ação em seu próximo turno. Você pode usar este Move como uma ação em seu turno para fazer o mesmo efeito com o último Move utilizado pelo alvo naquele combate.</p>",
-    "higherLevels": "",
-    "observations": "<p>Este Move ignora Substitute. Se o Pokémon afetado por Encore ficar sem PP para o Move bloqueado, o efeito de Encore termina imediatamente. Se o Move estiver impedido por Disable, Gravity, Heal Block, Imprison, Taunt, Throat Chop ou Torment, o Pokémon será forçado a usar Struggle. Encore não pode ser utilizado contra os Moves Encore, Mimic, Mirror Move, Sketch, Struggle ou Transform.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "reaction",
+          "raw": "1 reação/ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "3 rodadas",
+        "range": {
+          "raw": "100 pés (30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você dispara uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara que a força a repetir o último Move que utilizou. Quando uma criatura dentro do alcance usar um Move, você pode gastar sua reação para rolar 1d20 + MOVE + 9 e comparar o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, nenhum outro Move além do que ativou esta reação pode ser ativado pela criatura alvo pelas próximas 3 rodadas. Fazer isso consome sua ação em seu próximo turno. Você pode usar este Move como uma ação em seu turno para fazer o mesmo efeito com o último Move utilizado pelo alvo naquele combate.</p>",
+        "higherLevels": "",
+        "observations": "<p>Este Move ignora Substitute. Se o Pokémon afetado por Encore ficar sem PP para o Move bloqueado, o efeito de Encore termina imediatamente. Se o Move estiver impedido por Disable, Gravity, Heal Block, Imprison, Taunt, Throat Chop ou Torment, o Pokémon será forçado a usar Struggle. Encore não pode ser utilizado contra os Moves Encore, Mimic, Mirror Move, Sketch, Struggle ou Transform.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

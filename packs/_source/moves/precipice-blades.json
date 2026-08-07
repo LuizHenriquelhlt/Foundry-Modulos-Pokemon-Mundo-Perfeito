@@ -2,55 +2,151 @@
   "_key": "!items!tne91EZDpVT4aQfP",
   "_id": "tne91EZDpVT4aQfP",
   "name": "Precipice Blades",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
   "system": {
-    "moveType": "ground",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você reúne a energia natural da terra ao seu redor e manifesta todo o poder em lâminas de pedra temíveis que surgem do chão. Faça até quatro rolagens de ataque à distância contra qualquer criatura(s) no alcance, e a até 40 pés (12 metros) de altura do solo, causando 3d8 + MOVE de dano de terra em cada acerto bem-sucedido. Cada lâmina deve mirar um alvo diferente.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Terrestre",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "100 pés (30 metros)",
-      "meters": 30.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você reúne a energia natural da terra ao seu redor e manifesta todo o poder em lâminas de pedra temíveis que surgem do chão. Faça até quatro rolagens de ataque à distância contra qualquer criatura(s) no alcance, e a até 40 pés (12 metros) de altura do solo, causando 3d8 + MOVE de dano de terra em cada acerto bem-sucedido. Cada lâmina deve mirar um alvo diferente.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "6d6"
-        },
-        {
-          "level": 10,
-          "formula": "6d8"
-        },
-        {
-          "level": 17,
-          "formula": "6d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "H0v4xog6JzgGXrJx": {
+        "_id": "H0v4xog6JzgGXrJx",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ground",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "100 pés (30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você reúne a energia natural da terra ao seu redor e manifesta todo o poder em lâminas de pedra temíveis que surgem do chão. Faça até quatro rolagens de ataque à distância contra qualquer criatura(s) no alcance, e a até 40 pés (12 metros) de altura do solo, causando 3d8 + MOVE de dano de terra em cada acerto bem-sucedido. Cada lâmina deve mirar um alvo diferente.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "6d6"
+            },
+            {
+              "level": 10,
+              "formula": "6d8"
+            },
+            {
+              "level": 17,
+              "formula": "6d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

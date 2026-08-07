@@ -2,56 +2,152 @@
   "_key": "!items!jVOt7iZafTs6sCDk",
   "_id": "jVOt7iZafTs6sCDk",
   "name": "Venoshock",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "DES/CON",
-    "powerAbilities": [
-      "dex",
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 15 pés (4,5 metros)</p><p>Você tenta encharcar uma criatura com líquido venenoso. Faça um ataque à distância contra um alvo em alcance, causando 2d6 + MOVE de dano venenoso em um acerto. Se o alvo já estiver envenenado, dobre os dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "15 pés (4,5 metros)",
-      "meters": 4.5,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você tenta encharcar uma criatura com líquido venenoso. Faça um ataque à distância contra um alvo em alcance, causando 2d6 + MOVE de dano venenoso em um acerto. Se o alvo já estiver envenenado, dobre os dados de dano.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d20"
-        },
-        {
-          "level": 10,
-          "formula": "4d6"
-        },
-        {
-          "level": 17,
-          "formula": "4d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "L4zYmOWO3V87BLrd": {
+        "_id": "L4zYmOWO3V87BLrd",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "DES/CON",
+        "powerAbilities": [
+          "dex",
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "15 pés (4,5 metros)",
+          "meters": 4.5,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você tenta encharcar uma criatura com líquido venenoso. Faça um ataque à distância contra um alvo em alcance, causando 2d6 + MOVE de dano venenoso em um acerto. Se o alvo já estiver envenenado, dobre os dados de dano.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d20"
+            },
+            {
+              "level": 10,
+              "formula": "4d6"
+            },
+            {
+              "level": 17,
+              "formula": "4d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -59,7 +155,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6400,
+  "sort": 6410,
   "ownership": {
     "default": 0
   }

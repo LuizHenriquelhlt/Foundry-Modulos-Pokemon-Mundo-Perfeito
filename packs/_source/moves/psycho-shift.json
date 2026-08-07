@@ -2,44 +2,70 @@
   "_key": "!items!zkFcM5DXpvzBIV17",
   "_id": "zkFcM5DXpvzBIV17",
   "name": "Psycho Shift",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "INT/SAB",
-    "powerAbilities": [
-      "int",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você canaliza seu poder psíquico para transferir uma Condição de Status para uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, uma Condição de Status que esteja afetando você é transferida para o alvo. Se o alvo possuir alguma imunidade natural a essa condição, o efeito se dissipa.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 2 estágios.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você canaliza seu poder psíquico para transferir uma Condição de Status para uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, uma Condição de Status que esteja afetando você é transferida para o alvo. Se o alvo possuir alguma imunidade natural a essa condição, o efeito se dissipa.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta o Ataque Especial em 2 estágios."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "INT/SAB",
+        "powerAbilities": [
+          "int",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você canaliza seu poder psíquico para transferir uma Condição de Status para uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, uma Condição de Status que esteja afetando você é transferida para o alvo. Se o alvo possuir alguma imunidade natural a essa condição, o efeito se dissipa.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta o Ataque Especial em 2 estágios."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

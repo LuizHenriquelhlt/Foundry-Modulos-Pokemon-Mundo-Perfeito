@@ -2,43 +2,126 @@
   "_key": "!items!qeg19396aihoOXD8",
   "_id": "qeg19396aihoOXD8",
   "name": "Toxic Thread",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você dispara uma trama de fios venenosos contra uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Envenenado e tem sua Velocidade reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Uma criatura cuja Velocidade seja reduzida a 0 com este Move fica impedida. O alvo pode gastar uma ação para se livrar de qualquer teia com um teste de FOR contra uma CD igual a 10 + bônus de proficiência do usuário deste Move + 1 pra cada acúmulo de teia.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você dispara uma trama de fios venenosos contra uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Envenenado e tem sua Velocidade reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Uma criatura cuja Velocidade seja reduzida a 0 com este Move fica impedida. O alvo pode gastar uma ação para se livrar de qualquer teia com um teste de FOR contra uma CD igual a 10 + bônus de proficiência do usuário deste Move + 1 pra cada acúmulo de teia.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+    "activities": {
+      "MRj0GpHSgkHMI0Rg": {
+        "_id": "MRj0GpHSgkHMI0Rg",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        }
+      }
+    }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você dispara uma trama de fios venenosos contra uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Envenenado e tem sua Velocidade reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Uma criatura cuja Velocidade seja reduzida a 0 com este Move fica impedida. O alvo pode gastar uma ação para se livrar de qualquer teia com um teste de FOR contra uma CD igual a 10 + bônus de proficiência do usuário deste Move + 1 pra cada acúmulo de teia.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -46,7 +129,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6240,
+  "sort": 6250,
   "ownership": {
     "default": 0
   }

@@ -2,58 +2,145 @@
   "_key": "!items!cYICZqV75WF5UMhX",
   "_id": "cYICZqV75WF5UMhX",
   "name": "Electro Shot",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-electric.png",
   "system": {
-    "moveType": "electric",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação, carga"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, carga &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você concentra energia elétrica em seu corpo e, em seguida, dispara um tiro de altíssima voltagem. Ao ativar este Move, seu Ataque Especial aumenta em 1 estágio, podendo ser acumulado em até 6 estágios. Com uma ação completa no seu próximo turno, se você mantiver sua concentração, você realiza um ataque à distância contra um alvo em alcance, causando 4d6 + MOVE de dano do tipo elétrico em um acerto. A criatura atingida deve ser bem-sucedida em um teste de resistência de FOR contra sua CD do Move ou ser derrubada. Após selecionar Electro Shot, o usuário não pode ser trocado para fora da batalha até que o Move seja interrompido ou totalmente executado. Caso seja usado durante a chuva, Electro Shot é executado em 1 único turno, aumentando o Ataque Especial e realizando o ataque no mesmo turno. As condições dormindo, congelado e atordoado pausam, mas não interrompem, a duração de Electro Shot.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Elétrico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "1 rodada, Concentração",
-    "range": {
-      "raw": "100 pés (30 metros)",
-      "meters": 30.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você concentra energia elétrica em seu corpo e, em seguida, dispara um tiro de altíssima voltagem. Ao ativar este Move, seu Ataque Especial aumenta em 1 estágio, podendo ser acumulado em até 6 estágios. Com uma ação completa no seu próximo turno, se você mantiver sua concentração, você realiza um ataque à distância contra um alvo em alcance, causando 4d6 + MOVE de dano do tipo elétrico em um acerto. A criatura atingida deve ser bem-sucedida em um teste de resistência de FOR contra sua CD do Move ou ser derrubada. Após selecionar Electro Shot, o usuário não pode ser trocado para fora da batalha até que o Move seja interrompido ou totalmente executado. Caso seja usado durante a chuva, Electro Shot é executado em 1 único turno, aumentando o Ataque Especial e realizando o ataque no mesmo turno. As condições dormindo, congelado e atordoado pausam, mas não interrompem, a duração de Electro Shot.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d20"
-        },
-        {
-          "level": 10,
-          "formula": "5d10"
-        },
-        {
-          "level": 17,
-          "formula": "8d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "mVk2f00AHFuqyGlA": {
+        "_id": "mVk2f00AHFuqyGlA",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "electric",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação, carga"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "1 rodada, Concentração",
+        "range": {
+          "raw": "100 pés (30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você concentra energia elétrica em seu corpo e, em seguida, dispara um tiro de altíssima voltagem. Ao ativar este Move, seu Ataque Especial aumenta em 1 estágio, podendo ser acumulado em até 6 estágios. Com uma ação completa no seu próximo turno, se você mantiver sua concentração, você realiza um ataque à distância contra um alvo em alcance, causando 4d6 + MOVE de dano do tipo elétrico em um acerto. A criatura atingida deve ser bem-sucedida em um teste de resistência de FOR contra sua CD do Move ou ser derrubada. Após selecionar Electro Shot, o usuário não pode ser trocado para fora da batalha até que o Move seja interrompido ou totalmente executado. Caso seja usado durante a chuva, Electro Shot é executado em 1 único turno, aumentando o Ataque Especial e realizando o ataque no mesmo turno. As condições dormindo, congelado e atordoado pausam, mas não interrompem, a duração de Electro Shot.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d20"
+            },
+            {
+              "level": 10,
+              "formula": "5d10"
+            },
+            {
+              "level": 17,
+              "formula": "8d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

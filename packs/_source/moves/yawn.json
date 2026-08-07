@@ -2,41 +2,67 @@
   "_key": "!items!I2ekpwukRgPLPtDL",
   "_id": "I2ekpwukRgPLPtDL",
   "name": "Yawn",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "Nenhum",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um grande bocejo que faz uma criatura ficar com muito sono. Escolha um alvo dentro do alcance. O alvo fica Sonolento. Se ainda estiver em batalha ao final da próxima rodada, ele Dorme. Caso retorne para a Pokébola antes de dormir, o alvo perde a condição Sonolento.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "1 rodada",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você solta um grande bocejo que faz uma criatura ficar com muito sono. Escolha um alvo dentro do alcance. O alvo fica Sonolento. Se ainda estiver em batalha ao final da próxima rodada, ele Dorme. Caso retorne para a Pokébola antes de dormir, o alvo perde a condição Sonolento.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "Nenhum",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "1 rodada",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você solta um grande bocejo que faz uma criatura ficar com muito sono. Escolha um alvo dentro do alcance. O alvo fica Sonolento. Se ainda estiver em batalha ao final da próxima rodada, ele Dorme. Caso retorne para a Pokébola antes de dormir, o alvo perde a condição Sonolento.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -44,7 +70,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6700,
+  "sort": 6710,
   "ownership": {
     "default": 0
   }

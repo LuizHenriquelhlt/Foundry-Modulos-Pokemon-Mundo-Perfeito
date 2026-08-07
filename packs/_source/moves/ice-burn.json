@@ -2,56 +2,146 @@
   "_key": "!items!gOZ1i7tzPJ81qfQB",
   "_id": "gOZ1i7tzPJ81qfQB",
   "name": "Ice Burn",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ice.png",
   "system": {
-    "moveType": "ice",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Quando usa este Move, você carrega uma energia intensa dentro de seu corpo. Na ação do seu próximo turno, se mantiver sua concentração, você dispara múltiplos feixes congelantes em um raio de 40 pés (12 metros) ao seu redor. Qualquer um no alcance dos raios deve fazer um teste de DES contra sua CD de Move -1, sofrendo 3d10 + MOVE de dano de gelo em uma falha, ou metade desse dano em caso de sucesso. Se alguma criatura falhar no teste por 5 ou mais, ela fica queimada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Gelo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "1 rodada, Concentração",
-    "range": {
-      "raw": "Pessoal (raio de 40 pés / 12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Quando usa este Move, você carrega uma energia intensa dentro de seu corpo. Na ação do seu próximo turno, se mantiver sua concentração, você dispara múltiplos feixes congelantes em um raio de 40 pés (12 metros) ao seu redor. Qualquer um no alcance dos raios deve fazer um teste de DES contra sua CD de Move -1, sofrendo 3d10 + MOVE de dano de gelo em uma falha, ou metade desse dano em caso de sucesso. Se alguma criatura falhar no teste por 5 ou mais, ela fica queimada.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d10"
-        },
-        {
-          "level": 10,
-          "formula": "7d8"
-        },
-        {
-          "level": 17,
-          "formula": "7d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "yfuwMtyqmljFY3f7": {
+        "_id": "yfuwMtyqmljFY3f7",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ice",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "1 rodada, Concentração",
+        "range": {
+          "raw": "Pessoal (raio de 40 pés / 12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Quando usa este Move, você carrega uma energia intensa dentro de seu corpo. Na ação do seu próximo turno, se mantiver sua concentração, você dispara múltiplos feixes congelantes em um raio de 40 pés (12 metros) ao seu redor. Qualquer um no alcance dos raios deve fazer um teste de DES contra sua CD de Move -1, sofrendo 3d10 + MOVE de dano de gelo em uma falha, ou metade desse dano em caso de sucesso. Se alguma criatura falhar no teste por 5 ou mais, ela fica queimada.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d10"
+            },
+            {
+              "level": 10,
+              "formula": "7d8"
+            },
+            {
+              "level": 17,
+              "formula": "7d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

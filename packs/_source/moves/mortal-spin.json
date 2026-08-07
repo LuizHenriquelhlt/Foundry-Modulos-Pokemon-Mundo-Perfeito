@@ -2,57 +2,144 @@
   "_key": "!items!EU73MhFDXwgnY4Kb",
   "_id": "EU73MhFDXwgnY4Kb",
   "name": "Mortal Spin",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você realiza um ataque giratório, liberando uma onda de veneno em um cone de 30 pés (9 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 1d6 + MOVE de dano do tipo Venenoso em uma falha, ou metade do dano em um sucesso. Aqueles que falharem no teste também ficam Envenenados. Este Move automaticamente liberta o usuário de Bind, Clamp, Leech Seed e Wrap ou qualquer coisa que o mantenha agarrado ou impedido (exceto Sky Drop), sendo removido desses estados antes do teste de resistência ser feito, além de desfazer uma área de Fire Spin, Infestation, Magma Storm, Sand Tomb, Whirlpool, Spikes, Stealth Rock, Sticky Web e Toxic Spikes caso estejam dentro ou em contato com o cone.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (cone de 30 pés / 9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você realiza um ataque giratório, liberando uma onda de veneno em um cone de 30 pés (9 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 1d6 + MOVE de dano do tipo Venenoso em uma falha, ou metade do dano em um sucesso. Aqueles que falharem no teste também ficam Envenenados. Este Move automaticamente liberta o usuário de Bind, Clamp, Leech Seed e Wrap ou qualquer coisa que o mantenha agarrado ou impedido (exceto Sky Drop), sendo removido desses estados antes do teste de resistência ser feito, além de desfazer uma área de Fire Spin, Infestation, Magma Storm, Sand Tomb, Whirlpool, Spikes, Stealth Rock, Sticky Web e Toxic Spikes caso estejam dentro ou em contato com o cone.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d10"
-        },
-        {
-          "level": 10,
-          "formula": "1d12"
-        },
-        {
-          "level": 17,
-          "formula": "2d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "Rj8uFKzDptgaSnIt": {
+        "_id": "Rj8uFKzDptgaSnIt",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (cone de 30 pés / 9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você realiza um ataque giratório, liberando uma onda de veneno em um cone de 30 pés (9 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 1d6 + MOVE de dano do tipo Venenoso em uma falha, ou metade do dano em um sucesso. Aqueles que falharem no teste também ficam Envenenados. Este Move automaticamente liberta o usuário de Bind, Clamp, Leech Seed e Wrap ou qualquer coisa que o mantenha agarrado ou impedido (exceto Sky Drop), sendo removido desses estados antes do teste de resistência ser feito, além de desfazer uma área de Fire Spin, Infestation, Magma Storm, Sand Tomb, Whirlpool, Spikes, Stealth Rock, Sticky Web e Toxic Spikes caso estejam dentro ou em contato com o cone.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d10"
+            },
+            {
+              "level": 10,
+              "formula": "1d12"
+            },
+            {
+              "level": 17,
+              "formula": "2d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

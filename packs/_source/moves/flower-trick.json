@@ -2,57 +2,138 @@
   "_key": "!items!ie27hcFbGCE5dEoD",
   "_id": "ie27hcFbGCE5dEoD",
   "name": "Flower Trick",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
   "system": {
-    "moveType": "grass",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você arremessa uma bomba de flores repleta de pólen contra um oponente, que detona em uma nuvem verde cintilante misturada a pétalas cor-de-rosa. Este Move é garantido para acertar, causando 2d8 + MOVE de dano do tipo grama, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Além disso, este Move sempre resulta em um golpe crítico, portanto, caso o alvo não seja imune a acertos críticos, dobre os dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Grama",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você arremessa uma bomba de flores repleta de pólen contra um oponente, que detona em uma nuvem verde cintilante misturada a pétalas cor-de-rosa. Este Move é garantido para acertar, causando 2d8 + MOVE de dano do tipo grama, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Além disso, este Move sempre resulta em um golpe crítico, portanto, caso o alvo não seja imune a acertos críticos, dobre os dados de dano.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d10"
-        },
-        {
-          "level": 17,
-          "formula": "3d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "r1CPKohVHlE5J9gB": {
+        "_id": "r1CPKohVHlE5J9gB",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "grass",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você arremessa uma bomba de flores repleta de pólen contra um oponente, que detona em uma nuvem verde cintilante misturada a pétalas cor-de-rosa. Este Move é garantido para acertar, causando 2d8 + MOVE de dano do tipo grama, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Além disso, este Move sempre resulta em um golpe crítico, portanto, caso o alvo não seja imune a acertos críticos, dobre os dados de dano.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d10"
+            },
+            {
+              "level": 17,
+              "formula": "3d12"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

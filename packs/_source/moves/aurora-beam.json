@@ -2,56 +2,152 @@
   "_key": "!items!dyUOzCA4SOR9VnF3",
   "_id": "dyUOzCA4SOR9VnF3",
   "name": "Aurora Beam",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ice.png",
   "system": {
-    "moveType": "ice",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você dispara um feixe congelante multicolorido em uma única criatura no alcance. Faça um ataque à distância, causando 2d6 + MOVE de dano de gelo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Gelo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "80 pés (24 metros)",
-      "meters": 24.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você dispara um feixe congelante multicolorido em uma única criatura no alcance. Faça um ataque à distância, causando 2d6 + MOVE de dano de gelo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d20"
-        },
-        {
-          "level": 10,
-          "formula": "4d6"
-        },
-        {
-          "level": 17,
-          "formula": "4d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "HwdSUVnod92SAYBk": {
+        "_id": "HwdSUVnod92SAYBk",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ice",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "80 pés (24 metros)",
+          "meters": 24.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você dispara um feixe congelante multicolorido em uma única criatura no alcance. Faça um ataque à distância, causando 2d6 + MOVE de dano de gelo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d20"
+            },
+            {
+              "level": 10,
+              "formula": "4d6"
+            },
+            {
+              "level": 17,
+              "formula": "4d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

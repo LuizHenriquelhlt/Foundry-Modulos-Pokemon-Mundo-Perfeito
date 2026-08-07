@@ -2,56 +2,146 @@
   "_key": "!items!GeGs3A6sAggz7dFj",
   "_id": "GeGs3A6sAggz7dFj",
   "name": "Blizzard",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ice.png",
   "system": {
-    "moveType": "ice",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Uma rajada de vento congelante é exalada pelo usuário em um cone, cobrindo a área com neve e gelo cortante. Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -3, sofrendo 2d12 + MOVE de dano de gelo em caso de falha, ou metade disso em caso de sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna congelada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Gelo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (cone de 40 pés / 12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Uma rajada de vento congelante é exalada pelo usuário em um cone, cobrindo a área com neve e gelo cortante. Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -3, sofrendo 2d12 + MOVE de dano de gelo em caso de falha, ou metade disso em caso de sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna congelada.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d8"
-        },
-        {
-          "level": 10,
-          "formula": "4d12"
-        },
-        {
-          "level": 17,
-          "formula": "7d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "xE7ITJWlwDAVHrmI": {
+        "_id": "xE7ITJWlwDAVHrmI",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ice",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (cone de 40 pés / 12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Uma rajada de vento congelante é exalada pelo usuário em um cone, cobrindo a área com neve e gelo cortante. Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -3, sofrendo 2d12 + MOVE de dano de gelo em caso de falha, ou metade disso em caso de sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna congelada.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d8"
+            },
+            {
+              "level": 10,
+              "formula": "4d12"
+            },
+            {
+              "level": 17,
+              "formula": "7d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

@@ -2,58 +2,145 @@
   "_key": "!items!0KA335vCh7eEl7Do",
   "_id": "0KA335vCh7eEl7Do",
   "name": "Triple Axel",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ice.png",
   "system": {
-    "moveType": "ice",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você gira e desfere três chutes consecutivos no oponente, aumentando a força a cada golpe e expandindo o alcance a cada salto. Faça 3 ataques corpo a corpo -1 contra o mesmo alvo. O primeiro golpe causa 1d4 + MOVE de dano do tipo gelo. Os golpes seguintes multiplicam seus dados de dano em x2 e x3, respectivamente. Além disso, todas as criaturas ao redor do alvo em um raio de 10 pés (3 metros) no segundo golpe e 20 pés (6 metros) no terceiro golpe devem fazer um teste de DES contra sua CD de Move, recebendo metade do dano do respectivo golpe em uma falha, ou nenhum dano em um sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Gelo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você gira e desfere três chutes consecutivos no oponente, aumentando a força a cada golpe e expandindo o alcance a cada salto. Faça 3 ataques corpo a corpo -1 contra o mesmo alvo. O primeiro golpe causa 1d4 + MOVE de dano do tipo gelo. Os golpes seguintes multiplicam seus dados de dano em x2 e x3, respectivamente. Além disso, todas as criaturas ao redor do alvo em um raio de 10 pés (3 metros) no segundo golpe e 20 pés (6 metros) no terceiro golpe devem fazer um teste de DES contra sua CD de Move, recebendo metade do dano do respectivo golpe em uma falha, ou nenhum dano em um sucesso.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d6"
-        },
-        {
-          "level": 10,
-          "formula": "1d8"
-        },
-        {
-          "level": 17,
-          "formula": "1d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "lizX9lntYi4BaGSJ": {
+        "_id": "lizX9lntYi4BaGSJ",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "ice",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você gira e desfere três chutes consecutivos no oponente, aumentando a força a cada golpe e expandindo o alcance a cada salto. Faça 3 ataques corpo a corpo -1 contra o mesmo alvo. O primeiro golpe causa 1d4 + MOVE de dano do tipo gelo. Os golpes seguintes multiplicam seus dados de dano em x2 e x3, respectivamente. Além disso, todas as criaturas ao redor do alvo em um raio de 10 pés (3 metros) no segundo golpe e 20 pés (6 metros) no terceiro golpe devem fazer um teste de DES contra sua CD de Move, recebendo metade do dano do respectivo golpe em uma falha, ou nenhum dano em um sucesso.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d6"
+            },
+            {
+              "level": 10,
+              "formula": "1d8"
+            },
+            {
+              "level": 17,
+              "formula": "1d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

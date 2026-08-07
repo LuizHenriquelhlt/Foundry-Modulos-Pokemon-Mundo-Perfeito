@@ -2,55 +2,145 @@
   "_key": "!items!65raDWRRnG3xfriy",
   "_id": "65raDWRRnG3xfriy",
   "name": "Avalanche",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ice.png",
   "system": {
-    "moveType": "ice",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você convoca uma nuvem escura sobre o alvo, fazendo pedaços de gelo caírem em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Qualquer criatura nesta área deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano de gelo em uma falha. Se um alvo que tenha causado dano a você nesta rodada ou desde o final do seu último turno estiver nesta área, dobre os dados de dano deste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Gelo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você convoca uma nuvem escura sobre o alvo, fazendo pedaços de gelo caírem em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Qualquer criatura nesta área deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano de gelo em uma falha. Se um alvo que tenha causado dano a você nesta rodada ou desde o final do seu último turno estiver nesta área, dobre os dados de dano deste Move.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d6"
-        },
-        {
-          "level": 10,
-          "formula": "3d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "tC3MTGAqOLWYZMg9": {
+        "_id": "tC3MTGAqOLWYZMg9",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ice",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você convoca uma nuvem escura sobre o alvo, fazendo pedaços de gelo caírem em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Qualquer criatura nesta área deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano de gelo em uma falha. Se um alvo que tenha causado dano a você nesta rodada ou desde o final do seu último turno estiver nesta área, dobre os dados de dano deste Move.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d6"
+            },
+            {
+              "level": 10,
+              "formula": "3d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

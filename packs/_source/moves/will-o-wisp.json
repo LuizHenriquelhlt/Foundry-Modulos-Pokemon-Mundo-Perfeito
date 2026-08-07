@@ -2,44 +2,70 @@
   "_key": "!items!qoyct8Wk0mL2wjBB",
   "_id": "qoyct8Wk0mL2wjBB",
   "name": "Will-O-Wisp",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "DES/SAB",
-    "powerAbilities": [
-      "dex",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você envia uma chama sinistra e incandescente em direção a uma criatura. Role 1d20 + MOVE + 6 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o alvo fica Queimado. Ar te feita por Cr imzonLogic</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você envia uma chama sinistra e incandescente em direção a uma criatura. Role 1d20 + MOVE + 6 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o alvo fica Queimado. Ar te feita por Cr imzonLogic</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta o Ataque em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "DES/SAB",
+        "powerAbilities": [
+          "dex",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envia uma chama sinistra e incandescente em direção a uma criatura. Role 1d20 + MOVE + 6 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o alvo fica Queimado. Ar te feita por Cr imzonLogic</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta o Ataque em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -47,7 +73,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6590,
+  "sort": 6600,
   "ownership": {
     "default": 0
   }

@@ -2,42 +2,125 @@
   "_key": "!items!w9wxwUhRrNZ1RPge",
   "_id": "w9wxwUhRrNZ1RPge",
   "name": "Magnitude",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
   "system": {
-    "moveType": "ground",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (20 pés / 6 metros de raio)</p><p>Você sacode o chão com um terremoto destruidor. Todas as criaturas dentro do alcance devem fazer um teste de DES contra sua CD de Move, sofrendo metade do dano em caso de sucesso e o dano total em caso de falha. Criaturas dentro do alcance que estiverem escavadas ou na fase invulnerável de Dig sofrem o dobro do dano deste Move. Role um d100 na tabela abaixo para determinar o dado de dano, e some o resultado ao seu MOVE. Criaturas elevadas são imunes aos efeitos e dano deste Move. Dano D100 Nível 1 Nível 5 Nível 10 Nível 17 01-05 1d4 1d4 1d6 1d6 06-15 1d6 1d10 1d12 2d8 16-35 1d10 2d8 2d10 4d6 36-65 2d8 1d20 3d10 3d12 66-85 3d6 3d10 3d12 4d12 86-95 2d12 4d8 4d12 7d8 96-100 5d6 5d8 6d10 6d12</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 15,
-      "max": 15,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Terrestre",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (20 pés / 6 metros de raio)",
-      "meters": 6.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "15",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você sacode o chão com um terremoto destruidor. Todas as criaturas dentro do alcance devem fazer um teste de DES contra sua CD de Move, sofrendo metade do dano em caso de sucesso e o dano total em caso de falha. Criaturas dentro do alcance que estiverem escavadas ou na fase invulnerável de Dig sofrem o dobro do dano deste Move. Role um d100 na tabela abaixo para determinar o dado de dano, e some o resultado ao seu MOVE. Criaturas elevadas são imunes aos efeitos e dano deste Move. Dano D100 Nível 1 Nível 5 Nível 10 Nível 17 01-05 1d4 1d4 1d6 1d6 06-15 1d6 1d10 1d12 2d8 16-35 1d10 2d8 2d10 4d6 36-65 2d8 1d20 3d10 3d12 66-85 3d6 3d10 3d12 4d12 86-95 2d12 4d8 4d12 7d8 96-100 5d6 5d8 6d10 6d12</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
+    "activities": {
+      "Y2cm3LmZmuEOn1HC": {
+        "_id": "Y2cm3LmZmuEOn1HC",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ground",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 15,
+          "max": 15,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (20 pés / 6 metros de raio)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você sacode o chão com um terremoto destruidor. Todas as criaturas dentro do alcance devem fazer um teste de DES contra sua CD de Move, sofrendo metade do dano em caso de sucesso e o dano total em caso de falha. Criaturas dentro do alcance que estiverem escavadas ou na fase invulnerável de Dig sofrem o dobro do dano deste Move. Role um d100 na tabela abaixo para determinar o dado de dano, e some o resultado ao seu MOVE. Criaturas elevadas são imunes aos efeitos e dano deste Move. Dano D100 Nível 1 Nível 5 Nível 10 Nível 17 01-05 1d4 1d4 1d6 1d6 06-15 1d6 1d10 1d12 2d8 16-35 1d10 2d8 2d10 4d6 36-65 2d8 1d20 3d10 3d12 66-85 3d6 3d10 3d12 4d12 86-95 2d12 4d8 4d12 7d8 96-100 5d6 5d8 6d10 6d12</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

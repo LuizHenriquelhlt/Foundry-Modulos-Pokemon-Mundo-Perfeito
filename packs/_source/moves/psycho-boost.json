@@ -2,56 +2,152 @@
   "_key": "!items!FJykIKrDqc5EpnrN",
   "_id": "FJykIKrDqc5EpnrN",
   "name": "Psycho Boost",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "INT/SAB",
-    "powerAbilities": [
-      "int",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você envia uma esfera extremamente poderosa de energia psíquica em uma criatura. Faça um ataque à distância -1 contra um alvo em alcance, causando 3d10 + MOVE de dano psíquico em um acerto. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você envia uma esfera extremamente poderosa de energia psíquica em uma criatura. Faça um ataque à distância -1 contra um alvo em alcance, causando 3d10 + MOVE de dano psíquico em um acerto. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d10"
-        },
-        {
-          "level": 10,
-          "formula": "7d8"
-        },
-        {
-          "level": 17,
-          "formula": "7d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "MPnckKVneDBMDY54": {
+        "_id": "MPnckKVneDBMDY54",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "int",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "INT/SAB",
+        "powerAbilities": [
+          "int",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envia uma esfera extremamente poderosa de energia psíquica em uma criatura. Faça um ataque à distância -1 contra um alvo em alcance, causando 3d10 + MOVE de dano psíquico em um acerto. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d10"
+            },
+            {
+              "level": 10,
+              "formula": "7d8"
+            },
+            {
+              "level": 17,
+              "formula": "7d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

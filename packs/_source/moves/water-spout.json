@@ -2,56 +2,146 @@
   "_key": "!items!kAnyG59HYs9jajDY",
   "_id": "kAnyG59HYs9jajDY",
   "name": "Water Spout",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você gera uma explosão massiva e intensa de água que jorra de seu corpo. Qualquer criatura em um raio de 20 pés (6 metros), centrado em um ponto dentro do alcance, deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de água em uma falha, ou metade disso em um sucesso. Este Move causa dano máximo apenas quando o usuário está com 100% de seus Pontos de Vida. Ao perder qualquer quantidade de vida, reduza em 1 o número de dados de dano rolados. Além disso, para cada 25% da vida máxima perdida, reduza em mais 1 dado de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "60 pés (18 metros)",
-      "meters": 18.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você gera uma explosão massiva e intensa de água que jorra de seu corpo. Qualquer criatura em um raio de 20 pés (6 metros), centrado em um ponto dentro do alcance, deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de água em uma falha, ou metade disso em um sucesso. Este Move causa dano máximo apenas quando o usuário está com 100% de seus Pontos de Vida. Ao perder qualquer quantidade de vida, reduza em 1 o número de dados de dano rolados. Além disso, para cada 25% da vida máxima perdida, reduza em mais 1 dado de dano.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "5d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d8"
-        },
-        {
-          "level": 10,
-          "formula": "6d10"
-        },
-        {
-          "level": 17,
-          "formula": "6d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "1OmcakI4bdXxDTlC": {
+        "_id": "1OmcakI4bdXxDTlC",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "60 pés (18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você gera uma explosão massiva e intensa de água que jorra de seu corpo. Qualquer criatura em um raio de 20 pés (6 metros), centrado em um ponto dentro do alcance, deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de água em uma falha, ou metade disso em um sucesso. Este Move causa dano máximo apenas quando o usuário está com 100% de seus Pontos de Vida. Ao perder qualquer quantidade de vida, reduza em 1 o número de dados de dano rolados. Além disso, para cada 25% da vida máxima perdida, reduza em mais 1 dado de dano.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "5d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d8"
+            },
+            {
+              "level": 10,
+              "formula": "6d10"
+            },
+            {
+              "level": 17,
+              "formula": "6d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -59,7 +149,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6520,
+  "sort": 6530,
   "ownership": {
     "default": 0
   }

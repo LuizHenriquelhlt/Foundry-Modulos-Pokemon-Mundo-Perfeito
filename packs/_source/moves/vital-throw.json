@@ -2,55 +2,139 @@
   "_key": "!items!0xquo0kDnduvLBSt",
   "_id": "0xquo0kDnduvLBSt",
   "name": "Vital Throw",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fighting.png",
   "system": {
-    "moveType": "fighting",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você espera o inimigo atacar primeiro e, em seguida, o agarra para arremessá-lo com força, sem chance de errar. Como uma ação em seu turno, você segura este Move até o início de seu próximo turno, onde automaticamente acertará o golpe, causando 2d8 + MOVE de dano lutador desde que o alvo permaneça dentro do alcance corpo a corpo ou desencadeie um ataque de oportunidade antes disso. Ao causar o dano do ataque, você pode arremessar o alvo até 10 pés (3 metros) em uma direção à sua escolha, desde que ele seja de até duas categorias de tamanho maiores que a sua.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Lutador",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "1 rodada",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você espera o inimigo atacar primeiro e, em seguida, o agarra para arremessá-lo com força, sem chance de errar. Como uma ação em seu turno, você segura este Move até o início de seu próximo turno, onde automaticamente acertará o golpe, causando 2d8 + MOVE de dano lutador desde que o alvo permaneça dentro do alcance corpo a corpo ou desencadeie um ataque de oportunidade antes disso. Ao causar o dano do ataque, você pode arremessar o alvo até 10 pés (3 metros) em uma direção à sua escolha, desde que ele seja de até duas categorias de tamanho maiores que a sua.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d10"
-        },
-        {
-          "level": 17,
-          "formula": "3d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "qq5naSPv0Gf2HWaZ": {
+        "_id": "qq5naSPv0Gf2HWaZ",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fighting",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "1 rodada",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você espera o inimigo atacar primeiro e, em seguida, o agarra para arremessá-lo com força, sem chance de errar. Como uma ação em seu turno, você segura este Move até o início de seu próximo turno, onde automaticamente acertará o golpe, causando 2d8 + MOVE de dano lutador desde que o alvo permaneça dentro do alcance corpo a corpo ou desencadeie um ataque de oportunidade antes disso. Ao causar o dano do ataque, você pode arremessar o alvo até 10 pés (3 metros) em uma direção à sua escolha, desde que ele seja de até duas categorias de tamanho maiores que a sua.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d10"
+            },
+            {
+              "level": 17,
+              "formula": "3d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -58,7 +142,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6430,
+  "sort": 6440,
   "ownership": {
     "default": 0
   }

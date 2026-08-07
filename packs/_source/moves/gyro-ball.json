@@ -2,56 +2,152 @@
   "_key": "!items!WRcG8fmlHX61RmM2",
   "_id": "WRcG8fmlHX61RmM2",
   "name": "Gyro Ball",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-steel.png",
   "system": {
-    "moveType": "steel",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe em uma criatura com um giro de alta velocidade, causando maior dano conforme mais rápido o alvo for. Faça um ataque corpo a corpo contra uma criatura, causando 2d4 + MOVE de dano de aço em um acerto. Para cada 5 pontos em que você estiver abaixo da ordem de iniciativa do alvo, acrescente mais um dado de dano, até um máximo de +5 dados de dano extra.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Aço",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você investe em uma criatura com um giro de alta velocidade, causando maior dano conforme mais rápido o alvo for. Faça um ataque corpo a corpo contra uma criatura, causando 2d4 + MOVE de dano de aço em um acerto. Para cada 5 pontos em que você estiver abaixo da ordem de iniciativa do alvo, acrescente mais um dado de dano, até um máximo de +5 dados de dano extra.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d6"
-        },
-        {
-          "level": 10,
-          "formula": "2d8"
-        },
-        {
-          "level": 17,
-          "formula": "2d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "av2xef4stbYqWngQ": {
+        "_id": "av2xef4stbYqWngQ",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "steel",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você investe em uma criatura com um giro de alta velocidade, causando maior dano conforme mais rápido o alvo for. Faça um ataque corpo a corpo contra uma criatura, causando 2d4 + MOVE de dano de aço em um acerto. Para cada 5 pontos em que você estiver abaixo da ordem de iniciativa do alvo, acrescente mais um dado de dano, até um máximo de +5 dados de dano extra.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d6"
+            },
+            {
+              "level": 10,
+              "formula": "2d8"
+            },
+            {
+              "level": 17,
+              "formula": "2d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

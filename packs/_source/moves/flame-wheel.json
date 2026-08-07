@@ -2,56 +2,140 @@
   "_key": "!items!YYuprTwJBaLPDDjz",
   "_id": "YYuprTwJBaLPDDjz",
   "name": "Flame Wheel",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / linha de 20 pés (6 metros)</p><p>Você se envolve em chamas e gira em alta velocidade, avançando como uma roda de fogo em direção ao alvo. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 2d6 + MOVE de dano do tipo fogo em um acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Em um resultado natural de 19 ou 20 no acerto, os alvos atingidos ficam queimados. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 15,
-      "max": 15,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo / linha de 20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você se envolve em chamas e gira em alta velocidade, avançando como uma roda de fogo em direção ao alvo. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 2d6 + MOVE de dano do tipo fogo em um acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Em um resultado natural de 19 ou 20 no acerto, os alvos atingidos ficam queimados. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "15",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d6"
-        },
-        {
-          "level": 10,
-          "formula": "3d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "ZQtrJLzuzLfkhWVC": {
+        "_id": "ZQtrJLzuzLfkhWVC",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 15,
+          "max": 15,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo / linha de 20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você se envolve em chamas e gira em alta velocidade, avançando como uma roda de fogo em direção ao alvo. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 2d6 + MOVE de dano do tipo fogo em um acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Em um resultado natural de 19 ou 20 no acerto, os alvos atingidos ficam queimados. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d6"
+            },
+            {
+              "level": 10,
+              "formula": "3d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

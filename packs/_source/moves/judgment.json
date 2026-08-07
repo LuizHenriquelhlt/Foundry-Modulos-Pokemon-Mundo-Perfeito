@@ -2,55 +2,145 @@
   "_key": "!items!UP5KUHSPpvtAH5Ra",
   "_id": "UP5KUHSPpvtAH5Ra",
   "name": "Judgment",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "icons/svg/item-bag.svg",
   "system": {
-    "moveType": "variable",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> variable &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você envia poderosos mísseis de energia pura para chover sobre qualquer criatura em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na área deve fazer um teste de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano em uma falha, ou a metade em um sucesso. O tipo de dano depende do tipo de Arceus Plate que o usuário estiver segurando. O usuário não recebe dano deste Move caso esteja dentro da área de efeito.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo variable",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "100 pés (30 metros)",
-      "meters": 30.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você envia poderosos mísseis de energia pura para chover sobre qualquer criatura em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na área deve fazer um teste de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano em uma falha, ou a metade em um sucesso. O tipo de dano depende do tipo de Arceus Plate que o usuário estiver segurando. O usuário não recebe dano deste Move caso esteja dentro da área de efeito.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d6"
-        },
-        {
-          "level": 10,
-          "formula": "5d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "2xkhMg3BuN7OHMYT": {
+        "_id": "2xkhMg3BuN7OHMYT",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "variable",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "100 pés (30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envia poderosos mísseis de energia pura para chover sobre qualquer criatura em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na área deve fazer um teste de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano em uma falha, ou a metade em um sucesso. O tipo de dano depende do tipo de Arceus Plate que o usuário estiver segurando. O usuário não recebe dano deste Move caso esteja dentro da área de efeito.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d6"
+            },
+            {
+              "level": 10,
+              "formula": "5d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

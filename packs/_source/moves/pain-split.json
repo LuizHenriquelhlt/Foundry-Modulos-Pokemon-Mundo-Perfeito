@@ -2,44 +2,70 @@
   "_key": "!items!rmmiBR9SRxMX1O8Z",
   "_id": "rmmiBR9SRxMX1O8Z",
   "name": "Pain Split",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "CON/CAR",
-    "powerAbilities": [
-      "con",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>ocê divide a dor dos seus ferimentos com uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, você e o alvo alteram seus pontos de vida atuais para a média entre os pontos de vida atuais dos dois, arredondada para baixo. Se isso fizer com que qualquer criatura ultrapasse seu máximo de pontos de vida, ela fica com seu máximo de pontos de vida em vez disso. O máximo de pontos de vida que um alvo pode perder com este Move é igual a 5 vezes o seu nível atual.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>ocê divide a dor dos seus ferimentos com uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, você e o alvo alteram seus pontos de vida atuais para a média entre os pontos de vida atuais dos dois, arredondada para baixo. Se isso fizer com que qualquer criatura ultrapasse seu máximo de pontos de vida, ela fica com seu máximo de pontos de vida em vez disso. O máximo de pontos de vida que um alvo pode perder com este Move é igual a 5 vezes o seu nível atual.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "CON/CAR",
+        "powerAbilities": [
+          "con",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>ocê divide a dor dos seus ferimentos com uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, você e o alvo alteram seus pontos de vida atuais para a média entre os pontos de vida atuais dos dois, arredondada para baixo. Se isso fizer com que qualquer criatura ultrapasse seu máximo de pontos de vida, ela fica com seu máximo de pontos de vida em vez disso. O máximo de pontos de vida que um alvo pode perder com este Move é igual a 5 vezes o seu nível atual.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

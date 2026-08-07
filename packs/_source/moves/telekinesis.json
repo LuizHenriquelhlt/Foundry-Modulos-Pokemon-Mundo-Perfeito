@@ -2,44 +2,70 @@
   "_key": "!items!oriC5Bz927GpXSzR",
   "_id": "oriC5Bz927GpXSzR",
   "name": "Telekinesis",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "INT/SAB",
-    "powerAbilities": [
-      "int",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você usa seu poder psíquico para tentar erguer uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o alvo flutua alguns metros no ar, ficando Impedido enquanto você mantiver sua concentração, ou até o fim de 3 rodadas. Enquanto estiver agarrada, a criatura é considerada 'Elevada'. Criaturas elevadas não são afetadas por Moves do tipo Terra, Spikes, Toxic Spikes e Sticky Web.</p><p><strong>Observações:</strong></p><p>Se um Pokémon sob o efeito de Telekinesis for afetado por Ingrain, ele se torna 'No Chão', mas ele ainda se mantém agarrado e impedido. Se um Pokémon sob o efeito de Telekinesis for atingido por Smack Down ou Thousand Arrows, o efeito de Telekinesis desaparece. Se Gravity estiver em efeito, Telekinesis desaparece de todos os Pokémon afetados. O Move Telekinesis não pode afetar um Pokémon sob o efeito de Ingrain, Smack Down ou Thousand Arrows. Enquanto Gravity estiver em efeito, Telekinesis não pode ser selecionado. Mega Gengar, Diglett, Dugtrio, Sandygast e Palossand não podem ser afetados pelo Move Telekinesis, mas um Pokémon transformado em um desses pode ser afetado.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "3 rodadas, Concentração",
-    "range": {
-      "raw": "20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você usa seu poder psíquico para tentar erguer uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o alvo flutua alguns metros no ar, ficando Impedido enquanto você mantiver sua concentração, ou até o fim de 3 rodadas. Enquanto estiver agarrada, a criatura é considerada 'Elevada'. Criaturas elevadas não são afetadas por Moves do tipo Terra, Spikes, Toxic Spikes e Sticky Web.</p>",
-    "higherLevels": "",
-    "observations": "<p>Se um Pokémon sob o efeito de Telekinesis for afetado por Ingrain, ele se torna 'No Chão', mas ele ainda se mantém agarrado e impedido. Se um Pokémon sob o efeito de Telekinesis for atingido por Smack Down ou Thousand Arrows, o efeito de Telekinesis desaparece. Se Gravity estiver em efeito, Telekinesis desaparece de todos os Pokémon afetados. O Move Telekinesis não pode afetar um Pokémon sob o efeito de Ingrain, Smack Down ou Thousand Arrows. Enquanto Gravity estiver em efeito, Telekinesis não pode ser selecionado. Mega Gengar, Diglett, Dugtrio, Sandygast e Palossand não podem ser afetados pelo Move Telekinesis, mas um Pokémon transformado em um desses pode ser afetado.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta o Ataque Especial em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "INT/SAB",
+        "powerAbilities": [
+          "int",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "3 rodadas, Concentração",
+        "range": {
+          "raw": "20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você usa seu poder psíquico para tentar erguer uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o alvo flutua alguns metros no ar, ficando Impedido enquanto você mantiver sua concentração, ou até o fim de 3 rodadas. Enquanto estiver agarrada, a criatura é considerada 'Elevada'. Criaturas elevadas não são afetadas por Moves do tipo Terra, Spikes, Toxic Spikes e Sticky Web.</p>",
+        "higherLevels": "",
+        "observations": "<p>Se um Pokémon sob o efeito de Telekinesis for afetado por Ingrain, ele se torna 'No Chão', mas ele ainda se mantém agarrado e impedido. Se um Pokémon sob o efeito de Telekinesis for atingido por Smack Down ou Thousand Arrows, o efeito de Telekinesis desaparece. Se Gravity estiver em efeito, Telekinesis desaparece de todos os Pokémon afetados. O Move Telekinesis não pode afetar um Pokémon sob o efeito de Ingrain, Smack Down ou Thousand Arrows. Enquanto Gravity estiver em efeito, Telekinesis não pode ser selecionado. Mega Gengar, Diglett, Dugtrio, Sandygast e Palossand não podem ser afetados pelo Move Telekinesis, mas um Pokémon transformado em um desses pode ser afetado.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta o Ataque Especial em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

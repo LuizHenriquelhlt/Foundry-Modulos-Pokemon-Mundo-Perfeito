@@ -2,41 +2,67 @@
   "_key": "!items!dJEduFAK8zQn3aTe",
   "_id": "dJEduFAK8zQn3aTe",
   "name": "Mirror Move",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-flying.png",
   "system": {
-    "moveType": "flying",
-    "category": "",
-    "power": "Variável",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Variável &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você imita um alvo que pode ver, dentro do alcance. Ao ativar este Move, escolha um alvo dentro do alcance e execute completamente o Move mais recente usado pela criatura, usando seus próprios valores de atributo, nível e tipo para CD de teste de resistência, ataque e dano.</p><p><strong>Observações:</strong></p><p>Mirror Move não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 2 estágios. Além disso, o Move copiado se tornará seu respectivo Z-Move. Moves de Status</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Voador",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "50 pés (15 metros)",
-      "meters": 15.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você imita um alvo que pode ver, dentro do alcance. Ao ativar este Move, escolha um alvo dentro do alcance e execute completamente o Move mais recente usado pela criatura, usando seus próprios valores de atributo, nível e tipo para CD de teste de resistência, ataque e dano.</p>",
-    "higherLevels": "",
-    "observations": "<p>Mirror Move não pode ser escolhido pelo Move Assist.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta o Ataque em 2 estágios. Além disso, o Move copiado se tornará seu respectivo Z-Move. Moves de Status"
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "flying",
+        "category": "",
+        "power": "Variável",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "50 pés (15 metros)",
+          "meters": 15.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você imita um alvo que pode ver, dentro do alcance. Ao ativar este Move, escolha um alvo dentro do alcance e execute completamente o Move mais recente usado pela criatura, usando seus próprios valores de atributo, nível e tipo para CD de teste de resistência, ataque e dano.</p>",
+        "higherLevels": "",
+        "observations": "<p>Mirror Move não pode ser escolhido pelo Move Assist.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta o Ataque em 2 estágios. Além disso, o Move copiado se tornará seu respectivo Z-Move. Moves de Status"
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

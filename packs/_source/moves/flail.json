@@ -2,56 +2,152 @@
   "_key": "!items!Nza6lLLbRZrAcf6M",
   "_id": "Nza6lLLbRZrAcf6M",
   "name": "Flail",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se agita com um golpe selvagem que aumenta de poder quanto mais ferido você está. Faça um ataque corpo a corpo contra uma criatura, causando 1d4 + MOVE de dano do tipo normal em um acerto. Caso tenha recebido dano, aumente os dados de dano com base na sua porcentagem de vida atual (arredondado para baixo), seguindo a tabela abaixo.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17. Porcentagem de vida atual Dados de dano Abaixo de 70% x2 Abaixo de 35% x3 Abaixo de 20% x5 Abaixo de 10% x7 Abaixo de 5% x10</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você se agita com um golpe selvagem que aumenta de poder quanto mais ferido você está. Faça um ataque corpo a corpo contra uma criatura, causando 1d4 + MOVE de dano do tipo normal em um acerto. Caso tenha recebido dano, aumente os dados de dano com base na sua porcentagem de vida atual (arredondado para baixo), seguindo a tabela abaixo.</p>",
-    "higherLevels": "<p>O dado de dano para este Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17. Porcentagem de vida atual Dados de dano Abaixo de 70% x2 Abaixo de 35% x3 Abaixo de 20% x5 Abaixo de 10% x7 Abaixo de 5% x10</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "1d6"
-        },
-        {
-          "level": 10,
-          "formula": "1d8"
-        },
-        {
-          "level": 17,
-          "formula": "1d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "hmJtHDZCbQWuZU5D": {
+        "_id": "hmJtHDZCbQWuZU5D",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você se agita com um golpe selvagem que aumenta de poder quanto mais ferido você está. Faça um ataque corpo a corpo contra uma criatura, causando 1d4 + MOVE de dano do tipo normal em um acerto. Caso tenha recebido dano, aumente os dados de dano com base na sua porcentagem de vida atual (arredondado para baixo), seguindo a tabela abaixo.</p>",
+        "higherLevels": "<p>O dado de dano para este Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17. Porcentagem de vida atual Dados de dano Abaixo de 70% x2 Abaixo de 35% x3 Abaixo de 20% x5 Abaixo de 10% x7 Abaixo de 5% x10</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "1d6"
+            },
+            {
+              "level": 10,
+              "formula": "1d8"
+            },
+            {
+              "level": 17,
+              "formula": "1d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

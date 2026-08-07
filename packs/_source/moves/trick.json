@@ -2,43 +2,69 @@
   "_key": "!items!miMLpex7WZlUG4K9",
   "_id": "miMLpex7WZlUG4K9",
   "name": "Trick",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "SAB",
-    "powerAbilities": [
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se move rapidamente para tentar trocar itens segurados com uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, você pega o item segurado pelo alvo e o substitui pelo seu próprio. Caso não esteja segurando um item, você apenas pega o item do alvo. Caso o alvo não esteja segurando um item, você pode entregar a ele um item que esteja segurando.</p><p><strong>Observações:</strong></p><p>A Griseous Orb não pode ser removida de Giratina; as Type Plates não podem ser removidas de Arceus; os Drives não podem ser removidos de Genesect; e as Mega Pedras não podem ser removidas de seus respectivos Pokémon. Trick não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 2 estágios.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você se move rapidamente para tentar trocar itens segurados com uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, você pega o item segurado pelo alvo e o substitui pelo seu próprio. Caso não esteja segurando um item, você apenas pega o item do alvo. Caso o alvo não esteja segurando um item, você pode entregar a ele um item que esteja segurando.</p>",
-    "higherLevels": "",
-    "observations": "<p>A Griseous Orb não pode ser removida de Giratina; as Type Plates não podem ser removidas de Arceus; os Drives não podem ser removidos de Genesect; e as Mega Pedras não podem ser removidas de seus respectivos Pokémon. Trick não pode ser escolhido pelo Move Assist.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 2 estágios."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "SAB",
+        "powerAbilities": [
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você se move rapidamente para tentar trocar itens segurados com uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, você pega o item segurado pelo alvo e o substitui pelo seu próprio. Caso não esteja segurando um item, você apenas pega o item do alvo. Caso o alvo não esteja segurando um item, você pode entregar a ele um item que esteja segurando.</p>",
+        "higherLevels": "",
+        "observations": "<p>A Griseous Orb não pode ser removida de Giratina; as Type Plates não podem ser removidas de Arceus; os Drives não podem ser removidos de Genesect; e as Mega Pedras não podem ser removidas de seus respectivos Pokémon. Trick não pode ser escolhido pelo Move Assist.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 2 estágios."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -46,7 +72,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6270,
+  "sort": 6280,
   "ownership": {
     "default": 0
   }

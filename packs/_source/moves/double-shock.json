@@ -2,58 +2,151 @@
   "_key": "!items!19f1QhTrwkKOdNGb",
   "_id": "19f1QhTrwkKOdNGb",
   "name": "Double Shock",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-electric.png",
   "system": {
-    "moveType": "electric",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você descarrega toda a eletricidade do seu corpo em um ataque de alto dano. Este Move só funciona se o usuário for do tipo Elétrico. Faça um ataque corpo a corpo, causando 3d8 + MOVE do tipo elétrico. Após usar este Move, o usuário se esgota e perde sua tipagem Elétrico pelo resto do combate, ou até ser trocado, ou através de outros efeitos de mudança de tipo, como Protean ou Reflect Type. Um Pokémon que tenha se Terastalizado em seu Tera Tipo Elétrico não perderá o tipo Elétrico. Portanto, um Pokémon Terastalizado pode usar Double Shock várias vezes seguidas sem precisar ser retirado de campo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Double Shock falha se o usuário não for do tipo Elétrico, fazendo com que o Move sempre falhe após o primeiro uso até que o Pokémon recupere seu tipo Elétrico, seja ao ser trocado para fora de batalha ou por outros efeitos de mudança de tipo, como por meio de Protean ou Reflect Type. Se o usuário for um Pokémon puramente do tipo Elétrico, ele se tornará sem tipo.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Elétrico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto ativo",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você descarrega toda a eletricidade do seu corpo em um ataque de alto dano. Este Move só funciona se o usuário for do tipo Elétrico. Faça um ataque corpo a corpo, causando 3d8 + MOVE do tipo elétrico. Após usar este Move, o usuário se esgota e perde sua tipagem Elétrico pelo resto do combate, ou até ser trocado, ou através de outros efeitos de mudança de tipo, como Protean ou Reflect Type. Um Pokémon que tenha se Terastalizado em seu Tera Tipo Elétrico não perderá o tipo Elétrico. Portanto, um Pokémon Terastalizado pode usar Double Shock várias vezes seguidas sem precisar ser retirado de campo.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
-    "observations": "<p>Double Shock falha se o usuário não for do tipo Elétrico, fazendo com que o Move sempre falhe após o primeiro uso até que o Pokémon recupere seu tipo Elétrico, seja ao ser trocado para fora de batalha ou por outros efeitos de mudança de tipo, como por meio de Protean ou Reflect Type. Se o usuário for um Pokémon puramente do tipo Elétrico, ele se tornará sem tipo.</p>",
-    "damage": {
-      "baseFormula": "3d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "6d6"
-        },
-        {
-          "level": 10,
-          "formula": "6d8"
-        },
-        {
-          "level": 17,
-          "formula": "6d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "HahuCmsECJBQvKHc": {
+        "_id": "HahuCmsECJBQvKHc",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "electric",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto ativo",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você descarrega toda a eletricidade do seu corpo em um ataque de alto dano. Este Move só funciona se o usuário for do tipo Elétrico. Faça um ataque corpo a corpo, causando 3d8 + MOVE do tipo elétrico. Após usar este Move, o usuário se esgota e perde sua tipagem Elétrico pelo resto do combate, ou até ser trocado, ou através de outros efeitos de mudança de tipo, como Protean ou Reflect Type. Um Pokémon que tenha se Terastalizado em seu Tera Tipo Elétrico não perderá o tipo Elétrico. Portanto, um Pokémon Terastalizado pode usar Double Shock várias vezes seguidas sem precisar ser retirado de campo.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+        "observations": "<p>Double Shock falha se o usuário não for do tipo Elétrico, fazendo com que o Move sempre falhe após o primeiro uso até que o Pokémon recupere seu tipo Elétrico, seja ao ser trocado para fora de batalha ou por outros efeitos de mudança de tipo, como por meio de Protean ou Reflect Type. Se o usuário for um Pokémon puramente do tipo Elétrico, ele se tornará sem tipo.</p>",
+        "damage": {
+          "baseFormula": "3d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "6d6"
+            },
+            {
+              "level": 10,
+              "formula": "6d8"
+            },
+            {
+              "level": 17,
+              "formula": "6d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

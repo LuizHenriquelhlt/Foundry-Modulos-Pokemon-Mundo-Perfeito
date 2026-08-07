@@ -2,56 +2,146 @@
   "_key": "!items!zWsvkAVwMSLdE1b3",
   "_id": "zWsvkAVwMSLdE1b3",
   "name": "Blast Burn",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação, recarga"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, recarga &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você envolve seu corpo em chamas e lança uma explosão de fogo um raio de 5 pés (1,5 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na explosão deve fazer um teste de resistência de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "50 pés (15 metros)",
-      "meters": 15.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você envolve seu corpo em chamas e lança uma explosão de fogo um raio de 5 pés (1,5 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na explosão deve fazer um teste de resistência de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "5d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d8"
-        },
-        {
-          "level": 10,
-          "formula": "6d10"
-        },
-        {
-          "level": 17,
-          "formula": "6d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "XHtp0k3sZdK5mmxp": {
+        "_id": "XHtp0k3sZdK5mmxp",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação, recarga"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "50 pés (15 metros)",
+          "meters": 15.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envolve seu corpo em chamas e lança uma explosão de fogo um raio de 5 pés (1,5 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na explosão deve fazer um teste de resistência de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "5d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d8"
+            },
+            {
+              "level": 10,
+              "formula": "6d10"
+            },
+            {
+              "level": 17,
+              "formula": "6d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

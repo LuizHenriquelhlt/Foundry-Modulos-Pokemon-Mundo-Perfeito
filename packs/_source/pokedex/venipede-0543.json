@@ -2,36 +2,9 @@
   "_key": "!actors!QY5bZmXO8JqM5Az3",
   "_id": "QY5bZmXO8JqM5Az3",
   "name": "Venipede",
-  "type": "pokemon-mundo-perfeito.pokemon",
+  "type": "npc",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/543.png",
   "system": {
-    "species": "venipede",
-    "dexNumber": 543,
-    "types": {
-      "type1": "bug",
-      "type2": "poison"
-    },
-    "speciesRank": {
-      "value": 0.25,
-      "display": "1/4"
-    },
-    "size": "tiny",
-    "heightMeters": 0.4,
-    "minLevelFound": 1,
-    "eggGroups": [
-      "Inseto"
-    ],
-    "gender": {
-      "malePercent": 50,
-      "femalePercent": 50,
-      "genderless": false
-    },
-    "evolutionStage": {
-      "current": 1,
-      "max": 3
-    },
-    "evolution": "Venipede pode evoluir para Whirlipede no nível 8 ou superior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
-    "biography": "<p>O Pokémon Centopeia. Venipede e Sizzlipede são espécies semelhantes, mas sempre travam grandes batalhas quando se encontram. Suas presas são extremamente venenosas. Ao encontrar algo que considera comestível, ele se lança sobre o alvo sem pensar nas consequências.</p>",
     "abilities": {
       "str": {
         "value": 12
@@ -52,184 +25,304 @@
         "value": 10
       }
     },
-    "skills": [
-      "Sobrevivência"
-    ],
-    "armorClass": {
-      "value": 13
-    },
-    "hitPoints": {
-      "value": 16,
-      "max": 16,
-      "hitDie": "d6"
-    },
-    "movement": {
-      "walk": 6,
-      "other": "6m de caminhada, 6m de escalada"
-    },
-    "senses": "",
-    "passiveAbility": {
-      "options": [],
-      "active": ""
-    },
-    "hiddenAbility": "Speed Boost",
-    "level": 1,
-    "moveTable": [
-      {
-        "level": 1,
-        "moves": [
-          "Defense Curl",
-          "Rollout"
-        ]
+    "attributes": {
+      "ac": {
+        "flat": 13,
+        "calc": "flat"
       },
-      {
-        "level": 2,
-        "moves": [
-          "Poison Sting"
-        ]
+      "hp": {
+        "value": 16,
+        "max": 16,
+        "temp": 0,
+        "tempmax": 0,
+        "formula": ""
       },
-      {
-        "level": 3,
-        "moves": [
-          "Screech"
-        ]
+      "movement": {
+        "walk": 6.0,
+        "swim": 0,
+        "fly": 0,
+        "climb": 6.0,
+        "burrow": 0,
+        "hover": false,
+        "units": "m"
       },
-      {
-        "level": 4,
-        "moves": [
-          "Pursuit"
-        ]
-      },
-      {
-        "level": 5,
-        "moves": [
-          "Protect"
-        ]
-      },
-      {
-        "level": 7,
-        "moves": [
-          "Poison Tail"
-        ]
-      },
-      {
-        "level": 8,
-        "moves": [
-          "Bug Bite"
-        ]
-      },
-      {
-        "level": 9,
-        "moves": [
-          "Venoshock"
-        ]
-      },
-      {
-        "level": 10,
-        "moves": [
-          "Agility",
-          "Take Down"
-        ]
-      },
-      {
-        "level": 11,
-        "moves": [
-          "Steamroller"
-        ]
-      },
-      {
-        "level": 12,
-        "moves": [
-          "Toxic"
-        ]
-      },
-      {
-        "level": 13,
-        "moves": [
-          "Venom Drench"
-        ]
-      },
-      {
-        "level": 14,
-        "moves": [
-          "Rock Climb"
-        ]
-      },
-      {
-        "level": 15,
-        "moves": [
-          "Double-Edge"
-        ]
+      "senses": {
+        "darkvision": 0,
+        "blindsight": 0,
+        "tremorsense": 0,
+        "truesight": 0,
+        "units": "m",
+        "special": ""
       }
-    ],
-    "knownMoves": [
-      "Defense Curl",
-      "Rollout"
-    ],
-    "tms": [
-      "Attract",
-      "Bug Bite",
-      "Confide",
-      "Double Team",
-      "Endeavor",
-      "Facade",
-      "Frustration",
-      "Gyro Ball",
-      "Hex",
-      "Hidden Power",
-      "Infestation",
-      "Iron Defense",
-      "Payback",
-      "Pin Missile",
-      "Poison Jab",
-      "Protect",
-      "Rest",
-      "Return",
-      "Round",
-      "Screech",
-      "Signal Beam",
-      "Skitter Smack",
-      "Sleep Talk",
-      "Sludge Bomb",
-      "Snore",
-      "Solar Beam",
-      "Steel Roller",
-      "Substitute",
-      "Sunny Day",
-      "Swagger",
-      "Toxic",
-      "Venoshock"
-    ],
-    "eggMoves": [
-      "Bite",
-      "Fury Cutter",
-      "Pin Missile",
-      "Rock Climb",
-      "Spikes",
-      "Take Down",
-      "Toxic Spikes",
-      "Twineedle"
-    ],
-    "typeDefenseOverrides": {},
-    "nature": {
-      "name": "",
-      "increased": "",
-      "decreased": ""
     },
-    "loyalty": 0,
-    "shiny": false,
-    "evs": {
-      "str": 0,
-      "dex": 0,
-      "con": 0,
-      "int": 0,
-      "wis": 0,
-      "cha": 0
+    "details": {
+      "cr": 0.25,
+      "type": {
+        "value": "custom",
+        "subtype": "",
+        "custom": "Pokémon"
+      },
+      "biography": {
+        "value": "<p>O Pokémon Centopeia. Venipede e Sizzlipede são espécies semelhantes, mas sempre travam grandes batalhas quando se encontram. Suas presas são extremamente venenosas. Ao encontrar algo que considera comestível, ele se lança sobre o alvo sem pensar nas consequências.</p><p><strong>SR:</strong> 1/4 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 1 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Inseto &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 1/3</p><p><strong>Evolução:</strong> Venipede pode evoluir para Whirlipede no nível 8 ou superior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Defense Curl, Rollout</td></tr><tr><td style='text-align:center'>2</td><td>Poison Sting</td></tr><tr><td style='text-align:center'>3</td><td>Screech</td></tr><tr><td style='text-align:center'>4</td><td>Pursuit</td></tr><tr><td style='text-align:center'>5</td><td>Protect</td></tr><tr><td style='text-align:center'>7</td><td>Poison Tail</td></tr><tr><td style='text-align:center'>8</td><td>Bug Bite</td></tr><tr><td style='text-align:center'>9</td><td>Venoshock</td></tr><tr><td style='text-align:center'>10</td><td>Agility, Take Down</td></tr><tr><td style='text-align:center'>11</td><td>Steamroller</td></tr><tr><td style='text-align:center'>12</td><td>Toxic</td></tr><tr><td style='text-align:center'>13</td><td>Venom Drench</td></tr><tr><td style='text-align:center'>14</td><td>Rock Climb</td></tr><tr><td style='text-align:center'>15</td><td>Double-Edge</td></tr></tbody></table><h3>TMs</h3><p>Attract, Bug Bite, Confide, Double Team, Endeavor, Facade, Frustration, Gyro Ball, Hex, Hidden Power, Infestation, Iron Defense, Payback, Pin Missile, Poison Jab, Protect, Rest, Return, Round, Screech, Signal Beam, Skitter Smack, Sleep Talk, Sludge Bomb, Snore, Solar Beam, Steel Roller, Substitute, Sunny Day, Swagger, Toxic, Venoshock</p><h3>Egg Moves</h3><p>Bite, Fury Cutter, Pin Missile, Rock Climb, Spikes, Take Down, Toxic Spikes, Twineedle</p>",
+        "public": ""
+      },
+      "alignment": ""
+    },
+    "traits": {
+      "size": "tiny",
+      "di": {
+        "value": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "custom": "Tipo Grama (x1/4); Tipo Lutador (x1/4); Tipo Venenoso; Tipo Inseto; Tipo Fada"
+      },
+      "dv": {
+        "value": [],
+        "custom": "Tipo Fogo; Tipo Voador; Tipo Psíquico; Tipo Pedra"
+      },
+      "languages": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "skills": {
+      "sur": {
+        "value": 1,
+        "ability": "wis"
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "species": {
+        "species": "venipede",
+        "dexNumber": 543,
+        "types": {
+          "type1": "bug",
+          "type2": "poison"
+        },
+        "speciesRank": {
+          "value": 0.25,
+          "display": "1/4"
+        },
+        "size": "tiny",
+        "heightMeters": 0.4,
+        "minLevelFound": 1,
+        "eggGroups": [
+          "Inseto"
+        ],
+        "gender": {
+          "malePercent": 50,
+          "femalePercent": 50,
+          "genderless": false
+        },
+        "evolutionStage": {
+          "current": 1,
+          "max": 3
+        },
+        "evolution": "Venipede pode evoluir para Whirlipede no nível 8 ou superior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
+        "biography": "<p>O Pokémon Centopeia. Venipede e Sizzlipede são espécies semelhantes, mas sempre travam grandes batalhas quando se encontram. Suas presas são extremamente venenosas. Ao encontrar algo que considera comestível, ele se lança sobre o alvo sem pensar nas consequências.</p>",
+        "abilities": {
+          "str": {
+            "value": 12
+          },
+          "dex": {
+            "value": 12
+          },
+          "con": {
+            "value": 10
+          },
+          "int": {
+            "value": 6
+          },
+          "wis": {
+            "value": 10
+          },
+          "cha": {
+            "value": 10
+          }
+        },
+        "skills": [
+          "Sobrevivência"
+        ],
+        "armorClass": {
+          "value": 13
+        },
+        "hitPoints": {
+          "value": 16,
+          "max": 16,
+          "hitDie": "d6"
+        },
+        "movement": {
+          "walk": 6,
+          "other": "6m de caminhada, 6m de escalada"
+        },
+        "senses": "",
+        "passiveAbility": {
+          "options": [],
+          "active": ""
+        },
+        "hiddenAbility": "Speed Boost",
+        "level": 1,
+        "moveTable": [
+          {
+            "level": 1,
+            "moves": [
+              "Defense Curl",
+              "Rollout"
+            ]
+          },
+          {
+            "level": 2,
+            "moves": [
+              "Poison Sting"
+            ]
+          },
+          {
+            "level": 3,
+            "moves": [
+              "Screech"
+            ]
+          },
+          {
+            "level": 4,
+            "moves": [
+              "Pursuit"
+            ]
+          },
+          {
+            "level": 5,
+            "moves": [
+              "Protect"
+            ]
+          },
+          {
+            "level": 7,
+            "moves": [
+              "Poison Tail"
+            ]
+          },
+          {
+            "level": 8,
+            "moves": [
+              "Bug Bite"
+            ]
+          },
+          {
+            "level": 9,
+            "moves": [
+              "Venoshock"
+            ]
+          },
+          {
+            "level": 10,
+            "moves": [
+              "Agility",
+              "Take Down"
+            ]
+          },
+          {
+            "level": 11,
+            "moves": [
+              "Steamroller"
+            ]
+          },
+          {
+            "level": 12,
+            "moves": [
+              "Toxic"
+            ]
+          },
+          {
+            "level": 13,
+            "moves": [
+              "Venom Drench"
+            ]
+          },
+          {
+            "level": 14,
+            "moves": [
+              "Rock Climb"
+            ]
+          },
+          {
+            "level": 15,
+            "moves": [
+              "Double-Edge"
+            ]
+          }
+        ],
+        "knownMoves": [
+          "Defense Curl",
+          "Rollout"
+        ],
+        "tms": [
+          "Attract",
+          "Bug Bite",
+          "Confide",
+          "Double Team",
+          "Endeavor",
+          "Facade",
+          "Frustration",
+          "Gyro Ball",
+          "Hex",
+          "Hidden Power",
+          "Infestation",
+          "Iron Defense",
+          "Payback",
+          "Pin Missile",
+          "Poison Jab",
+          "Protect",
+          "Rest",
+          "Return",
+          "Round",
+          "Screech",
+          "Signal Beam",
+          "Skitter Smack",
+          "Sleep Talk",
+          "Sludge Bomb",
+          "Snore",
+          "Solar Beam",
+          "Steel Roller",
+          "Substitute",
+          "Sunny Day",
+          "Swagger",
+          "Toxic",
+          "Venoshock"
+        ],
+        "eggMoves": [
+          "Bite",
+          "Fury Cutter",
+          "Pin Missile",
+          "Rock Climb",
+          "Spikes",
+          "Take Down",
+          "Toxic Spikes",
+          "Twineedle"
+        ],
+        "typeDefenseOverrides": {},
+        "nature": {
+          "name": "",
+          "increased": "",
+          "decreased": ""
+        },
+        "loyalty": 0,
+        "shiny": false,
+        "evs": {
+          "str": 0,
+          "dex": 0,
+          "con": 0,
+          "int": 0,
+          "wis": 0,
+          "cha": 0
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -247,5 +340,427 @@
     "texture": {
       "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/543.png"
     }
-  }
+  },
+  "items": [
+    {
+      "_id": "4NmuRjdtxPU8ugTq",
+      "name": "Tipo Inseto",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-bug.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Inseto.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!QY5bZmXO8JqM5Az3.4NmuRjdtxPU8ugTq"
+    },
+    {
+      "_id": "to9N4ldSjHdBfKvg",
+      "name": "Tipo Venenoso",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!QY5bZmXO8JqM5Az3.to9N4ldSjHdBfKvg"
+    },
+    {
+      "_id": "NC1j7C7PT69EIMIh",
+      "name": "Habilidade Oculta: Speed Boost",
+      "type": "feat",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": {
+          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!QY5bZmXO8JqM5Az3.NC1j7C7PT69EIMIh"
+    },
+    {
+      "_id": "Vgf1BdIYDHpNpRWQ",
+      "name": "Defense Curl",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se enrola em formato esférico, aumentando sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Ao ativar Defense Curl, enquanto você permanecer em batalha e até ser trocado, dobre os dados de dano dos Moves Rollout ou Ice Ball.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "Pessoal",
+              "meters": 0.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você se enrola em formato esférico, aumentando sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Ao ativar Defense Curl, enquanto você permanecer em batalha e até ser trocado, dobre os dados de dano dos Moves Rollout ou Ice Ball.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Precisão em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!QY5bZmXO8JqM5Az3.Vgf1BdIYDHpNpRWQ"
+    },
+    {
+      "_id": "UJBZsO5aR2k7ceRQ",
+      "name": "Rollout",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / linha de 20 pés (6 metros)</p><p>Você se lança em direção a um alvo, desferindo ataques sucessivos com força crescente. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo -1, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 1d6 + MOVE de dano do tipo Pedra em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Se você usar este Move em rodadas consecutivas, dobre a quantidade de dados de dano a cada acerto subsequente. O multiplicador máximo é de 16× o dano base. O acúmulo de dano é perdido se qualquer ataque errar ou se você ficar incapacitado. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Pedra",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "Nr71Pgsqo6pk744l": {
+            "_id": "Nr71Pgsqo6pk744l",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "damage",
+            "damage": {
+              "critical": {
+                "allow": false,
+                "bonus": ""
+              },
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 6,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "rock",
+            "category": "",
+            "power": "FOR",
+            "powerAbilities": [
+              "str"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / linha de 20 pés (6 metros)",
+              "meters": 6.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você se lança em direção a um alvo, desferindo ataques sucessivos com força crescente. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo -1, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 1d6 + MOVE de dano do tipo Pedra em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Se você usar este Move em rodadas consecutivas, dobre a quantidade de dados de dano a cada acerto subsequente. O multiplicador máximo é de 16× o dano base. O acúmulo de dano é perdido se qualquer ataque errar ou se você ficar incapacitado. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "1d6",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "1d10"
+                },
+                {
+                  "level": 10,
+                  "formula": "1d12"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!QY5bZmXO8JqM5Az3.UJBZsO5aR2k7ceRQ"
+    },
+    {
+      "_id": "puxgWuHITA1wwldj",
+      "name": "Struggle",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {
+          "XswP1sziaokq7KFo": {
+            "_id": "XswP1sziaokq7KFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 0,
+              "max": 0,
+              "unlimited": true
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / 60 pés (18 metros)",
+              "meters": 18.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+            "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+            "damage": {
+              "baseFormula": "1d10",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d10"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!QY5bZmXO8JqM5Az3.puxgWuHITA1wwldj"
+    }
+  ]
 }

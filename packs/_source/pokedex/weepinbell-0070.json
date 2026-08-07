@@ -2,36 +2,9 @@
   "_key": "!actors!qd47Oxw27qVelOiP",
   "_id": "qd47Oxw27qVelOiP",
   "name": "Weepinbell",
-  "type": "pokemon-mundo-perfeito.pokemon",
+  "type": "npc",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/70.png",
   "system": {
-    "species": "weepinbell",
-    "dexNumber": 70,
-    "types": {
-      "type1": "grass",
-      "type2": "poison"
-    },
-    "speciesRank": {
-      "value": 5.0,
-      "display": "5"
-    },
-    "size": "small",
-    "heightMeters": 1.0,
-    "minLevelFound": 5,
-    "eggGroups": [
-      "Grama"
-    ],
-    "gender": {
-      "malePercent": 50,
-      "femalePercent": 50,
-      "genderless": false
-    },
-    "evolutionStage": {
-      "current": 2,
-      "max": 3
-    },
-    "evolution": "Weepinbell pode evoluir para Victreebel no nível 11 ou superior com a ajuda de uma Leaf Stone. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
-    "biography": "<p>O Pokémon Papa-Moscas. Mesmo estando cheio de ácido, Weepinbell não se dissolve porque também secreta um fluido protetor. Suas partes semelhantes a folhas funcionam como lâminas para cortar os inimigos. Ele também cospe um líquido capaz de dissolver qualquer coisa.</p>",
     "abilities": {
       "str": {
         "value": 13
@@ -52,173 +25,297 @@
         "value": 10
       }
     },
-    "skills": [
-      "Natureza",
-      "Sobrevivência"
-    ],
-    "armorClass": {
-      "value": 13
-    },
-    "hitPoints": {
-      "value": 50,
-      "max": 50,
-      "hitDie": "d8"
-    },
-    "movement": {
-      "walk": 9,
-      "other": "9m de caminhada"
-    },
-    "senses": "Sentido Sísmico 12m",
-    "passiveAbility": {
-      "options": [
-        "Chlorophyll"
-      ],
-      "active": "Chlorophyll"
-    },
-    "hiddenAbility": "Gluttony",
-    "level": 5,
-    "moveTable": [
-      {
-        "level": 1,
-        "moves": [
-          "Growth",
-          "Vine Whip",
-          "Wrap"
-        ]
+    "attributes": {
+      "ac": {
+        "flat": 13,
+        "calc": "flat"
       },
-      {
-        "level": 5,
-        "moves": [
-          "Poison Powder",
-          "Sleep Powder"
-        ]
+      "hp": {
+        "value": 50,
+        "max": 50,
+        "temp": 0,
+        "tempmax": 0,
+        "formula": ""
       },
-      {
-        "level": 6,
-        "moves": [
-          "Stun Spore"
-        ]
+      "movement": {
+        "walk": 9.0,
+        "swim": 0,
+        "fly": 0,
+        "climb": 0,
+        "burrow": 0,
+        "hover": false,
+        "units": "m"
       },
-      {
-        "level": 8,
-        "moves": [
-          "Acid"
-        ]
-      },
-      {
-        "level": 10,
-        "moves": [
-          "Knock Off"
-        ]
-      },
-      {
-        "level": 11,
-        "moves": [
-          "Sweet Scent"
-        ]
-      },
-      {
-        "level": 13,
-        "moves": [
-          "Gastro Acid"
-        ]
-      },
-      {
-        "level": 15,
-        "moves": [
-          "Poison Jab",
-          "Razor Leaf"
-        ]
-      },
-      {
-        "level": 16,
-        "moves": [
-          "Power Whip",
-          "Slam",
-          "Wring Out"
-        ]
+      "senses": {
+        "darkvision": 0,
+        "blindsight": 0,
+        "tremorsense": 12.0,
+        "truesight": 0,
+        "units": "m",
+        "special": ""
       }
-    ],
-    "knownMoves": [
-      "Growth",
-      "Vine Whip",
-      "Wrap"
-    ],
-    "tms": [
-      "Acid Spray",
-      "Attract",
-      "Bind",
-      "Body Slam",
-      "Bug Bite",
-      "Bullet Seed",
-      "Confide",
-      "Double Team",
-      "Encore",
-      "Endure",
-      "Energy Ball",
-      "Facade",
-      "Frustration",
-      "Gastro Acid",
-      "Giga Drain",
-      "Grass Knot",
-      "Grassy Glide",
-      "Grassy Terrain",
-      "Hidden Power",
-      "Infestation",
-      "Knock Off",
-      "Leaf Storm",
-      "Leech Life",
-      "Lunge",
-      "Magical Leaf",
-      "Nature Power",
-      "Poison Jab",
-      "Pounce",
-      "Protect",
-      "Reflect",
-      "Rest",
-      "Return",
-      "Round",
-      "Seed Bomb",
-      "Sleep Talk",
-      "Sludge Bomb",
-      "Sludge Wave",
-      "Snore",
-      "Solar Beam",
-      "Substitute",
-      "Sunny Day",
-      "Swagger",
-      "Swift",
-      "Swords Dance",
-      "Synthesis",
-      "Tera Blast",
-      "Thief",
-      "Toxic",
-      "Trailblaze",
-      "Venoshock",
-      "Weather Ball",
-      "Worry Seed"
-    ],
-    "eggMoves": [],
-    "typeDefenseOverrides": {},
-    "nature": {
-      "name": "",
-      "increased": "",
-      "decreased": ""
     },
-    "loyalty": 0,
-    "shiny": false,
-    "evs": {
-      "str": 0,
-      "dex": 0,
-      "con": 0,
-      "int": 0,
-      "wis": 0,
-      "cha": 0
+    "details": {
+      "cr": 5.0,
+      "type": {
+        "value": "custom",
+        "subtype": "",
+        "custom": "Pokémon"
+      },
+      "biography": {
+        "value": "<p>O Pokémon Papa-Moscas. Mesmo estando cheio de ácido, Weepinbell não se dissolve porque também secreta um fluido protetor. Suas partes semelhantes a folhas funcionam como lâminas para cortar os inimigos. Ele também cospe um líquido capaz de dissolver qualquer coisa.</p><p><strong>SR:</strong> 5 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 5 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Grama &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 2/3</p><p><strong>Evolução:</strong> Weepinbell pode evoluir para Victreebel no nível 11 ou superior com a ajuda de uma Leaf Stone. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Growth, Vine Whip, Wrap</td></tr><tr><td style='text-align:center'>5</td><td>Poison Powder, Sleep Powder</td></tr><tr><td style='text-align:center'>6</td><td>Stun Spore</td></tr><tr><td style='text-align:center'>8</td><td>Acid</td></tr><tr><td style='text-align:center'>10</td><td>Knock Off</td></tr><tr><td style='text-align:center'>11</td><td>Sweet Scent</td></tr><tr><td style='text-align:center'>13</td><td>Gastro Acid</td></tr><tr><td style='text-align:center'>15</td><td>Poison Jab, Razor Leaf</td></tr><tr><td style='text-align:center'>16</td><td>Power Whip, Slam, Wring Out</td></tr></tbody></table><h3>TMs</h3><p>Acid Spray, Attract, Bind, Body Slam, Bug Bite, Bullet Seed, Confide, Double Team, Encore, Endure, Energy Ball, Facade, Frustration, Gastro Acid, Giga Drain, Grass Knot, Grassy Glide, Grassy Terrain, Hidden Power, Infestation, Knock Off, Leaf Storm, Leech Life, Lunge, Magical Leaf, Nature Power, Poison Jab, Pounce, Protect, Reflect, Rest, Return, Round, Seed Bomb, Sleep Talk, Sludge Bomb, Sludge Wave, Snore, Solar Beam, Substitute, Sunny Day, Swagger, Swift, Swords Dance, Synthesis, Tera Blast, Thief, Toxic, Trailblaze, Venoshock, Weather Ball, Worry Seed</p>",
+        "public": ""
+      },
+      "alignment": ""
+    },
+    "traits": {
+      "size": "sm",
+      "di": {
+        "value": [],
+        "custom": ""
+      },
+      "dr": {
+        "value": [],
+        "custom": "Tipo Água; Tipo Elétrico; Tipo Grama (x1/4); Tipo Lutador; Tipo Fada"
+      },
+      "dv": {
+        "value": [],
+        "custom": "Tipo Fogo; Tipo Gelo; Tipo Voador; Tipo Psíquico"
+      },
+      "languages": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "skills": {
+      "nat": {
+        "value": 1,
+        "ability": "int"
+      },
+      "sur": {
+        "value": 1,
+        "ability": "wis"
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "species": {
+        "species": "weepinbell",
+        "dexNumber": 70,
+        "types": {
+          "type1": "grass",
+          "type2": "poison"
+        },
+        "speciesRank": {
+          "value": 5.0,
+          "display": "5"
+        },
+        "size": "small",
+        "heightMeters": 1.0,
+        "minLevelFound": 5,
+        "eggGroups": [
+          "Grama"
+        ],
+        "gender": {
+          "malePercent": 50,
+          "femalePercent": 50,
+          "genderless": false
+        },
+        "evolutionStage": {
+          "current": 2,
+          "max": 3
+        },
+        "evolution": "Weepinbell pode evoluir para Victreebel no nível 11 ou superior com a ajuda de uma Leaf Stone. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
+        "biography": "<p>O Pokémon Papa-Moscas. Mesmo estando cheio de ácido, Weepinbell não se dissolve porque também secreta um fluido protetor. Suas partes semelhantes a folhas funcionam como lâminas para cortar os inimigos. Ele também cospe um líquido capaz de dissolver qualquer coisa.</p>",
+        "abilities": {
+          "str": {
+            "value": 13
+          },
+          "dex": {
+            "value": 14
+          },
+          "con": {
+            "value": 15
+          },
+          "int": {
+            "value": 6
+          },
+          "wis": {
+            "value": 12
+          },
+          "cha": {
+            "value": 10
+          }
+        },
+        "skills": [
+          "Natureza",
+          "Sobrevivência"
+        ],
+        "armorClass": {
+          "value": 13
+        },
+        "hitPoints": {
+          "value": 50,
+          "max": 50,
+          "hitDie": "d8"
+        },
+        "movement": {
+          "walk": 9,
+          "other": "9m de caminhada"
+        },
+        "senses": "Sentido Sísmico 12m",
+        "passiveAbility": {
+          "options": [
+            "Chlorophyll"
+          ],
+          "active": "Chlorophyll"
+        },
+        "hiddenAbility": "Gluttony",
+        "level": 5,
+        "moveTable": [
+          {
+            "level": 1,
+            "moves": [
+              "Growth",
+              "Vine Whip",
+              "Wrap"
+            ]
+          },
+          {
+            "level": 5,
+            "moves": [
+              "Poison Powder",
+              "Sleep Powder"
+            ]
+          },
+          {
+            "level": 6,
+            "moves": [
+              "Stun Spore"
+            ]
+          },
+          {
+            "level": 8,
+            "moves": [
+              "Acid"
+            ]
+          },
+          {
+            "level": 10,
+            "moves": [
+              "Knock Off"
+            ]
+          },
+          {
+            "level": 11,
+            "moves": [
+              "Sweet Scent"
+            ]
+          },
+          {
+            "level": 13,
+            "moves": [
+              "Gastro Acid"
+            ]
+          },
+          {
+            "level": 15,
+            "moves": [
+              "Poison Jab",
+              "Razor Leaf"
+            ]
+          },
+          {
+            "level": 16,
+            "moves": [
+              "Power Whip",
+              "Slam",
+              "Wring Out"
+            ]
+          }
+        ],
+        "knownMoves": [
+          "Growth",
+          "Vine Whip",
+          "Wrap"
+        ],
+        "tms": [
+          "Acid Spray",
+          "Attract",
+          "Bind",
+          "Body Slam",
+          "Bug Bite",
+          "Bullet Seed",
+          "Confide",
+          "Double Team",
+          "Encore",
+          "Endure",
+          "Energy Ball",
+          "Facade",
+          "Frustration",
+          "Gastro Acid",
+          "Giga Drain",
+          "Grass Knot",
+          "Grassy Glide",
+          "Grassy Terrain",
+          "Hidden Power",
+          "Infestation",
+          "Knock Off",
+          "Leaf Storm",
+          "Leech Life",
+          "Lunge",
+          "Magical Leaf",
+          "Nature Power",
+          "Poison Jab",
+          "Pounce",
+          "Protect",
+          "Reflect",
+          "Rest",
+          "Return",
+          "Round",
+          "Seed Bomb",
+          "Sleep Talk",
+          "Sludge Bomb",
+          "Sludge Wave",
+          "Snore",
+          "Solar Beam",
+          "Substitute",
+          "Sunny Day",
+          "Swagger",
+          "Swift",
+          "Swords Dance",
+          "Synthesis",
+          "Tera Blast",
+          "Thief",
+          "Toxic",
+          "Trailblaze",
+          "Venoshock",
+          "Weather Ball",
+          "Worry Seed"
+        ],
+        "eggMoves": [],
+        "typeDefenseOverrides": {},
+        "nature": {
+          "name": "",
+          "increased": "",
+          "decreased": ""
+        },
+        "loyalty": 0,
+        "shiny": false,
+        "evs": {
+          "str": 0,
+          "dex": 0,
+          "con": 0,
+          "int": 0,
+          "wis": 0,
+          "cha": 0
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -236,5 +333,744 @@
     "texture": {
       "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png"
     }
-  }
+  },
+  "items": [
+    {
+      "_id": "cFn8xGHeKTyk3V6k",
+      "name": "Tipo Grama",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Grama.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.cFn8xGHeKTyk3V6k"
+    },
+    {
+      "_id": "8hQyAZGpG8bf2kOG",
+      "name": "Tipo Venenoso",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.8hQyAZGpG8bf2kOG"
+    },
+    {
+      "_id": "Ro6d9Vgku2QRncVl",
+      "name": "Habilidade Passiva: Chlorophyll",
+      "type": "feat",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": {
+          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.Ro6d9Vgku2QRncVl"
+    },
+    {
+      "_id": "J2BOVd8rMPnsfX6a",
+      "name": "Habilidade Oculta: Gluttony",
+      "type": "feat",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": {
+          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.J2BOVd8rMPnsfX6a"
+    },
+    {
+      "_id": "287v6Saw3Z6FQBUx",
+      "name": "Growth",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você gera forças interiores que fortificam seu corpo, aumentando seu Ataque e Ataque Especial em 1 estágio, podendo ser acumulado em até 6 estágios cada. Durante luz solar intensa, o aumento passa a ser de 2 estágios cada.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "Pessoal",
+              "meters": 0.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você gera forças interiores que fortificam seu corpo, aumentando seu Ataque e Ataque Especial em 1 estágio, podendo ser acumulado em até 6 estágios cada. Durante luz solar intensa, o aumento passa a ser de 2 estágios cada.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta o Ataque Especial em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.287v6Saw3Z6FQBUx"
+    },
+    {
+      "_id": "cZXP4IQYIIDp7fLN",
+      "name": "Vine Whip",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo (alcance de 15 pés / 4,5 metros)</p><p>Você estende uma vinha alongada para chicotear o alvo. Faça um ataque corpo a corpo com alcance estendido de até 15 pés (4,5 metros), causando 1d10 + MOVE de dano de grama em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d6 no nível 5, 3d6 no nível 10 e 2d12 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Grama",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "15",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "83aCsHA0aOhvBj0c": {
+            "_id": "83aCsHA0aOhvBj0c",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "grass",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 15,
+              "max": 15,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo (alcance de 15 pés / 4,5 metros)",
+              "meters": 4.5,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você estende uma vinha alongada para chicotear o alvo. Faça um ataque corpo a corpo com alcance estendido de até 15 pés (4,5 metros), causando 1d10 + MOVE de dano de grama em um acerto.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 2d6 no nível 5, 3d6 no nível 10 e 2d12 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "1d10",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "3d6"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d12"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.cZXP4IQYIIDp7fLN"
+    },
+    {
+      "_id": "c7yLhmLbjq1gSLHb",
+      "name": "Wrap",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto agarrado &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você envolve o inimigo com seu corpo ou apêndices e o aperta, limitando seus movimentos. Force um alvo a realizar um teste de FOR contra sua CD de Move -1. Em uma falha, o alvo sofre 1d4 + MOVE de dano normal e fica agarrado. No início de cada um dos turnos dele, o alvo pode tentar escapar repetindo o teste de FOR. Enquanto o alvo estiver agarrado por você, ele sofre dano sem tipo igual ao nível dele ao final de cada um dos próprios turnos. Você não pode usar outros Moves enquanto estiver agarrando um alvo com Wrap, mas ambos podem ser substituídos, encerrando o efeito deste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d6 no nível 10 e 1d8 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "YHN4I7PaqFajRh4M": {
+            "_id": "YHN4I7PaqFajRh4M",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "save",
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "onSave": "none",
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Enquanto agarrado",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você envolve o inimigo com seu corpo ou apêndices e o aperta, limitando seus movimentos. Force um alvo a realizar um teste de FOR contra sua CD de Move -1. Em uma falha, o alvo sofre 1d4 + MOVE de dano normal e fica agarrado. No início de cada um dos turnos dele, o alvo pode tentar escapar repetindo o teste de FOR. Enquanto o alvo estiver agarrado por você, ele sofre dano sem tipo igual ao nível dele ao final de cada um dos próprios turnos. Você não pode usar outros Moves enquanto estiver agarrando um alvo com Wrap, mas ambos podem ser substituídos, encerrando o efeito deste Move.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 1d6 no nível 10 e 1d8 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "1d4",
+              "scaling": [
+                {
+                  "level": 10,
+                  "formula": "1d6"
+                },
+                {
+                  "level": 17,
+                  "formula": "1d8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.c7yLhmLbjq1gSLHb"
+    },
+    {
+      "_id": "Pa52XdNxVVz0N0NK",
+      "name": "Poison Powder",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você libera um aglomerado de esporos venenosos que explodem no ar acima de uma criatura dentro do alcance. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Envenenado.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Venenoso",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "poison",
+            "category": "",
+            "power": "CON",
+            "powerAbilities": [
+              "con"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "20 pés (6 metros)",
+              "meters": 6.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você libera um aglomerado de esporos venenosos que explodem no ar acima de uma criatura dentro do alcance. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Envenenado.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.Pa52XdNxVVz0N0NK"
+    },
+    {
+      "_id": "D3KFfe2UPqWaIIgG",
+      "name": "Sleep Powder",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você libera um aglomerado de esporos em direção a uma criatura dentro do alcance, tentando deixá-la sonolenta. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Sonolento. Arte feita c_r_o_f_t</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Grama",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "grass",
+            "category": "",
+            "power": "CON",
+            "powerAbilities": [
+              "con"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "20 pés (6 metros)",
+              "meters": 6.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você libera um aglomerado de esporos em direção a uma criatura dentro do alcance, tentando deixá-la sonolenta. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Sonolento. Arte feita c_r_o_f_t</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.D3KFfe2UPqWaIIgG"
+    },
+    {
+      "_id": "puxgWuHITA1wwldj",
+      "name": "Struggle",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {
+          "XswP1sziaokq7KFo": {
+            "_id": "XswP1sziaokq7KFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 0,
+              "max": 0,
+              "unlimited": true
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / 60 pés (18 metros)",
+              "meters": 18.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+            "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+            "damage": {
+              "baseFormula": "1d10",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d10"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!qd47Oxw27qVelOiP.puxgWuHITA1wwldj"
+    }
+  ]
 }

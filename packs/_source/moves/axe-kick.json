@@ -2,58 +2,151 @@
   "_key": "!items!85kWNX8PWjXyk5D6",
   "_id": "85kWNX8PWjXyk5D6",
   "name": "Axe Kick",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fighting.png",
   "system": {
-    "moveType": "fighting",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você salta e atinge o alvo com o calcanhar. Faça um ataque corpo a corpo -1, causando 3d8 + MOVE de dano do tipo lutador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Caso erre o Move, você sofre o dobro do dano que causaria no ataque (não contando com suas Mudanças de Status).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Lutador",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você salta e atinge o alvo com o calcanhar. Faça um ataque corpo a corpo -1, causando 3d8 + MOVE de dano do tipo lutador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Caso erre o Move, você sofre o dobro do dano que causaria no ataque (não contando com suas Mudanças de Status).</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "6d6"
-        },
-        {
-          "level": 10,
-          "formula": "6d8"
-        },
-        {
-          "level": 17,
-          "formula": "6d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "VyuUiXDzp6TvtdyQ": {
+        "_id": "VyuUiXDzp6TvtdyQ",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "fighting",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você salta e atinge o alvo com o calcanhar. Faça um ataque corpo a corpo -1, causando 3d8 + MOVE de dano do tipo lutador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Caso erre o Move, você sofre o dobro do dano que causaria no ataque (não contando com suas Mudanças de Status).</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "6d6"
+            },
+            {
+              "level": 10,
+              "formula": "6d8"
+            },
+            {
+              "level": 17,
+              "formula": "6d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

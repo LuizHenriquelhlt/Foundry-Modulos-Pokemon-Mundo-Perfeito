@@ -2,55 +2,145 @@
   "_key": "!items!oXpQtvO7aFvKlsuL",
   "_id": "oXpQtvO7aFvKlsuL",
   "name": "Land's Wrath",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
   "system": {
-    "moveType": "ground",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você reúne a energia natural da terra ao seu redor e a concentra em uma erupção súbita em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra no fracasso, ou a metade no sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Terrestre",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "100 pés (30 metros)",
-      "meters": 30.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você reúne a energia natural da terra ao seu redor e a concentra em uma erupção súbita em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra no fracasso, ou a metade no sucesso.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d12"
-        },
-        {
-          "level": 17,
-          "formula": "4d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "O8yavMBcr9mzXZN3": {
+        "_id": "O8yavMBcr9mzXZN3",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ground",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "100 pés (30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você reúne a energia natural da terra ao seu redor e a concentra em uma erupção súbita em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra no fracasso, ou a metade no sucesso.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d12"
+            },
+            {
+              "level": 17,
+              "formula": "4d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

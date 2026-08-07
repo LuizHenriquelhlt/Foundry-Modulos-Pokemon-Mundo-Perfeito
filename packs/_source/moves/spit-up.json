@@ -2,56 +2,82 @@
   "_key": "!items!TET6kQjTFZ8xJAtT",
   "_id": "TET6kQjTFZ8xJAtT",
   "name": "Spit Up",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "DES/CON",
-    "powerAbilities": [
-      "dex",
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>O poder da energia armazenada por Stockpile é liberado contra um alvo. Faça um ataque à distância contra uma criatura, causando um dano normal base de 2d10 + MOVE em caso de acerto. Os dados de dano são dobrados se Stockpile foi usado por duas rodadas, e triplicados se Stockpile foi usado por três rodadas.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>O poder da energia armazenada por Stockpile é liberado contra um alvo. Faça um ataque à distância contra uma criatura, causando um dano normal base de 2d10 + MOVE em caso de acerto. Os dados de dano são dobrados se Stockpile foi usado por duas rodadas, e triplicados se Stockpile foi usado por três rodadas.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d6"
-        },
-        {
-          "level": 10,
-          "formula": "5d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
-    }
+    },
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "DES/CON",
+        "powerAbilities": [
+          "dex",
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>O poder da energia armazenada por Stockpile é liberado contra um alvo. Faça um ataque à distância contra uma criatura, causando um dano normal base de 2d10 + MOVE em caso de acerto. Os dados de dano são dobrados se Stockpile foi usado por duas rodadas, e triplicados se Stockpile foi usado por três rodadas.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d6"
+            },
+            {
+              "level": 10,
+              "formula": "5d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

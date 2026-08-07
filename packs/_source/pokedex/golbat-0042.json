@@ -2,36 +2,9 @@
   "_key": "!actors!Vof50N1MM0l7Gd9M",
   "_id": "Vof50N1MM0l7Gd9M",
   "name": "Golbat",
-  "type": "pokemon-mundo-perfeito.pokemon",
+  "type": "npc",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/42.png",
   "system": {
-    "species": "golbat",
-    "dexNumber": 42,
-    "types": {
-      "type1": "poison",
-      "type2": "flying"
-    },
-    "speciesRank": {
-      "value": 7.0,
-      "display": "7"
-    },
-    "size": "medium",
-    "heightMeters": 1.6,
-    "minLevelFound": 5,
-    "eggGroups": [
-      "Voador"
-    ],
-    "gender": {
-      "malePercent": 50,
-      "femalePercent": 50,
-      "genderless": false
-    },
-    "evolutionStage": {
-      "current": 2,
-      "max": 3
-    },
-    "evolution": "Golbat pode evoluir para Crobat no nível 14 ou superior quando sua Lealdade for +2 ou maior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
-    "biography": "<p>O Pokémon Morcego. Golbat adora beber o sangue de outras criaturas. Dizem que, ao encontrar outros de sua espécie passando fome, às vezes compartilha o sangue que coletou. Seus pés são pequenos, mas ele caminha com habilidade. Aproxima-se silenciosamente de presas adormecidas antes de cravar as presas e sugar seu sangue.</p>",
     "abilities": {
       "str": {
         "value": 14
@@ -52,179 +25,299 @@
         "value": 8
       }
     },
-    "skills": [
-      "Furtividade"
-    ],
-    "armorClass": {
-      "value": 15
-    },
-    "hitPoints": {
-      "value": 50,
-      "max": 50,
-      "hitDie": "d10"
-    },
-    "movement": {
-      "walk": 3,
-      "other": "3m de caminhada, 9m de voo"
-    },
-    "senses": "Percepção às Cegas 30m",
-    "passiveAbility": {
-      "options": [
-        "Inner Focus"
-      ],
-      "active": "Inner Focus"
-    },
-    "hiddenAbility": "Infiltrator",
-    "level": 5,
-    "moveTable": [
-      {
-        "level": 1,
-        "moves": [
-          "Absorb",
-          "Astonish",
-          "Bite",
-          "Screech",
-          "Supersonic"
-        ]
+    "attributes": {
+      "ac": {
+        "flat": 15,
+        "calc": "flat"
       },
-      {
-        "level": 5,
-        "moves": [
-          "Wing Attack"
-        ]
+      "hp": {
+        "value": 50,
+        "max": 50,
+        "temp": 0,
+        "tempmax": 0,
+        "formula": ""
       },
-      {
-        "level": 6,
-        "moves": [
-          "Confuse Ray"
-        ]
+      "movement": {
+        "walk": 3.0,
+        "swim": 0,
+        "fly": 9.0,
+        "climb": 0,
+        "burrow": 0,
+        "hover": false,
+        "units": "m"
       },
-      {
-        "level": 7,
-        "moves": [
-          "Air Cutter"
-        ]
-      },
-      {
-        "level": 8,
-        "moves": [
-          "Swift"
-        ]
-      },
-      {
-        "level": 9,
-        "moves": [
-          "Poison Fang"
-        ]
-      },
-      {
-        "level": 11,
-        "moves": [
-          "Mean Look"
-        ]
-      },
-      {
-        "level": 12,
-        "moves": [
-          "Leech Life"
-        ]
-      },
-      {
-        "level": 14,
-        "moves": [
-          "Haze"
-        ]
-      },
-      {
-        "level": 15,
-        "moves": [
-          "Air Slash",
-          "Venoshock"
-        ]
-      },
-      {
-        "level": 16,
-        "moves": [
-          "Quick Guard"
-        ]
+      "senses": {
+        "darkvision": 0,
+        "blindsight": 0,
+        "tremorsense": 0,
+        "truesight": 0,
+        "units": "m",
+        "special": ""
       }
-    ],
-    "knownMoves": [
-      "Absorb",
-      "Astonish",
-      "Bite",
-      "Screech"
-    ],
-    "tms": [
-      "Acrobatics",
-      "Aerial Ace",
-      "Air Slash",
-      "Assurance",
-      "Attract",
-      "Confide",
-      "Defog",
-      "Double Team",
-      "Dual Wingbeat",
-      "Facade",
-      "Fly",
-      "Frustration",
-      "Giga Drain",
-      "Giga Impact",
-      "Heat Wave",
-      "Hidden Power",
-      "Hyper Beam",
-      "Leech Life",
-      "Ominous Wind",
-      "Payback",
-      "Protect",
-      "Rain Dance",
-      "Rest",
-      "Return",
-      "Roost",
-      "Round",
-      "Screech",
-      "Shadow Ball",
-      "Sleep Talk",
-      "Sludge Bomb",
-      "Snatch",
-      "Snore",
-      "Steel Wing",
-      "Substitute",
-      "Sunny Day",
-      "Super Fang",
-      "Swagger",
-      "Swift",
-      "Tailwind",
-      "Taunt",
-      "Thief",
-      "Torment",
-      "Toxic",
-      "U-turn",
-      "Uproar",
-      "Venoshock",
-      "Zen Headbutt"
-    ],
-    "eggMoves": [],
-    "typeDefenseOverrides": {},
-    "nature": {
-      "name": "",
-      "increased": "",
-      "decreased": ""
     },
-    "loyalty": 0,
-    "shiny": false,
-    "evs": {
-      "str": 0,
-      "dex": 0,
-      "con": 0,
-      "int": 0,
-      "wis": 0,
-      "cha": 0
+    "details": {
+      "cr": 7.0,
+      "type": {
+        "value": "custom",
+        "subtype": "",
+        "custom": "Pokémon"
+      },
+      "biography": {
+        "value": "<p>O Pokémon Morcego. Golbat adora beber o sangue de outras criaturas. Dizem que, ao encontrar outros de sua espécie passando fome, às vezes compartilha o sangue que coletou. Seus pés são pequenos, mas ele caminha com habilidade. Aproxima-se silenciosamente de presas adormecidas antes de cravar as presas e sugar seu sangue.</p><p><strong>SR:</strong> 7 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 5 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Voador &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 2/3</p><p><strong>Evolução:</strong> Golbat pode evoluir para Crobat no nível 14 ou superior quando sua Lealdade for +2 ou maior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Absorb, Astonish, Bite, Screech, Supersonic</td></tr><tr><td style='text-align:center'>5</td><td>Wing Attack</td></tr><tr><td style='text-align:center'>6</td><td>Confuse Ray</td></tr><tr><td style='text-align:center'>7</td><td>Air Cutter</td></tr><tr><td style='text-align:center'>8</td><td>Swift</td></tr><tr><td style='text-align:center'>9</td><td>Poison Fang</td></tr><tr><td style='text-align:center'>11</td><td>Mean Look</td></tr><tr><td style='text-align:center'>12</td><td>Leech Life</td></tr><tr><td style='text-align:center'>14</td><td>Haze</td></tr><tr><td style='text-align:center'>15</td><td>Air Slash, Venoshock</td></tr><tr><td style='text-align:center'>16</td><td>Quick Guard</td></tr></tbody></table><h3>TMs</h3><p>Acrobatics, Aerial Ace, Air Slash, Assurance, Attract, Confide, Defog, Double Team, Dual Wingbeat, Facade, Fly, Frustration, Giga Drain, Giga Impact, Heat Wave, Hidden Power, Hyper Beam, Leech Life, Ominous Wind, Payback, Protect, Rain Dance, Rest, Return, Roost, Round, Screech, Shadow Ball, Sleep Talk, Sludge Bomb, Snatch, Snore, Steel Wing, Substitute, Sunny Day, Super Fang, Swagger, Swift, Tailwind, Taunt, Thief, Torment, Toxic, U-turn, Uproar, Venoshock, Zen Headbutt</p>",
+        "public": ""
+      },
+      "alignment": ""
+    },
+    "traits": {
+      "size": "med",
+      "di": {
+        "value": [],
+        "custom": "Tipo Terrestre"
+      },
+      "dr": {
+        "value": [],
+        "custom": "Tipo Grama (x1/4); Tipo Lutador (x1/4); Tipo Venenoso; Tipo Inseto (x1/4); Tipo Fada"
+      },
+      "dv": {
+        "value": [],
+        "custom": "Tipo Elétrico; Tipo Gelo; Tipo Psíquico; Tipo Pedra"
+      },
+      "languages": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "skills": {
+      "ste": {
+        "value": 1,
+        "ability": "dex"
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "species": {
+        "species": "golbat",
+        "dexNumber": 42,
+        "types": {
+          "type1": "poison",
+          "type2": "flying"
+        },
+        "speciesRank": {
+          "value": 7.0,
+          "display": "7"
+        },
+        "size": "medium",
+        "heightMeters": 1.6,
+        "minLevelFound": 5,
+        "eggGroups": [
+          "Voador"
+        ],
+        "gender": {
+          "malePercent": 50,
+          "femalePercent": 50,
+          "genderless": false
+        },
+        "evolutionStage": {
+          "current": 2,
+          "max": 3
+        },
+        "evolution": "Golbat pode evoluir para Crobat no nível 14 ou superior quando sua Lealdade for +2 ou maior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
+        "biography": "<p>O Pokémon Morcego. Golbat adora beber o sangue de outras criaturas. Dizem que, ao encontrar outros de sua espécie passando fome, às vezes compartilha o sangue que coletou. Seus pés são pequenos, mas ele caminha com habilidade. Aproxima-se silenciosamente de presas adormecidas antes de cravar as presas e sugar seu sangue.</p>",
+        "abilities": {
+          "str": {
+            "value": 14
+          },
+          "dex": {
+            "value": 18
+          },
+          "con": {
+            "value": 14
+          },
+          "int": {
+            "value": 6
+          },
+          "wis": {
+            "value": 14
+          },
+          "cha": {
+            "value": 8
+          }
+        },
+        "skills": [
+          "Furtividade"
+        ],
+        "armorClass": {
+          "value": 15
+        },
+        "hitPoints": {
+          "value": 50,
+          "max": 50,
+          "hitDie": "d10"
+        },
+        "movement": {
+          "walk": 3,
+          "other": "3m de caminhada, 9m de voo"
+        },
+        "senses": "Percepção às Cegas 30m",
+        "passiveAbility": {
+          "options": [
+            "Inner Focus"
+          ],
+          "active": "Inner Focus"
+        },
+        "hiddenAbility": "Infiltrator",
+        "level": 5,
+        "moveTable": [
+          {
+            "level": 1,
+            "moves": [
+              "Absorb",
+              "Astonish",
+              "Bite",
+              "Screech",
+              "Supersonic"
+            ]
+          },
+          {
+            "level": 5,
+            "moves": [
+              "Wing Attack"
+            ]
+          },
+          {
+            "level": 6,
+            "moves": [
+              "Confuse Ray"
+            ]
+          },
+          {
+            "level": 7,
+            "moves": [
+              "Air Cutter"
+            ]
+          },
+          {
+            "level": 8,
+            "moves": [
+              "Swift"
+            ]
+          },
+          {
+            "level": 9,
+            "moves": [
+              "Poison Fang"
+            ]
+          },
+          {
+            "level": 11,
+            "moves": [
+              "Mean Look"
+            ]
+          },
+          {
+            "level": 12,
+            "moves": [
+              "Leech Life"
+            ]
+          },
+          {
+            "level": 14,
+            "moves": [
+              "Haze"
+            ]
+          },
+          {
+            "level": 15,
+            "moves": [
+              "Air Slash",
+              "Venoshock"
+            ]
+          },
+          {
+            "level": 16,
+            "moves": [
+              "Quick Guard"
+            ]
+          }
+        ],
+        "knownMoves": [
+          "Absorb",
+          "Astonish",
+          "Bite",
+          "Screech"
+        ],
+        "tms": [
+          "Acrobatics",
+          "Aerial Ace",
+          "Air Slash",
+          "Assurance",
+          "Attract",
+          "Confide",
+          "Defog",
+          "Double Team",
+          "Dual Wingbeat",
+          "Facade",
+          "Fly",
+          "Frustration",
+          "Giga Drain",
+          "Giga Impact",
+          "Heat Wave",
+          "Hidden Power",
+          "Hyper Beam",
+          "Leech Life",
+          "Ominous Wind",
+          "Payback",
+          "Protect",
+          "Rain Dance",
+          "Rest",
+          "Return",
+          "Roost",
+          "Round",
+          "Screech",
+          "Shadow Ball",
+          "Sleep Talk",
+          "Sludge Bomb",
+          "Snatch",
+          "Snore",
+          "Steel Wing",
+          "Substitute",
+          "Sunny Day",
+          "Super Fang",
+          "Swagger",
+          "Swift",
+          "Tailwind",
+          "Taunt",
+          "Thief",
+          "Torment",
+          "Toxic",
+          "U-turn",
+          "Uproar",
+          "Venoshock",
+          "Zen Headbutt"
+        ],
+        "eggMoves": [],
+        "typeDefenseOverrides": {},
+        "nature": {
+          "name": "",
+          "increased": "",
+          "decreased": ""
+        },
+        "loyalty": 0,
+        "shiny": false,
+        "evs": {
+          "str": 0,
+          "dex": 0,
+          "con": 0,
+          "int": 0,
+          "wis": 0,
+          "cha": 0
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -242,5 +335,980 @@
     "texture": {
       "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png"
     }
-  }
+  },
+  "items": [
+    {
+      "_id": "yU1IokU6kn1sgz6t",
+      "name": "Tipo Venenoso",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.yU1IokU6kn1sgz6t"
+    },
+    {
+      "_id": "qmittEaksOoraxhj",
+      "name": "Tipo Voador",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-flying.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Voador.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.qmittEaksOoraxhj"
+    },
+    {
+      "_id": "GuLshUvm9eGnUiB1",
+      "name": "Habilidade Passiva: Inner Focus",
+      "type": "feat",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": {
+          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.GuLshUvm9eGnUiB1"
+    },
+    {
+      "_id": "wnx4Ngtd5LvdlpEO",
+      "name": "Habilidade Oculta: Infiltrator",
+      "type": "feat",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": {
+          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.wnx4Ngtd5LvdlpEO"
+    },
+    {
+      "_id": "wv7hfpZtA75lkJz2",
+      "name": "Absorb",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você dispara feixes vermelhos que envolvem o alvo e drenam sua força vital. Faça um ataque à distância em uma criatura, causando 1d4 + MOVE de dano de grama. Metade do dano causado é convertido em cura para o usuário (arredondado para cima).</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Grama",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "15",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "LN0bdT2xVbbYZpMV": {
+            "_id": "LN0bdT2xVbbYZpMV",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "grass",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 15,
+              "max": 15,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "20 pés (6 metros)",
+              "meters": 6.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você dispara feixes vermelhos que envolvem o alvo e drenam sua força vital. Faça um ataque à distância em uma criatura, causando 1d4 + MOVE de dano de grama. Metade do dano causado é convertido em cura para o usuário (arredondado para cima).</p>",
+            "higherLevels": "<p>O dado de dano para esse Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "1d4",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "1d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "1d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "1d10"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.wv7hfpZtA75lkJz2"
+    },
+    {
+      "_id": "ngkNqbtrbIDZ42d3",
+      "name": "Astonish",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ghost.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você cria uma face assustadora envolta em sombras que amedronta o alvo. Faça um ataque à distância contra uma criatura, causando 1d6 + MOVE de dano fantasma em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Fantasma",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "Rx36q8iDFTndPiAD": {
+            "_id": "Rx36q8iDFTndPiAD",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 6,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "ghost",
+            "category": "",
+            "power": "DES/SAB",
+            "powerAbilities": [
+              "dex",
+              "wis"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "20 pés (6 metros)",
+              "meters": 6.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você cria uma face assustadora envolta em sombras que amedronta o alvo. Faça um ataque à distância contra uma criatura, causando 1d6 + MOVE de dano fantasma em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p>",
+            "higherLevels": "<p>O dado de dano para esse Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "1d6",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "1d10"
+                },
+                {
+                  "level": 10,
+                  "formula": "1d12"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.ngkNqbtrbIDZ42d3"
+    },
+    {
+      "_id": "2v1IIsy11tZn1uiK",
+      "name": "Bite",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-dark.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você morde o alvo com força. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano sombrio em um acerto bem- sucedido. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Sombrio",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "15",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "I3z68cQ4oBGgVTgx": {
+            "_id": "I3z68cQ4oBGgVTgx",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "dark",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 15,
+              "max": 15,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você morde o alvo com força. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano sombrio em um acerto bem- sucedido. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d6",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "3d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "3d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "5d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.2v1IIsy11tZn1uiK"
+    },
+    {
+      "_id": "mFOJvGH7eJLqldFs",
+      "name": "Screech",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um grito agudo que libera ondas de choque invisíveis, distorcendo o ar e desestabilizando uma criatura dentro do alcance. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a Defesa do alvo é reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Observação: Screech é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "CON/CAR",
+            "powerAbilities": [
+              "con",
+              "cha"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "30 pés (9 metros)",
+              "meters": 9.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você solta um grito agudo que libera ondas de choque invisíveis, distorcendo o ar e desestabilizando uma criatura dentro do alcance. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a Defesa do alvo é reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Observação: Screech é um Move baseado em som.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta o Ataque em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.mFOJvGH7eJLqldFs"
+    },
+    {
+      "_id": "4cK1Bx64T6kqIH4m",
+      "name": "Supersonic",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você emite um grito agudo, ouvido apenas por uma criatura dentro do alcance. Role 1d20 + MOVE e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Confuso.</p><p><strong>Observações:</strong></p><p>Supersonic é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "DES/SAB",
+            "powerAbilities": [
+              "dex",
+              "wis"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "40 pés (12 metros)",
+              "meters": 12.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você emite um grito agudo, ouvido apenas por uma criatura dentro do alcance. Role 1d20 + MOVE e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Confuso.</p>",
+            "higherLevels": "",
+            "observations": "<p>Supersonic é um Move baseado em som.</p>",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.4cK1Bx64T6kqIH4m"
+    },
+    {
+      "_id": "XVPyJEkLdGwHZ9l2",
+      "name": "Wing Attack",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-flying.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca uma criatura alvo com suas asas. Você pode se mover imediatamente até 15 pés (4,5 metros) e fazer um ataque corpo a corpo contra uma criatura dentro do alcance, sem sofrer um ataque de oportunidade, causando 2d6 + MOVE de dano voador em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Voador",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "P1SEA672ABboadQs": {
+            "_id": "P1SEA672ABboadQs",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "damage",
+            "damage": {
+              "critical": {
+                "allow": false,
+                "bonus": ""
+              },
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "flying",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você ataca uma criatura alvo com suas asas. Você pode se mover imediatamente até 15 pés (4,5 metros) e fazer um ataque corpo a corpo contra uma criatura dentro do alcance, sem sofrer um ataque de oportunidade, causando 2d6 + MOVE de dano voador em um acerto.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d6",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "3d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "3d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "5d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.XVPyJEkLdGwHZ9l2"
+    },
+    {
+      "_id": "puxgWuHITA1wwldj",
+      "name": "Struggle",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {
+          "XswP1sziaokq7KFo": {
+            "_id": "XswP1sziaokq7KFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 0,
+              "max": 0,
+              "unlimited": true
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / 60 pés (18 metros)",
+              "meters": 18.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+            "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+            "damage": {
+              "baseFormula": "1d10",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d10"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!Vof50N1MM0l7Gd9M.puxgWuHITA1wwldj"
+    }
+  ]
 }

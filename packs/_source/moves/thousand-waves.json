@@ -2,56 +2,146 @@
   "_key": "!items!Kj5sJflVpO8xr9oP",
   "_id": "Kj5sJflVpO8xr9oP",
   "name": "Thousand Waves",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
   "system": {
-    "moveType": "ground",
-    "category": "",
-    "power": "DES/SAB",
-    "powerAbilities": [
-      "dex",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 60 pés / 18 metros)</p><p>Uma onda de energia verde percorre o campo de batalha em um cone de 60 pés (18 metros), centrado em você. Qualquer criatura pega na onda deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra em caso de falha, ou a metade disso em caso de sucesso. Qualquer criatura que falhe na rolagem de resistência não pode fugir, ser trocada ou se afastar de você para além do alcance. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. O efeito se mantém enquanto você permanecer em batalha. Isso não impede os efeitos de Moves, habilidades passivas ou itens que forçam a substituição do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Terrestre",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto ativo",
-    "range": {
-      "raw": "Pessoal (cone de 60 pés / 18 metros)",
-      "meters": 18.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Uma onda de energia verde percorre o campo de batalha em um cone de 60 pés (18 metros), centrado em você. Qualquer criatura pega na onda deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra em caso de falha, ou a metade disso em caso de sucesso. Qualquer criatura que falhe na rolagem de resistência não pode fugir, ser trocada ou se afastar de você para além do alcance. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. O efeito se mantém enquanto você permanecer em batalha. Isso não impede os efeitos de Moves, habilidades passivas ou itens que forçam a substituição do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d12"
-        },
-        {
-          "level": 17,
-          "formula": "4d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "Sjjw4t5kirUk1ukW": {
+        "_id": "Sjjw4t5kirUk1ukW",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ground",
+        "category": "",
+        "power": "DES/SAB",
+        "powerAbilities": [
+          "dex",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto ativo",
+        "range": {
+          "raw": "Pessoal (cone de 60 pés / 18 metros)",
+          "meters": 18.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Uma onda de energia verde percorre o campo de batalha em um cone de 60 pés (18 metros), centrado em você. Qualquer criatura pega na onda deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra em caso de falha, ou a metade disso em caso de sucesso. Qualquer criatura que falhe na rolagem de resistência não pode fugir, ser trocada ou se afastar de você para além do alcance. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. O efeito se mantém enquanto você permanecer em batalha. Isso não impede os efeitos de Moves, habilidades passivas ou itens que forçam a substituição do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d12"
+            },
+            {
+              "level": 17,
+              "formula": "4d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

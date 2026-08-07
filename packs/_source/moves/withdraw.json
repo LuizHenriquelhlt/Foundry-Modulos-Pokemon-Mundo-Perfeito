@@ -2,41 +2,67 @@
   "_key": "!items!jWLgD6slpWtmNMFq",
   "_id": "jWLgD6slpWtmNMFq",
   "name": "Withdraw",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "Nenhum",
-    "powerAbilities": [],
-    "activation": {
-      "type": "reaction",
-      "raw": "1 reação / ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Quando sujeito a um ataque corpo a corpo, você pode gastar sua reação para aumentar sua Defesa em 1 estágio antes de receber o dano, podendo ser acumulado em até 6 estágios. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 20,
-      "max": 20,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal",
-      "meters": 0.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "20",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Quando sujeito a um ataque corpo a corpo, você pode gastar sua reação para aumentar sua Defesa em 1 estágio antes de receber o dano, podendo ser acumulado em até 6 estágios. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "Nenhum",
+        "powerAbilities": [],
+        "activation": {
+          "type": "reaction",
+          "raw": "1 reação / ação"
+        },
+        "pp": {
+          "value": 20,
+          "max": 20,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal",
+          "meters": 0.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Quando sujeito a um ataque corpo a corpo, você pode gastar sua reação para aumentar sua Defesa em 1 estágio antes de receber o dano, podendo ser acumulado em até 6 estágios. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -44,7 +70,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6620,
+  "sort": 6630,
   "ownership": {
     "default": 0
   }

@@ -2,58 +2,151 @@
   "_key": "!items!yWBHQHfRRGtju77J",
   "_id": "yWBHQHfRRGtju77J",
   "name": "Armor Cannon",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você concentra uma enorme bola de fogo entre os braços, posiciona suas ombreiras como se fossem um canhão e dispara o ataque, envolvendo o oponente em chamas. Faça um ataque à distância contra um alvo em alcance, causando 3d8 + MOVE de dano do tipo fogo em um acerto. Este Move enfraquece sua armadura, reduzindo sua Defesa e Defesa Especial em 1 estágio, podendo ser acumulado em até -6 estágios cada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "80 pés (24 metros)",
-      "meters": 24.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você concentra uma enorme bola de fogo entre os braços, posiciona suas ombreiras como se fossem um canhão e dispara o ataque, envolvendo o oponente em chamas. Faça um ataque à distância contra um alvo em alcance, causando 3d8 + MOVE de dano do tipo fogo em um acerto. Este Move enfraquece sua armadura, reduzindo sua Defesa e Defesa Especial em 1 estágio, podendo ser acumulado em até -6 estágios cada.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "6d6"
-        },
-        {
-          "level": 10,
-          "formula": "6d8"
-        },
-        {
-          "level": 17,
-          "formula": "6d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "DMzXMK6qHOLSIGo4": {
+        "_id": "DMzXMK6qHOLSIGo4",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "80 pés (24 metros)",
+          "meters": 24.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você concentra uma enorme bola de fogo entre os braços, posiciona suas ombreiras como se fossem um canhão e dispara o ataque, envolvendo o oponente em chamas. Faça um ataque à distância contra um alvo em alcance, causando 3d8 + MOVE de dano do tipo fogo em um acerto. Este Move enfraquece sua armadura, reduzindo sua Defesa e Defesa Especial em 1 estágio, podendo ser acumulado em até -6 estágios cada.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "6d6"
+            },
+            {
+              "level": 10,
+              "formula": "6d8"
+            },
+            {
+              "level": 17,
+              "formula": "6d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

@@ -2,58 +2,151 @@
   "_key": "!items!4O6QxEbKHsdu5TCG",
   "_id": "4O6QxEbKHsdu5TCG",
   "name": "Mighty Cleave",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
   "system": {
-    "moveType": "rock",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você concentra a luz acumulada sobre sua cabeça e desfere um corte poderoso contra uma criatura. Faça um ataque corpo a corpo, causando 1d20 + MOVE de dano do tipo Pedra em um acerto. Este Move ignora Moves de proteção como Protect ou Detect. Se usado por um Pokémon com a habilidade passiva Sharpness, os dados de dano deste Move aumentam em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 4d10 no nível 10 e 6d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Pedra",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você concentra a luz acumulada sobre sua cabeça e desfere um corte poderoso contra uma criatura. Faça um ataque corpo a corpo, causando 1d20 + MOVE de dano do tipo Pedra em um acerto. Este Move ignora Moves de proteção como Protect ou Detect. Se usado por um Pokémon com a habilidade passiva Sharpness, os dados de dano deste Move aumentam em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 4d10 no nível 10 e 6d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d20",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d10"
-        },
-        {
-          "level": 10,
-          "formula": "4d10"
-        },
-        {
-          "level": 17,
-          "formula": "6d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "ZsGeOmC3eMWk5hQJ": {
+        "_id": "ZsGeOmC3eMWk5hQJ",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 20,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "rock",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você concentra a luz acumulada sobre sua cabeça e desfere um corte poderoso contra uma criatura. Faça um ataque corpo a corpo, causando 1d20 + MOVE de dano do tipo Pedra em um acerto. Este Move ignora Moves de proteção como Protect ou Detect. Se usado por um Pokémon com a habilidade passiva Sharpness, os dados de dano deste Move aumentam em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 4d10 no nível 10 e 6d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d20",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d10"
+            },
+            {
+              "level": 10,
+              "formula": "4d10"
+            },
+            {
+              "level": 17,
+              "formula": "6d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

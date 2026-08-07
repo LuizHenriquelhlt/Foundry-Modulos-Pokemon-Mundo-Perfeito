@@ -2,36 +2,9 @@
   "_key": "!actors!68HJeUDIi71LC0Ju",
   "_id": "68HJeUDIi71LC0Ju",
   "name": "Graveler",
-  "type": "pokemon-mundo-perfeito.pokemon",
+  "type": "npc",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png",
   "system": {
-    "species": "graveler",
-    "dexNumber": 75,
-    "types": {
-      "type1": "rock",
-      "type2": "ground"
-    },
-    "speciesRank": {
-      "value": 6.0,
-      "display": "6"
-    },
-    "size": "small",
-    "heightMeters": 1.0,
-    "minLevelFound": 5,
-    "eggGroups": [
-      "Mineral"
-    ],
-    "gender": {
-      "malePercent": 50,
-      "femalePercent": 50,
-      "genderless": false
-    },
-    "evolutionStage": {
-      "current": 2,
-      "max": 3
-    },
-    "evolution": "Graveler pode evoluir para Golem no nível 12 ou superior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
-    "biography": "<p>O Pokémon Rocha. Graveler anda devagar, por isso se locomove rolando e não dá atenção a nenhum objeto em seu caminho. Suas comidas favoritas são pedras cobertas de musgo. Ele consome mais de uma tonelada delas por dia, mastigando ruidosamente enquanto come.</p>",
     "abilities": {
       "str": {
         "value": 16
@@ -52,180 +25,304 @@
         "value": 10
       }
     },
-    "skills": [
-      "Atletismo",
-      "Sobrevivência"
-    ],
-    "armorClass": {
-      "value": 15
-    },
-    "hitPoints": {
-      "value": 55,
-      "max": 55,
-      "hitDie": "d8"
-    },
-    "movement": {
-      "walk": 5,
-      "other": "7,5m de caminhada"
-    },
-    "senses": "Sentido Sísmico 15m",
-    "passiveAbility": {
-      "options": [],
-      "active": ""
-    },
-    "hiddenAbility": "Sand Veil",
-    "level": 5,
-    "moveTable": [
-      {
-        "level": 1,
-        "moves": [
-          "Defense Curl",
-          "Mud Sport",
-          "Rock Polish",
-          "Tackle"
-        ]
+    "attributes": {
+      "ac": {
+        "flat": 15,
+        "calc": "flat"
       },
-      {
-        "level": 4,
-        "moves": [
-          "Magnitude",
-          "Rollout"
-        ]
+      "hp": {
+        "value": 55,
+        "max": 55,
+        "temp": 0,
+        "tempmax": 0,
+        "formula": ""
       },
-      {
-        "level": 6,
-        "moves": [
-          "Rock Throw",
-          "Smack Down"
-        ]
+      "movement": {
+        "walk": 7.5,
+        "swim": 0,
+        "fly": 0,
+        "climb": 0,
+        "burrow": 0,
+        "hover": false,
+        "units": "m"
       },
-      {
-        "level": 8,
-        "moves": [
-          "Bulldoze",
-          "Self-Destruct"
-        ]
-      },
-      {
-        "level": 10,
-        "moves": [
-          "Stealth Rock"
-        ]
-      },
-      {
-        "level": 12,
-        "moves": [
-          "Rock Blast"
-        ]
-      },
-      {
-        "level": 14,
-        "moves": [
-          "Earthquake"
-        ]
-      },
-      {
-        "level": 15,
-        "moves": [
-          "Double-Edge",
-          "Explosion"
-        ]
-      },
-      {
-        "level": 16,
-        "moves": [
-          "Stone Edge"
-        ]
+      "senses": {
+        "darkvision": 0,
+        "blindsight": 0,
+        "tremorsense": 15.0,
+        "truesight": 0,
+        "units": "m",
+        "special": ""
       }
-    ],
-    "knownMoves": [
-      "Defense Curl",
-      "Mud Sport",
-      "Rock Polish",
-      "Tackle"
-    ],
-    "tms": [
-      "Attract",
-      "Block",
-      "Body Press",
-      "Body Slam",
-      "Brick Break",
-      "Bulldoze",
-      "Confide",
-      "Curse",
-      "Dig",
-      "Double Team",
-      "Double-Edge",
-      "Earth Power",
-      "Earthquake",
-      "Endure",
-      "Explosion",
-      "Facade",
-      "Fire Blast",
-      "Fire Punch",
-      "Flamethrower",
-      "Fling",
-      "Focus Blast",
-      "Focus Punch",
-      "Frustration",
-      "Gyro Ball",
-      "Hard Press",
-      "Heavy Slam",
-      "Hidden Power",
-      "High Horsepower",
-      "Iron Defense",
-      "Iron Head",
-      "Metronome",
-      "Mud Shot",
-      "Mud-Slap",
-      "Nature Power",
-      "Protect",
-      "Rest",
-      "Return",
-      "Rock Blast",
-      "Rock Polish",
-      "Rock Slide",
-      "Rock Smash",
-      "Rock Tomb",
-      "Round",
-      "Sandstorm",
-      "Scary Face",
-      "Sleep Talk",
-      "Smack Down",
-      "Snore",
-      "Stealth Rock",
-      "Stomping Tantrum",
-      "Stone Edge",
-      "Substitute",
-      "Sunny Day",
-      "Superpower",
-      "Swagger",
-      "Take Down",
-      "Tera Blast",
-      "Thunder Punch",
-      "Toxic"
-    ],
-    "eggMoves": [],
-    "typeDefenseOverrides": {},
-    "nature": {
-      "name": "",
-      "increased": "",
-      "decreased": ""
     },
-    "loyalty": 0,
-    "shiny": false,
-    "evs": {
-      "str": 0,
-      "dex": 0,
-      "con": 0,
-      "int": 0,
-      "wis": 0,
-      "cha": 0
+    "details": {
+      "cr": 6.0,
+      "type": {
+        "value": "custom",
+        "subtype": "",
+        "custom": "Pokémon"
+      },
+      "biography": {
+        "value": "<p>O Pokémon Rocha. Graveler anda devagar, por isso se locomove rolando e não dá atenção a nenhum objeto em seu caminho. Suas comidas favoritas são pedras cobertas de musgo. Ele consome mais de uma tonelada delas por dia, mastigando ruidosamente enquanto come.</p><p><strong>SR:</strong> 6 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 5 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Mineral &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 2/3</p><p><strong>Evolução:</strong> Graveler pode evoluir para Golem no nível 12 ou superior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Defense Curl, Mud Sport, Rock Polish, Tackle</td></tr><tr><td style='text-align:center'>4</td><td>Magnitude, Rollout</td></tr><tr><td style='text-align:center'>6</td><td>Rock Throw, Smack Down</td></tr><tr><td style='text-align:center'>8</td><td>Bulldoze, Self-Destruct</td></tr><tr><td style='text-align:center'>10</td><td>Stealth Rock</td></tr><tr><td style='text-align:center'>12</td><td>Rock Blast</td></tr><tr><td style='text-align:center'>14</td><td>Earthquake</td></tr><tr><td style='text-align:center'>15</td><td>Double-Edge, Explosion</td></tr><tr><td style='text-align:center'>16</td><td>Stone Edge</td></tr></tbody></table><h3>TMs</h3><p>Attract, Block, Body Press, Body Slam, Brick Break, Bulldoze, Confide, Curse, Dig, Double Team, Double-Edge, Earth Power, Earthquake, Endure, Explosion, Facade, Fire Blast, Fire Punch, Flamethrower, Fling, Focus Blast, Focus Punch, Frustration, Gyro Ball, Hard Press, Heavy Slam, Hidden Power, High Horsepower, Iron Defense, Iron Head, Metronome, Mud Shot, Mud-Slap, Nature Power, Protect, Rest, Return, Rock Blast, Rock Polish, Rock Slide, Rock Smash, Rock Tomb, Round, Sandstorm, Scary Face, Sleep Talk, Smack Down, Snore, Stealth Rock, Stomping Tantrum, Stone Edge, Substitute, Sunny Day, Superpower, Swagger, Take Down, Tera Blast, Thunder Punch, Toxic</p>",
+        "public": ""
+      },
+      "alignment": ""
+    },
+    "traits": {
+      "size": "sm",
+      "di": {
+        "value": [],
+        "custom": "Tipo Elétrico"
+      },
+      "dr": {
+        "value": [],
+        "custom": "Tipo Normal; Tipo Fogo; Tipo Venenoso (x1/4); Tipo Voador; Tipo Pedra"
+      },
+      "dv": {
+        "value": [],
+        "custom": "Tipo Água (x4); Tipo Grama (x4); Tipo Gelo; Tipo Lutador; Tipo Terrestre; Tipo Aço"
+      },
+      "languages": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "skills": {
+      "ath": {
+        "value": 1,
+        "ability": "str"
+      },
+      "sur": {
+        "value": 1,
+        "ability": "wis"
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "species": {
+        "species": "graveler",
+        "dexNumber": 75,
+        "types": {
+          "type1": "rock",
+          "type2": "ground"
+        },
+        "speciesRank": {
+          "value": 6.0,
+          "display": "6"
+        },
+        "size": "small",
+        "heightMeters": 1.0,
+        "minLevelFound": 5,
+        "eggGroups": [
+          "Mineral"
+        ],
+        "gender": {
+          "malePercent": 50,
+          "femalePercent": 50,
+          "genderless": false
+        },
+        "evolutionStage": {
+          "current": 2,
+          "max": 3
+        },
+        "evolution": "Graveler pode evoluir para Golem no nível 12 ou superior. Quando evolui, seus pontos de vida aumentam no dobro do seu nível.",
+        "biography": "<p>O Pokémon Rocha. Graveler anda devagar, por isso se locomove rolando e não dá atenção a nenhum objeto em seu caminho. Suas comidas favoritas são pedras cobertas de musgo. Ele consome mais de uma tonelada delas por dia, mastigando ruidosamente enquanto come.</p>",
+        "abilities": {
+          "str": {
+            "value": 16
+          },
+          "dex": {
+            "value": 10
+          },
+          "con": {
+            "value": 16
+          },
+          "int": {
+            "value": 6
+          },
+          "wis": {
+            "value": 12
+          },
+          "cha": {
+            "value": 10
+          }
+        },
+        "skills": [
+          "Atletismo",
+          "Sobrevivência"
+        ],
+        "armorClass": {
+          "value": 15
+        },
+        "hitPoints": {
+          "value": 55,
+          "max": 55,
+          "hitDie": "d8"
+        },
+        "movement": {
+          "walk": 5,
+          "other": "7,5m de caminhada"
+        },
+        "senses": "Sentido Sísmico 15m",
+        "passiveAbility": {
+          "options": [],
+          "active": ""
+        },
+        "hiddenAbility": "Sand Veil",
+        "level": 5,
+        "moveTable": [
+          {
+            "level": 1,
+            "moves": [
+              "Defense Curl",
+              "Mud Sport",
+              "Rock Polish",
+              "Tackle"
+            ]
+          },
+          {
+            "level": 4,
+            "moves": [
+              "Magnitude",
+              "Rollout"
+            ]
+          },
+          {
+            "level": 6,
+            "moves": [
+              "Rock Throw",
+              "Smack Down"
+            ]
+          },
+          {
+            "level": 8,
+            "moves": [
+              "Bulldoze",
+              "Self-Destruct"
+            ]
+          },
+          {
+            "level": 10,
+            "moves": [
+              "Stealth Rock"
+            ]
+          },
+          {
+            "level": 12,
+            "moves": [
+              "Rock Blast"
+            ]
+          },
+          {
+            "level": 14,
+            "moves": [
+              "Earthquake"
+            ]
+          },
+          {
+            "level": 15,
+            "moves": [
+              "Double-Edge",
+              "Explosion"
+            ]
+          },
+          {
+            "level": 16,
+            "moves": [
+              "Stone Edge"
+            ]
+          }
+        ],
+        "knownMoves": [
+          "Defense Curl",
+          "Mud Sport",
+          "Rock Polish",
+          "Tackle"
+        ],
+        "tms": [
+          "Attract",
+          "Block",
+          "Body Press",
+          "Body Slam",
+          "Brick Break",
+          "Bulldoze",
+          "Confide",
+          "Curse",
+          "Dig",
+          "Double Team",
+          "Double-Edge",
+          "Earth Power",
+          "Earthquake",
+          "Endure",
+          "Explosion",
+          "Facade",
+          "Fire Blast",
+          "Fire Punch",
+          "Flamethrower",
+          "Fling",
+          "Focus Blast",
+          "Focus Punch",
+          "Frustration",
+          "Gyro Ball",
+          "Hard Press",
+          "Heavy Slam",
+          "Hidden Power",
+          "High Horsepower",
+          "Iron Defense",
+          "Iron Head",
+          "Metronome",
+          "Mud Shot",
+          "Mud-Slap",
+          "Nature Power",
+          "Protect",
+          "Rest",
+          "Return",
+          "Rock Blast",
+          "Rock Polish",
+          "Rock Slide",
+          "Rock Smash",
+          "Rock Tomb",
+          "Round",
+          "Sandstorm",
+          "Scary Face",
+          "Sleep Talk",
+          "Smack Down",
+          "Snore",
+          "Stealth Rock",
+          "Stomping Tantrum",
+          "Stone Edge",
+          "Substitute",
+          "Sunny Day",
+          "Superpower",
+          "Swagger",
+          "Take Down",
+          "Tera Blast",
+          "Thunder Punch",
+          "Toxic"
+        ],
+        "eggMoves": [],
+        "typeDefenseOverrides": {},
+        "nature": {
+          "name": "",
+          "increased": "",
+          "decreased": ""
+        },
+        "loyalty": 0,
+        "shiny": false,
+        "evs": {
+          "str": 0,
+          "dex": 0,
+          "con": 0,
+          "int": 0,
+          "wis": 0,
+          "cha": 0
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -243,5 +340,834 @@
     "texture": {
       "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png"
     }
-  }
+  },
+  "items": [
+    {
+      "_id": "Zsbpd1U6ObVTv6xX",
+      "name": "Tipo Pedra",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Pedra.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.Zsbpd1U6ObVTv6xX"
+    },
+    {
+      "_id": "Cg2AmFObfQTmv4VJ",
+      "name": "Tipo Terrestre",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Terrestre.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.Cg2AmFObfQTmv4VJ"
+    },
+    {
+      "_id": "O8B5tNT0AHbbX65X",
+      "name": "Habilidade Oculta: Sand Veil",
+      "type": "feat",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": {
+          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.O8B5tNT0AHbbX65X"
+    },
+    {
+      "_id": "Vgf1BdIYDHpNpRWQ",
+      "name": "Defense Curl",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se enrola em formato esférico, aumentando sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Ao ativar Defense Curl, enquanto você permanecer em batalha e até ser trocado, dobre os dados de dano dos Moves Rollout ou Ice Ball.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "Pessoal",
+              "meters": 0.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você se enrola em formato esférico, aumentando sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Ao ativar Defense Curl, enquanto você permanecer em batalha e até ser trocado, dobre os dados de dano dos Moves Rollout ou Ice Ball.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Precisão em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.Vgf1BdIYDHpNpRWQ"
+    },
+    {
+      "_id": "yoeRrqdA28Vl2Oyk",
+      "name": "Mud Sport",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés/12 metros)</p><p>Você cobre todo o ambiente em alcance num campo de lama pela duração, reduzindo o dano de ataques do tipo Elétrico pela metade, sejam estes ativados dentro da área ou contra alvos dentro da área.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Terrestre",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "ground",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "5 rodadas",
+            "range": {
+              "raw": "Pessoal (raio de 40 pés/12 metros)",
+              "meters": 12.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você cobre todo o ambiente em alcance num campo de lama pela duração, reduzindo o dano de ataques do tipo Elétrico pela metade, sejam estes ativados dentro da área ou contra alvos dentro da área.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Defesa Especial em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.yoeRrqdA28Vl2Oyk"
+    },
+    {
+      "_id": "gke42CF4iz8fyv9c",
+      "name": "Rock Polish",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Seu rígido corpo rochoso emite um brilho, polindo seu corpo e reduzindo o atrito. Ao ativar este Move, sua Velocidade é aumentada em 2 estágios, podendo ser acumulado em até 6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Pedra",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "rock",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "Pessoal",
+              "meters": 0.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Seu rígido corpo rochoso emite um brilho, polindo seu corpo e reduzindo o atrito. Ao ativar este Move, sua Velocidade é aumentada em 2 estágios, podendo ser acumulado em até 6 estágios.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Remove todas as Mudanças de Status negativas."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.gke42CF4iz8fyv9c"
+    },
+    {
+      "_id": "xk9xF0JrBW2E3J4F",
+      "name": "Tackle",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "yvOXyHsKm4aK78Lf": {
+            "_id": "yvOXyHsKm4aK78Lf",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d4",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d10"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.xk9xF0JrBW2E3J4F"
+    },
+    {
+      "_id": "w9wxwUhRrNZ1RPge",
+      "name": "Magnitude",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (20 pés / 6 metros de raio)</p><p>Você sacode o chão com um terremoto destruidor. Todas as criaturas dentro do alcance devem fazer um teste de DES contra sua CD de Move, sofrendo metade do dano em caso de sucesso e o dano total em caso de falha. Criaturas dentro do alcance que estiverem escavadas ou na fase invulnerável de Dig sofrem o dobro do dano deste Move. Role um d100 na tabela abaixo para determinar o dado de dano, e some o resultado ao seu MOVE. Criaturas elevadas são imunes aos efeitos e dano deste Move. Dano D100 Nível 1 Nível 5 Nível 10 Nível 17 01-05 1d4 1d4 1d6 1d6 06-15 1d6 1d10 1d12 2d8 16-35 1d10 2d8 2d10 4d6 36-65 2d8 1d20 3d10 3d12 66-85 3d6 3d10 3d12 4d12 86-95 2d12 4d8 4d12 7d8 96-100 5d6 5d8 6d10 6d12</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Terrestre",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "15",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "Y2cm3LmZmuEOn1HC": {
+            "_id": "Y2cm3LmZmuEOn1HC",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "save",
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "ground",
+            "category": "",
+            "power": "FOR",
+            "powerAbilities": [
+              "str"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 15,
+              "max": 15,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Pessoal (20 pés / 6 metros de raio)",
+              "meters": 6.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você sacode o chão com um terremoto destruidor. Todas as criaturas dentro do alcance devem fazer um teste de DES contra sua CD de Move, sofrendo metade do dano em caso de sucesso e o dano total em caso de falha. Criaturas dentro do alcance que estiverem escavadas ou na fase invulnerável de Dig sofrem o dobro do dano deste Move. Role um d100 na tabela abaixo para determinar o dado de dano, e some o resultado ao seu MOVE. Criaturas elevadas são imunes aos efeitos e dano deste Move. Dano D100 Nível 1 Nível 5 Nível 10 Nível 17 01-05 1d4 1d4 1d6 1d6 06-15 1d6 1d10 1d12 2d8 16-35 1d10 2d8 2d10 4d6 36-65 2d8 1d20 3d10 3d12 66-85 3d6 3d10 3d12 4d12 86-95 2d12 4d8 4d12 7d8 96-100 5d6 5d8 6d10 6d12</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.w9wxwUhRrNZ1RPge"
+    },
+    {
+      "_id": "UJBZsO5aR2k7ceRQ",
+      "name": "Rollout",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / linha de 20 pés (6 metros)</p><p>Você se lança em direção a um alvo, desferindo ataques sucessivos com força crescente. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo -1, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 1d6 + MOVE de dano do tipo Pedra em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Se você usar este Move em rodadas consecutivas, dobre a quantidade de dados de dano a cada acerto subsequente. O multiplicador máximo é de 16× o dano base. O acúmulo de dano é perdido se qualquer ataque errar ou se você ficar incapacitado. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Pedra",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "Nr71Pgsqo6pk744l": {
+            "_id": "Nr71Pgsqo6pk744l",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "damage",
+            "damage": {
+              "critical": {
+                "allow": false,
+                "bonus": ""
+              },
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 6,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "rock",
+            "category": "",
+            "power": "FOR",
+            "powerAbilities": [
+              "str"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / linha de 20 pés (6 metros)",
+              "meters": 6.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você se lança em direção a um alvo, desferindo ataques sucessivos com força crescente. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo -1, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 1d6 + MOVE de dano do tipo Pedra em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Se você usar este Move em rodadas consecutivas, dobre a quantidade de dados de dano a cada acerto subsequente. O multiplicador máximo é de 16× o dano base. O acúmulo de dano é perdido se qualquer ataque errar ou se você ficar incapacitado. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "1d6",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "1d10"
+                },
+                {
+                  "level": 10,
+                  "formula": "1d12"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.UJBZsO5aR2k7ceRQ"
+    },
+    {
+      "_id": "puxgWuHITA1wwldj",
+      "name": "Struggle",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {
+          "XswP1sziaokq7KFo": {
+            "_id": "XswP1sziaokq7KFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 0,
+              "max": 0,
+              "unlimited": true
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / 60 pés (18 metros)",
+              "meters": 18.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+            "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+            "damage": {
+              "baseFormula": "1d10",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d10"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!68HJeUDIi71LC0Ju.puxgWuHITA1wwldj"
+    }
+  ]
 }

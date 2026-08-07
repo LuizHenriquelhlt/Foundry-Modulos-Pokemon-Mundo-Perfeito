@@ -2,57 +2,138 @@
   "_key": "!items!fmVXlBaNq02LoamM",
   "_id": "fmVXlBaNq02LoamM",
   "name": "Steel Roller",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-steel.png",
   "system": {
-    "moveType": "steel",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / linha de 20 pés (6 metros)</p><p>Você sai rolando de maneira desastrosa, destruindo todo o terreno ao redor. Este Move não funciona caso seja ativado fora de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain). Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize um ataque corpo a corpo contra cada criatura no trajeto, causando 4d6 + MOVE de dano do tipo aço em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto. Ao ativar este Move, o terreno é desfeito imediatamente.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Aço",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo / linha de 20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você sai rolando de maneira desastrosa, destruindo todo o terreno ao redor. Este Move não funciona caso seja ativado fora de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain). Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize um ataque corpo a corpo contra cada criatura no trajeto, causando 4d6 + MOVE de dano do tipo aço em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto. Ao ativar este Move, o terreno é desfeito imediatamente.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d20"
-        },
-        {
-          "level": 10,
-          "formula": "5d10"
-        },
-        {
-          "level": 17,
-          "formula": "8d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "QZsULJ0cgNkzwlNL": {
+        "_id": "QZsULJ0cgNkzwlNL",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "steel",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo / linha de 20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você sai rolando de maneira desastrosa, destruindo todo o terreno ao redor. Este Move não funciona caso seja ativado fora de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain). Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize um ataque corpo a corpo contra cada criatura no trajeto, causando 4d6 + MOVE de dano do tipo aço em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto. Ao ativar este Move, o terreno é desfeito imediatamente.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d20"
+            },
+            {
+              "level": 10,
+              "formula": "5d10"
+            },
+            {
+              "level": 17,
+              "formula": "8d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

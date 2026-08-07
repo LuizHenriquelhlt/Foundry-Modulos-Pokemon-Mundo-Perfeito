@@ -2,58 +2,151 @@
   "_key": "!items!fHwYESPmXCyc5gCS",
   "_id": "fHwYESPmXCyc5gCS",
   "name": "Flip Turn",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca o alvo e, logo em seguida, recua rapidamente para trocar de lugar com um aliado que esteja aguardando. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano de água em um acerto. Caso acerte, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Flip Turn troca o usuário mesmo que ele esteja sob efeito de Ingrain, Arena Trap, Magnet Pull, Shadow Tag, Mean Look ou Block.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você ataca o alvo e, logo em seguida, recua rapidamente para trocar de lugar com um aliado que esteja aguardando. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano de água em um acerto. Caso acerte, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
-    "observations": "<p>Flip Turn troca o usuário mesmo que ele esteja sob efeito de Ingrain, Arena Trap, Magnet Pull, Shadow Tag, Mean Look ou Block.</p>",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d6"
-        },
-        {
-          "level": 10,
-          "formula": "3d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "LIRynprasnXzeYnA": {
+        "_id": "LIRynprasnXzeYnA",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você ataca o alvo e, logo em seguida, recua rapidamente para trocar de lugar com um aliado que esteja aguardando. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano de água em um acerto. Caso acerte, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+        "observations": "<p>Flip Turn troca o usuário mesmo que ele esteja sob efeito de Ingrain, Arena Trap, Magnet Pull, Shadow Tag, Mean Look ou Block.</p>",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d6"
+            },
+            {
+              "level": 10,
+              "formula": "3d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d6"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

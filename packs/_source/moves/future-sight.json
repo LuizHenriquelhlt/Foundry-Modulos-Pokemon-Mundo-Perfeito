@@ -2,56 +2,152 @@
   "_key": "!items!ugz1GlJF7Yr1S8hk",
   "_id": "ugz1GlJF7Yr1S8hk",
   "name": "Future Sight",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "FOR/SAB",
-    "powerAbilities": [
-      "str",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você lança ondas psíquicas no ar que se manifestarão atingindo um alvo em um momento futuro. Ao usar este Move, escolha um alvo dentro do alcance. O ataque será desferido automaticamente no início do turno do alvo na terceira rodada após o uso (a rodada atual conta como a primeira). Quando chegar este momento, faça um ataque à distância, causando 3d8 + MOVE de dano psíquico em um acerto, mesmo que o alvo tenha saído do alcance do Move. Caso o alvo seja trocado, o Pokémon que o substituiu receberá este ataque. Future Sight não pode ser interrompido por Moves de proteção (como Protect ou Detect), Endure ou pela habilidade Wonder Guard.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "3 rodadas",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você lança ondas psíquicas no ar que se manifestarão atingindo um alvo em um momento futuro. Ao usar este Move, escolha um alvo dentro do alcance. O ataque será desferido automaticamente no início do turno do alvo na terceira rodada após o uso (a rodada atual conta como a primeira). Quando chegar este momento, faça um ataque à distância, causando 3d8 + MOVE de dano psíquico em um acerto, mesmo que o alvo tenha saído do alcance do Move. Caso o alvo seja trocado, o Pokémon que o substituiu receberá este ataque. Future Sight não pode ser interrompido por Moves de proteção (como Protect ou Detect), Endure ou pela habilidade Wonder Guard.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "6d6"
-        },
-        {
-          "level": 10,
-          "formula": "6d8"
-        },
-        {
-          "level": 17,
-          "formula": "6d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "3CpbISadPLNfGgs6": {
+        "_id": "3CpbISadPLNfGgs6",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "FOR/SAB",
+        "powerAbilities": [
+          "str",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "3 rodadas",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você lança ondas psíquicas no ar que se manifestarão atingindo um alvo em um momento futuro. Ao usar este Move, escolha um alvo dentro do alcance. O ataque será desferido automaticamente no início do turno do alvo na terceira rodada após o uso (a rodada atual conta como a primeira). Quando chegar este momento, faça um ataque à distância, causando 3d8 + MOVE de dano psíquico em um acerto, mesmo que o alvo tenha saído do alcance do Move. Caso o alvo seja trocado, o Pokémon que o substituiu receberá este ataque. Future Sight não pode ser interrompido por Moves de proteção (como Protect ou Detect), Endure ou pela habilidade Wonder Guard.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "6d6"
+            },
+            {
+              "level": 10,
+              "formula": "6d8"
+            },
+            {
+              "level": 17,
+              "formula": "6d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

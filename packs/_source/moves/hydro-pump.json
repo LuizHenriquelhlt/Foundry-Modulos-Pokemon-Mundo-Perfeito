@@ -2,56 +2,146 @@
   "_key": "!items!IINroOY3GeQGy0Nx",
   "_id": "IINroOY3GeQGy0Nx",
   "name": "Hydro Pump",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você envia uma onda de água poderosa em direção às criaturas em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Criaturas atingidas pela explosão devem ter sucesso em um teste de DES contra sua CD de Move -2, sofrendo 2d12 + MOVE de dano de água em uma falha, e metade desse dano em caso de sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (linha de 80 pés / 24 metros)",
-      "meters": 24.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você envia uma onda de água poderosa em direção às criaturas em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Criaturas atingidas pela explosão devem ter sucesso em um teste de DES contra sua CD de Move -2, sofrendo 2d12 + MOVE de dano de água em uma falha, e metade desse dano em caso de sucesso.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d8"
-        },
-        {
-          "level": 10,
-          "formula": "4d12"
-        },
-        {
-          "level": 17,
-          "formula": "7d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "tv8BZmshPL4KOOda": {
+        "_id": "tv8BZmshPL4KOOda",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (linha de 80 pés / 24 metros)",
+          "meters": 24.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envia uma onda de água poderosa em direção às criaturas em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Criaturas atingidas pela explosão devem ter sucesso em um teste de DES contra sua CD de Move -2, sofrendo 2d12 + MOVE de dano de água em uma falha, e metade desse dano em caso de sucesso.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d8"
+            },
+            {
+              "level": 10,
+              "formula": "4d12"
+            },
+            {
+              "level": 17,
+              "formula": "7d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

@@ -2,43 +2,69 @@
   "_key": "!items!b1yVzlPzt1ivVYGL",
   "_id": "b1yVzlPzt1ivVYGL",
   "name": "Mirror Coat",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "CON/SAB",
-    "powerAbilities": [
-      "con",
-      "wis"
-    ],
-    "activation": {
-      "type": "reaction",
-      "raw": "1 reação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você rapidamente envolve seu corpo em uma aura brilhante, rebatendo todo ataque à distância. Após você ser atingido por um ataque à distância, você pode usar sua reação para desferir um ataque à distância contra a criatura, causando o dobro do dano recebido como dano do tipo Psíquico em caso de acerto (máximo de 5 vezes o seu nível atual). Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo Vulnerabilidades, STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p><p><strong>Observações:</strong></p><p>Mirror Coat não reflete ataques absorvidos por Substitute. Mirror Coat não pode ser escolhido pelo Move Assist.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "100 pés (30 metros)",
-      "meters": 30.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você rapidamente envolve seu corpo em uma aura brilhante, rebatendo todo ataque à distância. Após você ser atingido por um ataque à distância, você pode usar sua reação para desferir um ataque à distância contra a criatura, causando o dobro do dano recebido como dano do tipo Psíquico em caso de acerto (máximo de 5 vezes o seu nível atual). Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo Vulnerabilidades, STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p>",
-    "higherLevels": "",
-    "observations": "<p>Mirror Coat não reflete ataques absorvidos por Substitute. Mirror Coat não pode ser escolhido pelo Move Assist.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    }
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "CON/SAB",
+        "powerAbilities": [
+          "con",
+          "wis"
+        ],
+        "activation": {
+          "type": "reaction",
+          "raw": "1 reação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "100 pés (30 metros)",
+          "meters": 30.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você rapidamente envolve seu corpo em uma aura brilhante, rebatendo todo ataque à distância. Após você ser atingido por um ataque à distância, você pode usar sua reação para desferir um ataque à distância contra a criatura, causando o dobro do dano recebido como dano do tipo Psíquico em caso de acerto (máximo de 5 vezes o seu nível atual). Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo Vulnerabilidades, STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p>",
+        "higherLevels": "",
+        "observations": "<p>Mirror Coat não reflete ataques absorvidos por Substitute. Mirror Coat não pode ser escolhido pelo Move Assist.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

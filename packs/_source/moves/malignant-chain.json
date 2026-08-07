@@ -2,58 +2,145 @@
   "_key": "!items!8pS62HJYGN94CnIN",
   "_id": "8pS62HJYGN94CnIN",
   "name": "Malignant Chain",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "CON/SAB",
-    "powerAbilities": [
-      "con",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você envolve o alvo em uma corrente tóxica e corrosiva, despejando um veneno potente em seu corpo. O alvo deve realizar um teste de CON contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo Venenoso em uma falha, e metade disso em um sucesso. Caso o alvo role um resultado natural de 10 ou menos no teste, ele ficará gravemente envenenado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você envolve o alvo em uma corrente tóxica e corrosiva, despejando um veneno potente em seu corpo. O alvo deve realizar um teste de CON contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo Venenoso em uma falha, e metade disso em um sucesso. Caso o alvo role um resultado natural de 10 ou menos no teste, ele ficará gravemente envenenado.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d6"
-        },
-        {
-          "level": 10,
-          "formula": "5d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "MxiMh47KgyXjdu4r": {
+        "_id": "MxiMh47KgyXjdu4r",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "con",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "CON/SAB",
+        "powerAbilities": [
+          "con",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envolve o alvo em uma corrente tóxica e corrosiva, despejando um veneno potente em seu corpo. O alvo deve realizar um teste de CON contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo Venenoso em uma falha, e metade disso em um sucesso. Caso o alvo role um resultado natural de 10 ou menos no teste, ele ficará gravemente envenenado.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d6"
+            },
+            {
+              "level": 10,
+              "formula": "5d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

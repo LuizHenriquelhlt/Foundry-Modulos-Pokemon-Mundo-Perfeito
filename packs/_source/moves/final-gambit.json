@@ -2,42 +2,125 @@
   "_key": "!items!jjQUcLZCMPtUk1eI",
   "_id": "jjQUcLZCMPtUk1eI",
   "name": "Final Gambit",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fighting.png",
   "system": {
-    "moveType": "fighting",
-    "category": "",
-    "power": "FOR",
-    "powerAbilities": [
-      "str"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você arrisca tudo e usa sua própria força de vida para causar dano a uma criatura em alcance. Quando você ativa este Move, force um alvo em alcance a fazer um teste de CON contra sua CD de Move. Em caso de falha, você desmaia imediatamente (independente do efeito de itens ou outros Moves), e o alvo recebe dano fixo do tipo lutador igual aos seus PVs restantes antes de desmaiar. O dano fixo independe do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos. Se Final Gambit fizer o alvo desmaiar, o usuário desmaia antes do alvo. Caso este Move não atinja o oponente devido a imunidade de tipo ou proteção, ou se o alvo passar no teste de CON, então o Move falhará, e o usuário não desmaiará.</p><p><strong>Observações:</strong></p><p>O desmaio causado por este Move não é considerado como receber dano, portanto não ativa itens, Moves ou Habilidades que reduzam ou previnam dano recebido. Entretanto, para o alvo o efeito é tratado como dano, permitindo que ele utilize tais recursos, como Sturdy ou Endure.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Lutador",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você arrisca tudo e usa sua própria força de vida para causar dano a uma criatura em alcance. Quando você ativa este Move, force um alvo em alcance a fazer um teste de CON contra sua CD de Move. Em caso de falha, você desmaia imediatamente (independente do efeito de itens ou outros Moves), e o alvo recebe dano fixo do tipo lutador igual aos seus PVs restantes antes de desmaiar. O dano fixo independe do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos. Se Final Gambit fizer o alvo desmaiar, o usuário desmaia antes do alvo. Caso este Move não atinja o oponente devido a imunidade de tipo ou proteção, ou se o alvo passar no teste de CON, então o Move falhará, e o usuário não desmaiará.</p>",
-    "higherLevels": "",
-    "observations": "<p>O desmaio causado por este Move não é considerado como receber dano, portanto não ativa itens, Moves ou Habilidades que reduzam ou previnam dano recebido. Entretanto, para o alvo o efeito é tratado como dano, permitindo que ele utilize tais recursos, como Sturdy ou Endure.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
+    "activities": {
+      "gFVyQhXgNbslkLhI": {
+        "_id": "gFVyQhXgNbslkLhI",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fighting",
+        "category": "",
+        "power": "FOR",
+        "powerAbilities": [
+          "str"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você arrisca tudo e usa sua própria força de vida para causar dano a uma criatura em alcance. Quando você ativa este Move, force um alvo em alcance a fazer um teste de CON contra sua CD de Move. Em caso de falha, você desmaia imediatamente (independente do efeito de itens ou outros Moves), e o alvo recebe dano fixo do tipo lutador igual aos seus PVs restantes antes de desmaiar. O dano fixo independe do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos. Se Final Gambit fizer o alvo desmaiar, o usuário desmaia antes do alvo. Caso este Move não atinja o oponente devido a imunidade de tipo ou proteção, ou se o alvo passar no teste de CON, então o Move falhará, e o usuário não desmaiará.</p>",
+        "higherLevels": "",
+        "observations": "<p>O desmaio causado por este Move não é considerado como receber dano, portanto não ativa itens, Moves ou Habilidades que reduzam ou previnam dano recebido. Entretanto, para o alvo o efeito é tratado como dano, permitindo que ele utilize tais recursos, como Sturdy ou Endure.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

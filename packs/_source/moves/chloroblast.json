@@ -2,58 +2,145 @@
   "_key": "!items!P56ttq0dPMqJt7Nr",
   "_id": "P56ttq0dPMqJt7Nr",
   "name": "Chloroblast",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-grass.png",
   "system": {
-    "moveType": "grass",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você descarrega de uma só vez a clorofila que acumulou, projetando uma rajada poderosa que atinge com força intensa, mas também causando dano a você. Qualquer criatura pega em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura, deve fazer um teste de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de grama em um fracasso, e metade em um sucesso. Após isso, você perde metade de sua vida máxima como dano de recuo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Grama",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (linha de 80 pés / 24 metros)",
-      "meters": 24.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você descarrega de uma só vez a clorofila que acumulou, projetando uma rajada poderosa que atinge com força intensa, mas também causando dano a você. Qualquer criatura pega em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura, deve fazer um teste de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de grama em um fracasso, e metade em um sucesso. Após isso, você perde metade de sua vida máxima como dano de recuo.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "5d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d8"
-        },
-        {
-          "level": 10,
-          "formula": "6d10"
-        },
-        {
-          "level": 17,
-          "formula": "6d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "YvOF71Nrb4dFjAd5": {
+        "_id": "YvOF71Nrb4dFjAd5",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "grass",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (linha de 80 pés / 24 metros)",
+          "meters": 24.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você descarrega de uma só vez a clorofila que acumulou, projetando uma rajada poderosa que atinge com força intensa, mas também causando dano a você. Qualquer criatura pega em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura, deve fazer um teste de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de grama em um fracasso, e metade em um sucesso. Após isso, você perde metade de sua vida máxima como dano de recuo.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "5d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d8"
+            },
+            {
+              "level": 10,
+              "formula": "6d10"
+            },
+            {
+              "level": 17,
+              "formula": "6d12"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

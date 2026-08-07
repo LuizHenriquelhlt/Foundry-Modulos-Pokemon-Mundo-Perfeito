@@ -2,40 +2,66 @@
   "_key": "!items!V7cG8BkjViLn7roI",
   "_id": "V7cG8BkjViLn7roI",
   "name": "Bide",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "Nenhum",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 2 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você abraça o dano feito a você, esperando sua hora de atacar. Use sua ação para ativar este Move e registre todo o dano que você receber nas próximas duas rodadas. No seu terceiro turno (contando a partir deste), use sua ação para atacar um alvo dentro do alcance com um ataque à distância, causando o dobro do dano total acumulado nesse período. Esse ataque é um acerto garantido, não possui tipo e só pode ser realizado se você puder ver o alvo e ele estiver dentro do seu alcance.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "2 rodadas",
-    "range": {
-      "raw": "50 pés (15 metros)",
-      "meters": 15.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você abraça o dano feito a você, esperando sua hora de atacar. Use sua ação para ativar este Move e registre todo o dano que você receber nas próximas duas rodadas. No seu terceiro turno (contando a partir deste), use sua ação para atacar um alvo dentro do alcance com um ataque à distância, causando o dobro do dano total acumulado nesse período. Esse ataque é um acerto garantido, não possui tipo e só pode ser realizado se você puder ver o alvo e ele estiver dentro do seu alcance.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    }
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "Nenhum",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "2 rodadas",
+        "range": {
+          "raw": "50 pés (15 metros)",
+          "meters": 15.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você abraça o dano feito a você, esperando sua hora de atacar. Use sua ação para ativar este Move e registre todo o dano que você receber nas próximas duas rodadas. No seu terceiro turno (contando a partir deste), use sua ação para atacar um alvo dentro do alcance com um ataque à distância, causando o dobro do dano total acumulado nesse período. Esse ataque é um acerto garantido, não possui tipo e só pode ser realizado se você puder ver o alvo e ele estiver dentro do seu alcance.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

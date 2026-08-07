@@ -2,56 +2,152 @@
   "_key": "!items!vOwDymguF3zY01rC",
   "_id": "vOwDymguF3zY01rC",
   "name": "Hurricane",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-flying.png",
   "system": {
-    "moveType": "flying",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você cria um turbilhão de ventos fortes e o direciona a uma criatura. Faça um ataque à distância -3 contra uma criatura ao alcance, causando 2d12 + MOVE de dano voador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Se usado durante a chuva intensa, Hurricane acerta com garantia (mas role um d20 para chance de causar dano crítico e confusão). Por outro lado, se usado durante luz solar intensa, a penalidade na rolagem de acerto passa a ser de -5, ao invés de -3. Hurricane pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Voador",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você cria um turbilhão de ventos fortes e o direciona a uma criatura. Faça um ataque à distância -3 contra uma criatura ao alcance, causando 2d12 + MOVE de dano voador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Se usado durante a chuva intensa, Hurricane acerta com garantia (mas role um d20 para chance de causar dano crítico e confusão). Por outro lado, se usado durante luz solar intensa, a penalidade na rolagem de acerto passa a ser de -5, ao invés de -3. Hurricane pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d8"
-        },
-        {
-          "level": 10,
-          "formula": "4d12"
-        },
-        {
-          "level": 17,
-          "formula": "7d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "Ptte1960asVknfCe": {
+        "_id": "Ptte1960asVknfCe",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "flying",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você cria um turbilhão de ventos fortes e o direciona a uma criatura. Faça um ataque à distância -3 contra uma criatura ao alcance, causando 2d12 + MOVE de dano voador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Se usado durante a chuva intensa, Hurricane acerta com garantia (mas role um d20 para chance de causar dano crítico e confusão). Por outro lado, se usado durante luz solar intensa, a penalidade na rolagem de acerto passa a ser de -5, ao invés de -3. Hurricane pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d8"
+            },
+            {
+              "level": 10,
+              "formula": "4d12"
+            },
+            {
+              "level": 17,
+              "formula": "7d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

@@ -2,56 +2,146 @@
   "_key": "!items!cdKyJL5sikASLosb",
   "_id": "cdKyJL5sikASLosb",
   "name": "Fleur Cannon",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fairy.png",
   "system": {
-    "moveType": "fairy",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fada &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você libera um feixe brilhante de energia rosada em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Todas as criaturas em seu caminho devem fazer um teste de DES contra sua CD de Move, sofrendo 4d6 + MOVE de dano de fada em uma falha, ou metade disso em um sucesso. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fada",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (linha de 80 pés / 24 metros)",
-      "meters": 24.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera um feixe brilhante de energia rosada em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Todas as criaturas em seu caminho devem fazer um teste de DES contra sua CD de Move, sofrendo 4d6 + MOVE de dano de fada em uma falha, ou metade disso em um sucesso. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d20"
-        },
-        {
-          "level": 10,
-          "formula": "5d10"
-        },
-        {
-          "level": 17,
-          "formula": "8d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "7SWoqQYAWLbtbxj8": {
+        "_id": "7SWoqQYAWLbtbxj8",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fairy",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (linha de 80 pés / 24 metros)",
+          "meters": 24.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera um feixe brilhante de energia rosada em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Todas as criaturas em seu caminho devem fazer um teste de DES contra sua CD de Move, sofrendo 4d6 + MOVE de dano de fada em uma falha, ou metade disso em um sucesso. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d20"
+            },
+            {
+              "level": 10,
+              "formula": "5d10"
+            },
+            {
+              "level": 17,
+              "formula": "8d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

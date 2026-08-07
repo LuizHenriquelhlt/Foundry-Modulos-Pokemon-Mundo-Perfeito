@@ -2,58 +2,145 @@
   "_key": "!items!QuvG0MStxNRmGX2K",
   "_id": "QuvG0MStxNRmGX2K",
   "name": "Burning Jealousy",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você libera uma onda de energia alimentada por pura inveja em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d8 + MOVE de dano de fogo em uma falha, ou metade do dano em um sucesso. Caso alguma das criaturas atingidas tenha aumentado alguma Mudança de Status desde o final do seu último turno, ela se torna queimada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p><p><strong>Observações:</strong></p><p>Se o alvo tiver vulnerabilidade a Burning Jealousy e estiver segurando uma Weakness Policy, determinar se o oponente será queimado acontece antes da Weakness Policy ser consumida. Se o usuário tiver a habilidade Sheer Force, o aumento de dano é aplicado independentemente de Burning Jealousy queimar ou não o alvo.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (cone de 40 pés / 12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera uma onda de energia alimentada por pura inveja em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d8 + MOVE de dano de fogo em uma falha, ou metade do dano em um sucesso. Caso alguma das criaturas atingidas tenha aumentado alguma Mudança de Status desde o final do seu último turno, ela se torna queimada.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
-    "observations": "<p>Se o alvo tiver vulnerabilidade a Burning Jealousy e estiver segurando uma Weakness Policy, determinar se o oponente será queimado acontece antes da Weakness Policy ser consumida. Se o usuário tiver a habilidade Sheer Force, o aumento de dano é aplicado independentemente de Burning Jealousy queimar ou não o alvo.</p>",
-    "damage": {
-      "baseFormula": "2d8",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d10"
-        },
-        {
-          "level": 10,
-          "formula": "3d10"
-        },
-        {
-          "level": 17,
-          "formula": "3d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "PhnJPDbNTVWG0wvy": {
+        "_id": "PhnJPDbNTVWG0wvy",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (cone de 40 pés / 12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera uma onda de energia alimentada por pura inveja em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d8 + MOVE de dano de fogo em uma falha, ou metade do dano em um sucesso. Caso alguma das criaturas atingidas tenha aumentado alguma Mudança de Status desde o final do seu último turno, ela se torna queimada.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+        "observations": "<p>Se o alvo tiver vulnerabilidade a Burning Jealousy e estiver segurando uma Weakness Policy, determinar se o oponente será queimado acontece antes da Weakness Policy ser consumida. Se o usuário tiver a habilidade Sheer Force, o aumento de dano é aplicado independentemente de Burning Jealousy queimar ou não o alvo.</p>",
+        "damage": {
+          "baseFormula": "2d8",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d10"
+            },
+            {
+              "level": 10,
+              "formula": "3d10"
+            },
+            {
+              "level": 17,
+              "formula": "3d12"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

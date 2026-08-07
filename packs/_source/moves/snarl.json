@@ -2,56 +2,146 @@
   "_key": "!items!hXdCPNvU7mLVmJC7",
   "_id": "hXdCPNvU7mLVmJC7",
   "name": "Snarl",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-dark.png",
   "system": {
-    "moveType": "dark",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você emite um rosnado carregado de energia sombria, prejudicando a força de vontade dos inimigos em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de SAB-1 contra sua CD de Move, sofrendo 1d12 + MOVE de dano sombrio em uma falha, ou metade do dano em um sucesso. Criaturas que falharem no teste também têm seu Ataque Especial reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Snarl é um Move baseado em som.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Sombrio",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto ativo",
-    "range": {
-      "raw": "Pessoal (cone de 40 pés / 12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você emite um rosnado carregado de energia sombria, prejudicando a força de vontade dos inimigos em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de SAB-1 contra sua CD de Move, sofrendo 1d12 + MOVE de dano sombrio em uma falha, ou metade do dano em um sucesso. Criaturas que falharem no teste também têm seu Ataque Especial reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
-    "higherLevels": "<p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
-    "observations": "<p>Snarl é um Move baseado em som.</p>",
-    "damage": {
-      "baseFormula": "1d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d4"
-        },
-        {
-          "level": 10,
-          "formula": "2d12"
-        },
-        {
-          "level": 17,
-          "formula": "3d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "3VjrRZZp1ux2eeDh": {
+        "_id": "3VjrRZZp1ux2eeDh",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "dark",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto ativo",
+        "range": {
+          "raw": "Pessoal (cone de 40 pés / 12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você emite um rosnado carregado de energia sombria, prejudicando a força de vontade dos inimigos em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de SAB-1 contra sua CD de Move, sofrendo 1d12 + MOVE de dano sombrio em uma falha, ou metade do dano em um sucesso. Criaturas que falharem no teste também têm seu Ataque Especial reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
+        "higherLevels": "<p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
+        "observations": "<p>Snarl é um Move baseado em som.</p>",
+        "damage": {
+          "baseFormula": "1d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d4"
+            },
+            {
+              "level": 10,
+              "formula": "2d12"
+            },
+            {
+              "level": 17,
+              "formula": "3d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

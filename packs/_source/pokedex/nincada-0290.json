@@ -2,36 +2,9 @@
   "_key": "!actors!OLMKwO4dZaImDDK0",
   "_id": "OLMKwO4dZaImDDK0",
   "name": "Nincada",
-  "type": "pokemon-mundo-perfeito.pokemon",
+  "type": "npc",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/290.png",
   "system": {
-    "species": "nincada",
-    "dexNumber": 290,
-    "types": {
-      "type1": "bug",
-      "type2": "ground"
-    },
-    "speciesRank": {
-      "value": 0.25,
-      "display": "1/4"
-    },
-    "size": "tiny",
-    "heightMeters": 0.5,
-    "minLevelFound": 1,
-    "eggGroups": [
-      "Inseto"
-    ],
-    "gender": {
-      "malePercent": 50,
-      "femalePercent": 50,
-      "genderless": false
-    },
-    "evolutionStage": {
-      "current": 1,
-      "max": 3
-    },
-    "evolution": "Nincada pode evoluir para Ninjask no nível 7 ou superior. Se o seu treinador possuir um Pokéslot vazio e uma Poké Bola vazia (de qualquer tipo), ele também adquire um Shedinja no mesmo nível. O Shedinja possui todos os atributos base e valor de vida fixos conforme seu bloco de estatísticas. Quando evolui para Ninjask, seus pontos de vida aumentam no dobro do seu nível.",
-    "biography": "<p>O Pokémon Aprendiz. Como passou quase toda a vida debaixo da terra, Nincada é praticamente cego e usa as antenas para se orientar. Às vezes, permanece no subsolo por mais de dez anos, absorvendo nutrientes das raízes das árvores.</p>",
     "abilities": {
       "str": {
         "value": 10
@@ -52,157 +25,277 @@
         "value": 10
       }
     },
-    "skills": [
-      "Natureza"
-    ],
-    "armorClass": {
-      "value": 13
-    },
-    "hitPoints": {
-      "value": 16,
-      "max": 16,
-      "hitDie": "d6"
-    },
-    "movement": {
-      "walk": 3,
-      "other": "3m de caminhada, 3m de escalada, 3m de"
-    },
-    "senses": "Visão no Escuro 9m",
-    "passiveAbility": {
-      "options": [
-        "Compound Eyes"
-      ],
-      "active": "Compound Eyes"
-    },
-    "hiddenAbility": "Run Away",
-    "level": 1,
-    "moveTable": [
-      {
-        "level": 1,
-        "moves": [
-          "Harden",
-          "Scratch"
-        ]
+    "attributes": {
+      "ac": {
+        "flat": 13,
+        "calc": "flat"
       },
-      {
-        "level": 2,
-        "moves": [
-          "Absorb"
-        ]
+      "hp": {
+        "value": 16,
+        "max": 16,
+        "temp": 0,
+        "tempmax": 0,
+        "formula": ""
       },
-      {
-        "level": 3,
-        "moves": [
-          "Sand Attack"
-        ]
+      "movement": {
+        "walk": 3.0,
+        "swim": 0,
+        "fly": 0,
+        "climb": 3.0,
+        "burrow": 0,
+        "hover": false,
+        "units": "m"
       },
-      {
-        "level": 5,
-        "moves": [
-          "Fury Swipes"
-        ]
-      },
-      {
-        "level": 6,
-        "moves": [
-          "Mud-Slap"
-        ]
-      },
-      {
-        "level": 7,
-        "moves": [
-          "Metal Claw"
-        ]
-      },
-      {
-        "level": 9,
-        "moves": [
-          "Mind Reader"
-        ]
-      },
-      {
-        "level": 10,
-        "moves": [
-          "Bide"
-        ]
-      },
-      {
-        "level": 11,
-        "moves": [
-          "False Swipe"
-        ]
-      },
-      {
-        "level": 13,
-        "moves": [
-          "Dig"
-        ]
+      "senses": {
+        "darkvision": 9.0,
+        "blindsight": 0,
+        "tremorsense": 0,
+        "truesight": 0,
+        "units": "m",
+        "special": ""
       }
-    ],
-    "knownMoves": [
-      "Harden",
-      "Scratch"
-    ],
-    "tms": [
-      "Aerial Ace",
-      "Bug Bite",
-      "Confide",
-      "Dig",
-      "Double Team",
-      "Facade",
-      "False Swipe",
-      "Frustration",
-      "Giga Drain",
-      "Hidden Power",
-      "Leech Life",
-      "Protect",
-      "Rest",
-      "Return",
-      "Round",
-      "Sandstorm",
-      "Shadow Ball",
-      "Skitter Smack",
-      "Sleep Talk",
-      "Snore",
-      "Solar Beam",
-      "Spite",
-      "Substitute",
-      "Sunny Day",
-      "Swagger",
-      "Toxic",
-      "X-Scissor"
-    ],
-    "eggMoves": [
-      "Bug Bite",
-      "Bug Buzz",
-      "Endure",
-      "Feint Attack",
-      "Final Gambit",
-      "Flail",
-      "Gust",
-      "Night Slash",
-      "Silver Wind"
-    ],
-    "typeDefenseOverrides": {},
-    "nature": {
-      "name": "",
-      "increased": "",
-      "decreased": ""
     },
-    "loyalty": 0,
-    "shiny": false,
-    "evs": {
-      "str": 0,
-      "dex": 0,
-      "con": 0,
-      "int": 0,
-      "wis": 0,
-      "cha": 0
+    "details": {
+      "cr": 0.25,
+      "type": {
+        "value": "custom",
+        "subtype": "",
+        "custom": "Pokémon"
+      },
+      "biography": {
+        "value": "<p>O Pokémon Aprendiz. Como passou quase toda a vida debaixo da terra, Nincada é praticamente cego e usa as antenas para se orientar. Às vezes, permanece no subsolo por mais de dez anos, absorvendo nutrientes das raízes das árvores.</p><p><strong>SR:</strong> 1/4 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 1 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Inseto &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 1/3</p><p><strong>Evolução:</strong> Nincada pode evoluir para Ninjask no nível 7 ou superior. Se o seu treinador possuir um Pokéslot vazio e uma Poké Bola vazia (de qualquer tipo), ele também adquire um Shedinja no mesmo nível. O Shedinja possui todos os atributos base e valor de vida fixos conforme seu bloco de estatísticas. Quando evolui para Ninjask, seus pontos de vida aumentam no dobro do seu nível.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Harden, Scratch</td></tr><tr><td style='text-align:center'>2</td><td>Absorb</td></tr><tr><td style='text-align:center'>3</td><td>Sand Attack</td></tr><tr><td style='text-align:center'>5</td><td>Fury Swipes</td></tr><tr><td style='text-align:center'>6</td><td>Mud-Slap</td></tr><tr><td style='text-align:center'>7</td><td>Metal Claw</td></tr><tr><td style='text-align:center'>9</td><td>Mind Reader</td></tr><tr><td style='text-align:center'>10</td><td>Bide</td></tr><tr><td style='text-align:center'>11</td><td>False Swipe</td></tr><tr><td style='text-align:center'>13</td><td>Dig</td></tr></tbody></table><h3>TMs</h3><p>Aerial Ace, Bug Bite, Confide, Dig, Double Team, Facade, False Swipe, Frustration, Giga Drain, Hidden Power, Leech Life, Protect, Rest, Return, Round, Sandstorm, Shadow Ball, Skitter Smack, Sleep Talk, Snore, Solar Beam, Spite, Substitute, Sunny Day, Swagger, Toxic, X-Scissor</p><h3>Egg Moves</h3><p>Bug Bite, Bug Buzz, Endure, Feint Attack, Final Gambit, Flail, Gust, Night Slash, Silver Wind</p>",
+        "public": ""
+      },
+      "alignment": ""
+    },
+    "traits": {
+      "size": "tiny",
+      "di": {
+        "value": [],
+        "custom": "Tipo Elétrico"
+      },
+      "dr": {
+        "value": [],
+        "custom": "Tipo Lutador; Tipo Venenoso; Tipo Terrestre"
+      },
+      "dv": {
+        "value": [],
+        "custom": "Tipo Fogo; Tipo Água; Tipo Gelo; Tipo Voador"
+      },
+      "languages": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "skills": {
+      "nat": {
+        "value": 1,
+        "ability": "int"
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "species": {
+        "species": "nincada",
+        "dexNumber": 290,
+        "types": {
+          "type1": "bug",
+          "type2": "ground"
+        },
+        "speciesRank": {
+          "value": 0.25,
+          "display": "1/4"
+        },
+        "size": "tiny",
+        "heightMeters": 0.5,
+        "minLevelFound": 1,
+        "eggGroups": [
+          "Inseto"
+        ],
+        "gender": {
+          "malePercent": 50,
+          "femalePercent": 50,
+          "genderless": false
+        },
+        "evolutionStage": {
+          "current": 1,
+          "max": 3
+        },
+        "evolution": "Nincada pode evoluir para Ninjask no nível 7 ou superior. Se o seu treinador possuir um Pokéslot vazio e uma Poké Bola vazia (de qualquer tipo), ele também adquire um Shedinja no mesmo nível. O Shedinja possui todos os atributos base e valor de vida fixos conforme seu bloco de estatísticas. Quando evolui para Ninjask, seus pontos de vida aumentam no dobro do seu nível.",
+        "biography": "<p>O Pokémon Aprendiz. Como passou quase toda a vida debaixo da terra, Nincada é praticamente cego e usa as antenas para se orientar. Às vezes, permanece no subsolo por mais de dez anos, absorvendo nutrientes das raízes das árvores.</p>",
+        "abilities": {
+          "str": {
+            "value": 10
+          },
+          "dex": {
+            "value": 10
+          },
+          "con": {
+            "value": 10
+          },
+          "int": {
+            "value": 6
+          },
+          "wis": {
+            "value": 10
+          },
+          "cha": {
+            "value": 10
+          }
+        },
+        "skills": [
+          "Natureza"
+        ],
+        "armorClass": {
+          "value": 13
+        },
+        "hitPoints": {
+          "value": 16,
+          "max": 16,
+          "hitDie": "d6"
+        },
+        "movement": {
+          "walk": 3,
+          "other": "3m de caminhada, 3m de escalada, 3m de"
+        },
+        "senses": "Visão no Escuro 9m",
+        "passiveAbility": {
+          "options": [
+            "Compound Eyes"
+          ],
+          "active": "Compound Eyes"
+        },
+        "hiddenAbility": "Run Away",
+        "level": 1,
+        "moveTable": [
+          {
+            "level": 1,
+            "moves": [
+              "Harden",
+              "Scratch"
+            ]
+          },
+          {
+            "level": 2,
+            "moves": [
+              "Absorb"
+            ]
+          },
+          {
+            "level": 3,
+            "moves": [
+              "Sand Attack"
+            ]
+          },
+          {
+            "level": 5,
+            "moves": [
+              "Fury Swipes"
+            ]
+          },
+          {
+            "level": 6,
+            "moves": [
+              "Mud-Slap"
+            ]
+          },
+          {
+            "level": 7,
+            "moves": [
+              "Metal Claw"
+            ]
+          },
+          {
+            "level": 9,
+            "moves": [
+              "Mind Reader"
+            ]
+          },
+          {
+            "level": 10,
+            "moves": [
+              "Bide"
+            ]
+          },
+          {
+            "level": 11,
+            "moves": [
+              "False Swipe"
+            ]
+          },
+          {
+            "level": 13,
+            "moves": [
+              "Dig"
+            ]
+          }
+        ],
+        "knownMoves": [
+          "Harden",
+          "Scratch"
+        ],
+        "tms": [
+          "Aerial Ace",
+          "Bug Bite",
+          "Confide",
+          "Dig",
+          "Double Team",
+          "Facade",
+          "False Swipe",
+          "Frustration",
+          "Giga Drain",
+          "Hidden Power",
+          "Leech Life",
+          "Protect",
+          "Rest",
+          "Return",
+          "Round",
+          "Sandstorm",
+          "Shadow Ball",
+          "Skitter Smack",
+          "Sleep Talk",
+          "Snore",
+          "Solar Beam",
+          "Spite",
+          "Substitute",
+          "Sunny Day",
+          "Swagger",
+          "Toxic",
+          "X-Scissor"
+        ],
+        "eggMoves": [
+          "Bug Bite",
+          "Bug Buzz",
+          "Endure",
+          "Feint Attack",
+          "Final Gambit",
+          "Flail",
+          "Gust",
+          "Night Slash",
+          "Silver Wind"
+        ],
+        "typeDefenseOverrides": {},
+        "nature": {
+          "name": "",
+          "increased": "",
+          "decreased": ""
+        },
+        "loyalty": 0,
+        "shiny": false,
+        "evs": {
+          "str": 0,
+          "dex": 0,
+          "con": 0,
+          "int": 0,
+          "wis": 0,
+          "cha": 0
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -220,5 +313,467 @@
     "texture": {
       "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/290.png"
     }
-  }
+  },
+  "items": [
+    {
+      "_id": "W9ou0iFpJcyoZNdw",
+      "name": "Tipo Inseto",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-bug.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Inseto.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.W9ou0iFpJcyoZNdw"
+    },
+    {
+      "_id": "1Kz4FmsgsJf0vx4K",
+      "name": "Tipo Terrestre",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ground.png",
+      "system": {
+        "description": {
+          "value": "<p>Este Pokémon é do tipo Terrestre.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.1Kz4FmsgsJf0vx4K"
+    },
+    {
+      "_id": "0Q4uoBLtx5ajHcTR",
+      "name": "Habilidade Passiva: Compound Eyes",
+      "type": "feat",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": {
+          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.0Q4uoBLtx5ajHcTR"
+    },
+    {
+      "_id": "XYw9z1soW7spakqA",
+      "name": "Habilidade Oculta: Run Away",
+      "type": "feat",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": {
+          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {},
+      "sort": 0,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.XYw9z1soW7spakqA"
+    },
+    {
+      "_id": "boCtKKt7rxQUnjXh",
+      "name": "Harden",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você aumenta sua defesa, capaz de reduzir o dano recebido. Ao ser alvo de um ataque corpo a corpo, você pode usar sua reação para aumentar sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "15",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {}
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "reaction",
+              "raw": "1 reação / ação"
+            },
+            "pp": {
+              "value": 15,
+              "max": 15,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "Pessoal",
+              "meters": 0.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Você aumenta sua defesa, capaz de reduzir o dano recebido. Ao ser alvo de um ataque corpo a corpo, você pode usar sua reação para aumentar sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.boCtKKt7rxQUnjXh"
+    },
+    {
+      "_id": "xEcx9KNB6L1Te5P1",
+      "name": "Scratch",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere arranhões rápidos com suas garras afiadas em uma criatura. Faça um ataque corpo a corpo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "lV20XrOGzEWHzKy4": {
+            "_id": "lV20XrOGzEWHzKy4",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você desfere arranhões rápidos com suas garras afiadas em uma criatura. Faça um ataque corpo a corpo, causando 2d4 + MOVE de dano normal em um acerto.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d4",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d10"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.xEcx9KNB6L1Te5P1"
+    },
+    {
+      "_id": "puxgWuHITA1wwldj",
+      "name": "Struggle",
+      "type": "feat",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "activities": {
+          "XswP1sziaokq7KFo": {
+            "_id": "XswP1sziaokq7KFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "@mod",
+                  "types": []
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 0,
+              "max": 0,
+              "unlimited": true
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo / 60 pés (18 metros)",
+              "meters": 18.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p>",
+            "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+            "observations": "<p>Struggle não pode ser escolhido pelo Move Assist.</p>",
+            "damage": {
+              "baseFormula": "1d10",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d10"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d6"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!OLMKwO4dZaImDDK0.puxgWuHITA1wwldj"
+    }
+  ]
 }

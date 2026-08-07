@@ -21,6 +21,8 @@ OUT_DIR = os.path.join(ROOT, "packs", "_source", "moves")
 spec = importlib.util.spec_from_file_location("parse_moves", os.path.join(HERE, "parse-moves.py"))
 parse_moves = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(parse_moves)
+# nos suplementos de Gen 8/9 os Moves não têm tradução — o nome vem "puro" antes do "Tipo:"
+parse_moves.ALLOW_BARE_NAMES = True
 
 sys.path.insert(0, os.path.join(HERE, "lib"))
 from pdf_text import extract_range, strip_noise  # noqa: E402

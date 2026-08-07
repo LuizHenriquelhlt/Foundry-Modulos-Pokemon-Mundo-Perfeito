@@ -2,45 +2,125 @@
   "_key": "!items!kiCq4G1VLDYmbnAw",
   "_id": "kiCq4G1VLDYmbnAw",
   "name": "Doodle",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "CAR",
-    "powerAbilities": [
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros); aliados em raio de 30 pés (9 metros)</p><p>Você captura a essência do alvo em um esboço. Escolha um alvo dentro do alcance. Sua habilidade passiva e a de todos os seus aliados a até 30 pés (9 metros) de você passam a ser a mesma habilidade passiva desse alvo. Qualquer aliado que não deseje substituir sua habilidade atual pode tentar resistir, realizando um teste de CAR contra a sua CD de Move, evitando o efeito em um sucesso.</p><p><strong>Observações:</strong></p><p>Doodle falha se o alvo, o usuário ou o aliado do usuário possuírem qualquer uma das seguintes habilidades: As One, Battle Bond, Comatose, Commander, Disguise, Gulp Missile, Ice Face, Multitype, Poison Puppeteer, Power Construct, Protosynthesis, Quark Drive, RKS System, Schooling, Shields Down, Stance Change, Zen Mode ou Zero to Hero. Ele também falha se o alvo possuir Receiver, mas não falha se o usuário ou seu aliado possuírem essa habilidade.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Enquanto ativo",
-    "range": {
-      "raw": "30 pés (9 metros); aliados em raio de 30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você captura a essência do alvo em um esboço. Escolha um alvo dentro do alcance. Sua habilidade passiva e a de todos os seus aliados a até 30 pés (9 metros) de você passam a ser a mesma habilidade passiva desse alvo. Qualquer aliado que não deseje substituir sua habilidade atual pode tentar resistir, realizando um teste de CAR contra a sua CD de Move, evitando o efeito em um sucesso.</p>",
-    "higherLevels": "",
-    "observations": "<p>Doodle falha se o alvo, o usuário ou o aliado do usuário possuírem qualquer uma das seguintes habilidades: As One, Battle Bond, Comatose, Commander, Disguise, Gulp Missile, Ice Face, Multitype, Poison Puppeteer, Power Construct, Protosynthesis, Quark Drive, RKS System, Schooling, Shields Down, Stance Change, Zen Mode ou Zero to Hero. Ele também falha se o alvo possuir Receiver, mas não falha se o usuário ou seu aliado possuírem essa habilidade.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+    "activities": {
+      "kTyhQz5XdgxtIvH2": {
+        "_id": "kTyhQz5XdgxtIvH2",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "cha",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        }
+      }
+    }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "CAR",
+        "powerAbilities": [
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Enquanto ativo",
+        "range": {
+          "raw": "30 pés (9 metros); aliados em raio de 30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você captura a essência do alvo em um esboço. Escolha um alvo dentro do alcance. Sua habilidade passiva e a de todos os seus aliados a até 30 pés (9 metros) de você passam a ser a mesma habilidade passiva desse alvo. Qualquer aliado que não deseje substituir sua habilidade atual pode tentar resistir, realizando um teste de CAR contra a sua CD de Move, evitando o efeito em um sucesso.</p>",
+        "higherLevels": "",
+        "observations": "<p>Doodle falha se o alvo, o usuário ou o aliado do usuário possuírem qualquer uma das seguintes habilidades: As One, Battle Bond, Comatose, Commander, Disguise, Gulp Missile, Ice Face, Multitype, Poison Puppeteer, Power Construct, Protosynthesis, Quark Drive, RKS System, Schooling, Shields Down, Stance Change, Zen Mode ou Zero to Hero. Ele também falha se o alvo possuir Receiver, mas não falha se o usuário ou seu aliado possuírem essa habilidade.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 1 estágio."
+      }
     }
   },
   "_stats": {

@@ -2,58 +2,151 @@
   "_key": "!items!9cWrM0DrleO98m9X",
   "_id": "9cWrM0DrleO98m9X",
   "name": "Poltergeist",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ghost.png",
   "system": {
-    "moveType": "ghost",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você emana um tornado fantasmagórico ao redor de um alvo, fazendo ele ser atacado pelo próprio item segurado. Faça um ataque corpo a corpo -1 com alcance estendido de 30 pés (9 metros), causando 2d12 + MOVE de dano fantasma em um acerto. O Move falha se o alvo não estiver segurando nenhum item. Poltergeist não aciona efeitos de inimigos que se ativam ao contato corpo a corpo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p><p><strong>Observações:</strong></p><p>Se o item segurado for consumido no momento do ataque, como uma Kasib Berry ou uma Weakness Policy, Poltergeist ainda causará dano após o item ser consumido.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fantasma",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você emana um tornado fantasmagórico ao redor de um alvo, fazendo ele ser atacado pelo próprio item segurado. Faça um ataque corpo a corpo -1 com alcance estendido de 30 pés (9 metros), causando 2d12 + MOVE de dano fantasma em um acerto. O Move falha se o alvo não estiver segurando nenhum item. Poltergeist não aciona efeitos de inimigos que se ativam ao contato corpo a corpo.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
-    "observations": "<p>Se o item segurado for consumido no momento do ataque, como uma Kasib Berry ou uma Weakness Policy, Poltergeist ainda causará dano após o item ser consumido.</p>",
-    "damage": {
-      "baseFormula": "2d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d8"
-        },
-        {
-          "level": 10,
-          "formula": "4d12"
-        },
-        {
-          "level": 17,
-          "formula": "7d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "HALZDW7WFcRmt9Pw": {
+        "_id": "HALZDW7WFcRmt9Pw",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "ghost",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você emana um tornado fantasmagórico ao redor de um alvo, fazendo ele ser atacado pelo próprio item segurado. Faça um ataque corpo a corpo -1 com alcance estendido de 30 pés (9 metros), causando 2d12 + MOVE de dano fantasma em um acerto. O Move falha se o alvo não estiver segurando nenhum item. Poltergeist não aciona efeitos de inimigos que se ativam ao contato corpo a corpo.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+        "observations": "<p>Se o item segurado for consumido no momento do ataque, como uma Kasib Berry ou uma Weakness Policy, Poltergeist ainda causará dano após o item ser consumido.</p>",
+        "damage": {
+          "baseFormula": "2d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d8"
+            },
+            {
+              "level": 10,
+              "formula": "4d12"
+            },
+            {
+              "level": 17,
+              "formula": "7d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

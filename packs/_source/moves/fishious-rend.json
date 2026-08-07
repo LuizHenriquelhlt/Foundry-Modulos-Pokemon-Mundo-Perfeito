@@ -2,58 +2,151 @@
   "_key": "!items!nSxeFSMA6qOs5eHf",
   "_id": "nSxeFSMA6qOs5eHf",
   "name": "Fishious Rend",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-water.png",
   "system": {
-    "moveType": "water",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação / reação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você rasga o alvo com brânquias rígidas. Faça um ataque corpo a corpo em um alvo, causando 4d4 + MOVE de dano de água em um acerto. Se a sua iniciativa for maior que a do alvo, dobre os dados de dano. Você também pode usar este Move como reação quando um Pokémon for substituído, desde que o novo alvo surja dentro do alcance do seu deslocamento, movendo-se imediatamente até ele sem sofrer ataques de oportunidade, e desferindo o ataque assim que ele entrar em campo, com o dobro dos dados de dano (não cumulativo com o bônus da iniciativa). Ao fazer isso, você abre mão de sua ação padrão e de movimento do próximo turno.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 5d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Água",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você rasga o alvo com brânquias rígidas. Faça um ataque corpo a corpo em um alvo, causando 4d4 + MOVE de dano de água em um acerto. Se a sua iniciativa for maior que a do alvo, dobre os dados de dano. Você também pode usar este Move como reação quando um Pokémon for substituído, desde que o novo alvo surja dentro do alcance do seu deslocamento, movendo-se imediatamente até ele sem sofrer ataques de oportunidade, e desferindo o ataque assim que ele entrar em campo, com o dobro dos dados de dano (não cumulativo com o bônus da iniciativa). Ao fazer isso, você abre mão de sua ação padrão e de movimento do próximo turno.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 5d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d6"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "Js91kgi74lPJReeb": {
+        "_id": "Js91kgi74lPJReeb",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "water",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação / reação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você rasga o alvo com brânquias rígidas. Faça um ataque corpo a corpo em um alvo, causando 4d4 + MOVE de dano de água em um acerto. Se a sua iniciativa for maior que a do alvo, dobre os dados de dano. Você também pode usar este Move como reação quando um Pokémon for substituído, desde que o novo alvo surja dentro do alcance do seu deslocamento, movendo-se imediatamente até ele sem sofrer ataques de oportunidade, e desferindo o ataque assim que ele entrar em campo, com o dobro dos dados de dano (não cumulativo com o bônus da iniciativa). Ao fazer isso, você abre mão de sua ação padrão e de movimento do próximo turno.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 5d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d6"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

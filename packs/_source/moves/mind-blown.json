@@ -2,56 +2,146 @@
   "_key": "!items!UrxzUX5zyZn9e4ip",
   "_id": "UrxzUX5zyZn9e4ip",
   "name": "Mind Blown",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "DES/CON",
-    "powerAbilities": [
-      "dex",
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (20 pés / 6 metros de raio)</p><p>Você enche sua cabeça com fogo quente que explode ao seu redor. Force todas as criaturas dentro de 20 pés (6 metros) de você a fazer um teste de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Após ativar este Move, você sofre uma quantidade de dano sem tipo igual ao dobro do dano total.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (20 pés / 6 metros de raio)",
-      "meters": 6.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você enche sua cabeça com fogo quente que explode ao seu redor. Force todas as criaturas dentro de 20 pés (6 metros) de você a fazer um teste de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Após ativar este Move, você sofre uma quantidade de dano sem tipo igual ao dobro do dano total.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "5d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "5d8"
-        },
-        {
-          "level": 10,
-          "formula": "6d10"
-        },
-        {
-          "level": 17,
-          "formula": "6d12"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "HNGcm9tsP7DoaDVR": {
+        "_id": "HNGcm9tsP7DoaDVR",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "DES/CON",
+        "powerAbilities": [
+          "dex",
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (20 pés / 6 metros de raio)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você enche sua cabeça com fogo quente que explode ao seu redor. Force todas as criaturas dentro de 20 pés (6 metros) de você a fazer um teste de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Após ativar este Move, você sofre uma quantidade de dano sem tipo igual ao dobro do dano total.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "5d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "5d8"
+            },
+            {
+              "level": 10,
+              "formula": "6d10"
+            },
+            {
+              "level": 17,
+              "formula": "6d12"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

@@ -2,58 +2,151 @@
   "_key": "!items!QXtsf5WNal2JV3pk",
   "_id": "QXtsf5WNal2JV3pk",
   "name": "Salt Cure",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-rock.png",
   "system": {
-    "moveType": "rock",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você recobre o alvo com uma camada corrosiva de sal cristalizado, ferindo-o no impacto e fazendo o sal continuar a desgastá-lo. Faça um ataque à distância contra um alvo em alcance, causando 2d4 + MOVE de dano do tipo Pedra. Em um acerto, o alvo sofre dano sem tipo igual ao próprio nível ao final de cada turno, mantendo o efeito enquanto permanecer ativo. Se o alvo for um Pokémon do tipo Aço ou Água, o dano por turno passa a ser igual ao dobro do nível.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Salt Cure não pode ser passado por Baton Pass. Os Starmobiles da Team Star não são afetados pelos efeitos secundários de Salt Cure.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Pedra",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea, Enquanto ativo",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você recobre o alvo com uma camada corrosiva de sal cristalizado, ferindo-o no impacto e fazendo o sal continuar a desgastá-lo. Faça um ataque à distância contra um alvo em alcance, causando 2d4 + MOVE de dano do tipo Pedra. Em um acerto, o alvo sofre dano sem tipo igual ao próprio nível ao final de cada turno, mantendo o efeito enquanto permanecer ativo. Se o alvo for um Pokémon do tipo Aço ou Água, o dano por turno passa a ser igual ao dobro do nível.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
-    "observations": "<p>Salt Cure não pode ser passado por Baton Pass. Os Starmobiles da Team Star não são afetados pelos efeitos secundários de Salt Cure.</p>",
-    "damage": {
-      "baseFormula": "2d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d6"
-        },
-        {
-          "level": 10,
-          "formula": "2d8"
-        },
-        {
-          "level": 17,
-          "formula": "2d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "GBO0DxXNetqaWbTn": {
+        "_id": "GBO0DxXNetqaWbTn",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "rock",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea, Enquanto ativo",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você recobre o alvo com uma camada corrosiva de sal cristalizado, ferindo-o no impacto e fazendo o sal continuar a desgastá-lo. Faça um ataque à distância contra um alvo em alcance, causando 2d4 + MOVE de dano do tipo Pedra. Em um acerto, o alvo sofre dano sem tipo igual ao próprio nível ao final de cada turno, mantendo o efeito enquanto permanecer ativo. Se o alvo for um Pokémon do tipo Aço ou Água, o dano por turno passa a ser igual ao dobro do nível.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+        "observations": "<p>Salt Cure não pode ser passado por Baton Pass. Os Starmobiles da Team Star não são afetados pelos efeitos secundários de Salt Cure.</p>",
+        "damage": {
+          "baseFormula": "2d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d6"
+            },
+            {
+              "level": 10,
+              "formula": "2d8"
+            },
+            {
+              "level": 17,
+              "formula": "2d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

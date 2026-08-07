@@ -2,56 +2,146 @@
   "_key": "!items!SD5DgBqSYylAfPPX",
   "_id": "SD5DgBqSYylAfPPX",
   "name": "Blue Flare",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 50 pés / 15 metros)</p><p>Você libera uma intensa e bela linha de chamas azuis em uma linha de 50 pés (15 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve fazer um teste de resistência de DES contra sua CD de Move -2, sofrendo 4d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Se uma criatura falhar no teste por 5 ou mais, ela fica queimada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (linha de 50 pés / 15 metros)",
-      "meters": 15.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera uma intensa e bela linha de chamas azuis em uma linha de 50 pés (15 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve fazer um teste de resistência de DES contra sua CD de Move -2, sofrendo 4d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Se uma criatura falhar no teste por 5 ou mais, ela fica queimada.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d20"
-        },
-        {
-          "level": 10,
-          "formula": "5d10"
-        },
-        {
-          "level": 17,
-          "formula": "8d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "4eNFqBhGMB5m6GUt": {
+        "_id": "4eNFqBhGMB5m6GUt",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (linha de 50 pés / 15 metros)",
+          "meters": 15.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera uma intensa e bela linha de chamas azuis em uma linha de 50 pés (15 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve fazer um teste de resistência de DES contra sua CD de Move -2, sofrendo 4d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Se uma criatura falhar no teste por 5 ou mais, ela fica queimada.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d20"
+            },
+            {
+              "level": 10,
+              "formula": "5d10"
+            },
+            {
+              "level": 17,
+              "formula": "8d8"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

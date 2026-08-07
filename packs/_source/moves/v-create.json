@@ -2,56 +2,152 @@
   "_key": "!items!0HlcEZIXmHM2CNq9",
   "_id": "0HlcEZIXmHM2CNq9",
   "name": "V-Create",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-fire.png",
   "system": {
-    "moveType": "fire",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Sua testa queima como carvões quentes enquanto você bate sua cabeça em uma criatura. Faça um ataque corpo a corpo - 1, causando 6d6 + MOVE de dano de fogo em um acerto. Após ativar este Move, sua Defesa, Defesa Especial e Velocidade são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 7d8 no nível 5, 6d12 no nível 10 e 9d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Fogo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Sua testa queima como carvões quentes enquanto você bate sua cabeça em uma criatura. Faça um ataque corpo a corpo - 1, causando 6d6 + MOVE de dano de fogo em um acerto. Após ativar este Move, sua Defesa, Defesa Especial e Velocidade são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 7d8 no nível 5, 6d12 no nível 10 e 9d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "6d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "7d8"
-        },
-        {
-          "level": 10,
-          "formula": "6d12"
-        },
-        {
-          "level": 17,
-          "formula": "9d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "Z8xhKy9FjdeRR7qW": {
+        "_id": "Z8xhKy9FjdeRR7qW",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 6,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "fire",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Sua testa queima como carvões quentes enquanto você bate sua cabeça em uma criatura. Faça um ataque corpo a corpo - 1, causando 6d6 + MOVE de dano de fogo em um acerto. Após ativar este Move, sua Defesa, Defesa Especial e Velocidade são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 7d8 no nível 5, 6d12 no nível 10 e 9d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "6d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "7d8"
+            },
+            {
+              "level": 10,
+              "formula": "6d12"
+            },
+            {
+              "level": 17,
+              "formula": "9d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -59,7 +155,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6370,
+  "sort": 6380,
   "ownership": {
     "default": 0
   }

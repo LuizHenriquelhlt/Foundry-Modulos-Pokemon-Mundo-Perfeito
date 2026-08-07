@@ -2,46 +2,69 @@
   "_key": "!items!YXrQ9M34TIhjhmjk",
   "_id": "YXrQ9M34TIhjhmjk",
   "name": "Corrosive Gas",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "DES/SAB",
-    "powerAbilities": [
-      "dex",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você libera um gás altamente ácido que envolve um alvo, corroendo os itens que ele estiver segurando. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o item segurável dele é largado e se torna inutilizável até o final do combate.</p><p><strong>Observações:</strong></p><p>Itens segurados removidos por Corrosive Gas não podem ser recuperados por Recycle ou Harvest. Corrosive Gas não afeta um item segurado por Pokémon com a habilidade Sticky Hold, ou se atingir um substitute de um Pokémon. Também não afeta uma Griseous Orb, Drive, Memory, Rusted Sword ou Rusted Shield segurados respectivamente por Giratina, Genesect, Silvally, Zacian ou Zamazenta.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 20,
-      "max": 20,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "20",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você libera um gás altamente ácido que envolve um alvo, corroendo os itens que ele estiver segurando. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o item segurável dele é largado e se torna inutilizável até o final do combate.</p>",
-    "higherLevels": "",
-    "observations": "<p>Itens segurados removidos por Corrosive Gas não podem ser recuperados por Recycle ou Harvest. Corrosive Gas não afeta um item segurado por Pokémon com a habilidade Sticky Hold, ou se atingir um substitute de um Pokémon. Também não afeta uma Griseous Orb, Drive, Memory, Rusted Sword ou Rusted Shield segurados respectivamente por Giratina, Genesect, Silvally, Zacian ou Zamazenta.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta o Ataque Especial em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "DES/SAB",
+        "powerAbilities": [
+          "dex",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 20,
+          "max": 20,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera um gás altamente ácido que envolve um alvo, corroendo os itens que ele estiver segurando. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o item segurável dele é largado e se torna inutilizável até o final do combate.</p>",
+        "higherLevels": "",
+        "observations": "<p>Itens segurados removidos por Corrosive Gas não podem ser recuperados por Recycle ou Harvest. Corrosive Gas não afeta um item segurado por Pokémon com a habilidade Sticky Hold, ou se atingir um substitute de um Pokémon. Também não afeta uma Griseous Orb, Drive, Memory, Rusted Sword ou Rusted Shield segurados respectivamente por Giratina, Genesect, Silvally, Zacian ou Zamazenta.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta o Ataque Especial em 1 estágio."
+      }
     }
   },
   "_stats": {

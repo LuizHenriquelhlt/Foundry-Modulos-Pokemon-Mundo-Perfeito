@@ -2,46 +2,126 @@
   "_key": "!items!nRBxi2Cu1XjzIN7T",
   "_id": "nRBxi2Cu1XjzIN7T",
   "name": "Teatime",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "SAB/CAR",
-    "powerAbilities": [
-      "wis",
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Você dança, liberando notas musicais e luzes cintilantes ao seu redor, gerando uma fome excessiva nas criaturas em alcance. Todas as criaturas ao seu redor em um raio de 40 pés (12 metros) devem fazer um teste de SAB contra sua CD de Move, consumindo suas berries seguradas imediatamente em caso de falha.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute. Teatime faz os Pokémon comerem suas Berries mesmo na presença de Unnerve.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 2 estágios.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal (raio de 40 pés / 12 metros)",
-      "meters": 12.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você dança, liberando notas musicais e luzes cintilantes ao seu redor, gerando uma fome excessiva nas criaturas em alcance. Todas as criaturas ao seu redor em um raio de 40 pés (12 metros) devem fazer um teste de SAB contra sua CD de Move, consumindo suas berries seguradas imediatamente em caso de falha.</p>",
-    "higherLevels": "",
-    "observations": "<p>Este Move ignora Substitute. Teatime faz os Pokémon comerem suas Berries mesmo na presença de Unnerve.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Velocidade em 2 estágios."
+    "activities": {
+      "tYDHfufY3Re2RAqP": {
+        "_id": "tYDHfufY3Re2RAqP",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "save",
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        }
+      }
+    }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "SAB/CAR",
+        "powerAbilities": [
+          "wis",
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal (raio de 40 pés / 12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você dança, liberando notas musicais e luzes cintilantes ao seu redor, gerando uma fome excessiva nas criaturas em alcance. Todas as criaturas ao seu redor em um raio de 40 pés (12 metros) devem fazer um teste de SAB contra sua CD de Move, consumindo suas berries seguradas imediatamente em caso de falha.</p>",
+        "higherLevels": "",
+        "observations": "<p>Este Move ignora Substitute. Teatime faz os Pokémon comerem suas Berries mesmo na presença de Unnerve.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Velocidade em 2 estágios."
+      }
     }
   },
   "_stats": {

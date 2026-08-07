@@ -54,17 +54,28 @@ FIELD_CORRECTIONS = {
     "Rapid Spin": {"duration": "Instantânea, Enquanto ativo"}
 }
 
-# Chave = tipo_idx (índice da linha "Tipo:" no array de linhas extraídas — estável entre
-# execuções, já que não depende de qual heurística de nome disparou). Aplicado sempre por
-# tipo_idx, não por nome adivinhado, para não ser contornado se uma heurística de fallback
-# nova (ex.: nomes sem tradução dos suplementos de Gen 8/9) "acertar" um nome errado nesses
-# blocos específicos antes da checagem de correção rodar.
-NAME_CORRECTIONS_BY_TIPO_IDX = {
-    4588: "Healing Wish",
-    6942: "Overheat",
-    8136: "Rest",
-    10388: "Sweet Kiss"
+# No livro principal todo Move tem tradução "Nome (Tradução)"; o formato "Nome" puro só
+# existe nos suplementos de Gen 8/9. O parser de Gen 8/9 liga esta flag antes de rodar.
+# Mantê-la desligada aqui evita que linhas órfãs (handles de artista soltos pelo layout)
+# sejam aceitas como nome de Move.
+ALLOW_BARE_NAMES = False
+
+# Blocos cujo nome o layout do PDF destrói (crédito de arte engolindo a linha do nome).
+# Correção por CONTEÚDO, robusta a qualquer mudança de índice de linha:
+#  1º) a tradução órfã que sobra perto do bloco ("(Desejo de Cura)" → Healing Wish);
+#  2º) uma assinatura única da Descrição do Move.
+TRANSLATION_TO_NAME = {
+    "desejo de cura": "Healing Wish",
+    "superaquecimento": "Overheat",
+    "descansar": "Rest",
+    "beijo doce": "Sweet Kiss",
+    "cauda d'agua": "Aqua Tail"
 }
+DESCRIPTION_SIGNATURES = [
+    ("entra em sono profundo", "Rest"),
+    ("lança um beijo", "Sweet Kiss"),
+    ("superaquece seu corpo", "Overheat")
+]
 
 ABILITY_ABBR_TO_KEY = {
     "for": "str", "des": "dex", "con": "con", "int": "int", "sab": "wis",
@@ -136,12 +147,12 @@ def find_move_headers(lines):
             # formato de uma linha: "Nome (Tradução)"
             start = i - 1
             name = lines[i - 1]
-        elif i >= 1 and lines[i - 1].strip() and not lines[i - 1].rstrip().endswith((".", ",", ":", ";")) \
+        elif ALLOW_BARE_NAMES and i >= 1 and lines[i - 1].strip() \
+                and not lines[i - 1].rstrip().endswith((".", ",", ":", ";")) \
                 and len(lines[i - 1]) <= 40 and not re.search(r"\d", lines[i - 1]):
-            # formato sem tradução (comum nos suplementos de Gen 8/9): "Nome" puro antes de "Tipo:".
+            # formato sem tradução (só nos suplementos de Gen 8/9): "Nome" puro antes de "Tipo:".
             # Exclui candidatos com dígitos — nomes de Move nunca têm números, mas handles de
-            # artista órfãos às vezes têm (ex.: "3Paula3", "13alrog"), que é exatamente o tipo de
-            # ruído que essa heurística poderia capturar por engano.
+            # artista órfãos às vezes têm (ex.: "3Paula3", "13alrog").
             start = i - 1
             name = lines[i - 1]
         else:
@@ -166,10 +177,17 @@ def parse_block(lines, header, block_end):
 
     raw_name = header["name"] or f"MOVE_DESCONHECIDO_{header['tipo_idx']}"
     name = clean_move_name(raw_name)
-    if header["tipo_idx"] in NAME_CORRECTIONS_BY_TIPO_IDX:
-        corrected = NAME_CORRECTIONS_BY_TIPO_IDX[header["tipo_idx"]]
-        warnings.append(f"nome na linha 'Tipo:' #{header['tipo_idx']} corrigido de '{name}' para '{corrected}'")
-        name = corrected
+    if name.startswith("MOVE_DESCONHECIDO"):
+        # tenta recuperar pela tradução órfã nas linhas imediatamente anteriores
+        for j in range(max(0, header["tipo_idx"] - 5), header["tipo_idx"]):
+            for m in re.finditer(r"\(([^)]{3,40})\)", lines[j]):
+                candidate = TRANSLATION_TO_NAME.get(strip_accents_lower(m.group(1)))
+                if candidate:
+                    warnings.append(f"nome recuperado pela tradução órfã '({m.group(1)})': {candidate}")
+                    name = candidate
+                    break
+            if not name.startswith("MOVE_DESCONHECIDO"):
+                break
 
     # Delimita a região onde os 6 campos fixos (Tipo..Alcance) devem estar: do "Tipo:" até a
     # primeira linha "Descrição:" do bloco. Dentro dessa janela, procura cada campo pelo rótulo
@@ -218,6 +236,14 @@ def parse_block(lines, header, block_end):
 
     if "Descrição" not in sections:
         warnings.append(f"{name}: sem seção 'Descrição' reconhecida")
+
+    if name.startswith("MOVE_DESCONHECIDO"):
+        # último recurso: assinatura única da Descrição
+        for signature, real_name in DESCRIPTION_SIGNATURES:
+            if signature in sections.get("Descrição", ""):
+                warnings.append(f"nome recuperado pela assinatura '{signature}': {real_name}")
+                name = real_name
+                break
 
     move_type = map_type(fields["type"]) if fields["type"] else None
     if fields["type"] and not move_type:

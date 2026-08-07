@@ -2,41 +2,67 @@
   "_key": "!items!IX51d2pcBEgq2nxB",
   "_id": "IX51d2pcBEgq2nxB",
   "name": "Metronome",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "Variável",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Variável &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Variável &nbsp;•&nbsp; <strong>Alcance:</strong> Variável</p><p>Você invoca um Move aleatório para infligir contra uma criatura. Você pode utilizar seu deslocamento antes de utilizar o Move selecionado por Metronome. Se o Move não puder ser concluído por causa do posicionamento, alcance, etc., o Metronome falha. Alguns Moves não podem ser escolhidos por Metronome. Nesse caso, utilize um dos métodos abaixo para este Move (a ser escolhido pelo Mestre).</p><p><strong>Observações:</strong></p><p>Metronome não pode ser escolhido pelo Move Assist. Método simples: Quando você usa este Move, role um d100. O número resultante é o número do TM para o Move que você faz. Porém é limitado somente aos Moves de TM. Método pelo site Metronome Generator: https://perchance.org/pokemonmetronome Rolagem de dados digitais: Role um d603, e compare com a “Tabela para o Move Metronome” ao final deste arquivo.</p><p><strong>Efeito de Poder-Z:</strong> O Move chamado se tornará seu respectivo Z-Move. Moves de Status chamados dessa forma não recebam o Efeito</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Variável",
-    "range": {
-      "raw": "Variável",
-      "meters": 0.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você invoca um Move aleatório para infligir contra uma criatura. Você pode utilizar seu deslocamento antes de utilizar o Move selecionado por Metronome. Se o Move não puder ser concluído por causa do posicionamento, alcance, etc., o Metronome falha. Alguns Moves não podem ser escolhidos por Metronome. Nesse caso, utilize um dos métodos abaixo para este Move (a ser escolhido pelo Mestre).</p>",
-    "higherLevels": "",
-    "observations": "<p>Metronome não pode ser escolhido pelo Move Assist. Método simples: Quando você usa este Move, role um d100. O número resultante é o número do TM para o Move que você faz. Porém é limitado somente aos Moves de TM. Método pelo site Metronome Generator: https://perchance.org/pokemonmetronome Rolagem de dados digitais: Role um d603, e compare com a “Tabela para o Move Metronome” ao final deste arquivo.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "O Move chamado se tornará seu respectivo Z-Move. Moves de Status chamados dessa forma não recebam o Efeito"
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "Variável",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Variável",
+        "range": {
+          "raw": "Variável",
+          "meters": 0.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você invoca um Move aleatório para infligir contra uma criatura. Você pode utilizar seu deslocamento antes de utilizar o Move selecionado por Metronome. Se o Move não puder ser concluído por causa do posicionamento, alcance, etc., o Metronome falha. Alguns Moves não podem ser escolhidos por Metronome. Nesse caso, utilize um dos métodos abaixo para este Move (a ser escolhido pelo Mestre).</p>",
+        "higherLevels": "",
+        "observations": "<p>Metronome não pode ser escolhido pelo Move Assist. Método simples: Quando você usa este Move, role um d100. O número resultante é o número do TM para o Move que você faz. Porém é limitado somente aos Moves de TM. Método pelo site Metronome Generator: https://perchance.org/pokemonmetronome Rolagem de dados digitais: Role um d603, e compare com a “Tabela para o Move Metronome” ao final deste arquivo.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "O Move chamado se tornará seu respectivo Z-Move. Moves de Status chamados dessa forma não recebam o Efeito"
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

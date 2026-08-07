@@ -2,41 +2,67 @@
   "_key": "!items!r5MbmpMnjclNfCTI",
   "_id": "r5MbmpMnjclNfCTI",
   "name": "Healing Wish",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "Nenhum",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se sacrifica, emanando uma pequena área de cura para o próximo Pokémon de seu treinador. Ao ativar este Move, o usuário desmaia, mas a próxima criatura libertada por seu treinador tem sua vida completamente restaurada e é curada de todas as condições de status. Para receber esta cura, o Pokémon que entra deve estar a pelo menos 5 pés (1,5 metros) do exato local em que o usuário desmaiou.</p><p><strong>Efeito de Poder-Z:</strong> Nenhum.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Pessoal",
-      "meters": 0.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você se sacrifica, emanando uma pequena área de cura para o próximo Pokémon de seu treinador. Ao ativar este Move, o usuário desmaia, mas a próxima criatura libertada por seu treinador tem sua vida completamente restaurada e é curada de todas as condições de status. Para receber esta cura, o Pokémon que entra deve estar a pelo menos 5 pés (1,5 metros) do exato local em que o usuário desmaiou.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Nenhum."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "Nenhum",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Pessoal",
+          "meters": 0.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você se sacrifica, emanando uma pequena área de cura para o próximo Pokémon de seu treinador. Ao ativar este Move, o usuário desmaia, mas a próxima criatura libertada por seu treinador tem sua vida completamente restaurada e é curada de todas as condições de status. Para receber esta cura, o Pokémon que entra deve estar a pelo menos 5 pés (1,5 metros) do exato local em que o usuário desmaiou.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Nenhum."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

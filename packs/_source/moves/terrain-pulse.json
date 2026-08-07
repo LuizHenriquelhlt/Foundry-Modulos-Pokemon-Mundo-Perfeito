@@ -2,58 +2,151 @@
   "_key": "!items!XXbpheMIUA1Gj2oH",
   "_id": "XXbpheMIUA1Gj2oH",
   "name": "Terrain Pulse",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "DES/SAB",
-    "powerAbilities": [
-      "dex",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você canaliza a energia do terreno ao redor, lançando ondas pulsantes que avançam com força em direção ao alvo. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo normal em um acerto. Caso esteja dentro de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain) e em contato com o solo, dobre os dados de dano, e o tipo do Move se torna igual ao tipo do Terreno.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Terrain Pulse não é afetado por Normalize, Pixilate, Refrigerate ou Galvanize.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você canaliza a energia do terreno ao redor, lançando ondas pulsantes que avançam com força em direção ao alvo. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo normal em um acerto. Caso esteja dentro de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain) e em contato com o solo, dobre os dados de dano, e o tipo do Move se torna igual ao tipo do Terreno.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
-    "observations": "<p>Terrain Pulse não é afetado por Normalize, Pixilate, Refrigerate ou Galvanize.</p>",
-    "damage": {
-      "baseFormula": "1d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "2d8"
-        },
-        {
-          "level": 10,
-          "formula": "2d10"
-        },
-        {
-          "level": 17,
-          "formula": "4d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "lVZwOECnf077KKp7": {
+        "_id": "lVZwOECnf077KKp7",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "DES/SAB",
+        "powerAbilities": [
+          "dex",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você canaliza a energia do terreno ao redor, lançando ondas pulsantes que avançam com força em direção ao alvo. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo normal em um acerto. Caso esteja dentro de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain) e em contato com o solo, dobre os dados de dano, e o tipo do Move se torna igual ao tipo do Terreno.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+        "observations": "<p>Terrain Pulse não é afetado por Normalize, Pixilate, Refrigerate ou Galvanize.</p>",
+        "damage": {
+          "baseFormula": "1d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "2d8"
+            },
+            {
+              "level": 10,
+              "formula": "2d10"
+            },
+            {
+              "level": 17,
+              "formula": "4d6"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

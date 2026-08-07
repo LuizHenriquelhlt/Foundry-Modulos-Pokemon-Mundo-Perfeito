@@ -2,53 +2,149 @@
   "_key": "!items!eUp0AaIJDWMgQjCc",
   "_id": "eUp0AaIJDWMgQjCc",
   "name": "Hidden Power",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "Qualquer",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Qualquer &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera uma onda de poder desconhecido em uma criatura no alcance. Faça um ataque à distância em uma criatura, causando 2d6 + MOVE de dano de um tipo aleatório. Role um d20 para determinar qual tipo de dano é causado. d20 Tipo d20 Tipo 1 Normal 11 Psíquico 2 Fogo 12 Inseto 3 Água 13 Pedra 4 Elétrico 14 Fantasma 5 Grama 15 Dragão 6 Gelo 16 Sombrio 7 Lutador 17 Aço 8 Venenoso 18 Fada 9 Terra 19 Role novamente 10 Voador 20 Role novamente</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10, e 5d6 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera uma onda de poder desconhecido em uma criatura no alcance. Faça um ataque à distância em uma criatura, causando 2d6 + MOVE de dano de um tipo aleatório. Role um d20 para determinar qual tipo de dano é causado. d20 Tipo d20 Tipo 1 Normal 11 Psíquico 2 Fogo 12 Inseto 3 Água 13 Pedra 4 Elétrico 14 Fantasma 5 Grama 15 Dragão 6 Gelo 16 Sombrio 7 Lutador 17 Aço 8 Venenoso 18 Fada 9 Terra 19 Role novamente 10 Voador 20 Role novamente</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10, e 5d6 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "2d6",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "3d6"
-        },
-        {
-          "level": 10,
-          "formula": "3d8"
-        },
-        {
-          "level": 17,
-          "formula": "5d6"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "jGV8JCfJWllRcu0G": {
+        "_id": "jGV8JCfJWllRcu0G",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "Qualquer",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera uma onda de poder desconhecido em uma criatura no alcance. Faça um ataque à distância em uma criatura, causando 2d6 + MOVE de dano de um tipo aleatório. Role um d20 para determinar qual tipo de dano é causado. d20 Tipo d20 Tipo 1 Normal 11 Psíquico 2 Fogo 12 Inseto 3 Água 13 Pedra 4 Elétrico 14 Fantasma 5 Grama 15 Dragão 6 Gelo 16 Sombrio 7 Lutador 17 Aço 8 Venenoso 18 Fada 9 Terra 19 Role novamente 10 Voador 20 Role novamente</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10, e 5d6 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "2d6",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "3d6"
+            },
+            {
+              "level": 10,
+              "formula": "3d8"
+            },
+            {
+              "level": 17,
+              "formula": "5d6"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

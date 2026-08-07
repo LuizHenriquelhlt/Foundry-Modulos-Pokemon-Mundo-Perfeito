@@ -2,41 +2,67 @@
   "_key": "!items!PUeKbkDZyOgdvZbM",
   "_id": "PUeKbkDZyOgdvZbM",
   "name": "Transform",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "Nenhum",
-    "powerAbilities": [],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você tenta se transformar em uma cópia quase exata de uma criatura dentro do alcance. O seu treinador deve ser capaz de controlar o SR base do alvo ou o Move falha. Durante a duração, você copia a aparência, o tamanho, o tipo, os valores de atributos, perícias, deslocamentos, sentidos, habilidade passiva, Moves atuais do alvo e qualquer alteração em suas Mudanças de Status. Você retém seus próprios talentos, nível, PV (Mudanças de CON não afetam seu PV) e Condições de Status. Um Pokémon selvagem mantém sua taxa de captura, mesmo transformado. Criaturas com visão verdadeira conseguem enxergar sua forma original.</p><p><strong>Observações:</strong></p><p>Este Move ignora reações de proteção, como Protect ou Detect. Se você ou o alvo estiverem sob efeito da habilidade Illusion, o Move falha. Transform não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Enquanto ativo",
-    "range": {
-      "raw": "50 pés (15 metros)",
-      "meters": 15.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você tenta se transformar em uma cópia quase exata de uma criatura dentro do alcance. O seu treinador deve ser capaz de controlar o SR base do alvo ou o Move falha. Durante a duração, você copia a aparência, o tamanho, o tipo, os valores de atributos, perícias, deslocamentos, sentidos, habilidade passiva, Moves atuais do alvo e qualquer alteração em suas Mudanças de Status. Você retém seus próprios talentos, nível, PV (Mudanças de CON não afetam seu PV) e Condições de Status. Um Pokémon selvagem mantém sua taxa de captura, mesmo transformado. Criaturas com visão verdadeira conseguem enxergar sua forma original.</p>",
-    "higherLevels": "",
-    "observations": "<p>Este Move ignora reações de proteção, como Protect ou Detect. Se você ou o alvo estiverem sob efeito da habilidade Illusion, o Move falha. Transform não pode ser escolhido pelo Move Assist.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "Nenhum",
+        "powerAbilities": [],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Enquanto ativo",
+        "range": {
+          "raw": "50 pés (15 metros)",
+          "meters": 15.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você tenta se transformar em uma cópia quase exata de uma criatura dentro do alcance. O seu treinador deve ser capaz de controlar o SR base do alvo ou o Move falha. Durante a duração, você copia a aparência, o tamanho, o tipo, os valores de atributos, perícias, deslocamentos, sentidos, habilidade passiva, Moves atuais do alvo e qualquer alteração em suas Mudanças de Status. Você retém seus próprios talentos, nível, PV (Mudanças de CON não afetam seu PV) e Condições de Status. Um Pokémon selvagem mantém sua taxa de captura, mesmo transformado. Criaturas com visão verdadeira conseguem enxergar sua forma original.</p>",
+        "higherLevels": "",
+        "observations": "<p>Este Move ignora reações de proteção, como Protect ou Detect. Se você ou o alvo estiverem sob efeito da habilidade Illusion, o Move falha. Transform não pode ser escolhido pelo Move Assist.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -44,7 +70,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6250,
+  "sort": 6260,
   "ownership": {
     "default": 0
   }

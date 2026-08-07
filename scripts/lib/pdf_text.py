@@ -63,7 +63,18 @@ def strip_noise(text):
             i += 1
             continue
         if line == "Arte feita por":
-            i += 2  # pula a linha de crédito e a linha do nome do artista
+            # pula a linha de crédito; a linha seguinte normalmente é só o handle do
+            # artista (token único, ex.: "drjhordan"). Mas às vezes o pdfplumber cola o
+            # handle no FIM de uma linha de conteúdo real (ex.: "Aqua Tail drjhordan") —
+            # nesse caso, descarta apenas o último token e preserva o resto da linha.
+            nxt = lines[i + 1].strip() if i + 1 < len(lines) else ""
+            if nxt and " " not in nxt:
+                i += 2
+            elif nxt:
+                cleaned.append(nxt.rsplit(" ", 1)[0])
+                i += 2
+            else:
+                i += 1
             continue
         cleaned.append(line)
         i += 1

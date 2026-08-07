@@ -65,7 +65,11 @@ def patch_pokedex():
     n = 0
     for f in glob.glob(os.path.join(SRC, "pokedex", "*.json")):
         doc = json.load(open(f, encoding="utf-8"))
-        dex = doc["system"]["dexNumber"]
+        # após convert-to-dnd5e-native.py o schema PMP vive em flags, não em system
+        dex = doc["system"].get("dexNumber") \
+            or doc.get("flags", {}).get("pokemon-mundo-perfeito", {}).get("species", {}).get("dexNumber")
+        if not dex:
+            continue
         doc["img"] = ARTWORK.format(dex=dex)
         token = doc.setdefault("prototypeToken", {})
         token["texture"] = {"src": SPRITE.format(dex=dex)}
@@ -90,11 +94,17 @@ def patch_pokeballs():
     print(f"pokeballs: {n_ok} com sprite, {n_missing} sem correspondência no PokeAPI")
 
 
+def move_type_of(doc):
+    # após convert-to-dnd5e-native.py o schema PMP vive em flags, não em system
+    return doc["system"].get("moveType") \
+        or doc.get("flags", {}).get("pokemon-mundo-perfeito", {}).get("move", {}).get("moveType", "normal")
+
+
 def move_types_by_name():
     types = {}
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
         doc = json.load(open(f, encoding="utf-8"))
-        types[doc["name"]] = doc["system"].get("moveType", "normal")
+        types[doc["name"]] = move_type_of(doc)
     return types
 
 
@@ -102,7 +112,7 @@ def patch_moves_and_tms(types_by_name):
     n = 0
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
         doc = json.load(open(f, encoding="utf-8"))
-        mtype = doc["system"].get("moveType", "normal")
+        mtype = move_type_of(doc)
         if mtype in TM_TYPES:
             doc["img"] = ITEM.format(slug=f"tm-{mtype}")
             save(f, doc)

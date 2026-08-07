@@ -2,59 +2,152 @@
   "_key": "!items!3R4WSu6Kc2LWIlkX",
   "_id": "3R4WSu6Kc2LWIlkX",
   "name": "Expanding Force",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-psychic.png",
   "system": {
-    "moveType": "psychic",
-    "category": "",
-    "power": "DES/INT/SAB",
-    "powerAbilities": [
-      "dex",
-      "int",
-      "wis"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você ataca o alvo usando poder psíquico, e se o campo estiver coberto por Psychic Terrain, o golpe explode com força ainda maior. Fora de um Psychic Terrain: Faça um ataque à distância contra um alvo em alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Dentro de um Psychic Terrain: Seu ataque se expande, tornando-se um cone de 40 pés (12 metros), e causando mais dois dados de dano extra. Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo metade do dano em um sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Psíquico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você ataca o alvo usando poder psíquico, e se o campo estiver coberto por Psychic Terrain, o golpe explode com força ainda maior. Fora de um Psychic Terrain: Faça um ataque à distância contra um alvo em alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Dentro de um Psychic Terrain: Seu ataque se expande, tornando-se um cone de 40 pés (12 metros), e causando mais dois dados de dano extra. Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo metade do dano em um sucesso.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "4d4",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d6"
-        },
-        {
-          "level": 10,
-          "formula": "4d8"
-        },
-        {
-          "level": 17,
-          "formula": "4d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "5mYXUXW2dikwN3Y9": {
+        "_id": "5mYXUXW2dikwN3Y9",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "psychic",
+        "category": "",
+        "power": "DES/INT/SAB",
+        "powerAbilities": [
+          "dex",
+          "int",
+          "wis"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você ataca o alvo usando poder psíquico, e se o campo estiver coberto por Psychic Terrain, o golpe explode com força ainda maior. Fora de um Psychic Terrain: Faça um ataque à distância contra um alvo em alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Dentro de um Psychic Terrain: Seu ataque se expande, tornando-se um cone de 40 pés (12 metros), e causando mais dois dados de dano extra. Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo metade do dano em um sucesso.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "4d4",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d6"
+            },
+            {
+              "level": 10,
+              "formula": "4d8"
+            },
+            {
+              "level": 17,
+              "formula": "4d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

@@ -2,43 +2,69 @@
   "_key": "!items!bAnngeYwXn5EJukP",
   "_id": "bAnngeYwXn5EJukP",
   "name": "Parting Shot",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-dark.png",
   "system": {
-    "moveType": "dark",
-    "category": "",
-    "power": "CAR",
-    "powerAbilities": [
-      "cha"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você entrega uma ameaça brutal contra uma criatura dentro do alcance antes de recuar. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque e o Ataque Especial do alvo são reduzidos em 1 estágio cada, podendo ser acumulados em até -6 estágios cada, e o treinador deve trocar o usuário por outro Pokémon como uma ação livre.</p><p><strong>Observações:</strong></p><p>Parting Shot é um Move baseado em som. O usuário não será trocado se o Move falhar (como por causa de Soundproof), ou se o alvo já estiver com -6 em seu Ataque ou Ataque Especial. Se Parting Shot for usado em um Pokémon sob o efeito de Magic Coat ou que possua a habilidade Magic Bounce, o efeito é refletido de volta para o usuário, reduzindo seu próprio Ataque e Ataque Especial, e o alvo é quem é trocado no lugar.</p><p><strong>Efeito de Poder-Z:</strong> O usuário desmaia, mas a próxima criatura libertada por seu Treinador tem sua vida completamente restaurada e</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Sombrio",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "50 pés (15 metros)",
-      "meters": 15.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você entrega uma ameaça brutal contra uma criatura dentro do alcance antes de recuar. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque e o Ataque Especial do alvo são reduzidos em 1 estágio cada, podendo ser acumulados em até -6 estágios cada, e o treinador deve trocar o usuário por outro Pokémon como uma ação livre.</p>",
-    "higherLevels": "",
-    "observations": "<p>Parting Shot é um Move baseado em som. O usuário não será trocado se o Move falhar (como por causa de Soundproof), ou se o alvo já estiver com -6 em seu Ataque ou Ataque Especial. Se Parting Shot for usado em um Pokémon sob o efeito de Magic Coat ou que possua a habilidade Magic Bounce, o efeito é refletido de volta para o usuário, reduzindo seu próprio Ataque e Ataque Especial, e o alvo é quem é trocado no lugar.</p>",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "O usuário desmaia, mas a próxima criatura libertada por seu Treinador tem sua vida completamente restaurada e"
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "dark",
+        "category": "",
+        "power": "CAR",
+        "powerAbilities": [
+          "cha"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "50 pés (15 metros)",
+          "meters": 15.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você entrega uma ameaça brutal contra uma criatura dentro do alcance antes de recuar. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque e o Ataque Especial do alvo são reduzidos em 1 estágio cada, podendo ser acumulados em até -6 estágios cada, e o treinador deve trocar o usuário por outro Pokémon como uma ação livre.</p>",
+        "higherLevels": "",
+        "observations": "<p>Parting Shot é um Move baseado em som. O usuário não será trocado se o Move falhar (como por causa de Soundproof), ou se o alvo já estiver com -6 em seu Ataque ou Ataque Especial. Se Parting Shot for usado em um Pokémon sob o efeito de Magic Coat ou que possua a habilidade Magic Bounce, o efeito é refletido de volta para o usuário, reduzindo seu próprio Ataque e Ataque Especial, e o alvo é quem é trocado no lugar.</p>",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "O usuário desmaia, mas a próxima criatura libertada por seu Treinador tem sua vida completamente restaurada e"
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

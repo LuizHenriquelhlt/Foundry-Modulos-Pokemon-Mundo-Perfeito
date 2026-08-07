@@ -2,55 +2,151 @@
   "_key": "!items!tdyDeULs4cKxfOa6",
   "_id": "tdyDeULs4cKxfOa6",
   "name": "Acrobatics",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-flying.png",
   "system": {
-    "moveType": "flying",
-    "category": "",
-    "power": "DES",
-    "powerAbilities": [
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca habilmente um alvo com destreza acrobática. Faça um ataque corpo a corpo, causando 1d12 + MOVE de dano voador em um acerto. Se não estiver segurando um item quando ativar este Move, dobre os dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 10,
-      "max": 10,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Voador",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você ataca habilmente um alvo com destreza acrobática. Faça um ataque corpo a corpo, causando 1d12 + MOVE de dano voador em um acerto. Se não estiver segurando um item quando ativar este Move, dobre os dados de dano.</p>",
-    "higherLevels": "<p>O dado de dano para esse Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "1d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "10",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d4"
-        },
-        {
-          "level": 10,
-          "formula": "2d12"
-        },
-        {
-          "level": 17,
-          "formula": "3d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "RKwqV7717jfJgIEk": {
+        "_id": "RKwqV7717jfJgIEk",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "flying",
+        "category": "",
+        "power": "DES",
+        "powerAbilities": [
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 10,
+          "max": 10,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você ataca habilmente um alvo com destreza acrobática. Faça um ataque corpo a corpo, causando 1d12 + MOVE de dano voador em um acerto. Se não estiver segurando um item quando ativar este Move, dobre os dados de dano.</p>",
+        "higherLevels": "<p>O dado de dano para esse Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "1d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d4"
+            },
+            {
+              "level": 10,
+              "formula": "2d12"
+            },
+            {
+              "level": 17,
+              "formula": "3d10"
+            }
+          ]
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

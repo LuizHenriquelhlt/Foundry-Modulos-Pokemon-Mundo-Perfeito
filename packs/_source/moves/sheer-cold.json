@@ -2,43 +2,69 @@
   "_key": "!items!IsBGXCf2IsysA5R2",
   "_id": "IsBGXCf2IsysA5R2",
   "name": "Sheer Cold",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-ice.png",
   "system": {
-    "moveType": "ice",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você envia um arrepio na espinha de uma criatura, congelando seu interior. Faça um ataque à distância contra um alvo. Em um acerto, role um d20. Em um resultado de 15 ou mais, você faz a criatura desmaiar instantaneamente. Em qualquer outro resultado, este Move não tem efeito. Para cada 2 níveis em que você estiver acima do alvo, aumente em +1 a margem de acerto no efeito do d20 deste Move. Caso use em um alvo de nível maior que o seu, o ataque falha automaticamente.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Gelo",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "30 pés (9 metros)",
-      "meters": 9.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você envia um arrepio na espinha de uma criatura, congelando seu interior. Faça um ataque à distância contra um alvo. Em um acerto, role um d20. Em um resultado de 15 ou mais, você faz a criatura desmaiar instantaneamente. Em qualquer outro resultado, este Move não tem efeito. Para cada 2 níveis em que você estiver acima do alvo, aumente em +1 a margem de acerto no efeito do d20 deste Move. Caso use em um alvo de nível maior que o seu, o ataque falha automaticamente.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    }
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "ice",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "30 pés (9 metros)",
+          "meters": 9.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você envia um arrepio na espinha de uma criatura, congelando seu interior. Faça um ataque à distância contra um alvo. Em um acerto, role um d20. Em um resultado de 15 ou mais, você faz a criatura desmaiar instantaneamente. Em qualquer outro resultado, este Move não tem efeito. Para cada 2 níveis em que você estiver acima do alvo, aumente em +1 a margem de acerto no efeito do d20 deste Move. Caso use em um alvo de nível maior que o seu, o ataque falha automaticamente.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        }
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",

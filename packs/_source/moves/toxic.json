@@ -2,43 +2,69 @@
   "_key": "!items!w7Gl3JCcZk1gCWLP",
   "_id": "w7Gl3JCcZk1gCWLP",
   "name": "Toxic",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-poison.png",
   "system": {
-    "moveType": "poison",
-    "category": "",
-    "power": "CON",
-    "powerAbilities": [
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você lança uma chuva intensa de veneno contra uma criatura dentro do alcance. Role 1d20 + MOVE + 7 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Gravemente Envenenado. Caso este Move seja usado por um Pokémon do tipo Venenoso, ele acerta automaticamente.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Venenoso",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "20 pés (6 metros)",
-      "meters": 6.0,
-      "melee": false
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
+        }
+      ]
     },
-    "priority": 0,
-    "description": "<p>Você lança uma chuva intensa de veneno contra uma criatura dentro do alcance. Role 1d20 + MOVE + 7 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Gravemente Envenenado. Caso este Move seja usado por um Pokémon do tipo Venenoso, ele acerta automaticamente.</p>",
-    "higherLevels": "",
-    "observations": "",
-    "damage": {
-      "baseFormula": "",
-      "scaling": []
-    },
-    "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+    "activities": {}
   },
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "move": {
+        "moveType": "poison",
+        "category": "",
+        "power": "CON",
+        "powerAbilities": [
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "20 pés (6 metros)",
+          "meters": 6.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você lança uma chuva intensa de veneno contra uma criatura dentro do alcance. Role 1d20 + MOVE + 7 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Gravemente Envenenado. Caso este Move seja usado por um Pokémon do tipo Venenoso, ele acerta automaticamente.</p>",
+        "higherLevels": "",
+        "observations": "",
+        "damage": {
+          "baseFormula": "",
+          "scaling": []
+        },
+        "zPowerEffect": "Aumenta a Defesa em 1 estágio."
+      }
+    }
+  },
   "_stats": {
     "coreVersion": "12.331",
     "systemId": "dnd5e",
@@ -46,7 +72,7 @@
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 6220,
+  "sort": 6230,
   "ownership": {
     "default": 0
   }

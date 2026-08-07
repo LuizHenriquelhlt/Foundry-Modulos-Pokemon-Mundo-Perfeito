@@ -2,58 +2,139 @@
   "_key": "!items!3ezFWYetZYoyv1nt",
   "_id": "3ezFWYetZYoyv1nt",
   "name": "Aura Wheel",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-electric.png",
   "system": {
-    "moveType": "electric",
-    "category": "",
-    "power": "FOR/DES",
-    "powerAbilities": [
-      "str",
-      "dex"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você forma uma roda de energia em tons de azul claro e vermelho ao seu redor, então avança em alta velocidade contra o oponente. Avance obrigatoriamente 20 pés (6 metros) em linha reta e realize um ataque corpo a corpo contra cada criatura no trajeto, causando 2d12 + MOVE de dano do tipo elétrico ou sombrio, a depender do tipo atual de Morpeko. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Caso consiga causar dano com este Move, sua Velocidade é aumentada em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p><p><strong>Observações:</strong></p><p>Aura Wheel só pode ser usado com sucesso por Morpeko, ou por um Pokémon que tenha se transformado em Morpeko. Se este Move for usado por qualquer outro Pokémon, como através de Mimic, o Move falhará.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 5,
-      "max": 5,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Elétrico",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "Corpo a corpo",
-      "meters": 0.0,
-      "melee": true
-    },
-    "priority": 0,
-    "description": "<p>Você forma uma roda de energia em tons de azul claro e vermelho ao seu redor, então avança em alta velocidade contra o oponente. Avance obrigatoriamente 20 pés (6 metros) em linha reta e realize um ataque corpo a corpo contra cada criatura no trajeto, causando 2d12 + MOVE de dano do tipo elétrico ou sombrio, a depender do tipo atual de Morpeko. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Caso consiga causar dano com este Move, sua Velocidade é aumentada em 1 estágio, podendo ser acumulado em até 6 estágios.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
-    "observations": "<p>Aura Wheel só pode ser usado com sucesso por Morpeko, ou por um Pokémon que tenha se transformado em Morpeko. Se este Move for usado por qualquer outro Pokémon, como através de Mimic, o Move falhará.</p>",
-    "damage": {
-      "baseFormula": "2d12",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "5",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d8"
-        },
-        {
-          "level": 10,
-          "formula": "4d12"
-        },
-        {
-          "level": 17,
-          "formula": "7d8"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "KkZQ3bhguqj8c4Ic": {
+        "_id": "KkZQ3bhguqj8c4Ic",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "damage",
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 12,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen8"
+      "source": "Gen8",
+      "move": {
+        "moveType": "electric",
+        "category": "",
+        "power": "FOR/DES",
+        "powerAbilities": [
+          "str",
+          "dex"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação"
+        },
+        "pp": {
+          "value": 5,
+          "max": 5,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "Corpo a corpo",
+          "meters": 0.0,
+          "melee": true
+        },
+        "priority": 0,
+        "description": "<p>Você forma uma roda de energia em tons de azul claro e vermelho ao seu redor, então avança em alta velocidade contra o oponente. Avance obrigatoriamente 20 pés (6 metros) em linha reta e realize um ataque corpo a corpo contra cada criatura no trajeto, causando 2d12 + MOVE de dano do tipo elétrico ou sombrio, a depender do tipo atual de Morpeko. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Caso consiga causar dano com este Move, sua Velocidade é aumentada em 1 estágio, podendo ser acumulado em até 6 estágios.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+        "observations": "<p>Aura Wheel só pode ser usado com sucesso por Morpeko, ou por um Pokémon que tenha se transformado em Morpeko. Se este Move for usado por qualquer outro Pokémon, como através de Mimic, o Move falhará.</p>",
+        "damage": {
+          "baseFormula": "2d12",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d8"
+            },
+            {
+              "level": 10,
+              "formula": "4d12"
+            },
+            {
+              "level": 17,
+              "formula": "7d8"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {

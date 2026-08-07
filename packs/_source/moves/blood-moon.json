@@ -2,58 +2,151 @@
   "_key": "!items!QNctesjdsk2lyY6B",
   "_id": "QNctesjdsk2lyY6B",
   "name": "Blood Moon",
-  "type": "pokemon-mundo-perfeito.move",
+  "type": "feat",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png",
   "system": {
-    "moveType": "normal",
-    "category": "",
-    "power": "FOR/CON",
-    "powerAbilities": [
-      "str",
-      "con"
-    ],
-    "activation": {
-      "type": "action",
-      "raw": "1 ação, recarga"
+    "description": {
+      "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, recarga &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você libera toda a força do seu espírito para criar uma esfera de energia vermelha como sangue, e a dispara contra um oponente. Faça um ataque à distância contra um alvo em alcance, causando 3d10 + MOVE de dano do tipo normal em um acerto. Este Move não pode ser usado em turnos consecutivos, exceto se o ataque errar ou falhar. Se o usuário não puder selecionar outro Move (devido a itens Choice ou por não ter outros Moves utilizáveis), ele usará Struggle a cada dois turnos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+      "chat": ""
     },
-    "pp": {
-      "value": 3,
-      "max": 3,
-      "unlimited": false
+    "requirements": "Move de Pokémon — Tipo Normal",
+    "type": {
+      "value": "",
+      "subtype": ""
     },
-    "duration": "Instantânea",
-    "range": {
-      "raw": "40 pés (12 metros)",
-      "meters": 12.0,
-      "melee": false
-    },
-    "priority": 0,
-    "description": "<p>Você libera toda a força do seu espírito para criar uma esfera de energia vermelha como sangue, e a dispara contra um oponente. Faça um ataque à distância contra um alvo em alcance, causando 3d10 + MOVE de dano do tipo normal em um acerto. Este Move não pode ser usado em turnos consecutivos, exceto se o ataque errar ou falhar. Se o usuário não puder selecionar outro Move (devido a itens Choice ou por não ter outros Moves utilizáveis), ele usará Struggle a cada dois turnos.</p>",
-    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
-    "observations": "",
-    "damage": {
-      "baseFormula": "3d10",
-      "scaling": [
+    "uses": {
+      "spent": 0,
+      "max": "3",
+      "recovery": [
         {
-          "level": 5,
-          "formula": "4d10"
-        },
-        {
-          "level": 10,
-          "formula": "7d8"
-        },
-        {
-          "level": 17,
-          "formula": "7d10"
+          "period": "lr",
+          "type": "recoverAll",
+          "formula": ""
         }
       ]
+    },
+    "activities": {
+      "z7PJqPhMmuDL3c0w": {
+        "_id": "z7PJqPhMmuDL3c0w",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 10,
+              "bonus": "@mod",
+              "types": []
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
   "folder": null,
   "flags": {
     "pokemon-mundo-perfeito": {
-      "source": "Gen9"
+      "source": "Gen9",
+      "move": {
+        "moveType": "normal",
+        "category": "",
+        "power": "FOR/CON",
+        "powerAbilities": [
+          "str",
+          "con"
+        ],
+        "activation": {
+          "type": "action",
+          "raw": "1 ação, recarga"
+        },
+        "pp": {
+          "value": 3,
+          "max": 3,
+          "unlimited": false
+        },
+        "duration": "Instantânea",
+        "range": {
+          "raw": "40 pés (12 metros)",
+          "meters": 12.0,
+          "melee": false
+        },
+        "priority": 0,
+        "description": "<p>Você libera toda a força do seu espírito para criar uma esfera de energia vermelha como sangue, e a dispara contra um oponente. Faça um ataque à distância contra um alvo em alcance, causando 3d10 + MOVE de dano do tipo normal em um acerto. Este Move não pode ser usado em turnos consecutivos, exceto se o ataque errar ou falhar. Se o usuário não puder selecionar outro Move (devido a itens Choice ou por não ter outros Moves utilizáveis), ele usará Struggle a cada dois turnos.</p>",
+        "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+        "observations": "",
+        "damage": {
+          "baseFormula": "3d10",
+          "scaling": [
+            {
+              "level": 5,
+              "formula": "4d10"
+            },
+            {
+              "level": 10,
+              "formula": "7d8"
+            },
+            {
+              "level": 17,
+              "formula": "7d10"
+            }
+          ]
+        }
+      }
     }
   },
   "_stats": {
