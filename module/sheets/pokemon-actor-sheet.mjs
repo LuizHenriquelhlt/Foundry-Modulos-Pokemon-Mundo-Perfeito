@@ -1,6 +1,10 @@
 const ABILITY_KEYS = ["str", "dex", "con", "int", "wis", "cha"];
 
-export default class PokemonActorSheet extends ActorSheet {
+// Foundry v13+ moveu as classes AppV1 para foundry.appv1.sheets; o global antigo
+// (ActorSheet) só existe até ser removido de vez. Resolve nos dois caminhos.
+const ActorSheetBase = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
+
+export default class PokemonActorSheet extends ActorSheetBase {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["pmp", "sheet", "actor", "pokemon"],

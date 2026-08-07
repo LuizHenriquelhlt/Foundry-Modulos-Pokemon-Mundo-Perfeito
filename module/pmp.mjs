@@ -23,12 +23,17 @@ Hooks.once("init", () => {
   CONFIG.Actor.dataModels["pokemon-mundo-perfeito.pokemon"] = PokemonData;
   CONFIG.Item.dataModels["pokemon-mundo-perfeito.move"] = MoveData;
 
-  Actors.registerSheet(MODULE_ID, PokemonActorSheet, {
+  // Foundry v13+ moveu as coleções para foundry.documents.collections; os globais
+  // antigos (Actors/Items) só existem até serem removidos de vez.
+  const ActorsCollection = foundry.documents?.collections?.Actors ?? globalThis.Actors;
+  const ItemsCollection = foundry.documents?.collections?.Items ?? globalThis.Items;
+
+  ActorsCollection.registerSheet(MODULE_ID, PokemonActorSheet, {
     types: ["pokemon-mundo-perfeito.pokemon"],
     makeDefault: true,
     label: "Ficha de Pokémon"
   });
-  Items.registerSheet(MODULE_ID, MoveItemSheet, {
+  ItemsCollection.registerSheet(MODULE_ID, MoveItemSheet, {
     types: ["pokemon-mundo-perfeito.move"],
     makeDefault: true,
     label: "Ficha de Move"
