@@ -31,6 +31,7 @@ def make_id(seed):
 
 def base_item(doc_id, name, system, category, img="icons/svg/upgrade.svg"):
     return {
+        "_key": f"!items!{doc_id}",
         "_id": doc_id, "name": name, "type": "feat", "img": img, "system": system,
         "effects": [], "folder": None,
         "flags": {"pokemon-mundo-perfeito": {"category": category}},

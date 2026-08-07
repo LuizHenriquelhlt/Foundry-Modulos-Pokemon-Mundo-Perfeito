@@ -115,6 +115,7 @@ def extract_page_items(page):
 
 def base_item(doc_id, name, item_type, system, img="icons/svg/item-bag.svg"):
     return {
+        "_key": f"!items!{doc_id}",
         "_id": doc_id, "name": name, "type": item_type, "img": img, "system": system,
         "effects": [], "folder": None, "flags": {},
         "_stats": {"coreVersion": "12.331", "systemId": "dnd5e", "systemVersion": "4.3.5",

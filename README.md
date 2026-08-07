@@ -2,7 +2,7 @@
 
 Módulo que integra o sistema de RPG **Pokémon Mundo Perfeito (PMP)** ao Foundry VTT, rodando por cima do sistema oficial **dnd5e** (v4/v5, Foundry v12+). O PMP é um hack completo de D&D 5e — este módulo reaproveita toda a engine de rolagens/perícias/CA/PV/descansos do dnd5e e adiciona por cima: Pokémon como Actors, Moves como Items, tabela de tipos, captura, Mega Evolução, Z-Moves, Dynamax/Terastal (referência) e a Pokédex completa.
 
-**Status: conteúdo completo das 5 fases planejadas**, extraído dos 6 livros do sistema (Livro de Regras, Livro dos Pokémon, Mega Evoluções, Z-Moves, Geração 8, Geração 9) via parsers dedicados em `scripts/`. Ainda não commitado nem testado dentro de um Foundry real — só gerado e validado estruturalmente (JSON bem formado, sem duplicatas, campos cruzados contra o PDF fonte).
+**Status: conteúdo completo das 5 fases planejadas**, extraído dos 6 livros do sistema (Livro de Regras, Livro dos Pokémon, Mega Evoluções, Z-Moves, Geração 8, Geração 9) via parsers dedicados em `scripts/`. O pipeline `npm install && npm run build:packs` foi testado de ponta a ponta (Node.js instalado, compêndios compilados e conferidos por tamanho/contagem de documentos) — ainda **não foi testado dentro de um Foundry real rodando**, então ajustes de sheet/CSS podem aparecer na primeira ativação.
 
 ## Conteúdo dos compêndios
 
@@ -97,7 +97,8 @@ Depois de instalar e compilar:
 
 ## Limitações conhecidas / próximos passos
 
-- **Sem teste em Foundry real**: todo o trabalho até aqui foi gerar e validar arquivos; a primeira ativação em um mundo Foundry de verdade vai revelar ajustes de sheet/CSS/Handlebars que só aparecem em execução.
+- **Sem teste em Foundry real**: o pipeline de build (`npm install && npm run build:packs`) foi testado e os compêndios compilam corretamente com dados reais — mas a primeira ativação em um mundo Foundry de verdade ainda vai revelar ajustes de sheet/CSS/Handlebars que só aparecem em execução.
+- **Ao rodar `npm install`, o npm pode avisar que bloqueou o script nativo do `classic-level`** (dependência de LevelDB do `@foundryvtt/foundryvtt-cli`) por segurança. Rode `npm approve-scripts classic-level` se quiser silenciar o aviso; na prática não afeta o resultado, já que `classic-level` traz binário pré-compilado para Windows/macOS/Linux.
 - **Classes de Treinador, Regiões, Origens e Especializações** viraram Items do tipo `feat`/`background` com o texto completo (fiel ao livro), mas não têm a progressão de nível conectada ao sistema de Advancement do dnd5e (isso exigiria reconstruir a classe inteira nesse sistema — escopo maior, não incluído aqui).
 - **Catálogo geral de itens** (~347 itens) tem ~110 linhas descartadas pelo parser de tabela por ambiguidade (fragmento de descrição vs. nome de item) — descartadas em vez de gravadas erradas; ver `scripts/parse-items.py`.
 - **Dynamax/Gigantamax e Terastal** ficaram como texto de referência (regras + requisitos), não como mecânica automatizada em código — o próprio livro oferece múltiplos métodos alternativos à escolha do Mestre para o cálculo de PV do Dynamax, o que não se resume a uma função determinística única.

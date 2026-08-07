@@ -501,6 +501,7 @@ def main():
 
         doc_id = make_id(f"{name}{dex}{seen_dex[key]}", used_ids)
         doc = {
+            "_key": f"!actors!{doc_id}",
             "_id": doc_id,
             "name": name,
             "type": "pokemon-mundo-perfeito.pokemon",

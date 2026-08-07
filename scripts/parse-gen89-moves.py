@@ -77,6 +77,7 @@ def main():
 
             doc_id = parse_moves.make_id(name + tag, used_ids)
             doc = {
+                "_key": f"!items!{doc_id}",
                 "_id": doc_id, "name": name, "type": "pokemon-mundo-perfeito.move",
                 "img": "icons/svg/item-bag.svg", "system": system,
                 "effects": [], "folder": None, "flags": {"pokemon-mundo-perfeito": {"source": tag}},

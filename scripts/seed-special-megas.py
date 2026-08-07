@@ -26,6 +26,7 @@ def make_id(seed):
 
 def base_item(doc_id, name, system, img="icons/svg/upgrade.svg"):
     return {
+        "_key": f"!items!{doc_id}",
         "_id": doc_id, "name": name, "type": "equipment", "img": img, "system": system,
         "effects": [], "folder": None, "flags": {"pokemon-mundo-perfeito": {"category": "mega-stone-especial"}},
         "_stats": {"coreVersion": "12.331", "systemId": "dnd5e", "systemVersion": "4.3.5",

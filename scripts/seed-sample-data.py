@@ -33,7 +33,9 @@ POWER_ABILITY_MAP = {
 
 
 def base_item(doc_id, name, item_type, system, img=ITEM_ICON):
+    collection = "actors" if item_type == "pokemon-mundo-perfeito.pokemon" else "items"
     return {
+        "_key": f"!{collection}!{doc_id}",
         "_id": doc_id,
         "name": name,
         "type": item_type,

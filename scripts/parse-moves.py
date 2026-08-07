@@ -339,6 +339,7 @@ def main():
 
         doc_id = make_id(name + str(names_seen[name]), used_ids)
         doc = {
+            "_key": f"!items!{doc_id}",
             "_id": doc_id,
             "name": name,
             "type": "pokemon-mundo-perfeito.move",
