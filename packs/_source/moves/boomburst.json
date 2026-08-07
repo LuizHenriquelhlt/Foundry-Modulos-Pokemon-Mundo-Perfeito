@@ -1,0 +1,65 @@
+{
+  "_id": "FN90BS1NEFWhY1vx",
+  "name": "Boomburst",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "FOR/CAR",
+    "powerAbilities": [
+      "str",
+      "cha"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal (raio de 20 pés / 6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você cria um som ensurdecedor e explosivo que causa dano a todas as criaturas dentro de 20 pés (6 metros) de você. Force qualquer criatura dentro do alcance a fazer um teste de CON contra sua CD de Move, sofrendo 3d10 + MOVE de dano normal em caso de falha, ou metade disso em caso de sucesso.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
+    "observations": "<p>Boomburst é um Move baseado em som.</p>",
+    "damage": {
+      "baseFormula": "3d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "4d10"
+        },
+        {
+          "level": 10,
+          "formula": "7d8"
+        },
+        {
+          "level": 17,
+          "formula": "7d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 560,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "MAmMHirYKTKYE4vC",
+  "name": "Freeze-Dry",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "ice",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "20 pés (6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você libera um ar extremamente frio que rapidamente resfria uma criatura em alcance. Faça um ataque à distância em uma criatura, causando 2d8 + MOVE de dano de gelo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica congelado. Este Move causa dano super efetivo a criaturas do tipo água. Se o alvo tiver um segundo tipo resistente ao dano de gelo, este Move causa dano padrão. Já se o segundo tipo for vulnerável ao dano de gelo, o dano é quadruplicado.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d10"
+        },
+        {
+          "level": 17,
+          "formula": "3d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 2120,
+  "ownership": {
+    "default": 0
+  }
+}

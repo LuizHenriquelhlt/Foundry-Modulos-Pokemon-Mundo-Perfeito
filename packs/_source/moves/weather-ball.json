@@ -1,0 +1,65 @@
+{
+  "_id": "tiGxeUWkWD01E0o8",
+  "name": "Weather Ball",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "30 pés (9 metros)",
+      "meters": 9.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você envia uma bola de energia poderosa que muda de tipo com base no clima circundante. Sem nenhuma condição climática, este Move causa 1d10 + MOVE de dano normal. Se houver uma condição climática em efeito, dobre os dados de dano e o Move se torna de outro tipo, conforme a tabela abaixo: Clima Tipo Nevoeiro ou ventos fortes Normal Luz solar intensa Fogo Chuva Água Tempestade de Areia Pedra Granizo ou Neve Gelo</p>",
+    "higherLevels": "<p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+    "observations": "<p>Weather Ball receberá STAB quando apropriado, por exemplo, Vanilluxe durante uma nevasca, ou Castform durante sol, chuva ou granizo, já que ele se transforma no tipo correspondente. Na luz solar intensa e na chuva, o dano de Weather Ball naturalmente recebe um aumento adicional em seus dados de dano, pois os ataques do tipo fogo e água são fortalecidos nessas condições, respectivamente. Leia os Moves Sunny Day e Rain Dance para mais detalhes.</p>",
+    "damage": {
+      "baseFormula": "1d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d8"
+        },
+        {
+          "level": 10,
+          "formula": "2d10"
+        },
+        {
+          "level": 17,
+          "formula": "4d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 6540,
+  "ownership": {
+    "default": 0
+  }
+}

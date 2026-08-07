@@ -1,0 +1,64 @@
+{
+  "_id": "pBQdMk6E4burvAfe",
+  "name": "Steamroller",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "bug",
+    "category": "",
+    "power": "FOR",
+    "powerAbilities": [
+      "str"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você retrai o corpo e gira em alta velocidade, avançando em colisão contra o alvo. Faça uma rolagem de ataque corpo a corpo, causando 2d6 + MOVE de dano de inseto em caso de acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica atordoado. Se o alvo tiver usado Minimize, Steamroller causa um acerto garantido e o dobro dos dados de dano, desde que você possa vê-lo e ele esteja dentro do seu alcance (mas role um d20 para chance de golpe crítico e outros efeitos).</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "1d20"
+        },
+        {
+          "level": 10,
+          "formula": "4d6"
+        },
+        {
+          "level": 17,
+          "formula": "4d8"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 5640,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "ub8oRSmTqSnAfBnT",
+  "name": "Charge Beam",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "electric",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "80 pés (24 metros)",
+      "meters": 24.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você dispara um feixe de energia elétrica em uma criatura, e esse ataque ainda tem chance de energizá-lo. Faça um ataque à distância -1 em um alvo, causando 1d10 + MOVE de dano do tipo elétrico em caso de acerto. Em uma rolagem natural de ataque de 7 ou mais, mesmo que o golpe erre, seu Ataque Especial aumenta em 1 estágio, podendo ser acumulado em até 6 estágios.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "1d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d8"
+        },
+        {
+          "level": 10,
+          "formula": "2d10"
+        },
+        {
+          "level": 17,
+          "formula": "4d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 750,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,78 @@
+<form class="{{cssClass}} pmp-move-sheet" autocomplete="off">
+
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <input class="move-name" type="text" name="name" value="{{item.name}}" placeholder="Nome do Move" />
+  </header>
+
+  <div class="pmp-grid-top">
+    <div class="stat-box">
+      <label>Tipo</label>
+      <select name="system.moveType">
+        {{#each typeOptions as |type|}}
+          <option value="{{type}}" {{#if (eq type system.moveType)}}selected{{/if}}>{{lookup ../typeLabels type}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="stat-box">
+      <label>Categoria</label>
+      <input type="text" name="system.category" value="{{system.category}}" placeholder="Físico / Especial / Status" />
+    </div>
+    <div class="stat-box">
+      <label>Poder do Move</label>
+      <input type="text" name="system.power" value="{{system.power}}" placeholder="ex.: FOR/DES" />
+    </div>
+    <div class="stat-box">
+      <label>Prioridade</label>
+      <input type="number" name="system.priority" value="{{system.priority}}" />
+    </div>
+  </div>
+
+  <div class="pmp-grid-top">
+    <div class="stat-box">
+      <label>Tempo de Execução</label>
+      <input type="text" name="system.activation.raw" value="{{system.activation.raw}}" />
+    </div>
+    <div class="stat-box">
+      <label>PP</label>
+      <input type="number" name="system.pp.value" value="{{system.pp.value}}" style="width:3em" {{#if system.pp.unlimited}}disabled{{/if}} />
+      / <input type="number" name="system.pp.max" value="{{system.pp.max}}" style="width:3em" {{#if system.pp.unlimited}}disabled{{/if}} />
+      <label class="inline"><input type="checkbox" name="system.pp.unlimited" {{checked system.pp.unlimited}} /> Ilimitado</label>
+    </div>
+    <div class="stat-box">
+      <label>Duração</label>
+      <input type="text" name="system.duration" value="{{system.duration}}" />
+    </div>
+    <div class="stat-box">
+      <label>Alcance</label>
+      <input type="text" name="system.range.raw" value="{{system.range.raw}}" />
+    </div>
+  </div>
+
+  <div class="pmp-row">
+    <label>Fórmula de Dano</label>
+    <input type="text" name="system.damage.baseFormula" value="{{system.damage.baseFormula}}" placeholder="ex.: 1d4" />
+  </div>
+
+  <div class="pmp-row">
+    <label>Descrição</label>
+    {{editor enrichedDescription target="system.description" button=true engine="prosemirror" collaborate=false}}
+  </div>
+
+  <div class="pmp-row">
+    <label>Níveis Superiores</label>
+    {{editor enrichedHigherLevels target="system.higherLevels" button=true engine="prosemirror" collaborate=false}}
+  </div>
+
+  <div class="pmp-row">
+    <label>Observações</label>
+    {{editor enrichedObservations target="system.observations" button=true engine="prosemirror" collaborate=false}}
+  </div>
+
+  <div class="pmp-row">
+    <label>Efeito de Poder-Z</label>
+    <input type="text" name="system.zPowerEffect" value="{{system.zPowerEffect}}"
+      placeholder="Só se aplica quando convertido em Z-Move de Status" />
+  </div>
+
+</form>

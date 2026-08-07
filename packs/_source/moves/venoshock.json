@@ -1,0 +1,65 @@
+{
+  "_id": "jVOt7iZafTs6sCDk",
+  "name": "Venoshock",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "poison",
+    "category": "",
+    "power": "DES/CON",
+    "powerAbilities": [
+      "dex",
+      "con"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "15 pés (4,5 metros)",
+      "meters": 4.5,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você tenta encharcar uma criatura com líquido venenoso. Faça um ataque à distância contra um alvo em alcance, causando 2d6 + MOVE de dano venenoso em um acerto. Se o alvo já estiver envenenado, dobre os dados de dano.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "1d20"
+        },
+        {
+          "level": 10,
+          "formula": "4d6"
+        },
+        {
+          "level": 17,
+          "formula": "4d8"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 6400,
+  "ownership": {
+    "default": 0
+  }
+}

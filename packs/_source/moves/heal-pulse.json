@@ -1,0 +1,66 @@
+{
+  "_id": "xM2GuBqOwE2Z6gTt",
+  "name": "Heal Pulse",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "psychic",
+    "category": "",
+    "power": "CON/SAB",
+    "powerAbilities": [
+      "con",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "30 pés (9 metros)",
+      "meters": 9.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você emite um pulso de cura que restaura os PV de um alvo. Escolha um alvo dentro do alcance (não pode ser você mesmo). O alvo recupera 2d6 + MOVE pontos de vida.</p>",
+    "higherLevels": "<p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17. (Desejo de Cura) 3Paula3</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "4d8"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    },
+    "zPowerEffect": "Remove todas as Mudanças de Status negativas."
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 2550,
+  "ownership": {
+    "default": 0
+  }
+}

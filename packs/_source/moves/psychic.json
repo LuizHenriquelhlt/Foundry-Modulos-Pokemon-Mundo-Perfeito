@@ -1,0 +1,65 @@
+{
+  "_id": "YUCYk0GuSzb73hxK",
+  "name": "Psychic",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "psychic",
+    "category": "",
+    "power": "INT/SAB",
+    "powerAbilities": [
+      "int",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "40 pés (12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você entra na mente de um alvo, prejudicando sua vontade de lutar. O alvo deve fazer um teste de resistência de SAB contra sua CD de Move, sofrendo 3d6 + MOVE de dano psíquico em uma falha, ou metade disso em um sucesso. Caso a criatura falhe na resistência por 10 ou mais, ou role um resultado natural de 1 ou 2 no teste, ela tem sua Defesa Especial reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "3d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "3d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d12"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 4350,
+  "ownership": {
+    "default": 0
+  }
+}

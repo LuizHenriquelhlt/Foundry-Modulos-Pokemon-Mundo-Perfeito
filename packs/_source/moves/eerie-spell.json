@@ -1,0 +1,69 @@
+{
+  "_id": "1l10eo255in2Xmxx",
+  "name": "Eerie Spell",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "psychic",
+    "category": "",
+    "power": "INT/SAB",
+    "powerAbilities": [
+      "int",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "40 pés (12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você desfere um ataque usando um poder psíquico imenso, drenando também parte da energia do último Move usado pela criatura. O alvo deve fazer um teste de resistência de SAB contra sua CD de Move, sofrendo 4d4 + MOVE de dano psíquico em uma falha, ou metade disso em um sucesso. Em uma falha, o último Move usado pelo alvo tem seus PP reduzidos em 1.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+    "observations": "<p>Eerie Spell é um Move baseado em som.</p>",
+    "damage": {
+      "baseFormula": "4d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "4d6"
+        },
+        {
+          "level": 10,
+          "formula": "4d8"
+        },
+        {
+          "level": 17,
+          "formula": "4d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10260,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "SZpZLIZgU0B2XsKv",
+  "name": "Eruption",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fire",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "60 pés (18 metros)",
+      "meters": 18.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você gera uma explosão massiva e intensa de fogo e magma que jorram de seu corpo. Qualquer criatura em um raio de 20 pés (6 metros), centrado em um ponto dentro do alcance, deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d6 + MOVE de dano de fogo em uma falha, ou metade disso em um sucesso. Este Move causa dano máximo apenas quando o usuário está com 100% de seus Pontos de Vida. Ao perder qualquer quantidade de vida, reduza em 1 o número de dados de dano rolados. Além disso, para cada 25% da vida máxima perdida, reduza em mais 1 dado de dano.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "5d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d8"
+        },
+        {
+          "level": 10,
+          "formula": "6d10"
+        },
+        {
+          "level": 17,
+          "formula": "6d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 1640,
+  "ownership": {
+    "default": 0
+  }
+}

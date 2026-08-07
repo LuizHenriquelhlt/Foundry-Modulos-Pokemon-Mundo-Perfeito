@@ -1,0 +1,65 @@
+{
+  "_id": "wv7hfpZtA75lkJz2",
+  "name": "Absorb",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "grass",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 15,
+      "max": 15,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "20 pés (6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você dispara feixes vermelhos que envolvem o alvo e drenam sua força vital. Faça um ataque à distância em uma criatura, causando 1d4 + MOVE de dano de grama. Metade do dano causado é convertido em cura para o usuário (arredondado para cima).</p>",
+    "higherLevels": "<p>O dado de dano para esse Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "1d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "1d6"
+        },
+        {
+          "level": 10,
+          "formula": "1d8"
+        },
+        {
+          "level": 17,
+          "formula": "1d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  }
+}

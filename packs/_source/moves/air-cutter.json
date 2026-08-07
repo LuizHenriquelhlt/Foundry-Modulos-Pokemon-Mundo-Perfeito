@@ -1,0 +1,64 @@
+{
+  "_id": "el5YWusSX71jKRPk",
+  "name": "Air Cutter",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "flying",
+    "category": "",
+    "power": "DES",
+    "powerAbilities": [
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 15,
+      "max": 15,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal (cone de 40 pés / 12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você cria uma rajada de vento cortante em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -1, sofrendo 2d6 + MOVE de dano voador em caso de falha, ou metade em um sucesso. Qualquer criatura que rolar um resultado natural de 3 ou menos no teste sofrerá um dano crítico.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "3d6"
+        },
+        {
+          "level": 10,
+          "formula": "3d8"
+        },
+        {
+          "level": 17,
+          "formula": "5d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 110,
+  "ownership": {
+    "default": 0
+  }
+}

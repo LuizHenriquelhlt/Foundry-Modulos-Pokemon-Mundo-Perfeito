@@ -1,0 +1,65 @@
+{
+  "_id": "rFENHzAtKBEtaKhk",
+  "name": "Steel Wing",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "steel",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 15,
+      "max": 15,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você golpeia um alvo com força com as asas enrijecidas como aço. Faça um ataque corpo a corpo -1 em uma criatura, causando 2d8 + MOVE de dano de aço em caso de acerto. Em um resultado natural de 19 ou 20 no acerto, sua Defesa é aumentada em 1 estágio, podendo ser acumulado em até 6 estágios.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d10"
+        },
+        {
+          "level": 17,
+          "formula": "3d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 5650,
+  "ownership": {
+    "default": 0
+  }
+}

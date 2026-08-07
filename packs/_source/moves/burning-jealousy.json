@@ -1,0 +1,69 @@
+{
+  "_id": "QuvG0MStxNRmGX2K",
+  "name": "Burning Jealousy",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fire",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal (cone de 40 pés / 12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você libera uma onda de energia alimentada por pura inveja em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d8 + MOVE de dano de fogo em uma falha, ou metade do dano em um sucesso. Caso alguma das criaturas atingidas tenha aumentado alguma Mudança de Status desde o final do seu último turno, ela se torna queimada.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+    "observations": "<p>Se o alvo tiver vulnerabilidade a Burning Jealousy e estiver segurando uma Weakness Policy, determinar se o oponente será queimado acontece antes da Weakness Policy ser consumida. Se o usuário tiver a habilidade Sheer Force, o aumento de dano é aplicado independentemente de Burning Jealousy queimar ou não o alvo.</p>",
+    "damage": {
+      "baseFormula": "2d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d10"
+        },
+        {
+          "level": 17,
+          "formula": "3d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10120,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "_id": "yW7y5TIifs0Ych7X",
+  "name": "Mystical Power",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "psychic",
+    "category": "",
+    "power": "DES/INT/SAB",
+    "powerAbilities": [
+      "dex",
+      "int",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "40 pés (12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você libera um poder misterioso para atacar. Faça um ataque à distância -1 contra um alvo em alcance, causando 2d8 + MOVE de dano psíquico em um acerto. Caso acerte, seu Ataque Especial é aumentado em 1 estágio, podendo ser acumulado em até 6 estágios.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d10"
+        },
+        {
+          "level": 17,
+          "formula": "3d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10500,
+  "ownership": {
+    "default": 0
+  }
+}

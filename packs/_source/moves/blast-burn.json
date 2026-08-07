@@ -1,0 +1,65 @@
+{
+  "_id": "zWsvkAVwMSLdE1b3",
+  "name": "Blast Burn",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fire",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação, recarga"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "50 pés (15 metros)",
+      "meters": 15.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você envolve seu corpo em chamas e lança uma explosão de fogo um raio de 5 pés (1,5 metros), centrado em um ponto dentro do alcance. Qualquer criatura pega na explosão deve fazer um teste de resistência de DES contra sua CD de Move -1, sofrendo 5d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Este Move drena sua energia, e você não pode realizar outra ação padrão ou reação até o final do seu próximo turno.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "5d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d8"
+        },
+        {
+          "level": 10,
+          "formula": "6d10"
+        },
+        {
+          "level": 17,
+          "formula": "6d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 460,
+  "ownership": {
+    "default": 0
+  }
+}

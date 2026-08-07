@@ -1,0 +1,119 @@
+<form class="{{cssClass}} pmp-pokemon-sheet" autocomplete="off">
+
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-fields">
+      <input class="pokemon-name" type="text" name="name" value="{{actor.name}}" placeholder="Nome" />
+      <div class="header-badges">
+        <span class="badge dex-number">#{{system.dexNumber}}</span>
+        <select name="system.types.type1">
+          {{#each typeOptions as |type|}}
+            <option value="{{type}}" {{#if (eq type system.types.type1)}}selected{{/if}}>{{lookup ../typeLabels type}}</option>
+          {{/each}}
+        </select>
+        <select name="system.types.type2">
+          <option value="">—</option>
+          {{#each typeOptions as |type|}}
+            <option value="{{type}}" {{#if (eq type system.types.type2)}}selected{{/if}}>{{lookup ../typeLabels type}}</option>
+          {{/each}}
+        </select>
+        <span class="badge">SR {{system.speciesRank.display}}</span>
+        <span class="badge">Nível <input type="number" name="system.level" value="{{system.level}}" /></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="stats">Estatísticas</a>
+    <a class="item" data-tab="moves">Moves</a>
+    <a class="item" data-tab="bio">Evolução &amp; Biografia</a>
+  </nav>
+
+  <section class="sheet-body">
+
+    <div class="tab" data-group="primary" data-tab="stats">
+      <div class="pmp-grid-top">
+        <div class="stat-box">
+          <label>Classe de Armadura</label>
+          <input type="number" name="system.armorClass.value" value="{{system.armorClass.value}}" />
+        </div>
+        <div class="stat-box">
+          <label>Pontos de Vida</label>
+          <input type="number" name="system.hitPoints.value" value="{{system.hitPoints.value}}" />
+          / <input type="number" name="system.hitPoints.max" value="{{system.hitPoints.max}}" />
+          (<input type="text" name="system.hitPoints.hitDie" value="{{system.hitPoints.hitDie}}" size="3" />)
+        </div>
+        <div class="stat-box">
+          <label>Deslocamento</label>
+          <input type="number" name="system.movement.walk" value="{{system.movement.walk}}" /> m
+          <input type="text" name="system.movement.other" value="{{system.movement.other}}" placeholder="outros deslocamentos" />
+        </div>
+        <div class="stat-box">
+          <label>Bônus de Proficiência</label>
+          <span>+{{system.proficiencyBonus}}</span>
+        </div>
+      </div>
+
+      <ol class="pmp-abilities">
+        {{#each abilityKeys as |key|}}
+          <li class="ability">
+            <label>{{lookup ../abilityLabels key}}</label>
+            <input type="number" name="system.abilities.{{key}}.value" value="{{lookup (lookup ../system.abilities key) "value"}}" />
+            <button type="button" class="ability-mod" data-action="roll-ability" data-ability="{{key}}">
+              {{numberFormat (lookup (lookup ../system.abilities key) "mod") decimals=0 sign=true}}
+            </button>
+          </li>
+        {{/each}}
+      </ol>
+
+      <div class="pmp-row">
+        <label>Habilidade Passiva</label>
+        <input type="text" name="system.passiveAbility.active" value="{{system.passiveAbility.active}}" />
+      </div>
+      <div class="pmp-row">
+        <label>Habilidade Oculta</label>
+        <input type="text" name="system.hiddenAbility" value="{{system.hiddenAbility}}" />
+      </div>
+      <div class="pmp-row">
+        <label>Sentidos</label>
+        <input type="text" name="system.senses" value="{{system.senses}}" />
+      </div>
+      <div class="pmp-row">
+        <label>Natureza</label>
+        <input type="text" name="system.nature.name" value="{{system.nature.name}}" placeholder="ex.: Adamant" />
+      </div>
+      <div class="pmp-row">
+        <label>Lealdade</label>
+        <input type="number" name="system.loyalty" value="{{system.loyalty}}" />
+        <label class="inline"><input type="checkbox" name="system.shiny" {{checked system.shiny}} /> Brilhante</label>
+      </div>
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="moves">
+      <ol class="pmp-move-list">
+        {{#each moveItems as |move|}}
+          <li class="move-entry" data-item-id="{{move.id}}">
+            <span class="move-name">{{move.name}}</span>
+            <span class="move-type">{{lookup ../typeLabels move.system.moveType}}</span>
+            <span class="move-pp">{{move.system.pp.value}}/{{move.system.pp.max}} PP</span>
+            <button type="button" data-action="use-move"><i class="fa-solid fa-hand-fist"></i> Usar</button>
+          </li>
+        {{else}}
+          <li class="empty">Nenhum Move conhecido. Arraste Moves do compêndio para cá.</li>
+        {{/each}}
+      </ol>
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="bio">
+      <div class="pmp-row">
+        <label>Evolução</label>
+        <textarea name="system.evolution">{{system.evolution}}</textarea>
+      </div>
+      <div class="pmp-row">
+        <label>Biografia</label>
+        {{editor system.biography target="system.biography" button=true engine="prosemirror" collaborate=false}}
+      </div>
+    </div>
+
+  </section>
+</form>

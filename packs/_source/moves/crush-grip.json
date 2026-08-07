@@ -1,0 +1,64 @@
+{
+  "_id": "2DCvJETXQvGORBI3",
+  "name": "Crush Grip",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "FOR",
+    "powerAbilities": [
+      "str"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você envolve suas mãos ao redor de uma criatura para um golpe esmagador. Faça um ataque corpo a corpo contra um alvo, causando 6d4 + MOVE de dano do tipo normal, e o alvo tem direito a um teste de FOR contra sua CD de Move, ou ficar agarrado. Este Move causa dano máximo apenas quando o alvo está com 100% de seus Pontos de Vida. Se o alvo tiver perdido qualquer quantidade de vida, reduza em 1 o número de dados de dano rolados. Além disso, para cada 25% da vida máxima do alvo perdida, reduza em mais 1 dado de dano. Enquanto o alvo estiver agarrado por você em seus turnos subsequentes, este Move pode ser ativado novamente com um acerto garantido (mas role um d20 para chance de golpe crítico e outros efeitos).</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "6d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "6d6"
+        },
+        {
+          "level": 10,
+          "formula": "6d8"
+        },
+        {
+          "level": 17,
+          "formula": "6d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 1050,
+  "ownership": {
+    "default": 0
+  }
+}

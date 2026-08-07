@@ -1,0 +1,65 @@
+{
+  "_id": "71H7icaPch62wU1t",
+  "name": "Belch",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "poison",
+    "category": "",
+    "power": "FOR/CON",
+    "powerAbilities": [
+      "str",
+      "con"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "15 pés (4,5 metros)",
+      "meters": 4.5,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você solta um arroto prejudicial em uma criatura dentro do alcance. Este Move só pode ser usado se o usuário tiver comido uma Berry por conta própria durante a batalha; Berries dadas manualmente pelo treinador não ativam o efeito. Caso tenha, force a criatura a fazer um teste de CON contra sua CD de Move -1, sofrendo 3d8 + MOVE de dano venenoso em caso de falha, ou metade disso em caso de sucesso. Depois de comer uma Berry, o Pokémon pode usar Belch pelo resto da batalha, mesmo que tenha sido trocado, desmaiado e revivido, ou a Berry tenha sido restaurada com Recycle, Harvest ou Pickup.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+    "observations": "<p>Belch não pode ser escolhido pelo Move Assist.</p>",
+    "damage": {
+      "baseFormula": "3d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "6d6"
+        },
+        {
+          "level": 10,
+          "formula": "6d8"
+        },
+        {
+          "level": 17,
+          "formula": "6d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 400,
+  "ownership": {
+    "default": 0
+  }
+}

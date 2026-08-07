@@ -1,0 +1,70 @@
+{
+  "_id": "QHEeBz0ljlW3yJpT",
+  "name": "Psychic Noise",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "psychic",
+    "category": "",
+    "power": "DES/INT/SAB",
+    "powerAbilities": [
+      "dex",
+      "int",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea, 3 rodadas.",
+    "range": {
+      "raw": "40 pés (12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você ataca o alvo com ondas sonoras psíquicas desagradáveis, perturbando sua mente e bloqueando temporariamente sua capacidade de cura. Faça um ataque à distância contra um alvo em alcance, causando 2d8 + MOVE de dano do tipo Psíquico em um acerto. Caso acerte, o alvo se torna incapaz de recuperar pontos de vida nesta e nas próximas duas rodadas.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
+    "observations": "<p>Psychic Noise é um Move baseado em som. A propriedade de Heal Block deste Move é considerada um efeito adicional e, por isso, é bloqueada por Shield Dust e suprimida por Sheer Force. Aroma Veil também impede que o efeito secundário seja ativado. Usar Psychic Noise novamente enquanto Heal Block já estiver ativo não renova sua duração.</p>",
+    "damage": {
+      "baseFormula": "2d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "5d6"
+        },
+        {
+          "level": 17,
+          "formula": "6d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen9"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10440,
+  "ownership": {
+    "default": 0
+  }
+}

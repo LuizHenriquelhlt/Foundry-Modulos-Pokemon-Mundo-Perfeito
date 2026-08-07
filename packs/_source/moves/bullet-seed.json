@@ -1,0 +1,64 @@
+{
+  "_id": "KdMoukcPF3bdSqXn",
+  "name": "Bullet Seed",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "grass",
+    "category": "",
+    "power": "DES",
+    "powerAbilities": [
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 15,
+      "max": 15,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "30 pés (9 metros)",
+      "meters": 9.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você dispara uma série de sementes em alta velocidade em uma criatura. Faça um ataque à distância em uma criatura, causando 1d4 + MOVE de dano de grama em um acerto. Em um acerto, após isso, role um d8 e compare o resultado com a tabela abaixo para determinar a quantidade de golpes. Para cada golpe adicional, você pode imediatamente realizar um novo ataque contra o mesmo alvo com acerto garantido, causando 1d4 + MOVE de dano de grama. Cada golpe extra deve rolar separadamente um d20 para verificar chance de crítico, mas não para efeitos secundários de habilidades ou itens.</p>",
+    "higherLevels": "<p>O dado de dano para esse Move muda para 1d8 no nível 5, 1d10 no nível 10 e 2d6 no nível 17. 1-3 Você realiza mais 1 ataque 4-6 Você realiza mais 2 ataques 7 Você realiza mais 3 ataques 8 Você realiza mais 4 ataques Cada golpe de Bullet Seed é tratado como um ataque separado: • Se o primeiro golpe quebrar um Substitute, o segundo golpe causará dano direto ao Pokémon alvo.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "1d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "1d8"
+        },
+        {
+          "level": 10,
+          "formula": "1d10"
+        },
+        {
+          "level": 17,
+          "formula": "2d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 690,
+  "ownership": {
+    "default": 0
+  }
+}

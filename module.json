@@ -1,0 +1,107 @@
+{
+  "id": "pokemon-mundo-perfeito",
+  "title": "Pokémon Mundo Perfeito",
+  "description": "Integra o sistema de RPG Pokémon Mundo Perfeito (PMP) ao Foundry VTT, rodando sobre o sistema dnd5e: Pokémon como Actors, Moves como Items, tipagem, captura, Mega Evolução, Z-Moves e a Pokédex completa.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Comunidade Pokémon Mundo Perfeito",
+      "flags": {}
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "4.0.0",
+          "verified": "4.3.5"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "module/pmp.mjs"
+  ],
+  "styles": [
+    "styles/pmp.css"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "pokemon": {
+        "htmlFields": ["biography"]
+      }
+    },
+    "Item": {
+      "move": {
+        "htmlFields": ["description"]
+      }
+    }
+  },
+  "packs": [
+    {
+      "name": "pokedex",
+      "label": "Pokédex",
+      "path": "packs/pokedex",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+    },
+    {
+      "name": "moves",
+      "label": "Moves",
+      "path": "packs/moves",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+    },
+    {
+      "name": "tms",
+      "label": "TMs",
+      "path": "packs/tms",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+    },
+    {
+      "name": "pokeballs",
+      "label": "Pokébolas",
+      "path": "packs/pokeballs",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+    },
+    {
+      "name": "mega-evolutions",
+      "label": "Mega Evoluções",
+      "path": "packs/mega-evolutions",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+    },
+    {
+      "name": "trainer-features",
+      "label": "Recursos de Treinador",
+      "path": "packs/trainer-features",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+    }
+  ],
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

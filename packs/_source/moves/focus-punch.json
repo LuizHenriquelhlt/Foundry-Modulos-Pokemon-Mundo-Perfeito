@@ -1,0 +1,65 @@
+{
+  "_id": "1DKaMkuZ3bcwHGQh",
+  "name": "Focus Punch",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fighting",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "1 rodada, Concentração",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Ao ativar este Move, você entra em estado de foco, preparando um poderoso ataque. Você não realiza um ataque imediatamente. Em vez disso, você gasta sua ação atual focando. No início de seu próximo turno, se você mantiver a concentração, você executa o golpe com uma ação livre, realizando um ataque corpo a corpo contra uma criatura, causando 5d6 + MOVE de dano lutador em um acerto. Para este Move, você pode escolher usar sua movimentação em seu turno ou ao executar o ataque (sem gastar movimentação adicional no próximo turno).</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10 e 6d12 no nível 17.</p>",
+    "observations": "<p>Focus Punch não pode ser escolhido pelo Move Assist.</p>",
+    "damage": {
+      "baseFormula": "5d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d8"
+        },
+        {
+          "level": 10,
+          "formula": "6d10"
+        },
+        {
+          "level": 17,
+          "formula": "6d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 2050,
+  "ownership": {
+    "default": 0
+  }
+}

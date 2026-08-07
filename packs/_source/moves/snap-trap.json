@@ -1,0 +1,68 @@
+{
+  "_id": "76AbMfMprKMdpCDQ",
+  "name": "Snap Trap",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "grass",
+    "category": "",
+    "power": "FOR",
+    "powerAbilities": [
+      "str"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea, Enquanto agarrado",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você prende o alvo em uma armadilha que se fecha com força. Faça um ataque corpo a corpo, causando 1d8 + MOVE de dano de grama e agarrando o alvo em um acerto. O alvo tem direito a um teste de FOR contra sua CD de Move no início de cada turno para tentar se soltar. Enquanto estiver agarrado, o alvo não pode fugir ou ser substituído, e ao final de cada turno receberá dano sem tipo igual ao nível dele.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "1d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "1d10"
+        },
+        {
+          "level": 10,
+          "formula": "2d8"
+        },
+        {
+          "level": 17,
+          "formula": "3d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10670,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "dlvJR5UeXUDdOj1f",
+  "name": "Beak Blast",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "flying",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "1 rodada, carga",
+    "range": {
+      "raw": "Pessoal (linha de 50 pés / 15 metros)",
+      "meters": 15.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você aquece o bico, pressurizando o vento, e dispara um poderoso feixe contra o alvo. Quando você ativa este Move, você gasta sua ação para aquecer seu bico. Se for atingido por um ataque corpo a corpo antes da ação do seu próximo turno, o atacante é queimado. Em seu próximo turno, dispare um feixe em uma linha de 50 pés (15 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano voador em caso de falha, ou metade disso em caso de sucesso.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+    "observations": "<p>Beak Blast não pode ser escolhido pelo Move Assist.</p>",
+    "damage": {
+      "baseFormula": "2d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d6"
+        },
+        {
+          "level": 10,
+          "formula": "5d8"
+        },
+        {
+          "level": 17,
+          "formula": "5d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 380,
+  "ownership": {
+    "default": 0
+  }
+}

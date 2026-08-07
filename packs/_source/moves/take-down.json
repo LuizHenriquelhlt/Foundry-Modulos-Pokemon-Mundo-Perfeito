@@ -1,0 +1,64 @@
+{
+  "_id": "6pTIhrrKA56gx64o",
+  "name": "Take Down",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "FOR",
+    "powerAbilities": [
+      "str"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você investe contra uma criatura para uma cabeçada potente. Faça um ataque corpo a corpo -2, causando 3d6 + MOVE de dano normal em um acerto, sofrendo um quarto do dano causado (arredondado para baixo) como recuo de dano sem tipo.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "3d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "3d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d12"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 6020,
+  "ownership": {
+    "default": 0
+  }
+}

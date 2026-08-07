@@ -1,0 +1,65 @@
+{
+  "_id": "8W6jMlJwfQfGTKUD",
+  "name": "Ice Beam",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "ice",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal (linha de 80 pés / 24 metros)",
+      "meters": 24.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você cria uma linha de gelo congelante de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura atingida pela linha deve ter sucesso em um teste de DES contra sua CD de Move ou sofrer 3d6 + MOVE de dano de gelo numa falha, ou metade desse dano em caso de sucesso. As criaturas que falharem nesse teste por 10 ou mais, ou rolarem um resultado natural de 1 ou 2 no teste, ficam congeladas.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "3d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "3d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d12"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 2840,
+  "ownership": {
+    "default": 0
+  }
+}

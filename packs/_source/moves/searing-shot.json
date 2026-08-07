@@ -1,0 +1,64 @@
+{
+  "_id": "PCtJHzo7vJSTks2a",
+  "name": "Searing Shot",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fire",
+    "category": "",
+    "power": "DES",
+    "powerAbilities": [
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal (raio de 20 pés / 6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Chamas abrasadoras atingem as criaturas em um raio de 20 pés (6 metros), centrado em você. Qualquer criatura dentro do alcance deve fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano de fogo e ficando queimada em uma falha, ou metade disso sem ficar queimada em um sucesso.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d6"
+        },
+        {
+          "level": 10,
+          "formula": "5d8"
+        },
+        {
+          "level": 17,
+          "formula": "5d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 4960,
+  "ownership": {
+    "default": 0
+  }
+}

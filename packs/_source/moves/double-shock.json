@@ -1,0 +1,69 @@
+{
+  "_id": "19f1QhTrwkKOdNGb",
+  "name": "Double Shock",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "electric",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea, Enquanto ativo",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você descarrega toda a eletricidade do seu corpo em um ataque de alto dano. Este Move só funciona se o usuário for do tipo Elétrico. Faça um ataque corpo a corpo, causando 3d8 + MOVE do tipo elétrico. Após usar este Move, o usuário se esgota e perde sua tipagem Elétrico pelo resto do combate, ou até ser trocado, ou através de outros efeitos de mudança de tipo, como Protean ou Reflect Type. Um Pokémon que tenha se Terastalizado em seu Tera Tipo Elétrico não perderá o tipo Elétrico. Portanto, um Pokémon Terastalizado pode usar Double Shock várias vezes seguidas sem precisar ser retirado de campo.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
+    "observations": "<p>Double Shock falha se o usuário não for do tipo Elétrico, fazendo com que o Move sempre falhe após o primeiro uso até que o Pokémon recupere seu tipo Elétrico, seja ao ser trocado para fora de batalha ou por outros efeitos de mudança de tipo, como por meio de Protean ou Reflect Type. Se o usuário for um Pokémon puramente do tipo Elétrico, ele se tornará sem tipo.</p>",
+    "damage": {
+      "baseFormula": "3d8",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "6d6"
+        },
+        {
+          "level": 10,
+          "formula": "6d8"
+        },
+        {
+          "level": 17,
+          "formula": "6d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen9"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10150,
+  "ownership": {
+    "default": 0
+  }
+}

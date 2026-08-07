@@ -1,0 +1,69 @@
+{
+  "_id": "fHwYESPmXCyc5gCS",
+  "name": "Flip Turn",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "water",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você ataca o alvo e, logo em seguida, recua rapidamente para trocar de lugar com um aliado que esteja aguardando. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano de água em um acerto. Caso acerte, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
+    "observations": "<p>Flip Turn troca o usuário mesmo que ele esteja sob efeito de Ingrain, Arena Trap, Magnet Pull, Shadow Tag, Mean Look ou Block.</p>",
+    "damage": {
+      "baseFormula": "2d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "3d6"
+        },
+        {
+          "level": 10,
+          "formula": "3d8"
+        },
+        {
+          "level": 17,
+          "formula": "5d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10330,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "_id": "XXbpheMIUA1Gj2oH",
+  "name": "Terrain Pulse",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "DES/SAB",
+    "powerAbilities": [
+      "dex",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "40 pés (12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você canaliza a energia do terreno ao redor, lançando ondas pulsantes que avançam com força em direção ao alvo. Faça um ataque à distância contra um alvo em alcance, causando 1d10 + MOVE de dano do tipo normal em um acerto. Caso esteja dentro de um Terreno (Grassy Terrain, Misty Terrain, Electric Terrain ou Psychic Terrain) e em contato com o solo, dobre os dados de dano, e o tipo do Move se torna igual ao tipo do Terreno.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
+    "observations": "<p>Terrain Pulse não é afetado por Normalize, Pixilate, Refrigerate ou Galvanize.</p>",
+    "damage": {
+      "baseFormula": "1d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d8"
+        },
+        {
+          "level": 10,
+          "formula": "2d10"
+        },
+        {
+          "level": 17,
+          "formula": "4d6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10800,
+  "ownership": {
+    "default": 0
+  }
+}

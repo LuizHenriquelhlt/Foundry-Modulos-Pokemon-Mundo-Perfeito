@@ -1,0 +1,65 @@
+{
+  "_id": "EvaKM4UyvLvyQEWD",
+  "name": "Burn Up",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fire",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea, Enquanto ativo",
+    "range": {
+      "raw": "Pessoal (raio de 20 pés / 6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você usa toda a energia de fogo que tem para infligir um dano massivo em um raio de 20 pés (6 metros), centrado em você. Criaturas dentro da área devem fazer um teste de DES contra sua CD de Move, sofrendo 4d6 + MOVE de dano do tipo fogo em caso de falha, e metade no sucesso. Após usar este Move, o usuário se esgota e perde sua tipagem de fogo pelo resto do combate, ou até ser trocado, ou através de outros efeitos de mudança de tipo, como Protean ou Reflect Type. Você precisa ser do tipo fogo para poder usar este Move. Caso você esteja congelado, Burn Up irá derreter o gelo imediatamente ao ser ativado.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
+    "observations": "<p>Pokémon de duplo tipo fogo mudam para seu único outro tipo, e Pokémon de tipo único tornam-se sem tipo, perdendo o STAB e todas as vulnerabilidades, resistências e imunidades. Um Pokémon com Protean ou Libero não consegue usar Burn Up com sucesso a menos que já seja do tipo fogo; caso contrário, Burn Up falhará e Protean ou Libero não serão ativados. Um Pokémon que tenha se Terastalizado em seu Tera Tipo Fogo não perderá o tipo Fogo. Portanto, um Pokémon Terastalizado pode usar Burn Up várias vezes seguidas sem precisar ser retirado de campo.</p>",
+    "damage": {
+      "baseFormula": "4d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d20"
+        },
+        {
+          "level": 10,
+          "formula": "5d10"
+        },
+        {
+          "level": 17,
+          "formula": "8d8"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 700,
+  "ownership": {
+    "default": 0
+  }
+}

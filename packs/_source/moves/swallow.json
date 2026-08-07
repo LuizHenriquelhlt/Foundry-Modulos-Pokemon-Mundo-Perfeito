@@ -1,0 +1,65 @@
+{
+  "_id": "6Z1VvcxQGZp9qm6s",
+  "name": "Swallow",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "CON",
+    "powerAbilities": [
+      "con"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal",
+      "meters": 0.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você absorve sua energia armazenada para curar suas feridas. Quando ativado após usar o Move Stockpile, recupere 1d6 + MOVE pontos de vida. Os dados de cura são dobrados se Stockpile foi usado por duas rodadas, e triplicados se Stockpile foi usado por três rodadas.</p>",
+    "higherLevels": "<p>O dado base de cura para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 2d12 no nível 17. Arte Sweet Kiss Arte feita por (Beijo Doce)</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "1d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "1d10"
+        },
+        {
+          "level": 10,
+          "formula": "2d8"
+        },
+        {
+          "level": 17,
+          "formula": "2d12"
+        }
+      ]
+    },
+    "zPowerEffect": "Remove todas as Mudanças de Status negativas."
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 5890,
+  "ownership": {
+    "default": 0
+  }
+}

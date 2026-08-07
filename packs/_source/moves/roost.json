@@ -1,0 +1,65 @@
+{
+  "_id": "JQFc6hh1bDAN2L3w",
+  "name": "Roost",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "flying",
+    "category": "",
+    "power": "CON",
+    "powerAbilities": [
+      "con"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "1 rodada",
+    "range": {
+      "raw": "Pessoal",
+      "meters": 0.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você pousa no chão para descansar seu corpo. Quando ativado, sua velocidade de voo diminui para zero, e você perde seu tipo voador (caso tenha) até o início de seu próximo turno. Ao fazer isso, recupere imediatamente 2d6 + MOVE pontos de vida.</p>",
+    "higherLevels": "<p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17.</p>",
+    "observations": "<p>Se um Pokémon do tipo Voador puro usar Roost com sucesso, ele se tornará do tipo Normal. Se um Pokémon do tipo fogo/Voador perdeu seu tipo fogo devido a Burn Up, ao usar Roost ele se tornará sem tipo.</p>",
+    "damage": {
+      "baseFormula": "",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "4d8"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    },
+    "zPowerEffect": "Remove todas as Mudanças de Status negativas."
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 4830,
+  "ownership": {
+    "default": 0
+  }
+}

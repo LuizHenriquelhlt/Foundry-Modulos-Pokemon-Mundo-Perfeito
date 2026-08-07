@@ -1,0 +1,64 @@
+{
+  "_id": "cUDLRcyIebP27gx9",
+  "name": "Lava Plume",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "fire",
+    "category": "",
+    "power": "FOR",
+    "powerAbilities": [
+      "str"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Pessoal (raio de 20 pés / 6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você libera jatos de lava incandescente ao redor de si, envoltos em vapor e cinzas, atingindo todos ao redor. Todas as criaturas na área da explosão devem fazer um teste de DES contra sua CD de MOVE, sofrendo 4d4 + MOVE de dano de fogo no fracasso e ficando queimadas, ou a metade do dano e sem ficarem queimadas no sucesso.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "4d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "4d6"
+        },
+        {
+          "level": 10,
+          "formula": "4d8"
+        },
+        {
+          "level": 17,
+          "formula": "4d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 3120,
+  "ownership": {
+    "default": 0
+  }
+}

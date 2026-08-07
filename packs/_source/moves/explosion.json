@@ -1,0 +1,64 @@
+{
+  "_id": "eEjn9Hbc8i8pa3yI",
+  "name": "Explosion",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "normal",
+    "category": "",
+    "power": "CON",
+    "powerAbilities": [
+      "con"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 3,
+      "max": 3,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "20 pés (6 metros)",
+      "meters": 6.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você concentra energia em si para formar uma explosão devastadora, desmaiando imediatamente antes do dano ser causado. Todos na área de efeito devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d10 + MOVE de dano normal em uma falha, ou metade disso em um sucesso. O usuário desmaia ao utilizar o Move, mas antes do dano ser causado.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 6d12 no nível 5, 10d10 no nível 10 e 12d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "5d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "6d12"
+        },
+        {
+          "level": 10,
+          "formula": "10d10"
+        },
+        {
+          "level": 17,
+          "formula": "12d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 1650,
+  "ownership": {
+    "default": 0
+  }
+}

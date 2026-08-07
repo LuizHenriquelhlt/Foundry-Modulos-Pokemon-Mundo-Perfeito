@@ -1,0 +1,65 @@
+{
+  "_id": "cFUBEbFcj3GzfgQr",
+  "name": "Purify",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "poison",
+    "category": "",
+    "power": "CON",
+    "powerAbilities": [
+      "con"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "15 pés (4,5 metros)",
+      "meters": 4.5,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você estende uma energia de cura para remover todas as Condições de Status de um alvo. Se o alvo estiver com uma Condição de Status Não Volátil, Purify a cura e, em seguida, restaura os PV do usuário em 2d6 + MOVE pontos de vida. Você não pode utilizar este Move em si mesmo.</p>",
+    "higherLevels": "<p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17.</p>",
+    "observations": "<p>Não tem efeito se o alvo não estiver com uma Condição de Status Não Volátil (mesmo que possua a habilidade Comatose).</p>",
+    "damage": {
+      "baseFormula": "",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d10"
+        },
+        {
+          "level": 10,
+          "formula": "4d8"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    },
+    "zPowerEffect": "Aumenta o Ataque, Ataque Especial, Defesa, Defesa Especial e Velocidade em 1 estágio."
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 4450,
+  "ownership": {
+    "default": 0
+  }
+}

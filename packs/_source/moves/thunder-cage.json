@@ -1,0 +1,69 @@
+{
+  "_id": "y52VPzqmqMdkqfuW",
+  "name": "Thunder Cage",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "electric",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Até 5 rodadas",
+    "range": {
+      "raw": "40 pés (12 metros)",
+      "meters": 12.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você dispara vários feixes elétricos contra o oponente, prendendo-o em uma gaiola de raios. Faça um ataque à distância -1 contra um alvo em alcance, causando 4d4 + MOVE de dano do tipo elétrico e deixando-o impedido em um acerto. O alvo tem direito a um teste de FOR contra sua CD de Move no início de cada turno para tentar se soltar. O efeito termina após 5 rodadas ou quando o alvo escapar. Enquanto estiver impedido, o alvo não pode fugir ou ser substituído, e ao final de cada turno receberá dano sem tipo igual ao nível dele.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "4d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "4d6"
+        },
+        {
+          "level": 10,
+          "formula": "4d8"
+        },
+        {
+          "level": 17,
+          "formula": "4d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {
+    "pokemon-mundo-perfeito": {
+      "source": "Gen8"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 10810,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "4inRsQlrTBHXgdzC",
+  "name": "Spectral Thief",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "ghost",
+    "category": "",
+    "power": "FOR/SAB",
+    "powerAbilities": [
+      "str",
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 5,
+      "max": 5,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "100 pés (30 metros)",
+      "meters": 30.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você sucumbe à escuridão e se transporta para a sombra de uma criatura. Teleporte-se imediatamente para um ponto no alcance e faça um ataque corpo a corpo em uma criatura. Em um acerto, você rouba todas as Mudanças de Status positivas que afetam a criatura, e logo em seguida causa 3d6 + MOVE de dano fantasma.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
+    "observations": "<p>Este Move ignora Substitute. Spectral Thief rouba todos os estágios positivos de atributo. Mesmo que a soma entre os estágios já existentes do usuário e os do alvo ultrapasse +6 em um atributo, todos os aumentos do alvo são reduzidos a 0 se forem positivos. Se o usuário tiver a Habilidade Simple, os estágios roubados serão duplicados; se tiver Contrary, os aumentos roubados se tornam reduções.</p>",
+    "damage": {
+      "baseFormula": "3d6",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "3d10"
+        },
+        {
+          "level": 10,
+          "formula": "3d12"
+        },
+        {
+          "level": 17,
+          "formula": "4d12"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 5500,
+  "ownership": {
+    "default": 0
+  }
+}

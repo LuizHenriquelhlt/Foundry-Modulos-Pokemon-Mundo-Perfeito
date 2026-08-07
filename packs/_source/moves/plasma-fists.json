@@ -1,0 +1,65 @@
+{
+  "_id": "Ng5mJgY7NZG5pAzh",
+  "name": "Plasma Fists",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "electric",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você carrega seus punhos com eletricidade e ataca um alvo. Faça um ataque corpo a corpo, causando 2d10 + MOVE de dano elétrico em um acerto. Em um acerto, tanto os seus Moves do tipo normal quanto os do alvo se tornam do tipo elétrico até o final do seu próximo turno.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+    "observations": "<p>O efeito de mudança de tipo é aplicado após habilidades passivas que alteram o tipo de Moves, portanto, não afeta um Move originalmente do tipo Normal usado por um Pokémon com Pixilate, mas pode afetar um Move originalmente do tipo Fada usado por um Pokémon com Normalize.</p>",
+    "damage": {
+      "baseFormula": "2d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d6"
+        },
+        {
+          "level": 10,
+          "formula": "5d8"
+        },
+        {
+          "level": 17,
+          "formula": "5d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 4080,
+  "ownership": {
+    "default": 0
+  }
+}

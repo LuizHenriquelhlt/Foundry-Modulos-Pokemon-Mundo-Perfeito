@@ -1,0 +1,64 @@
+{
+  "_id": "v7LaVsxPuiBUq784",
+  "name": "Dream Eater",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "psychic",
+    "category": "",
+    "power": "SAB",
+    "powerAbilities": [
+      "wis"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "30 pés (9 metros)",
+      "meters": 9.0,
+      "melee": false
+    },
+    "priority": 0,
+    "description": "<p>Você entra nos sonhos de uma criatura adormecida, sugando sua vitalidade. Instantaneamente, cause 2d10 + MOVE de dano psíquico em um alvo Sonolento ou Dormindo no alcance, ganhando metade do dano causado (arredondado para baixo) em pontos de vida. Este Move não desperta a criatura adormecida.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
+    "observations": "<p>Dream Eater pode atingir um Substitute e ainda irá restaurar a vida do usuário ao causar dano.</p>",
+    "damage": {
+      "baseFormula": "2d10",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "5d6"
+        },
+        {
+          "level": 10,
+          "formula": "5d8"
+        },
+        {
+          "level": 17,
+          "formula": "5d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 1430,
+  "ownership": {
+    "default": 0
+  }
+}

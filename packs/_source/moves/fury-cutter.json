@@ -1,0 +1,65 @@
+{
+  "_id": "I1xlIdeOO44jNKST",
+  "name": "Fury Cutter",
+  "type": "pokemon-mundo-perfeito.move",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "moveType": "bug",
+    "category": "",
+    "power": "FOR/DES",
+    "powerAbilities": [
+      "str",
+      "dex"
+    ],
+    "activation": {
+      "type": "action",
+      "raw": "1 ação"
+    },
+    "pp": {
+      "value": 10,
+      "max": 10,
+      "unlimited": false
+    },
+    "duration": "Instantânea",
+    "range": {
+      "raw": "Corpo a corpo",
+      "meters": 0.0,
+      "melee": true
+    },
+    "priority": 0,
+    "description": "<p>Você desencadeia uma série de cortes contra uma criatura que aumentam em força. Quando você ativa este Move, faça um ataque corpo a corpo -1 em um alvo em alcance, causando 2d4 + MOVE de dano inseto em um acerto. Se você usar este Move em seu turno em rodadas consecutivas, dobre os dados de dano a cada acerto. O multiplicador tem um limite máximo de 4x o dano original. O dano é resetado se algum dos ataques falhar, ou se você estiver incapacitado.</p>",
+    "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+    "observations": "",
+    "damage": {
+      "baseFormula": "2d4",
+      "scaling": [
+        {
+          "level": 5,
+          "formula": "2d6"
+        },
+        {
+          "level": 10,
+          "formula": "2d8"
+        },
+        {
+          "level": 17,
+          "formula": "2d10"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.5",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "sort": 2170,
+  "ownership": {
+    "default": 0
+  }
+}
