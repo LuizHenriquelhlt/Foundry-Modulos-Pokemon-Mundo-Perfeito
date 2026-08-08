@@ -3,7 +3,7 @@
 Ajustes de tamanho de token na Pokédex (pedido do usuário):
 
 1. Lendários e Míticos de tamanho Médio sobem uma categoria (Médio -> Grande, token 2x2).
-2. Formas finais de tamanho Médio com mais de 1,60 m de altura ganham token 2x2
+2. Formas finais de tamanho Médio com 1,60 m ou mais de altura ganham token 2x2
    (a categoria de regra continua Médio — só a presença em cena cresce).
 3. Proporção nas linhas evolutivas: reconstrói as famílias pelo texto de Evolução
    ("X pode evoluir para Y") e garante que nenhuma evolução tenha token MENOR que uma
@@ -94,13 +94,13 @@ def main():
             n_leg += 1
             changed.add(f)
 
-    # Regra 2: forma final média com mais de 1,60 m -> token 2x2
+    # Regra 2: forma final média com 1,60 m ou mais -> token 2x2
     for f, d in docs.items():
         sp = d["flags"]["pokemon-mundo-perfeito"]["species"]
         stage = sp.get("evolutionStage", {})
         is_final = stage.get("current", 1) == stage.get("max", 1)
         if is_final and d["system"]["traits"]["size"] == "med" \
-                and sp.get("heightMeters", 0) > 1.60 \
+                and sp.get("heightMeters", 0) >= 1.60 \
                 and d["prototypeToken"].get("width", 1) < 2:
             d["prototypeToken"]["width"] = 2
             d["prototypeToken"]["height"] = 2
@@ -148,7 +148,7 @@ def main():
         save(f, docs[f])
 
     print(f"Regra 1 (lendário/mítico médio -> Grande 2x2): {n_leg}")
-    print(f"Regra 2 (forma final média > 1,60 m -> token 2x2): {n_final}")
+    print(f"Regra 2 (forma final média >= 1,60 m -> token 2x2): {n_final}")
     print(f"Regra 3 (proporção na linha evolutiva): {n_prop}")
     for e in examples:
         print(f"  - {e}")
