@@ -501,7 +501,8 @@ def convert_pokedex():
         moves_by_name[d["name"]] = d
         moves_by_norm[normalize_name(d["name"])] = d
 
-    tm_sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-{t}.png"
+    # ícone de TIPO (svg, como no 5e/pokemon5e) para as características "Tipo X"
+    type_icon = "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/{t}.svg"
     # mesmos seeds de seed-progression-features.py — IDs determinísticos
     progression_ids = {slug: make_id(f"progressao-{slug}")
                         for slug in ["ponto-de-ev", "aumento-de-stab", "talento-de-pokemon",
@@ -532,7 +533,7 @@ def convert_pokedex():
         for t in [type1] + ([type2] if type2 else []):
             embedded.append(feat_stub(
                 make_id(f"{name}-tipo-{t}"), f"Tipo {TYPE_LABELS.get(t, t)}",
-                f"<p>Este Pokémon é do tipo {TYPE_LABELS.get(t, t)}.</p>", tm_sprite.format(t=t)))
+                f"<p>Este Pokémon é do tipo {TYPE_LABELS.get(t, t)}.</p>", type_icon.format(t=t)))
 
         passive = pmp.get("passiveAbility", {}).get("active", "")
         if passive:

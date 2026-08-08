@@ -32,6 +32,8 @@ BASE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites"
 ARTWORK = BASE + "/pokemon/other/official-artwork/{dex}.png"
 SPRITE = BASE + "/pokemon/{dex}.png"
 ITEM = BASE + "/items/{slug}.png"
+# ícones de tipo (mesmos SVGs usados pelo módulo pokemon5e) — para Moves e características
+TYPE_ICON = "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/{t}.svg"
 
 TM_TYPES = {"normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison",
             "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark",
@@ -109,15 +111,18 @@ def move_types_by_name():
 
 
 def patch_moves_and_tms(types_by_name):
+    # Moves usam o ÍCONE DE TIPO (svg, como no 5e/pokemon5e); o disco de TM fica só nos TMs
+    move_ids_by_name = {}
     n = 0
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
         doc = json.load(open(f, encoding="utf-8"))
+        move_ids_by_name[doc["name"]] = doc["_id"]
         mtype = move_type_of(doc)
         if mtype in TM_TYPES:
-            doc["img"] = ITEM.format(slug=f"tm-{mtype}")
+            doc["img"] = TYPE_ICON.format(t=mtype)
             save(f, doc)
             n += 1
-    print(f"moves: {n} com sprite de tipo")
+    print(f"moves: {n} com ícone de tipo")
 
     n_ok = n_fallback = 0
     for f in glob.glob(os.path.join(SRC, "tms", "*.json")):
@@ -130,6 +135,17 @@ def patch_moves_and_tms(types_by_name):
         else:
             doc["img"] = ITEM.format(slug="tm-normal")
             n_fallback += 1
+        # link clicável para o Move ensinado (além da automação via hook do módulo)
+        move_id = move_ids_by_name.get(move_name)
+        if move_id:
+            link = (f'<p><strong>Move ensinado:</strong> '
+                    f'@UUID[Compendium.pokemon-mundo-perfeito.moves.Item.{move_id}]'
+                    f'{{{move_name}}}</p>'
+                    f'<p><em>Coloque este TM na ficha de um Pokémon para ele aprender o Move '
+                    f'automaticamente.</em></p>')
+            desc = doc["system"].get("description", {}).get("value", "")
+            if "Move ensinado:" not in desc:
+                doc["system"]["description"]["value"] = desc + link
         save(f, doc)
     print(f"tms: {n_ok} com sprite do tipo do Move, {n_fallback} com sprite genérico (Move não encontrado)")
 

@@ -32,3 +32,31 @@ Hooks.once("ready", () => {
     ui.notifications.warn(game.i18n.localize("PMP.Warnings.RequiresDnd5e"));
   }
 });
+
+// TM colocado na ficha de um Pokémon => o Pokémon aprende o Move automaticamente
+// (o Move correspondente é copiado do compêndio, com fórmula/PP/atividade prontos).
+Hooks.on("createItem", async (item, options, userId) => {
+  if (game.user.id !== userId) return;
+  const teaches = item.getFlag(MODULE_ID, "teachesMove");
+  const actor = item.parent;
+  if (!teaches || !actor || actor.documentName !== "Actor") return;
+
+  if (actor.items.some((i) => i.name === teaches && i.id !== item.id)) {
+    ui.notifications.info(`${actor.name} já conhece ${teaches}.`);
+    return;
+  }
+
+  const pack = game.packs.get(`${MODULE_ID}.moves`);
+  if (!pack) return;
+  const index = await pack.getIndex();
+  const entry = index.find((e) => e.name === teaches);
+  if (!entry) {
+    ui.notifications.warn(`Move "${teaches}" não encontrado no compêndio de Moves.`);
+    return;
+  }
+  const move = await pack.getDocument(entry._id);
+  const data = move.toObject();
+  delete data._id;
+  await actor.createEmbeddedDocuments("Item", [data]);
+  ui.notifications.info(`${actor.name} aprendeu ${teaches} com ${item.name}!`);
+});
