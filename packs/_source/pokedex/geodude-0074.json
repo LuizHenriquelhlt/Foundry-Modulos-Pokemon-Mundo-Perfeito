@@ -32,10 +32,10 @@
       },
       "hp": {
         "value": 18,
-        "max": 18,
+        "max": 10,
         "temp": 0,
         "tempmax": 0,
-        "formula": ""
+        "formula": "d6"
       },
       "movement": {
         "walk": 6.0,
@@ -342,6 +342,460 @@
     }
   },
   "items": [
+    {
+      "_id": "fOSpIVzstDi3U3ng",
+      "name": "Geodude Level",
+      "type": "class",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "hd": {
+          "denomination": "d6",
+          "additional": "",
+          "spent": 0
+        },
+        "description": {
+          "value": "<p><strong>Não remova esta classe da ficha.</strong> Ela controla o nível do Pokémon: ao subir de nível, o dnd5e aplica o aumento de PV e concede os Moves da tabela da espécie e os benefícios da tabela de Progressão de Níveis do Pokémon (Ponto de EV, Aumento de STAB, Talento, Aumento de Proficiência/Dano) automaticamente.</p>",
+          "chat": ""
+        },
+        "advancement": [
+          {
+            "type": "HitPoints",
+            "title": "Aumento de Pontos de Vida",
+            "_id": "QntjoE2gFb9V2lPK",
+            "configuration": {},
+            "value": {
+              "1": "max"
+            }
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 2: Moves e benefícios da tabela",
+            "_id": "Uuvc5H8hvsyoQrmY",
+            "level": 2,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.yoeRrqdA28Vl2Oyk",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.gke42CF4iz8fyv9c",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 3: Moves e benefícios da tabela",
+            "_id": "ybIR6PxNGP7NyQ5f",
+            "level": 3,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.CqxxKLbcDb0EmMPM",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 4: Moves e benefícios da tabela",
+            "_id": "RPzlZIY0SnFAQJSY",
+            "level": 4,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.w9wxwUhRrNZ1RPge",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.UJBZsO5aR2k7ceRQ",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.tgXlRM6LcupGoiw4",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 5: Moves e benefícios da tabela",
+            "_id": "Iqy45GQyIeKn7ObU",
+            "level": 5,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.nbkHAIU9aJ8Qa2kl",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.TfZliwxbz10K8tjQ",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 6: Moves e benefícios da tabela",
+            "_id": "phkyjK73O4AXr3XK",
+            "level": 6,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.Zq2nG67wSRX5AYXo",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.1rfJEkE6OMUVHtq2",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 7: Moves e benefícios da tabela",
+            "_id": "JlrutBS7pFHYRKGY",
+            "level": 7,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.CqxxKLbcDb0EmMPM",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 8: Moves e benefícios da tabela",
+            "_id": "RnEDBlN1E0UI2qgI",
+            "level": 8,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.oz2FBggmypYEmKS5",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.4Gvxm4i8uBGcyTTt",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.tgXlRM6LcupGoiw4",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 9: Moves e benefícios da tabela",
+            "_id": "dNxNmD3xNfcyWjp9",
+            "level": 9,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.nbkHAIU9aJ8Qa2kl",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 10: Moves e benefícios da tabela",
+            "_id": "Hw1lACIXgbVCGeq6",
+            "level": 10,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.zyG2nllml2bfFgSO",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.oyYaa7LF1CeKecT9",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.TfZliwxbz10K8tjQ",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 11: Moves e benefícios da tabela",
+            "_id": "W3vTsZYtH8jYsCvX",
+            "level": 11,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.CqxxKLbcDb0EmMPM",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 12: Moves e benefícios da tabela",
+            "_id": "9jCNZ4AQTHyDGs5k",
+            "level": 12,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.8tmLQ7nqrsxCPhUd",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.eEjn9Hbc8i8pa3yI",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.tgXlRM6LcupGoiw4",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 13: Moves e benefícios da tabela",
+            "_id": "vIF9HDP5oLipHEgw",
+            "level": 13,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.nbkHAIU9aJ8Qa2kl",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 14: Moves e benefícios da tabela",
+            "_id": "3Zsgt7kCDJi1TZDF",
+            "level": 14,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.61igzUSJqsaGz1dX",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.TLlydvPvnLwr6bYw",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 15: Moves e benefícios da tabela",
+            "_id": "2KGl5r1svnqna5nG",
+            "level": 15,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.CqxxKLbcDb0EmMPM",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 16: Moves e benefícios da tabela",
+            "_id": "SkctE7Ls7fQjPISl",
+            "level": 16,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.tgXlRM6LcupGoiw4",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 17: Moves e benefícios da tabela",
+            "_id": "u0AbdhQ9C0TRLNcJ",
+            "level": 17,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.nbkHAIU9aJ8Qa2kl",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.TfZliwxbz10K8tjQ",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 18: Moves e benefícios da tabela",
+            "_id": "q2qzhTypMjCpXRxK",
+            "level": 18,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 19: Moves e benefícios da tabela",
+            "_id": "aX5PPdPeN4LVZcwB",
+            "level": 19,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.CqxxKLbcDb0EmMPM",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          },
+          {
+            "type": "ItemGrant",
+            "title": "Nível 20: Moves e benefícios da tabela",
+            "_id": "vB6AmucI7biShHRD",
+            "level": 20,
+            "configuration": {
+              "items": [
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.tgXlRM6LcupGoiw4",
+                  "optional": false
+                },
+                {
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.bnQaqPFWhxvitBoe",
+                  "optional": false
+                }
+              ],
+              "optional": false,
+              "spell": null
+            },
+            "value": {}
+          }
+        ],
+        "levels": 1,
+        "identifier": "",
+        "startingEquipment": [],
+        "primaryAbility": {
+          "value": [],
+          "all": true
+        },
+        "spellcasting": {
+          "progression": "none",
+          "preparation": {}
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "sort": -1,
+      "_key": "!actors.items!pZYim8vzdNS8pGHO.fOSpIVzstDi3U3ng"
+    },
     {
       "_id": "sDAwVqHabRTq2fQo",
       "name": "Tipo Pedra",

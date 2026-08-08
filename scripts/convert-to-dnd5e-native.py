@@ -325,6 +325,121 @@ def skills_object(skill_names):
     return skills
 
 
+# Tabela "Progressão de Níveis do Pokémon" (Livro de Regras): benefícios por nível.
+# Chaves = slugs dos itens criados por seed-progression-features.py.
+PROGRESSION_BY_LEVEL = {
+    2: ["ponto-de-ev"],
+    3: ["aumento-de-stab"],
+    4: ["talento-de-pokemon", "ponto-de-ev"],
+    5: ["aumento-de-proficiencia", "aumento-de-dano"],
+    6: ["ponto-de-ev"],
+    7: ["aumento-de-stab"],
+    8: ["talento-de-pokemon", "ponto-de-ev"],
+    9: ["aumento-de-proficiencia"],
+    10: ["aumento-de-dano", "ponto-de-ev"],
+    11: ["aumento-de-stab"],
+    12: ["talento-de-pokemon", "ponto-de-ev"],
+    13: ["aumento-de-proficiencia"],
+    14: ["ponto-de-ev"],
+    15: ["aumento-de-stab"],
+    16: ["talento-de-pokemon", "ponto-de-ev"],
+    17: ["aumento-de-proficiencia", "aumento-de-dano"],
+    18: ["ponto-de-ev"],
+    19: ["aumento-de-stab"],
+    20: ["talento-de-pokemon", "ponto-de-ev"]
+}
+
+
+def stab_bonus(level):
+    """Bônus de STAB pela tabela de Progressão de Níveis: +0 (1-2), +1 (3-6), +2 (7-10),
+    +3 (11-14), +4 (15-18), +5 (19-20)."""
+    if level >= 19:
+        return 5
+    if level >= 15:
+        return 4
+    if level >= 11:
+        return 3
+    if level >= 7:
+        return 2
+    if level >= 3:
+        return 1
+    return 0
+
+
+def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants, progression_ids):
+    """Item de classe "<Espécie> Level" no padrão do módulo pokemon5e: dá o seletor de
+    nível na ficha, proficiência automática (mesma progressão da tabela do PMP) e o fluxo
+    de Avanço do dnd5e ao subir de nível. Além do avanço de PV, concede via ItemGrant os
+    Moves da tabela da espécie e os benefícios da tabela de Progressão de Níveis nos
+    níveis ainda não alcançados."""
+    die_size = int(hit_die.lstrip("d") or 6)
+    avg = die_size // 2 + 1
+    # PV derivado da classe (1º nível = dado cheio, demais = média), como o dnd5e calcula
+    class_hp = die_size + avg * (level - 1)
+    # hp.max funciona como bônus somado ao PV de classe + CON — calibrado para o total
+    # bater exatamente com os PV do bloco de estatística do livro (técnica do pokemon5e)
+    hp_bonus = book_hp - (class_hp + con_mod * level)
+
+    hp_values = {"1": "max"}
+    for lvl in range(2, level + 1):
+        hp_values[str(lvl)] = "avg"
+
+    advancement = [{
+        "type": "HitPoints",
+        "title": "Aumento de Pontos de Vida",
+        "_id": make_id(f"{species_name}-adv-hp"),
+        "configuration": {},
+        "value": hp_values
+    }]
+
+    for lvl in range(level + 1, 21):
+        uuids = []
+        for move_id in move_grants.get(lvl, []):
+            uuids.append(f"Compendium.pokemon-mundo-perfeito.moves.Item.{move_id}")
+        for slug in PROGRESSION_BY_LEVEL.get(lvl, []):
+            uuids.append(f"Compendium.pokemon-mundo-perfeito.trainer-features.Item.{progression_ids[slug]}")
+        if not uuids:
+            continue
+        advancement.append({
+            "type": "ItemGrant",
+            "title": f"Nível {lvl}: Moves e benefícios da tabela",
+            "_id": make_id(f"{species_name}-adv-grant-{lvl}"),
+            "level": lvl,
+            "configuration": {
+                "items": [{"uuid": u, "optional": False} for u in uuids],
+                "optional": False,
+                "spell": None
+            },
+            "value": {}
+        })
+
+    return {
+        "_id": make_id(f"{species_name}-class"),
+        "name": f"{species_name} Level",
+        "type": "class",
+        "img": "icons/svg/upgrade.svg",
+        "system": {
+            "hd": {"denomination": hit_die if hit_die.startswith("d") else "d6",
+                    "additional": "", "spent": 0},
+            "description": {
+                "value": "<p><strong>Não remova esta classe da ficha.</strong> Ela controla o "
+                          "nível do Pokémon: ao subir de nível, o dnd5e aplica o aumento de PV e "
+                          "concede os Moves da tabela da espécie e os benefícios da tabela de "
+                          "Progressão de Níveis do Pokémon (Ponto de EV, Aumento de STAB, Talento, "
+                          "Aumento de Proficiência/Dano) automaticamente.</p>",
+                "chat": ""
+            },
+            "advancement": advancement,
+            "levels": level,
+            "identifier": "",
+            "startingEquipment": [],
+            "primaryAbility": {"value": [], "all": True},
+            "spellcasting": {"progression": "none", "preparation": {}}
+        },
+        "effects": [], "flags": {}, "sort": -1
+    }, hp_bonus
+
+
 def feat_stub(item_id, name, description, img):
     return {
         "_id": item_id, "name": name, "type": "feat", "img": img,
@@ -387,6 +502,10 @@ def convert_pokedex():
         moves_by_norm[normalize_name(d["name"])] = d
 
     tm_sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-{t}.png"
+    # mesmos seeds de seed-progression-features.py — IDs determinísticos
+    progression_ids = {slug: make_id(f"progressao-{slug}")
+                        for slug in ["ponto-de-ev", "aumento-de-stab", "talento-de-pokemon",
+                                      "aumento-de-proficiencia", "aumento-de-dano"]}
     n = 0
     missing_moves = set()
     for f in glob.glob(os.path.join(SRC, "pokedex", "*.json")):
@@ -436,6 +555,8 @@ def convert_pokedex():
             known = pmp["moveTable"][0]["moves"]
         known.append("Struggle")  # todo Pokémon conhece Struggle (Livro de Regras)
 
+        actor_types = {type1} | ({type2} if type2 else set())
+        current_stab = stab_bonus(level)
         seen = set()
         for move_name in known:
             if move_name in seen:
@@ -445,19 +566,54 @@ def convert_pokedex():
             if not src_move:
                 missing_moves.add(move_name)
                 continue
-            embed = {k: v for k, v in src_move.items()
-                     if k in ("_id", "name", "type", "img", "system", "effects", "flags")}
+            embed = json.loads(json.dumps({k: v for k, v in src_move.items()
+                                            if k in ("_id", "name", "type", "img", "system",
+                                                     "effects", "flags")}))
             embed["sort"] = 100
+            # STAB do nível atual embutido no dano de Moves do mesmo tipo do Pokémon
+            move_type = embed.get("flags", {}).get("pokemon-mundo-perfeito", {}) \
+                              .get("move", {}).get("moveType")
+            if current_stab and move_type in actor_types:
+                for act in embed.get("system", {}).get("activities", {}).values():
+                    for part in act.get("damage", {}).get("parts", []):
+                        if part.get("bonus") == "@mod":
+                            part["bonus"] = f"@mod + {current_stab}"
             embedded.append(embed)
+
+        # ItemGrants dos Moves de níveis futuros (acima do nível em que a espécie é encontrada)
+        move_grants = {}
+        for row in pmp.get("moveTable") or []:
+            if row["level"] <= level or row["level"] > 20:
+                continue
+            ids = []
+            for move_name in row["moves"]:
+                src_move = moves_by_name.get(move_name) or moves_by_norm.get(normalize_name(move_name))
+                if src_move:
+                    ids.append(src_move["_id"])
+                else:
+                    missing_moves.add(move_name)
+            if ids:
+                move_grants[row["level"]] = ids
+
+        hit_die = pmp.get("hitPoints", {}).get("hitDie", "d6")
+        if not hit_die.startswith("d"):
+            hit_die = "d6"
+        book_hp = pmp.get("hitPoints", {}).get("max", 1)
+        con_mod = (pmp["abilities"].get("con", {}).get("value", 10) - 10) // 2
+        class_item, hp_bonus = build_class_item(name, hit_die, level, book_hp, con_mod,
+                                                 move_grants, progression_ids)
+        embedded.insert(0, class_item)
 
         doc["type"] = "npc"
         doc["system"] = {
             "abilities": {k: {"value": v.get("value", 10)} for k, v in pmp["abilities"].items()},
             "attributes": {
                 "ac": {"flat": pmp.get("armorClass", {}).get("value", 10), "calc": "flat"},
-                "hp": {"value": pmp.get("hitPoints", {}).get("max", 1),
-                        "max": pmp.get("hitPoints", {}).get("max", 1), "temp": 0, "tempmax": 0,
-                        "formula": ""},
+                # com a classe embutida, o dnd5e deriva o PV máximo dos avanços de PV da
+                # classe + mod de CON; "max" aqui vira um bônus fixo, calibrado para o
+                # total bater com os PV do livro (mesma técnica do pokemon5e)
+                "hp": {"value": book_hp, "max": hp_bonus, "temp": 0, "tempmax": 0,
+                        "formula": hit_die},
                 "movement": parse_movement(pmp),
                 "senses": parse_senses(pmp.get("senses", ""))
             },

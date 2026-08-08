@@ -32,10 +32,10 @@
       },
       "hp": {
         "value": 505,
-        "max": 505,
+        "max": 176,
         "temp": 0,
         "tempmax": 0,
-        "formula": ""
+        "formula": "d20"
       },
       "movement": {
         "walk": 12.0,
@@ -437,6 +437,68 @@
   },
   "items": [
     {
+      "_id": "NL9brh7ofEBUARpy",
+      "name": "Reshiram Level",
+      "type": "class",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "hd": {
+          "denomination": "d20",
+          "additional": "",
+          "spent": 0
+        },
+        "description": {
+          "value": "<p><strong>Não remova esta classe da ficha.</strong> Ela controla o nível do Pokémon: ao subir de nível, o dnd5e aplica o aumento de PV e concede os Moves da tabela da espécie e os benefícios da tabela de Progressão de Níveis do Pokémon (Ponto de EV, Aumento de STAB, Talento, Aumento de Proficiência/Dano) automaticamente.</p>",
+          "chat": ""
+        },
+        "advancement": [
+          {
+            "type": "HitPoints",
+            "title": "Aumento de Pontos de Vida",
+            "_id": "OqRHWt77NIeY6Piu",
+            "configuration": {},
+            "value": {
+              "1": "max",
+              "2": "avg",
+              "3": "avg",
+              "4": "avg",
+              "5": "avg",
+              "6": "avg",
+              "7": "avg",
+              "8": "avg",
+              "9": "avg",
+              "10": "avg",
+              "11": "avg",
+              "12": "avg",
+              "13": "avg",
+              "14": "avg",
+              "15": "avg",
+              "16": "avg",
+              "17": "avg",
+              "18": "avg",
+              "19": "avg",
+              "20": "avg"
+            }
+          }
+        ],
+        "levels": 20,
+        "identifier": "",
+        "startingEquipment": [],
+        "primaryAbility": {
+          "value": [],
+          "all": true
+        },
+        "spellcasting": {
+          "progression": "none",
+          "preparation": {}
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "sort": -1,
+      "_key": "!actors.items!CugSI07l0zfmnlSb.NL9brh7ofEBUARpy"
+    },
+    {
       "_id": "8xtgb4cKnMQwOKET",
       "name": "Tipo Dragão",
       "type": "feat",
@@ -674,7 +736,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -1096,7 +1158,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -1241,7 +1303,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -1693,7 +1755,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -1843,7 +1905,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -2213,7 +2275,7 @@
                 {
                   "number": 2,
                   "denomination": 12,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -2364,7 +2426,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
@@ -2508,7 +2570,7 @@
                 {
                   "number": 4,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + 5",
                   "types": []
                 }
               ]
