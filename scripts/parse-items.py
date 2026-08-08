@@ -162,29 +162,40 @@ def main():
             os.remove(os.path.join(ITEMS_OUT_DIR, f))
 
     used_ids = set()
-    all_items = []
-    seen_names = set()
+    entries = []          # [{name, desc_parts, price}] em ordem de leitura
+    entry_by_name = {}
+    last_entry = None
+    merged_fragments = 0
 
-    skipped_bad_name = 0
     with pdfplumber.open(pdf_path) as pdf:
         for pi in range(FIRST_PAGE - 1, LAST_PAGE):
             page_items = extract_page_items(pdf.pages[pi])
             for name, desc, price in page_items:
-                if not name or name in seen_names:
+                if not name:
                     continue
                 # heurística de sanidade: nomes reais de item nesta tabela começam com
-                # maiúscula e são curtos. Um "nome" longo e/ou iniciado em minúscula é sinal
-                # de que o parser de grade de tabela associou um fragmento de descrição
-                # (linha de continuação de célula) como se fosse o início de um novo item —
-                # mais seguro descartar essa entrada do que gerar dado errado.
-                if len(name) > 45 or not name[0].isupper():
-                    skipped_bad_name += 1
+                # maiúscula e são curtos. Um "nome" longo e/ou iniciado em minúscula é uma
+                # LINHA DE CONTINUAÇÃO da célula de descrição do item anterior (quebra de
+                # linha dentro da célula da grade) — funde no item anterior em vez de
+                # descartar, senão as descrições ficam cortadas no meio da frase.
+                is_fragment = len(name) > 45 or not name[0].isupper()
+                if is_fragment:
+                    if last_entry is not None:
+                        fragment = (name + (" " + desc if desc else "")).strip()
+                        last_entry["desc_parts"].append(fragment)
+                        if price and not last_entry["price"]:
+                            last_entry["price"] = price
+                        merged_fragments += 1
                     continue
-                seen_names.add(name)
-                all_items.append((name, desc, price))
-    if skipped_bad_name:
-        print(f"{skipped_bad_name} linhas descartadas por falharem a checagem de nome "
-              f"(provável fragmento de descrição mal associado pelo parser de tabela)")
+                if name in entry_by_name:
+                    last_entry = entry_by_name[name]
+                    continue
+                last_entry = {"name": name, "desc_parts": [desc] if desc else [], "price": price}
+                entries.append(last_entry)
+                entry_by_name[name] = last_entry
+
+    print(f"{merged_fragments} linhas de continuação fundidas nas descrições dos itens anteriores")
+    all_items = [(e["name"], " ".join(e["desc_parts"]).strip(), e["price"]) for e in entries]
 
     n_pokeballs = 0
     n_items = 0

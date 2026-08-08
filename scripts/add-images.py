@@ -150,6 +150,24 @@ def patch_moves_and_tms(types_by_name):
     print(f"tms: {n_ok} com sprite do tipo do Move, {n_fallback} com sprite genérico (Move não encontrado)")
 
 
+def patch_trainer_items():
+    """Itens do catálogo de treinador: muitos são itens reais dos jogos (Berries, itens
+    segurados, vitaminas...) com sprite no PokeAPI pelo slug do nome em inglês. Os de
+    nome em português (Algemas, Kit de Escalada...) não existem lá e mantêm o ícone
+    genérico."""
+    n_ok = n_keep = 0
+    for f in glob.glob(os.path.join(SRC, "trainer-features", "item-*.json")):
+        doc = json.load(open(f, encoding="utf-8"))
+        url = ITEM.format(slug=slugify(doc["name"]))
+        if url_exists(url):
+            doc["img"] = url
+            save(f, doc)
+            n_ok += 1
+        else:
+            n_keep += 1
+    print(f"trainer-features (itens): {n_ok} com sprite do PokeAPI, {n_keep} mantêm ícone genérico")
+
+
 def patch_megas():
     n_ok = n_missing = 0
     for f in glob.glob(os.path.join(SRC, "mega-evolutions", "*.json")):
@@ -170,6 +188,7 @@ def main():
     patch_pokeballs()
     patch_moves_and_tms(move_types_by_name())
     patch_megas()
+    patch_trainer_items()
 
 
 if __name__ == "__main__":
