@@ -30,7 +30,9 @@ SRC = os.path.join(ROOT, "packs", "_source")
 
 BASE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites"
 ARTWORK = BASE + "/pokemon/other/official-artwork/{dex}.png"
-SPRITE = BASE + "/pokemon/{dex}.png"
+# render HOME (512px, recorte justo) para o token — o sprite classico de 96px tem
+# muita margem transparente e o token fica minusculo no grid
+SPRITE = BASE + "/pokemon/other/home/{dex}.png"
 ITEM = BASE + "/items/{slug}.png"
 # ícones de tipo (mesmos SVGs usados pelo módulo pokemon5e) — para Moves e características
 TYPE_ICON = "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/{t}.svg"
@@ -66,6 +68,8 @@ def save(path, doc):
 def patch_pokedex():
     n = 0
     for f in glob.glob(os.path.join(SRC, "pokedex", "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         doc = json.load(open(f, encoding="utf-8"))
         # após convert-to-dnd5e-native.py o schema PMP vive em flags, não em system
         dex = doc["system"].get("dexNumber") \
@@ -75,6 +79,11 @@ def patch_pokedex():
         doc["img"] = ARTWORK.format(dex=dex)
         token = doc.setdefault("prototypeToken", {})
         token["texture"] = {"src": SPRITE.format(dex=dex)}
+        # tamanho do token pela categoria de tamanho da especie (Grande=2x2, Enorme=3x3...)
+        size = doc["system"].get("traits", {}).get("size", "med")
+        dims = {"tiny": 1, "sm": 1, "med": 1, "lg": 2, "huge": 3, "grg": 4}.get(size, 1)
+        token["width"] = dims
+        token["height"] = dims
         save(f, doc)
         n += 1
     print(f"pokedex: {n} espécies com arte oficial + sprite de token")
@@ -105,6 +114,8 @@ def move_type_of(doc):
 def move_types_by_name():
     types = {}
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         doc = json.load(open(f, encoding="utf-8"))
         types[doc["name"]] = move_type_of(doc)
     return types
@@ -115,6 +126,8 @@ def patch_moves_and_tms(types_by_name):
     move_ids_by_name = {}
     n = 0
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         doc = json.load(open(f, encoding="utf-8"))
         move_ids_by_name[doc["name"]] = doc["_id"]
         mtype = move_type_of(doc)

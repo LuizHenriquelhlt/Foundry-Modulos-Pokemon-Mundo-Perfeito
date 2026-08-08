@@ -221,6 +221,8 @@ def move_description_html(pmp, name):
 def convert_moves():
     n = 0
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         doc = json.load(open(f, encoding="utf-8"))
         if doc.get("type") == "feat":
             # já convertido: reconstrói a partir dos dados PMP preservados em flags
@@ -497,6 +499,8 @@ def convert_pokedex():
     moves_by_name = {}
     moves_by_norm = {}
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         d = json.load(open(f, encoding="utf-8"))
         moves_by_name[d["name"]] = d
         moves_by_norm[normalize_name(d["name"])] = d
@@ -510,6 +514,8 @@ def convert_pokedex():
     n = 0
     missing_moves = set()
     for f in glob.glob(os.path.join(SRC, "pokedex", "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         doc = json.load(open(f, encoding="utf-8"))
         if doc.get("type") == "npc":
             # já convertido: reconstrói a partir dos dados PMP preservados em flags

@@ -39,7 +39,8 @@ TYPE_PT_TO_EN = {
 SIZE_PT_TO_EN = {
     "miúdo": "tiny", "miudo": "tiny", "minúsculo": "tiny", "minusculo": "tiny",
     "pequeno": "small", "médio": "medium", "medio": "medium",
-    "grande": "large", "enorme": "huge", "gigantesco": "gigantic", "colossal": "gigantic"
+    "grande": "large", "enorme": "huge", "gigantesco": "gigantic", "colossal": "gigantic",
+    "imenso": "gigantic"
 }
 
 HEADER_RE = re.compile(r"^(.*)#(\d{3,4})$")
@@ -360,7 +361,11 @@ def parse_species(lines, header, block_end, warnings_out):
     size_m = re.match(r"^(.+?)\s*\(([\d,.]+)\s*m\)$", fixed["size"])
     size_word, height_m = "", 0.0
     if size_m:
-        size_word = SIZE_PT_TO_EN.get(strip_accents_lower(size_m.group(1)), "medium")
+        size_key = strip_accents_lower(size_m.group(1))
+        size_word = SIZE_PT_TO_EN.get(size_key)
+        if size_word is None:
+            warnings_out.append(f"{name} #{dex}: Tamanho '{size_m.group(1)}' não mapeado (usando medium)")
+            size_word = "medium"
         try:
             height_m = float(size_m.group(2).replace(",", "."))
         except ValueError:

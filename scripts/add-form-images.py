@@ -25,7 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POKEDEX = os.path.join(ROOT, "packs", "_source", "pokedex")
 
 ARTWORK = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png"
-SPRITE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png"
+SPRITE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{id}.png"
 
 NAME_FIXES = {
     "fazê-lo retornar à forma Hoopa Liberto": "Hoopa Liberto"
@@ -187,6 +187,8 @@ def main():
     n_ok = 0
     failures = []
     for f in glob.glob(os.path.join(POKEDEX, "*.json")):
+        if os.path.basename(f).startswith("folder-"):
+            continue
         doc = json.load(open(f, encoding="utf-8"))
         changed = False
 
