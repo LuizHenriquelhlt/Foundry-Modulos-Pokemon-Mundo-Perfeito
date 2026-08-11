@@ -87,17 +87,40 @@ def parse_regioes(lines, used_ids):
         if strip_accents_lower(name) == "sinnoh":
             name = "Sinnoh"
         system = {
-            "description": {"value": f"<p>{text}</p>"},
-            "type": {"value": "feat", "subtype": ""},
-            "requirements": "Escolhida na criação do Treinador"
+            "description": {"value": f"<p>{text}</p>", "chat": ""},
+            "identifier": slugify(name),
+            "source": {"custom": "Pokémon Mundo Perfeito"}
         }
-        doc = base_item(make_id(f"regiao-{name}", used_ids), name, "feat", system)
+        doc = base_item(make_id(f"regiao-{name}", used_ids), name, "race", system)
         doc["flags"] = {"pokemon-mundo-perfeito": {"category": "regiao-de-origem"}}
         with open(os.path.join(OUT_DIR, f"regiao-{slugify(name)}.json"), "w", encoding="utf-8") as fh:
             json.dump(doc, fh, ensure_ascii=False, indent=2)
             fh.write("\n")
         written += 1
     return written
+
+
+ORIGEM_FIELD_RE = re.compile(
+    r"^(?P<flavor>.*?)\s*"
+    r"•\s*Perícias:\s*(?P<pericias>.*?)\s*"
+    r"•\s*Conhecimento de Itens:\s*(?P<itens>.*?)\s*"
+    r"•\s*Equipamento Bônus:\s*(?P<equip>.*?)\s*"
+    r"Habilidade:\s*(?P<habnome>.+?)\s+"
+    r"(?P<habdesc>Você\s.+)$",
+    re.DOTALL
+)
+
+
+def origem_bullets_html(text):
+    parts = [p.strip() for p in re.split(r"•\s*", text) if p.strip()]
+    if len(parts) <= 1:
+        return f"<p>{text.strip()}</p>"
+    intro, *bullets = parts
+    html = f"<p>{intro.strip()}</p><ul>"
+    for b in bullets:
+        html += f"<li>{b.strip()}</li>"
+    html += "</ul>"
+    return html
 
 
 def parse_origens(lines, used_ids):
@@ -121,16 +144,42 @@ def parse_origens(lines, used_ids):
         stop = anchors[i + 1]["idx"] if i + 1 < len(anchors) else len(lines)
         text = " ".join(lines[start:stop]).strip()
 
-        skills_m = re.search(r"Per[íi]cias:\s*([^•]+?)(?:•|$)", text)
-        skills = [s.strip() for s in skills_m.group(1).split(",")] if skills_m else []
+        m = ORIGEM_FIELD_RE.match(text)
+        if m:
+            flavor = m.group("flavor").strip()
+            pericias = m.group("pericias").strip()
+            itens = m.group("itens").strip()
+            equip = m.group("equip").strip()
+            hab_nome = m.group("habnome").strip()
+            hab_desc = origem_bullets_html(m.group("habdesc").strip())
+            html = (
+                f"<p>{flavor}</p>"
+                f"<h3>Você Ganha</h3>"
+                f"<ul>"
+                f"<li><strong>Perícias:</strong> {pericias}</li>"
+                f"<li><strong>Conhecimento de Itens:</strong> {itens}</li>"
+                f"<li><strong>Equipamento Bônus:</strong> {equip}</li>"
+                f"</ul>"
+                f"<h3>Habilidade: {hab_nome}</h3>"
+                f"{hab_desc}"
+            )
+            skills = [s.strip() for s in pericias.split(",")]
+        else:
+            print(f"AVISO Origem de Jornada '{a['name']}': não foi possível separar "
+                  f"Ganhos/Habilidade, mantendo texto corrido")
+            html = f"<p>{text}</p>"
+            skills_m = re.search(r"Per[íi]cias:\s*([^•]+?)(?:•|$)", text)
+            skills = [s.strip() for s in skills_m.group(1).split(",")] if skills_m else []
+            hab_nome = ""
 
         system = {
-            "description": {"value": f"<p>{text}</p>"},
+            "description": {"value": html},
         }
         doc = base_item(
             make_id(f"origem-{a['name']}", used_ids), f"{a['name']} ({a['subtitle']})", "background", system
         )
-        doc["flags"] = {"pokemon-mundo-perfeito": {"category": "origem-de-jornada", "skills": skills}}
+        doc["flags"] = {"pokemon-mundo-perfeito": {"category": "origem-de-jornada", "skills": skills,
+                                                    "abilityName": hab_nome}}
         with open(os.path.join(OUT_DIR, f"origem-{slugify(a['name'])}.json"), "w", encoding="utf-8") as fh:
             json.dump(doc, fh, ensure_ascii=False, indent=2)
             fh.write("\n")

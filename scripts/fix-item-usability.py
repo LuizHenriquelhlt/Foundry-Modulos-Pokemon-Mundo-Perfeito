@@ -240,9 +240,41 @@ def fix_megas():
     print(f"mega-evolutions: {n} pedras com schema de equipment válido")
 
 
+CONTAINER_FILES = ["item-mochila.json", "item-mochila-energizada.json"]
+
+
+def fix_containers():
+    n = 0
+    for fname in CONTAINER_FILES:
+        f = os.path.join(SRC, "trainer-features", fname)
+        if not os.path.exists(f):
+            continue
+        doc = json.load(open(f, encoding="utf-8"))
+        desc = description_of(doc)
+        price = price_number(doc)
+        cap_m = re.search(r"(\d+)\s*kg", desc)
+        capacity = int(cap_m.group(1)) if cap_m else None
+        doc["type"] = "container"
+        doc["system"] = {
+            "description": {"value": desc, "chat": ""},
+            "price": {"value": price, "denomination": "gp"},
+            "weight": {"value": 0, "units": "lb"},
+            "quantity": 1,
+            "rarity": "",
+            "identified": True,
+            "container": None,
+            "capacity": {"type": "weight", "value": capacity},
+            "properties": []
+        }
+        save(f, doc)
+        n += 1
+    print(f"contêineres: {n} mochilas convertidas para type container")
+
+
 def main():
     fix_catalog_and_consumables()
     fix_megas()
+    fix_containers()
 
 
 if __name__ == "__main__":
