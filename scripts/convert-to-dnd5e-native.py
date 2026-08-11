@@ -368,12 +368,15 @@ def stab_bonus(level):
     return 0
 
 
-def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants, progression_ids):
+def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants, progression_ids,
+                      talento_ids):
     """Item de classe "<Espécie> Level" no padrão do módulo pokemon5e: dá o seletor de
     nível na ficha, proficiência automática (mesma progressão da tabela do PMP) e o fluxo
     de Avanço do dnd5e ao subir de nível. Além do avanço de PV, concede via ItemGrant os
-    Moves da tabela da espécie e os benefícios da tabela de Progressão de Níveis nos
-    níveis ainda não alcançados."""
+    Moves da tabela da espécie e os benefícios de STAB/Proficiência/Dano da tabela de
+    Progressão de Níveis do Pokémon nos níveis ainda não alcançados. Ponto de EV vira um
+    Aumento de Valor de Atributo nativo (+1 ponto livre) e Talento de Pokémon vira uma
+    escolha real (ItemChoice) dentre os Talentos do compêndio, em vez de placeholders."""
     die_size = int(hit_die.lstrip("d") or 6)
     avg = die_size // 2 + 1
     # PV derivado da classe (1º nível = dado cheio, demais = média), como o dnd5e calcula
@@ -394,11 +397,25 @@ def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants
         "value": hp_values
     }]
 
+    talento_choice_levels = {}
     for lvl in range(level + 1, 21):
         uuids = []
         for move_id in move_grants.get(lvl, []):
             uuids.append(f"Compendium.pokemon-mundo-perfeito.moves.Item.{move_id}")
         for slug in PROGRESSION_BY_LEVEL.get(lvl, []):
+            if slug == "ponto-de-ev":
+                advancement.append({
+                    "type": "AbilityScoreImprovement",
+                    "title": "Ponto de EV (+1 Atributo)",
+                    "_id": make_id(f"{species_name}-adv-ev-{lvl}"),
+                    "level": lvl,
+                    "configuration": {"points": 1, "cap": 2, "fixed": {}, "locked": []},
+                    "value": {}
+                })
+                continue
+            if slug == "talento-de-pokemon":
+                talento_choice_levels[str(lvl)] = {"count": 1, "replacement": False}
+                continue
             uuids.append(f"Compendium.pokemon-mundo-perfeito.trainer-features.Item.{progression_ids[slug]}")
         if not uuids:
             continue
@@ -411,6 +428,27 @@ def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants
                 "items": [{"uuid": u, "optional": False} for u in uuids],
                 "optional": False,
                 "spell": None
+            },
+            "value": {}
+        })
+
+    if talento_choice_levels:
+        advancement.append({
+            "type": "ItemChoice",
+            "title": "Talento de Pokémon",
+            "_id": make_id(f"{species_name}-adv-talento"),
+            "configuration": {
+                "allowDrops": True,
+                "choices": talento_choice_levels,
+                "pool": [
+                    {"sort": i * 10000,
+                     "uuid": f"Compendium.pokemon-mundo-perfeito.trainer-features.Item.{tid}"}
+                    for i, tid in enumerate(talento_ids)
+                ],
+                "restriction": {"level": "", "list": [], "subtype": "", "type": "feat"},
+                "sorting": "a",
+                "spell": None,
+                "type": "feat"
             },
             "value": {}
         })
@@ -511,6 +549,9 @@ def convert_pokedex():
     progression_ids = {slug: make_id(f"progressao-{slug}")
                         for slug in ["ponto-de-ev", "aumento-de-stab", "talento-de-pokemon",
                                       "aumento-de-proficiencia", "aumento-de-dano"]}
+    talento_ids = []
+    for tf in sorted(glob.glob(os.path.join(SRC, "trainer-features", "talento-*.json"))):
+        talento_ids.append(json.load(open(tf, encoding="utf-8"))["_id"])
     n = 0
     missing_moves = set()
     for f in glob.glob(os.path.join(SRC, "pokedex", "*.json")):
@@ -612,7 +653,7 @@ def convert_pokedex():
         book_hp = pmp.get("hitPoints", {}).get("max", 1)
         con_mod = (pmp["abilities"].get("con", {}).get("value", 10) - 10) // 2
         class_item, hp_bonus = build_class_item(name, hit_die, level, book_hp, con_mod,
-                                                 move_grants, progression_ids)
+                                                 move_grants, progression_ids, talento_ids)
         embedded.insert(0, class_item)
 
         doc["type"] = "npc"
