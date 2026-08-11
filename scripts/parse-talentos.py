@@ -22,7 +22,7 @@ from pdf_glossary import extract_glossary  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "packs", "_source", "trainer-features")
-FOLDER_ID = "tAlEnToSfOlDeR001"
+FOLDER_ID = "TalentosFolder01"
 FIRST_PAGE, LAST_PAGE = 72, 75
 
 

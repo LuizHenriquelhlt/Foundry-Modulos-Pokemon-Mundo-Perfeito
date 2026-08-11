@@ -19,7 +19,7 @@ import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "packs", "_source", "trainer-features")
-FOLDER_ID = "nAtUrEzAsFoLdEr01"
+FOLDER_ID = "NaturezasFolder1"
 
 ATTR_PATTERN = r"(?:Força|Destreza|Constituição|Inteligência|Sabedoria|Carisma|CA)"
 ROW_RE = re.compile(
