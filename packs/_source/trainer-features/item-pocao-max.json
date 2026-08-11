@@ -2,16 +2,87 @@
   "_key": "!items!UA1k6W9OVrUX52yi",
   "_id": "UA1k6W9OVrUX52yi",
   "name": "Poção Max",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-potion.png",
   "system": {
     "description": {
-      "value": "<p>Restaura 8d12+14 PV.</p>"
+      "value": "<p>Restaura 8d12+14 PV.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽1.500",
-      "denomination": "P"
-    }
+      "value": 1500,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "potion",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "ouICj4suxUOsJDDO": {
+        "_id": "ouICj4suxUOsJDDO",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "zQABwLvPl4rF8rw4",

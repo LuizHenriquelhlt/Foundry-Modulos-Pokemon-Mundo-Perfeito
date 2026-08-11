@@ -2,16 +2,87 @@
   "_key": "!items!fplsYsqspEAeCK2v",
   "_id": "fplsYsqspEAeCK2v",
   "name": "Tomato Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "icons/consumables/food/berries-ration-round-red.webp",
   "system": {
     "description": {
-      "value": "<p>Reduz o deslocamento de um Pokémon em 10 pés (3 metros) até o próximo descanso longo e aumenta sua Lealdade em 1 pelo mesmo período.</p>"
+      "value": "<p>Reduz o deslocamento de um Pokémon em 10 pés (3 metros) até o próximo descanso longo e aumenta sua Lealdade em 1 pelo mesmo período.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽500",
-      "denomination": "P"
-    }
+      "value": 500,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "bnBv40UpqT4dDztz": {
+        "_id": "bnBv40UpqT4dDztz",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

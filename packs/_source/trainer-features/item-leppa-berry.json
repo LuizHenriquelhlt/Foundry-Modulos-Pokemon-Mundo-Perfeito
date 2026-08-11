@@ -2,16 +2,87 @@
   "_key": "!items!lVUd9vz24pY9Hbe5",
   "_id": "lVUd9vz24pY9Hbe5",
   "name": "Leppa Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/leppa-berry.png",
   "system": {
     "description": {
-      "value": "<p>Restaura 10 PP para um Move. Ativado quando o Pokémon fica sem PP para um Move.</p>"
+      "value": "<p>Restaura 10 PP para um Move. Ativado quando o Pokémon fica sem PP para um Move.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽400",
-      "denomination": "P"
-    }
+      "value": 400,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "FxEmBKx8oTwQmLiA": {
+        "_id": "FxEmBKx8oTwQmLiA",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

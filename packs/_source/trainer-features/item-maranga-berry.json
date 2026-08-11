@@ -2,16 +2,87 @@
   "_key": "!items!PaTfUII1nFUsZ06h",
   "_id": "PaTfUII1nFUsZ06h",
   "name": "Maranga Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/maranga-berry.png",
   "system": {
     "description": {
-      "value": "<p>Aumenta a Defesa Especial em 1 estágio. Ativado após o Pokémon receber dano de um ataque à distância.</p>"
+      "value": "<p>Aumenta a Defesa Especial em 1 estágio. Ativado após o Pokémon receber dano de um ataque à distância.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽400",
-      "denomination": "P"
-    }
+      "value": 400,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "8upHWF3JHlGf9QX5": {
+        "_id": "8upHWF3JHlGf9QX5",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

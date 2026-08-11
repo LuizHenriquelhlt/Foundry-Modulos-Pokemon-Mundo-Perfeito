@@ -2,16 +2,87 @@
   "_key": "!items!VQZvgdMhJ57YWyNp",
   "_id": "VQZvgdMhJ57YWyNp",
   "name": "Enigma Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/enigma-berry.png",
   "system": {
     "description": {
-      "value": "<p>Restaura 2d10+5 PV. Ativado quando o Pokémon recebe um dano super efetivo.</p>"
+      "value": "<p>Restaura 2d10+5 PV. Ativado quando o Pokémon recebe um dano super efetivo.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽450",
-      "denomination": "P"
-    }
+      "value": 450,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "6zlK7UiEkISC5WCJ": {
+        "_id": "6zlK7UiEkISC5WCJ",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

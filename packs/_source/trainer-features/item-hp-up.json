@@ -2,16 +2,87 @@
   "_key": "!items!t77IbrUiO5ytSuP8",
   "_id": "t77IbrUiO5ytSuP8",
   "name": "HP Up",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hp-up.png",
   "system": {
     "description": {
-      "value": "<p>Aumenta o PV máximo em um valor igual ao resultado máximo do seu dado de vida. Caso o Pokémon evolua, passe a considerar o novo dado de vida para esse cálculo. Pode ser usado até 3x em um único Pokémon.</p>"
+      "value": "<p>Aumenta o PV máximo em um valor igual ao resultado máximo do seu dado de vida. Caso o Pokémon evolua, passe a considerar o novo dado de vida para esse cálculo. Pode ser usado até 3x em um único Pokémon.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽8.800",
-      "denomination": "P"
-    }
+      "value": 8800,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "xnAzCtGb6a9g7xS9": {
+        "_id": "xnAzCtGb6a9g7xS9",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

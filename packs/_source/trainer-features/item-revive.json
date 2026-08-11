@@ -2,16 +2,87 @@
   "_key": "!items!9jRhwE7S7m8gS6O7",
   "_id": "9jRhwE7S7m8gS6O7",
   "name": "Revive",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/revive.png",
   "system": {
     "description": {
-      "value": "<p>Revive um Pokémon desmaiado e cura 4d12+10 PV.</p>"
+      "value": "<p>Revive um Pokémon desmaiado e cura 4d12+10 PV.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽3.000",
-      "denomination": "P"
-    }
+      "value": 3000,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "potion",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "q1IUge0p9z6FAwlW": {
+        "_id": "q1IUge0p9z6FAwlW",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

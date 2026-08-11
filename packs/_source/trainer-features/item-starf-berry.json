@@ -2,16 +2,87 @@
   "_key": "!items!4bcc4DeOCPeoAIvl",
   "_id": "4bcc4DeOCPeoAIvl",
   "name": "Starf Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/starf-berry.png",
   "system": {
     "description": {
-      "value": "<p>Role 1d6 e aumente em 2 estágios o status correspondente. Ativado quando o Pokémon cai abaixo de 25% de PV. 1: Ataque / 2: Ataque Especial / 3: Defesa / 4: Defesa Especial / 5: Velocidade / 6: role novamente.</p>"
+      "value": "<p>Role 1d6 e aumente em 2 estágios o status correspondente. Ativado quando o Pokémon cai abaixo de 25% de PV. 1: Ataque / 2: Ataque Especial / 3: Defesa / 4: Defesa Especial / 5: Velocidade / 6: role novamente.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽350",
-      "denomination": "P"
-    }
+      "value": 350,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "nJ6Df7NjR03MCrds": {
+        "_id": "nJ6Df7NjR03MCrds",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

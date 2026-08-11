@@ -60,8 +60,8 @@ FIELD_RE = {
     "movement": re.compile(r"^Deslocamento:\s*(.+)$"),
     "abilities_header": re.compile(r"^FOR\s+DES\s+CON\s+INT\s+SAB\s+CHA$"),
     "skills": re.compile(r"^Perícias:\s*(.+)$"),
-    "passive": re.compile(r"^Habilidade Passiva:\s*(.+)$"),
-    "hidden": re.compile(r"^Habilidade Oculta:\s*(.+)$"),
+    "passive": re.compile(r"^Habilidades? Passivas?:\s*(.+)$"),
+    "hidden": re.compile(r"^Habilidades? Ocultas?:\s*(.+)$"),
     "senses": re.compile(r"^Sentidos:\s*(.+)$"),
     "evolution": re.compile(r"^Evolução:\s*(.+)$"),
     "movetable_header": re.compile(r"^Nível\s+Moves adquiridos em cada nível$"),
@@ -99,7 +99,11 @@ SPECIES_CORRECTIONS = {
             "Barrier", "Baton Pass", "Curse", "Healing Wish", "Helping Hand", "Magic Coat",
             "Secret Power", "Sleep Talk", "Sonic Boom", "Swift"
         ]
-    }
+    },
+    # o livro omite as linhas de Habilidade nas formas Caída/Esticada do Tatsugiri
+    # (só as lista na Forma Curva) — replicadas da forma base
+    ("Tatsugiri Forma Caída", 978): {"passive": "Commander", "hidden": "Storm Drain"},
+    ("Tatsugiri Forma Esticada", 978): {"passive": "Commander", "hidden": "Storm Drain"}
 }
 
 ABILITY_LINE_RE = re.compile(r"(\d+)\s*\(([+-]\d+)\)")
@@ -403,6 +407,10 @@ def parse_species(lines, header, block_end, warnings_out):
             tms = correction["tms"]
         if "eggMoves" in correction:
             egg_moves = correction["eggMoves"]
+        if "passive" in correction:
+            passive = correction["passive"]
+        if "hidden" in correction:
+            hidden = correction["hidden"]
         warnings_out.append(f"{name} #{dex}: dados corrigidos manualmente ({', '.join(correction)})")
 
     system = {
@@ -425,7 +433,10 @@ def parse_species(lines, header, block_end, warnings_out):
         "movement": {"walk": (lambda m: int(m.group(1)) if m else 9)(re.search(r"(\d+)m", move_val or "")),
                      "other": move_val},
         "senses": senses,
-        "passiveAbility": {"options": [passive] if passive else [], "active": passive},
+        "passiveAbility": {
+            "options": [p.strip() for p in passive.split(",") if p.strip()],
+            "active": passive.split(",")[0].strip() if passive else ""
+        },
         "hiddenAbility": hidden,
         "level": min_level,
         "moveTable": move_table,

@@ -2,16 +2,87 @@
   "_key": "!items!Hm4IkIJN76PfjLRx",
   "_id": "Hm4IkIJN76PfjLRx",
   "name": "Candy Bar",
-  "type": "loot",
+  "type": "consumable",
   "img": "icons/consumables/food/berries-ration-round-red.webp",
   "system": {
     "description": {
-      "value": "<p>Restaura 5 PV.</p>"
+      "value": "<p>Restaura 5 PV.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽150",
-      "denomination": "P"
-    }
+      "value": 150,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "8nhoETKW7bd3ZbKx": {
+        "_id": "8nhoETKW7bd3ZbKx",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "B2a1HNRXFGMnAjrf",

@@ -2,16 +2,87 @@
   "_key": "!items!5RXP55LHYQlWy9XR",
   "_id": "5RXP55LHYQlWy9XR",
   "name": "Kee Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kee-berry.png",
   "system": {
     "description": {
-      "value": "<p>Aumenta a Defesa em 1 estágio. Ativado após o Pokémon receber dano de um ataque corpo a corpo.</p>"
+      "value": "<p>Aumenta a Defesa em 1 estágio. Ativado após o Pokémon receber dano de um ataque corpo a corpo.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽400",
-      "denomination": "P"
-    }
+      "value": 400,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "Z4gUFuPBaHa10Mbc": {
+        "_id": "Z4gUFuPBaHa10Mbc",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

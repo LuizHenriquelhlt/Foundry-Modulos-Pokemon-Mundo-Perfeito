@@ -2,16 +2,87 @@
   "_key": "!items!OMQkjfzPYIM6Hd8r",
   "_id": "OMQkjfzPYIM6Hd8r",
   "name": "Oran Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/oran-berry.png",
   "system": {
     "description": {
-      "value": "<p>Restaura 2d4+2 PV. Ativado quando o Pokémon cai abaixo de 50% de PV.</p>"
+      "value": "<p>Restaura 2d4+2 PV. Ativado quando o Pokémon cai abaixo de 50% de PV.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽120",
-      "denomination": "P"
-    }
+      "value": 120,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "gQGw5FSsYCa0winO": {
+        "_id": "gQGw5FSsYCa0winO",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

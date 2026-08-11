@@ -2,16 +2,87 @@
   "_key": "!items!d8uYPkKeoMOyAvix",
   "_id": "d8uYPkKeoMOyAvix",
   "name": "PP Up",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pp-up.png",
   "system": {
     "description": {
-      "value": "<p>Aumenta o máximo de PP de um Move em 2. Pode ser usado até 3x em um único Move</p>"
+      "value": "<p>Aumenta o máximo de PP de um Move em 2. Pode ser usado até 3x em um único Move</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽8.800",
-      "denomination": "P"
-    }
+      "value": 8800,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "129Z4T68K8EVOQem": {
+        "_id": "129Z4T68K8EVOQem",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

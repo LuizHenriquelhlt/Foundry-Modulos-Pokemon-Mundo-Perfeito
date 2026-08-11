@@ -2,16 +2,87 @@
   "_key": "!items!pYrk8K7EM8Yscpqz",
   "_id": "pYrk8K7EM8Yscpqz",
   "name": "Repelente",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/repel.png",
   "system": {
     "description": {
-      "value": "<p>Evita que Pokémon selvagens de nível inferior ao seu se aproximem de você pelas próximas 2 horas. Pode ser usado até três vezes antes de se esgotar. Não impede que outros aliados ao seu redor atraiam Pokémon para eles.</p>"
+      "value": "<p>Evita que Pokémon selvagens de nível inferior ao seu se aproximem de você pelas próximas 2 horas. Pode ser usado até três vezes antes de se esgotar. Não impede que outros aliados ao seu redor atraiam Pokémon para eles.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽50",
-      "denomination": "P"
-    }
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "OlVAu8G5dmtkSuXU": {
+        "_id": "OlVAu8G5dmtkSuXU",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

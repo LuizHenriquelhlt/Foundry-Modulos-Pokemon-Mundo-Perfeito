@@ -6,12 +6,83 @@
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-flying.png",
   "system": {
     "description": {
-      "value": "<p>TM que ensina o Move <strong>Hurricane</strong> a um Pokémon compatível.</p><p><strong>Move ensinado:</strong> @UUID[Compendium.pokemon-mundo-perfeito.moves.Item.vOwDymguF3zY01rC]{Hurricane}</p><p><em>Coloque este TM na ficha de um Pokémon para ele aprender o Move automaticamente.</em></p>"
+      "value": "<p>TM que ensina o Move <strong>Hurricane</strong> a um Pokémon compatível.</p><p><strong>Move ensinado:</strong> @UUID[Compendium.pokemon-mundo-perfeito.moves.Item.vOwDymguF3zY01rC]{Hurricane}</p><p><em>Coloque este TM na ficha de um Pokémon para ele aprender o Move automaticamente.</em></p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽6.000",
-      "denomination": "P"
-    }
+      "value": 6000,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "DnkGQ0LqX33reO20": {
+        "_id": "DnkGQ0LqX33reO20",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": null,

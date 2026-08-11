@@ -6,12 +6,83 @@
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-dark.png",
   "system": {
     "description": {
-      "value": "<p>TM que ensina o Move <strong>Quash</strong> a um Pokémon compatível.</p><p><strong>Move ensinado:</strong> @UUID[Compendium.pokemon-mundo-perfeito.moves.Item.lMHIgB2ZO3rgPT6L]{Quash}</p><p><em>Coloque este TM na ficha de um Pokémon para ele aprender o Move automaticamente.</em></p>"
+      "value": "<p>TM que ensina o Move <strong>Quash</strong> a um Pokémon compatível.</p><p><strong>Move ensinado:</strong> @UUID[Compendium.pokemon-mundo-perfeito.moves.Item.lMHIgB2ZO3rgPT6L]{Quash}</p><p><em>Coloque este TM na ficha de um Pokémon para ele aprender o Move automaticamente.</em></p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽2.500",
-      "denomination": "P"
-    }
+      "value": 2500,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "hTgDg34ejkcecWM1": {
+        "_id": "hTgDg34ejkcecWM1",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": null,

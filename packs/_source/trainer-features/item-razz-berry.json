@@ -2,16 +2,87 @@
   "_key": "!items!lVItWHVMvtbw3uXA",
   "_id": "lVItWHVMvtbw3uXA",
   "name": "Razz Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/razz-berry.png",
   "system": {
     "description": {
-      "value": "<p>Quando segurado por um Pokémon em combate, o Treinador ganha +1 nas tentativas de captura. (Não consumível)</p>"
+      "value": "<p>Quando segurado por um Pokémon em combate, o Treinador ganha +1 nas tentativas de captura. (Não consumível)</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽1000",
-      "denomination": "P"
-    }
+      "value": 1000,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "1lmEyLsA6ag4n3WF": {
+        "_id": "1lmEyLsA6ag4n3WF",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

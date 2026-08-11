@@ -541,11 +541,15 @@ def convert_pokedex():
                 make_id(f"{name}-tipo-{t}"), f"Tipo {TYPE_LABELS.get(t, t)}",
                 f"<p>Este Pokémon é do tipo {TYPE_LABELS.get(t, t)}.</p>", type_icon.format(t=t)))
 
-        passive = pmp.get("passiveAbility", {}).get("active", "")
-        if passive:
+        passive_options = pmp.get("passiveAbility", {}).get("options") or []
+        if not passive_options and pmp.get("passiveAbility", {}).get("active"):
+            passive_options = [pmp["passiveAbility"]["active"]]
+        for passive in passive_options:
             embedded.append(feat_stub(
                 make_id(f"{name}-passiva-{passive}"), f"Habilidade Passiva: {passive}",
-                "<p>Veja a Lista de Habilidades Passivas no Livro de Regras.</p>",
+                "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie "
+                "lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma "
+                "delas (remova a que não for usar).</p>",
                 "icons/svg/aura.svg"))
         hidden = pmp.get("hiddenAbility", "")
         if hidden:

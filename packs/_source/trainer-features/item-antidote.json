@@ -2,16 +2,87 @@
   "_key": "!items!VCh92k41hgGCkk6N",
   "_id": "VCh92k41hgGCkk6N",
   "name": "Antidote",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/antidote.png",
   "system": {
     "description": {
-      "value": "<p>Cura instantaneamente um Pokémon do status \"Envenenado\" ou “Gravemente Envenenado”.</p>"
+      "value": "<p>Cura instantaneamente um Pokémon do status \"Envenenado\" ou “Gravemente Envenenado”.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽200",
-      "denomination": "P"
-    }
+      "value": 200,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "xh7zCk3EDFqv0shG": {
+        "_id": "xh7zCk3EDFqv0shG",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

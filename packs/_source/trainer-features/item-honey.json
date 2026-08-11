@@ -2,16 +2,87 @@
   "_key": "!items!S5gXKJR9iFilcZha",
   "_id": "S5gXKJR9iFilcZha",
   "name": "Honey",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/honey.png",
   "system": {
     "description": {
-      "value": "<p>Pode ser usado para atrair automaticamente um único Pokémon que reside na área (critério do Mestre).</p>"
+      "value": "<p>Pode ser usado para atrair automaticamente um único Pokémon que reside na área (critério do Mestre).</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽1.000",
-      "denomination": "P"
-    }
+      "value": 1000,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "gsjRs09bC66amfhs": {
+        "_id": "gsjRs09bC66amfhs",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

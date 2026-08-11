@@ -2,16 +2,87 @@
   "_key": "!items!FKhqDc6g67yo2rUb",
   "_id": "FKhqDc6g67yo2rUb",
   "name": "Ability Patch",
-  "type": "loot",
+  "type": "consumable",
   "img": "icons/commodities/treasure/token-brass-round.webp",
   "system": {
     "description": {
-      "value": "<p>Um item consumível que permite um Pokémon trocar a habilidade passiva para a habilidade oculta que ele possui em sua aba de estatísticas. Este item normalmente é dado como prêmio por realizar grandes feitos.</p>"
+      "value": "<p>Um item consumível que permite um Pokémon trocar a habilidade passiva para a habilidade oculta que ele possui em sua aba de estatísticas. Este item normalmente é dado como prêmio por realizar grandes feitos.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽25.000",
-      "denomination": "P"
-    }
+      "value": 25000,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "gt38FBncX7dC9ySR": {
+        "_id": "gt38FBncX7dC9ySR",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

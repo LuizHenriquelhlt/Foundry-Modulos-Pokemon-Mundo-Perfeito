@@ -2,16 +2,87 @@
   "_key": "!items!VHQbGQiXInFsWbM7",
   "_id": "VHQbGQiXInFsWbM7",
   "name": "Grepa Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grepa-berry.png",
   "system": {
     "description": {
-      "value": "<p>Reduz a SAB de um Pokémon em 2 até o próximo descanso longo e aumenta sua Lealdade em 1 pelo mesmo período. Se Pokémon possuir pontos de EV gastos nesse atributo, ele pode redistribuir permanentemente os pontos removidos.</p>"
+      "value": "<p>Reduz a SAB de um Pokémon em 2 até o próximo descanso longo e aumenta sua Lealdade em 1 pelo mesmo período. Se Pokémon possuir pontos de EV gastos nesse atributo, ele pode redistribuir permanentemente os pontos removidos.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽500",
-      "denomination": "P"
-    }
+      "value": 500,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "iyDcMN5hLkgiZ4z6": {
+        "_id": "iyDcMN5hLkgiZ4z6",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

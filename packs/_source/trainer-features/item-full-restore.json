@@ -2,16 +2,87 @@
   "_key": "!items!H0B8ftnjavlQPVcl",
   "_id": "H0B8ftnjavlQPVcl",
   "name": "Full Restore",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/full-restore.png",
   "system": {
     "description": {
-      "value": "<p>Restaura 8d12+14 PV, cura todas as condições de status e concede imunidade a elas por uma rodada.</p>"
+      "value": "<p>Restaura 8d12+14 PV, cura todas as condições de status e concede imunidade a elas por uma rodada.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽2.000",
-      "denomination": "P"
-    }
+      "value": 2000,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "potion",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "JcYvR7L9foSluB7m": {
+        "_id": "JcYvR7L9foSluB7m",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

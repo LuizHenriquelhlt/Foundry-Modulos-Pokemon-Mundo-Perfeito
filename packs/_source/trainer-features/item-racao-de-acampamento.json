@@ -2,16 +2,87 @@
   "_key": "!items!RWaJFiNIaJXccDbj",
   "_id": "RWaJFiNIaJXccDbj",
   "name": "Ração de Acampamento",
-  "type": "loot",
+  "type": "consumable",
   "img": "icons/consumables/food/berries-ration-round-red.webp",
   "system": {
     "description": {
-      "value": "<p>Um pacote hermético de comida liofilizada, adicione água quente para reconstituir. Fornece uma refeição diária para uma pessoa.</p>"
+      "value": "<p>Um pacote hermético de comida liofilizada, adicione água quente para reconstituir. Fornece uma refeição diária para uma pessoa.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽50",
-      "denomination": "P"
-    }
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "x6Mwvh3KOaktRmGQ": {
+        "_id": "x6Mwvh3KOaktRmGQ",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "Zm6FGQvH27WXnke5",

@@ -2,16 +2,87 @@
   "_key": "!items!epxbneZ5tMSCbXe4",
   "_id": "epxbneZ5tMSCbXe4",
   "name": "Wiki Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wiki-berry.png",
   "system": {
     "description": {
-      "value": "<p>Restaura 3d10+5 PV. Ativado quando o Pokémon cai abaixo de 25% de PV, mas causa confusão caso seja de Natureza</p>"
+      "value": "<p>Restaura 3d10+5 PV. Ativado quando o Pokémon cai abaixo de 25% de PV, mas causa confusão caso seja de Natureza</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽350",
-      "denomination": "P"
-    }
+      "value": 350,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "ui4dsgiofUZddVjE": {
+        "_id": "ui4dsgiofUZddVjE",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",

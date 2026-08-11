@@ -2,16 +2,87 @@
   "_key": "!items!TjN0xTyypN740n9y",
   "_id": "TjN0xTyypN740n9y",
   "name": "Salac Berry",
-  "type": "loot",
+  "type": "consumable",
   "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/salac-berry.png",
   "system": {
     "description": {
-      "value": "<p>Aumenta a Velocidade em 1 estágio. Ativado quando o Pokémon cai abaixo de 25% de PV.</p>"
+      "value": "<p>Aumenta a Velocidade em 1 estágio. Ativado quando o Pokémon cai abaixo de 25% de PV.</p>",
+      "chat": ""
     },
     "price": {
-      "value": "₽300",
-      "denomination": "P"
-    }
+      "value": 300,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "quantity": 1,
+    "rarity": "",
+    "identified": true,
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "type": {
+      "value": "food",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true
+    },
+    "activities": {
+      "DltjtqXvLhPvSmy4": {
+        "_id": "DltjtqXvLhPvSmy4",
+        "type": "utility",
+        "name": "Usar",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    },
+    "properties": []
   },
   "effects": [],
   "folder": "nP1jb30nypol9cNe",
