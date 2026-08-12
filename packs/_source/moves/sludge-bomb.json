@@ -26,8 +26,77 @@
       ]
     },
     "activities": {
-      "qfeF20Dj3qCopfxS": {
-        "_id": "qfeF20Dj3qCopfxS",
+      "CNKL8yWKDvjzACuE": {
+        "_id": "CNKL8yWKDvjzACuE",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 6,
+              "bonus": "@mod + {0,@abilities.con.mod-@abilities.dex.mod}kh1",
+              "types": []
+            }
+          ]
+        }
+      },
+      "rZfPaidkEsQKWDM8": {
+        "_id": "rZfPaidkEsQKWDM8",
         "name": "",
         "activation": {
           "type": "action",
@@ -80,14 +149,7 @@
         },
         "damage": {
           "onSave": "none",
-          "parts": [
-            {
-              "number": 3,
-              "denomination": 6,
-              "bonus": "@mod + {0,@abilities.con.mod-@abilities.dex.mod}kh1",
-              "types": []
-            }
-          ]
+          "parts": []
         }
       }
     }

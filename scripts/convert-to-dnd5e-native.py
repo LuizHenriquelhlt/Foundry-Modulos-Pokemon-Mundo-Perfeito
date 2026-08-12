@@ -113,16 +113,20 @@ def ability_topup_formula(abilities):
 
 
 def build_move_activity(pmp, move_name):
-    """Constrói uma Activity do dnd5e v4 a partir dos campos PMP do Move.
+    """Constrói as Activities do dnd5e v4 a partir dos campos PMP do Move.
     Ataque ("Faça um ataque...") ou a mecânica "Role 1d20 + MOVE + N e compare com a defesa do
     alvo" (usada pelos Moves de status de alvo único, ex. Attract/Thunder Wave/Toxic) viram
     activity attack — nesse sistema o atacante sempre rola o dado, mesmo em Moves de status.
     "Teste de X contra sua CD de Move" (o alvo que rola) vira activity save, com CD exposta.
-    Status sem nenhuma rolagem (buffs em si mesmo, ex. Agility) vira activity utility (botão
-    Usar), para nunca ficar sem nenhuma ação executável. O bônus de MOVE do PMP (melhor
-    atributo + proficiência) equivale ao mod do atributo + proficiência do dnd5e, então @mod
-    nas partes de dano e o cálculo padrão de acerto/CD reproduzem a matemática do livro; quando
-    o Move aceita mais de um atributo, soma-se o "top up" do maior entre eles."""
+    Alguns Moves (ex. Mud-Slap, Poison Fang, Nuzzle) têm as DUAS coisas: um ataque que causa
+    dano no acerto e, separadamente, um teste de resistência do alvo para um efeito secundário
+    (sem dano extra) — nesse caso o Move ganha duas Activities (attack + save), uma pra cada
+    rolagem, em vez de perder uma delas. Status sem nenhuma rolagem (buffs em si mesmo, ex.
+    Agility) vira activity utility (botão Usar), para nunca ficar sem nenhuma ação executável.
+    O bônus de MOVE do PMP (melhor atributo + proficiência) equivale ao mod do atributo +
+    proficiência do dnd5e, então @mod nas partes de dano e o cálculo padrão de acerto/CD
+    reproduzem a matemática do livro; quando o Move aceita mais de um atributo, soma-se o
+    "top up" do maior entre eles."""
     desc_plain = re.sub(r"<[^>]+>", " ", pmp.get("description", ""))
     base = pmp.get("damage", {}).get("baseFormula", "")
     power_abilities = pmp.get("powerAbilities") or []
@@ -151,41 +155,32 @@ def build_move_activity(pmp, move_name):
     m_roll_vs_defense = re.search(r"[Rr]ole 1d20\s*\+\s*MOVE(?:\s*\+\s*(\d+))?", desc_plain)
     is_attack_phrase = bool(re.search(r"[Ff]aça (?:um|até \w+ rolagens? de)? ?ataque", desc_plain))
     is_attack = is_attack_phrase or bool(m_roll_vs_defense) or (bool(damage_part) and not m_save)
+    # ataque com efeito secundário: quando o próprio ataque já causa o dano, o save que
+    # acompanha é só para o efeito extra (veneno/paralisia/agarrão/etc.), sem dano dele
+    dual_attack_and_save = is_attack and m_save
 
     uses_pp = pmp.get("pp", {})
     consumption = {"targets": [], "scaling": {"allowed": False, "max": ""}, "spellSlot": True}
     if uses_pp.get("max") and not uses_pp.get("unlimited"):
         consumption["targets"] = [{"type": "itemUses", "target": "", "value": "1", "scaling": {"mode": "", "formula": ""}}]
 
-    activity_id = make_id(f"activity-{move_name}")
-    common = {
-        "_id": activity_id,
-        "name": "",
-        "activation": {"type": activation_type, "value": None, "condition": "", "override": False},
-        "consumption": consumption,
-        "description": {"chatFlavor": ""},
-        "duration": {"units": "inst", "concentration": False, "override": False},
-        "range": {"override": False},
-        "target": {"override": False}
-    }
+    def base_activity(suffix):
+        return {
+            "_id": make_id(f"activity-{move_name}-{suffix}"),
+            "name": "",
+            "activation": {"type": activation_type, "value": None, "condition": "", "override": False},
+            "consumption": consumption,
+            "description": {"chatFlavor": ""},
+            "duration": {"units": "inst", "concentration": False, "override": False},
+            "range": {"override": False},
+            "target": {"override": False}
+        }
 
-    if m_save:
-        save_ability = ABILITY_PT.get(m_save.group(1), "dex")
-        on_save = "half" if re.search(r"metade d", desc_plain) else "none"
-        return {activity_id: {
-            **common,
-            "type": "save",
-            "save": {
-                "ability": [save_ability],
-                "dc": {"calculation": ability or "str", "formula": "", "bonus": topup}
-            },
-            "damage": {"onSave": on_save, "parts": [damage_part] if damage_part else []}
-        }}
-
-    if is_attack:
+    def attack_activity():
+        common = base_activity("attack" if dual_attack_and_save else "act")
         melee = pmp.get("range", {}).get("melee", False)
         flat_bonus = str(m_roll_vs_defense.group(1)) if (m_roll_vs_defense and m_roll_vs_defense.group(1)) else ""
-        return {activity_id: {
+        return common["_id"], {
             **common,
             "type": "attack",
             "attack": {
@@ -197,11 +192,39 @@ def build_move_activity(pmp, move_name):
             },
             "damage": {"critical": {"bonus": ""}, "includeBase": False,
                         "parts": [damage_part] if damage_part else []}
-        }}
+        }
+
+    def save_activity(include_damage):
+        common = base_activity("save" if dual_attack_and_save else "act")
+        save_ability = ABILITY_PT.get(m_save.group(1), "dex")
+        on_save = "half" if re.search(r"metade d", desc_plain) else "none"
+        return common["_id"], {
+            **common,
+            "type": "save",
+            "save": {
+                "ability": [save_ability],
+                "dc": {"calculation": ability or "str", "formula": "", "bonus": topup}
+            },
+            "damage": {"onSave": on_save, "parts": ([damage_part] if damage_part else []) if include_damage else []}
+        }
+
+    if dual_attack_and_save:
+        aid, act = attack_activity()
+        sid, sv = save_activity(include_damage=False)
+        return {aid: act, sid: sv}
+
+    if m_save:
+        sid, sv = save_activity(include_damage=True)
+        return {sid: sv}
+
+    if is_attack:
+        aid, act = attack_activity()
+        return {aid: act}
 
     # Status sem nenhuma rolagem de acerto/resistência (ex.: buff em si mesmo) — ainda precisa de
     # uma ação executável na ficha, então vira utility (botão "Usar") em vez de ficar sem activity.
-    return {activity_id: {
+    common = base_activity("use")
+    return {common["_id"]: {
         **common,
         "type": "utility",
         "roll": {"prompt": False, "visible": False}

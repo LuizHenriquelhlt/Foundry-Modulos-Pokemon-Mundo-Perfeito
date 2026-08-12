@@ -26,8 +26,77 @@
       ]
     },
     "activities": {
-      "Gcy55X2ujWgNnMXh": {
-        "_id": "Gcy55X2ujWgNnMXh",
+      "dkxHX0PhnPz8oLtw": {
+        "_id": "dkxHX0PhnPz8oLtw",
+        "name": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "override": false
+        },
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
+              "types": []
+            }
+          ]
+        }
+      },
+      "x5GJXdSrEjOzZwd7": {
+        "_id": "x5GJXdSrEjOzZwd7",
         "name": "",
         "activation": {
           "type": "action",
@@ -80,14 +149,7 @@
         },
         "damage": {
           "onSave": "none",
-          "parts": [
-            {
-              "number": 4,
-              "denomination": 4,
-              "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
-              "types": []
-            }
-          ]
+          "parts": []
         }
       }
     }
