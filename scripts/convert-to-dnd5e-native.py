@@ -324,6 +324,15 @@ def type_defense_traits(type1, type2):
     return di, dr, dv
 
 
+def meters_to_feet(m):
+    """O livro dá o deslocamento só em metros, mas esses valores são a conversão métrica de
+    incrementos de 5 pés do dnd5e (9m = 30pés, 1,5m = 5pés etc.), então arredondar pro múltiplo
+    de 5 pés mais próximo reproduz o número "original" de forma confiável."""
+    if not m:
+        return 0
+    return round((m * 3.28084) / 5) * 5
+
+
 def parse_movement(pmp):
     result = {"walk": pmp.get("movement", {}).get("walk", 9) or 0, "swim": 0, "fly": 0,
               "climb": 0, "burrow": 0, "hover": False, "units": "m"}
@@ -345,6 +354,9 @@ def parse_movement(pmp):
         elif mode == "flutuacao":
             result["fly"] = max(result["fly"], val)
             result["hover"] = True
+    for key in ("walk", "swim", "fly", "climb", "burrow"):
+        result[key] = meters_to_feet(result[key])
+    result["units"] = "ft"
     return result
 
 
