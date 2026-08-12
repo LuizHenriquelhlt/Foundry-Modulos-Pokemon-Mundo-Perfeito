@@ -891,10 +891,10 @@
       "_id": "69oQiuu9rXhnmsOk",
       "name": "Habilidade Passiva: Flame Body",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando atingido por um ataque corpo a corpo, role um d20. Em um resultado de 15 ou mais, o atacante fica queimado.</p>",
           "chat": ""
         },
         "type": {
@@ -918,10 +918,10 @@
       "_id": "JPk9Wy86FCFPUr9c",
       "name": "Habilidade Oculta: Gale Wings",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Quando está com seus pontos de vida cheios, os Moves do tipo voador que exigem uma ação podem ser feitos com ação bônus por este Pokémon.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1031,7 +1031,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1182,7 +1182,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1311,12 +1311,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 1,
@@ -1471,7 +1483,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1607,7 +1619,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1726,17 +1739,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 1,
                   "denomination": 8,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1865,12 +1890,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
@@ -2025,7 +2062,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2112,7 +2149,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "BnSJmJCsOOtVcKhv": {
+            "_id": "BnSJmJCsOOtVcKhv",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -2242,7 +2327,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2329,7 +2414,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "dRNBjRILutWXyysX": {
+            "_id": "dRNBjRILutWXyysX",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -2443,7 +2576,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

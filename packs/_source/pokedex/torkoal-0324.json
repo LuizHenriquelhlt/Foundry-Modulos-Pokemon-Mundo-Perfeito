@@ -998,10 +998,10 @@
       "_id": "0eVnyDAdF195cmLc",
       "name": "Habilidade Passiva: White Smoke",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Os Moves ou habilidades de outros Pokémon não podem impor Mudanças de Status negativas neste Pokémon, mas não o impede de reduzir por conta própria.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1025,10 +1025,10 @@
       "_id": "7m2eTsqb5xkzxq65",
       "name": "Habilidade Passiva: Drought",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon entra em uma batalha, ele imediatamente gera os efeitos do Move Sunny Day. Se múltiplos Pokémon com habilidades que geram clima (Drizzle, Drought, Sand Stream ou Snow Warning) entrarem no campo ao mesmo tempo, a condição climática resultante será a do Pokémon mais lento na ordem de iniciativa. Se Drought for ativado enquanto já houver luz solar intensa (se outro Pokémon com Drought entrar em campo ou se o próprio usuário sair e retornar à batalha), a duração da luz solar intensa não é reiniciada.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1052,10 +1052,10 @@
       "_id": "XO07DPFUkExG9Q9i",
       "name": "Habilidade Oculta: Shell Armor",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon é imune a dano extra causado por um acerto crítico, incluindo aqueles causados em testes de resistência.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1165,7 +1165,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1301,7 +1301,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1396,7 +1397,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "BVMx5ltvkZm76wDt": {
+            "_id": "BVMx5ltvkZm76wDt",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1511,7 +1560,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1520,7 +1570,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1806,7 +1856,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1930,7 +1981,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

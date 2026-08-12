@@ -927,10 +927,10 @@
       "_id": "rzZVwjhGbZrLX8Af",
       "name": "Habilidade Passiva: Thick Fat",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon recebe apenas metade do dano de Moves do tipo Fogo e Gelo.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -954,10 +954,10 @@
       "_id": "nmAsu5IdE45FzC1K",
       "name": "Habilidade Passiva: Own Tempo",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune ao status Confuso. Caso fique confuso durante a batalha (por exemplo, se ganhar a habilidade fora de combate, por efeito de Skill Swap, ou por um Pokémon com Mold Breaker) ele será curado ao final de seu turno.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -981,10 +981,10 @@
       "_id": "ojl7JOa3aM8F651u",
       "name": "Habilidade Oculta: Gluttony",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon pode consumir berries que normalmente seriam consumidas com 25% de PV ou menos quando estiver com 50% de PV ou menos. Não tem efeito sobre Berries que ativam em outros limites de PV (como a Oran Berry, que normalmente é comida com 50% de PV ou menos) ou Berries com condições de ativação não relacionadas ao PV (como a Leppa Berry e a Lum Berry).</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1079,7 +1079,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.con.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1088,7 +1089,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.con.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1239,7 +1240,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.int.mod}kh1",
                   "types": []
                 }
               ]
@@ -1375,7 +1376,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1452,7 +1454,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "KDxtb1BrHKbVrmGE": {
+            "_id": "KDxtb1BrHKbVrmGE",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "int",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1585,7 +1650,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.int.mod-@abilities.dex.mod,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -1673,7 +1738,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "WPbjhv585ZiizGGr": {
+            "_id": "WPbjhv585ZiizGGr",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "int",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1741,7 +1869,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "OQXppy5ZrfYExaLC": {
+            "_id": "OQXppy5ZrfYExaLC",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1858,7 +2034,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -1935,7 +2112,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "oxKP2y9ssEvTKkKg": {
+            "_id": "oxKP2y9ssEvTKkKg",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -2001,7 +2226,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "bzAWmts1UtecnzBg": {
+            "_id": "bzAWmts1UtecnzBg",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "int",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -2070,7 +2358,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "kQAtBDaSvcOOuGz6": {
+            "_id": "kQAtBDaSvcOOuGz6",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -2184,7 +2520,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

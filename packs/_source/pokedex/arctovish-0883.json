@@ -891,10 +891,10 @@
       "_id": "lTOFS65Gb4O7kBHY",
       "name": "Habilidade Passiva: Water Absorb",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune ao dano e efeitos de Moves do tipo água (incluindo Moves de Status). Ao receber dano de um Move do tipo água proveniente de outro Pokémon, ao invés disso, ele recupera PV igual ao seu nível. O simples contato com água durante o combate não é suficiente para curá-lo, pois apenas a energia proveniente de outra criatura pode ativar esta habilidade. Moves de múltiplos golpes ativarão esta habilidade apenas uma vez.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -918,10 +918,10 @@
       "_id": "FC3ilbrMe3kOGnzh",
       "name": "Habilidade Passiva: Ice Body",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon recupera uma quantidade de PV igual ao seu bônus de proficiência ao final de cada turno enquanto estiver sob um clima de granizo. Além disso, essa habilidade o torna imune ao dano causado pela tempestade de granizo, caso ele não possua essa imunidade naturalmente.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -945,10 +945,10 @@
       "_id": "ZHe4CZ20O9ktVp4h",
       "name": "Habilidade Oculta: Slush Rush",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Durante uma Tempestade de Granizo, todos os deslocamentos deste Pokémon são dobrados, além de adicionar o dobro do seu bônus de proficiência em sua iniciativa (que entrará em vigor a partir da próxima rodada). Ambos retornam ao normal quando o efeito termina. Além disso, este Pokémon não recebe dano da Tempestade de Granizo se normalmente fosse afetado por ela.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1043,7 +1043,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1288,7 +1289,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "rDceqbmJJjQLHmZ5": {
+            "_id": "rDceqbmJJjQLHmZ5",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1403,7 +1452,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1562,7 +1612,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1697,7 +1747,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

@@ -959,10 +959,10 @@
       "_id": "yzQWJq12wmdWDmG8",
       "name": "Habilidade Passiva: Inner Focus",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune ao status Atordoado. No entanto, Pokémon com essa habilidade ainda podem ficar atordoados diante de um Pokémon com Mold Breaker, Teravolt ou Turboblaze.</p>",
           "chat": ""
         },
         "type": {
@@ -1057,7 +1057,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -1284,7 +1285,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "yBc0cUmIpkgMPFHt": {
+            "_id": "yBc0cUmIpkgMPFHt",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1350,7 +1399,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "EzlQdPyh0gWDNP8p": {
+            "_id": "EzlQdPyh0gWDNP8p",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1458,12 +1555,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
@@ -1602,7 +1711,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

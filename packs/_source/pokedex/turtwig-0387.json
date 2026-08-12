@@ -1028,10 +1028,10 @@
       "_id": "wkNOckm2EFhF1WH2",
       "name": "Habilidade Passiva: Overgrow",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon cai abaixo de 1/3 de seus pontos de vida máximos, seus Moves do tipo Grama aumentam os dados de dano em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado.</p>",
           "chat": ""
         },
         "type": {
@@ -1055,10 +1055,10 @@
       "_id": "xf04DBzGyMhLwWka",
       "name": "Habilidade Oculta: Shell Armor",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon é imune a dano extra causado por um acerto crítico, incluindo aqueles causados em testes de resistência.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1168,7 +1168,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1303,7 +1303,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

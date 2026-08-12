@@ -893,10 +893,10 @@
       "_id": "BTu7GcfDle8AYUA8",
       "name": "Habilidade Passiva: Water Absorb",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune ao dano e efeitos de Moves do tipo água (incluindo Moves de Status). Ao receber dano de um Move do tipo água proveniente de outro Pokémon, ao invés disso, ele recupera PV igual ao seu nível. O simples contato com água durante o combate não é suficiente para curá-lo, pois apenas a energia proveniente de outra criatura pode ativar esta habilidade. Moves de múltiplos golpes ativarão esta habilidade apenas uma vez.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -920,10 +920,10 @@
       "_id": "zDG5aIEF9i9lwbQR",
       "name": "Habilidade Passiva: Cursed Body",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando atingido por um ataque danoso, este Pokémon pode rolar um d20. Em um resultado de 15 ou mais, o oponente que fez o ataque não pode usar o mesmo Move nos próximos 3 turnos. Struggle não pode ser desativado. Se este Pokémon for atingido por um Move corpo a corpo de múltiplos golpes (como Fury Swipes), cada acerto terá uma chance independente de ativar esta habilidade, mas isso não impedirá que os outros golpes sejam executados neste turno.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -947,10 +947,10 @@
       "_id": "Hl9PhcrG0MU35GLO",
       "name": "Habilidade Oculta: Damp",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Todos num raio de 50 pés (15 metros) deste Pokémon são incapazes de usar os Moves Self-Destruct, Explosion, Mind Blown e Misty Explosion; se um Pokémon tentar usar um desses Moves, ele falhará e o usuário não desmaiará nem receberá dano. Além disso, Damp também previne dano (apenas ao Pokémon com Damp) proveniente da habilidade Aftermath.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1060,7 +1060,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1196,7 +1196,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1326,7 +1327,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1421,7 +1423,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "FkGXUMGiO9kC8DG6": {
+            "_id": "FkGXUMGiO9kC8DG6",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "int",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1553,7 +1618,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1786,7 +1851,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "ljKQFzDa4IARbSqW": {
+            "_id": "ljKQFzDa4IARbSqW",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1901,7 +2014,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1910,7 +2024,7 @@
                 {
                   "number": 5,
                   "denomination": 6,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2039,24 +2153,19 @@
             "target": {
               "override": false
             },
-            "type": "attack",
-            "attack": {
-              "ability": "str",
-              "bonus": "",
-              "critical": {
-                "threshold": null
-              },
-              "flat": false,
-              "type": {
-                "value": "melee",
-                "classification": "weapon"
+            "type": "save",
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
-              "critical": {
-                "bonus": ""
-              },
-              "includeBase": false,
+              "onSave": "none",
               "parts": [
                 {
                   "number": 6,
@@ -2211,7 +2320,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2340,17 +2449,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "wis",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.cha.mod-@abilities.wis.mod}kh1",
                   "types": []
                 }
               ]
@@ -2636,7 +2757,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

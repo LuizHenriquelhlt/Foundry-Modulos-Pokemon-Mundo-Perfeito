@@ -1087,10 +1087,10 @@
       "_id": "BwKuMMqGIfLlsDs5",
       "name": "Habilidade Passiva: Magnet Pull",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Criaturas inimigas do tipo aço dentro de 60 pés (18 metros) deste Pokémon não podem fugir (incluindo o uso de Teleport), serem trocadas (exceto por item, Move ou habilidade), e não podem se afastar para além dessa distância. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. Esta habilidade não afeta Pokémon do tipo Fantasma, ignora efeitos de proteção como Protect ou Detect, e não bloqueia Moves, habilidades passivas ou itens que forçam a troca do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1114,10 +1114,10 @@
       "_id": "CeHN6c610fwBPq4V",
       "name": "Habilidade Passiva: Sturdy",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se este Pokémon estiver com seus PV totalmente cheios e o primeiro dano recebido for maior que metade de sua vida máxima, esse dano é reduzido pela metade. Se mesmo reduzido pela metade o golpe ainda ser capaz de desmaiá-lo, você fica com 1 PV. Isso não reduz a quantidade de PV perdidos por Moves que causam dano direto. Quando atingido por um Move de múltiplos golpes estando com os PV no máximo, apenas o primeiro golpe terá seu dano reduzido, e todos os golpes seguintes causarão o dano total.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1141,10 +1141,10 @@
       "_id": "BXEnSHZip6VcwzLE",
       "name": "Habilidade Oculta: Galvanize",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Todos os Moves de ataque do tipo Normal usados por este Pokémon se tornam do tipo Elétrico. Além disso, para estes Moves, role os dados de dano duas vezes e escolha o maior valor.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1190,7 +1190,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "MVnVJne7kyemWs7u": {
+            "_id": "MVnVJne7kyemWs7u",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1320,7 +1368,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1455,7 +1503,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

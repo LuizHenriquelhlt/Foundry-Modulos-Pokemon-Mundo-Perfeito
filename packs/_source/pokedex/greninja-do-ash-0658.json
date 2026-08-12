@@ -842,10 +842,10 @@
       "_id": "bw9mV7fRuAaHOCZ0",
       "name": "Habilidade Passiva: Battle Bond",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Battle Bond faz com que Greninja se transforme em Ash-Greninja ao derrotar um oponente. Além disso, quando na forma Ash-Greninja, o dano do Move característico de Greninja, Water Shuriken, aumenta. Battle Bond é considerada uma Mega Evolução, e segue as mesmas regras para que se concretize (exceto a necessidade de pedras de Mega Evolução). Se Ash-Greninja desmaiar, ele retorna à forma original e não poderá se transformar novamente em Ash-Greninja na mesma batalha, mesmo se for revivido. Pré-requisitos: • Você deve ser um Treinador de nível 13 ou superior. • Battle Bond pode ser usado apenas uma vez por descanso curto ou longo. • Um Pokémon deve ter Lealdade de 'Leal' com seu treinador para poder usar Battle Bond. Alterações: • Quando Greninja se torna um Ash-Greninja, ele recebe +1 na sua Força, +5 na sua Destreza, +3 na sua Sabedoria e +10 pés (3 metros) em todas as suas velocidades de movimento. • Quando Greninja se torna um Ash-Greninja, o Move Water Shuriken é garantido de acertar pelo menos mais 2 vezes (mas mantenha a rolagem do d8. Em um resultado 7 ou 8, você atinge mais 1 ou 2 golpes, respectivamente), e seu dano aumenta para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17. Além disso, Battle Bond segue as seguintes restrições: • Gastro Acid, Worry Seed e Simple Beam falham se o alvo tiver Battle Bond. • Role Play, Skill Swap, Entrainment e Doodle falham se qualquer um dos Pokémon tiver Battle Bond. • Battle Bond não pode ser copiada por Trace, Power of Alchemy ou Receiver, substituída por Mummy ou Lingering Aroma, ou suprimida por Core Enforcer ou Neutralizing Gas. • Se um Pokémon que não seja Greninja obtiver Battle Bond via Imposter ou Transform, ele não poderá se transformar em Ash-Greninja mesmo que derrote outro Pokémon.</p>",
           "chat": ""
         },
         "type": {
@@ -933,12 +933,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 4,
@@ -1078,7 +1090,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1173,7 +1186,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "cTUBM2ZzJKGO2T6G": {
+            "_id": "cTUBM2ZzJKGO2T6G",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1290,7 +1366,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1367,7 +1444,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "USRAWX1DZOAy65Pr": {
+            "_id": "USRAWX1DZOAy65Pr",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1433,7 +1558,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "OACV2ueo8yieNQqD": {
+            "_id": "OACV2ueo8yieNQqD",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1541,17 +1714,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1702,7 +1887,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1831,12 +2016,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
@@ -1927,7 +2124,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "e0kBmak2D3yHbdBY": {
+            "_id": "e0kBmak2D3yHbdBY",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "wis",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -2044,7 +2304,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -2053,7 +2314,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.cha.mod-@abilities.wis.mod}kh1",
                   "types": []
                 }
               ]
@@ -2500,7 +2761,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -2786,7 +3047,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -2904,17 +3166,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -3001,7 +3275,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "IGcnEHbliG9RWHsq": {
+            "_id": "IGcnEHbliG9RWHsq",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -3115,7 +3437,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

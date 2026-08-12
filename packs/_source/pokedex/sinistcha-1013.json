@@ -954,10 +954,10 @@
       "_id": "o1lXZYhdV5vWbqhE",
       "name": "Habilidade Passiva: Hospitality",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p><em>Regra completa não encontrada no glossário de Habilidades Passivas do Livro de Regras (Geração 7+). Consulte o material de Geração 8/9 ou a descrição da espécie no bloco de estatísticas.</em></p>",
           "chat": ""
         },
         "type": {
@@ -981,10 +981,10 @@
       "_id": "xDJfCDk40TXp9oNg",
       "name": "Habilidade Oculta: Heatproof",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon recebe metade do dano que normalmente receberia de ataques de fogo. Além disso, a condição de queimado causa apenas metade de seu bônus de proficiência como dano ao final de cada turno (arredondado para baixo).</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1094,7 +1094,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -1245,7 +1245,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1381,7 +1381,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1477,7 +1478,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "N6O8GhBvQb07RkKx": {
+            "_id": "N6O8GhBvQb07RkKx",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "con",
+              "bonus": "4",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1545,7 +1609,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "msKfFEYtQDd860Ju": {
+            "_id": "msKfFEYtQDd860Ju",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1675,7 +1787,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

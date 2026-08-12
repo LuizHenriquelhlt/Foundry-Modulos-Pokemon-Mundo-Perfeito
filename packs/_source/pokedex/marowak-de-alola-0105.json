@@ -1002,10 +1002,10 @@
       "_id": "kAbTFwepDd3vcUjG",
       "name": "Habilidade Passiva: Cursed Body",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando atingido por um ataque danoso, este Pokémon pode rolar um d20. Em um resultado de 15 ou mais, o oponente que fez o ataque não pode usar o mesmo Move nos próximos 3 turnos. Struggle não pode ser desativado. Se este Pokémon for atingido por um Move corpo a corpo de múltiplos golpes (como Fury Swipes), cada acerto terá uma chance independente de ativar esta habilidade, mas isso não impedirá que os outros golpes sejam executados neste turno.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1029,10 +1029,10 @@
       "_id": "4Lp8HRuIH6b1Pa65",
       "name": "Habilidade Passiva: Lightning Rod",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se um aliado dentro de 30 pés (9 metros) for alvo de um Move elétrico à distância e de alvo único, este Pokémon pode usar sua reação para redirecionar o Move para si, com acerto garantido. Isso inclui o Move de status Thunder Wave. Caso o aliado seja alvo de um Move elétrico corpo a corpo de alvo único, este Pokémon pode usar sua reação para anular completamente o dano e os efeitos elétricos desse Move contra ele. Ao realizar qualquer uma dessas opções, e sempre que for atingido por um Move do tipo Elétrico, este Pokémon não recebe dano nem sofre os efeitos desse Move, e seu Ataque Especial aumenta em 1 estágio.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1056,10 +1056,10 @@
       "_id": "P9RgRi9RKk9awH2z",
       "name": "Habilidade Oculta: Rock Head",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon não sofre dano de recuo, exceto ao usar Struggle.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1169,7 +1169,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1320,7 +1320,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1471,7 +1471,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1750,17 +1750,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1847,7 +1859,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "EzlQdPyh0gWDNP8p": {
+            "_id": "EzlQdPyh0gWDNP8p",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1962,7 +2022,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -2081,12 +2142,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
@@ -2219,29 +2292,24 @@
             "target": {
               "override": false
             },
-            "type": "attack",
-            "attack": {
-              "ability": "str",
-              "bonus": "",
-              "critical": {
-                "threshold": null
-              },
-              "flat": false,
-              "type": {
-                "value": "ranged",
-                "classification": "weapon"
+            "type": "save",
+            "save": {
+              "ability": [
+                "con"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
-              "critical": {
-                "bonus": ""
-              },
-              "includeBase": false,
+              "onSave": "none",
               "parts": [
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2527,7 +2595,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.dex.mod}kh1"
               }
             },
             "damage": {
@@ -2653,7 +2722,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -2778,7 +2848,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

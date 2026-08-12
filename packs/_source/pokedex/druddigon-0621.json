@@ -991,10 +991,10 @@
       "_id": "SKeQXx52Ik9375lL",
       "name": "Habilidade Passiva: Rough Skin",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon é atingido por um ataque corpo a corpo, o atacante recebe uma quantidade de dano sem tipo igual à metade do nível dele (arredondado para baixo, mínimo de 1).</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1018,10 +1018,10 @@
       "_id": "F6NnyVM1byDG462Z",
       "name": "Habilidade Passiva: Sheer Force",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Todos os Moves danosos usados por este Pokémon que normalmente poderiam causar Mudanças de Status negativas no alvo, Mudanças de Status positivas nele mesmo ou infligir uma Condição de Status, não provocam esses efeitos. No entanto, ao usar esses Moves, ele rola os dados de dano duas vezes e utiliza o maior resultado. Moves que causam Mudanças de Status negativas em si mesmo ou que possuem dano de recuo não ativam esta habilidade.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1045,10 +1045,10 @@
       "_id": "z1KRbl7IlP62gkwe",
       "name": "Habilidade Oculta: Mold Breaker",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Os Moves deste Pokémon ignoram quaisquer habilidades passivas que afetem seu efeito ou a capacidade de atingir e dar dano a um oponente (devido a coisas como Water Absorb, Snow Cloak, Thick Fat, Sturdy, etc.). Isso só afeta habilidades que alteram o dano, o acerto ou outros efeitos dos Moves.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1143,7 +1143,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -1284,7 +1285,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1371,7 +1372,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "NkwS5uC8YdwX4WoZ": {
+            "_id": "NkwS5uC8YdwX4WoZ",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1501,7 +1550,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1780,18 +1829,24 @@
             "target": {
               "override": false
             },
-            "type": "save",
-            "save": {
-              "ability": [
-                "wis"
-              ],
-              "dc": {
-                "calculation": "str",
-                "formula": ""
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
               }
             },
             "damage": {
-              "onSave": "none",
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
               "parts": []
             }
           }
@@ -1912,7 +1967,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

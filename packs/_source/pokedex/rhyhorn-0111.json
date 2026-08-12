@@ -1091,10 +1091,10 @@
       "_id": "3DVRd1JB9wp1Ewwm",
       "name": "Habilidade Passiva: Lightning Rod",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se um aliado dentro de 30 pés (9 metros) for alvo de um Move elétrico à distância e de alvo único, este Pokémon pode usar sua reação para redirecionar o Move para si, com acerto garantido. Isso inclui o Move de status Thunder Wave. Caso o aliado seja alvo de um Move elétrico corpo a corpo de alvo único, este Pokémon pode usar sua reação para anular completamente o dano e os efeitos elétricos desse Move contra ele. Ao realizar qualquer uma dessas opções, e sempre que for atingido por um Move do tipo Elétrico, este Pokémon não recebe dano nem sofre os efeitos desse Move, e seu Ataque Especial aumenta em 1 estágio.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1118,10 +1118,10 @@
       "_id": "Y8LOYWkU7XrflUEI",
       "name": "Habilidade Passiva: Rock Head",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon não sofre dano de recuo, exceto ao usar Struggle.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1145,10 +1145,10 @@
       "_id": "aHJdW8PBaH92t2bn",
       "name": "Habilidade Oculta: Reckless",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Ao atacar com Moves que causam dano de recuo, este Pokémon rola os dados de dano duas vezes e escolhe o maior resultado. Também funciona para os Moves Axe Kick, High Jump Kick, Jump Kick e Supercell Slam.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1236,24 +1236,19 @@
             "target": {
               "override": false
             },
-            "type": "attack",
-            "attack": {
-              "ability": "str",
-              "bonus": "",
-              "critical": {
-                "threshold": null
-              },
-              "flat": false,
-              "type": {
-                "value": "melee",
-                "classification": "weapon"
+            "type": "save",
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
-              "critical": {
-                "bonus": ""
-              },
-              "includeBase": false,
+              "onSave": "none",
               "parts": [
                 {
                   "number": 2,
@@ -1408,7 +1403,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1544,7 +1539,8 @@
               ],
               "dc": {
                 "calculation": "dex",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.dex.mod}kh1"
               }
             },
             "damage": {
@@ -1669,7 +1665,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

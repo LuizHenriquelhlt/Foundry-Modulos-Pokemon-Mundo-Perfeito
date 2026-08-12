@@ -1073,10 +1073,10 @@
       "_id": "PpRKlMRPDAGDORJR",
       "name": "Habilidade Passiva: Big Pecks",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>A Defesa deste Pokémon não pode ser reduzida pelos Moves do oponente, mas não impede que o Pokémon com esta Habilidade reduza sua própria Defesa.</p>",
           "chat": ""
         },
         "type": {
@@ -1100,10 +1100,10 @@
       "_id": "4eNsNm6UIYRCbcNB",
       "name": "Habilidade Oculta: Gale Wings",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Quando está com seus pontos de vida cheios, os Moves do tipo voador que exigem uma ação podem ser feitos com ação bônus por este Pokémon.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1198,7 +1198,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1339,7 +1340,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1474,7 +1475,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

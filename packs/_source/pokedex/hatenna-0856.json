@@ -993,10 +993,10 @@
       "_id": "okEq6RkucJ3TuYCl",
       "name": "Habilidade Passiva: Healer",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>No final de cada turno deste Pokémon, aliados dentro de 20 pés (6 metros) que estejam sofrendo uma Condição de Status podem rolar um d20, curando-se da condição em um resultado de 15 ou mais.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1020,10 +1020,10 @@
       "_id": "DDkLNPD0KRUr7C5b",
       "name": "Habilidade Passiva: Anticipation",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon entra na batalha, ele estremece ao pressentir algo ruim. Todos os oponentes devem revelar se possuem algum Move ao qual o Pokémon é vulnerável ou um Move de nocaute instantâneo (Fissure, Horn Drill, Guillotine ou Sheer Cold). O Move não precisa ser revelado, apenas notificado de que existe. Essa Habilidade só é ativada quando o portador entra em campo, e não quando um oponente entra.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1047,10 +1047,10 @@
       "_id": "0CAeFfcyoqx3yYLJ",
       "name": "Habilidade Oculta: Magic Bounce",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Moves de Status direcionados a este Pokémon são devolvidos ao atacante.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1160,7 +1160,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.int.mod}kh1",
                   "types": []
                 }
               ]
@@ -1247,7 +1247,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "oKd7yvAYcdJO2CFo": {
+            "_id": "oKd7yvAYcdJO2CFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1361,7 +1409,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

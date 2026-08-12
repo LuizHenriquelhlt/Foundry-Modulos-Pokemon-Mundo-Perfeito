@@ -890,10 +890,10 @@
       "_id": "ET2BX1Kblms0U9QA",
       "name": "Habilidade Passiva: Own Tempo",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune ao status Confuso. Caso fique confuso durante a batalha (por exemplo, se ganhar a habilidade fora de combate, por efeito de Skill Swap, ou por um Pokémon com Mold Breaker) ele será curado ao final de seu turno.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -917,10 +917,10 @@
       "_id": "GQaO5KEskZhEYE1d",
       "name": "Habilidade Passiva: Synchronize",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se este Pokémon ficar queimado, paralisado, envenenado ou gravemente envenenado, seu atacante receberá a mesma Condição de Status também (se não for imune). Esta habilidade ignora Substitute. Se este Pokémon estiver segurando uma berry que cura a Condição de Status que acabou de receber, esta habilidade será ativada antes que a berry seja consumida.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -944,10 +944,10 @@
       "_id": "BxlKdGqPAaHOFeWE",
       "name": "Habilidade Oculta: Psychic Surge",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Quando este Pokémon entra em batalha, ele cria o efeito do Move Psychic Terrain.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -993,7 +993,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "oKd7yvAYcdJO2CFo": {
+            "_id": "oKd7yvAYcdJO2CFo",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1123,7 +1171,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1210,7 +1258,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "p6d77SU4695qR9TL": {
+            "_id": "p6d77SU4695qR9TL",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1318,12 +1414,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "cha",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
@@ -1478,7 +1586,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.int.mod-@abilities.dex.mod,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -1566,7 +1674,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "yfh4LxxVzBbx3Cng": {
+            "_id": "yfh4LxxVzBbx3Cng",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1680,7 +1836,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 2",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

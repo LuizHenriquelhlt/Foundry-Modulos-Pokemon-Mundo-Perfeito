@@ -1041,10 +1041,10 @@
       "_id": "y3pzfQBO0giUJCoX",
       "name": "Habilidade Passiva: Anticipation",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon entra na batalha, ele estremece ao pressentir algo ruim. Todos os oponentes devem revelar se possuem algum Move ao qual o Pokémon é vulnerável ou um Move de nocaute instantâneo (Fissure, Horn Drill, Guillotine ou Sheer Cold). O Move não precisa ser revelado, apenas notificado de que existe. Essa Habilidade só é ativada quando o portador entra em campo, e não quando um oponente entra.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1068,10 +1068,10 @@
       "_id": "OcN5tChFpiBZ7T8A",
       "name": "Habilidade Passiva: Dry Skin",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando atingido por um ataque do tipo Água, ao invés de receber dano, este Pokémon regenera pontos de vida igual ao dobro de seu nível (Moves de múltiplos golpes, como Water Shuriken, ativarão esse efeito apenas no primeiro golpe). Quando atingido por um ataque do tipo fogo, o dano recebido é aumentado em 25%. Durante luz solar intensa, este Pokémon perde pontos de vida igual à metade de seu nível ao final de cada turno. Durante chuva, este Pokémon recupera pontos de vida igual à metade de seu nível ao final de cada turno.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1095,10 +1095,10 @@
       "_id": "pns97kPihAu9OULF",
       "name": "Habilidade Oculta: Poison Touch",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Quando este Pokémon faz um ataque corpo a corpo, role um d20. Em um resultado de 15 ou mais, o alvo fica envenenado. Se este Pokémon usar um Move corpo a corpo de múltiplos golpes (como Fury Swipes), cada acerto terá uma chance independente de ativar esta habilidade.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1208,7 +1208,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -1337,29 +1337,24 @@
             "target": {
               "override": false
             },
-            "type": "attack",
-            "attack": {
-              "ability": "str",
-              "bonus": "",
-              "critical": {
-                "threshold": null
-              },
-              "flat": false,
-              "type": {
-                "value": "ranged",
-                "classification": "weapon"
+            "type": "save",
+            "save": {
+              "ability": [
+                "con"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
-              "critical": {
-                "bonus": ""
-              },
-              "includeBase": false,
+              "onSave": "none",
               "parts": [
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1510,7 +1505,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1593,7 +1588,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "LdRh1GVq3vvFk0gy": {
+            "_id": "LdRh1GVq3vvFk0gy",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "wis",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1704,17 +1762,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1849,7 +1919,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

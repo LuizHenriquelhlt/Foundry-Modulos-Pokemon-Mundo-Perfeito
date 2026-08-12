@@ -785,10 +785,10 @@
       "_id": "qaWJOB1c5L462CTy",
       "name": "Habilidade Passiva: RKS System",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>O tipo deste Pokémon é determinado pelo Memory Disc que ele segura. Se não estiver segurando um Memory Disc, o tipo deste Pokémon é Normal. Além disso, RKS System segue as seguintes restrições: • Gastro Acid, Worry Seed e Simple Beam falham se o alvo tiver a Habilidade RKS System. • Role Play, Skill Swap, Entrainment e Doodle falham se qualquer um dos Pokémon tiver RKS System. • RKS System não pode ser copiada por Trace, Power of Alchemy ou Receiver, substituída por Mummy ou Lingering Aroma, suprimida por Core Enforcer ou Neutralizing Gas, nem trocada por Wandering Spirit. • Se um Pokémon que não seja Silvally obtiver RKS System por Imposter ou Transform, ele copiará a forma do Silvally-alvo independentemente do item que estiver segurando.</p>",
           "chat": ""
         },
         "type": {
@@ -883,7 +883,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1042,7 +1043,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1178,7 +1179,8 @@
               ],
               "dc": {
                 "calculation": "int",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.wis.mod-@abilities.int.mod}kh1"
               }
             },
             "damage": {
@@ -1319,7 +1321,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1455,7 +1457,8 @@
               ],
               "dc": {
                 "calculation": "int",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.wis.mod-@abilities.int.mod}kh1"
               }
             },
             "damage": {
@@ -1746,7 +1749,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod + 4",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1875,29 +1878,24 @@
             "target": {
               "override": false
             },
-            "type": "attack",
-            "attack": {
-              "ability": "str",
-              "bonus": "",
-              "critical": {
-                "threshold": null
-              },
-              "flat": false,
-              "type": {
-                "value": "melee",
-                "classification": "weapon"
+            "type": "save",
+            "save": {
+              "ability": [
+                "con"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
-              "critical": {
-                "bonus": ""
-              },
-              "includeBase": false,
+              "onSave": "none",
               "parts": [
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2048,7 +2046,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + 4",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2177,17 +2175,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2338,7 +2348,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -2467,12 +2477,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
@@ -2755,18 +2777,24 @@
             "target": {
               "override": false
             },
-            "type": "save",
-            "save": {
-              "ability": [
-                "wis"
-              ],
-              "dc": {
-                "calculation": "str",
-                "formula": ""
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
               }
             },
             "damage": {
-              "onSave": "none",
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
               "parts": []
             }
           }
@@ -2903,7 +2931,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -3204,7 +3232,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -3291,7 +3319,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "d87XgIsvGA2fN0PN": {
+            "_id": "d87XgIsvGA2fN0PN",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "6",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -3408,7 +3499,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 4",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

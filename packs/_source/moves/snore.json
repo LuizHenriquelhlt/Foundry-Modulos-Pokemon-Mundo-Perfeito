@@ -74,7 +74,8 @@
           ],
           "dc": {
             "calculation": "str",
-            "formula": ""
+            "formula": "",
+            "bonus": "{0,@abilities.con.mod-@abilities.str.mod}kh1"
           }
         },
         "damage": {
@@ -83,7 +84,7 @@
             {
               "number": 1,
               "denomination": 10,
-              "bonus": "@mod",
+              "bonus": "@mod + {0,@abilities.con.mod-@abilities.str.mod}kh1",
               "types": []
             }
           ]

@@ -1078,10 +1078,10 @@
       "_id": "gMiilGvqZXAIZWhK",
       "name": "Habilidade Passiva: Pickup",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>No final do turno em que outro Pokémon usou um item de uso único (incluindo arremessar um item com Fling ou usar Natural Gift) dentro de 30 pés (9 metros), este Pokémon pode usar sua reação para coletar os restos e reutilizá-lo, obtendo o item para si, se não estiver segurando nada. Se mais de um Pokémon tiver Pickup ou Harvest, o Pokémon mais rápido na ordem de iniciativa restaurará o item primeiro.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1105,10 +1105,10 @@
       "_id": "ZHmTLwc31gDHjy6k",
       "name": "Habilidade Passiva: Gluttony",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon pode consumir berries que normalmente seriam consumidas com 25% de PV ou menos quando estiver com 50% de PV ou menos. Não tem efeito sobre Berries que ativam em outros limites de PV (como a Oran Berry, que normalmente é comida com 50% de PV ou menos) ou Berries com condições de ativação não relacionadas ao PV (como a Leppa Berry e a Lum Berry).</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1132,10 +1132,10 @@
       "_id": "owJAheap7kXhQMqA",
       "name": "Habilidade Oculta: Quick Feet",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Enquanto estiver sob o efeito de uma condição de status não volátil (envenenamento, queimadura, paralisia, congelamento, sonolência ou dormindo), este Pokémon aumenta em 50% o valor de sua iniciativa para determinar sua posição na ordem de iniciativa, e seu deslocamento aumenta em 5 pés (1,5 metros). Caso esteja paralisado ou sonolento, este Pokémon não sofre a redução usual de iniciativa e deslocamento.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1230,7 +1230,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1371,7 +1372,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1506,7 +1507,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

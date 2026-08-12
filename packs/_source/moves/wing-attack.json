@@ -67,17 +67,29 @@
         "target": {
           "override": false
         },
-        "type": "damage",
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
         "damage": {
           "critical": {
-            "allow": false,
             "bonus": ""
           },
+          "includeBase": false,
           "parts": [
             {
               "number": 2,
               "denomination": 6,
-              "bonus": "@mod",
+              "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
               "types": []
             }
           ]

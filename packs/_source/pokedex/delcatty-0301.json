@@ -779,10 +779,10 @@
       "_id": "bd3OSXBFg6F9s4Xp",
       "name": "Habilidade Passiva: Cute Charm",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se este Pokémon for atingido por um Move corpo a corpo causado por um alvo do gênero oposto, você pode rolar um d20. Em um resultado de 15 ou mais, o atacante fica encantado. Não é possível encantar um Pokémon do mesmo gênero, Pokémon sem gênero, nem aqueles com a habilidade Oblivious. Se este Pokémon for atingido por um Move corpo a corpo de múltiplos golpes (como Fury Swipes), cada acerto terá uma chance independente de ativar esta habilidade.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -806,10 +806,10 @@
       "_id": "RMNNqh5AX7uUN45O",
       "name": "Habilidade Passiva: Normalize",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Todo Move ativado por este Pokémon se torna do tipo Normal. Além disso, para Moves danosos, role os dados de dano duas vezes e escolha o maior resultado. Os seguintes Moves não são afetados por Normalize: Hidden Power, Judgment, Multi-Attack, Natural Gift, Revelation Dance, Struggle, Techno Blast, Weather Ball e Z-Moves que causem dano.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -833,10 +833,10 @@
       "_id": "UNDIiWdU7pNE9COq",
       "name": "Habilidade Oculta: Wonder Skin",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon tem um bônus de +5 na CA e nos testes de resistência contra Moves de Status. Não afeta Moves de Status autoaplicados, como Reflect ou Swords Dance, nem afeta condições secundárias de Moves de ataque, como Flamethrower.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -930,7 +930,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

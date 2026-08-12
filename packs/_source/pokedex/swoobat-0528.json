@@ -974,10 +974,10 @@
       "_id": "K3PMSutb4UyA8NNN",
       "name": "Habilidade Passiva: Unaware",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se este Pokémon usar um Move danoso ou for alvo de um Move danoso, todas as Mudanças de Status do outro Pokémon são ignorados durante o cálculo de dano (Ataque, Ataque Especial, Defesa e Defesa Especial) e acerto (Precisão e Evasão). Unaware não impede que Moves como Gyro Ball, Electro Ball, Stored Power, Punishment e Power Trip considerem Mudanças de Status que determinam seu dano.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1001,10 +1001,10 @@
       "_id": "vZ55p23qGBSWh4UN",
       "name": "Habilidade Passiva: Klutz",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon não é afetado pelos efeitos de qualquer item que esteja segurando.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1028,10 +1028,10 @@
       "_id": "cvEHq3YrSZ7ZzHCI",
       "name": "Habilidade Oculta: Simple",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon dobra a quantidade de estágios de todas as Mudanças de Status que o afetarem. Os atributos podem ser aumentados até um máximo de +6 estágios cada, ou reduzidos até um mínimo de -6 estágios cada.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1141,7 +1141,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1292,7 +1292,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.int.mod}kh1",
                   "types": []
                 }
               ]
@@ -1529,7 +1529,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "KDxtb1BrHKbVrmGE": {
+            "_id": "KDxtb1BrHKbVrmGE",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "int",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1662,7 +1725,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.cha.mod-@abilities.wis.mod}kh1",
                   "types": []
                 }
               ]
@@ -1797,7 +1860,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

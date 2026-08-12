@@ -1066,10 +1066,10 @@
       "_id": "LpK8YCHHdwN2pH7S",
       "name": "Habilidade Passiva: Stench",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Sempre que este Pokémon obtiver um resultado natural de 19 ou 20 em um ataque corpo a corpo, o alvo fica Atordoado. Esta habilidade não se acumula com os efeitos dos itens King’s Rock ou Razor Fang, nem com Moves que já têm chance de causar atordoamento. Cada golpe de um Move de múltiplos ataques tem uma chance independente de atordoar o alvo.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1093,10 +1093,10 @@
       "_id": "vMnfXS9WpsxcMuoZ",
       "name": "Habilidade Passiva: Sticky Hold",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Itens segurados por este Pokémon não podem ser roubados, removidos ou destruídos. Esta habilidade pode ser ignorada por Mold Breaker, Turboblaze e Teravolt. Caso o Pokémon seja nocauteado por um ataque que roube, remova ou destrua seu item, Sticky Hold não protegerá o item.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1120,10 +1120,10 @@
       "_id": "SjDwyk3nOT6pNQOy",
       "name": "Habilidade Oculta: Poison Touch",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Quando este Pokémon faz um ataque corpo a corpo, role um d20. Em um resultado de 15 ou mais, o alvo fica envenenado. Se este Pokémon usar um Move corpo a corpo de múltiplos golpes (como Fury Swipes), cada acerto terá uma chance independente de ativar esta habilidade.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1218,7 +1218,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1358,7 +1359,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1493,7 +1494,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

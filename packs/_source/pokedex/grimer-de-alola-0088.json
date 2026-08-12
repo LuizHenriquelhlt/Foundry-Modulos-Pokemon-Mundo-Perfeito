@@ -1102,10 +1102,10 @@
       "_id": "uDHcDcNcyUAkjmDZ",
       "name": "Habilidade Passiva: Poison Touch",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon faz um ataque corpo a corpo, role um d20. Em um resultado de 15 ou mais, o alvo fica envenenado. Se este Pokémon usar um Move corpo a corpo de múltiplos golpes (como Fury Swipes), cada acerto terá uma chance independente de ativar esta habilidade.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1129,10 +1129,10 @@
       "_id": "qajLAPTiUMAP7MpL",
       "name": "Habilidade Passiva: Gluttony",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon pode consumir berries que normalmente seriam consumidas com 25% de PV ou menos quando estiver com 50% de PV ou menos. Não tem efeito sobre Berries que ativam em outros limites de PV (como a Oran Berry, que normalmente é comida com 50% de PV ou menos) ou Berries com condições de ativação não relacionadas ao PV (como a Leppa Berry e a Lum Berry).</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1156,10 +1156,10 @@
       "_id": "6Hx7O68JAEEArd2Q",
       "name": "Habilidade Oculta: Power of Alchemy",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Quando um aliado a até 30 pés (9 metros) deste Pokémon desmaia em batalha (independentemente da causa), Power of Alchemy será substituído pela habilidade do Pokémon que desmaiou. Power of Alchemy não será ativada se o aliado tiver uma das seguintes habilidades: Power of Alchemy, Receiver, Trace, Forecast, Flower Gift, Multitype, Ice Face, Illusion, Wonder Guard, Zen Mode, Imposter, Stance Change, Power Construct, Schooling, Comatose, Shields Down, Disguise, RKS System, Battle Bond, Wandering Spirit, As One, Zero to Hero, Commander, Protosynthesis, Quark Drive ou Poison Puppeteer.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1254,7 +1254,8 @@
               ],
               "dc": {
                 "calculation": "con",
-                "formula": ""
+                "formula": "",
+                "bonus": ""
               }
             },
             "damage": {
@@ -1394,7 +1395,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1529,7 +1530,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

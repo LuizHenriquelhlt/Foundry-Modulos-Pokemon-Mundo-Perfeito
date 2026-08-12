@@ -969,10 +969,10 @@
       "_id": "5LZDDpadhvtXx9r7",
       "name": "Habilidade Passiva: Shields Down",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune a Condições de Status enquanto estiver na Forma Meteoro. Quando este Pokémon cai abaixo de 50% de seus pontos de vida máximos, sua casca externa quebra e ele muda para a Forma Núcleo. Na Forma Núcleo, ele adiciona 6 pontos à sua DES, mas reduz sua CA em 4. O Pokémon deve completar um descanso curto para se restaurar à Forma Meteoro. Se este Pokémon receber uma condição de status enquanto está na Forma Núcleo e depois muda para a Forma Meteoro, a condição de status continua em efeito. Além disso, Shields Down segue as seguintes restrições: • Gastro Acid, Worry Seed e Simple Beam falham se o alvo tiver a Habilidade Shields Down. • Role Play, Skill Swap, Entrainment e Doodle falham se qualquer um dos Pokémon tiver Shields Down. • Shields Down não pode ser copiada por Trace, Power of Alchemy ou Receiver. Shields Down não pode ser substituída por Mummy ou Lingering Aroma, nem suprimida por Core Enforcer ou Neutralizing Gas, nem trocada por Wandering Spirit. • Se um Pokémon que não seja Minior obtiver Shields Down por Imposter ou Transform, o Pokémon não mudará de forma e não será imune a condições de status (mesmo que tenha se transformado em um Minior na Forma Meteoro). • Mold Breaker, Turboblaze e Teravolt não têm efeito sobre Shields Down. • Se um Pokémon com Poison Touch usar Sunsteel Strike ou suas variações em um alvo na Forma Meteoro, ele não será envenenado.</p>",
           "chat": ""
         },
         "type": {
@@ -1018,7 +1018,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "MVnVJne7kyemWs7u": {
+            "_id": "MVnVJne7kyemWs7u",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1148,7 +1196,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1277,12 +1325,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 1,
@@ -1373,7 +1433,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "bzAWmts1UtecnzBg": {
+            "_id": "bzAWmts1UtecnzBg",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "int",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1484,17 +1607,29 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.wis.mod-@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -1629,7 +1764,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

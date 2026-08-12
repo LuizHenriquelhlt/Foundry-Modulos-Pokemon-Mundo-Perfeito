@@ -927,10 +927,10 @@
       "_id": "3HeKNqpPozDadu4f",
       "name": "Habilidade Passiva: Comatose",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>O Pokémon com esta Habilidade é tratado como se estivesse adormecido, sem de fato possuir a condição de status dormindo. Ele ainda pode usar Moves normalmente (incluindo Sleep Talk e Snore com sucesso), mas não pode ser afetado por condições de status não voláteis. O Pokémon com esta Habilidade recebe o dobro dos dados de dano de Hex e Wake-Up Slap; pode ser afetado por Dream Eater, Nightmare e Bad Dreams; e não pode usar Rest com sucesso. No entanto, por não estar realmente com a condição de status de sono, ele não é considerado como tendo uma condição de status para efeitos como Purify, Berries como Chesto e Lum, Beat Up ou o bônus na fórmula de captura. Comatose não é afetada por efeitos que impedem o sono (como Uproar, Electric Terrain e Sweet Veil). Também não é afetada por Mold Breaker, Turboblaze ou Teravolt. Um Pokémon com Poison Touch usando Sunsteel Strike não pode envenenar um alvo com Comatose. Além disso, Comatose segue as seguintes restrições: • Gastro Acid, Worry Seed e Simple Beam falham se o alvo tiver a Habilidade Comatose. • Role Play, Skill Swap, Entrainment e Doodle falham se qualquer um dos Pokémon tiver Comatose. • Comatose não pode ser copiada por Trace, Power of Alchemy ou Receiver. • Comatose não pode ser substituída por Mummy ou Lingering Aroma, nem suprimida por Core Enforcer ou Neutralizing Gas, nem trocada por Wandering Spirit. • Se um Pokémon com sua Habilidade suprimida passa esse efeito para um Pokémon com Comatose via Baton Pass, o efeito é dissipado. • Se um Pokémon com a Habilidade já suprimida obtém Comatose com Transform, os efeitos de Comatose permanecem suprimidos (isto é, o Pokémon não será protegido de condições de status, não será tratado como adormecido para efeitos como Sleep Talk etc.). • Se um Pokémon que já possui uma Condição de Status adquire Comatose (por exemplo, via Transform ou Imposter), essa Condição de Status não será curada. Se estiver sob efeito de Dormindo, a condição de sono tem seu efeito normal, sem ser afetada por Comatose.</p>",
           "chat": ""
         },
         "type": {
@@ -976,7 +976,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "MVnVJne7kyemWs7u": {
+            "_id": "MVnVJne7kyemWs7u",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1084,12 +1132,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 1,
@@ -1180,7 +1240,70 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "gNSZs77ZCXNQvgOs": {
+            "_id": "gNSZs77ZCXNQvgOs",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1261,7 +1384,55 @@
             }
           ]
         },
-        "activities": {}
+        "activities": {
+          "zi80PnJjD3mAyI7w": {
+            "_id": "zi80PnJjD3mAyI7w",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
       },
       "effects": [],
       "flags": {
@@ -1369,12 +1540,24 @@
             "target": {
               "override": false
             },
-            "type": "damage",
+            "type": "attack",
+            "attack": {
+              "ability": "con",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
             "damage": {
               "critical": {
-                "allow": false,
                 "bonus": ""
               },
+              "includeBase": false,
               "parts": [
                 {
                   "number": 1,
@@ -1515,7 +1698,8 @@
               ],
               "dc": {
                 "calculation": "str",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
               }
             },
             "damage": {
@@ -1524,7 +1708,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1659,7 +1843,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + 1",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

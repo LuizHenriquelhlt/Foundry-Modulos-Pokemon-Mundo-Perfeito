@@ -1108,10 +1108,10 @@
       "_id": "AntwtN2yy9DF5dfp",
       "name": "Habilidade Passiva: Early Bird",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon reduz a duração do sono em 1 rodada. Se apenas 1 rodada estiver pré-definida, ela será arredondada para 0, fazendo com que o Pokémon acorde na próxima vez que agir. Isso também se aplica ao sono autoinduzido pelo Rest, reduzindo sua duração de 2 rodadas para 1 rodada de sono (não contando a rodada em que Rest é usado). Além disso, este Pokémon tem vantagem em rolagens para acordar do sono.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1135,10 +1135,10 @@
       "_id": "ppGCWNCIj7Kq6y3T",
       "name": "Habilidade Passiva: Flash Fire",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando este Pokémon é atingido por um Move do tipo fogo, ele não recebe dano e, em vez disso, os dados de dano de seus próprios Moves do tipo fogo aumentam em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado. Golpes subsequentes não aumentam ainda mais o dano, mas o efeito permanece ativo enquanto o portador da habilidade estiver em batalha.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1162,10 +1162,10 @@
       "_id": "8Oden99imSgrTnYq",
       "name": "Habilidade Oculta: Unnerve",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Oponentes em combate com este Pokémon não podem comer berries seguradas. Esta habilidade não impede o uso de Natural Gift.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1275,7 +1275,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1411,7 +1411,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -1536,7 +1537,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

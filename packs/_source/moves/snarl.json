@@ -67,23 +67,29 @@
         "target": {
           "override": false
         },
-        "type": "save",
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "wis",
-            "formula": ""
+        "type": "attack",
+        "attack": {
+          "ability": "wis",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
           }
         },
         "damage": {
-          "onSave": "half",
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
           "parts": [
             {
               "number": 1,
               "denomination": 12,
-              "bonus": "@mod",
+              "bonus": "@mod + {0,@abilities.cha.mod-@abilities.wis.mod}kh1",
               "types": []
             }
           ]

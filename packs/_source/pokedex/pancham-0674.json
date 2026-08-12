@@ -1032,10 +1032,10 @@
       "_id": "SVyK6KcDyDV8fALC",
       "name": "Habilidade Passiva: Iron Fist",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Ao atacar com um Move que contenha ‘Punch’ em seu nome, este Pokémon pode rolar o s dados de dano duas vezes e escolher o resultado. Também estão inclusos os Moves: Double Iron Bash, Hammer Arm, Headlong Rush, Ice Hammer, Meteor Mash, Plasma Fists, Rage Fist, Sky Uppercut, Surging Strikes e Wicked Blow.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1059,10 +1059,10 @@
       "_id": "ya7HXbHheWJBVcX7",
       "name": "Habilidade Passiva: Mold Breaker",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Os Moves deste Pokémon ignoram quaisquer habilidades passivas que afetem seu efeito ou a capacidade de atingir e dar dano a um oponente (devido a coisas como Water Absorb, Snow Cloak, Thick Fat, Sturdy, etc.). Isso só afeta habilidades que alteram o dano, o acerto ou outros efeitos dos Moves.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1086,10 +1086,10 @@
       "_id": "5cPk18XwpvJmGaaH",
       "name": "Habilidade Oculta: Scrappy",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Os Moves de tipo Normal e Lutador deste Pokémon atingem Pokémon de tipo Fantasma. Além disso, este Pokémon é imune aos efeitos de Intimidate.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1184,7 +1184,8 @@
               ],
               "dc": {
                 "calculation": "wis",
-                "formula": ""
+                "formula": "",
+                "bonus": "{0,@abilities.cha.mod-@abilities.wis.mod}kh1"
               }
             },
             "damage": {
@@ -1325,7 +1326,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1460,7 +1461,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

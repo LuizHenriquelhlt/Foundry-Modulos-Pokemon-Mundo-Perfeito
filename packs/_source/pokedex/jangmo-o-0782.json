@@ -1038,10 +1038,10 @@
       "_id": "H2kdsJ8IodtqyoUC",
       "name": "Habilidade Passiva: Bulletproof",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune ao dano e efeitos causados por Moves com Ball ou Bomb em seus nomes, além dos seguintes Moves: Acid Spray, Aura Sphere, Barrage, Beak Blast, Bullet Seed, Focus Blast, Octazooka, Pollen Puff, Rock Blast, Rock Wrecker, Searing Shot e Zap Cannon.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1065,10 +1065,10 @@
       "_id": "FAeiNzwjdQ4BwY17",
       "name": "Habilidade Passiva: Soundproof",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Este Pokémon é imune a Moves baseados em som, incluindo os seus próprios.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1092,10 +1092,10 @@
       "_id": "1KxdA9NLtOfkxvvZ",
       "name": "Habilidade Oculta: Overcoat",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon não sofre dano das condições climáticas de tempestade de areia e tempestade de granizo, e também é protegido contra Moves que contenham 'Powder' e 'Spore' em seu nome, bem como contra a habilidade Effect Spore.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1205,7 +1205,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1340,7 +1340,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

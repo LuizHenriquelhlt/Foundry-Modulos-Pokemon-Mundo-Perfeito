@@ -1032,10 +1032,10 @@
       "_id": "GdW0wGwIRv4UrDrF",
       "name": "Habilidade Passiva: Effect Spore",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Quando atingido por um ataque corpo a corpo, role um d20, e cause a Condição de Status no atacante com base no valor da rolagem: 15-16: Envenenado; 17-18: Paralisado; 19-20: Sonolento. Pokémon do tipo Grama são imunes a Effect Spore.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1059,10 +1059,10 @@
       "_id": "K53RgwPmykIhCTdq",
       "name": "Habilidade Passiva: Poison Heal",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Se este Pokémon estiver envenenado ou gravemente envenenado, ele recuperará uma quantidade de pontos de vida igual à metade de seu nível (arredondada para baixo) no final de cada turno, em vez de sofrer dano.</p><p><em>Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</em></p>",
           "chat": ""
         },
         "type": {
@@ -1086,10 +1086,10 @@
       "_id": "CmKpd3I8MdUsBIDL",
       "name": "Habilidade Oculta: Quick Feet",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Enquanto estiver sob o efeito de uma condição de status não volátil (envenenamento, queimadura, paralisia, congelamento, sonolência ou dormindo), este Pokémon aumenta em 50% o valor de sua iniciativa para determinar sua posição na ordem de iniciativa, e seu deslocamento aumenta em 5 pés (1,5 metros). Caso esteja paralisado ou sonolento, este Pokémon não sofre a redução usual de iniciativa e deslocamento.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -1199,7 +1199,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1350,7 +1350,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]
@@ -1485,7 +1485,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

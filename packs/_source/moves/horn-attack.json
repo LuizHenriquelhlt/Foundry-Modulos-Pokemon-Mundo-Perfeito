@@ -67,24 +67,19 @@
         "target": {
           "override": false
         },
-        "type": "attack",
-        "attack": {
-          "ability": "str",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": "weapon"
+        "type": "save",
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": "",
+            "bonus": ""
           }
         },
         "damage": {
-          "critical": {
-            "bonus": ""
-          },
-          "includeBase": false,
+          "onSave": "none",
           "parts": [
             {
               "number": 2,

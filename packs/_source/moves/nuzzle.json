@@ -67,24 +67,19 @@
         "target": {
           "override": false
         },
-        "type": "attack",
-        "attack": {
-          "ability": "dex",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": "weapon"
+        "type": "save",
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": "",
+            "bonus": ""
           }
         },
         "damage": {
-          "critical": {
-            "bonus": ""
-          },
-          "includeBase": false,
+          "onSave": "none",
           "parts": [
             {
               "number": 1,

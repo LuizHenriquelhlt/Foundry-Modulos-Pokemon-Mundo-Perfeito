@@ -725,10 +725,10 @@
       "_id": "7gDJyS2ZeTwvaCoq",
       "name": "Habilidade Passiva: Shadow Tag",
       "type": "feat",
-      "img": "icons/svg/aura.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Veja a Lista de Habilidades Passivas no Livro de Regras. Se a espécie lista mais de uma Habilidade Passiva, o Pokémon usa normalmente apenas uma delas (remova a que não for usar).</p>",
+          "value": "<p>Criaturas inimigas dentro de 60 pés (18 metros) deste Pokémon não podem fugir (incluindo o uso de Teleport), serem trocadas (exceto por item, Move ou habilidade), e não podem se afastar para além dessa distância. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. Esta habilidade não afeta Pokémon do tipo Fantasma, ignora efeitos de proteção como Protect ou Detect, e não bloqueia Moves, habilidades passivas ou itens que forçam a troca do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p>",
           "chat": ""
         },
         "type": {
@@ -752,10 +752,10 @@
       "_id": "guKKkKBNCsfJ4qEZ",
       "name": "Habilidade Oculta: Telepathy",
       "type": "feat",
-      "img": "icons/svg/mystery-man.svg",
+      "img": "icons/magic/control/buff-flight-wings-blue.webp",
       "system": {
         "description": {
-          "value": "<p>Habilidade Oculta — normalmente inativa; veja o Livro de Regras.</p>",
+          "value": "<p>Este Pokémon é imune ao dano causado pelos ataques de seus aliados.</p><p><em>Habilidade Oculta — normalmente inativa, só entra em uso com o item Ability Patch.</em></p>",
           "chat": ""
         },
         "type": {
@@ -849,7 +849,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
                   "types": []
                 }
               ]

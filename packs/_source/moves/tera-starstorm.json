@@ -67,29 +67,24 @@
         "target": {
           "override": false
         },
-        "type": "attack",
-        "attack": {
-          "ability": "str",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": "weapon"
+        "type": "save",
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "str",
+            "formula": "",
+            "bonus": "{0,@abilities.dex.mod-@abilities.str.mod,@abilities.int.mod-@abilities.str.mod,@abilities.wis.mod-@abilities.str.mod,@abilities.cha.mod-@abilities.str.mod}kh1"
           }
         },
         "damage": {
-          "critical": {
-            "bonus": ""
-          },
-          "includeBase": false,
+          "onSave": "half",
           "parts": [
             {
               "number": 3,
               "denomination": 8,
-              "bonus": "@mod",
+              "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod,@abilities.int.mod-@abilities.str.mod,@abilities.wis.mod-@abilities.str.mod,@abilities.cha.mod-@abilities.str.mod}kh1",
               "types": []
             }
           ]

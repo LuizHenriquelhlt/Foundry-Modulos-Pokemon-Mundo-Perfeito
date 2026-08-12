@@ -67,18 +67,24 @@
         "target": {
           "override": false
         },
-        "type": "save",
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "str",
-            "formula": ""
+        "type": "attack",
+        "attack": {
+          "ability": "str",
+          "bonus": "9",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
           }
         },
         "damage": {
-          "onSave": "none",
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
           "parts": []
         }
       }

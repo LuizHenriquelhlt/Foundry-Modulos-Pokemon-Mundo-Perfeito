@@ -67,18 +67,24 @@
         "target": {
           "override": false
         },
-        "type": "save",
-        "save": {
-          "ability": [
-            "str"
-          ],
-          "dc": {
-            "calculation": "dex",
-            "formula": ""
+        "type": "attack",
+        "attack": {
+          "ability": "dex",
+          "bonus": "9",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
           }
         },
         "damage": {
-          "onSave": "none",
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
           "parts": []
         }
       }
