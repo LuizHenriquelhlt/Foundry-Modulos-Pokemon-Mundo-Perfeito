@@ -100,16 +100,20 @@ def save(path, doc):
 # Moves -> Items "feat" nativos com Activities
 # ---------------------------------------------------------------------------
 
-def ability_topup_formula(abilities):
+def best_ability_mod_formula(abilities):
     """Quando o Move permite mais de um atributo (ex.: powerAbilities ['str','dex'] = FOR/DES do
-    livro), soma o quanto o segundo/terceiro atributo supera o primeiro (0 se não superar) via
-    dado-pool "mantenha o maior" do próprio Foundry — resultado final = o maior mod entre eles,
-    sem precisar trocar o atributo "principal" da activity (que já inclui bônus de proficiência)."""
-    if len(abilities) < 2:
+    livro), usa um dado-pool "mantenha o maior" do próprio Foundry sobre os mods crus dos
+    atributos possíveis — resultado final é sempre o maior mod entre eles. Cada elemento do
+    pool é uma única referência de roll-data (sem aritmética dentro do pool), que é a sintaxe
+    de dado-pool com suporte garantido do Foundry (a versão anterior somava a diferença via
+    "{0,@abilities.x.mod-@abilities.y.mod}kh1", mas o parser de dados não resolve essa
+    subtração de forma confiável dentro do pool e produzia valores errados)."""
+    abilities = [a for a in abilities if a]
+    if not abilities:
         return ""
-    base = abilities[0]
-    diffs = [f"@abilities.{a}.mod-@abilities.{base}.mod" for a in abilities[1:]]
-    return "{0," + ",".join(diffs) + "}kh1"
+    if len(abilities) == 1:
+        return f"@abilities.{abilities[0]}.mod"
+    return "{" + ",".join(f"@abilities.{a}.mod" for a in abilities) + "}kh1"
 
 
 def build_move_activity(pmp, move_name):
@@ -124,14 +128,14 @@ def build_move_activity(pmp, move_name):
     rolagem, em vez de perder uma delas. Status sem nenhuma rolagem (buffs em si mesmo, ex.
     Agility) vira activity utility (botão Usar), para nunca ficar sem nenhuma ação executável.
     O bônus de MOVE do PMP (melhor atributo + proficiência) equivale ao mod do atributo +
-    proficiência do dnd5e, então @mod nas partes de dano e o cálculo padrão de acerto/CD
-    reproduzem a matemática do livro; quando o Move aceita mais de um atributo, soma-se o
-    "top up" do maior entre eles."""
+    proficiência do dnd5e; quando o Move aceita só um atributo, o bônus de dano usa o mod dele
+    direto, e quando aceita mais de um (ex. FOR/DES), usa um dado-pool "mantenha o maior" sobre
+    os mods possíveis (best_ability_mod_formula) para sempre refletir o melhor dos dois."""
     desc_plain = re.sub(r"<[^>]+>", " ", pmp.get("description", ""))
     base = pmp.get("damage", {}).get("baseFormula", "")
     power_abilities = pmp.get("powerAbilities") or []
     ability = power_abilities[0] if power_abilities else ""
-    topup = ability_topup_formula(power_abilities)
+    best_mod = best_ability_mod_formula(power_abilities)
 
     activation_type = pmp.get("activation", {}).get("type", "action")
     if activation_type not in ("action", "bonus", "reaction"):
@@ -140,13 +144,10 @@ def build_move_activity(pmp, move_name):
     m_dmg = re.match(r"(\d+)d(\d+)", base)
     damage_part = None
     if m_dmg:
-        dmg_bonus = "@mod" if ability else ""
-        if topup:
-            dmg_bonus = f"{dmg_bonus} + {topup}" if dmg_bonus else topup
         damage_part = {
             "number": int(m_dmg.group(1)),
             "denomination": int(m_dmg.group(2)),
-            "bonus": dmg_bonus,
+            "bonus": best_mod,
             "types": []
         }
 
@@ -198,12 +199,16 @@ def build_move_activity(pmp, move_name):
         common = base_activity("save" if dual_attack_and_save else "act")
         save_ability = ABILITY_PT.get(m_save.group(1), "dex")
         on_save = "half" if re.search(r"metade d", desc_plain) else "none"
+        if len(power_abilities) > 1:
+            dc = {"calculation": "", "formula": f"8 + @prof + {best_mod}", "bonus": ""}
+        else:
+            dc = {"calculation": ability or "str", "formula": "", "bonus": ""}
         return common["_id"], {
             **common,
             "type": "save",
             "save": {
                 "ability": [save_ability],
-                "dc": {"calculation": ability or "str", "formula": "", "bonus": topup}
+                "dc": dc
             },
             "damage": {"onSave": on_save, "parts": ([damage_part] if damage_part else []) if include_damage else []}
         }

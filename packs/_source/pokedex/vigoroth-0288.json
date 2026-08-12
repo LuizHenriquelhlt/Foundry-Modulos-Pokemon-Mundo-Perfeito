@@ -1146,7 +1146,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 1",
+                  "bonus": "@abilities.dex.mod",
                   "types": []
                 }
               ]
@@ -1413,7 +1413,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod,@abilities.cha.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod,@abilities.cha.mod}kh1",
                   "types": []
                 }
               ]
@@ -1565,7 +1565,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -1830,7 +1830,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@mod + 1",
+                  "bonus": "@abilities.str.mod",
                   "types": []
                 }
               ]
@@ -1980,7 +1980,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod,@abilities.cha.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod,@abilities.cha.mod}kh1",
                   "types": []
                 }
               ]
@@ -2132,7 +2132,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -2283,7 +2283,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -2434,7 +2434,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + 1",
+                  "bonus": "@abilities.con.mod",
                   "types": []
                 }
               ]
@@ -2569,9 +2569,9 @@
                 "con"
               ],
               "dc": {
-                "calculation": "str",
-                "formula": "",
-                "bonus": "{0,@abilities.dex.mod-@abilities.str.mod}kh1"
+                "calculation": "",
+                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "bonus": ""
               }
             },
             "damage": {
@@ -2580,7 +2580,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -2845,7 +2845,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]
@@ -2976,7 +2976,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + {0,@abilities.dex.mod-@abilities.str.mod}kh1",
+                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
                   "types": []
                 }
               ]

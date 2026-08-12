@@ -89,7 +89,7 @@
             {
               "number": 3,
               "denomination": 6,
-              "bonus": "@mod + {0,@abilities.con.mod-@abilities.dex.mod}kh1",
+              "bonus": "{@abilities.dex.mod,@abilities.con.mod}kh1",
               "types": []
             }
           ]
@@ -142,9 +142,9 @@
             "con"
           ],
           "dc": {
-            "calculation": "dex",
-            "formula": "",
-            "bonus": "{0,@abilities.con.mod-@abilities.dex.mod}kh1"
+            "calculation": "",
+            "formula": "8 + @prof + {@abilities.dex.mod,@abilities.con.mod}kh1",
+            "bonus": ""
           }
         },
         "damage": {
