@@ -2,6 +2,7 @@ import { registerTypeConfig, TYPES } from "./combat/type-chart.mjs";
 import * as capture from "./combat/capture.mjs";
 import * as zMoves from "./combat/z-moves.mjs";
 import * as megaEvolution from "./combat/mega-evolution.mjs";
+import { registerSheetExtras } from "./sheet-extras.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -23,6 +24,7 @@ Hooks.once("init", () => {
   registerTypeConfig();
   CONFIG.PMP.abilityLabels = ABILITY_LABELS;
   CONFIG.PMP.typeLabels = TYPE_LABELS;
+  registerSheetExtras();
 
   globalThis.game.pmp = { capture, zMoves, megaEvolution, TYPES };
 });
