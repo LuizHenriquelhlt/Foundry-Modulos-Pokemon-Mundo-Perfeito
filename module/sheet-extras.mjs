@@ -23,8 +23,12 @@ function formatXp(n) {
 async function onInspirationClick(actor, el) {
   const current = actor.getFlag(MODULE_ID, "inspiration") ?? false;
   await actor.setFlag(MODULE_ID, "inspiration", !current);
-  el.classList.toggle("pmp-active", !current);
-  el.setAttribute("aria-pressed", String(!current));
+  // relê a flag em vez de confiar no !current calculado antes do await — se o re-render
+  // automático da ficha reconstruir o painel entre o clique e aqui, este "el" antigo fica
+  // órfão; reler garante que o próximo clique sempre parta do valor realmente salvo.
+  const updated = actor.getFlag(MODULE_ID, "inspiration") ?? false;
+  el.classList.toggle("pmp-active", updated);
+  el.setAttribute("aria-pressed", String(updated));
 }
 
 async function onXpChange(actor, value) {
@@ -91,7 +95,12 @@ function buildPanel(actor) {
 function injectPanel(app, htmlEl) {
   const actor = app.document ?? app.actor;
   if (!actor || actor.type !== "npc" || !actor.getFlag(MODULE_ID, "species")) return;
-  if (htmlEl.querySelector(".pmp-sheet-panel")) return; // já injetado, evita duplicar em re-render
+
+  // Remove qualquer painel antigo antes de reconstruir: como a ficha do dnd5e usa
+  // renderização parcial por partes (PARTS), nosso painel injetado fica fora desse
+  // ciclo e pode sobreviver "congelado" entre re-renders se só checarmos e pularmos —
+  // reconstruir do zero sempre garante que ele reflita o estado atual da flag.
+  htmlEl.querySelectorAll(".pmp-sheet-panel").forEach((el) => el.remove());
 
   const header = htmlEl.querySelector(".sheet-header") ?? htmlEl.querySelector("header");
   const panel = buildPanel(actor);
