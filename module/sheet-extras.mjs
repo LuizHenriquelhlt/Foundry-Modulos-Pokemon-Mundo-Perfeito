@@ -108,6 +108,16 @@ function injectPanel(app, htmlEl) {
   else htmlEl.prepend(panel);
 }
 
+function refreshOpenSheet(actor) {
+  // Subir de nível mexe no item de classe embutido (Advancement Manager), não no Actor
+  // em si — isso nem sempre dispara um novo "renderNPCActorSheet" a tempo de atualizar
+  // nosso painel (nível, PV/Dado de Vida dependem do item de classe). Forçar o render
+  // aqui garante que Inspiração/XP/Dado de Vida acompanhem qualquer subida de nível.
+  if (actor?.type === "npc" && actor.getFlag(MODULE_ID, "species") && actor.sheet?.rendered) {
+    actor.sheet.render(false);
+  }
+}
+
 export function registerSheetExtras() {
   Hooks.on("renderNPCActorSheet", (app, htmlEl) => {
     try {
@@ -117,4 +127,12 @@ export function registerSheetExtras() {
       console.error(`${MODULE_ID} | Falha ao injetar painel de Inspiração/XP`, err);
     }
   });
+
+  // Item de classe (nível/PV) e outros itens (Moves/Talentos ganhos ao subir de nível)
+  // vivem embutidos no Actor — qualquer mudança neles pode afetar o painel.
+  const onEmbeddedItemChange = (item) => refreshOpenSheet(item.parent);
+  Hooks.on("updateItem", onEmbeddedItemChange);
+  Hooks.on("createItem", onEmbeddedItemChange);
+  Hooks.on("deleteItem", onEmbeddedItemChange);
+  Hooks.on("updateActor", refreshOpenSheet);
 }
