@@ -8,6 +8,9 @@ import {
   resolveRequirement, defaultRequirementForSr, buildIncubationFormula, deriveState,
   canHatch, makeHistoryEntry
 } from "../data/egg-rules.mjs";
+import { createHatchedActor } from "../data/hatch-actor.mjs";
+import { fetchSpeciesEggMoves } from "../data/pokedex-lookup.mjs";
+import { openEggMovesDialog } from "./egg-moves-dialog.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
@@ -29,6 +32,53 @@ async function appendHistory(item, egg, type, delta, note = "") {
   egg.history = [...egg.history, makeHistoryEntry(type, delta, egg.progress, note)];
   await setEgg(item, egg);
   return egg;
+}
+
+// Se um ovo já foi marcado como chocado mas não conseguiu criar o Actor (espécie não
+// encontrada ou sem permissão), o botão "Chocar Ovo" vira "tentar de novo" em vez de ficar
+// travado pra sempre — por isso esta checagem é separada de canHatch() (que só olha
+// progresso x requisito).
+function needsHatchRetry(egg) {
+  return egg.hatched && !egg.hatchedActorUuid;
+}
+
+// Choca o ovo: revela os dados, cria o Actor Pokémon a partir da Pokédex (se a espécie for
+// encontrada), entrega a posse ao jogador dono do ovo e guarda o UUID do Actor no próprio
+// ovo pra os botões "Abrir Pokémon"/"Egg Moves" saberem pra onde apontar depois. Pode ser
+// chamada de novo (needsHatchRetry) se a criação do Actor falhou da primeira vez.
+async function hatchEgg(item, egg) {
+  const firstAttempt = !egg.hatched;
+  egg.hatched = true;
+  egg.revealed = true;
+
+  const result = await createHatchedActor(egg, item.parent);
+  if (result.status === "species-not-found") {
+    ui.notifications.warn(
+      `"${egg.species}" não foi encontrado na Pokédex — verifique o nome e tente de novo, ou crie o Pokémon manualmente.`
+    );
+  } else if (result.status === "permission-denied") {
+    ui.notifications.warn(
+      "Você não tem permissão para criar Actors — peça ao Mestre para tentar de novo, ou crie o Pokémon manualmente."
+    );
+  } else {
+    egg.hatchedActorUuid = result.actor.uuid;
+  }
+
+  await setEgg(item, egg);
+  if (firstAttempt) {
+    await item.update({ name: `Ovo Chocado — ${egg.species}${egg.shiny ? " ✨" : ""}` });
+  }
+
+  if (result.status === "created") {
+    ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: item.parent }),
+      content: `🥚✨ O ovo de ${item.parent?.name ?? "?"} chocou! Nasceu ${result.actor.link}${egg.shiny ? " ✨ (Shiny)" : ""}.`
+    });
+    const eggMoves = await fetchSpeciesEggMoves(egg.species);
+    if (eggMoves.length) openEggMovesDialog(result.actor, eggMoves);
+  } else if (firstAttempt) {
+    ui.notifications.info(`${item.parent?.name ?? "O ovo"} chocou! Revelando ${egg.species}${egg.shiny ? " ✨ (Shiny)" : ""}.`);
+  }
 }
 
 async function rollIncubation(item, egg, { asGM }) {
@@ -161,8 +211,16 @@ function renderGmView(item, egg) {
       <div class="pmp-egg-actions">
         <button type="button" data-action="roll-gm">🎲 Rolar Incubação (Mestre)</button>
         <button type="button" data-action="reveal" ${egg.revealed || egg.hatched ? "disabled" : ""}>👁️ Revelar informações</button>
-        <button type="button" data-action="hatch" ${canHatch(egg) ? "" : "disabled"}>🥚✨ Chocar Ovo</button>
+        <button type="button" data-action="hatch" ${canHatch(egg) || needsHatchRetry(egg) ? "" : "disabled"}>
+          ${needsHatchRetry(egg) ? "🥚 Tentar criar o Pokémon de novo" : "🥚✨ Chocar Ovo"}
+        </button>
       </div>
+
+      ${egg.hatched ? `
+      <div class="pmp-egg-actions">
+        <button type="button" data-action="open-actor" ${egg.hatchedActorUuid ? "" : "disabled"}>📄 Abrir ficha do Pokémon</button>
+        <button type="button" data-action="egg-moves" ${egg.hatchedActorUuid ? "" : "disabled"}>🧬 Egg Moves</button>
+      </div>` : ""}
 
       <h3>Histórico de Incubação</h3>
       ${historyList(egg.history)}
@@ -187,7 +245,10 @@ function renderPlayerView(item, egg) {
 
       <div class="pmp-egg-actions">
         <button type="button" data-action="roll-player" ${egg.hatched ? "disabled" : ""}>🎲 Incubar</button>
-        <button type="button" data-action="hatch" ${canHatch(egg) ? "" : "disabled"}>🥚✨ Chocar Ovo</button>
+        <button type="button" data-action="hatch" ${canHatch(egg) || needsHatchRetry(egg) ? "" : "disabled"}>
+          ${needsHatchRetry(egg) ? "🥚 Tentar de novo" : "🥚✨ Chocar Ovo"}
+        </button>
+        ${egg.hatched && !needsHatchRetry(egg) ? `<button type="button" data-action="open-actor" ${egg.hatchedActorUuid ? "" : "disabled"}>📄 Ver meu Pokémon</button>` : ""}
       </div>
     </div>`;
 }
@@ -274,13 +335,34 @@ export class EggItemSheet extends foundry.applications.api.DocumentSheetV2 {
 
     root.querySelector('[data-action="hatch"]')?.addEventListener("click", async () => {
       const egg = getEgg(item);
-      if (!canHatch(egg)) return;
-      egg.hatched = true;
-      egg.revealed = true;
-      await setEgg(item, egg);
-      await item.update({ name: `Ovo Chocado — ${egg.species}${egg.shiny ? " ✨" : ""}` });
-      ui.notifications.info(`${item.parent?.name ?? "O ovo"} chocou! Revelando ${egg.species}${egg.shiny ? " ✨ (Shiny)" : ""}.`);
+      if (!canHatch(egg) && !needsHatchRetry(egg)) return;
+      await hatchEgg(item, egg);
       this.render();
+    });
+
+    root.querySelector('[data-action="open-actor"]')?.addEventListener("click", async () => {
+      const egg = getEgg(item);
+      const actor = egg.hatchedActorUuid ? await fromUuid(egg.hatchedActorUuid) : null;
+      if (!actor) {
+        ui.notifications.warn("Não foi possível encontrar o Actor deste Pokémon (pode ter sido excluído).");
+        return;
+      }
+      actor.sheet.render(true);
+    });
+
+    root.querySelector('[data-action="egg-moves"]')?.addEventListener("click", async () => {
+      const egg = getEgg(item);
+      const actor = egg.hatchedActorUuid ? await fromUuid(egg.hatchedActorUuid) : null;
+      if (!actor) {
+        ui.notifications.warn("Não foi possível encontrar o Actor deste Pokémon (pode ter sido excluído).");
+        return;
+      }
+      const eggMoves = await fetchSpeciesEggMoves(egg.species);
+      if (!eggMoves.length) {
+        ui.notifications.info(`${egg.species} não tem Egg Moves cadastrados na Pokédex.`);
+        return;
+      }
+      openEggMovesDialog(actor, eggMoves);
     });
   }
 }

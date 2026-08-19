@@ -5,6 +5,7 @@ import * as megaEvolution from "./combat/mega-evolution.mjs";
 import { registerSheetExtras } from "./sheet-extras.mjs";
 import { registerEggSheet } from "./apps/egg-sheet.mjs";
 import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
+import { learnMove } from "./data/move-pack.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -61,22 +62,12 @@ Hooks.on("createItem", async (item, options, userId) => {
   const actor = item.parent;
   if (!teaches || !actor || actor.documentName !== "Actor") return;
 
-  if (actor.items.some((i) => i.name === teaches && i.id !== item.id)) {
+  const result = await learnMove(actor, teaches);
+  if (result === "already-known") {
     ui.notifications.info(`${actor.name} já conhece ${teaches}.`);
-    return;
-  }
-
-  const pack = game.packs.get(`${MODULE_ID}.moves`);
-  if (!pack) return;
-  const index = await pack.getIndex();
-  const entry = index.find((e) => e.name === teaches);
-  if (!entry) {
+  } else if (result === "not-found") {
     ui.notifications.warn(`Move "${teaches}" não encontrado no compêndio de Moves.`);
-    return;
+  } else {
+    ui.notifications.info(`${actor.name} aprendeu ${teaches} com ${item.name}!`);
   }
-  const move = await pack.getDocument(entry._id);
-  const data = move.toObject();
-  delete data._id;
-  await actor.createEmbeddedDocuments("Item", [data]);
-  ui.notifications.info(`${actor.name} aprendeu ${teaches} com ${item.name}!`);
 });
