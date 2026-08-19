@@ -3,6 +3,8 @@ import * as capture from "./combat/capture.mjs";
 import * as zMoves from "./combat/z-moves.mjs";
 import * as megaEvolution from "./combat/mega-evolution.mjs";
 import { registerSheetExtras } from "./sheet-extras.mjs";
+import { registerEggSheet } from "./apps/egg-sheet.mjs";
+import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -25,15 +27,31 @@ Hooks.once("init", () => {
   CONFIG.PMP.abilityLabels = ABILITY_LABELS;
   CONFIG.PMP.typeLabels = TYPE_LABELS;
   registerSheetExtras();
+  registerEggSheet();
 
-  globalThis.game.pmp = { capture, zMoves, megaEvolution, TYPES };
+  globalThis.game.pmp = { capture, zMoves, megaEvolution, TYPES, eggs: { openCreateEggDialog } };
 });
 
-Hooks.once("ready", () => {
+Hooks.once("ready", async () => {
   if (game.system.id !== "dnd5e") {
     ui.notifications.warn(game.i18n.localize("PMP.Warnings.RequiresDnd5e"));
   }
+  await ensureCreateEggMacro();
 });
+
+// Cria uma macro de conveniência pro Mestre abrir o diálogo de criação de ovo sem precisar
+// decorar o comando — só roda uma vez (idempotente: não recria se já existir uma com o
+// mesmo nome).
+async function ensureCreateEggMacro() {
+  if (!game.user.isGM) return;
+  const name = "Criar Ovo Pokémon";
+  if (game.macros.find((m) => m.name === name)) return;
+  await Macro.create({
+    name, type: "script", img: "icons/commodities/gems/pearl-storm.webp",
+    command: "game.pmp.eggs.openCreateEggDialog();",
+    flags: { [MODULE_ID]: { autoCreated: true } }
+  });
+}
 
 // TM colocado na ficha de um Pokémon => o Pokémon aprende o Move automaticamente
 // (o Move correspondente é copiado do compêndio, com fórmula/PP/atividade prontos).
