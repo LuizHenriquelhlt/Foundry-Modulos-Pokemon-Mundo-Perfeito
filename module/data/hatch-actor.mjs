@@ -33,9 +33,11 @@ export async function createHatchedActor(egg, trainerActor) {
   delete data._id;
   foundry.utils.setProperty(data, `flags.${MODULE_ID}.species.shiny`, !!egg.shiny);
 
-  const ownership = { default: 0 };
-  const user = egg.ownerUserId ? game.users.get(egg.ownerUserId) : null;
-  if (user) ownership[user.id] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
+  // Copia a permissão de quem já é dono do Treinador em vez de depender só do
+  // ownerUserId guardado no ovo — a Configuração de Propriedade do Actor é a fonte da
+  // verdade de "de quem é isso" no Foundry, então o Pokémon nasce com a mesma posse.
+  const ownership = { default: 0, ...(trainerActor?.ownership ?? {}) };
+  if (egg.ownerUserId) ownership[egg.ownerUserId] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
   data.ownership = ownership;
 
   const folder = await ensureTrainerFolder(trainerActor?.name);

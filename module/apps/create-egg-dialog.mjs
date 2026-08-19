@@ -14,6 +14,16 @@ async function fetchPokedexNames() {
   return [...index.map((e) => e.name)].sort((a, b) => a.localeCompare(b, "pt-BR"));
 }
 
+// Quem "é dono" de um Treinador é definido pela permissão real do Actor (Configuração de
+// Propriedade), não pelo "Personagem" padrão do usuário em Configurações — muita mesa nunca
+// preenche esse campo, então depender dele trava a criação de ovo sem necessidade.
+function findOwningUser(actor) {
+  const ownerId = Object.entries(actor.ownership ?? {}).find(([id, level]) =>
+    id !== "default" && level >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER && !game.users.get(id)?.isGM
+  )?.[0];
+  return ownerId ? game.users.get(ownerId) : null;
+}
+
 export class CreateEggDialog extends foundry.applications.api.ApplicationV2 {
   static DEFAULT_OPTIONS = {
     id: "pmp-create-egg",
@@ -23,15 +33,15 @@ export class CreateEggDialog extends foundry.applications.api.ApplicationV2 {
   };
 
   async _prepareContext() {
-    const players = game.users.filter((u) => !u.isGM);
+    const trainers = game.actors.filter((a) => a.type === "character");
     const speciesNames = await fetchPokedexNames();
-    return { players, speciesNames };
+    return { trainers, speciesNames };
   }
 
   async _renderHTML(context) {
-    const playerOptions = context.players.map((u) => {
-      const charName = u.character ? ` (${u.character.name})` : " — sem Ator atribuído";
-      return `<option value="${u.id}">${u.name}${charName}</option>`;
+    const trainerOptions = context.trainers.map((a) => {
+      const owner = findOwningUser(a);
+      return `<option value="${a.id}">${a.name}${owner ? ` (${owner.name})` : ""}</option>`;
     }).join("");
     const srOptions = SR_OPTIONS.map((sr) => `<option value="${sr}">${sr} (${defaultRequirementForSr(sr)})</option>`).join("");
     const incubatorOptions = `<option value="">Nenhuma</option>` +
@@ -48,7 +58,8 @@ export class CreateEggDialog extends foundry.applications.api.ApplicationV2 {
         .pmp-create-egg .pmp-egg-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.75rem; }
       </style>
       <div class="pmp-create-egg">
-        <div class="pmp-egg-row"><label>Jogador</label><select data-field="userId"><option value="">— selecione —</option>${playerOptions}</select></div>
+        <div class="pmp-egg-row"><label>Treinador</label><select data-field="actorId"><option value="">— selecione —</option>${trainerOptions}</select></div>
+        ${!context.trainers.length ? `<p class="pmp-egg-hint" style="margin-left:0;color:#c0392b;">Nenhum Actor do tipo "character" encontrado — crie a ficha do Treinador antes de criar o ovo.</p>` : ""}
         <div class="pmp-egg-row"><label>Espécie (secreta)</label><input type="text" data-field="species" list="pmp-species-list" /></div>
         <datalist id="pmp-species-list">${speciesList}</datalist>
         <div class="pmp-egg-row"><label>Shiny (secreto)</label><input type="checkbox" data-field="shiny" /></div>
@@ -82,32 +93,32 @@ export class CreateEggDialog extends foundry.applications.api.ApplicationV2 {
 
   async _onCreate(root) {
     const read = (name) => root.querySelector(`[data-field="${name}"]`);
-    const userId = read("userId").value;
+    const actorId = read("actorId").value;
     const species = read("species").value.trim();
     const sr = read("sr").value;
     const requirementValue = Number(read("requirement").value);
     const defaultValue = defaultRequirementForSr(sr);
 
-    if (!userId) {
-      ui.notifications.warn("Escolha o jogador que vai receber o ovo.");
+    if (!actorId) {
+      ui.notifications.warn("Escolha o Treinador que vai receber o ovo.");
+      return;
+    }
+    const actor = game.actors.get(actorId);
+    if (!actor) {
+      ui.notifications.error("Esse Treinador não existe mais — feche e abra o diálogo de novo.");
       return;
     }
     if (!species) {
       ui.notifications.warn("Defina a espécie do Pokémon dentro do ovo.");
       return;
     }
-    const user = game.users.get(userId);
-    const actor = user?.character;
-    if (!actor) {
-      ui.notifications.error(`${user?.name ?? "Esse jogador"} não tem um Ator atribuído. Atribua um Treinador a ele antes de criar o ovo.`);
-      return;
-    }
 
+    const owner = findOwningUser(actor);
     const progress = Number(read("progress").value) || 0;
     const egg = defaultEgg({
       species, shiny: read("shiny").checked, sr,
       requirementCustom: Number.isFinite(requirementValue) && requirementValue !== defaultValue ? requirementValue : null,
-      progress, incubator: read("incubator").value || null, ownerUserId: userId
+      progress, incubator: read("incubator").value || null, ownerUserId: owner?.id ?? null
     });
     if (progress > 0) egg.history = [makeHistoryEntry("initial", progress, progress, "Progresso inicial ao criar o ovo")];
 
