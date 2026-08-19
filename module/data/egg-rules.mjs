@@ -12,17 +12,6 @@ export const SR_HATCH_TABLE = {
 
 export const SR_OPTIONS = Object.keys(SR_HATCH_TABLE);
 
-// "Manuseio de Ovos" / tabela de Incubadoras, pág. 42: cada uma soma dados extras à
-// rolagem de 1d100 contra o contador de incubação.
-export const INCUBATORS = {
-  basica: { key: "basica", label: "Básica", bonusDice: "1d20", price: "₽1.000" },
-  plus: { key: "plus", label: "Plus", bonusDice: "2d20", price: "₽3.000" },
-  super: {
-    key: "super", label: "Super", bonusDice: "3d20", price: "₽10.000",
-    note: "Ao atingir o requisito, o Treinador escolhe o momento de chocar o ovo."
-  }
-};
-
 export const EGG_STATES = {
   novo: { key: "novo", label: "Novo" },
   incubando: { key: "incubando", label: "Incubando" },
@@ -53,9 +42,10 @@ export function resolveRequirement(egg) {
   return defaultRequirementForSr(egg.sr) ?? 0;
 }
 
-export function buildIncubationFormula(incubatorKey) {
-  const incubator = INCUBATORS[incubatorKey];
-  return incubator ? `1d100 + ${incubator.bonusDice}` : "1d100";
+// bonusDice vem do Item "Incubadora" de verdade no compêndio (module/data/incubator-lookup.mjs
+// lê o valor da flag) — esta função só monta a fórmula, sem saber de onde o dado veio.
+export function buildIncubationFormula(bonusDice) {
+  return bonusDice ? `1d100 + ${bonusDice}` : "1d100";
 }
 
 // Progresso e requisito nunca são a mesma coisa (seção 9) — o estado é sempre recalculado

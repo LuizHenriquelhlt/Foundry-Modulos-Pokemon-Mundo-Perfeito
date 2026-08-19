@@ -1,7 +1,8 @@
 // Diálogo do Mestre para criar um Ovo Pokémon e atribuí-lo direto a um jogador (seção 1
 // do pedido). Não é ligado a nenhum documento — por isso estende ApplicationV2 puro, não
 // DocumentSheetV2 (que é para editar um documento já existente).
-import { SR_OPTIONS, INCUBATORS, defaultRequirementForSr, defaultEgg, makeHistoryEntry } from "../data/egg-rules.mjs";
+import { SR_OPTIONS, defaultRequirementForSr, defaultEgg, makeHistoryEntry } from "../data/egg-rules.mjs";
+import { listIncubators } from "../data/incubator-lookup.mjs";
 import { EGG_SHEET_CLASS_ID } from "./egg-sheet.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
@@ -35,7 +36,8 @@ export class CreateEggDialog extends foundry.applications.api.ApplicationV2 {
   async _prepareContext() {
     const trainers = game.actors.filter((a) => a.type === "character");
     const speciesNames = await fetchPokedexNames();
-    return { trainers, speciesNames };
+    const incubators = await listIncubators();
+    return { trainers, speciesNames, incubators };
   }
 
   async _renderHTML(context) {
@@ -45,7 +47,7 @@ export class CreateEggDialog extends foundry.applications.api.ApplicationV2 {
     }).join("");
     const srOptions = SR_OPTIONS.map((sr) => `<option value="${sr}">${sr} (${defaultRequirementForSr(sr)})</option>`).join("");
     const incubatorOptions = `<option value="">Nenhuma</option>` +
-      Object.values(INCUBATORS).map((i) => `<option value="${i.key}">${i.label} — ${i.price}</option>`).join("");
+      context.incubators.map((i) => `<option value="${i.name}">${i.name} — ₽${i.price.toLocaleString("pt-BR")}</option>`).join("");
     const speciesList = context.speciesNames.map((n) => `<option value="${n}"></option>`).join("");
 
     return `

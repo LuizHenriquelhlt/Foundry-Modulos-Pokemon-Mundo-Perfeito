@@ -4,12 +4,13 @@
 // vez do sistema declarativo `actions` do ApplicationV2, para ficar consistente com o
 // único padrão já testado em produção neste módulo.
 import {
-  SR_OPTIONS, INCUBATORS, HISTORY_TYPES, EGG_STATES,
+  SR_OPTIONS, HISTORY_TYPES, EGG_STATES,
   resolveRequirement, defaultRequirementForSr, buildIncubationFormula, deriveState,
   canHatch, makeHistoryEntry
 } from "../data/egg-rules.mjs";
 import { createHatchedActor } from "../data/hatch-actor.mjs";
 import { fetchSpeciesEggMoves } from "../data/pokedex-lookup.mjs";
+import { listIncubators, fetchIncubatorByName } from "../data/incubator-lookup.mjs";
 import { openEggMovesDialog } from "./egg-moves-dialog.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
@@ -82,7 +83,8 @@ async function hatchEgg(item, egg) {
 }
 
 async function rollIncubation(item, egg, { asGM }) {
-  const formula = buildIncubationFormula(egg.incubator);
+  const incubator = await fetchIncubatorByName(egg.incubator);
+  const formula = buildIncubationFormula(incubator?.bonusDice);
   const roll = new Roll(formula);
   await roll.evaluate();
   await roll.toMessage({
@@ -172,7 +174,7 @@ function styleBlock() {
     </style>`;
 }
 
-function renderGmView(item, egg, hatchedActor) {
+function renderGmView(item, egg, hatchedActor, incubators) {
   const requirement = resolveRequirement(egg);
   const requirementDefault = defaultRequirementForSr(egg.sr);
   const state = deriveState(egg);
@@ -180,8 +182,9 @@ function renderGmView(item, egg, hatchedActor) {
   const srOptions = SR_OPTIONS.map((sr) =>
     `<option value="${sr}" ${sr === egg.sr ? "selected" : ""}>${sr}</option>`).join("");
   const incubatorOptions = `<option value="" ${!egg.incubator ? "selected" : ""}>Nenhuma</option>` +
-    Object.values(INCUBATORS).map((i) =>
-      `<option value="${i.key}" ${i.key === egg.incubator ? "selected" : ""}>${i.label}</option>`).join("");
+    (incubators.length ? incubators.map((i) =>
+      `<option value="${i.name}" ${i.name === egg.incubator ? "selected" : ""}>${i.name} (+${i.bonusDice})</option>`).join("")
+      : "");
 
   return `
     ${styleBlock()}
@@ -196,7 +199,7 @@ function renderGmView(item, egg, hatchedActor) {
         <div><label>Requisito padrão (SR)</label><span>${requirementDefault ?? "—"}</span></div>
         <div><label>Requisito personalizado</label><span>${Number.isFinite(egg.requirementCustom) ? egg.requirementCustom : "—"}</span></div>
         <div><label>Requisito atual</label><span>${requirement}</span></div>
-        <div><label>Incubadora</label><span>${egg.incubator ? INCUBATORS[egg.incubator].label : "Nenhuma"}</span></div>
+        <div><label>Incubadora</label><span>${egg.incubator || "Nenhuma"}</span></div>
         <div><label>Revelado ao jogador</label><span>${egg.revealed || egg.hatched ? "Sim" : "Não"}</span></div>
       </div>
 
@@ -213,6 +216,7 @@ function renderGmView(item, egg, hatchedActor) {
         <button type="button" data-action="reset-requirement">Restaurar padrão</button>
       </div>
       <div class="pmp-egg-row"><label>Incubadora</label><select data-field="incubator">${incubatorOptions}</select></div>
+      ${!incubators.length ? `<p class="pmp-egg-muted">Nenhuma Incubadora encontrada no compêndio "Recursos de Treinador".</p>` : ""}
       <div class="pmp-egg-actions"><button type="button" data-action="save-config">💾 Salvar alterações</button></div>
 
       <h3>Progresso manual</h3>
@@ -260,7 +264,7 @@ function renderPlayerView(item, egg) {
       <div class="pmp-egg-player-title">
         ${showSecrets ? `🥚 ${egg.species}${egg.shiny ? " ✨" : ""}` : "🥚 Ovo Pokémon"}
       </div>
-      <div class="pmp-egg-row"><label>Incubadora</label><span>${egg.incubator ? INCUBATORS[egg.incubator].label : "Nenhuma"}</span></div>
+      <div class="pmp-egg-row"><label>Incubadora</label><span>${egg.incubator || "Nenhuma"}</span></div>
       ${progressBar(egg.progress, requirement)}
       <div class="pmp-egg-row"><label>Estado</label>${stateBadge(state)}</div>
       ${showSecrets ? `<div class="pmp-egg-row"><label>SR</label><span>${egg.sr}</span></div>` : ""}
@@ -298,7 +302,8 @@ export class EggItemSheet extends foundry.applications.api.DocumentSheetV2 {
     const egg = getEgg(this.item);
     if (!game.user.isGM) return renderPlayerView(this.item, egg);
     const hatchedActor = egg.hatchedActorUuid ? await fromUuid(egg.hatchedActorUuid) : null;
-    return renderGmView(this.item, egg, hatchedActor);
+    const incubators = await listIncubators();
+    return renderGmView(this.item, egg, hatchedActor, incubators);
   }
 
   _replaceHTML(result, content) {

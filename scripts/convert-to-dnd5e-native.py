@@ -100,22 +100,6 @@ def save(path, doc):
 # Moves -> Items "feat" nativos com Activities
 # ---------------------------------------------------------------------------
 
-def best_ability_mod_formula(abilities):
-    """Quando o Move permite mais de um atributo (ex.: powerAbilities ['str','dex'] = FOR/DES do
-    livro), usa um dado-pool "mantenha o maior" do próprio Foundry sobre os mods crus dos
-    atributos possíveis — resultado final é sempre o maior mod entre eles. Cada elemento do
-    pool é uma única referência de roll-data (sem aritmética dentro do pool), que é a sintaxe
-    de dado-pool com suporte garantido do Foundry (a versão anterior somava a diferença via
-    "{0,@abilities.x.mod-@abilities.y.mod}kh1", mas o parser de dados não resolve essa
-    subtração de forma confiável dentro do pool e produzia valores errados)."""
-    abilities = [a for a in abilities if a]
-    if not abilities:
-        return ""
-    if len(abilities) == 1:
-        return f"@abilities.{abilities[0]}.mod"
-    return "{" + ",".join(f"@abilities.{a}.mod" for a in abilities) + "}kh1"
-
-
 def build_move_activity(pmp, move_name):
     """Constrói as Activities do dnd5e v4 a partir dos campos PMP do Move.
     Ataque ("Faça um ataque...") ou a mecânica "Role 1d20 + MOVE + N e compare com a defesa do
@@ -128,14 +112,17 @@ def build_move_activity(pmp, move_name):
     rolagem, em vez de perder uma delas. Status sem nenhuma rolagem (buffs em si mesmo, ex.
     Agility) vira activity utility (botão Usar), para nunca ficar sem nenhuma ação executável.
     O bônus de MOVE do PMP (melhor atributo + proficiência) equivale ao mod do atributo +
-    proficiência do dnd5e; quando o Move aceita só um atributo, o bônus de dano usa o mod dele
-    direto, e quando aceita mais de um (ex. FOR/DES), usa um dado-pool "mantenha o maior" sobre
-    os mods possíveis (best_ability_mod_formula) para sempre refletir o melhor dos dois."""
+    proficiência do dnd5e. Quando o Move do livro aceita mais de um atributo (ex. FOR/DES),
+    NÃO escolhemos automaticamente o maior — isso tirava a escolha do jogador. Em vez disso
+    a Activity usa "@mod" (a referência do próprio dnd5e pro atributo configurado na
+    Activity) tanto no ataque quanto no dano, e o campo "Ability" da Activity já vem
+    preenchido com o primeiro atributo listado no livro — o jogador pode trocar esse campo
+    (dropdown nativo do dnd5e, na própria ficha do Move) pra outro atributo válido a
+    qualquer momento, e ataque/dano/CD acompanham a troca juntos."""
     desc_plain = re.sub(r"<[^>]+>", " ", pmp.get("description", ""))
     base = pmp.get("damage", {}).get("baseFormula", "")
     power_abilities = pmp.get("powerAbilities") or []
     ability = power_abilities[0] if power_abilities else ""
-    best_mod = best_ability_mod_formula(power_abilities)
 
     activation_type = pmp.get("activation", {}).get("type", "action")
     if activation_type not in ("action", "bonus", "reaction"):
@@ -147,7 +134,7 @@ def build_move_activity(pmp, move_name):
         damage_part = {
             "number": int(m_dmg.group(1)),
             "denomination": int(m_dmg.group(2)),
-            "bonus": best_mod,
+            "bonus": "@mod",
             "types": []
         }
 
@@ -199,10 +186,7 @@ def build_move_activity(pmp, move_name):
         common = base_activity("save" if dual_attack_and_save else "act")
         save_ability = ABILITY_PT.get(m_save.group(1), "dex")
         on_save = "half" if re.search(r"metade d", desc_plain) else "none"
-        if len(power_abilities) > 1:
-            dc = {"calculation": "", "formula": f"8 + @prof + {best_mod}", "bonus": ""}
-        else:
-            dc = {"calculation": ability or "str", "formula": "", "bonus": ""}
+        dc = {"calculation": ability or "str", "formula": "", "bonus": ""}
         return common["_id"], {
             **common,
             "type": "save",
