@@ -5,6 +5,7 @@ import * as megaEvolution from "./combat/mega-evolution.mjs";
 import { registerSheetExtras } from "./sheet-extras.mjs";
 import { registerEggSheet } from "./apps/egg-sheet.mjs";
 import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
+import { openEggRollLog, refreshEggRollLogIfOpen } from "./apps/egg-roll-log.mjs";
 import { learnMove } from "./data/move-pack.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
@@ -30,29 +31,37 @@ Hooks.once("init", () => {
   registerSheetExtras();
   registerEggSheet();
 
-  globalThis.game.pmp = { capture, zMoves, megaEvolution, TYPES, eggs: { openCreateEggDialog } };
+  globalThis.game.pmp = {
+    capture, zMoves, megaEvolution, TYPES,
+    eggs: { openCreateEggDialog, openRollLog: openEggRollLog }
+  };
 });
 
 Hooks.once("ready", async () => {
   if (game.system.id !== "dnd5e") {
     ui.notifications.warn(game.i18n.localize("PMP.Warnings.RequiresDnd5e"));
   }
-  await ensureCreateEggMacro();
+  await ensureMacro("Criar Ovo Pokémon", "game.pmp.eggs.openCreateEggDialog();");
+  await ensureMacro("Log de Incubação de Ovos", "game.pmp.eggs.openRollLog();");
 });
 
-// Cria uma macro de conveniência pro Mestre abrir o diálogo de criação de ovo sem precisar
-// decorar o comando — só roda uma vez (idempotente: não recria se já existir uma com o
-// mesmo nome).
-async function ensureCreateEggMacro() {
+// Cria uma macro de conveniência pro Mestre sem precisar decorar o comando — só roda uma
+// vez (idempotente: não recria se já existir uma com o mesmo nome).
+async function ensureMacro(name, command) {
   if (!game.user.isGM) return;
-  const name = "Criar Ovo Pokémon";
   if (game.macros.find((m) => m.name === name)) return;
   await Macro.create({
-    name, type: "script", img: "icons/commodities/gems/pearl-storm.webp",
-    command: "game.pmp.eggs.openCreateEggDialog();",
+    name, type: "script", img: "icons/commodities/gems/pearl-storm.webp", command,
     flags: { [MODULE_ID]: { autoCreated: true } }
   });
 }
+
+// Mantém o Log de Rolagens de Incubação (se estiver aberto) sincronizado sempre que
+// qualquer ovo do mundo muda — sem isso, o Mestre precisaria fechar e abrir de novo depois
+// de cada rolagem pra ver a linha nova.
+Hooks.on("updateItem", (item) => {
+  if (item.getFlag(MODULE_ID, "egg")) refreshEggRollLogIfOpen();
+});
 
 // TM colocado na ficha de um Pokémon => o Pokémon aprende o Move automaticamente
 // (o Move correspondente é copiado do compêndio, com fórmula/PP/atividade prontos).
