@@ -106,8 +106,11 @@ realizar uma dessas ações especiais por batalha.</li>
 <li>Recebe STAB para golpes do Tera Tipo E dos tipos originais. Se o Tera Tipo coincidir
 com um tipo original, esse STAB é dobrado (mínimo de 1).</li>
 <li>Defensivamente, o Pokémon passa a ser considerado apenas do seu Tera Tipo.</li>
-<li>Moves de dano cujo dado máximo no nível 17 seja 30 ou menos passam a usar 2d6 (3d6 a
-partir do nível 5, 3d8 a partir do nível 10, 5d6 a partir do nível 17).</li>
+<li>Moves de dano do mesmo tipo que o Tera Tipo usados enquanto Terastalizado, cujo valor
+máximo dos dados de dano no nível 17 seja 30 ou menos, têm seus dados de dano alterados
+para 2d6, passando para 3d6 a partir do nível 5, 3d8 a partir do nível 10 e 5d6 a partir
+do nível 17. Este efeito não se aplica a Moves de golpes múltiplos, Moves de Prioridade ou
+Moves cujo dano varia de acordo com outros fatores.</li>
 <li>O Tera Tipo não pode ser alterado por Soak/Transform/Protean; Transform usado antes de
 Terastalizar não copia o Tera Tipo do oponente.</li>
 <li>Dura até o fim da batalha ou até o Pokémon desmaiar (como Mega Evolução).</li>
