@@ -8,7 +8,7 @@ const MODULE_ID = "pokemon-mundo-perfeito";
 
 /**
  * @param {object} egg Dados do ovo (species, shiny, ownerUserId).
- * @param {Actor|null} trainerActor Ator do Treinador dono do ovo, se houver (define a posse e a pasta do Pokémon novo).
+ * @param {Actor|null} trainerActor Ator do Treinador dono do ovo, se houver (define a posse do Pokémon novo).
  * @returns {Promise<{status: "created", actor: Actor}|{status: "species-not-found"|"permission-denied"}>}
  */
 export async function createHatchedActor(egg, trainerActor) {
@@ -32,10 +32,9 @@ export async function createHatchedActor(egg, trainerActor) {
   if (egg.ownerUserId) ownership[egg.ownerUserId] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
   data.ownership = ownership;
 
-  // Entra na mesma pasta do Treinador (ex.: "Jogadores/Luiz", com o Treinador e os
-  // Pokémon dele lado a lado) em vez de criar uma pasta nova — respeita a organização que
-  // o Mestre já tem, sem impor uma estrutura própria do módulo.
-  if (trainerActor?.folder) data.folder = trainerActor.folder.id;
+  // Não escolhe pasta sozinho — nasce na raiz do diretório de Actors, e o Mestre decide
+  // onde organizar (botão "📁 Mover para pasta" na ficha do ovo já chocado). Cada mesa
+  // organiza diferente; melhor deixar essa decisão manual e explícita.
 
   try {
     const actor = await Actor.create(data);

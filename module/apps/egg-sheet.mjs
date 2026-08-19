@@ -102,6 +102,21 @@ function progressBar(progress, requirement) {
     </div>`;
 }
 
+function folderPath(folder) {
+  const parts = [folder.name];
+  for (let f = folder.folder; f; f = f.folder) parts.unshift(f.name);
+  return parts.join(" / ");
+}
+
+function folderOptions(selectedId) {
+  const folders = game.folders.filter((f) => f.type === "Actor")
+    .map((f) => ({ id: f.id, path: folderPath(f) }))
+    .sort((a, b) => a.path.localeCompare(b.path, "pt-BR"));
+  const rootOption = `<option value="" ${!selectedId ? "selected" : ""}>— Raiz (sem pasta) —</option>`;
+  return rootOption + folders.map((f) =>
+    `<option value="${f.id}" ${f.id === selectedId ? "selected" : ""}>${f.path}</option>`).join("");
+}
+
 function stateBadge(stateKey) {
   const label = EGG_STATES[stateKey]?.label ?? stateKey;
   return `<span class="pmp-egg-badge pmp-egg-badge--${stateKey}">${label}</span>`;
@@ -157,7 +172,7 @@ function styleBlock() {
     </style>`;
 }
 
-function renderGmView(item, egg) {
+function renderGmView(item, egg, hatchedActor) {
   const requirement = resolveRequirement(egg);
   const requirementDefault = defaultRequirementForSr(egg.sr);
   const state = deriveState(egg);
@@ -222,6 +237,13 @@ function renderGmView(item, egg) {
         <button type="button" data-action="egg-moves" ${egg.hatchedActorUuid ? "" : "disabled"}>🧬 Egg Moves</button>
       </div>` : ""}
 
+      ${egg.hatchedActorUuid ? `
+      <div class="pmp-egg-row">
+        <label>Pasta do Pokémon</label>
+        <select data-field="folderId">${folderOptions(hatchedActor?.folder?.id ?? null)}</select>
+        <button type="button" data-action="move-folder">📁 Mover</button>
+      </div>` : ""}
+
       <h3>Histórico de Incubação</h3>
       ${historyList(egg.history)}
     </div>`;
@@ -274,7 +296,9 @@ export class EggItemSheet extends foundry.applications.api.DocumentSheetV2 {
 
   async _renderHTML(_context, _options) {
     const egg = getEgg(this.item);
-    return game.user.isGM ? renderGmView(this.item, egg) : renderPlayerView(this.item, egg);
+    if (!game.user.isGM) return renderPlayerView(this.item, egg);
+    const hatchedActor = egg.hatchedActorUuid ? await fromUuid(egg.hatchedActorUuid) : null;
+    return renderGmView(this.item, egg, hatchedActor);
   }
 
   _replaceHTML(result, content) {
@@ -363,6 +387,19 @@ export class EggItemSheet extends foundry.applications.api.DocumentSheetV2 {
         return;
       }
       openEggMovesDialog(actor, eggMoves);
+    });
+
+    root.querySelector('[data-action="move-folder"]')?.addEventListener("click", async () => {
+      const egg = getEgg(item);
+      const actor = egg.hatchedActorUuid ? await fromUuid(egg.hatchedActorUuid) : null;
+      if (!actor) {
+        ui.notifications.warn("Não foi possível encontrar o Actor deste Pokémon (pode ter sido excluído).");
+        return;
+      }
+      const folderId = readField("folderId").value || null;
+      await actor.update({ folder: folderId });
+      ui.notifications.info(`${actor.name} movido.`);
+      this.render();
     });
   }
 }
