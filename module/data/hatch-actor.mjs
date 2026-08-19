@@ -6,17 +6,9 @@ import { fetchSpeciesDocument } from "./pokedex-lookup.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
-async function ensureTrainerFolder(trainerName) {
-  if (!trainerName) return null;
-  const name = `Equipe de ${trainerName}`;
-  const existing = game.folders.find((f) => f.type === "Actor" && f.name === name);
-  if (existing) return existing;
-  return Folder.create({ name, type: "Actor", color: "#6b8f47" });
-}
-
 /**
  * @param {object} egg Dados do ovo (species, shiny, ownerUserId).
- * @param {Actor|null} trainerActor Ator do Treinador dono do ovo, se houver (só usado pro nome da pasta).
+ * @param {Actor|null} trainerActor Ator do Treinador dono do ovo, se houver (define a posse e a pasta do Pokémon novo).
  * @returns {Promise<{status: "created", actor: Actor}|{status: "species-not-found"|"permission-denied"}>}
  */
 export async function createHatchedActor(egg, trainerActor) {
@@ -40,8 +32,10 @@ export async function createHatchedActor(egg, trainerActor) {
   if (egg.ownerUserId) ownership[egg.ownerUserId] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
   data.ownership = ownership;
 
-  const folder = await ensureTrainerFolder(trainerActor?.name);
-  if (folder) data.folder = folder.id;
+  // Entra na mesma pasta do Treinador (ex.: "Jogadores/Luiz", com o Treinador e os
+  // Pokémon dele lado a lado) em vez de criar uma pasta nova — respeita a organização que
+  // o Mestre já tem, sem impor uma estrutura própria do módulo.
+  if (trainerActor?.folder) data.folder = trainerActor.folder.id;
 
   try {
     const actor = await Actor.create(data);
