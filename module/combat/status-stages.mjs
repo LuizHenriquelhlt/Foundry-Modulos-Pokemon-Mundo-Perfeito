@@ -1,13 +1,16 @@
 // Mudanças de Status (Livro de Regras, pág. 71): 8 estágios acumuláveis de -6 a +6, cada um
 // com um efeito fixo por estágio. Cada atributo alterado vira seu PRÓPRIO ActiveEffect
 // (transfer:false, recriado a cada mudança), com um selo próprio (verde pra estágio
-// positivo, vermelho pra negativo, mostrando a sigla do atributo e o valor do estágio) —
-// assim cada um aparece separado no token, com o número visível, em vez de um ícone
-// genérico só avisando "tem algo ativo". Os 96 selos (8 atributos × estágios -6..+6, sem o
-// zero) são arquivos .svg estáticos em assets/stages/ — o schema do dnd5e valida que "img"
-// termine numa extensão de arquivo reconhecida, então um data URI gerado na hora (testado e
-// rejeitado: "does not have a valid file extension") não funciona; os arquivos existem de
-// antemão pra cobrir todas as combinações possíveis.
+// positivo, vermelho pra negativo, só o número — sem a sigla do atributo dentro do desenho:
+// o ícone do token renderiza bem pequeno de verdade na tela, e sigla+número juntos viravam
+// uma mancha ilegível nesse tamanho; a sigla continua no NOME do efeito, "Ataque +1", visível
+// ao passar o mouse no ícone). Assim cada atributo alterado aparece como selo separado no
+// token, em vez de um ícone genérico só avisando "tem algo ativo". Os 96 selos (8 atributos
+// × estágios -6..+6, sem o zero) são arquivos .svg estáticos em assets/stages/ (gerados por
+// scripts/generate-stage-icons.mjs) — o schema do dnd5e valida que "img" termine numa
+// extensão de arquivo reconhecida, então um data URI gerado na hora (testado e rejeitado:
+// "does not have a valid file extension") não funciona; os arquivos existem de antemão pra
+// cobrir todas as combinações possíveis.
 //
 // Nem todo estágio tem um "bônus" no sentido de Active Effect do dnd5e:
 // - Ataque/Ataque Especial: bônus de proficiência × estágio, só que separado por dano
@@ -26,14 +29,14 @@
 const MODULE_ID = "pokemon-mundo-perfeito";
 
 export const STAGE_STATS = [
-  { key: "atk", label: "Ataque", short: "ATQ" },
-  { key: "spa", label: "Atq. Esp.", short: "AES" },
-  { key: "def", label: "Defesa", short: "DEF" },
-  { key: "spd", label: "Def. Esp.", short: "DES" },
-  { key: "spe", label: "Velocidade", short: "VEL" },
-  { key: "acc", label: "Precisão", short: "PRE" },
-  { key: "eva", label: "Evasão", short: "EVA" },
-  { key: "crit", label: "Marg. Crítico", short: "CRI" }
+  { key: "atk", label: "Ataque" },
+  { key: "spa", label: "Atq. Esp." },
+  { key: "def", label: "Defesa" },
+  { key: "spd", label: "Def. Esp." },
+  { key: "spe", label: "Velocidade" },
+  { key: "acc", label: "Precisão" },
+  { key: "eva", label: "Evasão" },
+  { key: "crit", label: "Marg. Crítico" }
 ];
 
 export function getStages(actor) {

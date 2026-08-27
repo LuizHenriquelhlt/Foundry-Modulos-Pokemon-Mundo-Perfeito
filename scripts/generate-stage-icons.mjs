@@ -4,8 +4,8 @@
 // termine numa extensão de arquivo reconhecida — testado e confirmado com o erro real do
 // Foundry: "[ActiveEffect5e] validation errors: img does not have a valid file extension".
 //
-// Reaproveita STAGE_STATS (sigla de cada atributo) do próprio módulo em vez de duplicar a
-// lista aqui. Idempotente — sobrescreve os mesmos 96 arquivos toda vez.
+// Reaproveita as chaves de STAGE_STATS do próprio módulo em vez de duplicar a lista aqui.
+// Idempotente — sobrescreve os mesmos 96 arquivos toda vez.
 // Uso: node scripts/generate-stage-icons.mjs
 import fs from "node:fs";
 import path from "node:path";
@@ -15,14 +15,17 @@ import { STAGE_STATS } from "../module/combat/status-stages.mjs";
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const OUT = path.join(ROOT, "assets", "stages");
 
-function svgFor(short, value) {
+// Tokens renderizam o ícone do efeito bem pequeno (20-30px de verdade na tela, mesmo que o
+// SVG fonte seja 100x100) — sigla + número juntos (versão anterior) viravam uma mancha
+// ilegível nesse tamanho. Só o número, gigante, ocupando quase todo o selo: continua
+// legível de longe. A sigla do atributo já está no nome do efeito ("Ataque +1"), visível ao
+// passar o mouse no ícone do token, então não precisa repetir dentro do desenho.
+function svgFor(value) {
   const color = value > 0 ? "#2b9e4f" : "#b0413e";
   const text = `${value > 0 ? "+" : ""}${value}`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">`
     + `<rect width="100" height="100" rx="14" fill="${color}"/>`
-    + `<text x="50" y="40" font-size="24" font-family="sans-serif" font-weight="700" `
-    + `fill="#fff" text-anchor="middle">${short}</text>`
-    + `<text x="50" y="80" font-size="36" font-family="sans-serif" font-weight="900" `
+    + `<text x="50" y="72" font-size="64" font-family="sans-serif" font-weight="900" `
     + `fill="#fff" text-anchor="middle">${text}</text>`
     + `</svg>`;
 }
@@ -34,10 +37,10 @@ function fileName(key, value) {
 
 fs.mkdirSync(OUT, { recursive: true });
 let n = 0;
-for (const { key, short } of STAGE_STATS) {
+for (const { key } of STAGE_STATS) {
   for (let v = -6; v <= 6; v++) {
     if (v === 0) continue;
-    fs.writeFileSync(path.join(OUT, fileName(key, v)), svgFor(short, v), "utf-8");
+    fs.writeFileSync(path.join(OUT, fileName(key, v)), svgFor(v), "utf-8");
     n++;
   }
 }
