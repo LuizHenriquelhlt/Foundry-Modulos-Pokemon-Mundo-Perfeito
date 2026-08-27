@@ -109,6 +109,15 @@ function buildPanel(actor) {
   const inspired = actor.getFlag(MODULE_ID, "inspiration") ?? false;
   const xp = actor.getFlag(MODULE_ID, "xp") ?? current;
   const hd = actor.system.attributes.hd;
+  // Isolado num try/catch próprio: é o pedaço mais novo/arriscado do painel, e um erro aqui
+  // não pode derrubar Inspiração/XP/Dado de Vida/Mudança de Status junto — melhor mostrar o
+  // painel sem o selo de tipo do que não mostrar nada.
+  let typeBadges = "";
+  try {
+    typeBadges = typeBadgeHtml(actor);
+  } catch (err) {
+    console.error(`${MODULE_ID} | Falha ao montar o selo de tipo`, err);
+  }
 
   const panel = document.createElement("div");
   panel.className = "pmp-sheet-panel";
@@ -156,7 +165,7 @@ function buildPanel(actor) {
       <span class="pmp-hd-label">Dado de Vida: ${hd.value}/${hd.max} d${hd.denomination}
         <a class="pmp-hd-roll" role="button" title="Rolar Dado de Vida">🎲 Rolar</a>
       </span>
-      ${typeBadgeHtml(actor)}
+      ${typeBadges}
     </div>
     ${stageRowHtml(actor)}
   `;
@@ -172,7 +181,7 @@ function buildPanel(actor) {
       await stepStage(actor, key, Number(delta));
     });
   });
-  panel.querySelector(".pmp-stage-reset").addEventListener("click", () => clearStages(actor));
+  panel.querySelector(".pmp-stage-reset")?.addEventListener("click", () => clearStages(actor));
 
   return panel;
 }

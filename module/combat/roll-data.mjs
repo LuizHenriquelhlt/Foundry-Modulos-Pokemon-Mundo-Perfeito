@@ -14,10 +14,17 @@ export function registerRollDataExtension() {
 
   ActorClass.prototype.getRollData = function (options) {
     const data = original.call(this, options);
-    if (this.type === "npc" && this.getFlag(MODULE_ID, "species")) {
-      const stages = getStages(this);
-      data.pmpAtkStage = stages.atk;
-      data.pmpSpaStage = stages.spa;
+    // getRollData é chamado o tempo todo (qualquer fórmula do sistema, incluindo durante a
+    // própria preparação de dados do Actor, antes de qualquer sheet ou HUD aparecer) — um
+    // erro aqui dentro não pode vazar pra fora e quebrar esse cálculo pro resto do dnd5e.
+    try {
+      if (this.type === "npc" && this.getFlag(MODULE_ID, "species")) {
+        const stages = getStages(this);
+        data.pmpAtkStage = stages.atk;
+        data.pmpSpaStage = stages.spa;
+      }
+    } catch (err) {
+      console.error(`${MODULE_ID} | Falha ao calcular pmpAtkStage/pmpSpaStage`, err);
     }
     return data;
   };

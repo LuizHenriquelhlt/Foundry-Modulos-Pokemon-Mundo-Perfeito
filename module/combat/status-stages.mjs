@@ -1,56 +1,34 @@
 // Mudanças de Status (Livro de Regras, pág. 71): 8 estágios acumuláveis de -6 a +6.
 //
-// Até a v1.19 este módulo tentava interceptar o clique no HUD do Token via um hook
-// "applyTokenStatusEffect" pra rodar a própria lógica de estágio por cima — só que esse
-// hook não existe nesse ponto do fluxo real do dnd5e (conferido lendo o código-fonte:
-// module/applications/hud/token-hud.mjs). O clique no HUD do dnd5e vai direto pra
-// TokenHUD5e#onToggleEffect -> actor.toggleStatusEffect(id, {levels}) -> quando o status
-// tem "levels" configurado, ConditionData._applyDelta cria/incrementa/decrementa/remove um
-// ActiveEffect do tipo "condition" sozinho, sem chamar nenhum hook nosso — por isso nada
-// acontecia (o efeito "bonito" com tint que a v1.19 criava simplesmente nunca era o mesmo
-// que o dnd5e usa pra decidir o que mostrar).
+// HISTÓRICO — pra não cair no mesmo buraco uma terceira vez:
+// - v1.19 tentava interceptar o clique no HUD do Token via um hook "applyTokenStatusEffect"
+//   que não existe em nenhuma versão real do dnd5e — nunca disparava.
+// - v1.20/v1.21 tentaram usar um mecanismo de "condição com nível" (CONFIG.DND5E.
+//   conditionTypes[id].levels + ConditionData/_applyDelta, do jeito que a Exaustão parece
+//   funcionar) — só que essa pesquisa foi feita direto no branch de DESENVOLVIMENTO do dnd5e
+//   no GitHub, que fica na FRENTE do que está de fato lançado. Conferido depois contra a tag
+//   real "release-5.3.3" (a versão que este mundo roda de verdade — "system:dnd5e(5.3.3)"
+//   no erro que apareceu uma vez): esse mecanismo genérico simplesmente NÃO EXISTE nela.
+//   Em 5.3.3, Exaustão é tratada por código só dela, sem nenhum gancho reaproveitável por
+//   um módulo de fora (module/documents/active-effect.mjs#_prepareExhaustionLevel e
+//   #_manageExhaustion nessa tag são bem diferentes do ConditionData genérico que só existe
+//   no branch principal). "levels" no CONFIG era só um campo extra ignorado, e
+//   Actor#toggleStatusEffect em 5.3.3 (module/documents/actor/actor.mjs) é só um liga/desliga
+//   simples baseado em existência — sem NENHUM suporte a incremento.
 //
-// A v1.20 usa o MESMO mecanismo nativo que o dnd5e já usa pra Exaustão — uma condição de 1
-// a 6 níveis, com ícone próprio por nível (module/data/active-effect/condition.mjs:
-// ConditionData#getIconByLevel sempre troca a imagem pra "<base>-<nível>.<ext>", por isso
-// os SVGs em assets/stages/ existem numerados de 1 a 6, gerados por
-// scripts/generate-stage-icons.mjs). Cada direção (Ataque ↑ / Ataque ↓ etc.) é registrada
-// como sua própria condição com "levels: 6" em CONFIG.DND5E.conditionTypes — o dnd5e cuida
-// sozinho de criar/incrementar/decrementar/remover o efeito ao clicar no HUD (botão esquerdo
-// = +1 nível, botão direito = -1, igual Exaustão), inclusive aparecer selecionado/destacado
-// na grade e visível no token, sem nenhum código nosso no meio do clique.
-//
-// Como uma condição do dnd5e só cresce num sentido, um estágio bidirecional -6..+6 precisa
-// de duas condições independentes por atributo ("-up"/"-down"), mantidas mutuamente
-// exclusivas por este módulo (reage a qualquer uma mudar e zera a oposta), mais um terceiro
-// efeito "mecânico" próprio — sem vínculo com o HUD, invisível no token — que carrega os
-// "changes" de bônus de fato. Os três ficam sincronizados via hooks reativos
-// (createActiveEffect/updateActiveEffect/deleteActiveEffect) sempre que qualquer um muda,
-// seja pelo HUD do Token ou pelos botões +/- da própria ficha (que chamam o mesmíssimo
-// Actor#toggleStatusEffect nativo, não uma lógica própria separada).
-//
-// Nem todo estágio tem um "bônus" no sentido de Active Effect do dnd5e:
-// - Ataque/Ataque Especial NÃO usam Active Effect — o bônus (prof × estágio) já vem embutido
-//   na fórmula de dano de cada Move (@pmpAtkStage/@pmpSpaStage — ver roll-data.mjs e
-//   scripts/convert-to-dnd5e-native.py), porque o bônus global do dnd5e por classificação de
-//   ataque (mwak/rwak) só existe pra Moves com activity "attack" — não alcança Moves com
-//   activity "save" (teste de resistência), que são a maioria dos Moves "especiais" deste
-//   sistema. A fórmula embutida no Move funciona pros dois tipos de activity igual.
-// - Precisão: +1/estágio nas rolagens de ataque — system.rolls.attack.mwak.bonus / rwak.bonus.
-// - Evasão: +1/estágio na CA e nos testes de resistência — system.attributes.ac.bonus e
-//   system.rolls.ability.save.bonus (bônus global de resistência).
-// - Velocidade: iniciativa em prof×estágio (system.attributes.init.roll.bonus, via "@prof") +
-//   5 pés por estágio em todo tipo de deslocamento (system.attributes.movement.speeds.*).
-// - Defesa/Defesa Especial (redução de dano recebido) e Margem de Crítico não têm uma
-//   chave de Active Effect confirmada no dnd5e pra automatizar com segurança — ficam só
-//   como registro visível (nome do efeito) e no painel da ficha.
-//
-// system.bonuses.*/system.attributes.init.bonus/system.attributes.movement.<nome> (sem
-// "speeds.") são os nomes ANTIGOS desses mesmos campos — o dnd5e ainda os aceita hoje via um
-// "shim" de compatibilidade (ActiveEffect5e#_applyChangeShim, module/documents/active-
-// effect.mjs, redireciona pro nome novo sozinho), mas esse tipo de shim costuma ser removido
-// depois de algumas versões — por isso os "changes" abaixo já usam os nomes atuais
-// diretamente, sem depender do redirecionamento.
+// Desenho atual (v1.22, conferido contra a tag release-5.3.3, não o branch principal): cada
+// direção (Ataque ↑ / Ataque ↓ etc.) é registrada em CONFIG.DND5E.conditionTypes só pra
+// aparecer com o ícone certo na grade do HUD do Token — sem "levels" (não faz nada nessa
+// versão). O módulo mesmo cuida de tudo o resto: um hook "preCreateActiveEffect" (esse sim
+// um hook padrão e estável do próprio Foundry, não algo específico de uma versão do dnd5e)
+// cancela a criação "crua" que o Foundry faria sozinho ao clicar no HUD (sem os nossos
+// "changes" e sem o ícone certo do estágio) e cria um efeito PRÓPRIO completo no lugar —
+// ligando aquela direção em magnitude 1, exatamente como Envenenado/Agarrado (um clique liga,
+// outro desliga — isso último já acontece sozinho, porque nessa hora o Foundry vê o efeito
+// existente de verdade e apaga ele direto, sem passar pelo hook). Estágios 2-6 só dá pra
+// alcançar pelos botões +/- da própria ficha, que gerenciam esse mesmo efeito diretamente
+// (create/update/delete na mão — sem depender de toggleStatusEffect, que não incrementa nada
+// nessa versão do dnd5e).
 const MODULE_ID = "pokemon-mundo-perfeito";
 
 export const STAGE_STATS = [
@@ -68,8 +46,12 @@ function conditionId(key, direction) {
   return `${MODULE_ID}-${key}-${direction}`;
 }
 
-function iconPath(key, direction) {
+function baseIconPath(key, direction) {
   return `modules/${MODULE_ID}/assets/stages/${key}-${direction}.svg`;
+}
+
+function leveledIconPath(key, direction, level) {
+  return `modules/${MODULE_ID}/assets/stages/${key}-${direction}-${level}.svg`;
 }
 
 function parseConditionId(statusId) {
@@ -83,18 +65,19 @@ function parseConditionId(statusId) {
   return { key, direction };
 }
 
-function conditionEffect(actor, statusId) {
-  return actor.effects.find((e) => e.type === "condition" && e.system?.type === statusId);
+function findStageEffect(actor, key, direction) {
+  return actor.effects.find((e) =>
+    e.getFlag(MODULE_ID, "stageKey") === key && e.getFlag(MODULE_ID, "stageDirection") === direction);
 }
 
-function conditionLevel(actor, statusId) {
-  return conditionEffect(actor, statusId)?.system?.level ?? 0;
+function stageValue(actor, key, direction) {
+  return findStageEffect(actor, key, direction)?.getFlag(MODULE_ID, "stageValue") ?? 0;
 }
 
 export function getStages(actor) {
   const stages = {};
   for (const { key } of STAGE_STATS) {
-    stages[key] = conditionLevel(actor, conditionId(key, "up")) - conditionLevel(actor, conditionId(key, "down"));
+    stages[key] = stageValue(actor, key, "up") - stageValue(actor, key, "down");
   }
   return stages;
 }
@@ -102,21 +85,19 @@ export function getStages(actor) {
 function changesFor(key, value) {
   const add = (k, v) => (v ? [{ key: k, mode: 2, value: String(v), priority: null }] : []);
   switch (key) {
-    // Ataque/Atq. Especial NÃO entram mais aqui — o bônus de dano deles já vem embutido na
-    // própria fórmula de cada Move (@pmpAtkStage/@pmpSpaStage, ver scripts/convert-to-dnd5e-
-    // native.py e module/combat/roll-data.mjs), porque o bônus global do dnd5e usado antes
-    // (bonuses.mwak/rwak.damage) só alcança Moves com activity "attack" — não faz nada pros
-    // Moves com activity "save" (a maioria dos Moves "especiais" deste sistema, que usam
-    // teste de resistência em vez de rolagem de ataque). A fórmula embutida no Move funciona
-    // pros dois tipos de activity igual.
+    // Ataque/Atq. Especial não entram aqui — o bônus deles já vem embutido direto na
+    // fórmula de dano de cada Move (@pmpAtkStage/@pmpSpaStage, ver roll-data.mjs e scripts/
+    // convert-to-dnd5e-native.py): o bônus global do dnd5e por classificação de ataque
+    // (mwak/rwak) só existe pra Moves com activity "attack" — não alcança os com activity
+    // "save" (a maioria dos Moves "especiais" deste sistema).
     case "acc":
-      return [...add("system.rolls.attack.mwak.bonus", value), ...add("system.rolls.attack.rwak.bonus", value)];
+      return [...add("system.bonuses.mwak.attack", value), ...add("system.bonuses.rwak.attack", value)];
     case "eva":
-      return [...add("system.attributes.ac.bonus", value), ...add("system.rolls.ability.save.bonus", value)];
+      return [...add("system.attributes.ac.bonus", value), ...add("system.bonuses.abilities.save", value)];
     case "spe": {
-      const changes = add("system.attributes.init.roll.bonus", `${value} * @prof`);
+      const changes = add("system.attributes.init.bonus", `${value} * @prof`);
       for (const move of ["walk", "swim", "fly", "climb", "burrow"]) {
-        changes.push(...add(`system.attributes.movement.speeds.${move}`, value * 5));
+        changes.push(...add(`system.attributes.movement.${move}`, value * 5));
       }
       return changes;
     }
@@ -125,53 +106,37 @@ function changesFor(key, value) {
   }
 }
 
-// Efeito próprio que carrega os "changes" de bônus de verdade — sem "statuses", então não
-// aparece por conta própria no token (a arte/seleção no HUD já vêm do efeito nativo de
-// condição "-up"/"-down"; ter os dois com "statuses" duplicaria o ícone no token).
-async function syncMechanicalEffect(actor, key) {
-  const value = getStages(actor)[key];
-  const meta = STAGE_STATS.find((s) => s.key === key);
-  const existing = actor.effects.find((e) => e.getFlag(MODULE_ID, "mechKey") === key);
-  if (value === 0) {
+// Cria/atualiza/apaga o efeito de UMA direção (ex.: só "atk"+"up") pra bater com a magnitude
+// pedida (0-6) — sempre o mesmo efeito, sem um segundo efeito "mecânico" separado: agora que
+// o módulo cria o efeito inteiro na mão (em vez de deixar o Foundry criar um cru e completar
+// depois), dá pra já nascer com ícone do nível certo, "statuses" (aparece selecionado na
+// grade do HUD e visível no token) e "changes" (bônus mecânico) tudo junto.
+async function setStageEffect(actor, key, direction, value) {
+  const clamped = Math.max(0, Math.min(6, value));
+  const existing = findStageEffect(actor, key, direction);
+  if (clamped === 0) {
     if (existing) await existing.delete();
     return;
   }
+
+  const meta = STAGE_STATS.find((s) => s.key === key);
+  const signed = direction === "up" ? clamped : -clamped;
   const data = {
-    name: `${meta.label} ${value > 0 ? "+" : ""}${value}`,
-    img: iconPath(key, value > 0 ? "up" : "down"),
-    changes: changesFor(key, value),
+    name: `${meta.label} ${direction === "up" ? "+" : "-"}${clamped}`,
+    img: leveledIconPath(key, direction, clamped),
+    changes: changesFor(key, signed),
     disabled: false,
     transfer: false,
-    flags: { [MODULE_ID]: { mechKey: key } }
+    statuses: [conditionId(key, direction)],
+    flags: { [MODULE_ID]: { stageKey: key, stageDirection: direction, stageValue: clamped } }
   };
   if (existing) await existing.update(data);
   else await actor.createEmbeddedDocuments("ActiveEffect", [data]);
 }
 
-// Só chega a coexistir "-up" e "-down" ao mesmo tempo clicando os dois separadamente no HUD
-// do Token (os botões da própria ficha nunca deixam isso acontecer, ver stepStage) — quando
-// isso acontece, a direção que acabou de mudar vence e a oposta é zerada.
-async function enforceExclusive(actor, touchedId) {
-  const info = parseConditionId(touchedId);
-  if (!info) return;
-  const opposite = conditionEffect(actor, conditionId(info.key, info.direction === "up" ? "down" : "up"));
-  if (opposite) await opposite.delete();
-}
-
-async function onStatusEffectTouched(effect, { deleted = false } = {}) {
-  if (effect?.type !== "condition") return;
-  const info = parseConditionId(effect.system?.type);
-  const actor = effect.parent;
-  if (!info || actor?.documentName !== "Actor") return;
-
-  if (!deleted) await enforceExclusive(actor, effect.system.type);
-  await syncMechanicalEffect(actor, info.key);
-}
-
-// Chamado pelos botões +/- da própria ficha — dá um passo de ±1 no estágio (-6..+6) usando
-// o MESMO caminho nativo que um clique no HUD do Token usaria (Actor#toggleStatusEffect com
-// "levels"), então o efeito nativo de condição, o efeito mecânico e o HUD ficam sempre
-// sincronizados não importa por onde o Mestre mexeu no estágio.
+// Botões +/- da própria ficha: dá um passo de ±1 no estágio (-6..+6), gerenciando o efeito
+// direto (não dá pra usar Actor#toggleStatusEffect pra incrementar — no dnd5e 5.3.3 esse
+// método é só um liga/desliga por existência, sem nenhum conceito de "nível").
 export async function stepStage(actor, key, delta) {
   const step = Math.sign(delta);
   if (!step) return;
@@ -179,17 +144,14 @@ export async function stepStage(actor, key, delta) {
   const target = Math.max(-6, Math.min(6, current + step));
   if (target === current) return;
 
-  const direction = (target || current) > 0 ? "up" : "down";
-  const magnitudeGrew = Math.abs(target) > Math.abs(current);
-  await actor.toggleStatusEffect(conditionId(key, direction), { levels: magnitudeGrew ? 1 : -1 });
+  await setStageEffect(actor, key, "up", target > 0 ? target : 0);
+  await setStageEffect(actor, key, "down", target < 0 ? -target : 0);
 }
 
 export async function clearStages(actor) {
   for (const { key } of STAGE_STATS) {
-    for (const direction of ["up", "down"]) {
-      const effect = conditionEffect(actor, conditionId(key, direction));
-      if (effect) await effect.delete();
-    }
+    await setStageEffect(actor, key, "up", 0);
+    await setStageEffect(actor, key, "down", 0);
   }
 }
 
@@ -198,18 +160,36 @@ export async function clearStages(actor) {
 // — nosso hook "init" roda antes disso, então empilhar direto em CONFIG.statusEffects.push(...)
 // (como se fosse um array puro do Foundry) simplesmente desaparecia quando o "setup" do dnd5e
 // sobrescrevia o array inteiro logo em seguida. O jeito certo é registrar em
-// CONFIG.DND5E.conditionTypes (mesmo lugar que o módulo "(pk5e)" usa e que o próprio dnd5e usa
-// pra Exaustão) — o dnd5e lê isso durante o "setup" dele e monta o CONFIG.statusEffects final
-// incluindo essas entradas, "levels" e tudo.
+// CONFIG.DND5E.conditionTypes (mesmo lugar que o módulo "(pk5e)" usa) — o dnd5e lê isso
+// durante o "setup" dele e monta o CONFIG.statusEffects final incluindo essas entradas.
 export function registerStatusEffects() {
   for (const { key, label } of STAGE_STATS) {
     CONFIG.DND5E.conditionTypes[conditionId(key, "up")] =
-      { name: `${label} ↑`, img: iconPath(key, "up"), levels: 6, pseudo: true };
+      { name: `${label} ↑`, img: baseIconPath(key, "up"), pseudo: true };
     CONFIG.DND5E.conditionTypes[conditionId(key, "down")] =
-      { name: `${label} ↓`, img: iconPath(key, "down"), levels: 6, pseudo: true };
+      { name: `${label} ↓`, img: baseIconPath(key, "down"), pseudo: true };
   }
 
-  Hooks.on("createActiveEffect", (effect) => onStatusEffectTouched(effect));
-  Hooks.on("updateActiveEffect", (effect) => onStatusEffectTouched(effect));
-  Hooks.on("deleteActiveEffect", (effect) => onStatusEffectTouched(effect, { deleted: true }));
+  // Clique no HUD do Token cria um ActiveEffect "cru" (só o que está registrado em
+  // CONFIG.statusEffects — sem "changes", sem ícone por nível). "preCreateActiveEffect" é um
+  // hook padrão do próprio Foundry (não específico de nenhuma versão do dnd5e): cancela essa
+  // criação padrão (return false) e cria um efeito próprio completo no lugar. O handler
+  // precisa ser SÍNCRONO — Hooks.call olha o valor de retorno na hora pra decidir se cancela;
+  // se o handler fosse "async", o retorno seria sempre uma Promise (nunca "=== false"), e a
+  // criação padrão nunca seria cancelada de verdade. Por isso o trabalho de verdade
+  // (setStageEffect) roda à parte, sem o hook esperar por ele.
+  Hooks.on("preCreateActiveEffect", (effect, data) => {
+    if (data.flags?.[MODULE_ID]?.stageKey) return true; // já é nosso (criado por setStageEffect)
+    const statusId = data.statuses?.[0];
+    const info = parseConditionId(statusId);
+    if (!info) return true;
+    const actor = effect.parent;
+    if (actor?.documentName !== "Actor") return true;
+
+    const opposite = info.direction === "up" ? "down" : "up";
+    setStageEffect(actor, info.key, opposite, 0)
+      .then(() => setStageEffect(actor, info.key, info.direction, 1))
+      .catch((err) => console.error(`${MODULE_ID} | Falha ao ligar ${statusId} pelo HUD do Token`, err));
+    return false;
+  });
 }
