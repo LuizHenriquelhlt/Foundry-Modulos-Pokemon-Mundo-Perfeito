@@ -1,17 +1,46 @@
 /**
  * Pokémon type effectiveness (Gen 6+ chart, 18 types incl. Fairy — matches Gen 1-9 coverage of PMP).
  *
- * Kept as our own CONFIG.PMP.types namespace rather than remapped onto CONFIG.DND5E.damageTypes:
- * dnd5e's damage types (acid, bludgeoning, fire, ...) are a fixed, differently-shaped set used by
- * every other dnd5e module/system content in the same world. Overwriting it with 18 Pokémon types
- * would corrupt damage typing for anything non-Pokémon sharing the world. Instead, type effectiveness
- * is applied explicitly when resolving a Move's damage (see combat/moves.mjs, added in a later phase).
+ * O cálculo de efetividade (getTypeMultiplier) usa nosso próprio CONFIG.PMP.types/typeEffectiveness,
+ * não os 13 tipos de dano nativos do dnd5e (acid, bludgeoning, fire...) — a tabela de efetividade
+ * Pokémon (fraquezas x4, imunidades, etc.) não tem equivalente no sistema padrão de resistência do
+ * dnd5e, então essa conta continua sendo feita à parte na resolução do dano do Move.
+ *
+ * Só o REGISTRO de cada tipo em CONFIG.DND5E.damageTypes (registerDamageTypes) usa o dnd5e nativo —
+ * necessário pra Moves conseguirem marcar seu "types" na Activity de dano (aparece no dropdown da
+ * própria ficha do Move, mostra o ícone certo na aba de Ataques). Cada tipo usa uma chave própria
+ * com prefixo "pmp" (pmpFire, pmpWater, ...) em vez de reaproveitar os 3 nomes que colidem com tipos
+ * nativos do D&D (fire/poison/psychic) — mantém todos os 18 tipos com o mesmo padrão de chave, e
+ * evita que Resistência a Fogo/Veneno/Psíquico de conteúdo não-Pokémon afete Moves Pokémon por
+ * engano (o inverso também: fraqueza a Fogo de um Pokémon não empresta a semântica de dano de fogo
+ * do D&D). Mesmo padrão do módulo "(pk5e)" que já convive no mesmo mundo (prefixa os tipos dele
+ * também), então os dois aparecem lado a lado no dropdown sem se confundir.
  */
 
 export const TYPES = [
   "normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison",
   "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"
 ];
+
+export const TYPE_LABELS = {
+  normal: "Normal", fire: "Fogo", water: "Água", electric: "Elétrico", grass: "Grama", ice: "Gelo",
+  fighting: "Lutador", poison: "Venenoso", ground: "Terrestre", flying: "Voador", psychic: "Psíquico",
+  bug: "Inseto", rock: "Pedra", ghost: "Fantasma", dragon: "Dragão", dark: "Sombrio", steel: "Aço", fairy: "Fada"
+};
+
+/** "fire" -> "pmpFire" — chave usada em CONFIG.DND5E.damageTypes e em damage.parts[].types dos Moves. */
+export function damageTypeKey(type) {
+  return `pmp${type.charAt(0).toUpperCase()}${type.slice(1)}`;
+}
+
+export function registerDamageTypes() {
+  for (const type of TYPES) {
+    globalThis.CONFIG.DND5E.damageTypes[damageTypeKey(type)] = {
+      label: `PMP: ${TYPE_LABELS[type]}`,
+      icon: `modules/pokemon-mundo-perfeito/assets/types/${type}.svg`
+    };
+  }
+}
 
 /** attacker type -> { defenderType: multiplier }. Omitted pairs default to 1 (neutral). */
 export const EFFECTIVENESS = {
@@ -51,6 +80,8 @@ export function getTypeMultiplier(attackType, defenderType1, defenderType2 = nul
 export function registerTypeConfig() {
   const CONFIG_PMP = (globalThis.CONFIG.PMP ??= {});
   CONFIG_PMP.types = TYPES;
+  CONFIG_PMP.typeLabels = TYPE_LABELS;
   CONFIG_PMP.typeEffectiveness = EFFECTIVENESS;
   CONFIG_PMP.getTypeMultiplier = getTypeMultiplier;
+  registerDamageTypes();
 }

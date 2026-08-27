@@ -16,18 +16,11 @@ const MODULE_ID = "pokemon-mundo-perfeito";
 
 const ABILITY_LABELS = { str: "FOR", dex: "DES", con: "CON", int: "INT", wis: "SAB", cha: "CHA" };
 
-const TYPE_LABELS = {
-  normal: "Normal", fire: "Fogo", water: "Água", electric: "Elétrico", grass: "Grama", ice: "Gelo",
-  fighting: "Lutador", poison: "Venenoso", ground: "Terrestre", flying: "Voador", psychic: "Psíquico",
-  bug: "Inseto", rock: "Pedra", ghost: "Fantasma", dragon: "Dragão", dark: "Sombrio", steel: "Aço", fairy: "Fada"
-};
-
 Hooks.once("init", () => {
   console.log(`${MODULE_ID} | Inicializando`);
 
   registerTypeConfig();
   CONFIG.PMP.abilityLabels = ABILITY_LABELS;
-  CONFIG.PMP.typeLabels = TYPE_LABELS;
   registerSheetExtras();
   registerEggSheet();
 

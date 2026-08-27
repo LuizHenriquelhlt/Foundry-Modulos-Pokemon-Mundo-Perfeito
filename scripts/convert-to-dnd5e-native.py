@@ -100,6 +100,16 @@ def save(path, doc):
 # Moves -> Items "feat" nativos com Activities
 # ---------------------------------------------------------------------------
 
+def damage_type_key(move_type):
+    """"fire" -> "pmpFire": mesma chave que module/combat/type-chart.mjs registra em
+    CONFIG.DND5E.damageTypes (prefixo "pmp" pra não colidir com os 3 tipos nativos do D&D
+    que têm o mesmo nome — fire/poison/psychic). "" e "variable" (Judgment, Natural Gift —
+    tipo depende do item segurado) não têm uma chave fixa, então ficam sem "types"."""
+    if not move_type or move_type == "variable" or move_type not in TYPE_LABELS:
+        return None
+    return f"pmp{move_type[0].upper()}{move_type[1:]}"
+
+
 def build_move_activity(pmp, move_name):
     """Constrói as Activities do dnd5e v4 a partir dos campos PMP do Move.
     Ataque ("Faça um ataque...") ou a mecânica "Role 1d20 + MOVE + N e compare com a defesa do
@@ -131,11 +141,12 @@ def build_move_activity(pmp, move_name):
     m_dmg = re.match(r"(\d+)d(\d+)", base)
     damage_part = None
     if m_dmg:
+        dtype = damage_type_key(pmp.get("moveType"))
         damage_part = {
             "number": int(m_dmg.group(1)),
             "denomination": int(m_dmg.group(2)),
             "bonus": "@mod",
-            "types": []
+            "types": [dtype] if dtype else []
         }
 
     m_save = re.search(r"teste (?:de resistência )?de (FOR|DES|CON|INT|SAB|CAR)\s+contra sua CD",
