@@ -117,3 +117,40 @@ export async function clearStages(actor) {
   for (const { key } of STAGE_STATS) stages[key] = 0;
   await actor.setFlag(MODULE_ID, "stages", stages);
 }
+
+// Botões +1/-1 no menu de status do Token (o grid de ícones que abre ao clicar no botão de
+// efeitos com o token selecionado) — a mesma ação dos botões +/- da ficha, só que acessível
+// direto no token sem precisar abrir a ficha. Cada estágio (-6..+6) tem seu próprio Active
+// Effect gerenciado por setStage(); estes 16 ícones (8 atributos × ↑/↓) não são um daqueles
+// estágios — são só o GATILHO de "+1"/"-1", então nunca aparecem "marcados/ativos" no grid
+// mesmo depois de clicados (não têm id em comum com o effect real que setStage() cria).
+const UP_DOWN_SUFFIX = { up: 1, down: -1 };
+
+export function registerStatusEffects() {
+  const entries = STAGE_STATS.flatMap(({ key, label }) => [
+    { id: `${MODULE_ID}-${key}-up`, name: `${label} +1`, img: stageIcon(key, 1) },
+    { id: `${MODULE_ID}-${key}-down`, name: `${label} -1`, img: stageIcon(key, -1) }
+  ]);
+  CONFIG.statusEffects.push(...entries);
+}
+
+// Hook applyTokenStatusEffect(token, statusId, active): dispara ANTES do Foundry aplicar o
+// toggle padrão (liga/desliga um único Active Effect) — como nossos ids não são estágios de
+// verdade, sempre interceptamos e retornamos false pra impedir esse comportamento padrão,
+// chamando setStage() no lugar.
+export function handleTokenStatusEffect(token, statusId) {
+  const prefix = `${MODULE_ID}-`;
+  if (!statusId.startsWith(prefix)) return true;
+  const rest = statusId.slice(prefix.length);
+  const sepIndex = rest.lastIndexOf("-");
+  const key = rest.slice(0, sepIndex);
+  const direction = rest.slice(sepIndex + 1);
+  const delta = UP_DOWN_SUFFIX[direction];
+  if (delta === undefined || !STAGE_STATS.some((s) => s.key === key)) return true;
+
+  const actor = token.actor;
+  if (!actor) return false;
+  const stages = getStages(actor);
+  setStage(actor, key, stages[key] + delta);
+  return false;
+}
