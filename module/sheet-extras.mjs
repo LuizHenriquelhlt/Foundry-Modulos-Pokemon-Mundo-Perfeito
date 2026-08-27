@@ -6,7 +6,7 @@
 // do livro (soma dos níveis da equipe) — porque o dnd5e nativo assume que "character" sobe
 // de nível por XP acumulado, e a regra de Treinador deste sistema não funciona assim.
 import { computeTrainerLevelInfo } from "./data/trainer-level.mjs";
-import { STAGE_STATS, getStages, setStage } from "./combat/status-stages.mjs";
+import { STAGE_STATS, getStages, stepStage } from "./combat/status-stages.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
@@ -133,8 +133,7 @@ function buildPanel(actor) {
   panel.querySelectorAll(".pmp-stage-btn").forEach((btn) => {
     btn.addEventListener("click", async (ev) => {
       const { key, delta } = ev.currentTarget.dataset;
-      const stages = getStages(actor);
-      await setStage(actor, key, stages[key] + Number(delta));
+      await stepStage(actor, key, Number(delta));
     });
   });
 

@@ -6,7 +6,7 @@ import { registerSheetExtras } from "./sheet-extras.mjs";
 import { registerEggSheet } from "./apps/egg-sheet.mjs";
 import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
 import { openEggRollLog, refreshEggRollLogIfOpen } from "./apps/egg-roll-log.mjs";
-import { registerStatusEffects, handleTokenStatusEffect } from "./combat/status-stages.mjs";
+import { registerStatusEffects } from "./combat/status-stages.mjs";
 import { learnMove } from "./data/move-pack.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
@@ -31,11 +31,6 @@ Hooks.once("init", () => {
     eggs: { openCreateEggDialog, openRollLog: openEggRollLog }
   };
 });
-
-// Ícones de +1/-1 de Mudança de Status no menu de status do Token — intercepta o clique
-// pra ajustar o estágio (status-stages.mjs) em vez de deixar o Foundry ligar/desligar um
-// único effect (não são estágios de verdade, só o gatilho de incrementar/decrementar).
-Hooks.on("applyTokenStatusEffect", handleTokenStatusEffect);
 
 Hooks.once("ready", async () => {
   if (game.system.id !== "dnd5e") {
