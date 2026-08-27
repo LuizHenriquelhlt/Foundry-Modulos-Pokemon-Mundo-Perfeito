@@ -1,16 +1,10 @@
 // Mudanças de Status (Livro de Regras, pág. 71): 8 estágios acumuláveis de -6 a +6, cada um
 // com um efeito fixo por estágio. Cada atributo alterado vira seu PRÓPRIO ActiveEffect
-// (transfer:false, recriado a cada mudança), com um selo próprio (verde pra estágio
-// positivo, vermelho pra negativo, só o número — sem a sigla do atributo dentro do desenho:
-// o ícone do token renderiza bem pequeno de verdade na tela, e sigla+número juntos viravam
-// uma mancha ilegível nesse tamanho; a sigla continua no NOME do efeito, "Ataque +1", visível
-// ao passar o mouse no ícone). Assim cada atributo alterado aparece como selo separado no
-// token, em vez de um ícone genérico só avisando "tem algo ativo". Os 96 selos (8 atributos
-// × estágios -6..+6, sem o zero) são arquivos .svg estáticos em assets/stages/ (gerados por
-// scripts/generate-stage-icons.mjs) — o schema do dnd5e valida que "img" termine numa
-// extensão de arquivo reconhecida, então um data URI gerado na hora (testado e rejeitado:
-// "does not have a valid file extension") não funciona; os arquivos existem de antemão pra
-// cobrir todas as combinações possíveis.
+// (transfer:false, recriado a cada mudança), usando um ícone temático fixo por atributo
+// (espada = Ataque, cérebro = Ataque Especial, escudo = Defesa etc. — todos já usados em
+// algum outro lugar deste módulo, então o caminho é garantidamente válido) tingido de verde
+// (estágio positivo) ou vermelho (negativo) via "tint" — em vez de gerar um selo numérico
+// próprio por valor, que ficava ilegível no tamanho real que o token desenha o ícone.
 //
 // Nem todo estágio tem um "bônus" no sentido de Active Effect do dnd5e:
 // - Ataque/Ataque Especial: bônus de proficiência × estágio, só que separado por dano
@@ -25,30 +19,28 @@
 //   fórmula "@prof") + 5 pés por estágio em todo tipo de deslocamento.
 // - Defesa/Defesa Especial (redução de dano recebido) e Margem de Crítico não têm uma
 //   chave de Active Effect confirmada no dnd5e pra automatizar com segurança — ficam só
-//   como registro numérico (no painel e no selo do token), aplicados manualmente.
+//   como registro numérico no painel da ficha, aplicados manualmente.
 const MODULE_ID = "pokemon-mundo-perfeito";
 
 export const STAGE_STATS = [
-  { key: "atk", label: "Ataque" },
-  { key: "spa", label: "Atq. Esp." },
-  { key: "def", label: "Defesa" },
-  { key: "spd", label: "Def. Esp." },
-  { key: "spe", label: "Velocidade" },
-  { key: "acc", label: "Precisão" },
-  { key: "eva", label: "Evasão" },
-  { key: "crit", label: "Marg. Crítico" }
+  { key: "atk", label: "Ataque", icon: "icons/skills/melee/weapons-crossed-swords-yellow.webp" },
+  { key: "spa", label: "Atq. Esp.", icon: "icons/commodities/biological/organ-brain-pink-purple.webp" },
+  { key: "def", label: "Defesa", icon: "icons/equipment/shield/heater-crystal-blue.webp" },
+  { key: "spd", label: "Def. Esp.", icon: "icons/magic/defensive/barrier-shield-dome-blue-purple.webp" },
+  { key: "spe", label: "Velocidade", icon: "icons/commodities/treasure/trinket-wing-white.webp" },
+  { key: "acc", label: "Precisão", icon: "icons/skills/ranged/target-bullseye-arrow-glowing.webp" },
+  { key: "eva", label: "Evasão", icon: "icons/creatures/eyes/human-single-blue.webp" },
+  { key: "crit", label: "Marg. Crítico", icon: "icons/magic/nature/symbol-moon-stars-white.webp" }
 ];
+
+const POSITIVE_TINT = "#4ade80";
+const NEGATIVE_TINT = "#f87171";
 
 export function getStages(actor) {
   const stored = actor.getFlag(MODULE_ID, "stages") ?? {};
   const stages = {};
   for (const { key } of STAGE_STATS) stages[key] = stored[key] ?? 0;
   return stages;
-}
-
-function stageIcon(key, value) {
-  const sign = value > 0 ? "plus" : "minus";
-  return `modules/${MODULE_ID}/assets/stages/${key}-${sign}${Math.abs(value)}.svg`;
 }
 
 function changesFor(key, value) {
@@ -68,7 +60,7 @@ function changesFor(key, value) {
       return changes;
     }
     default:
-      return []; // def, spd, crit — sem chave confirmada, só o selo visual
+      return []; // def, spd, crit — sem chave confirmada, só o registro no painel
   }
 }
 
@@ -82,19 +74,20 @@ async function syncStat(actor, key, value, meta) {
     if (existing) await existing.delete();
     return;
   }
+  const direction = value > 0 ? "up" : "down";
   const data = {
     name: `${meta.label} ${value > 0 ? "+" : ""}${value}`,
-    img: stageIcon(key, value),
+    img: meta.icon,
+    tint: value > 0 ? POSITIVE_TINT : NEGATIVE_TINT,
     changes: changesFor(key, value),
     disabled: false, transfer: false,
-    // O Foundry só desenha o selo no token pra effects "temporários" (isTemporary), e isso é
-    // decidido por ter uma duration>0 OU por ter pelo menos uma entrada em "statuses" — sem
-    // nenhum dos dois (nosso caso antes desse ajuste), o effect existe e funciona
-    // mecanicamente, mas nunca aparece no token, só na aba Efeitos da ficha. Não queremos uma
-    // duration de verdade (o estágio não deve expirar sozinho), então usamos "statuses" com
-    // um id só nosso — não precisa corresponder a nenhuma entrada registrada em
-    // CONFIG.statusEffects, só precisa existir pra marcar o effect como temporário.
-    statuses: [`${MODULE_ID}-stage-${key}`],
+    // O Foundry só desenha o ícone no token pra effects "temporários" (isTemporary), decidido
+    // por ter duration>0 OU pelo menos uma entrada em "statuses" — sem nenhum dos dois o
+    // effect funciona mecanicamente mas fica invisível no token. Inclui o id persistente
+    // (pra achar de novo em findEffect) E o id de ↑/↓ do menu de status do Token — assim o
+    // ícone "Ataque ↑" aparece MARCADO/selecionado no grid sempre que o estágio for positivo,
+    // e "Ataque ↓" quando negativo, do mesmo jeito que Envenenado/Agarrado ficam marcados.
+    statuses: [`${MODULE_ID}-stage-${key}`, `${MODULE_ID}-${key}-${direction}`],
     flags: { [MODULE_ID]: { stageKey: key } }
   };
   if (existing) await existing.update(data);
@@ -118,34 +111,27 @@ export async function clearStages(actor) {
   await actor.setFlag(MODULE_ID, "stages", stages);
 }
 
-// Botões +1/-1 no menu de status do Token (o grid de ícones que abre ao clicar no botão de
-// efeitos com o token selecionado) — a mesma ação dos botões +/- da ficha, só que acessível
-// direto no token sem precisar abrir a ficha. Cada estágio (-6..+6) tem seu próprio Active
-// Effect gerenciado por setStage(); estes 16 ícones (8 atributos × ↑/↓) não são um daqueles
-// estágios — são só o GATILHO de "+1"/"-1", então nunca aparecem "marcados/ativos" no grid
-// mesmo depois de clicados (não têm id em comum com o effect real que setStage() cria).
-const UP_DOWN_SUFFIX = { up: 1, down: -1 };
-
 // O dnd5e RECONSTRÓI CONFIG.statusEffects inteiro (de array pra objeto por id) durante o
 // próprio hook "setup" dele, a partir de CONFIG.DND5E.conditionTypes + CONFIG.DND5E.statusEffects
 // — nosso hook "init" roda antes disso, então empilhar direto em CONFIG.statusEffects.push(...)
 // (como se fosse um array puro do Foundry) simplesmente desaparecia quando o "setup" do dnd5e
-// sobrescrevia o array inteiro logo em seguida. É por isso que os ícones nunca apareciam em
-// lugar nenhum (nem HUD do token, nem aba Efeitos da ficha), mesmo sem erro nenhum no console.
-// O jeito certo é registrar em CONFIG.DND5E.conditionTypes (mesmo lugar que "(pk5e)" usa,
-// por isso os ícones deles aparecem certinho) — o dnd5e lê isso durante o "setup" dele e
-// monta o CONFIG.statusEffects final incluindo essas entradas automaticamente.
+// sobrescrevia o array inteiro logo em seguida. O jeito certo é registrar em
+// CONFIG.DND5E.conditionTypes (mesmo lugar que o módulo "(pk5e)" usa) — o dnd5e lê isso
+// durante o "setup" dele e monta o CONFIG.statusEffects final incluindo essas entradas.
 export function registerStatusEffects() {
-  for (const { key, label } of STAGE_STATS) {
-    CONFIG.DND5E.conditionTypes[`${MODULE_ID}-${key}-up`] = { name: `${label} +1`, img: stageIcon(key, 1), pseudo: true };
-    CONFIG.DND5E.conditionTypes[`${MODULE_ID}-${key}-down`] = { name: `${label} -1`, img: stageIcon(key, -1), pseudo: true };
+  for (const { key, label, icon } of STAGE_STATS) {
+    CONFIG.DND5E.conditionTypes[`${MODULE_ID}-${key}-up`] = { name: `${label} ↑`, img: icon, pseudo: true };
+    CONFIG.DND5E.conditionTypes[`${MODULE_ID}-${key}-down`] = { name: `${label} ↓`, img: icon, pseudo: true };
   }
 }
 
-// Hook applyTokenStatusEffect(token, statusId, active): dispara ANTES do Foundry aplicar o
-// toggle padrão (liga/desliga um único Active Effect) — como nossos ids não são estágios de
-// verdade, sempre interceptamos e retornamos false pra impedir esse comportamento padrão,
-// chamando setStage() no lugar.
+// Hook applyTokenStatusEffect(token, statusId): dispara ANTES do Foundry aplicar o toggle
+// padrão dele. Clicar liga o estágio em +1 (ou -1) igual a qualquer condição normal
+// (Envenenado, Agarrado); clicar de novo no MESMO ícone desliga (volta a 0) — não empilha
+// estágios maiores por clique repetido no token (isso é só pros botões +/- da própria
+// ficha, que continuam indo até 6). Clicar no ícone OPOSTO enquanto o atributo já está
+// alterado no outro sentido substitui a mudança em vez de somar (Ataque não fica ao mesmo
+// tempo "pra cima" e "pra baixo").
 export function handleTokenStatusEffect(token, statusId) {
   const prefix = `${MODULE_ID}-`;
   if (!statusId.startsWith(prefix)) return true;
@@ -153,12 +139,13 @@ export function handleTokenStatusEffect(token, statusId) {
   const sepIndex = rest.lastIndexOf("-");
   const key = rest.slice(0, sepIndex);
   const direction = rest.slice(sepIndex + 1);
-  const delta = UP_DOWN_SUFFIX[direction];
-  if (delta === undefined || !STAGE_STATS.some((s) => s.key === key)) return true;
+  if ((direction !== "up" && direction !== "down") || !STAGE_STATS.some((s) => s.key === key)) return true;
 
   const actor = token.actor;
   if (!actor) return false;
-  const stages = getStages(actor);
-  setStage(actor, key, stages[key] + delta);
+  const current = getStages(actor)[key];
+  const isUp = direction === "up";
+  const alreadyOn = isUp ? current > 0 : current < 0;
+  setStage(actor, key, alreadyOn ? 0 : (isUp ? 1 : -1));
   return false;
 }
