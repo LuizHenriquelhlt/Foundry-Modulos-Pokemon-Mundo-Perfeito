@@ -1268,7 +1268,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "60",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1395,7 +1400,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -1549,7 +1559,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpGrass"
                   ]
@@ -1815,7 +1825,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -2100,7 +2110,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpFairy"
                   ]
@@ -2351,7 +2361,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

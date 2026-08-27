@@ -870,7 +870,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpDark"
                   ]
@@ -999,7 +999,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "60",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -1137,7 +1142,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpSteel"
                   ]
@@ -1289,7 +1294,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1555,7 +1560,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpFighting"
                   ]
@@ -1708,7 +1713,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1975,7 +1980,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpSteel"
                   ]
@@ -2357,7 +2362,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

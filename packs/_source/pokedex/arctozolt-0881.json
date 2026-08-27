@@ -1040,7 +1040,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1059,7 +1064,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpIce"
                   ]
@@ -1211,7 +1216,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpElectric"
                   ]
@@ -1478,7 +1483,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1631,7 +1636,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpRock"
                   ]
@@ -1768,7 +1773,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

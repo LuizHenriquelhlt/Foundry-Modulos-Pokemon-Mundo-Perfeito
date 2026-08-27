@@ -65,7 +65,12 @@
           "override": false
         },
         "target": {
-          "override": false
+          "override": true,
+          "template": {
+            "type": "line",
+            "size": "25",
+            "units": "ft"
+          }
         },
         "type": "attack",
         "attack": {
@@ -89,7 +94,7 @@
             {
               "number": 3,
               "denomination": 6,
-              "bonus": "@mod",
+              "bonus": "@mod + @pmpAtkStage * @prof",
               "types": [
                 "pmpDragon"
               ]
@@ -136,7 +141,12 @@
           "override": false
         },
         "target": {
-          "override": false
+          "override": true,
+          "template": {
+            "type": "line",
+            "size": "25",
+            "units": "ft"
+          }
         },
         "type": "save",
         "save": {

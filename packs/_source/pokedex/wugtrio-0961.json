@@ -1095,7 +1095,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpGround"
                   ]
@@ -1437,7 +1437,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpWater"
                   ]
@@ -1584,7 +1584,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1733,7 +1733,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpWater"
                   ]
@@ -1869,7 +1869,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

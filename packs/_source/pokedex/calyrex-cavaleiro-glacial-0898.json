@@ -926,7 +926,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpIce"
                   ]
@@ -1078,7 +1078,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpPsychic"
                   ]
@@ -1231,7 +1231,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1384,7 +1384,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpFighting"
                   ]
@@ -1532,7 +1532,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpIce"
                   ]
@@ -1800,7 +1800,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpIce"
                   ]
@@ -2066,7 +2066,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpGrass"
                   ]
@@ -2195,7 +2195,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "30",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -2333,7 +2338,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -2486,7 +2491,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -2753,7 +2758,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -3033,7 +3038,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -3317,7 +3322,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]
@@ -3577,7 +3582,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -3731,7 +3741,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpGrass"
                   ]
@@ -3884,7 +3894,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpPsychic"
                   ]
@@ -4127,7 +4137,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "10",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -4241,7 +4256,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -4355,7 +4375,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -4493,7 +4518,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpGrass"
                   ]
@@ -4629,7 +4654,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

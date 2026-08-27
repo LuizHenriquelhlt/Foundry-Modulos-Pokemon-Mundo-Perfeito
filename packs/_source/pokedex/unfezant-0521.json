@@ -1007,7 +1007,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "60",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1158,7 +1163,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpFlying"
                   ]
@@ -1286,7 +1291,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1437,7 +1447,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1565,7 +1575,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1584,7 +1599,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpFlying"
                   ]
@@ -1963,7 +1978,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpNormal"
                   ]

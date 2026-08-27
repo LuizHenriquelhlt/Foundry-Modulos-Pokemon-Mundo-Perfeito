@@ -1133,7 +1133,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "60",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1374,7 +1379,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1393,7 +1403,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1546,7 +1556,7 @@
                 {
                   "number": 3,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpNormal"
                   ]
@@ -1675,7 +1685,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -2017,7 +2032,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "attack",
             "attack": {
@@ -2041,7 +2061,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpFairy"
                   ]
@@ -2177,7 +2197,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpNormal"
                   ]

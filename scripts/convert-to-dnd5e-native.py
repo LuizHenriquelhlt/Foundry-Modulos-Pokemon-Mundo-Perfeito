@@ -110,6 +110,26 @@ def damage_type_key(move_type):
     return f"pmp{move_type[0].upper()}{move_type[1:]}"
 
 
+# "Pessoal (raio de 20 pés / 6 metros)" / "... (cone de 30 pés / ...)" / "... (linha de 50 pés / ...)"
+# — o único lugar onde a área de um Move de área fica registrada nos dados originais é essa
+# frase solta dentro de "range.raw". "raio" sempre é centrado no próprio usuário (nunca um
+# ponto à distância que o livro descreve), então mapeia pro tipo "radius" (Emanation) do
+# dnd5e, não "circle" (que é uma área plantada num ponto escolhido) — confirmado no schema
+# de CONFIG.DND5E.areaTargetTypes do próprio dnd5e. "cone"/"linha" mapeiam direto pros tipos
+# "cone"/"line" nativos; "linha" não precisa de largura explícita (TargetField do dnd5e já
+# preenche "width" com 5 pés sozinho quando o tipo pede largura e ela não veio definida).
+AREA_SHAPE_MAP = {"raio": "radius", "cone": "cone", "linha": "line"}
+
+
+def parse_area_template(pmp):
+    raw = pmp.get("range", {}).get("raw", "")
+    m = re.search(r"(raio|cone|linha) de (\d+)\s*p", raw, re.IGNORECASE)
+    if not m:
+        return None
+    shape = m.group(1).lower()
+    return {"type": AREA_SHAPE_MAP[shape], "size": m.group(2), "units": "ft"}
+
+
 def build_move_activity(pmp, move_name):
     """Constrói as Activities do dnd5e v4 a partir dos campos PMP do Move.
     Ataque ("Faça um ataque...") ou a mecânica "Role 1d20 + MOVE + N e compare com a defesa do
@@ -133,6 +153,7 @@ def build_move_activity(pmp, move_name):
     base = pmp.get("damage", {}).get("baseFormula", "")
     power_abilities = pmp.get("powerAbilities") or []
     ability = power_abilities[0] if power_abilities else ""
+    melee = pmp.get("range", {}).get("melee", False)
 
     activation_type = pmp.get("activation", {}).get("type", "action")
     if activation_type not in ("action", "bonus", "reaction"):
@@ -142,10 +163,19 @@ def build_move_activity(pmp, move_name):
     damage_part = None
     if m_dmg:
         dtype = damage_type_key(pmp.get("moveType"))
+        # Estágio de Ataque (corpo a corpo) só entra no dano de Moves de alcance corpo a
+        # corpo; Ataque Especial (à distância), só nos de alcance à distância — mesmo
+        # critério "melee" já usado pra decidir mwak/ranged na activity de ataque, então um
+        # Move nunca fica "no meio" das duas coisas. "@prof" pra continuar escalando sozinho
+        # com o nível, igual todo o resto dos bônus de estágio. Funciona tanto em Moves com
+        # activity "attack" quanto "save" — os dois usam essa mesma "bonus" no damage part,
+        # diferente do bônus global system.bonuses.mwak/rwak.damage do dnd5e, que só existe
+        # pra activities do tipo "attack" (não alcança dano de Moves com teste de resistência).
+        stage_token = "@pmpAtkStage" if melee else "@pmpSpaStage"
         damage_part = {
             "number": int(m_dmg.group(1)),
             "denomination": int(m_dmg.group(2)),
-            "bonus": "@mod",
+            "bonus": f"@mod + {stage_token} * @prof",
             "types": [dtype] if dtype else []
         }
 
@@ -163,7 +193,10 @@ def build_move_activity(pmp, move_name):
     if uses_pp.get("max") and not uses_pp.get("unlimited"):
         consumption["targets"] = [{"type": "itemUses", "target": "", "value": "1", "scaling": {"mode": "", "formula": ""}}]
 
+    area = parse_area_template(pmp)
+
     def base_activity(suffix):
+        target = {"override": True, "template": area} if area else {"override": False}
         return {
             "_id": make_id(f"activity-{move_name}-{suffix}"),
             "name": "",
@@ -172,12 +205,11 @@ def build_move_activity(pmp, move_name):
             "description": {"chatFlavor": ""},
             "duration": {"units": "inst", "concentration": False, "override": False},
             "range": {"override": False},
-            "target": {"override": False}
+            "target": target
         }
 
     def attack_activity():
         common = base_activity("attack" if dual_attack_and_save else "act")
-        melee = pmp.get("range", {}).get("melee", False)
         flat_bonus = str(m_roll_vs_defense.group(1)) if (m_roll_vs_defense and m_roll_vs_defense.group(1)) else ""
         return common["_id"], {
             **common,
@@ -691,8 +723,13 @@ def convert_pokedex():
             if move_type in actor_types:
                 for act in embed.get("system", {}).get("activities", {}).values():
                     for part in act.get("damage", {}).get("parts", []):
-                        if part.get("bonus") == "@mod":
-                            part["bonus"] = f"@mod + {STAB_FORMULA}"
+                        bonus = part.get("bonus", "")
+                        # "@mod + @pmpAtkStage * @prof" (ou Spa) é o padrão desde que o bônus
+                        # de estágio passou a morar direto na fórmula do damage part — o STAB
+                        # some acrescenta em cima, não substitui mais (por isso "startswith"
+                        # em vez de comparar com "@mod" sozinho).
+                        if bonus.startswith("@mod") and STAB_FORMULA not in bonus:
+                            part["bonus"] = f"{bonus} + {STAB_FORMULA}"
             embedded.append(embed)
 
         # ItemGrants dos Moves de níveis futuros (acima do nível em que a espécie é encontrada)

@@ -7,7 +7,9 @@ import { registerEggSheet } from "./apps/egg-sheet.mjs";
 import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
 import { openEggRollLog, refreshEggRollLogIfOpen } from "./apps/egg-roll-log.mjs";
 import { registerStatusEffects } from "./combat/status-stages.mjs";
+import { registerRollDataExtension } from "./combat/roll-data.mjs";
 import { learnMove } from "./data/move-pack.mjs";
+import { repairPokemonMoves } from "./data/repair-moves.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -25,10 +27,12 @@ Hooks.once("init", () => {
   registerSheetExtras();
   registerEggSheet();
   registerStatusEffects();
+  registerRollDataExtension();
 
   globalThis.game.pmp = {
     capture, zMoves, megaEvolution, TYPES,
-    eggs: { openCreateEggDialog, openRollLog: openEggRollLog }
+    eggs: { openCreateEggDialog, openRollLog: openEggRollLog },
+    repairMoves: repairPokemonMoves
   };
 });
 
@@ -38,6 +42,7 @@ Hooks.once("ready", async () => {
   }
   await ensureMacro("Criar Ovo Pokémon", "game.pmp.eggs.openCreateEggDialog();");
   await ensureMacro("Log de Incubação de Ovos", "game.pmp.eggs.openRollLog();");
+  await ensureMacro("Reparar Moves dos Pokémon", "game.pmp.repairMoves();");
 });
 
 // Cria uma macro de conveniência pro Mestre sem precisar decorar o comando — só roda uma

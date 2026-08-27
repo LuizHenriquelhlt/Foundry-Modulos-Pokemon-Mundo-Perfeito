@@ -852,7 +852,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "10",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -1104,7 +1109,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpSpaStage * @prof",
                   "types": [
                     "pmpGhost"
                   ]
@@ -1257,7 +1262,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpPsychic"
                   ]
@@ -1410,7 +1415,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpAtkStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpFairy"
                   ]
@@ -1671,7 +1676,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -2054,7 +2064,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpPsychic"
                   ]
@@ -2184,7 +2194,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "30",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -2466,7 +2481,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpPsychic"
                   ]
@@ -2750,7 +2765,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@mod + floor((@details.level + 1) / 4)",
+                  "bonus": "@mod + @pmpSpaStage * @prof + floor((@details.level + 1) / 4)",
                   "types": [
                     "pmpPsychic"
                   ]
@@ -3017,7 +3032,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

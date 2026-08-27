@@ -65,7 +65,12 @@
           "override": false
         },
         "target": {
-          "override": false
+          "override": true,
+          "template": {
+            "type": "cone",
+            "size": "40",
+            "units": "ft"
+          }
         },
         "type": "save",
         "save": {
@@ -84,7 +89,7 @@
             {
               "number": 3,
               "denomination": 6,
-              "bonus": "@mod",
+              "bonus": "@mod + @pmpSpaStage * @prof",
               "types": [
                 "pmpNormal"
               ]

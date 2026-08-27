@@ -65,7 +65,12 @@
           "override": false
         },
         "target": {
-          "override": false
+          "override": true,
+          "template": {
+            "type": "line",
+            "size": "20",
+            "units": "ft"
+          }
         },
         "type": "attack",
         "attack": {
@@ -89,7 +94,7 @@
             {
               "number": 1,
               "denomination": 6,
-              "bonus": "@mod",
+              "bonus": "@mod + @pmpAtkStage * @prof",
               "types": [
                 "pmpRock"
               ]

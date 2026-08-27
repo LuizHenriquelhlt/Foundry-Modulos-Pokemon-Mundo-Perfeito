@@ -1357,7 +1357,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -1471,7 +1476,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "40",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -1831,7 +1841,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "20",
+                "units": "ft"
+              }
             },
             "type": "utility",
             "roll": {
@@ -1953,7 +1968,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@mod",
+                  "bonus": "@mod + @pmpAtkStage * @prof",
                   "types": [
                     "pmpNormal"
                   ]

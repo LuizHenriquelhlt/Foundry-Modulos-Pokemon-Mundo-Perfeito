@@ -6,7 +6,8 @@
 // do livro (soma dos níveis da equipe) — porque o dnd5e nativo assume que "character" sobe
 // de nível por XP acumulado, e a regra de Treinador deste sistema não funciona assim.
 import { computeTrainerLevelInfo } from "./data/trainer-level.mjs";
-import { STAGE_STATS, getStages, stepStage } from "./combat/status-stages.mjs";
+import { STAGE_STATS, getStages, stepStage, clearStages } from "./combat/status-stages.mjs";
+import { TYPE_LABELS } from "./combat/type-chart.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
@@ -55,6 +56,20 @@ async function onRollHitDie(actor) {
   await actor.rollHitDie();
 }
 
+// Ícone de tipo do próprio Pokémon (mesmo SVG usado no dropdown de tipo de dano dos Moves,
+// ver combat/type-chart.mjs) — mostrado no topo do painel, ao lado de XP/Inspiração, pra dar
+// uma identificação visual rápida do(s) tipo(s) sem precisar abrir a Pokédex.
+function typeBadgeHtml(actor) {
+  const types = actor.getFlag(MODULE_ID, "species")?.types;
+  if (!types?.type1) return "";
+  const chip = (t) => `
+    <span class="pmp-type-chip">
+      <img src="modules/${MODULE_ID}/assets/types/${t}.svg" alt="${TYPE_LABELS[t] ?? t}" />
+      ${TYPE_LABELS[t] ?? t}
+    </span>`;
+  return `<span class="pmp-type-badges">${chip(types.type1)}${types.type2 ? chip(types.type2) : ""}</span>`;
+}
+
 function stageRowHtml(actor) {
   const stages = getStages(actor);
   const cells = STAGE_STATS.map(({ key, label }) => {
@@ -64,7 +79,10 @@ function stageRowHtml(actor) {
     // dela quando está no modo "trancado" (um <fieldset disabled> nativo do HTML, que o CSS
     // não consegue driblar) — <a role="button"> não é um controle de formulário de verdade,
     // então continua clicável mesmo com a ficha trancada (mesmo motivo pelo qual Inspiração
-    // e Rolar Dado de Vida, logo acima, já usavam <span>/<a> em vez de <button>).
+    // e Rolar Dado de Vida, logo acima, já usavam <span>/<a> em vez de <button>). Reforçado
+    // com "pointer-events: auto !important" no CSS abaixo — se o "trancado" algum dia passar
+    // a bloquear cliques também por CSS (não só pelo <fieldset disabled> nativo), o !important
+    // sobrepõe isso pra esses elementos específicos.
     const minusDisabled = value <= -6 ? "pmp-stage-btn-disabled" : "";
     const plusDisabled = value >= 6 ? "pmp-stage-btn-disabled" : "";
     return `
@@ -75,7 +93,13 @@ function stageRowHtml(actor) {
         <a role="button" class="pmp-stage-btn ${plusDisabled}" data-key="${key}" data-delta="1">+</a>
       </span>`;
   }).join("");
-  return `<div class="pmp-stage-row">${cells}</div>`;
+  const anyStage = Object.values(stages).some((v) => v !== 0);
+  return `
+    <div class="pmp-stage-row">
+      ${cells}
+      <a role="button" class="pmp-stage-reset ${anyStage ? "" : "pmp-stage-btn-disabled"}"
+         title="Resetar todas as Mudanças de Status">↺ Resetar Estágios</a>
+    </div>`;
 }
 
 function buildPanel(actor) {
@@ -101,15 +125,26 @@ function buildPanel(actor) {
       .pmp-sheet-panel input.pmp-xp-input { width: 70px; }
       .pmp-sheet-panel .pmp-hd-roll { cursor: pointer; margin-left: 4px; }
       .pmp-sheet-panel .pmp-hd-roll:hover { text-decoration: underline; }
-      .pmp-stage-row { display: flex; gap: 6px; flex-wrap: wrap; }
+      .pmp-type-badges { display: flex; gap: 4px; }
+      .pmp-type-chip { display: inline-flex; align-items: center; gap: 3px; border: 1px solid #999;
+        border-radius: 10px; padding: 1px 7px 1px 4px; font-size: 10px; opacity: 0.9; }
+      .pmp-type-chip img { width: 12px; height: 12px; }
+      .pmp-stage-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
       .pmp-stage { display: flex; align-items: center; gap: 3px; border: 1px solid #ccc;
         border-radius: 4px; padding: 1px 4px; }
       .pmp-stage-pos { border-color: #2b9e4f; background: rgba(43,158,79,0.12); }
       .pmp-stage-neg { border-color: #b0413e; background: rgba(176,65,62,0.12); }
       .pmp-stage-label { opacity: 0.75; font-size: 10px; }
       .pmp-stage-value { min-width: 1.4em; text-align: center; font-weight: 700; }
+      .pmp-stage-reset { cursor: pointer; opacity: 0.75; font-size: 11px; margin-left: auto;
+        white-space: nowrap; }
+      .pmp-stage-reset:hover { text-decoration: underline; }
+      /* !important pra garantir clique mesmo se a ficha "trancada" algum dia bloquear por CSS
+         em vez de só pelo <fieldset disabled> nativo (ver comentário em stageRowHtml). A regra
+         de -disabled vem DEPOIS no arquivo, então continua vencendo onde as duas classes coexistem. */
+      .pmp-inspiration, .pmp-hd-roll, .pmp-stage-btn, .pmp-stage-reset { pointer-events: auto !important; }
       .pmp-stage-btn { cursor: pointer; line-height: 1; padding: 0 3px; }
-      .pmp-stage-btn-disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+      .pmp-stage-btn-disabled { opacity: 0.3; cursor: default; pointer-events: none !important; }
     </style>
     <div class="pmp-top-row">
       <span class="pmp-inspiration${inspired ? " pmp-active" : ""}" role="button"
@@ -121,6 +156,7 @@ function buildPanel(actor) {
       <span class="pmp-hd-label">Dado de Vida: ${hd.value}/${hd.max} d${hd.denomination}
         <a class="pmp-hd-roll" role="button" title="Rolar Dado de Vida">🎲 Rolar</a>
       </span>
+      ${typeBadgeHtml(actor)}
     </div>
     ${stageRowHtml(actor)}
   `;
@@ -136,6 +172,7 @@ function buildPanel(actor) {
       await stepStage(actor, key, Number(delta));
     });
   });
+  panel.querySelector(".pmp-stage-reset").addEventListener("click", () => clearStages(actor));
 
   return panel;
 }

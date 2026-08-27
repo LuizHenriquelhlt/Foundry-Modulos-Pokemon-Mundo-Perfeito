@@ -65,7 +65,12 @@
           "override": false
         },
         "target": {
-          "override": false
+          "override": true,
+          "template": {
+            "type": "radius",
+            "size": "20",
+            "units": "ft"
+          }
         },
         "type": "save",
         "save": {
@@ -84,7 +89,7 @@
             {
               "number": 2,
               "denomination": 10,
-              "bonus": "@mod",
+              "bonus": "@mod + @pmpSpaStage * @prof",
               "types": [
                 "pmpFire"
               ]

@@ -30,18 +30,27 @@
 // Actor#toggleStatusEffect nativo, não uma lógica própria separada).
 //
 // Nem todo estágio tem um "bônus" no sentido de Active Effect do dnd5e:
-// - Ataque/Ataque Especial: bônus de proficiência × estágio, separado por dano corpo a
-//   corpo (mwak) e à distância (rwak) — system.bonuses.mwak.damage / rwak.damage
-//   (confirmado contra o próprio Rage do dnd5e). Usa "@prof" na fórmula em vez de
-//   multiplicar na hora, então o bônus continua certo sozinho se o Pokémon subir de nível.
-// - Precisão: +1/estágio nas rolagens de ataque — system.bonuses.mwak.attack / rwak.attack.
+// - Ataque/Ataque Especial NÃO usam Active Effect — o bônus (prof × estágio) já vem embutido
+//   na fórmula de dano de cada Move (@pmpAtkStage/@pmpSpaStage — ver roll-data.mjs e
+//   scripts/convert-to-dnd5e-native.py), porque o bônus global do dnd5e por classificação de
+//   ataque (mwak/rwak) só existe pra Moves com activity "attack" — não alcança Moves com
+//   activity "save" (teste de resistência), que são a maioria dos Moves "especiais" deste
+//   sistema. A fórmula embutida no Move funciona pros dois tipos de activity igual.
+// - Precisão: +1/estágio nas rolagens de ataque — system.rolls.attack.mwak.bonus / rwak.bonus.
 // - Evasão: +1/estágio na CA e nos testes de resistência — system.attributes.ac.bonus e
-//   system.bonuses.abilities.save (bônus global de resistência, chave conhecida do dnd5e).
-// - Velocidade: iniciativa em prof×estágio (system.attributes.init.bonus, via "@prof") +
-//   5 pés por estágio em todo tipo de deslocamento.
+//   system.rolls.ability.save.bonus (bônus global de resistência).
+// - Velocidade: iniciativa em prof×estágio (system.attributes.init.roll.bonus, via "@prof") +
+//   5 pés por estágio em todo tipo de deslocamento (system.attributes.movement.speeds.*).
 // - Defesa/Defesa Especial (redução de dano recebido) e Margem de Crítico não têm uma
 //   chave de Active Effect confirmada no dnd5e pra automatizar com segurança — ficam só
 //   como registro visível (nome do efeito) e no painel da ficha.
+//
+// system.bonuses.*/system.attributes.init.bonus/system.attributes.movement.<nome> (sem
+// "speeds.") são os nomes ANTIGOS desses mesmos campos — o dnd5e ainda os aceita hoje via um
+// "shim" de compatibilidade (ActiveEffect5e#_applyChangeShim, module/documents/active-
+// effect.mjs, redireciona pro nome novo sozinho), mas esse tipo de shim costuma ser removido
+// depois de algumas versões — por isso os "changes" abaixo já usam os nomes atuais
+// diretamente, sem depender do redirecionamento.
 const MODULE_ID = "pokemon-mundo-perfeito";
 
 export const STAGE_STATS = [
@@ -93,16 +102,21 @@ export function getStages(actor) {
 function changesFor(key, value) {
   const add = (k, v) => (v ? [{ key: k, mode: 2, value: String(v), priority: null }] : []);
   switch (key) {
-    case "atk": return add("system.bonuses.mwak.damage", `${value} * @prof`);
-    case "spa": return add("system.bonuses.rwak.damage", `${value} * @prof`);
+    // Ataque/Atq. Especial NÃO entram mais aqui — o bônus de dano deles já vem embutido na
+    // própria fórmula de cada Move (@pmpAtkStage/@pmpSpaStage, ver scripts/convert-to-dnd5e-
+    // native.py e module/combat/roll-data.mjs), porque o bônus global do dnd5e usado antes
+    // (bonuses.mwak/rwak.damage) só alcança Moves com activity "attack" — não faz nada pros
+    // Moves com activity "save" (a maioria dos Moves "especiais" deste sistema, que usam
+    // teste de resistência em vez de rolagem de ataque). A fórmula embutida no Move funciona
+    // pros dois tipos de activity igual.
     case "acc":
-      return [...add("system.bonuses.mwak.attack", value), ...add("system.bonuses.rwak.attack", value)];
+      return [...add("system.rolls.attack.mwak.bonus", value), ...add("system.rolls.attack.rwak.bonus", value)];
     case "eva":
-      return [...add("system.attributes.ac.bonus", value), ...add("system.bonuses.abilities.save", value)];
+      return [...add("system.attributes.ac.bonus", value), ...add("system.rolls.ability.save.bonus", value)];
     case "spe": {
-      const changes = add("system.attributes.init.bonus", `${value} * @prof`);
+      const changes = add("system.attributes.init.roll.bonus", `${value} * @prof`);
       for (const move of ["walk", "swim", "fly", "climb", "burrow"]) {
-        changes.push(...add(`system.attributes.movement.${move}`, value * 5));
+        changes.push(...add(`system.attributes.movement.speeds.${move}`, value * 5));
       }
       return changes;
     }

@@ -65,7 +65,12 @@
           "override": false
         },
         "target": {
-          "override": false
+          "override": true,
+          "template": {
+            "type": "line",
+            "size": "120",
+            "units": "ft"
+          }
         },
         "type": "save",
         "save": {
@@ -84,7 +89,7 @@
             {
               "number": 4,
               "denomination": 8,
-              "bonus": "@mod",
+              "bonus": "@mod + @pmpSpaStage * @prof",
               "types": [
                 "pmpDragon"
               ]
