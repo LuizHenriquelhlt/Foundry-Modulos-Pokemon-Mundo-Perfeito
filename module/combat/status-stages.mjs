@@ -87,6 +87,14 @@ async function syncStat(actor, key, value, meta) {
     img: stageIcon(key, value),
     changes: changesFor(key, value),
     disabled: false, transfer: false,
+    // O Foundry só desenha o selo no token pra effects "temporários" (isTemporary), e isso é
+    // decidido por ter uma duration>0 OU por ter pelo menos uma entrada em "statuses" — sem
+    // nenhum dos dois (nosso caso antes desse ajuste), o effect existe e funciona
+    // mecanicamente, mas nunca aparece no token, só na aba Efeitos da ficha. Não queremos uma
+    // duration de verdade (o estágio não deve expirar sozinho), então usamos "statuses" com
+    // um id só nosso — não precisa corresponder a nenhuma entrada registrada em
+    // CONFIG.statusEffects, só precisa existir pra marcar o effect como temporário.
+    statuses: [`${MODULE_ID}-stage-${key}`],
     flags: { [MODULE_ID]: { stageKey: key } }
   };
   if (existing) await existing.update(data);
