@@ -1,9 +1,13 @@
 // Mudanças de Status (Livro de Regras, pág. 71): 8 estágios acumuláveis de -6 a +6, cada um
 // com um efeito fixo por estágio. Cada atributo alterado vira seu PRÓPRIO ActiveEffect
-// (transfer:false, recriado a cada mudança), com um ícone gerado na hora (SVG embutido como
-// data URI — verde pra estágio positivo, vermelho pra negativo, mostrando a sigla do
-// atributo e o valor do estágio) — assim cada um aparece separado como selo no token, com o
-// número visível, em vez de um ícone genérico só avisando "tem algo ativo".
+// (transfer:false, recriado a cada mudança), com um selo próprio (verde pra estágio
+// positivo, vermelho pra negativo, mostrando a sigla do atributo e o valor do estágio) —
+// assim cada um aparece separado no token, com o número visível, em vez de um ícone
+// genérico só avisando "tem algo ativo". Os 96 selos (8 atributos × estágios -6..+6, sem o
+// zero) são arquivos .svg estáticos em assets/stages/ — o schema do dnd5e valida que "img"
+// termine numa extensão de arquivo reconhecida, então um data URI gerado na hora (testado e
+// rejeitado: "does not have a valid file extension") não funciona; os arquivos existem de
+// antemão pra cobrir todas as combinações possíveis.
 //
 // Nem todo estágio tem um "bônus" no sentido de Active Effect do dnd5e:
 // - Ataque/Ataque Especial: bônus de proficiência × estágio, só que separado por dano
@@ -39,17 +43,9 @@ export function getStages(actor) {
   return stages;
 }
 
-function stageIcon(short, value) {
-  const color = value > 0 ? "#2b9e4f" : "#b0413e";
-  const text = `${value > 0 ? "+" : ""}${value}`;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">`
-    + `<rect width="100" height="100" rx="14" fill="${color}"/>`
-    + `<text x="50" y="40" font-size="24" font-family="sans-serif" font-weight="700" `
-    + `fill="#fff" text-anchor="middle">${short}</text>`
-    + `<text x="50" y="80" font-size="36" font-family="sans-serif" font-weight="900" `
-    + `fill="#fff" text-anchor="middle">${text}</text>`
-    + `</svg>`;
-  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+function stageIcon(key, value) {
+  const sign = value > 0 ? "plus" : "minus";
+  return `modules/${MODULE_ID}/assets/stages/${key}-${sign}${Math.abs(value)}.svg`;
 }
 
 function changesFor(key, value) {
@@ -85,7 +81,7 @@ async function syncStat(actor, key, value, meta) {
   }
   const data = {
     name: `${meta.label} ${value > 0 ? "+" : ""}${value}`,
-    img: stageIcon(meta.short, value),
+    img: stageIcon(key, value),
     changes: changesFor(key, value),
     disabled: false, transfer: false,
     flags: { [MODULE_ID]: { stageKey: key } }

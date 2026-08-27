@@ -60,12 +60,19 @@ function stageRowHtml(actor) {
   const cells = STAGE_STATS.map(({ key, label }) => {
     const value = stages[key];
     const cls = value > 0 ? "pmp-stage-pos" : value < 0 ? "pmp-stage-neg" : "";
+    // <a>, não <button>: a ficha do dnd5e desabilita todo <button>/<input>/<select> dentro
+    // dela quando está no modo "trancado" (um <fieldset disabled> nativo do HTML, que o CSS
+    // não consegue driblar) — <a role="button"> não é um controle de formulário de verdade,
+    // então continua clicável mesmo com a ficha trancada (mesmo motivo pelo qual Inspiração
+    // e Rolar Dado de Vida, logo acima, já usavam <span>/<a> em vez de <button>).
+    const minusDisabled = value <= -6 ? "pmp-stage-btn-disabled" : "";
+    const plusDisabled = value >= 6 ? "pmp-stage-btn-disabled" : "";
     return `
       <span class="pmp-stage ${cls}" data-key="${key}">
-        <button type="button" class="pmp-stage-btn" data-key="${key}" data-delta="-1" ${value <= -6 ? "disabled" : ""}>−</button>
+        <a role="button" class="pmp-stage-btn ${minusDisabled}" data-key="${key}" data-delta="-1">−</a>
         <span class="pmp-stage-label" title="${label}">${label}</span>
         <span class="pmp-stage-value">${value > 0 ? "+" : ""}${value}</span>
-        <button type="button" class="pmp-stage-btn" data-key="${key}" data-delta="1" ${value >= 6 ? "disabled" : ""}>+</button>
+        <a role="button" class="pmp-stage-btn ${plusDisabled}" data-key="${key}" data-delta="1">+</a>
       </span>`;
   }).join("");
   return `<div class="pmp-stage-row">${cells}</div>`;
@@ -102,7 +109,7 @@ function buildPanel(actor) {
       .pmp-stage-label { opacity: 0.75; font-size: 10px; }
       .pmp-stage-value { min-width: 1.4em; text-align: center; font-weight: 700; }
       .pmp-stage-btn { cursor: pointer; line-height: 1; padding: 0 3px; }
-      .pmp-stage-btn:disabled { opacity: 0.3; cursor: default; }
+      .pmp-stage-btn-disabled { opacity: 0.3; cursor: default; pointer-events: none; }
     </style>
     <div class="pmp-top-row">
       <span class="pmp-inspiration${inspired ? " pmp-active" : ""}" role="button"
