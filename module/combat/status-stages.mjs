@@ -126,12 +126,20 @@ export async function clearStages(actor) {
 // mesmo depois de clicados (não têm id em comum com o effect real que setStage() cria).
 const UP_DOWN_SUFFIX = { up: 1, down: -1 };
 
+// O dnd5e RECONSTRÓI CONFIG.statusEffects inteiro (de array pra objeto por id) durante o
+// próprio hook "setup" dele, a partir de CONFIG.DND5E.conditionTypes + CONFIG.DND5E.statusEffects
+// — nosso hook "init" roda antes disso, então empilhar direto em CONFIG.statusEffects.push(...)
+// (como se fosse um array puro do Foundry) simplesmente desaparecia quando o "setup" do dnd5e
+// sobrescrevia o array inteiro logo em seguida. É por isso que os ícones nunca apareciam em
+// lugar nenhum (nem HUD do token, nem aba Efeitos da ficha), mesmo sem erro nenhum no console.
+// O jeito certo é registrar em CONFIG.DND5E.conditionTypes (mesmo lugar que "(pk5e)" usa,
+// por isso os ícones deles aparecem certinho) — o dnd5e lê isso durante o "setup" dele e
+// monta o CONFIG.statusEffects final incluindo essas entradas automaticamente.
 export function registerStatusEffects() {
-  const entries = STAGE_STATS.flatMap(({ key, label }) => [
-    { id: `${MODULE_ID}-${key}-up`, name: `${label} +1`, img: stageIcon(key, 1) },
-    { id: `${MODULE_ID}-${key}-down`, name: `${label} -1`, img: stageIcon(key, -1) }
-  ]);
-  CONFIG.statusEffects.push(...entries);
+  for (const { key, label } of STAGE_STATS) {
+    CONFIG.DND5E.conditionTypes[`${MODULE_ID}-${key}-up`] = { name: `${label} +1`, img: stageIcon(key, 1), pseudo: true };
+    CONFIG.DND5E.conditionTypes[`${MODULE_ID}-${key}-down`] = { name: `${label} -1`, img: stageIcon(key, -1), pseudo: true };
+  }
 }
 
 // Hook applyTokenStatusEffect(token, statusId, active): dispara ANTES do Foundry aplicar o
