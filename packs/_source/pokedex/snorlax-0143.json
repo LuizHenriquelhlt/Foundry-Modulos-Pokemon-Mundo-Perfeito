@@ -885,7 +885,7 @@
       "_id": "YWjHgnH2gjnW1igl",
       "name": "Tipo Normal",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Normal.</p>",
@@ -993,7 +993,7 @@
       "_id": "HztZLFAhpzr82kTE",
       "name": "Covet",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia com mãos rápidas e grudentas. Faça um ataque corpo a corpo contra uma criatura, causando 2d6 + MOVE de dano do tipo normal em caso de acerto. Em um ataque bem- sucedido, você rouba o item que a criatura está segurando, se você não estiver segurando um.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Se o item for ativado/consumido ao ser atacado, ele é ativado/consumido antes de ser roubado. O Griseous Orb não pode ser removido de Giratina, as Type Plates não podem ser removidas de Arceus, os Drives não podem ser removidos de Genesect e as Mega Pedras não podem ser removidas de seus respectivos Pokémon. Covet não pode ser escolhido pelo Move Assist.</p>",
@@ -1079,7 +1079,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1143,7 +1143,7 @@
       "_id": "Nza6lLLbRZrAcf6M",
       "name": "Flail",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se agita com um golpe selvagem que aumenta de poder quanto mais ferido você está. Faça um ataque corpo a corpo contra uma criatura, causando 1d4 + MOVE de dano do tipo normal em um acerto. Caso tenha recebido dano, aumente os dados de dano com base na sua porcentagem de vida atual (arredondado para baixo), seguindo a tabela abaixo.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17. Porcentagem de vida atual Dados de dano Abaixo de 70% x2 Abaixo de 35% x3 Abaixo de 20% x5 Abaixo de 10% x7 Abaixo de 5% x10</p>",
@@ -1229,7 +1229,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1294,7 +1294,7 @@
       "_id": "lIapLs5ulH4Kqi60",
       "name": "Fling",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você sacrifica seu item segurado para lançá-lo em uma criatura. Faça um ataque à distância. Em um acerto, a quantidade de dano sombrio e efeito secundário causado vai depender do item arremessado, com base nas tabelas abaixo. A todos os danos, deve ser somado o valor do MOVE do usuário. Após ativar este Move, em um acerto ou erro, o item desaparece, podendo ser recuperado ao final do combate. Se o usuário arremessar uma Berry, o efeito dela será ativado no alvo (efeitos permanentes de berries adquiridos dessa forma duram até o final do combate). Itens com Efeito: Item Efeito Flame Orb Queima King's Rock Atordoa Light Ball Paralisa Poison Barb Envenena Razor Fang Atordoa Toxic Orb Envenena gravemente Dano para cada item arremessado: Dano em cada nível Item Nv 1 Nv 5 Nv 10 Nv 17 Air Balloon, Big Root, Choice Band, Choice Scarf, Choice Specs, Electric Seed, Focus Band, Grassy Seed, Leftovers, Metal Powder, Misty 1d4 1d4 1d6 1d6 Seed, Muscle Band, Psychic Seed, Silk Scarf, Silver Powder, Smooth Rock, Soft Sand, Soothe Bell, Smoke Ball, Soul Dew, Wide Lens, Wise Glasses Black Belt, Black Glasses, Black Sludge, Charcoal, Deep Sea Scale, Eject Button, Everstone, Fairy Feather, Flame Orb, Float Stone, King's Rock, Life Orb, Light Ball, Lucky Egg, 1d6 1d10 1d12 2d8 Magnet, Metal Coat, Miracle Seed, Mystic Water, Never-Melt Ice, Razor Fang, Scope Lens, Shell Bell, Spell Tag, Toxic Orb, Twisted Spoon Icy Rock, Eviolite, Lucky 2d4 1d12 4d4 2d10 Punch Sharp Beak 1d10 2d8 2d10 4d6 Adamant Orb, Damp Rock, Griseous Orb, Heat 2d6 3d6 3d8 5d6 Rock, Lustrous Orb, Rocky Helmet, Terrain Extender Genesect Drives, Dragon 2d8 1d20 3d10 3d12 Fang, Poison Barb Assault Vest, Quick Claw, Razor Claw, Safety 4d4 4d6 4d8 4d10 Goggles Arceus Plates, Deep Sea 3d6 3d10 3d12 4d12 Tooth, Thick Club Hard Stone 2d10 5d6 5d8 5d10</p>",
@@ -1425,7 +1425,7 @@
       "_id": "IsVXzxOJgaCoKq1x",
       "name": "Last Resort",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você libera sua força final em um ataque devastador, só podendo usá-lo após recorrer a todos os outros Moves disponíveis. Este Move só pode ser ativado após todos os seus outros Moves conhecidos forem ativados no mesmo combate (exceto Struggle). Se o usuário for substituído, esta regra é redefinida. Faça um ataque corpo a corpo, causando 3d10 + MOVE de dano normal no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
@@ -1511,7 +1511,7 @@
                 {
                   "number": 3,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1576,7 +1576,7 @@
       "_id": "IX51d2pcBEgq2nxB",
       "name": "Metronome",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Variável &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Variável &nbsp;•&nbsp; <strong>Alcance:</strong> Variável</p><p>Você invoca um Move aleatório para infligir contra uma criatura. Você pode utilizar seu deslocamento antes de utilizar o Move selecionado por Metronome. Se o Move não puder ser concluído por causa do posicionamento, alcance, etc., o Metronome falha. Alguns Moves não podem ser escolhidos por Metronome. Nesse caso, utilize um dos métodos abaixo para este Move (a ser escolhido pelo Mestre).</p><p><strong>Observações:</strong></p><p>Metronome não pode ser escolhido pelo Move Assist. Método simples: Quando você usa este Move, role um d100. O número resultante é o número do TM para o Move que você faz. Porém é limitado somente aos Moves de TM. Método pelo site Metronome Generator: https://perchance.org/pokemonmetronome Rolagem de dados digitais: Role um d603, e compare com a “Tabela para o Move Metronome” ao final deste arquivo.</p><p><strong>Efeito de Poder-Z:</strong> O Move chamado se tornará seu respectivo Z-Move. Moves de Status chamados dessa forma não recebam o Efeito</p>",
@@ -1821,7 +1821,7 @@
       "_id": "yp43Ps4YQMdEchZj",
       "name": "Odor Sleuth",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você exala uma onda de energia em direção a uma criatura dentro do alcance, envolvendo-a com um odor característico. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo não pode se beneficiar de aumentos em sua Evasão. Além disso, se o alvo for do tipo Fantasma, ele passa a poder ser acertado por Moves dos tipos Normal e Lutador durante a duração.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1953,7 +1953,7 @@
       "_id": "UmTxfIIzpYML4YRz",
       "name": "Recycle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você reconstrói um item consumido recentemente e o traz de volta à sua posse. Se não estiver carregando nenhum item, este Move pode ser usado para recuperar o último item consumido por você durante este combate, permitindo que ele seja utilizado normalmente. Caso seja consumido outra vez, poderá ser recuperado com um novo uso de Recycle. Fora de combate, este Move só pode ser usado uma vez por item, desde que ele tenha sido consumido nos últimos 10 minutos.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 2 estágios.</p>",
@@ -2067,7 +2067,7 @@
       "_id": "mFOJvGH7eJLqldFs",
       "name": "Screech",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um grito agudo que libera ondas de choque invisíveis, distorcendo o ar e desestabilizando uma criatura dentro do alcance. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a Defesa do alvo é reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Observação: Screech é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -2199,7 +2199,7 @@
       "_id": "TbFTkBRHLM7N6equ",
       "name": "Snatch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você convoca energia sombria para roubar o efeito de uma criatura. Quando uma criatura dentro do alcance usar um Move de Status em si mesma, você pode gastar sua reação para tentar tomar esse efeito para você. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o efeito positivo do Move é aplicado em você, e o Move falha para o alvo original. Caso o efeito seja aplicado, você abre mão de sua ação padrão no próximo turno. Moves que podem ser roubados com Snatch: • Moves de Status, como Swords Dance ou Belly Drum (com exceções abaixo); • Moves de proteção, como Substitute, Lucky Chant, Wide Guard ou Quick Guard (com exceções abaixo); • Moves de recuperação e cura, como Recover, Ingrain ou Heal Bell; • Imprison; • Outros efeitos autoinduzidos, como Magnet Rise, Power Trick ou Light Screen. Moves que não podem ser roubados com Snatch: • Acupressure; • Psych Up; • Curse; • Moves de autoproteção como Protect ou Detect; • Helping Hand; • Taunt.</p><p><strong>Observações:</strong></p><p>Snatch não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 2 estágios.</p>",
@@ -2330,7 +2330,7 @@
       "_id": "UzLMXQ6T0RayYZZN",
       "name": "Stockpile",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você consome algum objeto em sua frente, com intenção de armazenar energia para um ataque ou para se curar. Cada vez que ativar este Move, você aumenta sua Defesa e Defesa Especial em um estágio cada, e acumula energia para ser usada com os Moves complementares Spit Up ou Swallow. Pode ser usado até três vezes antes desses Moves, que respectivamente causam dano e recuperam pontos de vida. O dano de Spit Up e a cura de Swallow variam conforme o número de vezes que Stockpile foi usado. Após utilizar um desses Moves, o usuário perde os bônus de Defesa e Defesa Especial.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17.</p>",
@@ -2444,7 +2444,7 @@
       "_id": "6Z1VvcxQGZp9qm6s",
       "name": "Swallow",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você absorve sua energia armazenada para curar suas feridas. Quando ativado após usar o Move Stockpile, recupere 1d6 + MOVE pontos de vida. Os dados de cura são dobrados se Stockpile foi usado por duas rodadas, e triplicados se Stockpile foi usado por três rodadas.</p><p><strong>Níveis Superiores:</strong></p><p>O dado base de cura para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 2d12 no nível 17. Arte Sweet Kiss Arte feita por (Beijo Doce) megubunnii</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2530,7 +2530,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@abilities.con.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2595,7 +2595,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2681,7 +2681,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2746,7 +2746,7 @@
       "_id": "Vgf1BdIYDHpNpRWQ",
       "name": "Defense Curl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se enrola em formato esférico, aumentando sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Ao ativar Defense Curl, enquanto você permanecer em batalha e até ser trocado, dobre os dados de dano dos Moves Rollout ou Ice Ball.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
@@ -2860,7 +2860,7 @@
       "_id": "bpYbXDbteQOCHxDw",
       "name": "Amnesia",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação bônus &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Sua mente eleva-se a um novo nível de foco. Aumente sua Defesa Especial em 2 estágios, mas selecione um de seus Moves que não seja Amnésia. Você esquece esse Move e não pode usá-lo novamente. Este bônus pode ser acumulado até um máximo de 6 estágios, esquecendo até 3 Moves diferentes.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2974,7 +2974,7 @@
       "_id": "z3o8PSEVZFSFh1kn",
       "name": "Lick",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você estende a língua e lambe um alvo. Faça um ataque corpo a corpo. Em um acerto, cause 1d6 + MOVE de dano do tipo fantasma. Em um resultado natural de 15 ou mais no acerto, o alvo fica paralisado.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -3060,7 +3060,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3125,7 +3125,7 @@
       "_id": "2v1IIsy11tZn1uiK",
       "name": "Bite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você morde o alvo com força. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano sombrio em um acerto bem- sucedido. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -3211,7 +3211,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3276,7 +3276,7 @@
       "_id": "ThixZIcinHZrTK5d",
       "name": "Chip Away",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você espera por uma abertura, golpeando com velocidade quando o momento é certo. Ignorando qualquer aumento da Defesa ou Evasão do alvo, faça um ataque corpo a corpo, causando 2d8 + MOVE de dano do tipo normal em caso de acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -3362,7 +3362,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3427,7 +3427,7 @@
       "_id": "I2ekpwukRgPLPtDL",
       "name": "Yawn",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um grande bocejo que faz uma criatura ficar com muito sono. Escolha um alvo dentro do alcance. O alvo fica Sonolento. Se ainda estiver em batalha ao final da próxima rodada, ele Dorme. Caso retorne para a Pokébola antes de dormir, o alvo perde a condição Sonolento.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -3541,7 +3541,7 @@
       "_id": "lxGE23ubmwnldA84",
       "name": "Body Slam",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se lança em direção a uma criatura na tentativa de esmagá-la com seu tamanho físico. Faça um ataque corpo a corpo em um alvo. Em um acerto, o alvo sofre 4d4 + MOVE de dano normal. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Paralisado. Se o alvo tiver usado Minimize, Body Slam causa um acerto garantido e o dobro dos dados de dano, desde que você possa vê-lo e ele esteja dentro do seu alcance (mas role um d20 para chance de golpe crítico e outros efeitos).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 5d8 no nível 17.</p>",
@@ -3627,7 +3627,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3691,7 +3691,7 @@
       "_id": "xTLz909s73HsmZ02",
       "name": "Rest",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você entra em sono profundo, cercado por uma aura suave, enquanto seu corpo se regenera e todas as aflições desaparecem. Ao ativar este Move, você adormece por este e pelos 2 turnos seguintes (acordando ao final do terceiro turno dormindo), e não é capaz de rolar nenhum teste para acordar. No momento em que adormece, você imediatamente recupera 4d6 + MOVE pontos de vida e é curado de todas as condições de status não voláteis (com exceção do próprio sono). Você não recupera saúde se não adormecer, mas pode acordar previamente através de outras fontes, como itens ou Moves.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de cura para este Move mudam para 4d10 no nível 5, 8d8 no nível 10 e 8d12 no nível 17.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -3777,7 +3777,7 @@
                 {
                   "number": 4,
                   "denomination": 6,
-                  "bonus": "{@abilities.wis.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3843,7 +3843,7 @@
       "_id": "fxPWUf2aoXipsXMd",
       "name": "Snore",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você ronca alto enquanto dorme, fazendo os oponentes taparem os ouvidos de dor. Você apenas pode ativar este Move enquanto estiver dormindo, forçando todas as criaturas dentro do alcance a realizarem um teste de CON contra sua CD de Move, causando 1d10 + MOVE de dano normal e ficando atordoadas em uma falha, ou metade do dano sem ficarem atordoadas em um sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Snore é um Move baseado em som.</p>",
@@ -3913,8 +3913,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.con.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -3924,7 +3924,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3989,7 +3989,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -4059,7 +4059,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]

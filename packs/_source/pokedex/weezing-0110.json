@@ -864,7 +864,7 @@
       "_id": "XQHWUS1gzu2YajFk",
       "name": "Tipo Venenoso",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
@@ -972,7 +972,7 @@
       "_id": "pe6a6OKY0t9qNNNA",
       "name": "Double Hit",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere rapidamente dois golpes. Faça duas rolagens de ataque corpo a corpo -1, causando 1d8 + MOVE de dano normal em cada acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
@@ -1058,7 +1058,7 @@
                 {
                   "number": 1,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1123,7 +1123,7 @@
       "_id": "3eEmvpVpObY2HBTk",
       "name": "Heat Wave",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você exala uma onda de ar quente em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -1, sofrendo 1d20 + MOVE de dano de fogo em uma falha, ou metade em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna queimada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 3d10 no nível 5, 4d10 no nível 10, e 6d8 no nível 17.</p>",
@@ -1193,8 +1193,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.con.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1204,7 +1204,7 @@
                 {
                   "number": 1,
                   "denomination": 20,
-                  "bonus": "{@abilities.dex.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1269,7 +1269,7 @@
       "_id": "Ar8zxwTcBkOpOMxR",
       "name": "Poison Gas",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você cria uma névoa de gás venenoso em um raio de 15 pés (4,5 metros), centrado em um ponto dentro do alcance. Criaturas que começam ou terminam seu turno na área devem ter sucesso em um teste de CON contra sua CD de Move -1 ou ficarem envenenadas. Cada criatura realiza esse teste apenas uma vez, enquanto permanecer na área. A nuvem de gás se dissipa no início do seu próximo turno.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1395,7 +1395,7 @@
       "_id": "WBJkcZGYzy52gE82",
       "name": "Smog",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você libera uma nuvem tóxica de fumaça venenosa em um raio de 10 pés (3 metros), centrada em um ponto dentro do alcance. Qualquer criatura que comece seu turno nesta área deve ter sucesso em um teste de resistência de CON contra sua CD de Move -3, sofrendo 1d6 + MOVE de dano venenoso e ficando envenenada em caso de falha, ou metade disso sem ficar envenenada em caso de sucesso. A nuvem tóxica dura 1 rodada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -1476,7 +1476,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@abilities.con.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1540,7 +1540,7 @@
       "_id": "XiQk4P87YHA6TG0l",
       "name": "Smokescreen",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você conjura uma linha de fumaça escura no campo de batalha, com 30 pés (9 metros) de comprimento e 5 pés (1,5 metros) de espessura, que se estende em qualquer direção a partir de um ponto dentro do alcance, com duração de 5 rodadas. A área dos dois lados fica obscurecida e impõe desvantagem em qualquer ataque à distância feito por uma criatura mirando em outra do lado oposto. Qualquer criatura atingida dentro da parede de fumaça no momento em que foi criada deve fazer um teste de resistência de CON contra sua CD de Move ou ficará cega pelo tempo de duração. Uma criatura cega pode repetir o teste no início de seus turnos para remover o efeito com sucesso. Ao sair da cegueira, a criatura permanece com sua Precisão reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
@@ -1666,7 +1666,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1752,7 +1752,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1817,7 +1817,7 @@
       "_id": "mJzSSHSZa8cdwyni",
       "name": "Assurance",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia uma criatura onde já dói. Faça um ataque corpo a corpo contra uma criatura, causando 2d6 + MOVE de dano sombrio em um acerto. Se o alvo já tiver sofrido dano por outras fontes além de você nesta rodada ou desde o final do seu último turno, dobre os dados de dano. Isso inclui dano autoinfligido e dano indireto, como dano de um Life Orb, recuo, condição de status (mesmo que causadas por você), clima, entre outros.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1903,7 +1903,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1968,7 +1968,7 @@
       "_id": "xHIRIBYSkL5verfm",
       "name": "Clear Smog",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você lança uma lama especial que tem o poder de remover todas as mudanças de status de um alvo. Esse golpe é garantido de acertar, causando 1d10 + MOVE de dano do tipo venenoso, e removendo todas as Mudanças de Status afetando o alvo, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Role um d20 para chance de golpe crítico e outros efeitos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -2054,7 +2054,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.dex.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2119,7 +2119,7 @@
       "_id": "O7PIqmJxuQNk3mKH",
       "name": "Sludge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você cospe lodo venenoso em uma criatura alvo dentro do alcance. Faça um ataque à distância, causando 2d6 + MOVE de dano venenoso em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica envenenado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17. por</p>",
@@ -2205,7 +2205,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2270,7 +2270,7 @@
       "_id": "4Gvxm4i8uBGcyTTt",
       "name": "Self-Destruct",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você libera uma explosão massiva em um raio de 20 pés (6 metros), desmaiando imediatamente antes do dano ser causado. Todos na área de efeito devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 4d10 + MOVE de dano normal em uma falha, ou metade disso em um sucesso. O usuário desmaia ao utilizar o Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d10 no nível 5, 8d10 no nível 10 e 10d10 no nível 17.</p>",
@@ -2351,7 +2351,7 @@
                 {
                   "number": 4,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2415,7 +2415,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2485,7 +2485,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

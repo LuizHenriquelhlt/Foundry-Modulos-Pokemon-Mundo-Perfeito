@@ -914,7 +914,7 @@
       "_id": "42NhG6CxhTqMtJnc",
       "name": "Tipo Grama",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Grama.</p>",
@@ -941,7 +941,7 @@
       "_id": "flt1eVf5rrtpWjEL",
       "name": "Tipo Aço",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Aço.</p>",
@@ -1022,7 +1022,7 @@
       "_id": "tgcJW0lE8IyFiozM",
       "name": "Curse",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 10 pés (3 metros)</p><p>Este Move tem um efeito diferente com base no seu tipo: Se você for do tipo fantasma: Você tenta lançar uma maldição sobre uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo é amaldiçoado. Você perde uma quantidade de vida igual a 1/2 de seus pontos de vida máximos, e o alvo passa a sofrer 1/4 da vida máxima dele como dano sem tipo ao final de cada turno. Se você tiver menos de 1/2 de sua vida máxima ao acertar este Move, você desmaia, mas ainda aplica o efeito de Curse no inimigo. Se você for de qualquer outro tipo: Seu Ataque e Defesa aumentam em 1 estágio, podendo ser acumulado em até 6 estágios, porém sua Velocidade é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute e Moves de proteção, como Protect e Detect, mas consegue ser bloqueado por Crafty Shield.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d20 PV, caso seja do tipo fantasma. Os dados de cura aumentam em 6d20 no nível 5, 8d20 no nível 10 e</p>",
@@ -1154,7 +1154,7 @@
       "_id": "boCtKKt7rxQUnjXh",
       "name": "Harden",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você aumenta sua defesa, capaz de reduzir o dano recebido. Ao ser alvo de um ataque corpo a corpo, você pode usar sua reação para aumentar sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1268,7 +1268,7 @@
       "_id": "05RLIrN6VJ2fX7M6",
       "name": "Power Whip",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você gira violentamente seus tentáculos ou cipós em direção a um alvo. Faça um ataque corpo a corpo -2 contra uma criatura, causando 3d8 + MOVE de dano de grama em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -1354,7 +1354,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1419,7 +1419,7 @@
       "_id": "zVVXktsiePSukO7V",
       "name": "Rock Climb",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança em direção a um alvo com um ataque que tenta causar confusão. Ao usar este Move, garras afiadas se formam em suas mãos e pés, permitindo que você ignore terreno difícil e escale superfícies verticais com sua movimentação normal até o final do turno. Ao alcançar um alvo, faça um ataque corpo a corpo -2, causando 3d6 + MOVE de dano normal em um acerto. Em um resultado natural de 17 ou mais no acerto, o alvo fica confuso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -1505,7 +1505,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1569,7 +1569,7 @@
       "_id": "UJBZsO5aR2k7ceRQ",
       "name": "Rollout",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / linha de 20 pés (6 metros)</p><p>Você se lança em direção a um alvo, desferindo ataques sucessivos com força crescente. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo -1, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 1d6 + MOVE de dano do tipo Pedra em cada acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Se você usar este Move em rodadas consecutivas, dobre a quantidade de dados de dano a cada acerto subsequente. O multiplicador máximo é de 16× o dano base. O acúmulo de dano é perdido se qualquer ataque errar ou se você ficar incapacitado. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -1655,7 +1655,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1719,7 +1719,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1805,7 +1805,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1870,7 +1870,7 @@
       "_id": "DJjDC7YWffQaDZjz",
       "name": "Metal Claw",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca com garras afiadas. Faça um ataque corpo a corpo -1 contra uma criatura, causando 1d10 + MOVE de dano de aço em um acerto. Em um resultado natural de 19 ou 20 no acerto, seu Ataque aumenta em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1956,7 +1956,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2020,7 +2020,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2090,7 +2090,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

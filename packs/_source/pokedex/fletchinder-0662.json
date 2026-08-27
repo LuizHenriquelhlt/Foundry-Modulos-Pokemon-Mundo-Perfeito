@@ -927,7 +927,7 @@
       "_id": "ZzjZVPd1N7m6R12O",
       "name": "Tipo Fogo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fogo.</p>",
@@ -954,7 +954,7 @@
       "_id": "XnygQxrS4m2uPwg0",
       "name": "Tipo Voador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Voador.</p>",
@@ -1035,7 +1035,7 @@
       "_id": "9i8bhI3366YaFv40",
       "name": "Ember",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você lança uma bola de chamas em um alvo dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica queimado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1121,7 +1121,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1186,7 +1186,7 @@
       "_id": "dwej3nXrElMDrJPG",
       "name": "Feint",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / ação bônus &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você engana uma criatura antes de atacar. Use sua ação para fazer um ataque corpo a corpo contra um alvo, causando 1d6 + MOVE de dano normal em um acerto. Este Move ignora completamente reações de proteção, como Protect e Detect. Caso o alvo tente ativar uma dessas reações contra Feint, a proteção falha automaticamente, e o usuário não sofre quaisquer efeitos secundários associados a ela, como o envenenamento de Baneful Bunker. Caso o alvo já esteja sob proteção, Feint a dissipa imediatamente, permitindo que outros Moves também o acertem após isso. Você pode usar Feint como uma ação bônus apenas caso um Move utilizado anteriormente no mesmo turno tenha sido bloqueado por um Move de proteção.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p><p><strong>Observações:</strong></p><p>Feint não pode ser escolhido pelo Move Assist. Feint não pode remover os efeitos de Moves de proteção se errar ou não afetar o alvo (como no caso de um alvo do tipo Fantasma).</p>",
@@ -1272,7 +1272,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1336,7 +1336,7 @@
       "_id": "vXnO4Ri3UGXRmi0Z",
       "name": "Growl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 60 pés / 18 metros)</p><p>Você mira nas criaturas à sua frente com um rosnado intimidador em um cone de 60 pés (18 metros). Qualquer criatura inimiga pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo o Ataque em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Growl é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1406,8 +1406,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.cha.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1463,7 +1463,7 @@
       "_id": "cO6gYXuRRpjOTuuQ",
       "name": "Quick Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você dispara em alta velocidade, seja para se reposicionar ou atacar. Como uma ação, você pode se mover imediatamente até 15 pés (4,5 metros) sem provocar ataques de oportunidade, e realizar um ataque corpo a corpo, causando 2d4 + MOVE de dano do tipo Normal em um acerto. Este Move também pode ser usado como reação, podendo ser ativado em qualquer momento da rodada, desde que ocorra fora do turno de outra criatura (após um turno ser encerrado e antes da próxima criatura agir) e antes do início do seu próximo turno. Se usar esta reação, você perde a ação padrão do seu próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p><p><strong>Níveis Superiores:</strong></p><p>A partir do nível 10, você também pode utilizar este Move como uma ação bônus. Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1549,7 +1549,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1613,7 +1613,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1699,7 +1699,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1764,7 +1764,7 @@
       "_id": "v6nN62vpxr8nzLXq",
       "name": "Peck",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você martela um alvo com um ataque de bicada. Você pode se mover imediatamente até 15 pés (4,5 metros) e fazer um ataque corpo a corpo em um alvo, causando 1d8 + MOVE de dano voador em um acerto bem-sucedido.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
@@ -1850,7 +1850,7 @@
                 {
                   "number": 1,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1915,7 +1915,7 @@
       "_id": "NJTFJr7InODLIttN",
       "name": "Agility",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você aprimora suas habilidades e sente uma onda de velocidade percorrer suas veias. Aumente sua Velocidade em 2 estágios, podendo ser acumulado em até 6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2029,7 +2029,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2099,7 +2099,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

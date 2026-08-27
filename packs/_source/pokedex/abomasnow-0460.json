@@ -846,7 +846,7 @@
       "_id": "U0lCyHpR56Rpo4jz",
       "name": "Tipo Grama",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Grama.</p>",
@@ -873,7 +873,7 @@
       "_id": "huYm74ocNkyKFHnt",
       "name": "Tipo Gelo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Gelo.</p>",
@@ -954,7 +954,7 @@
       "_id": "Dp18NiKGnbl5OQ1h",
       "name": "Aurora Veil",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você cria uma barreira de aurora ao redor de você reduzindo pela metade todo o dano recebido durante cinco rodadas. Você também pode ampliar o escudo para proteger aliados dentro do alcance, porém, ao fazer isso, a eficácia do escudo é reduzida, passando a defender apenas 1/3 do dano recebido em vez de metade. Só pode ser ativado enquanto está em clima de granizo ou neve, mas os efeitos continuam mesmo se o clima mudar ou parar.</p><p><strong>Observações:</strong></p><p>Embora possa estar ativa ao mesmo tempo que Reflect e Light Screen, seus efeitos de redução de dano não se acumulam. Aurora Veil não surte efeito contra um ataque crítico ou certos Moves específicos. As habilidades Cloud Nine e Air Lock fazem com que Aurora Veil falhe, mesmo que esteja nevando ou com granizo ativo.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1068,7 +1068,7 @@
       "_id": "r8nEY1KS3035Erd5",
       "name": "Ice Punch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia com punhos infundidos de gelo. Faça um ataque corpo a corpo contra um alvo, causando 2d8 + MOVE de dano de gelo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica congelado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
@@ -1154,7 +1154,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1219,7 +1219,7 @@
       "_id": "ysReiSeBRimyUKjk",
       "name": "Icy Wind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você cria um vento gélido que sopra à sua frente em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -1, sofrendo 1d12 + MOVE de dano de gelo em uma falha, ou metade do dano em um sucesso. Além disso, aqueles que falharem também terão suas Velocidades reduzidas em 1 estágio, podendo ser acumulado em até -6 estágios. Uma criatura cuja Velocidade seja reduzida a 0 com este Move fica impedida. O alvo pode gastar uma ação para tentar se livrar de qualquer gelo com um teste de FOR contra sua CD de Move.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
@@ -1300,7 +1300,7 @@
                 {
                   "number": 1,
                   "denomination": 12,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1364,7 +1364,7 @@
       "_id": "enEPSWPL0Zb7xj7F",
       "name": "Leafage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você convoca uma sequência de folhas para bombardear um alvo. Faça um ataque à distância, causando 2d4 + MOVE de dano do tipo grama em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1450,7 +1450,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1514,7 +1514,7 @@
       "_id": "xjUtFxFVOnihp1Ec",
       "name": "Leer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você encara os alvos à sua frente, reduzindo suas vontades, em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo a Defesa em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1584,8 +1584,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.wis.mod,@abilities.cha.mod}kh1",
+                "calculation": "wis",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1641,7 +1641,7 @@
       "_id": "Z1ygnBEyi8Gbd03Q",
       "name": "Powder Snow",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você libera uma rajada gélida de neve fina e cortante em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano de gelo em uma falha, ou metade do dano em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna congelada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1722,7 +1722,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1786,7 +1786,7 @@
       "_id": "xYnGHy5W9qiir10R",
       "name": "Razor Leaf",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você envia diversas folhas afiadas em tremenda velocidade à sua frente, em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -1, sofrendo 1d12 + MOVE de dano de grama em uma falha, ou metade do dano em um sucesso. Qualquer criatura que rolar um resultado natural de 3 ou menos no teste sofrerá um dano crítico.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
@@ -1856,8 +1856,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1867,7 +1867,7 @@
                 {
                   "number": 1,
                   "denomination": 12,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1932,7 +1932,7 @@
       "_id": "7TEhdURWNGD4yzva",
       "name": "Grass Whistle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você emite um som agudo que tem a chance de fazer uma criatura ficar sonolenta. Role 1d20 + MOVE e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Sonolento.</p><p><strong>Observações:</strong></p><p>Grass Whistle é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -2064,7 +2064,7 @@
       "_id": "8EcBgg8bZTCaTDWz",
       "name": "Swagger",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você encara uma criatura dentro do alcance de maneira intimidadora enquanto brilha em vermelho, deixando-a confusa e também mais forte. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Confuso, mas aumenta o Ataque dele em 2 estágios, podendo ser acumulado em até 6 estágios. Você também pode usar este Move em aliados, sem precisar da rolagem.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2196,7 +2196,7 @@
       "_id": "qPsk8yOurihNeiBA",
       "name": "Mist",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 30 pés / 9 metros)</p><p>Uma leve névoa envolve você e seus aliados no alcance. Você e todos os aliados dentro da área, incluindo aqueles que entrarem na área após a ativação, recebem uma barreira protetora, garantindo imunidade a alterações negativas de Mudanças de Status causados por inimigos durante a duração, mas quaisquer efeitos atuais ainda permanecem em vigor. O próprio usuário e aliados protegidos ainda podem baixar seus atributos.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17.</p>",
@@ -2310,7 +2310,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2380,7 +2380,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

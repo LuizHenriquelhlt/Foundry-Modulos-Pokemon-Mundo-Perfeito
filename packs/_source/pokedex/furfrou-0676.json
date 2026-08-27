@@ -883,7 +883,7 @@
       "_id": "AynF9ALn6M64Rem6",
       "name": "Tipo Normal",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Normal.</p>",
@@ -937,7 +937,7 @@
       "_id": "vXnO4Ri3UGXRmi0Z",
       "name": "Growl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 60 pés / 18 metros)</p><p>Você mira nas criaturas à sua frente com um rosnado intimidador em um cone de 60 pés (18 metros). Qualquer criatura inimiga pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo o Ataque em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Growl é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1007,8 +1007,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.cha.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1064,7 +1064,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1150,7 +1150,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1215,7 +1215,7 @@
       "_id": "hHtUTynEHeYoKjET",
       "name": "Sand Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você chuta uma nuvem de areia contra uma criatura dentro do alcance, tentando atrapalhar sua visão. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, a Precisão do alvo é reduzida em 1 estágio, podendo ser acumulada em até -6 estágios. Caso o resultado seja 10 ou mais acima do valor necessário, o alvo também fica Cego até o final do próximo turno dele. Embora seja um Move do tipo Terra, ele é capaz de afetar Pokémon elevados. Pokémon elevados são quaisquer do tipo Voador, aqueles sob os efeitos de Levitate, Eelevate, Magnet Rise ou Telekinesis ou por segurarem um Air Balloon.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
@@ -1347,7 +1347,7 @@
       "_id": "YU0MxZUdhPpMEryH",
       "name": "Baby-Doll Eyes",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fada &nbsp;•&nbsp; <strong>Poder do Move:</strong> CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você rapidamente abre os olhos na tentativa de encantar uma criatura, diminuindo sua vontade de lutar. Quando você é alvo de um Move corpo a corpo, você pode usar sua reação antes de receber o dano. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Este Move também pode ser usado como uma ação para aplicar o mesmo efeito a um alvo dentro do alcance.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1478,7 +1478,7 @@
       "_id": "8igQMGA140lO7NHB",
       "name": "Headbutt",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você realmente sabe como usar sua cabeça. Faça uma rolagem de ataque corpo a corpo, causando 2d8 + MOVE de dano normal no acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -1564,7 +1564,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1628,7 +1628,7 @@
       "_id": "AzI7kfF9ALrT4DCI",
       "name": "Tail Whip",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você balança sua cauda, distraindo seus inimigos e abrindo suas defesas. As criaturas ao alcance e que vejam você devem fazer um teste de resistência de SAB contra sua CD de Move. Os alvos que falharem terão sua Defesa reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1698,8 +1698,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.cha.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1755,7 +1755,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -1825,7 +1825,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]

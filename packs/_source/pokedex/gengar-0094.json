@@ -826,7 +826,7 @@
       "_id": "OLacivTkC0Vf4Wvy",
       "name": "Tipo Fantasma",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fantasma.</p>",
@@ -853,7 +853,7 @@
       "_id": "UkNO3pMnZTgYNy8Q",
       "name": "Tipo Venenoso",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
@@ -907,7 +907,7 @@
       "_id": "gl3QVuyd7qOduzff",
       "name": "Hypnosis",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera ondas circulares de energia multicolorida que se expandem em padrões hipnóticos na direção do oponente, causando sonolência. Role 1d20 + MOVE + 1 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Sonolento.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1039,7 +1039,7 @@
       "_id": "z3o8PSEVZFSFh1kn",
       "name": "Lick",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você estende a língua e lambe um alvo. Faça um ataque corpo a corpo. Em um acerto, cause 1d6 + MOVE de dano do tipo fantasma. Em um resultado natural de 15 ou mais no acerto, o alvo fica paralisado.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -1125,7 +1125,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1190,7 +1190,7 @@
       "_id": "d4M6gDlvFr4E26Q2",
       "name": "Perish Song",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 60 pés / 18 metros)</p><p>Você executa uma música com consequências devastadoras para as criaturas que a ouvem. Todas as criaturas dentro da área (incluindo você) desmaiam em 3 rodadas, no final de seus turnos, a menos que fujam ou sejam substituídas por seu treinador antes do final das três rodadas. Criaturas de nível superior ao seu não desmaiam, mas perdem PV iguais a 5 vezes o próprio nível. Perish Song ignora Moves de proteção como Protect ou Detect. Criaturas que já estejam sob a contagem de Perish Song não sofrem os efeitos de outro Perish Song (o contador atual não é alterado e uma nova contagem paralela não é iniciada).</p><p><strong>Observações:</strong></p><p>Se o Pokémon for trocado usando Baton Pass, a contagem é transferida para o Pokémon que entra (mesmo que ele tenha Soundproof). Perish Song é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1304,7 +1304,7 @@
       "_id": "pL7EZS1BEVQrP3eu",
       "name": "Reflect Type",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Seu corpo brilha como um espelho por apenas um instante. Quando ele volta ao normal, você assume o(s) tipo(s) de uma criatura no alcance.</p><p><strong>Observações:</strong></p><p>Se o alvo tiver um tipo adicionado por Forest's Curse ou Trick-or-Treat, Reflect Type também copiará o tipo adicional Grama ou Fantasma, respectivamente. Reflect Type copia com sucesso o tipo do alvo mesmo que ele esteja disfarçado por Illusion. O Move sempre funciona, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Reflect Type falhará se o alvo não tiver tipo (por exemplo, se for um Pokémon do tipo fogo puro que perdeu seu tipo devido a Burn Up). Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
@@ -1418,7 +1418,7 @@
       "_id": "pYHVKNfgomDPO6SN",
       "name": "Shadow Punch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um soco envolto de sombras que sempre acertam uma criatura. Este Move tem garantia de acertar, causando 2d6 + MOVE de dano fantasma, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Role um d20 para chance de golpe crítico e outros efeitos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1504,7 +1504,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1569,7 +1569,7 @@
       "_id": "BjgT0MQGXxuDKy3U",
       "name": "Spite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera uma energia rancorosa sobre o oponente. Quando for atingido por um Move, você pode gastar sua reação para tentar drenar os PP do atacante, desde que ele esteja dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do atacante. Em um resultado maior ou igual, role 1d4. Os PP do Move que atingiu você são reduzidos pelo valor rolado. Caso o efeito seja aplicado, você abre mão de sua ação padrão no próximo turno.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17.</p>",
@@ -1700,7 +1700,7 @@
       "_id": "A9hVqHGzrwNfn26N",
       "name": "Mean Look",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você lança um olhar intimidador contra uma criatura dentro do alcance, cercando-a com imagens assustadoras de olhos que a impedem de fugir. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo não pode fugir, ser substituído do combate, nem se afastar de você para além do alcance deste Move. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. O efeito se mantém enquanto você permanecer em batalha. Este Move não afeta Pokémon do tipo Fantasma, ignora efeitos de proteção como Protect ou Detect, e não bloqueia Moves, habilidades passivas ou itens que forçam a troca do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1832,7 +1832,7 @@
       "_id": "tgcJW0lE8IyFiozM",
       "name": "Curse",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 10 pés (3 metros)</p><p>Este Move tem um efeito diferente com base no seu tipo: Se você for do tipo fantasma: Você tenta lançar uma maldição sobre uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo é amaldiçoado. Você perde uma quantidade de vida igual a 1/2 de seus pontos de vida máximos, e o alvo passa a sofrer 1/4 da vida máxima dele como dano sem tipo ao final de cada turno. Se você tiver menos de 1/2 de sua vida máxima ao acertar este Move, você desmaia, mas ainda aplica o efeito de Curse no inimigo. Se você for de qualquer outro tipo: Seu Ataque e Defesa aumentam em 1 estágio, podendo ser acumulado em até 6 estágios, porém sua Velocidade é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute e Moves de proteção, como Protect e Detect, mas consegue ser bloqueado por Crafty Shield.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d20 PV, caso seja do tipo fantasma. Os dados de cura aumentam em 6d20 no nível 5, 8d20 no nível 10 e</p>",
@@ -1964,7 +1964,7 @@
       "_id": "oAd1xgFMdHEX6TZu",
       "name": "Night Shade",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você atinge um alvo com um feixe de energia sombria. Faça um ataque à distância contra um alvo. Em um acerto, o alvo sofre dano fixo do tipo Fantasma igual ao nível do usuário + seu bônus de proficiência, independente do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p>",
@@ -2095,7 +2095,7 @@
       "_id": "TkXf7QgQA0G8ZGER",
       "name": "Confuse Ray",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você convoca esferas douradas de energia que orbitam o alvo antes de se fundirem em um único brilho intenso, deixando a criatura desorientada. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, ela fica Confusa.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
@@ -2227,7 +2227,7 @@
       "_id": "d1gh5ConUHGgTIWr",
       "name": "Sucker Punch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um soco rápido antes que uma criatura tenha a chance de atacar. Quando alvo de um Move danoso, você pode usar sua reação para tentar atacar uma criatura antes que seu dano seja rolado. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano sombrio em um acerto. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Caso a criatura não esteja em seu alcance corpo a corpo, mas esteja em seu alcance de deslocamento, você pode se mover até ela durante esta reação, mas fazer isso também abre mão de sua ação de movimento do próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -2313,7 +2313,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2378,7 +2378,7 @@
       "_id": "exFPHfsi7uvyJ5uA",
       "name": "Payback",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia forte em retaliação. Faça um ataque corpo a corpo, causando 1d10 + MOVE de dano sombrio em um acerto. Se o alvo tiver lhe causado dano nesta rodada ou desde o final do seu último turno, dobre os dados de dano para este Move.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -2464,7 +2464,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2529,7 +2529,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2599,7 +2599,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

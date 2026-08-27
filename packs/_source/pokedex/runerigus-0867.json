@@ -896,7 +896,7 @@
       "_id": "wwFOCUOA6FkQm0AC",
       "name": "Tipo Terrestre",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Terrestre.</p>",
@@ -923,7 +923,7 @@
       "_id": "LYy3s5svRs4dfgSG",
       "name": "Tipo Fantasma",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fantasma.</p>",
@@ -977,7 +977,7 @@
       "_id": "ngkNqbtrbIDZ42d3",
       "name": "Astonish",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você cria uma face assustadora envolta em sombras que amedronta o alvo. Faça um ataque à distância contra uma criatura, causando 1d6 + MOVE de dano fantasma em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -1063,7 +1063,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1128,7 +1128,7 @@
       "_id": "mfXeeO6jUk4RqzEL",
       "name": "Haze",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Você cria uma névoa de neve leve que cobre as criaturas em um raio de 40 pés (12 metros), centrado em você. Todas as alterações de estatísticas, efeitos de itens, mudanças de status, escudos ou outras forças externas afetando criaturas na área são removidos. Isso inclui coisas como Leech Seed, Focus Energy, Substitute, Iron Defense, Disable, Reflect, Light Screen, etc.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17.</p>",
@@ -1242,7 +1242,7 @@
       "_id": "oAd1xgFMdHEX6TZu",
       "name": "Night Shade",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você atinge um alvo com um feixe de energia sombria. Faça um ataque à distância contra um alvo. Em um acerto, o alvo sofre dano fixo do tipo Fantasma igual ao nível do usuário + seu bônus de proficiência, independente do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p>",
@@ -1373,10 +1373,10 @@
       "_id": "o2rPudpmoaE0mzP8",
       "name": "Protect",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Observações:</strong></p><p>Protect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Observações:</strong></p><p>Protect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Normal",
@@ -1469,7 +1469,7 @@
               "melee": false
             },
             "priority": 0,
-            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "<p>Protect não pode ser escolhido pelo Move Assist.</p>",
             "damage": {
@@ -1487,7 +1487,7 @@
       "_id": "IAa8WEybZkuZupcV",
       "name": "Scary Face",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você faz sua cara mais assustadora, tentando amedrontar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Amedrontado e tem sua Velocidade reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Uma criatura Amedrontada dessa forma deve fazer um teste de SAB no final de cada um de seus turnos contra uma CD igual a 10 + o bônus de proficiência do usuário deste Move + 1 para cada acúmulo de Scary Face no alvo. Em caso de sucesso, ela deixa de estar Amedrontada, mas mantém a redução de Velocidade.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1619,7 +1619,7 @@
       "_id": "c7CCsTe5Hyu2EsVN",
       "name": "Shadow Claw",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo (10 pés / 3 metros de alcance)</p><p>Você ataca com uma garra afiada feita de sombras. Faça um ataque corpo a corpo com alcance estendido de até 10 pés (3 metros), causando 2d8 + MOVE de dano fantasma em um acerto. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -1705,7 +1705,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1770,7 +1770,7 @@
       "_id": "S99BrL924aF7q2mF",
       "name": "Disable",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 4 turnos &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Seus olhos brilham, envolvendo o inimigo em uma aura que momentaneamente bloqueia o uso de uma técnica. Escolha um alvo no alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o último Move que ele ativou não poderá ser usado nos próximos 4 turnos. (Se isso encerraria um Solar Beam, Skull Bash, etc. durante a fase de carga do Move, o Move falha automaticamente no próximo turno do alvo). Disable não funciona com o Move Struggle.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1902,7 +1902,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -1972,7 +1972,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

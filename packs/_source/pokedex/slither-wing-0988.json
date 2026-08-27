@@ -743,7 +743,7 @@
       "_id": "Fi7SWXGnDjdPKXVQ",
       "name": "Tipo Inseto",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Inseto.</p>",
@@ -770,7 +770,7 @@
       "_id": "UkRjxX33NhWUVUgG",
       "name": "Tipo Lutador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Lutador.</p>",
@@ -824,7 +824,7 @@
       "_id": "DvhkkhHNosFySloU",
       "name": "Bug Bite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e morde um alvo. Faça um ataque corpo a corpo contra uma criatura, causando 2d6 + MOVE de dano do tipo inseto em um acerto. Em um acerto, se o alvo estiver segurando uma berry, você a come imediatamente e ganha seu efeito. Bug Bite não pode roubar uma Berry de um Substitute.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -910,7 +910,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -975,7 +975,7 @@
       "_id": "9i8bhI3366YaFv40",
       "name": "Ember",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você lança uma bola de chamas em um alvo dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica queimado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1061,7 +1061,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1126,7 +1126,7 @@
       "_id": "1SxXFmsvLZDENN0a",
       "name": "Gust",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você cria um vento forte que atinge um alvo em alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano voador no acerto. Este Move pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance, causando o dobro dos dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10, e 2d10 no nível 17.</p>",
@@ -1212,7 +1212,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1276,7 +1276,7 @@
       "_id": "oeotEtSsAX4sf4Xz",
       "name": "Sunny Day",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 50 pés / 15 metros)</p><p>Você limpa os céus e fortalece os raios solares ao redor, mudando o clima para luz solar intensa em um raio de 50 pés (15 metros), sempre centrado em você e acompanhando seus movimentos. Em ambientes fechados, você cria uma esfera de luz radiante que emite calor e energia, gerando os mesmos efeitos. O efeito dura 5 rodadas, a menos que seja cancelado por Air Lock ou Cloud Nine, ou caso outro clima seja ativado em seguida e a área dele esteja encostada na sua. Usar Sunny Day enquanto já houver luz solar intensa ativa não reinicia a duração. Durante a luz solar intensa, ocorrem os seguintes efeitos: • Os Moves do tipo fogo aumentam os dados de dano em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado. • Os Moves do tipo Água reduzem seus dados de dano pela metade (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o menor resultado. • Solar Beam e Solar Blade não exigem turno de carregamento e atacam imediatamente. • Os Moves Thunder e Hurricane passam a ter -5 na rolagem de acerto, ao invés de -3. • Nenhuma criatura pode ser congelada durante esse clima, e quaisquer criaturas já congeladas têm sua condição encerrada.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1390,7 +1390,7 @@
       "_id": "Pa52XdNxVVz0N0NK",
       "name": "Poison Powder",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você libera um aglomerado de esporos venenosos que explodem no ar acima de uma criatura dentro do alcance. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Envenenado.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1521,7 +1521,7 @@
       "_id": "ivFOTupXTc9jl6i2",
       "name": "Stun Spore",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 15 pés (4,5 metros)</p><p>Você libera uma nuvem de esporos em direção a uma criatura dentro do alcance. Role 1d20 + MOVE + 4 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo fica Paralisado.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1652,7 +1652,7 @@
       "_id": "cGjAY0exGh4vrMFu",
       "name": "Flame Charge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você envolve seu corpo em chamas e investe contra uma criatura, aumentando sua velocidade após o impacto. Faça um ataque corpo a corpo, causando 1d10 + MOVE de dano de fogo em um acerto. Cada vez que acertar este Move em um inimigo, aumente sua Velocidade em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1738,7 +1738,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1803,7 +1803,7 @@
       "_id": "JC3vE86zTsGpg4jJ",
       "name": "Stomp",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ergue a perna e pisa com força sobre o alvo, esmagando-o sob o peso do impacto. Faça um ataque corpo a corpo contra um alvo, causando 2d6 + MOVE de dano normal em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status atordoado. Se o alvo tiver usado Minimize, Stomp causa um acerto garantido e o dobro dos dados de dano, desde que você possa vê-lo e ele esteja dentro do seu alcance (mas role um d20 para chance de golpe crítico e outros efeitos).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -1889,7 +1889,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1954,7 +1954,7 @@
       "_id": "5AIDkRTqVUBorzHf",
       "name": "Low Sweep",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um golpe rápido nas pernas do alvo. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano do tipo lutador em um acerto. Em um acerto, o alvo deve ter sucesso em um teste de FOR contra sua CD de Move ou ficar caído, além de ter a Velocidade reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -2040,7 +2040,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2093,8 +2093,8 @@
                 "str"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2162,7 +2162,7 @@
       "_id": "Be89JjD26jtb0PfJ",
       "name": "Morning Sun",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Um raio de luz do sol brilha sobre você, banhando-o em luz curativa cuja potência depende do clima em que se encontra. Veja a tabela abaixo para a quantidade de dados de cura + MOVE que você recupera. Se usado durante a noite, recebe metade da cura total (mesmo com o efeito de Luz Solar Intensa). Clima Nível 1 Nível 5 Nível 10 Nível 17 Sem clima 2d6 2d10 4d8 4d12 Luz Solar 3d6 3d10 5d8 5d12 Intensa Chuva, Granizo ou 1d6 1d10 2d8 2d12 Tempestade de Areia</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2279,7 +2279,7 @@
       "_id": "IpRJf9wAeCxy4MIR",
       "name": "Lunge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 15 pés (4,5 metros)</p><p>Você faz um ataque investido no alvo, atacando com toda a força. Faça um ataque corpo a corpo com alcance estendido de até 15 pés (4,5 metros), causando 4d4 + MOVE de dano do tipo inseto em um acerto. Em um acerto, o alvo deve fazer um teste de FOR contra sua CD de Move, ou ter o Ataque reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -2365,7 +2365,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2486,7 +2486,7 @@
       "_id": "h9PTpVI3T6VGMJDC",
       "name": "Superpower",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca um alvo com poder incrível, mas com grande poder vem grande responsabilidade. Faça um ataque corpo a corpo contra uma criatura, causando 3d8 + MOVE de dano lutador em um acerto. Este Move o exaure, e seu Ataque e Defesa são reduzidos em 1 estágio após atacar, podendo ser acumulados em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -2572,7 +2572,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2637,7 +2637,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2707,7 +2707,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

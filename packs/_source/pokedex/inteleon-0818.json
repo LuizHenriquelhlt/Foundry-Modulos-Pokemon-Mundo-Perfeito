@@ -770,7 +770,7 @@
       "_id": "vaNAhcCelfPbOMfs",
       "name": "Tipo Água",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Água.</p>",
@@ -851,7 +851,7 @@
       "_id": "tdyDeULs4cKxfOa6",
       "name": "Acrobatics",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca habilmente um alvo com destreza acrobática. Faça um ataque corpo a corpo, causando 1d12 + MOVE de dano voador em um acerto. Se não estiver segurando um item quando ativar este Move, dobre os dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
@@ -937,7 +937,7 @@
                 {
                   "number": 1,
                   "denomination": 12,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1001,7 +1001,7 @@
       "_id": "XFj3CUB4HLDjUp6Y",
       "name": "Bind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto agarrado &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você tenta imobilizar um alvo com seu corpo. Force um alvo a realizar um teste de FOR contra sua CD de Move -2. Em uma falha, o alvo sofre 1d4 + MOVE de dano normal e fica agarrado. No início de cada um dos turnos dele, o alvo pode tentar escapar repetindo o teste de FOR. Enquanto o alvo estiver agarrado por você, ele sofre dano sem tipo igual ao nível dele ao final de cada um dos próprios turnos. Você não pode usar outros Moves enquanto estiver agarrando um alvo com Bind, mas ambos podem ser substituídos, encerrando o efeito deste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d6 no nível 10 e 1d8 no nível 17.</p>",
@@ -1082,7 +1082,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1142,7 +1142,7 @@
       "_id": "vXnO4Ri3UGXRmi0Z",
       "name": "Growl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 60 pés / 18 metros)</p><p>Você mira nas criaturas à sua frente com um rosnado intimidador em um cone de 60 pés (18 metros). Qualquer criatura inimiga pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo o Ataque em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Growl é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1212,8 +1212,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.cha.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1269,7 +1269,7 @@
       "_id": "RTIbCRdXvEsBTIq8",
       "name": "Pound",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você esmaga uma criatura com um golpe de pancada. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1355,7 +1355,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1420,7 +1420,7 @@
       "_id": "JfADEboHAvxCYjZF",
       "name": "Snipe Shot",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você dispara um tiro de água concentrado a partir de seus dedos, atingindo o oponente com precisão. Faça um ataque à distância contra um alvo em alcance, causando 4d4 + MOVE de dano de água em um acerto. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto. Snipe Shot não é afetado por Moves nem por efeitos de habilidades que redirecionam Moves, como Follow Me e Storm Drain.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1506,7 +1506,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1571,7 +1571,7 @@
       "_id": "e96dda0pqhhUuinV",
       "name": "Water Gun",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você dispara um jato rápido de água em uma criatura dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de água em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1657,7 +1657,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1721,7 +1721,7 @@
       "_id": "q0RHGVAZHgVGo7qb",
       "name": "Water Pulse",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você dispara uma esfera azulada de energia aquática contra uma criatura; ao atingi-la, a esfera se desfaz em um vórtice de água giratório que pode desorientá-la. Faça um ataque à distância, causando 2d6 + MOVE de dano de água em um acerto. Em um resultado natural de 17 ou mais no acerto, o alvo fica confuso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1807,7 +1807,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1871,7 +1871,7 @@
       "_id": "IiYJvWP4wru0UeJS",
       "name": "Tearful Look",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você enche os olhos de lágrimas para fazer com que uma criatura dentro do alcance perca seu espírito combativo. Quando você for alvo de um ataque corpo a corpo ou à distância de alvo único, pode usar sua reação para usar este Move contra o atacante. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, o Ataque e Ataque Especial do alvo são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios. Essa redução ocorre antes do dano ser causado. Caso use este Move como reação e o efeito seja aplicado, você perde sua ação no próximo turno. Você também pode usar este Move como uma ação em seu turno para causar o mesmo efeito.</p><p><strong>Observações:</strong></p><p>Tearful Look ignora Moves de proteção como Protect e Detect, mas será bloqueado por Crafty Shield.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2003,7 +2003,7 @@
       "_id": "d1gh5ConUHGgTIWr",
       "name": "Sucker Punch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um soco rápido antes que uma criatura tenha a chance de atacar. Quando alvo de um Move danoso, você pode usar sua reação para tentar atacar uma criatura antes que seu dano seja rolado. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano sombrio em um acerto. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Caso a criatura não esteja em seu alcance corpo a corpo, mas esteja em seu alcance de deslocamento, você pode se mover até ela durante esta reação, mas fazer isso também abre mão de sua ação de movimento do próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -2089,7 +2089,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2154,7 +2154,7 @@
       "_id": "wf9khe3ep524N2lr",
       "name": "U-turn",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um golpe rápido antes de se afastar. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano inseto em um acerto. Após este Move ser ativado, o treinador deve trocar o usuário como uma ação livre, caso ele tenha outros Pokémon capazes de lutar.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -2240,7 +2240,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2304,7 +2304,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2374,7 +2374,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

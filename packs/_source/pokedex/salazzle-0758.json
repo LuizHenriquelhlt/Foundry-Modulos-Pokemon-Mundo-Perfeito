@@ -857,7 +857,7 @@
       "_id": "qJSwZ5lGbs0sZLN9",
       "name": "Tipo Venenoso",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
@@ -884,7 +884,7 @@
       "_id": "Xp4sDTqQA6wDFSZj",
       "name": "Tipo Fogo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fogo.</p>",
@@ -965,7 +965,7 @@
       "_id": "LKTgr1d5ocwik8Cs",
       "name": "Captivate",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você tenta encantar uma criatura do gênero oposto ao alcance para que ela diminua a força de seus golpes. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, o alvo tem seu Ataque Especial reduzido em 2 estágios, podendo ser acumulado em até -6 estágios. Captivate falhará se ambos os Pokémon forem do mesmo gênero, se algum deles não tiver gênero ou se o alvo tiver a habilidade Oblivious.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 2 estágios.</p>",
@@ -1097,7 +1097,7 @@
       "_id": "S99BrL924aF7q2mF",
       "name": "Disable",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 4 turnos &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Seus olhos brilham, envolvendo o inimigo em uma aura que momentaneamente bloqueia o uso de uma técnica. Escolha um alvo no alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o último Move que ele ativou não poderá ser usado nos próximos 4 turnos. (Se isso encerraria um Solar Beam, Skull Bash, etc. durante a fase de carga do Move, o Move falha automaticamente no próximo turno do alvo). Disable não funciona com o Move Struggle.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1229,7 +1229,7 @@
       "_id": "9i8bhI3366YaFv40",
       "name": "Ember",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você lança uma bola de chamas em um alvo dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica queimado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1315,7 +1315,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1380,10 +1380,10 @@
       "_id": "ymcqvwpB5OaMdyn5",
       "name": "Encore",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação/ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você dispara uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara que a força a repetir o último Move que utilizou. Quando uma criatura dentro do alcance usar um Move, você pode gastar sua reação para rolar 1d20 + MOVE + 9 e comparar o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, nenhum outro Move além do que ativou esta reação pode ser ativado pela criatura alvo pelas próximas 3 rodadas. Fazer isso consome sua ação em seu próximo turno. Você pode usar este Move como uma ação em seu turno para fazer o mesmo efeito com o último Move utilizado pelo alvo naquele combate.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute. Se o Pokémon afetado por Encore ficar sem PP para o Move bloqueado, o efeito de Encore termina imediatamente. Se o Move estiver impedido por Disable, Gravity, Heal Block, Imprison, Taunt, Throat Chop ou Torment, o Pokémon será forçado a usar Struggle. Encore não pode ser utilizado contra os Moves Encore, Mimic, Mirror Move, Sketch, Struggle ou Transform.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você usa sua ação para disparar uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a próxima vez que a criatura alvo usar um Move, ela fica forçada a repetir esse mesmo Move em todos os seus turnos pelas próximas 3 rodadas — nenhum outro Move pode ser usado por ela durante esse período.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute. Se o Pokémon afetado por Encore ficar sem PP para o Move bloqueado, o efeito de Encore termina imediatamente. Se o Move estiver impedido por Disable, Gravity, Heal Block, Imprison, Taunt, Throat Chop ou Torment, o Pokémon será forçado a usar Struggle. Encore não pode ser utilizado contra os Moves Encore, Mimic, Mirror Move, Sketch, Struggle ou Transform.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Normal",
@@ -1403,11 +1403,11 @@
           ]
         },
         "activities": {
-          "URU70UEChLfFWbbV": {
-            "_id": "URU70UEChLfFWbbV",
+          "L23LY8Fq5RFN0ISm": {
+            "_id": "L23LY8Fq5RFN0ISm",
             "name": "",
             "activation": {
-              "type": "reaction",
+              "type": "action",
               "value": null,
               "condition": "",
               "override": false
@@ -1444,10 +1444,25 @@
             "target": {
               "override": false
             },
-            "type": "utility",
-            "roll": {
-              "prompt": false,
-              "visible": false
+            "type": "attack",
+            "attack": {
+              "ability": "wis",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
             }
           }
         }
@@ -1464,8 +1479,8 @@
               "cha"
             ],
             "activation": {
-              "type": "reaction",
-              "raw": "1 reação/ação"
+              "type": "action",
+              "raw": "1 ação"
             },
             "pp": {
               "value": 3,
@@ -1479,7 +1494,7 @@
               "melee": false
             },
             "priority": 0,
-            "description": "<p>Você dispara uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara que a força a repetir o último Move que utilizou. Quando uma criatura dentro do alcance usar um Move, você pode gastar sua reação para rolar 1d20 + MOVE + 9 e comparar o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, nenhum outro Move além do que ativou esta reação pode ser ativado pela criatura alvo pelas próximas 3 rodadas. Fazer isso consome sua ação em seu próximo turno. Você pode usar este Move como uma ação em seu turno para fazer o mesmo efeito com o último Move utilizado pelo alvo naquele combate.</p>",
+            "description": "<p>Você usa sua ação para disparar uma esfera de energia branca em uma criatura, fazendo-a brilhar em uma aura clara. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a próxima vez que a criatura alvo usar um Move, ela fica forçada a repetir esse mesmo Move em todos os seus turnos pelas próximas 3 rodadas — nenhum outro Move pode ser usado por ela durante esse período.</p>",
             "higherLevels": "",
             "observations": "<p>Este Move ignora Substitute. Se o Pokémon afetado por Encore ficar sem PP para o Move bloqueado, o efeito de Encore termina imediatamente. Se o Move estiver impedido por Disable, Gravity, Heal Block, Imprison, Taunt, Throat Chop ou Torment, o Pokémon será forçado a usar Struggle. Encore não pode ser utilizado contra os Moves Encore, Mimic, Mirror Move, Sketch, Struggle ou Transform.</p>",
             "damage": {
@@ -1497,7 +1512,7 @@
       "_id": "XKkWFhjdyPFCDI3O",
       "name": "Endeavor",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Quando você ativa este Move, selecione uma criatura dentro do alcance. O alvo deve fazer um teste de resistência de SAB contra sua CD de Move. Em uma falha, os PV atuais do alvo são reduzidos para serem iguais aos seus próprios. O máximo de pontos de vida que podem ser reduzidos é igual a 5x o seu nível atual. A imunidade de tipo não é ignorada, então Endeavor não afeta Pokémon do tipo Fantasma.</p>",
@@ -1567,8 +1582,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.wis.mod,@abilities.con.mod}kh1",
+                "calculation": "wis",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1623,7 +1638,7 @@
       "_id": "pb4OkDxCPvZBrbHD",
       "name": "Fire Lash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 15 pés (4,5 metros)</p><p>Você golpeia um alvo em alcance com um chicote ardente. Faça um ataque corpo a corpo com alcance estendido de até 15 pés (4,5 metros), causando 4d4 + MOVE de dano de fogo. Em um acerto, o alvo deve fazer um teste de CON contra sua CD de Move, ou ter a Defesa reduzida em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1709,7 +1724,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1762,8 +1777,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.wis.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1831,7 +1846,7 @@
       "_id": "HkNN0arSN12sxSuq",
       "name": "Knock Off",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você tenta tirar um item segurado por uma criatura pelo resto da batalha. Faça um ataque corpo a corpo contra um alvo, causando 2d6 + MOVE de dano sombrio em um acerto. Se o alvo estiver segurando um item, dobre os dados de dano, e qualquer item segurado pelo alvo desaparece. O item reaparece no inventário do alvo quando a batalha termina. Observação: Se o item for ativado ou consumido ao ser atacado, ele é ativado/consumido antes de ser roubado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -1917,7 +1932,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1981,7 +1996,7 @@
       "_id": "Ar8zxwTcBkOpOMxR",
       "name": "Poison Gas",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você cria uma névoa de gás venenoso em um raio de 15 pés (4,5 metros), centrado em um ponto dentro do alcance. Criaturas que começam ou terminam seu turno na área devem ter sucesso em um teste de CON contra sua CD de Move -1 ou ficarem envenenadas. Cada criatura realiza esse teste apenas uma vez, enquanto permanecer na área. A nuvem de gás se dissipa no início do seu próximo turno.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2107,7 +2122,7 @@
       "_id": "RTIbCRdXvEsBTIq8",
       "name": "Pound",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você esmaga uma criatura com um golpe de pancada. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2193,7 +2208,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2258,7 +2273,7 @@
       "_id": "xEcx9KNB6L1Te5P1",
       "name": "Scratch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere arranhões rápidos com suas garras afiadas em uma criatura. Faça um ataque corpo a corpo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2344,7 +2359,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2409,7 +2424,7 @@
       "_id": "8EcBgg8bZTCaTDWz",
       "name": "Swagger",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você encara uma criatura dentro do alcance de maneira intimidadora enquanto brilha em vermelho, deixando-a confusa e também mais forte. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Confuso, mas aumenta o Ataque dele em 2 estágios, podendo ser acumulado em até 6 estágios. Você também pode usar este Move em aliados, sem precisar da rolagem.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2541,7 +2556,7 @@
       "_id": "qYYGOk9hb0bLtkGP",
       "name": "Sweet Scent",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você libera um cheiro doce direcionado em um cone de 30 pés (9 metros), na tentativa de distrair os inimigos. Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de CAR contra sua CD de Move, reduzindo a Evasão em 2 estágios em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
@@ -2611,8 +2626,8 @@
                 "cha"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.con.mod,@abilities.cha.mod}kh1",
+                "calculation": "con",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2668,7 +2683,7 @@
       "_id": "bqjznfYXShnv2oGs",
       "name": "Torment",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você envia energia sombria para atormentar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo não pode usar o mesmo Move em turnos consecutivos.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2800,7 +2815,7 @@
       "_id": "AjskPSdItij6IrBR",
       "name": "Dragon Rage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você dispara um feixe de energia dracônica de sua boca, atingindo uma criatura à sua frente. Faça um ataque à distância contra um alvo em alcance, causando 8 de dano fixo do tipo Dragão, independente do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p><p><strong>Níveis Superiores:</strong></p><p>O dano deste Move muda para 12 no nível 5, 16 no nível 10 e 20 no nível 17.</p>",
@@ -2930,7 +2945,7 @@
       "_id": "5OUjGmCex770mv0E",
       "name": "Poison Fang",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança com veneno poderoso. Faça um ataque corpo a corpo contra uma criatura, causando 1d10 + MOVE de dano venenoso em um acerto, forçando o alvo a fazer um teste de CON contra sua CD de Move. Em caso de falha, a criatura é gravemente envenenada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -3016,7 +3031,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3069,8 +3084,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -3138,7 +3153,7 @@
       "_id": "WBJkcZGYzy52gE82",
       "name": "Smog",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você libera uma nuvem tóxica de fumaça venenosa em um raio de 10 pés (3 metros), centrada em um ponto dentro do alcance. Qualquer criatura que comece seu turno nesta área deve ter sucesso em um teste de resistência de CON contra sua CD de Move -3, sofrendo 1d6 + MOVE de dano venenoso e ficando envenenada em caso de falha, ou metade disso sem ficar envenenada em caso de sucesso. A nuvem tóxica dura 1 rodada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -3219,7 +3234,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "@abilities.con.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3283,7 +3298,7 @@
       "_id": "IH6Si3KTz4D0PMkq",
       "name": "Double Slap",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere vários tapas rápidos. Faça um ataque corpo a corpo -2 em uma criatura, causando 1d4 + MOVE de dano normal em um acerto. Em um acerto, após isso, role um d8 e compare o resultado com a tabela abaixo para determinar a quantidade de golpes. Para cada golpe adicional, você pode imediatamente realizar um novo ataque contra o mesmo alvo com acerto garantido, causando 1d4 + MOVE de dano normal. Cada golpe extra deve rolar separadamente um d20 para verificar chance de crítico, mas não para efeitos secundários de habilidades ou itens.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d6 no nível 10 e 1d8 no nível 17. 1-3 Você realiza mais 1 ataque 4-6 Você realiza mais 2 ataques 7 Você realiza mais 3 ataques 8 Você realiza mais 4 ataques Cada golpe de Double Slap é tratado como um ataque separado: • Habilidades que ativam com o contato (como Static, Weak Armor, Iron Barbs, etc.) são ativadas para cada golpe individualmente. • Se o primeiro golpe quebrar um Substitute, o segundo golpe causará dano direto ao Pokémon alvo. • O Move Counter revida apenas o golpe final, enquanto Bide revida todo o dano acumulado</p>",
@@ -3369,7 +3384,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3431,7 +3446,7 @@
       "_id": "dFcWmpJQGnT0JmDy",
       "name": "Flame Burst",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você lança uma bola de fogo que explode ao atingir o alvo, liberando chamas que também alcançam criaturas próximas. Faça um ataque à distância contra uma criatura no alcance, causando 2d8 + MOVE de dano de fogo em um acerto. Todas as criaturas dentro de 10 pés (3 metros) do alvo devem fazer um teste de resistência de DES contra sua CD de Move ou sofrer uma quantidade de dano sem tipo igual a metade de seus respectivos níveis em uma falha, ou sem sofrer dano em um sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17. O dano em área de Flame Burst segue algumas condições: • Não ativa Flash Fire nem Color Change. • Não afeta Pokémon com a habilidade Magic Guard. • Não pode ser bloqueado por Moves como Protect, Endure ou outros Moves de proteção. • Ignora Wonder Guard, Mold Breaker, Telepathy, Substitute e Destiny Bond.</p>",
@@ -3517,7 +3532,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3570,8 +3585,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -3639,7 +3654,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3709,7 +3724,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

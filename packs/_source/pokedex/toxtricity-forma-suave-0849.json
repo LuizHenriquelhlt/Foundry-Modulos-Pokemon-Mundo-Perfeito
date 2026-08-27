@@ -879,7 +879,7 @@
       "_id": "A6nezjKm3yNxwVfH",
       "name": "Tipo Elétrico",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Elétrico.</p>",
@@ -906,7 +906,7 @@
       "_id": "VR2XWDS9iFf6IEEY",
       "name": "Tipo Venenoso",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
@@ -1014,7 +1014,7 @@
       "_id": "PL0GgzRZXho78KOS",
       "name": "Acid",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você cria um fluxo de ácido quente em um cone de 30 pés (9 metros), centrado em você. Criaturas pegas no cone devem fazer um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano venenoso em uma falha, além de reduzir a Defesa Especial do alvo em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17. durante o jogo, em ordem alfabética. O \"Poder do Move\" é o atributo resistência. Se um Poder do Move indicar \"Atributo 1/ Atributo 2\", isso descrições, o termo “Poder de Move”</p>",
@@ -1095,7 +1095,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1159,7 +1159,7 @@
       "_id": "hB9WLRoMDWcSkD4o",
       "name": "Acid Spray",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você cospe um jato de fluido ácido que trabalha para derreter a defesa de uma criatura. Faça um ataque à distância contra um alvo, causando 2d4 + MOVE de dano venenoso em um acerto. Em um acerto, o alvo deve fazer um teste de CON contra sua CD de Move, reduzindo sua Defesa Especial em 2 estágios em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1245,7 +1245,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.dex.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1298,8 +1298,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.con.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1367,7 +1367,7 @@
       "_id": "71H7icaPch62wU1t",
       "name": "Belch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 15 pés (4,5 metros)</p><p>Você solta um arroto prejudicial em uma criatura dentro do alcance. Este Move só pode ser usado se o usuário tiver comido uma Berry por conta própria durante a batalha; Berries dadas manualmente pelo treinador não ativam o efeito. Caso tenha, force a criatura a fazer um teste de CON contra sua CD de Move -1, sofrendo 3d8 + MOVE de dano venenoso em caso de falha, ou metade disso em caso de sucesso. Depois de comer uma Berry, o Pokémon pode usar Belch pelo resto da batalha, mesmo que tenha sido trocado, desmaiado e revivido, ou a Berry tenha sido restaurada com Recycle, Harvest ou Pickup.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Belch não pode ser escolhido pelo Move Assist.</p>",
@@ -1437,8 +1437,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.con.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1448,7 +1448,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1513,7 +1513,7 @@
       "_id": "oVJcsRl4pJKAIckS",
       "name": "Eerie Impulse",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Seu corpo gera um som pulsante estranho que pode perturbar a habilidade de atacar de uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o Ataque Especial dela é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1645,7 +1645,7 @@
       "_id": "Nza6lLLbRZrAcf6M",
       "name": "Flail",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se agita com um golpe selvagem que aumenta de poder quanto mais ferido você está. Faça um ataque corpo a corpo contra uma criatura, causando 1d4 + MOVE de dano do tipo normal em um acerto. Caso tenha recebido dano, aumente os dados de dano com base na sua porcentagem de vida atual (arredondado para baixo), seguindo a tabela abaixo.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17. Porcentagem de vida atual Dados de dano Abaixo de 70% x2 Abaixo de 35% x3 Abaixo de 20% x5 Abaixo de 10% x7 Abaixo de 5% x10</p>",
@@ -1731,7 +1731,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1796,7 +1796,7 @@
       "_id": "vXnO4Ri3UGXRmi0Z",
       "name": "Growl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 60 pés / 18 metros)</p><p>Você mira nas criaturas à sua frente com um rosnado intimidador em um cone de 60 pés (18 metros). Qualquer criatura inimiga pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo o Ataque em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Growl é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1866,8 +1866,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.cha.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1923,7 +1923,7 @@
       "_id": "xjUtFxFVOnihp1Ec",
       "name": "Leer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você encara os alvos à sua frente, reduzindo suas vontades, em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo a Defesa em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1993,8 +1993,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.wis.mod,@abilities.cha.mod}kh1",
+                "calculation": "wis",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2050,7 +2050,7 @@
       "_id": "HepJ6arfx99w9ccI",
       "name": "Noble Roar",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um rugido impressionante para intimidar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque e o Ataque Especial do alvo são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios cada.</p><p><strong>Observações:</strong></p><p>Noble Roar é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2182,7 +2182,7 @@
       "_id": "6w7V6s3EoUzFMntk",
       "name": "Nuzzle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você toca uma criatura com suas bochechas eletrificadas, enviando eletricidade por suas veias. Faça um ataque corpo a corpo contra uma criatura. Em um acerto, o alvo recebe 1d4 + MOVE de dano elétrico e é forçado a fazer um teste de CON contra sua CD de Move, ficando paralisado em caso de falha.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
@@ -2268,7 +2268,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2389,7 +2389,7 @@
       "_id": "24c8yvqa107VYJsT",
       "name": "Spark",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Seu corpo se envolve em faíscas elétricas e você avança, liberando uma descarga ao colidir com o alvo. Faça uma rolagem de ataque corpo a corpo contra uma criatura, causando 2d6 + MOVE de dano elétrico em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica paralisado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -2475,7 +2475,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2540,7 +2540,7 @@
       "_id": "IiYJvWP4wru0UeJS",
       "name": "Tearful Look",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você enche os olhos de lágrimas para fazer com que uma criatura dentro do alcance perca seu espírito combativo. Quando você for alvo de um ataque corpo a corpo ou à distância de alvo único, pode usar sua reação para usar este Move contra o atacante. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, o Ataque e Ataque Especial do alvo são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios. Essa redução ocorre antes do dano ser causado. Caso use este Move como reação e o efeito seja aplicado, você perde sua ação no próximo turno. Você também pode usar este Move como uma ação em seu turno para causar o mesmo efeito.</p><p><strong>Observações:</strong></p><p>Tearful Look ignora Moves de proteção como Protect e Detect, mas será bloqueado por Crafty Shield.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2672,7 +2672,7 @@
       "_id": "sautiEjpihgrrygG",
       "name": "Shock Wave",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você lança uma explosão de energia elétrica que busca uma criatura dentro do alcance, nunca errando o alvo. Este Move sempre acerta, causando 2d6 + MOVE de dano elétrico, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Role um d20 para chance de golpe crítico e outros efeitos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano deste Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -2758,7 +2758,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2822,7 +2822,7 @@
       "_id": "IAa8WEybZkuZupcV",
       "name": "Scary Face",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você faz sua cara mais assustadora, tentando amedrontar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Amedrontado e tem sua Velocidade reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Uma criatura Amedrontada dessa forma deve fazer um teste de SAB no final de cada um de seus turnos contra uma CD igual a 10 + o bônus de proficiência do usuário deste Move + 1 para cada acúmulo de Scary Face no alvo. Em caso de sucesso, ela deixa de estar Amedrontada, mas mantém a redução de Velocidade.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -2954,7 +2954,7 @@
       "_id": "NhhW0guIR45KPbca",
       "name": "Taunt",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você provoca uma criatura dentro do alcance com zombaria, deixando-a irritada e incapaz de se concentrar em outras ações. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo só pode usar ataques que causam dano durante a duração.</p><p><strong>Observações:</strong></p><p>Se um Pokémon que conhece apenas Moves de Status for afetado por Taunt, ou for afetado após usar um Move de Status enquanto segura um item do tipo Choice, ele será forçado a usar Struggle. Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -3086,7 +3086,7 @@
       "_id": "v7NgAkcZsnz1AwIO",
       "name": "Venom Drench",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você atinge criaturas já envenenadas para piorar ainda mais o efeito do veneno. Criaturas atingidas dentro de um cone de 30 pés (9 metros) devem fazer um teste de CON contra sua CD de Move, reduzindo seu Ataque, Ataque Especial e Velocidade em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios. Este Move não tem efeito em alvos que não estejam envenenados. Uma criatura cuja velocidade seja reduzida a 0 com este Move fica impedida.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -3156,8 +3156,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.con.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -3213,7 +3213,7 @@
       "_id": "mFOJvGH7eJLqldFs",
       "name": "Screech",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um grito agudo que libera ondas de choque invisíveis, distorcendo o ar e desestabilizando uma criatura dentro do alcance. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a Defesa do alvo é reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Observação: Screech é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -3345,7 +3345,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3415,7 +3415,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

@@ -703,7 +703,7 @@
       "_id": "mBduYsfCEZuEdJPT",
       "name": "Tipo Fada",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fada.</p>",
@@ -730,7 +730,7 @@
       "_id": "wyFWxdBpJfKjRhvS",
       "name": "Tipo Aço",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Aço.</p>",
@@ -784,7 +784,7 @@
       "_id": "2v1IIsy11tZn1uiK",
       "name": "Bite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você morde o alvo com força. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano sombrio em um acerto bem- sucedido. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -870,7 +870,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -935,7 +935,7 @@
       "_id": "3Ajgtpzu1BCEpWpj",
       "name": "Howl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 60 pés/18 metros)</p><p>Você perfura o ar com um uivo intimidador, encorajando seus aliados. Você e seus aliados dentro do alcance recebem um aumento de Ataque em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Observações:</strong></p><p>Howl é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1049,7 +1049,7 @@
       "_id": "DJjDC7YWffQaDZjz",
       "name": "Metal Claw",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca com garras afiadas. Faça um ataque corpo a corpo -1 contra uma criatura, causando 1d10 + MOVE de dano de aço em um acerto. Em um resultado natural de 19 ou 20 no acerto, seu Ataque aumenta em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1135,7 +1135,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1199,7 +1199,7 @@
       "_id": "cO6gYXuRRpjOTuuQ",
       "name": "Quick Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você dispara em alta velocidade, seja para se reposicionar ou atacar. Como uma ação, você pode se mover imediatamente até 15 pés (4,5 metros) sem provocar ataques de oportunidade, e realizar um ataque corpo a corpo, causando 2d4 + MOVE de dano do tipo Normal em um acerto. Este Move também pode ser usado como reação, podendo ser ativado em qualquer momento da rodada, desde que ocorra fora do turno de outra criatura (após um turno ser encerrado e antes da próxima criatura agir) e antes do início do seu próximo turno. Se usar esta reação, você perde a ação padrão do seu próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p><p><strong>Níveis Superiores:</strong></p><p>A partir do nível 10, você também pode utilizar este Move como uma ação bônus. Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1285,7 +1285,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1349,10 +1349,10 @@
       "_id": "HxDVqHyuEIDgKnSf",
       "name": "Quick Guard",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+          "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas: role 1d6 para cada uso consecutivo bem-sucedido desses Moves, até o máximo de 6d6, e o Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Lutador",
@@ -1445,7 +1445,7 @@
               "melee": false
             },
             "priority": 1,
-            "description": "<p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas: role 1d6 para cada uso consecutivo bem-sucedido desses Moves, até o máximo de 6d6, e o Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "",
             "damage": {
@@ -1463,7 +1463,7 @@
       "_id": "tWy7ekWT7oqHIMUF",
       "name": "Sacred Sword",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você conjura uma lâmina de energia pura que corta o alvo com um golpe preciso e implacável. Faça um ataque corpo a corpo com alcance estendido de 5 pés (1,5 metros), causando 3d6 + MOVE de dano lutador em um acerto. Este Move ignora quaisquer bônus nas Mudanças de Status do alvo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -1549,7 +1549,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1614,7 +1614,7 @@
       "_id": "Viv8w6aFAU0GYboR",
       "name": "Slash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia uma criatura no alcance. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano normal em um acerto. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -1700,7 +1700,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1765,7 +1765,7 @@
       "_id": "pnckgMzajdWS5W8L",
       "name": "Swords Dance",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você assume uma postura firme e intensa enquanto espadas de energia azulada giram ao seu redor. As lâminas param por um instante, cruzam-se no ar e desaparecem em meio a uma aura vermelha que sobe por seu corpo, aumentando seu Ataque em 2 estágios, podendo ser acumulado em até 6 estágios. sey</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1879,7 +1879,7 @@
       "_id": "h6baAGKEfWz9xBSr",
       "name": "Iron Head",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe contra o alvo com sua cabeça de aço. Faça um ataque corpo a corpo, causando 4d4 + MOVE de dano de aço em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1965,7 +1965,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2029,7 +2029,7 @@
       "_id": "wyhTOtTmFGeibRzc",
       "name": "Laser Focus",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Ao ativar este Move, você se concentra intensamente. Se você mantiver a concentração, seu primeiro ataque em seu próximo turno será um acerto crítico.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -2143,7 +2143,7 @@
       "_id": "HepJ6arfx99w9ccI",
       "name": "Noble Roar",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um rugido impressionante para intimidar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque e o Ataque Especial do alvo são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios cada.</p><p><strong>Observações:</strong></p><p>Noble Roar é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2275,7 +2275,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2345,7 +2345,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

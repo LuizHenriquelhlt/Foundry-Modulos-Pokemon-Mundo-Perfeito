@@ -787,7 +787,7 @@
       "_id": "6ijABQPnOyX8UJZA",
       "name": "Tipo Aço",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Aço.</p>",
@@ -814,7 +814,7 @@
       "_id": "QcMor3uVGmFyk0xl",
       "name": "Tipo Psíquico",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Psíquico.</p>",
@@ -895,7 +895,7 @@
       "_id": "icPQkyF4PEy6ql3q",
       "name": "Confusion",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você tenta entrar na mente de um alvo e causar confusão. Faça um ataque à distância em uma criatura dentro do alcance. Em caso de acerto, o alvo sofre 1d10 + MOVE de dano do tipo psíquico. Em um resultado natural de 19 ou 20 no acerto, o alvo fica confuso.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -981,7 +981,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.int.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1046,7 +1046,7 @@
       "_id": "eEjn9Hbc8i8pa3yI",
       "name": "Explosion",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você concentra energia em si para formar uma explosão devastadora, desmaiando imediatamente antes do dano ser causado. Todos na área de efeito devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d10 + MOVE de dano normal em uma falha, ou metade disso em um sucesso. O usuário desmaia ao utilizar o Move, mas antes do dano ser causado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d12 no nível 5, 10d10 no nível 10 e 12d10 no nível 17.</p>",
@@ -1127,7 +1127,7 @@
                 {
                   "number": 5,
                   "denomination": 10,
-                  "bonus": "@abilities.con.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1191,7 +1191,7 @@
       "_id": "uiAgmIGYQbyqrhkf",
       "name": "Hammer Arm",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você coloca toda a sua força em um ataque de punho forte e pesado. Faça um ataque corpo a corpo -1, causando 2d10 + MOVE de dano lutador no acerto. Após realizar este ataque, sua Velocidade é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Além disso, até o final do seu próximo turno, você tem desvantagem em todos os testes de DES.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10, e 5d10 no nível 17.</p>",
@@ -1277,7 +1277,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1341,7 +1341,7 @@
       "_id": "pQot58r0UPAEcee5",
       "name": "Hone Claws",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você afia suas garras para aumentar o poder de seus golpes, aumentando seu Ataque e Precisão em 1 estágio, podendo ser acumulado em até 6 estágios cada.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1455,7 +1455,7 @@
       "_id": "9dZvszhHkBD9RXnX",
       "name": "Magnet Rise",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 5 turnos &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você usa o poder magnético dentro de si para se elevar do chão, ficando imune a Moves do tipo terra pela duração.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
@@ -1569,7 +1569,7 @@
       "_id": "DJjDC7YWffQaDZjz",
       "name": "Metal Claw",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca com garras afiadas. Faça um ataque corpo a corpo -1 contra uma criatura, causando 1d10 + MOVE de dano de aço em um acerto. Em um resultado natural de 19 ou 20 no acerto, seu Ataque aumenta em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1655,7 +1655,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1719,7 +1719,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1805,7 +1805,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1870,7 +1870,7 @@
       "_id": "6pTIhrrKA56gx64o",
       "name": "Take Down",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe contra uma criatura para uma cabeçada potente. Faça um ataque corpo a corpo -2, causando 3d6 + MOVE de dano normal em um acerto, sofrendo um quarto do dano causado (arredondado para baixo) como recuo de dano sem tipo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -1956,7 +1956,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2020,7 +2020,7 @@
       "_id": "2YEWOFWQq6KhdDqD",
       "name": "Flash Cannon",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você reúne energia da luz ao seu redor e envia um feixe concentrado em direção a uma criatura em alcance. Faça um ataque à distância, causando 4d4 + MOVE de dano de aço em um acerto. Em um resultado natural de 19 ou 20 no acerto, a Defesa Especial do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -2106,7 +2106,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2171,7 +2171,7 @@
       "_id": "313ljpKUbnyiHULJ",
       "name": "Pursuit",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você é capaz de lançar um ataque sombrio e veloz que persegue os inimigos, principalmente quando tentam fugir. Você pode usar sua ação para realizar um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano sombrio em um acerto. Se alguma criatura no alcance de seu deslocamento estiver prestes a fugir ou ser trocada pelo treinador, você pode gastar sua reação para imediatamente se mover até ela em grande velocidade, sem sofrer ataques de oportunidade, e efetuar um ataque com o dobro dos dados de dano em um acerto. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Este ataque não impede a criatura de fugir ou ser trocada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p><p><strong>Observações:</strong></p><p>A reação de Pursuit não ativa com os Moves Teleport, Baton Pass ou com Moves que forcem o alvo a ser trocado, e ignora redirecionamentos como Follow Me.</p>",
@@ -2257,7 +2257,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2322,7 +2322,7 @@
       "_id": "MSOTv8znQt4oADd7",
       "name": "Bullet Punch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/steel.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/steel.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Aço &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia com um soco tão rápido quanto uma bala. Como uma ação, você pode se mover imediatamente até 15 pés (4,5 metros) sem provocar ataques de oportunidade, e realizar um ataque corpo a corpo contra uma criatura ao alcance, causando 2d4 + MOVE de dano do tipo Aço em um acerto. Este Move também pode ser usado como reação, podendo ser ativado em qualquer momento da rodada, desde que ocorra fora do turno de outra criatura (após um turno ser encerrado e antes da próxima criatura agir) e antes do início do seu próximo turno. Se usar esta reação, você perde a ação padrão do seu próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p><p><strong>Níveis Superiores:</strong></p><p>A partir do nível 10, você também pode utilizar este Move como uma ação bônus. Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2408,7 +2408,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2473,7 +2473,7 @@
       "_id": "m7dzPvjHTOG5EtUd",
       "name": "Miracle Eye",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você lança um olhar intenso contra uma criatura dentro do alcance, enfraquecendo suas defesas e revelando suas brechas. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, quaisquer modificadores de Evasão do alvo são redefinidos. Além disso, se o alvo for do tipo Sombrio, sua imunidade contra o tipo Psíquico é renunciada.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
@@ -2605,7 +2605,7 @@
       "_id": "eCSz6h0B8AZ0tKst",
       "name": "Zen Headbutt",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe contra o alvo com a cabeça envolta em energia psíquica, podendo atordoá-lo. Faça um ataque corpo a corpo -1, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 17 ou mais no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -2691,7 +2691,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2756,7 +2756,7 @@
       "_id": "IAa8WEybZkuZupcV",
       "name": "Scary Face",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você faz sua cara mais assustadora, tentando amedrontar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Amedrontado e tem sua Velocidade reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Uma criatura Amedrontada dessa forma deve fazer um teste de SAB no final de cada um de seus turnos contra uma CD igual a 10 + o bônus de proficiência do usuário deste Move + 1 para cada acúmulo de Scary Face no alvo. Em caso de sucesso, ela deixa de estar Amedrontada, mas mantém a redução de Velocidade.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -2888,7 +2888,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2958,7 +2958,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

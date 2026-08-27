@@ -828,7 +828,7 @@
       "_id": "lakPWKYR914LF2Fu",
       "name": "Tipo Fantasma",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fantasma.</p>",
@@ -855,7 +855,7 @@
       "_id": "aUytLpuX4MaaNso1",
       "name": "Tipo Grama",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Grama.</p>",
@@ -963,7 +963,7 @@
       "_id": "ngkNqbtrbIDZ42d3",
       "name": "Astonish",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você cria uma face assustadora envolta em sombras que amedronta o alvo. Faça um ataque à distância contra uma criatura, causando 1d6 + MOVE de dano fantasma em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -1049,7 +1049,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1114,7 +1114,7 @@
       "_id": "TkXf7QgQA0G8ZGER",
       "name": "Confuse Ray",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você convoca esferas douradas de energia que orbitam o alvo antes de se fundirem em um único brilho intenso, deixando a criatura desorientada. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, ela fica Confusa.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
@@ -1246,7 +1246,7 @@
       "_id": "eEjn9Hbc8i8pa3yI",
       "name": "Explosion",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você concentra energia em si para formar uma explosão devastadora, desmaiando imediatamente antes do dano ser causado. Todos na área de efeito devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 5d10 + MOVE de dano normal em uma falha, ou metade disso em um sucesso. O usuário desmaia ao utilizar o Move, mas antes do dano ser causado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d12 no nível 5, 10d10 no nível 10 e 12d10 no nível 17.</p>",
@@ -1327,7 +1327,7 @@
                 {
                   "number": 5,
                   "denomination": 10,
-                  "bonus": "@abilities.con.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1391,7 +1391,7 @@
       "_id": "V8kdX1cZj19wHHps",
       "name": "Moonblast",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fada &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você invoca uma esfera de energia rosa e a dispara contra uma criatura. Faça um ataque à distância contra um alvo dentro do alcance, causando 1d20 + MOVE de dano de fada em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo tem seu Ataque Especial reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 3d10 no nível 5, 4d10 no nível 10 e 6d8 no nível 17.</p>",
@@ -1477,7 +1477,7 @@
                 {
                   "number": 1,
                   "denomination": 20,
-                  "bonus": "{@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1542,7 +1542,7 @@
       "_id": "fxoo1avCBPi8y4Dh",
       "name": "Phantom Force",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 40 pés (12 metros)</p><p>Quando você ativa este Move, você desaparece em um portal sob seus pés, permanecendo em um estado invulnerável até o seu próximo turno. Durante este tempo, você é imune ao dano e efeitos de qualquer Move. No seu próximo turno, como uma ação, você pode reaparecer em um espaço desocupado dentro do alcance do Move, ou reaparecer por trás de uma criatura dentro do alcance (a partir do ponto em que usou o Move), desferindo um ataque corpo a corpo com vantagem, causando 3d6 + MOVE de dano fantasma em um acerto bem-sucedido. Este Move ignora reações de proteção (como Protect ou Detect). Se o alvo tiver Visão Verdadeira, o ataque não é rolado na vantagem. Caso o alvo saia do alcance estabelecido no momento em que o Move foi ativado, ele ainda pode ser atingido por esse Move, independente da distância que tenha percorrido.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p><p><strong>Observações:</strong></p><p>Phantom Force não pode ser escolhido pelo Move Assist.</p>",
@@ -1628,7 +1628,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1693,7 +1693,7 @@
       "_id": "IAa8WEybZkuZupcV",
       "name": "Scary Face",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você faz sua cara mais assustadora, tentando amedrontar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Amedrontado e tem sua Velocidade reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Uma criatura Amedrontada dessa forma deve fazer um teste de SAB no final de cada um de seus turnos contra uma CD igual a 10 + o bônus de proficiência do usuário deste Move + 1 para cada acúmulo de Scary Face no alvo. Em caso de sucesso, ela deixa de estar Amedrontada, mas mantém a redução de Velocidade.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1825,7 +1825,7 @@
       "_id": "ygfXATM9NF4ySe7I",
       "name": "Worry Seed",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você dispara uma semente bizarra que implanta preocupação em outra criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, a habilidade passiva do alvo é substituída por Insomnia durante a duração, impedindo-o de ficar Sonolenta ou Dormindo. Caso o alvo já esteja Sonolento ou Dormindo, ele acorda no início do próximo turno dele.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1957,7 +1957,7 @@
       "_id": "xYnGHy5W9qiir10R",
       "name": "Razor Leaf",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você envia diversas folhas afiadas em tremenda velocidade à sua frente, em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -1, sofrendo 1d12 + MOVE de dano de grama em uma falha, ou metade do dano em um sucesso. Qualquer criatura que rolar um resultado natural de 3 ou menos no teste sofrerá um dano crítico.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
@@ -2027,8 +2027,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2038,7 +2038,7 @@
                 {
                   "number": 1,
                   "denomination": 12,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2103,7 +2103,7 @@
       "_id": "bou0F0671bq0VVBo",
       "name": "Leech Seed",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você envia uma semente que se implanta na pele de uma criatura dentro do alcance. Faça um ataque à distância -1. Em um acerto, uma semente se implanta na pele do alvo. O alvo recebe dano sem tipo igual ao nível dele no final de cada um dos próprios turnos subsequentes até desmaiar ou ser trocado. O dano causado retorna como cura ao usuário, ou qualquer outra criatura ativa que o treinador tenha na batalha, mesmo que o atacante original desmaie ou seja devolvido à sua Pokébola. Apenas uma criatura pode ser semeada pelo atacante de cada vez. Criaturas do tipo grama são imunes ao dano deste Move.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2234,7 +2234,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2304,7 +2304,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

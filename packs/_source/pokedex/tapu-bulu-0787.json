@@ -69,7 +69,7 @@
       "alignment": ""
     },
     "traits": {
-      "size": "lg",
+      "size": "med",
       "di": {
         "value": [],
         "custom": "Tipo Dragão"
@@ -692,7 +692,7 @@
       "_id": "znvjPaK1yVW4YeGg",
       "name": "Tipo Grama",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Grama.</p>",
@@ -719,7 +719,7 @@
       "_id": "qvpbelFV4PaTNAe3",
       "name": "Tipo Fada",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fada.</p>",
@@ -800,7 +800,7 @@
       "_id": "S99BrL924aF7q2mF",
       "name": "Disable",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> 4 turnos &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Seus olhos brilham, envolvendo o inimigo em uma aura que momentaneamente bloqueia o uso de uma técnica. Escolha um alvo no alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o último Move que ele ativou não poderá ser usado nos próximos 4 turnos. (Se isso encerraria um Solar Beam, Skull Bash, etc. durante a fase de carga do Move, o Move falha automaticamente no próximo turno do alvo). Disable não funciona com o Move Struggle.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -932,7 +932,7 @@
       "_id": "GNvTLggmOyvgrTMl",
       "name": "Grassy Terrain",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Um campo de grama começa a surgir do solo em um círculo ao seu redor, revestindo a terra com energia de cura. Por 5 rodadas, todas as criaturas no chão na área afetada se curam em um montante de pontos de vida igual a seus bônus de proficiência no final de seus turnos. Criaturas no chão são aquelas que não estão utilizando sua velocidade de vôo ou sobre efeito de Levitate, Eelevate, Magnet Rise ou Telekinesis. Além disso, possui estes efeitos: • O dano dos Moves do tipo Grama ativados dentro da área aumentam os dados de dano em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado. Os Moves Earthquake, Magnitude e Bulldoze têm seus dados de • dano reduzidos pela metade, sejam estes ativados dentro da área ou contra alvos dentro da área (caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o menor resultado). Grassy Terrain é uma condição de terreno e pode coexistir ao mesmo tempo que condições climáticas, mas não com outras condições de terreno. Se uma nova condição de terreno for ativada na mesma área, ela substitui a anterior.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1046,7 +1046,7 @@
       "_id": "enEPSWPL0Zb7xj7F",
       "name": "Leafage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você convoca uma sequência de folhas para bombardear um alvo. Faça um ataque à distância, causando 2d4 + MOVE de dano do tipo grama em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1132,7 +1132,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1196,7 +1196,7 @@
       "_id": "A9hVqHGzrwNfn26N",
       "name": "Mean Look",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você lança um olhar intimidador contra uma criatura dentro do alcance, cercando-a com imagens assustadoras de olhos que a impedem de fugir. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo não pode fugir, ser substituído do combate, nem se afastar de você para além do alcance deste Move. Você pode se mover livremente, mas se o alvo sair do alcance por causa da sua movimentação, ele deixa de ser afetado. O efeito se mantém enquanto você permanecer em batalha. Este Move não afeta Pokémon do tipo Fantasma, ignora efeitos de proteção como Protect ou Detect, e não bloqueia Moves, habilidades passivas ou itens que forçam a troca do alvo, como Dragon Tail, Whirlwind ou Eject Button.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1328,7 +1328,7 @@
       "_id": "fLtmHklSZaKRbXpm",
       "name": "Rock Smash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca com um golpe esmagador de rocha que pode diminuir a defesa de um usuário. Faça um ataque corpo a corpo contra uma criatura, causando 2d4 + MOVE de dano lutador em um acerto. Em um resultado natural de 11 ou mais no acerto, a Defesa do alvo é reduzida em 1 estágio, podendo ser acumulada em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1414,7 +1414,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1478,7 +1478,7 @@
       "_id": "h9PTpVI3T6VGMJDC",
       "name": "Superpower",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca um alvo com poder incrível, mas com grande poder vem grande responsabilidade. Faça um ataque corpo a corpo contra uma criatura, causando 3d8 + MOVE de dano lutador em um acerto. Este Move o exaure, e seu Ataque e Defesa são reduzidos em 1 estágio após atacar, podendo ser acumulados em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -1564,7 +1564,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1629,7 +1629,7 @@
       "_id": "jyrudkonyRKG4oMD",
       "name": "Whirlwind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você cria uma rajada poderosa de vento que lança o inimigo para longe. O alvo deve realizar um teste de resistência de FOR contra sua CD de Move. Em caso de falha, o efeito depende do tipo de encontro. Em encontros selvagens: Se o alvo for de um nível menor que você, ele tenta fugir do combate imediatamente. Em batalhas contra treinadores: O alvo é imediatamente substituído por outro Pokémon da equipe, à escolha do treinador. Se não houver outro Pokémon disponível, ou se o alvo estiver impossibilitado de ser trocado (por habilidade, item ou condição de combate), o Move falha automaticamente. Este Move ignora reações de proteção, como Protect ou Detect</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute e reações de proteção, como Protect ou Detect. Whirlwind não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1755,7 +1755,7 @@
       "_id": "jWLgD6slpWtmNMFq",
       "name": "Withdraw",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Quando sujeito a um ataque corpo a corpo, você pode gastar sua reação para aumentar sua Defesa em 1 estágio antes de receber o dano, podendo ser acumulado em até 6 estágios. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1869,7 +1869,7 @@
       "_id": "STWBuXN3h3BrUP0d",
       "name": "Wood Hammer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você bate seu corpo áspero contra uma criatura, sofrendo um sério dano de recuo. Faça um ataque corpo a corpo contra um alvo, causando 3d8 + MOVE de dano de grama em um acerto, mas sofrendo 1/3 do dano causado (arredondado para baixo) em recuo de dano sem tipo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -1955,7 +1955,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2019,7 +2019,7 @@
       "_id": "BSlH0kO9rXTVY9IC",
       "name": "Horn Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca um alvo com seu chifre. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano normal no acerto. Se você se moveu 20 pés (6 metros) ou mais diretamente em direção a um alvo, imediatamente antes de ativar este Move, force uma criatura a fazer um teste de FOR contra sua CD de Move, deixando-a caída em caso de falha.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -2105,7 +2105,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2226,7 +2226,7 @@
       "_id": "UUaYWLTyG1SKWvbf",
       "name": "Giga Drain",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você projeta feixes verdes de energia que envolvem o alvo, drenando sua vitalidade e convertendo-a em vida para si. Faça um ataque à distância em uma criatura, causando 2d8 + MOVE de dano de grama em um acerto. Metade do dano causado retorna como cura ao usuário (arredondado para baixo).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
@@ -2312,7 +2312,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2377,7 +2377,7 @@
       "_id": "LaHk2fLfUJuc4a3k",
       "name": "Mega Drain",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você cria feixes verdes de energia que tentam drenar a força vital de um alvo. Faça um ataque à distância, causando 2d4 + MOVE de dano de grama em um acerto. Metade do dano causado retorna como cura ao usuário.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2463,7 +2463,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2528,7 +2528,7 @@
       "_id": "IAa8WEybZkuZupcV",
       "name": "Scary Face",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você faz sua cara mais assustadora, tentando amedrontar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Amedrontado e tem sua Velocidade reduzida em 2 estágios, podendo ser acumulado em até -6 estágios. Uma criatura Amedrontada dessa forma deve fazer um teste de SAB no final de cada um de seus turnos contra uma CD igual a 10 + o bônus de proficiência do usuário deste Move + 1 para cada acúmulo de Scary Face no alvo. Em caso de sucesso, ela deixa de estar Amedrontada, mas mantém a redução de Velocidade.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -2660,7 +2660,7 @@
       "_id": "bou0F0671bq0VVBo",
       "name": "Leech Seed",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você envia uma semente que se implanta na pele de uma criatura dentro do alcance. Faça um ataque à distância -1. Em um acerto, uma semente se implanta na pele do alvo. O alvo recebe dano sem tipo igual ao nível dele no final de cada um dos próprios turnos subsequentes até desmaiar ou ser trocado. O dano causado retorna como cura ao usuário, ou qualquer outra criatura ativa que o treinador tenha na batalha, mesmo que o atacante original desmaie ou seja devolvido à sua Pokébola. Apenas uma criatura pode ser semeada pelo atacante de cada vez. Criaturas do tipo grama são imunes ao dano deste Move.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2791,7 +2791,7 @@
       "_id": "ib7SMQenQsf7Hfeu",
       "name": "Horn Leech",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você afunda seus chifres em uma criatura, drenando parte de seu poder. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano de grama no acerto. Metade do dano causado retorna como cura ao usuário (arredondado para baixo).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
@@ -2877,7 +2877,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2942,7 +2942,7 @@
       "_id": "ewAx8p91dtg3sOgD",
       "name": "Rototiller",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 50 pés / 15 metros)</p><p>Você infunde o solo ao seu redor com uma camada mística de energia natural, como arar solo fresco. Todos os Pokémon do tipo Grama dentro da área no momento em que este Move é ativado aumentam seu Ataque e Ataque Especial em 1 estágio, podendo ser acumulado em até 6 estágios. Este Move ignora reações de proteção, como Protect ou Detect.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -3056,7 +3056,7 @@
       "_id": "iih1djd0WjArMLtD",
       "name": "Nature's Madness",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fada &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você canaliza todo o poder da natureza e o envia a uma criatura no alcance. Role 1d20 + MOVE + 7 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o alvo perde metade de seus pontos de vida atuais, arredondados para baixo (mínimo de 1 de dano, máximo de 5 vezes o seu nível atual).</p>",
@@ -3187,7 +3187,7 @@
       "_id": "eCSz6h0B8AZ0tKst",
       "name": "Zen Headbutt",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe contra o alvo com a cabeça envolta em energia psíquica, podendo atordoá-lo. Faça um ataque corpo a corpo -1, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 17 ou mais no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -3273,7 +3273,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3338,7 +3338,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3408,7 +3408,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

@@ -987,7 +987,7 @@
       "_id": "6buXZxCzkX0JZUrO",
       "name": "Tipo Sombrio",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Sombrio.</p>",
@@ -1014,7 +1014,7 @@
       "_id": "uhNcvzzc5Nc0IxLq",
       "name": "Tipo Lutador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Lutador.</p>",
@@ -1122,7 +1122,7 @@
       "_id": "IDGagr1drxxl3gHV",
       "name": "Feint Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se aproxima de uma criatura e a atinge com um soco de surpresa. Faça um ataque corpo a corpo com acerto garantido contra um alvo, causando 2d6 + MOVE de dano sombrio em um acerto, desde que você possa vê-lo e ele esteja dentro do seu alcance. Role um d20 para chance de golpe crítico e outros efeitos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1208,7 +1208,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1274,7 +1274,7 @@
       "_id": "8igQMGA140lO7NHB",
       "name": "Headbutt",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você realmente sabe como usar sua cabeça. Faça uma rolagem de ataque corpo a corpo, causando 2d8 + MOVE de dano normal no acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -1360,7 +1360,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1424,7 +1424,7 @@
       "_id": "xjUtFxFVOnihp1Ec",
       "name": "Leer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você encara os alvos à sua frente, reduzindo suas vontades, em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo a Defesa em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1494,8 +1494,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.wis.mod,@abilities.cha.mod}kh1",
+                "calculation": "wis",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1551,7 +1551,7 @@
       "_id": "hHtUTynEHeYoKjET",
       "name": "Sand Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você chuta uma nuvem de areia contra uma criatura dentro do alcance, tentando atrapalhar sua visão. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, a Precisão do alvo é reduzida em 1 estágio, podendo ser acumulada em até -6 estágios. Caso o resultado seja 10 ou mais acima do valor necessário, o alvo também fica Cego até o final do próximo turno dele. Embora seja um Move do tipo Terra, ele é capaz de afetar Pokémon elevados. Pokémon elevados são quaisquer do tipo Voador, aqueles sob os efeitos de Levitate, Eelevate, Magnet Rise ou Telekinesis ou por segurarem um Air Balloon.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
@@ -1683,7 +1683,7 @@
       "_id": "8EcBgg8bZTCaTDWz",
       "name": "Swagger",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você encara uma criatura dentro do alcance de maneira intimidadora enquanto brilha em vermelho, deixando-a confusa e também mais forte. Role 1d20 + MOVE + 6 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Confuso, mas aumenta o Ataque dele em 2 estágios, podendo ser acumulado em até 6 estágios. Você também pode usar este Move em aliados, sem precisar da rolagem.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1815,7 +1815,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -1885,7 +1885,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

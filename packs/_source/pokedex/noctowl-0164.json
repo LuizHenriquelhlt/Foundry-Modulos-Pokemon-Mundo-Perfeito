@@ -956,7 +956,7 @@
       "_id": "dAlS7e9aLxmaB7a3",
       "name": "Tipo Normal",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Normal.</p>",
@@ -983,7 +983,7 @@
       "_id": "zui5tkzZExilxpq9",
       "name": "Tipo Voador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Voador.</p>",
@@ -1091,7 +1091,7 @@
       "_id": "v7LaVsxPuiBUq784",
       "name": "Dream Eater",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você entra nos sonhos de uma criatura adormecida, sugando sua vitalidade. Instantaneamente, cause 2d10 + MOVE de dano psíquico em um alvo Sonolento ou Dormindo no alcance, ganhando metade do dano causado (arredondado para baixo) em pontos de vida. Este Move não desperta a criatura adormecida.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Dream Eater pode atingir um Substitute e ainda irá restaurar a vida do usuário ao causar dano.</p>",
@@ -1177,7 +1177,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "@abilities.wis.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1241,7 +1241,7 @@
       "_id": "IdHL7Fes0CtudcKT",
       "name": "Foresight",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Seus olhos brilham com uma aura que envolve um alvo em alcance, tornando-o mais sólido e visível. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CAR do alvo. Em um resultado maior ou igual, todos os bônus na Evasão do alvo são redefinidos, e caso ele seja do tipo fantasma, suas imunidades contra ataques do tipo normal e lutador são removidas.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Margem de Crítico em 2 estágios.</p>",
@@ -1373,7 +1373,7 @@
       "_id": "vXnO4Ri3UGXRmi0Z",
       "name": "Growl",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 60 pés / 18 metros)</p><p>Você mira nas criaturas à sua frente com um rosnado intimidador em um cone de 60 pés (18 metros). Qualquer criatura inimiga pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo o Ataque em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Growl é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1443,8 +1443,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.cha.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1500,7 +1500,7 @@
       "_id": "gl3QVuyd7qOduzff",
       "name": "Hypnosis",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera ondas circulares de energia multicolorida que se expandem em padrões hipnóticos na direção do oponente, causando sonolência. Role 1d20 + MOVE + 1 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Sonolento.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1632,7 +1632,7 @@
       "_id": "rCkxh39xseExMkGa",
       "name": "Sky Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, carga &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se envolve em uma luz intensa e avança contra o oponente em velocidade máxima. Com uma ação completa no seu próximo turno, se você mantiver sua concentração, você avança em linha reta em direção a uma criatura, a uma distância de até o dobro de seu deslocamento, ignorando quaisquer ataques de oportunidade, para um ataque corpo a corpo -1, causando 3d10 + MOVE de dano voador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica atordoado. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
@@ -1718,7 +1718,7 @@
                 {
                   "number": 3,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1783,7 +1783,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1869,7 +1869,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1934,7 +1934,7 @@
       "_id": "v6nN62vpxr8nzLXq",
       "name": "Peck",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você martela um alvo com um ataque de bicada. Você pode se mover imediatamente até 15 pés (4,5 metros) e fazer um ataque corpo a corpo em um alvo, causando 1d8 + MOVE de dano voador em um acerto bem-sucedido.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
@@ -2020,7 +2020,7 @@
                 {
                   "number": 1,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2085,7 +2085,7 @@
       "_id": "icPQkyF4PEy6ql3q",
       "name": "Confusion",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você tenta entrar na mente de um alvo e causar confusão. Faça um ataque à distância em uma criatura dentro do alcance. Em caso de acerto, o alvo sofre 1d10 + MOVE de dano do tipo psíquico. Em um resultado natural de 19 ou 20 no acerto, o alvo fica confuso.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -2171,7 +2171,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.int.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2236,7 +2236,7 @@
       "_id": "oMEoSKKqwR8rNmU1",
       "name": "Defog",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 50 pés / 15 metros)</p><p>Você convoca uma brisa mágica rápida em um raio de 50 pés (15 metros), centrado em você, que dissipa neblina, poeira e barreiras no ar, revelando o campo limpo. Escolha um alvo em alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, a Evasão do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios. Além disso, se usado em alcance ou dentro da área dos Moves Light Screen, Reflect, Mist, Safeguard, Aurora Veil, Spikes, Stealth Rock, Sticky Web, Toxic Spikes, os Terrenos e G-Max Steelsurge, eles são desfeitos imediatamente.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
@@ -2368,7 +2368,7 @@
       "_id": "UDILotdt7AcIO0W4",
       "name": "Echoed Voice",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você solta um grito que ecoa pelo campo de batalha em direção a uma criatura. Faça um ataque à distância, causando 2d4 + MOVE de dano normal em um acerto. Na rodada seguinte, se você ou outra criatura dentro do alcance usar este Move, ele adiciona aos dados de dano uma quantidade igual à quantidade base, podendo acumular esse aumento até o limite de 5x o dano base. O dano deste Move só aumenta uma vez por rodada, independentemente de quantos Pokémon o utilizem. Mesmo que o Move erre ou não cause dano (por exemplo, por ter sido protegido por Moves como Protect), o dano base ainda aumentará, desde que o Move seja executado em rodadas consecutivas. Não é necessário que o mesmo Pokémon use este Move em todos os turnos para que o dano aumente.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Echoed Voice é um Move baseado em som.</p>",
@@ -2454,7 +2454,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.wis.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2519,7 +2519,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2589,7 +2589,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]

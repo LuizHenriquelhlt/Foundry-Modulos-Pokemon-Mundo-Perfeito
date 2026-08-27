@@ -504,7 +504,7 @@
       "_id": "8xtgb4cKnMQwOKET",
       "name": "Tipo Dragão",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Dragão.</p>",
@@ -531,7 +531,7 @@
       "_id": "bLFuue9wKzYNwuq6",
       "name": "Tipo Fogo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fogo.</p>",
@@ -585,7 +585,7 @@
       "_id": "AjskPSdItij6IrBR",
       "name": "Dragon Rage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você dispara um feixe de energia dracônica de sua boca, atingindo uma criatura à sua frente. Faça um ataque à distância contra um alvo em alcance, causando 8 de dano fixo do tipo Dragão, independente do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p><p><strong>Níveis Superiores:</strong></p><p>O dano deste Move muda para 12 no nível 5, 16 no nível 10 e 20 no nível 17.</p>",
@@ -715,7 +715,7 @@
       "_id": "FqSNNUGnYat9ZRtw",
       "name": "Fire Fang",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você tenta perfurar uma criatura com presas envoltas em chamas. Faça um ataque corpo a corpo -1, causando 2d6 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo é queimado e atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -801,7 +801,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -866,7 +866,7 @@
       "_id": "c5AUXOZq8gMPzwJA",
       "name": "Imprison",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você emite ondas psíquicas que interferem na mente de seus inimigos, selando o acesso a técnicas que você conhece. Enquanto você permanecer em combate (isto é, até ser derrotado ou substituído), qualquer criatura inimiga a até 30 pés (9 metros) de você que tentar usar um Move que você também conheça deve fazer um teste de resistência de SAB contra sua CD de Move. Em caso de falha, ela não pode usar Moves que você conheça enquanto este efeito estiver ativo. Imprison não possui efeito com o Move Struggle.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 2 estágios.</p>",
@@ -936,8 +936,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.int.mod,@abilities.wis.mod}kh1",
+                "calculation": "int",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -993,7 +993,7 @@
       "_id": "Fl4Lt9opEiWH7xIg",
       "name": "Ancient Power",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você concentra energia em seu corpo, moldando-a em uma esfera prateada que é lançada contra o alvo. Faça um ataque à distância contra uma criatura no alcance, causando 2d6 + MOVE de dano de pedra em um acerto. Em um resultado natural de 19 ou 20 no acerto, seus atributos de Ataque, Ataque Especial, Defesa, Defesa Especial e Velocidade aumentam em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1079,7 +1079,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1144,7 +1144,7 @@
       "_id": "dZw6p7BFbrswunle",
       "name": "Flamethrower",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 60 pés / 18 metros)</p><p>Você dispara uma labareda concentrada de chamas em um linha de 60 pés (18 metros). Qualquer criatura atingida pela linha deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de fogo em uma falha, ou metade do dano em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna queimada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -1214,8 +1214,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1225,7 +1225,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1290,7 +1290,7 @@
       "_id": "HQtyaWgAbnIOZSHM",
       "name": "Dragon Breath",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você libera um poderoso feixe concentrado de energia em uma linha de 80 pés (24 metros). Todos os alvos atingidos pela explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano do tipo dragão em uma falha, e metade desse valor em uma defesa bem-sucedida. Criaturas que falharem no teste também ficam paralisadas.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1360,8 +1360,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1371,7 +1371,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1436,7 +1436,7 @@
       "_id": "Viv8w6aFAU0GYboR",
       "name": "Slash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia uma criatura no alcance. Faça um ataque corpo a corpo, causando 2d8 + MOVE de dano normal em um acerto. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -1522,7 +1522,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1587,7 +1587,7 @@
       "_id": "hJLrbiBScJP7stAq",
       "name": "Extrasensory",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera uma rajada de energia multicolorida contra uma criatura, atingindo sua mente com força psíquica e podendo imobilizá-la momentaneamente. Faça um ataque à distância contra uma criatura dentro do alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1673,7 +1673,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.wis.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1737,7 +1737,7 @@
       "_id": "cEuuWNVo1k6Hcg8L",
       "name": "Fusion Flare",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você dispara uma grande esfera flamejante pela boca, envolta por dois anéis de fogo giratórios, que colide com o alvo e causando uma explosão violenta. Faça um ataque à distância contra uma criatura no alcance, causando 2d10 + MOVE de dano de fogo em um acerto. Qualquer criatura dentro de 10 pés (3 metros) do alvo deve fazer um teste de resistência de DES contra sua CD de Move e sofrer a mesma quantidade de dano em uma falha, ou metade desse valor em um sucesso. Se Fusion Bolt tiver sido usado nesta rodada ou desde o final do seu último turno, dobre os dados de dano. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
@@ -1823,7 +1823,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1944,7 +1944,7 @@
       "_id": "1CEJ7qHYeIfYQR7B",
       "name": "Dragon Pulse",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você abre a boca e envia uma onda de choque de energia dracônica a um alvo no alcance. Faça um ataque à distância, causando 4d4 + MOVE de dano do tipo dragão em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 5d8 no nível 17.</p>",
@@ -2030,7 +2030,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2094,7 +2094,7 @@
       "_id": "HepJ6arfx99w9ccI",
       "name": "Noble Roar",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você solta um rugido impressionante para intimidar uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o Ataque e o Ataque Especial do alvo são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios cada.</p><p><strong>Observações:</strong></p><p>Noble Roar é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2226,7 +2226,7 @@
       "_id": "SFz0eFAxMO60HETg",
       "name": "Crunch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um golpe poderoso que tem a chance de diminuir temporariamente a defesa de um alvo. Faça um ataque corpo a corpo contra um alvo, causando 4d4 + MOVE de dano do tipo sombrio em caso de acerto. Em um resultado natural de 17 ou mais no acerto, a Defesa do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -2312,7 +2312,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2377,7 +2377,7 @@
       "_id": "69W0YHsBaKMC79AV",
       "name": "Fire Blast",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Um símbolo flamejante em forma de se forma diante de você e dispara em alta velocidade contra uma criatura em alcance, explodindo em chamas intensas ao atingi-la. Faça um ataque à distância -2 contra uma criatura ao alcance, causando 2d12 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica queimado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
@@ -2463,7 +2463,7 @@
                 {
                   "number": 2,
                   "denomination": 12,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2528,7 +2528,7 @@
       "_id": "rozSe7kVmtdFVagC",
       "name": "Outrage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 2-3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você entra em um frenesi, fazendo vários ataques sem controle. Neste e durante os próximos 1d2 turnos, faça um ataque corpo a corpo contra um alvo, causando 3d8 + MOVE de dano do tipo dragão em um acerto. Quando este Move termina após a última rodada, você fica confuso. Enquanto Outrage estiver sob efeito, você sempre deve utilizar seu deslocamento para estar em alcance contra o alvo, não pode fazer uso de outros Moves, e não pode ser substituído voluntariamente. O PP só é gasto no primeiro golpe.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17. Overheat Art e f e i t a p or (Superaquecimento) 1 3 a l r o g</p><p><strong>Observações:</strong></p><p>Se Outrage for interrompido (por exemplo, se o golpe errar, o usuário não puder atacar devido à paralisia, não houver mais alvos ou outra causa), ele será encerrado e não causará confusão, a menos que isso ocorra no turno em que ele naturalmente seria cessado. Se seu alvo não estiver mais em alcance, você pode optar por atacar outro inimigo mais próximo.</p>",
@@ -2614,7 +2614,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2678,7 +2678,7 @@
       "_id": "SD5DgBqSYylAfPPX",
       "name": "Blue Flare",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 50 pés / 15 metros)</p><p>Você libera uma intensa e bela linha de chamas azuis em uma linha de 50 pés (15 metros), com 5 pés (1,5 metros) de largura. Qualquer criatura pega na linha deve fazer um teste de resistência de DES contra sua CD de Move -2, sofrendo 4d6 + MOVE de dano de fogo em caso de falha, ou metade disso em caso de sucesso. Se uma criatura falhar no teste por 5 ou mais, ela fica queimada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
@@ -2748,8 +2748,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2759,7 +2759,7 @@
                 {
                   "number": 4,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2824,7 +2824,7 @@
       "_id": "5bB4kf4zPNgDkbL1",
       "name": "Hyper Voice",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés /12 metros)</p><p>Você emite um som alto e surpreendente, de alta frequência, em um cone de 40 pés (12 metros) à sua frente. Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano normal em uma falha.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute. Hyper Voice é um Move baseado em som.</p>",
@@ -2894,8 +2894,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.cha.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2905,7 +2905,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2970,7 +2970,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3040,7 +3040,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

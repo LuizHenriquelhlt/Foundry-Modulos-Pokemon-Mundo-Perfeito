@@ -69,7 +69,7 @@
       "alignment": ""
     },
     "traits": {
-      "size": "lg",
+      "size": "med",
       "di": {
         "value": [],
         "custom": "Tipo Elétrico"
@@ -467,7 +467,7 @@
       "_id": "aGpgkqrrzLfnWvzf",
       "name": "Tipo Dragão",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Dragão.</p>",
@@ -494,7 +494,7 @@
       "_id": "KkHU34KqlgioLdyY",
       "name": "Tipo Terrestre",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Terrestre.</p>",
@@ -575,7 +575,7 @@
       "_id": "2v1IIsy11tZn1uiK",
       "name": "Bite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você morde o alvo com força. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano sombrio em um acerto bem- sucedido. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -661,7 +661,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -726,7 +726,7 @@
       "_id": "oz2FBggmypYEmKS5",
       "name": "Bulldoze",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você golpeia o chão com tanta força que a energia se espalha de você em um raio de 20 pés (6 metros). Qualquer criatura pega na área deve fazer um teste de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano do tipo terra em caso de falha, ou metade disso em caso de sucesso. Criaturas que falharem no teste também têm suas Velocidades reduzidas em 1 estágio, podendo ser acumulado em até -6 estágios. Criaturas voando são imunes aos efeitos e dano deste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -807,7 +807,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -871,7 +871,7 @@
       "_id": "N6QJ4i5qfNkblen7",
       "name": "Core Enforcer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 45 pés (13,5 metros)</p><p>Você envia um laser focado que queima um padrão 'Z' no chão, atingindo uma área com raio de 20 pés (6 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d10 + MOVE de dano do tipo dragão em caso de falha, e metade em um sucesso. Em caso de falha, e caso o alvo já tenha agido nesta rodada, ele perde todos os efeitos de sua habilidade passiva, até ser trocado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
@@ -941,8 +941,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.wis.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -952,7 +952,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1017,7 +1017,7 @@
       "_id": "HQtyaWgAbnIOZSHM",
       "name": "Dragon Breath",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você libera um poderoso feixe concentrado de energia em uma linha de 80 pés (24 metros). Todos os alvos atingidos pela explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano do tipo dragão em uma falha, e metade desse valor em uma defesa bem-sucedida. Criaturas que falharem no teste também ficam paralisadas.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1087,8 +1087,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1098,7 +1098,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1163,7 +1163,7 @@
       "_id": "7Y1p1Qjtu6HIV1G8",
       "name": "Glare",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você encara nos olhos de uma criatura com ferocidade intensa. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Paralisado.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1295,7 +1295,7 @@
       "_id": "mtQZxfajgprDxhEY",
       "name": "Thousand Arrows",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você convoca uma chuva de flechas verdes para perfurar criaturas dentro do alcance. Todas as criaturas em um raio de 30 pés (9 metros), centrado em um ponto dentro do alcance, devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra em caso de falha, ou a metade disso em caso de sucesso. Criaturas do tipo Voador ou aquelas com Levitate, Eelevate, Magnet Rise ou habilidade similar PODEM ser atingidas por este Move. Qualquer criatura que falhe na jogada de resistência agora está Ao Chão e caída. Criaturas no chão são suscetíveis a Moves do tipo terra até se levantarem, independentemente de seu tipo ou habilidade.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -1365,8 +1365,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.wis.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1376,7 +1376,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1441,7 +1441,7 @@
       "_id": "l0kkQpPCW7q9Wl9z",
       "name": "Dig",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, carga &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 40 pés (12 metros)</p><p>Você cava no subsolo, desaparecendo da vista antes de atacar um alvo de baixo para cima. Quando você ativa este Move, você usa 10 pés (3 metros) do seu deslocamento para cavar no subsolo (ignorando terreno difícil) e permanece lá até o seu próximo turno. Durante este tempo, você é imune ao dano e efeitos de qualquer Move (exceto os que especificam o contrário, como Earthquake). Se você não tiver deslocamento restante ou estiver agarrado/impedido antes de ativar este Move, o Move falha. No seu próximo turno, como uma ação, você pode reaparecer em um espaço desocupado dentro do alcance do Move, ou emergir do solo abaixo de uma criatura dentro do alcance (a partir do ponto em que usou o Move) e a até 30 pés (9 metros) de altura do solo, em um ataque corpo a corpo com vantagem, causando 4d4 + MOVE de dano do tipo terra em um acerto bem-sucedido. Se o alvo tiver Sentido Sísmico, o ataque não é rolado com vantagem. Caso o alvo saia do alcance estabelecido no momento em que o Move foi ativado, ele ainda pode ser atingido por esse Move, independente da distância que tenha percorrido (exceto em altura).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Dig não pode ser escolhido pelo Move Assist.</p>",
@@ -1527,7 +1527,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1592,7 +1592,7 @@
       "_id": "XFj3CUB4HLDjUp6Y",
       "name": "Bind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto agarrado &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você tenta imobilizar um alvo com seu corpo. Force um alvo a realizar um teste de FOR contra sua CD de Move -2. Em uma falha, o alvo sofre 1d4 + MOVE de dano normal e fica agarrado. No início de cada um dos turnos dele, o alvo pode tentar escapar repetindo o teste de FOR. Enquanto o alvo estiver agarrado por você, ele sofre dano sem tipo igual ao nível dele ao final de cada um dos próprios turnos. Você não pode usar outros Moves enquanto estiver agarrando um alvo com Bind, mas ambos podem ser substituídos, encerrando o efeito deste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d6 no nível 10 e 1d8 no nível 17.</p>",
@@ -1673,7 +1673,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1733,7 +1733,7 @@
       "_id": "oXpQtvO7aFvKlsuL",
       "name": "Land's Wrath",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você reúne a energia natural da terra ao seu redor e a concentra em uma erupção súbita em um raio de 40 pés (12 metros), centrado em um ponto dentro do alcance. Todas as criaturas pegas na explosão devem fazer um teste de DES contra sua CD de Move, sofrendo 3d6 + MOVE de dano de terra no fracasso, ou a metade no sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -1814,7 +1814,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1878,7 +1878,7 @@
       "_id": "WqhSUrF1eVyFRXB4",
       "name": "Sandstorm",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 50 pés / 15 metros)</p><p>Você provoca uma tempestade de areia maciça em um raio de 50 pés (15 metros), sempre centrado em você e acompanhando seus movimentos. O efeito dura 5 rodadas, a menos que seja cancelado por Air Lock ou Cloud Nine, ou caso outro clima seja ativado em seguida e a área dele esteja encostada na sua. Usar Sandstorm enquanto já houver uma tempestade de areia ativa não reinicia a duração. Durante a tempestade de areia, ocorrem os seguintes efeitos: Quando uma criatura que não seja dos tipos Pedra, Aço ou Terra • entrar na área pela primeira vez em seu turno, ou começar seu turno dentro da área, ela sofrerá dano sem tipo igual a metade do nível dela (arredondado para baixo). • Os Moves Solar Beam e Solar Blade reduzem seus dados de dano pela metade. Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o menor resultado. • Os Pokémon do tipo Pedra dentro da área têm vantagem nos testes de resistência.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1992,7 +1992,7 @@
       "_id": "mfXeeO6jUk4RqzEL",
       "name": "Haze",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Você cria uma névoa de neve leve que cobre as criaturas em um raio de 40 pés (12 metros), centrado em você. Todas as alterações de estatísticas, efeitos de itens, mudanças de status, escudos ou outras forças externas afetando criaturas na área são removidos. Isso inclui coisas como Leech Seed, Focus Energy, Substitute, Iron Defense, Disable, Reflect, Light Screen, etc.</p><p><strong>Efeito de Poder-Z:</strong> Restaura 4d8 PV. Os dados de cura aumentam em 4d12 no nível 5, 8d8 no nível 10 e 8d10 no nível 17.</p>",
@@ -2106,7 +2106,7 @@
       "_id": "43PgpG5OLC4osr7b",
       "name": "Camouflage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se mistura com o ambiente, assumindo um novo tipo para resistências/vulnerabilidades/imunidades. O tipo depende do terreno, e fica a critério do mestre, ou pode seguir a tabela abaixo. Terreno/Condição Tipo assumido Edifícios, terrenos pavimentados/planos Normal Quando Grassy Terrain estiver em efeito, Grama ou em áreas gramadas comuns Desertos, praias ou terrenos rochosos Terra Cavernas Pedra Surfando na água ou mergulhando Água Áreas de neve ou cavernas geladas Gelo Áreas vulcânicas Fogo Altitudes elevadas, voando ou em lugares Voador com muita ventania Cemitérios ou ruínas Fantasma Castelos, ruínas ou no espaço Dragão Quando Misty Terrain estiver em efeito, ou Fada em campos floridos Quando Electric Terrain estiver em efeito, Elétrico ou em lugares com muita eletricidade Quando Psychic Terrain estiver em efeito Psíquico ou em templos</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
@@ -2220,7 +2220,7 @@
       "_id": "SFz0eFAxMO60HETg",
       "name": "Crunch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere um golpe poderoso que tem a chance de diminuir temporariamente a defesa de um alvo. Faça um ataque corpo a corpo contra um alvo, causando 4d4 + MOVE de dano do tipo sombrio em caso de acerto. Em um resultado natural de 17 ou mais no acerto, a Defesa do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -2306,7 +2306,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2371,7 +2371,7 @@
       "_id": "8tmLQ7nqrsxCPhUd",
       "name": "Earthquake",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você cria um tremor no chão em um raio de 20 pés (6 metros), centrado em você. Cada criatura na área deve ter sucesso em um teste de FOR contra sua CD de Move, recebendo 2d10 + MOVE de dano de terra em uma falha e sendo derrubada. Em um sucesso, ela sofre metade desse dano e não é derrubada. Criaturas no alcance que estejam cavando ou na fase invulnerável de Dig recebem o dobro do dano deste Move. Após o Move ser ativado, a área se torna terreno difícil. Criaturas voando a pelo menos 10 pés (3 metros) de altura são imunes aos efeitos e ao dano deste Move.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
@@ -2452,7 +2452,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2516,7 +2516,7 @@
       "_id": "1CEJ7qHYeIfYQR7B",
       "name": "Dragon Pulse",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você abre a boca e envia uma onda de choque de energia dracônica a um alvo no alcance. Faça um ataque à distância, causando 4d4 + MOVE de dano do tipo dragão em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 5d8 no nível 17.</p>",
@@ -2602,7 +2602,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2666,7 +2666,7 @@
       "_id": "sLlgEjG6Cl2N6a21",
       "name": "Coil",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se enrosca e concentra seu poder, aumentando seu Ataque, Defesa e Precisão em 1 estágio, podendo ser acumulado em até 6 estágios cada.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2780,7 +2780,7 @@
       "_id": "rozSe7kVmtdFVagC",
       "name": "Outrage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 2-3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você entra em um frenesi, fazendo vários ataques sem controle. Neste e durante os próximos 1d2 turnos, faça um ataque corpo a corpo contra um alvo, causando 3d8 + MOVE de dano do tipo dragão em um acerto. Quando este Move termina após a última rodada, você fica confuso. Enquanto Outrage estiver sob efeito, você sempre deve utilizar seu deslocamento para estar em alcance contra o alvo, não pode fazer uso de outros Moves, e não pode ser substituído voluntariamente. O PP só é gasto no primeiro golpe.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17. Overheat Art e f e i t a p or (Superaquecimento) 1 3 a l r o g</p><p><strong>Observações:</strong></p><p>Se Outrage for interrompido (por exemplo, se o golpe errar, o usuário não puder atacar devido à paralisia, não houver mais alvos ou outra causa), ele será encerrado e não causará confusão, a menos que isso ocorra no turno em que ele naturalmente seria cessado. Se seu alvo não estiver mais em alcance, você pode optar por atacar outro inimigo mais próximo.</p>",
@@ -2866,7 +2866,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2930,7 +2930,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3000,7 +3000,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

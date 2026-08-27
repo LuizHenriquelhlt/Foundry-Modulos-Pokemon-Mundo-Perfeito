@@ -736,7 +736,7 @@
       "_id": "T635wsTgvQ0Vw0JY",
       "name": "Tipo Elétrico",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Elétrico.</p>",
@@ -763,7 +763,7 @@
       "_id": "gVf4XplHDqMoLxp9",
       "name": "Tipo Dragão",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Dragão.</p>",
@@ -817,7 +817,7 @@
       "_id": "Fl4Lt9opEiWH7xIg",
       "name": "Ancient Power",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você concentra energia em seu corpo, moldando-a em uma esfera prateada que é lançada contra o alvo. Faça um ataque à distância contra uma criatura no alcance, causando 2d6 + MOVE de dano de pedra em um acerto. Em um resultado natural de 19 ou 20 no acerto, seus atributos de Ataque, Ataque Especial, Defesa, Defesa Especial e Velocidade aumentam em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -903,7 +903,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -968,7 +968,7 @@
       "_id": "sautiEjpihgrrygG",
       "name": "Shock Wave",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você lança uma explosão de energia elétrica que busca uma criatura dentro do alcance, nunca errando o alvo. Este Move sempre acerta, causando 2d6 + MOVE de dano elétrico, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Role um d20 para chance de golpe crítico e outros efeitos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano deste Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1054,7 +1054,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1118,7 +1118,7 @@
       "_id": "JC3vE86zTsGpg4jJ",
       "name": "Stomp",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ergue a perna e pisa com força sobre o alvo, esmagando-o sob o peso do impacto. Faça um ataque corpo a corpo contra um alvo, causando 2d6 + MOVE de dano normal em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status atordoado. Se o alvo tiver usado Minimize, Stomp causa um acerto garantido e o dobro dos dados de dano, desde que você possa vê-lo e ele esteja dentro do seu alcance (mas role um d20 para chance de golpe crítico e outros efeitos).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -1204,7 +1204,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1269,7 +1269,7 @@
       "_id": "oeotEtSsAX4sf4Xz",
       "name": "Sunny Day",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 50 pés / 15 metros)</p><p>Você limpa os céus e fortalece os raios solares ao redor, mudando o clima para luz solar intensa em um raio de 50 pés (15 metros), sempre centrado em você e acompanhando seus movimentos. Em ambientes fechados, você cria uma esfera de luz radiante que emite calor e energia, gerando os mesmos efeitos. O efeito dura 5 rodadas, a menos que seja cancelado por Air Lock ou Cloud Nine, ou caso outro clima seja ativado em seguida e a área dele esteja encostada na sua. Usar Sunny Day enquanto já houver luz solar intensa ativa não reinicia a duração. Durante a luz solar intensa, ocorrem os seguintes efeitos: • Os Moves do tipo fogo aumentam os dados de dano em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado. • Os Moves do tipo Água reduzem seus dados de dano pela metade (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o menor resultado. • Solar Beam e Solar Blade não exigem turno de carregamento e atacam imediatamente. • Os Moves Thunder e Hurricane passam a ter -5 na rolagem de acerto, ao invés de -3. • Nenhuma criatura pode ser congelada durante esse clima, e quaisquer criaturas já congeladas têm sua condição encerrada.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1383,7 +1383,7 @@
       "_id": "fs6CQuW5e2v25t8E",
       "name": "Twister",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você envia até duas rajadas de vento giratório que atravessam seus inimigos. Faça um ataque à distância em até duas criaturas, causando 2d4 + MOVE de dano dragão em um acerto. Em um resultado natural de 17 ou mais no acerto, o alvo fica atordoado. Este Move pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance. No caso de Bounce e Fly, dobre os dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1469,7 +1469,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1534,7 +1534,7 @@
       "_id": "Ik4quJ0AaiEc9a1M",
       "name": "Charge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Eletricidade percorre seu corpo, se preparando para seu próximo ataque. Você aumenta sua Defesa Especial em 1 estágio, podendo ser acumulado em até 6 estágios. Além disso, até o fim de seu próximo turno, se você usar um Move danoso do tipo elétrico, dobre os dados de dano dele.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1648,7 +1648,7 @@
       "_id": "HQtyaWgAbnIOZSHM",
       "name": "Dragon Breath",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você libera um poderoso feixe concentrado de energia em uma linha de 80 pés (24 metros). Todos os alvos atingidos pela explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano do tipo dragão em uma falha, e metade desse valor em uma defesa bem-sucedida. Criaturas que falharem no teste também ficam paralisadas.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1718,8 +1718,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1729,7 +1729,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1794,7 +1794,7 @@
       "_id": "L1ziWjj2U0J2kGIi",
       "name": "Electric Terrain",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Você eletrifica o solo ao seu redor para criar um campo estático de eletricidade. Por 5 rodadas, nenhuma criatura no chão dentro da área pode estar Sonolenta ou Dormindo, e as que estavam são acordadas. Criaturas no chão são aquelas que não estão utilizando sua velocidade de vôo ou sobre efeito de Levitate, Eelevate, Magnet Rise ou Telekinesis. Além disso, os Moves do tipo Elétrico ativados dentro da área também aumentam os dados de dano em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado. Electric Terrain é uma condição de terreno e pode coexistir ao mesmo tempo que condições climáticas, mas não com outras condições de terreno. Se uma nova condição de terreno for ativada na mesma área, ela substitui a anterior.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1908,7 +1908,7 @@
       "_id": "WbpGwlwuwoIm83zM",
       "name": "Discharge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Seu corpo se envolve em faíscas de eletricidade que explodem em múltiplos relâmpagos, liberando descargas por todos os lados em um raio de 20 pés (6 metros), centrado em você, atingindo todas as criaturas ao seu redor. As criaturas na área devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 4d4 + MOVE de dano elétrico e ficando paralisadas em caso de falha.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1989,7 +1989,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2053,7 +2053,7 @@
       "_id": "xaCVLzAI3MFB5GIz",
       "name": "Dragon Tail",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você chicoteia sua cauda com uma aura dracônica em uma criatura na tentativa de afastá-la. Faça um ataque corpo a corpo -1 contra um alvo, causando 2d6 + MOVE de dano do tipo dragão. Em batalhas selvagens, o alvo sofre o dano e foge da batalha se o seu nível for menor que o do usuário. Em batalhas de treinador, o alvo sofre o dano e deve ser imediatamente substituído por outra criatura no grupo do treinador, se houver alguma restante.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Dragon Tail não pode ser escolhido pelo Move Assist.</p>",
@@ -2139,7 +2139,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2203,7 +2203,7 @@
       "_id": "cQUNUuhs3i8nFpgz",
       "name": "Calm Mind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você limpa sua mente de todas as distrações, aumentando seu Ataque Especial e Defesa Especial em 1 estágio, podendo ser acumulado em até 6 estágios cada.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2317,7 +2317,7 @@
       "_id": "x76Nz5OoTulpxJXf",
       "name": "Thunderclap",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/electric.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você ataca antes do alvo com uma descarga elétrica súbita e estrondosa. Quando alvo de um Move danoso, você pode usar sua reação para tentar atacar uma criatura antes que seu dano seja rolado. Faça um ataque à distância contra o atacante, causando 2d8 + MOVE de dano do tipo Elétrico em um acerto. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes. Thunderclap não é afetado por nenhuma condição que o impeça de ser executado, como sono ou congelamento, ou a habilidade Truant.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 3d10 no nível 10 e 3d12 no nível 17.</p>",
@@ -2403,7 +2403,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2468,7 +2468,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2538,7 +2538,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

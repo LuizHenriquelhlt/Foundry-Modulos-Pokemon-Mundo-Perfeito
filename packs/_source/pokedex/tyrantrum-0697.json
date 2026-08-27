@@ -880,7 +880,7 @@
       "_id": "TaLrBd8OfQfBFrBd",
       "name": "Tipo Pedra",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Pedra.</p>",
@@ -907,7 +907,7 @@
       "_id": "8lLAwZSb5wpIQZQb",
       "name": "Tipo Dragão",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Dragão.</p>",
@@ -988,7 +988,7 @@
       "_id": "9nqkVpXeyhlyjTZH",
       "name": "Head Smash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você abaixa a cabeça para entregar uma cabeçada perigosa. Faça um ataque corpo a corpo -2, causando 5d6 + MOVE de dano de pedra no acerto. Em um acerto, o usuário sofre metade do dano causado como recuo sem tipo. Em um resultado natural de 19 ou 20 no acerto, o alvo é empurrado 5 pés (1,5 metros) para trás.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d8 no nível 5, 6d10 no nível 10, e 6d12 no nível 17.</p>",
@@ -1074,7 +1074,7 @@
                 {
                   "number": 5,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1138,7 +1138,7 @@
       "_id": "VVa4ZQQtG9NMUKHk",
       "name": "Roar",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você solta um rugido intimidador contra uma criatura a até 20 pés (6 metros) de você e que possa ouvi-lo. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o efeito depende do tipo de encontro. Em encontros selvagens: Se o alvo for de um nível igual ou menor que você, ele tenta fugir do combate imediatamente. Em batalhas contra treinadores: O alvo fica Amedrontado e, se possível, é imediatamente substituído por outro Pokémon da equipe, à escolha do treinador. Se não houver outro Pokémon disponível, ou se o alvo estiver impossibilitado de ser trocado por Habilidade, item ou condição de combate, ele fica apenas Amedrontado e deve usar sua ação neste turno para se afastar de você o máximo possível, sem provocar ataques de oportunidade. Uma criatura Amedrontada dessa forma deve fazer um teste de SAB no final de cada um de seus turnos contra uma CD igual a 10 + o bônus de proficiência do usuário deste Move. Em caso de sucesso, ela deixa de estar Amedrontada. Este Move ignora reações de proteção, como Protect ou Detect.</p><p><strong>Observações:</strong></p><p>Roar é um Move baseado em som. Roar não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1270,7 +1270,7 @@
       "_id": "fbr0mq6htVMhn1RM",
       "name": "Rock Slide",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você cria grandes pedregulhos que caem sobre criaturas em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance. Criaturas na área devem fazer um teste de FOR contra sua CD de Move -1 ou sofrer 2d8 + MOVE de dano de pedra e ficarem atordoadas em uma falha, ou metade disso e sem ficarem Atordoadas em um sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
@@ -1351,7 +1351,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1415,7 +1415,7 @@
       "_id": "JC3vE86zTsGpg4jJ",
       "name": "Stomp",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ergue a perna e pisa com força sobre o alvo, esmagando-o sob o peso do impacto. Faça um ataque corpo a corpo contra um alvo, causando 2d6 + MOVE de dano normal em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status atordoado. Se o alvo tiver usado Minimize, Stomp causa um acerto garantido e o dobro dos dados de dano, desde que você possa vê-lo e ele esteja dentro do seu alcance (mas role um d20 para chance de golpe crítico e outros efeitos).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
@@ -1501,7 +1501,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1566,7 +1566,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1652,7 +1652,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1717,7 +1717,7 @@
       "_id": "AzI7kfF9ALrT4DCI",
       "name": "Tail Whip",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você balança sua cauda, distraindo seus inimigos e abrindo suas defesas. As criaturas ao alcance e que vejam você devem fazer um teste de resistência de SAB contra sua CD de Move. Os alvos que falharem terão sua Defesa reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1787,8 +1787,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.cha.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1844,7 +1844,7 @@
       "_id": "V7cG8BkjViLn7roI",
       "name": "Bide",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 2 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você abraça o dano feito a você, esperando sua hora de atacar. Use sua ação para ativar este Move e registre todo o dano que você receber nas próximas duas rodadas. No seu terceiro turno (contando a partir deste), use sua ação para atacar um alvo dentro do alcance com um ataque à distância, causando o dobro do dano total acumulado nesse período. Esse ataque é um acerto garantido, não possui tipo e só pode ser realizado se você puder ver o alvo e ele estiver dentro do seu alcance.</p>",
@@ -1957,7 +1957,7 @@
       "_id": "oyYaa7LF1CeKecT9",
       "name": "Stealth Rock",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você rapidamente invoca uma área de armadilhas de rochas afiadas que surgem do chão e passam a flutuar em um raio de 20 pés (6 metros) de largura e 50 pés (15 metros) de altura, centrado em um ponto dentro do alcance. Sempre que uma criatura entrar nessa área, ou quando um Pokémon for substituído e o próximo surgir dentro dela, a criatura sofre dano de Pedra igual ao nível dela. Mover-se dentro da área é considerado terreno difícil. Uma criatura pode ignorar essa penalidade ao atravessar as pedras, mas recebe dano ao fazer isso. Um mesmo Pokémon pode manter até duas áreas de Stealth Rock ativas simultaneamente. Caso tente criar uma terceira, a mais antiga desaparece automaticamente.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2071,7 +2071,7 @@
       "_id": "2v1IIsy11tZn1uiK",
       "name": "Bite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você morde o alvo com força. Faça um ataque corpo a corpo, causando 2d6 + MOVE de dano sombrio em um acerto bem- sucedido. Em um resultado natural de 15 ou mais no acerto, o alvo recebe o status Atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -2157,7 +2157,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2222,7 +2222,7 @@
       "_id": "ogvZPNw5l6TSymUf",
       "name": "Charm",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fada &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você tenta encantar uma criatura, distraindo-a em combate. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo tem seu Ataque reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2354,7 +2354,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2424,7 +2424,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

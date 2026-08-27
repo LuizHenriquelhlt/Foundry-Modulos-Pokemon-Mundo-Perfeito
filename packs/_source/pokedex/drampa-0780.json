@@ -831,7 +831,7 @@
       "_id": "FuwDPjj44rAtO193",
       "name": "Tipo Normal",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Normal.</p>",
@@ -858,7 +858,7 @@
       "_id": "0kEpqrd2rUO1VYkv",
       "name": "Tipo Dragão",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Dragão.</p>",
@@ -966,7 +966,7 @@
       "_id": "UDILotdt7AcIO0W4",
       "name": "Echoed Voice",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você solta um grito que ecoa pelo campo de batalha em direção a uma criatura. Faça um ataque à distância, causando 2d4 + MOVE de dano normal em um acerto. Na rodada seguinte, se você ou outra criatura dentro do alcance usar este Move, ele adiciona aos dados de dano uma quantidade igual à quantidade base, podendo acumular esse aumento até o limite de 5x o dano base. O dano deste Move só aumenta uma vez por rodada, independentemente de quantos Pokémon o utilizem. Mesmo que o Move erre ou não cause dano (por exemplo, por ter sido protegido por Moves como Protect), o dano base ainda aumentará, desde que o Move seja executado em rodadas consecutivas. Não é necessário que o mesmo Pokémon use este Move em todos os turnos para que o dano aumente.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Echoed Voice é um Move baseado em som.</p>",
@@ -1052,7 +1052,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.wis.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1117,7 +1117,7 @@
       "_id": "oXuJSlhXjd1w4T91",
       "name": "Play Nice",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você convence uma criatura de que não tem más intenções. Ao usar este Move, escolha uma criatura dentro do alcance. O Ataque do alvo é reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Observações:</strong></p><p>Play Nice ignora Substitute e reações de proteção, como Protect ou Detect.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1231,7 +1231,7 @@
       "_id": "fs6CQuW5e2v25t8E",
       "name": "Twister",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 80 pés (24 metros)</p><p>Você envia até duas rajadas de vento giratório que atravessam seus inimigos. Faça um ataque à distância em até duas criaturas, causando 2d4 + MOVE de dano dragão em um acerto. Em um resultado natural de 17 ou mais no acerto, o alvo fica atordoado. Este Move pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance. No caso de Bounce e Fly, dobre os dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1317,7 +1317,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1382,10 +1382,10 @@
       "_id": "o2rPudpmoaE0mzP8",
       "name": "Protect",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Observações:</strong></p><p>Protect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Observações:</strong></p><p>Protect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Normal",
@@ -1478,7 +1478,7 @@
               "melee": false
             },
             "priority": 0,
-            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "<p>Protect não pode ser escolhido pelo Move Assist.</p>",
             "damage": {
@@ -1496,7 +1496,7 @@
       "_id": "7Y1p1Qjtu6HIV1G8",
       "name": "Glare",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você encara nos olhos de uma criatura com ferocidade intensa. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Paralisado.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1628,7 +1628,7 @@
       "_id": "LSZIOcxYvgV4SX9M",
       "name": "Light Screen",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal / raio de 15 pés (4,5 metros)</p><p>Placas luminosas e semitransparentes se formam no ar ao redor do usuário. Pela duração, você recebe apenas metade do dano causado por ataques à distância. Você também pode ampliar o escudo para proteger aliados dentro do alcance, porém, ao fazer isso, a eficácia do escudo é reduzida, passando a defender apenas 1/3 do dano recebido em vez de metade. Light Screen não surte efeito contra um ataque crítico ou certos Moves específicos.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1742,7 +1742,7 @@
       "_id": "AjskPSdItij6IrBR",
       "name": "Dragon Rage",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você dispara um feixe de energia dracônica de sua boca, atingindo uma criatura à sua frente. Faça um ataque à distância contra um alvo em alcance, causando 8 de dano fixo do tipo Dragão, independente do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos.</p><p><strong>Níveis Superiores:</strong></p><p>O dano deste Move muda para 12 no nível 5, 16 no nível 10 e 20 no nível 17.</p>",
@@ -2003,7 +2003,7 @@
       "_id": "HQtyaWgAbnIOZSHM",
       "name": "Dragon Breath",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dragon.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dragon.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Dragão &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você libera um poderoso feixe concentrado de energia em uma linha de 80 pés (24 metros). Todos os alvos atingidos pela explosão devem fazer um teste de resistência de DES contra sua CD de Move, sofrendo 2d6 + MOVE de dano do tipo dragão em uma falha, e metade desse valor em uma defesa bem-sucedida. Criaturas que falharem no teste também ficam paralisadas.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -2073,8 +2073,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2084,7 +2084,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2149,7 +2149,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2219,7 +2219,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]

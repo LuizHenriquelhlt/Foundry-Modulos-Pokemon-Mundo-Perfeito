@@ -449,7 +449,7 @@
       "_id": "HQ7vviQvBBdHupVO",
       "name": "Tipo Fogo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fogo.</p>",
@@ -476,7 +476,7 @@
       "_id": "eoIjwgcdmpFiJIVG",
       "name": "Tipo Voador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Voador.</p>",
@@ -557,7 +557,7 @@
       "_id": "tiGxeUWkWD01E0o8",
       "name": "Weather Ball",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você envia uma bola de energia poderosa que muda de tipo com base no clima circundante. Sem nenhuma condição climática, este Move causa 1d10 + MOVE de dano normal. Se houver uma condição climática em efeito, dobre os dados de dano e o Move se torna de outro tipo, conforme a tabela abaixo: Clima Tipo Nevoeiro ou ventos fortes Normal Luz solar intensa Fogo Chuva Água Tempestade de Areia Pedra Granizo ou Neve Gelo</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Weather Ball receberá STAB quando apropriado, por exemplo, Vanilluxe durante uma nevasca, ou Castform durante sol, chuva ou granizo, já que ele se transforma no tipo correspondente. Na luz solar intensa e na chuva, o dano de Weather Ball naturalmente recebe um aumento adicional em seus dados de dano, pois os ataques do tipo fogo e água são fortalecidos nessas condições, respectivamente. Leia os Moves Sunny Day e Rain Dance para mais detalhes.</p>",
@@ -643,7 +643,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -708,7 +708,7 @@
       "_id": "jyrudkonyRKG4oMD",
       "name": "Whirlwind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você cria uma rajada poderosa de vento que lança o inimigo para longe. O alvo deve realizar um teste de resistência de FOR contra sua CD de Move. Em caso de falha, o efeito depende do tipo de encontro. Em encontros selvagens: Se o alvo for de um nível menor que você, ele tenta fugir do combate imediatamente. Em batalhas contra treinadores: O alvo é imediatamente substituído por outro Pokémon da equipe, à escolha do treinador. Se não houver outro Pokémon disponível, ou se o alvo estiver impossibilitado de ser trocado (por habilidade, item ou condição de combate), o Move falha automaticamente. Este Move ignora reações de proteção, como Protect ou Detect</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute e reações de proteção, como Protect ou Detect. Whirlwind não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -834,7 +834,7 @@
       "_id": "1SxXFmsvLZDENN0a",
       "name": "Gust",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você cria um vento forte que atinge um alvo em alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano voador no acerto. Este Move pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance, causando o dobro dos dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10, e 2d10 no nível 17.</p>",
@@ -920,7 +920,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -984,7 +984,7 @@
       "_id": "sPWLzuyUrbeGdlOq",
       "name": "Life Dew",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Você espalha uma água misteriosa ao redor em um raio de 40 pés (12 metros) centrado em você, curando você e todos os aliados próximos em 1d6 + MOVE pontos de vida. Este Move consegue afetar aliados que possuam Water Absorb, Storm Drain ou Dry Skin, mas não ativa estas habilidades.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de cura para este Move mudam para 1d10 no nível 5, 2d8 no nível 10 e 2d12 no nível 17.</p><p><strong>Observações:</strong></p><p>Este Move afeta aliados que estejam com Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1114,7 +1114,7 @@
       "_id": "O7sOORtc1PiOBlDm",
       "name": "Brave Bird",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você recolhe suas asas e mergulha em direção a uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 3d8 + MOVE de dano voador em caso de acerto. Em um acerto, você também sofre 1/3 do total (arredondado para baixo) em dano de recuo, sem tipo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17. Feito por Yggdrassal</p>",
@@ -1200,7 +1200,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1265,7 +1265,7 @@
       "_id": "hJLrbiBScJP7stAq",
       "name": "Extrasensory",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você libera uma rajada de energia multicolorida contra uma criatura, atingindo sua mente com força psíquica e podendo imobilizá-la momentaneamente. Faça um ataque à distância contra uma criatura dentro do alcance, causando 4d4 + MOVE de dano psíquico em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica atordoado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1351,7 +1351,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "@abilities.wis.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1415,7 +1415,7 @@
       "_id": "oeotEtSsAX4sf4Xz",
       "name": "Sunny Day",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 50 pés / 15 metros)</p><p>Você limpa os céus e fortalece os raios solares ao redor, mudando o clima para luz solar intensa em um raio de 50 pés (15 metros), sempre centrado em você e acompanhando seus movimentos. Em ambientes fechados, você cria uma esfera de luz radiante que emite calor e energia, gerando os mesmos efeitos. O efeito dura 5 rodadas, a menos que seja cancelado por Air Lock ou Cloud Nine, ou caso outro clima seja ativado em seguida e a área dele esteja encostada na sua. Usar Sunny Day enquanto já houver luz solar intensa ativa não reinicia a duração. Durante a luz solar intensa, ocorrem os seguintes efeitos: • Os Moves do tipo fogo aumentam os dados de dano em metade da quantidade original (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o maior resultado. • Os Moves do tipo Água reduzem seus dados de dano pela metade (arredondado para baixo). Caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o menor resultado. • Solar Beam e Solar Blade não exigem turno de carregamento e atacam imediatamente. • Os Moves Thunder e Hurricane passam a ter -5 na rolagem de acerto, ao invés de -3. • Nenhuma criatura pode ser congelada durante esse clima, e quaisquer criaturas já congeladas têm sua condição encerrada.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1529,7 +1529,7 @@
       "_id": "69W0YHsBaKMC79AV",
       "name": "Fire Blast",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Um símbolo flamejante em forma de se forma diante de você e dispara em alta velocidade contra uma criatura em alcance, explodindo em chamas intensas ao atingi-la. Faça um ataque à distância -2 contra uma criatura ao alcance, causando 2d12 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica queimado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
@@ -1615,7 +1615,7 @@
                 {
                   "number": 2,
                   "denomination": 12,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1680,7 +1680,7 @@
       "_id": "t5t33eSe7yANe6o6",
       "name": "Punishment",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você envia um golpe de energia sombria para punir uma criatura. Faça um ataque corpo a corpo contra uma criatura, causando 3d4 + MOVE de dano sombrio em um acerto. Para cada estágio positivo que o alvo tiver no aumento de qualquer Mudança de Status, adicione mais um dado de dano (máximo de 7 estágios em Mudança de Status).</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 3d10 no nível 17.</p>",
@@ -1766,7 +1766,7 @@
                 {
                   "number": 3,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1831,7 +1831,7 @@
       "_id": "TAOtGLIS6qHlEkle",
       "name": "Sacred Fire",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 100 pés (30 metros)</p><p>Você invoca chamas sagradas multicoloridas que envolvem um alvo em alcance, queimando-o com calor e poder místico. Faça um ataque à distância -1, causando 2d10 + MOVE de dano de fogo em um acerto. Em um resultado natural de 11 ou mais no acerto, o alvo fica queimado. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
@@ -1917,7 +1917,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1982,7 +1982,7 @@
       "_id": "Fl4Lt9opEiWH7xIg",
       "name": "Ancient Power",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você concentra energia em seu corpo, moldando-a em uma esfera prateada que é lançada contra o alvo. Faça um ataque à distância contra uma criatura no alcance, causando 2d6 + MOVE de dano de pedra em um acerto. Em um resultado natural de 19 ou 20 no acerto, seus atributos de Ataque, Ataque Especial, Defesa, Defesa Especial e Velocidade aumentam em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -2068,7 +2068,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2133,7 +2133,7 @@
       "_id": "nGpi8S3S9BQVgYTj",
       "name": "Safeguard",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você cria um campo de força ao redor de você e seus aliados. Durante a duração, você e qualquer aliado dentro da área estão protegidos contra quaisquer novas Condições de Status.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -2247,7 +2247,7 @@
       "_id": "ugz1GlJF7Yr1S8hk",
       "name": "Future Sight",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você lança ondas psíquicas no ar que se manifestarão atingindo um alvo em um momento futuro. Ao usar este Move, escolha um alvo dentro do alcance. O ataque será desferido automaticamente no início do turno do alvo na terceira rodada após o uso (a rodada atual conta como a primeira). Quando chegar este momento, faça um ataque à distância, causando 3d8 + MOVE de dano psíquico em um acerto, mesmo que o alvo tenha saído do alcance do Move. Caso o alvo seja trocado, o Pokémon que o substituiu receberá este ataque. Future Sight não pode ser interrompido por Moves de proteção (como Protect ou Detect), Endure ou pela habilidade Wonder Guard.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -2333,7 +2333,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2398,7 +2398,7 @@
       "_id": "bFH3IhXWA25jNj0U",
       "name": "Recover",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você gera uma energia de cura para recuperar 2d6 + MOVE pontos de vida.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de cura para este Move mudam para 2d10 no nível 5, 4d8 no nível 10 e 4d12 no nível 17.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2484,7 +2484,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.wis.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2681,7 +2681,7 @@
       "_id": "EvaKM4UyvLvyQEWD",
       "name": "Burn Up",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você usa toda a energia de fogo que tem para infligir um dano massivo em um raio de 20 pés (6 metros), centrado em você. Criaturas dentro da área devem fazer um teste de DES contra sua CD de Move, sofrendo 4d6 + MOVE de dano do tipo fogo em caso de falha, e metade no sucesso. Após usar este Move, o usuário se esgota e perde sua tipagem de fogo pelo resto do combate, ou até ser trocado, ou através de outros efeitos de mudança de tipo, como Protean ou Reflect Type. Você precisa ser do tipo fogo para poder usar este Move. Caso você esteja congelado, Burn Up irá derreter o gelo imediatamente ao ser ativado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p><p><strong>Observações:</strong></p><p>Pokémon de duplo tipo fogo mudam para seu único outro tipo, e Pokémon de tipo único tornam-se sem tipo, perdendo o STAB e todas as vulnerabilidades, resistências e imunidades. Um Pokémon com Protean ou Libero não consegue usar Burn Up com sucesso a menos que já seja do tipo fogo; caso contrário, Burn Up falhará e Protean ou Libero não serão ativados. Um Pokémon que tenha se Terastalizado em seu Tera Tipo Fogo não perderá o tipo Fogo. Portanto, um Pokémon Terastalizado pode usar Burn Up várias vezes seguidas sem precisar ser retirado de campo.</p>",
@@ -2751,8 +2751,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2762,7 +2762,7 @@
                 {
                   "number": 4,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2827,7 +2827,7 @@
       "_id": "cQUNUuhs3i8nFpgz",
       "name": "Calm Mind",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você limpa sua mente de todas as distrações, aumentando seu Ataque Especial e Defesa Especial em 1 estágio, podendo ser acumulado em até 6 estágios cada.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2941,7 +2941,7 @@
       "_id": "GsUDlWyTXEQSqhjj",
       "name": "Overheat",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você superaquece seu corpo e libera uma intensa rajada de chamas contra uma criatura. Faça um ataque à distância -1 contra um alvo em alcance, causando 4d6 + MOVE de dano de fogo em um acerto. Este Move o exaure, e seu Ataque Especial é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d20 no nível 5, 5d10 no nível 10 e 8d8 no nível 17.</p>",
@@ -3027,7 +3027,7 @@
                 {
                   "number": 4,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3092,7 +3092,7 @@
       "_id": "rCkxh39xseExMkGa",
       "name": "Sky Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, carga &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se envolve em uma luz intensa e avança contra o oponente em velocidade máxima. Com uma ação completa no seu próximo turno, se você mantiver sua concentração, você avança em linha reta em direção a uma criatura, a uma distância de até o dobro de seu deslocamento, ignorando quaisquer ataques de oportunidade, para um ataque corpo a corpo -1, causando 3d10 + MOVE de dano voador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica atordoado. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d10 no nível 5, 7d8 no nível 10 e 7d10 no nível 17.</p>",
@@ -3178,7 +3178,7 @@
                 {
                   "number": 3,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3243,7 +3243,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3313,7 +3313,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

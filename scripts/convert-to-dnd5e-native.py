@@ -398,20 +398,15 @@ PROGRESSION_BY_LEVEL = {
 }
 
 
-def stab_bonus(level):
-    """Bônus de STAB pela tabela de Progressão de Níveis: +0 (1-2), +1 (3-6), +2 (7-10),
-    +3 (11-14), +4 (15-18), +5 (19-20)."""
-    if level >= 19:
-        return 5
-    if level >= 15:
-        return 4
-    if level >= 11:
-        return 3
-    if level >= 7:
-        return 2
-    if level >= 3:
-        return 1
-    return 0
+# Fórmula do bônus de STAB (Livro de Regras: "Bônus de Dano = MOVE (+ STAB, se aplicável)",
+# tabela de Progressão de Níveis do item "Aumento de STAB": +0 (1-2), +1 (3-6), +2 (7-10),
+# +3 (11-14), +4 (15-18), +5 (19-20)). floor((nível+1)/4) reproduz essa tabela inteira
+# (conferido nível a nível). Usar uma FÓRMULA (roll-data @details.level, que o dnd5e já
+# calcula pra Actors "npc" com Item de classe embutido) em vez de um número fixo é o que
+# torna o bônus automático: antes, o valor era travado no nível em que a ficha foi
+# importada e o item "Aumento de STAB" pedia pro Mestre atualizar cada Move na mão toda
+# vez que o Pokémon subisse de nível — a fórmula elimina essa manutenção manual.
+STAB_FORMULA = "floor((@details.level + 1) / 4)"
 
 
 def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants, progression_ids,
@@ -589,8 +584,9 @@ def convert_pokedex():
         moves_by_name[d["name"]] = d
         moves_by_norm[normalize_name(d["name"])] = d
 
-    # ícone de TIPO (svg, como no 5e/pokemon5e) para as características "Tipo X"
-    type_icon = "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/{t}.svg"
+    # ícone de TIPO (svg, como no 5e/pokemon5e) para as características "Tipo X" — asset
+    # local do módulo (scripts/localize-type-icons.py), não mais hotlink pro GitHub
+    type_icon = "modules/pokemon-mundo-perfeito/assets/types/{t}.svg"
     # mesmos seeds de seed-progression-features.py — IDs determinísticos
     progression_ids = {slug: make_id(f"progressao-{slug}")
                         for slug in ["ponto-de-ev", "aumento-de-stab", "talento-de-pokemon",
@@ -664,7 +660,6 @@ def convert_pokedex():
         known.append("Struggle")  # todo Pokémon conhece Struggle (Livro de Regras)
 
         actor_types = {type1} | ({type2} if type2 else set())
-        current_stab = stab_bonus(level)
         seen = set()
         for move_name in known:
             if move_name in seen:
@@ -678,14 +673,15 @@ def convert_pokedex():
                                             if k in ("_id", "name", "type", "img", "system",
                                                      "effects", "flags")}))
             embed["sort"] = 100
-            # STAB do nível atual embutido no dano de Moves do mesmo tipo do Pokémon
+            # STAB automático (escala sozinho com o nível, ver STAB_FORMULA) no dano de
+            # Moves do mesmo tipo do Pokémon
             move_type = embed.get("flags", {}).get("pokemon-mundo-perfeito", {}) \
                               .get("move", {}).get("moveType")
-            if current_stab and move_type in actor_types:
+            if move_type in actor_types:
                 for act in embed.get("system", {}).get("activities", {}).values():
                     for part in act.get("damage", {}).get("parts", []):
                         if part.get("bonus") == "@mod":
-                            part["bonus"] = f"@mod + {current_stab}"
+                            part["bonus"] = f"@mod + {STAB_FORMULA}"
             embedded.append(embed)
 
         # ItemGrants dos Moves de níveis futuros (acima do nível em que a espécie é encontrada)

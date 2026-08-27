@@ -828,7 +828,7 @@
       "_id": "CDpKRX3de6RBppq5",
       "name": "Tipo Inseto",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Inseto.</p>",
@@ -855,7 +855,7 @@
       "_id": "XpflSQXoZNglICfV",
       "name": "Tipo Fogo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fogo.</p>",
@@ -936,7 +936,7 @@
       "_id": "wv7hfpZtA75lkJz2",
       "name": "Absorb",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 20 pés (6 metros)</p><p>Você dispara feixes vermelhos que envolvem o alvo e drenam sua força vital. Faça um ataque à distância em uma criatura, causando 1d4 + MOVE de dano de grama. Metade do dano causado é convertido em cura para o usuário (arredondado para cima).</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d6 no nível 5, 1d8 no nível 10 e 1d10 no nível 17.</p>",
@@ -1022,7 +1022,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1087,7 +1087,7 @@
       "_id": "bpYbXDbteQOCHxDw",
       "name": "Amnesia",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação bônus &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Sua mente eleva-se a um novo nível de foco. Aumente sua Defesa Especial em 2 estágios, mas selecione um de seus Moves que não seja Amnésia. Você esquece esse Move e não pode usá-lo novamente. Este bônus pode ser acumulado até um máximo de 6 estágios, esquecendo até 3 Moves diferentes.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1201,7 +1201,7 @@
       "_id": "DvhkkhHNosFySloU",
       "name": "Bug Bite",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e morde um alvo. Faça um ataque corpo a corpo contra uma criatura, causando 2d6 + MOVE de dano do tipo inseto em um acerto. Em um acerto, se o alvo estiver segurando uma berry, você a come imediatamente e ganha seu efeito. Bug Bite não pode roubar uma Berry de um Substitute.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1287,7 +1287,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1352,7 +1352,7 @@
       "_id": "0qHRZdGltQMBomXf",
       "name": "Bug Buzz",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você emite ondas sonoras que cortam o ar e atingem o alvo com força. Escolha um alvo em alcance. Ele deve fazer um teste de CON contra sua CD de Move, sofrendo 3d6 + MOVE de dano do tipo inseto em caso de falha, ou metade disso em um sucesso. Se a criatura falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, ela tem sua Defesa Especial reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p><p><strong>Observações:</strong></p><p>Bug Buzz é um Move baseado em som.</p>",
@@ -1422,8 +1422,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.cha.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1433,7 +1433,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "{@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1498,7 +1498,7 @@
       "_id": "61igzUSJqsaGz1dX",
       "name": "Double-Edge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se lança com todo o corpo, colidindo com força contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 3d8 + MOVE de dano normal em um acerto, mas sofrendo 1/3 do dano causado (arredondado para baixo) em recuo de dano sem tipo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -1584,7 +1584,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1649,7 +1649,7 @@
       "_id": "9i8bhI3366YaFv40",
       "name": "Ember",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 60 pés (18 metros)</p><p>Você lança uma bola de chamas em um alvo dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de fogo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica queimado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1735,7 +1735,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1800,7 +1800,7 @@
       "_id": "opbbZBxZVYJQYtSe",
       "name": "Fiery Dance",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você envolve seu corpo em chamas e, ao dançar batendo as asas, libera labaredas contra um alvo em alcance. Faça um ataque à distância, causando 4d4 + MOVE de dano de fogo em um acerto. Em um resultado natural de 11 ou mais no acerto, seu Ataque Especial é aumentado em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
@@ -1886,7 +1886,7 @@
                 {
                   "number": 4,
                   "denomination": 4,
-                  "bonus": "{@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1951,7 +1951,7 @@
       "_id": "cGjAY0exGh4vrMFu",
       "name": "Flame Charge",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você envolve seu corpo em chamas e investe contra uma criatura, aumentando sua velocidade após o impacto. Faça um ataque corpo a corpo, causando 1d10 + MOVE de dano de fogo em um acerto. Cada vez que acertar este Move em um inimigo, aumente sua Velocidade em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -2037,7 +2037,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2102,7 +2102,7 @@
       "_id": "YYuprTwJBaLPDDjz",
       "name": "Flame Wheel",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / linha de 20 pés (6 metros)</p><p>Você se envolve em chamas e gira em alta velocidade, avançando como uma roda de fogo em direção ao alvo. Avance obrigatoriamente 20 pés (6 metros) em linha reta sem sofrer ataques de oportunidade, e realize uma única rolagem de ataque corpo a corpo, comparando o resultado individualmente com a CA de cada criatura no trajeto, causando 2d6 + MOVE de dano do tipo fogo em um acerto. Se atingir um alvo que seja duas ou mais escalas de tamanho maior que a sua, você ricocheteia ao colidir, continuando o movimento na direção oposta do golpe. Em um resultado natural de 19 ou 20 no acerto, os alvos atingidos ficam queimados. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque. Durante este Move, cada criatura só pode sofrer dano uma única vez, mesmo que seja atingida novamente no trajeto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -2188,7 +2188,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2253,7 +2253,7 @@
       "_id": "dKtToWm89bPcH3Zt",
       "name": "Flare Blitz",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se envolve em chamas e investe contra uma criatura, causando um sério dano. Faça um ataque corpo a corpo contra uma criatura, causando 3d8 + MOVE de dano de fogo em um acerto. Em um acerto, você sofre 1/3 do dano causado como dano sem tipo de recuo. Em um resultado natural de 19 ou 20 no acerto, o alvo é queimado. Se você estiver congelado, ainda pode usar este Move, sendo descongelado imediatamente antes de realizar o ataque.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -2339,7 +2339,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2404,7 +2404,7 @@
       "_id": "1SxXFmsvLZDENN0a",
       "name": "Gust",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você cria um vento forte que atinge um alvo em alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano voador no acerto. Este Move pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance, causando o dobro dos dados de dano.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10, e 2d10 no nível 17.</p>",
@@ -2490,7 +2490,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2554,7 +2554,7 @@
       "_id": "3eEmvpVpObY2HBTk",
       "name": "Heat Wave",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fire.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fire.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fogo &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CON &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você exala uma onda de ar quente em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move -1, sofrendo 1d20 + MOVE de dano de fogo em uma falha, ou metade em um sucesso. Qualquer criatura que falhar no teste por 10 ou mais, ou rolar um resultado natural de 1 ou 2 no teste, se torna queimada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 3d10 no nível 5, 4d10 no nível 10, e 6d8 no nível 17.</p>",
@@ -2624,8 +2624,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.dex.mod,@abilities.con.mod}kh1",
+                "calculation": "dex",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -2635,7 +2635,7 @@
                 {
                   "number": 1,
                   "denomination": 20,
-                  "bonus": "{@abilities.dex.mod,@abilities.con.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2700,7 +2700,7 @@
       "_id": "vOwDymguF3zY01rC",
       "name": "Hurricane",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você cria um turbilhão de ventos fortes e o direciona a uma criatura. Faça um ataque à distância -3 contra uma criatura ao alcance, causando 2d12 + MOVE de dano voador em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica confuso. Se usado durante a chuva intensa, Hurricane acerta com garantia (mas role um d20 para chance de causar dano crítico e confusão). Por outro lado, se usado durante luz solar intensa, a penalidade na rolagem de acerto passa a ser de -5, ao invés de -3. Hurricane pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
@@ -2786,7 +2786,7 @@
                 {
                   "number": 2,
                   "denomination": 12,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2851,7 +2851,7 @@
       "_id": "qsl0Pm8zo21dnfzb",
       "name": "Quiver Dance",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você executa levemente uma dança mística, aumentando seu Ataque Especial, Defesa Especial e Velocidade em 1 estágio, podendo ser acumulados em até 6 estágios cada.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2965,7 +2965,7 @@
       "_id": "8KN6zJMCpSMj5ET0",
       "name": "Rage Powder",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> CON/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você espalha uma nuvem de pó irritante, atraindo ataques para você. Quando um inimigo em alcance ativa um Move que mira diretamente outra criatura, ou é capaz de atingi-la em uma área de efeito, você pode usar sua reação para espalhar uma nuvem de pó ao seu redor. Todos os inimigos em alcance devem realizar um teste de SAB contra a sua CD de Move. Em caso de falha, todos os Moves de alvo único devem ter você como alvo até o início do seu próximo turno, e Moves de área de efeito devem ter você como centro. Se você estiver fora do alcance do Move inimigo, a criatura deve usar seu deslocamento restante para se aproximar de você (sem provocar ataques de oportunidade). Caso ainda esteja fora de alcance, o Move dela falha automaticamente. Pokémon do tipo Grama e Pokémon com Overcoat são imunes ao Rage Powder, de modo que seus ataques não são desviados por ele. Ativar este Move faz com que você perca sua ação em seu próximo turno.</p><p><strong>Observações:</strong></p><p>Rage Powder não redireciona Future Sight, Doom Desire e nem Sky Drop. Rage Powder atrai golpes do tipo Elétrico e Água mesmo que haja um Pokémon com Lightning Rod ou Storm Drain em campo. Se outro Pokémon da mesma equipe já estiver como centro das atenções, o primeiro a usar a técnica terá prioridade; se esse primeiro usuário estiver fora do alcance ou deixar de ser o centro das atenções, o ataque será redirecionado para o próximo centro das atenções. Rage Powder não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -3082,7 +3082,7 @@
       "_id": "MQu3hRpYcwsOhYUi",
       "name": "String Shot",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você libera uma teia pegajosa em um cone de 30 pés (9 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de DES contra sua CD de Move -1, reduzindo a Velocidade em 2 estágios em caso de falha, podendo ser acumulado em até -6 estágios. Uma criatura cuja velocidade seja reduzida a 0 com este Move fica impedida. O alvo pode gastar uma ação para tentar se livrar de qualquer teia com um teste de FOR contra sua CD de Move.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -3208,7 +3208,7 @@
       "_id": "fmFM16tRO5DHnCpT",
       "name": "Struggle Bug",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você dispara uma rajada de feixes em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 1d10 + MOVE de dano do tipo inseto em uma falha, ou metade do dano em um sucesso. Criaturas que falham também têm seu Ataque Especial reduzido em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -3278,8 +3278,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -3289,7 +3289,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -3354,7 +3354,7 @@
       "_id": "6pTIhrrKA56gx64o",
       "name": "Take Down",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe contra uma criatura para uma cabeçada potente. Faça um ataque corpo a corpo -2, causando 3d6 + MOVE de dano normal em um acerto, sofrendo um quarto do dano causado (arredondado para baixo) como recuo de dano sem tipo.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 3d10 no nível 5, 3d12 no nível 10 e 4d12 no nível 17.</p>",
@@ -3440,7 +3440,7 @@
                 {
                   "number": 3,
                   "denomination": 6,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3504,7 +3504,7 @@
       "_id": "vGDnl0A4lWcJHnJB",
       "name": "Thrash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 2-3 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se agita loucamente, fazendo vários ataques sem controle contra um alvo. Neste e durante os próximos 1d2 turnos, faça um ataque corpo a corpo contra um alvo, causando 3d8 + MOVE de dano do tipo normal em um acerto. Quando este Move termina após a última rodada, você fica confuso. Enquanto Thrash estiver sob efeito, você sempre deve utilizar seu deslocamento para estar em alcance contra o alvo, não pode fazer uso de outros Moves, e não pode ser substituído voluntariamente. O PP só é gasto no primeiro golpe.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p><p><strong>Observações:</strong></p><p>Se Thrash for interrompido (por exemplo, se o golpe errar, o usuário não puder atacar devido à paralisia, não houver mais alvos ou outra causa), ele será encerrado e não causará confusão, a menos que isso ocorra no turno em que ele naturalmente seria cessado. Se seu alvo não estiver mais em alcance, você pode optar por atacar outro inimigo mais próximo.</p>",
@@ -3590,7 +3590,7 @@
                 {
                   "number": 3,
                   "denomination": 8,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -3654,7 +3654,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3724,7 +3724,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

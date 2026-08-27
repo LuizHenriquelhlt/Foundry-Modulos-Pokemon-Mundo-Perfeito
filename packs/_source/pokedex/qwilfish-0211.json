@@ -959,7 +959,7 @@
       "_id": "SwBIziJXH4ZVeriM",
       "name": "Tipo Água",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Água.</p>",
@@ -986,7 +986,7 @@
       "_id": "J7YQeyIo9GRpYyMt",
       "name": "Tipo Venenoso",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
@@ -1094,7 +1094,7 @@
       "_id": "NtGPYj757T8HM02g",
       "name": "Destiny Bond",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ghost.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ghost.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fantasma &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você cria um vínculo interno obscuro com uma criatura. Ao ser atingido por um Move danoso, antes de saber o dano causado, ou antes de fazer um teste de resistência, você pode usar sua reação para criar uma conexão com o atacante. Até o início de seu próximo turno, se você desmaiar devido a um ataque desta criatura, o alvo também desmaia. Caso o alvo seja de nível acima do seu, ao invés de desmaiar, ele apenas recebe dano sem tipo igual à sua vida restante antes de desmaiar. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Destiny Bond não é ativado por dano indireto, como dano de clima, Leech Seed ou Future Sight. Este Move sempre falha se tiver sido usado na rodada anterior. O Pokémon que usou Destiny Bond sempre desmaia primeiro, e o atacante desmaia depois. Isso significa que, se ambos forem os últimos Pokémon de seus times, o oponente vence a batalha.</p><p><strong>Observações:</strong></p><p>Destiny Bond não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Inimigos a 50 pés (15 metros) de você são forçados a ter você como alvo até o início de seu próximo turno. Se for</p>",
@@ -1208,7 +1208,7 @@
       "_id": "qnMS9uFAqK6lL5Y1",
       "name": "Fell Stinger",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/bug.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/bug.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Inseto &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você investe contra uma criatura com um ataque de ferrão devastador. Faça um ataque corpo a corpo em uma criatura, causando 1d10 + MOVE de dano do tipo inseto em um acerto. Se este ataque fizer com que o alvo desmaie, aumente seu Ataque em 3 estágios, podendo ser acumulado em até 6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1294,7 +1294,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1359,7 +1359,7 @@
       "_id": "IINroOY3GeQGy0Nx",
       "name": "Hydro Pump",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (linha de 80 pés / 24 metros)</p><p>Você envia uma onda de água poderosa em direção às criaturas em uma linha de 80 pés (24 metros), com 5 pés (1,5 metros) de largura. Criaturas atingidas pela explosão devem ter sucesso em um teste de DES contra sua CD de Move -2, sofrendo 2d12 + MOVE de dano de água em uma falha, e metade desse dano em caso de sucesso.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
@@ -1429,8 +1429,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.str.mod,@abilities.dex.mod}kh1",
+                "calculation": "str",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1440,7 +1440,7 @@
                 {
                   "number": 2,
                   "denomination": 12,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1505,7 +1505,7 @@
       "_id": "h1rKXvwKNZgyxRXT",
       "name": "Poison Sting",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você ataca uma criatura com uma rajada de espinhos venenosos. Faça um ataque à distância contra um alvo, causando 1d4 + MOVE de dano venenoso em um acerto. Em um resultado natural de 15 ou mais no acerto, a criatura é envenenada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 10 e 1d8 no nível 17.</p>",
@@ -1591,7 +1591,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1652,7 +1652,7 @@
       "_id": "4MjLV30CsPtJlqAq",
       "name": "Spikes",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ground.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ground.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Terrestre &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você rapidamente espalha uma camada de espinhos pontiagudos no chão em um raio de 20 pés (6 metros), centrado em um ponto dentro do alcance. Sempre que uma criatura entrar nessa área, ou quando um Pokémon for substituído e o próximo surgir dentro dela, a criatura sofre dano sem tipo igual ao nível dela. Mover-se dentro da área é considerado terreno difícil. Uma criatura pode ignorar essa penalidade ao atravessar os espinhos, mas recebe dano ao fazer isso. Você pode usar uma ação para fortalecer a área. Cada vez que fizer isso, aumente o raio da área em mais 10 pés (3 metros), e o dano em mais 50% do valor original, até um máximo de 2 vezes (o dobro do nível do alvo). Um mesmo Pokémon pode manter até duas áreas de Spikes ativas simultaneamente. Caso tente criar uma terceira, a mais antiga desaparece automaticamente. Pokémon elevados não sofrem o efeito deste Move. Pokémon elevados são quaisquer do tipo Voador, aqueles sob os efeitos de Levitate, Eelevate, Magnet Rise, Telekinesis ou por segurarem um Air Balloon.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -1766,7 +1766,7 @@
       "_id": "xk9xF0JrBW2E3J4F",
       "name": "Tackle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1852,7 +1852,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1917,7 +1917,7 @@
       "_id": "e96dda0pqhhUuinV",
       "name": "Water Gun",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você dispara um jato rápido de água em uma criatura dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de água em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2003,7 +2003,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2067,7 +2067,7 @@
       "_id": "boCtKKt7rxQUnjXh",
       "name": "Harden",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você aumenta sua defesa, capaz de reduzir o dano recebido. Ao ser alvo de um ataque corpo a corpo, você pode usar sua reação para aumentar sua Defesa em 1 estágio, podendo ser acumulado em até 6 estágios. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Você também pode usar este Move como uma ação em seu turno para o mesmo efeito.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2181,7 +2181,7 @@
       "_id": "3bf99fPzzTZGpk5w",
       "name": "Minimize",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você parece menor para outras criaturas, aumentando sua Evasão em 2 estágios, podendo ser acumulado em até 6 estágios. Ao fazer isso, você reduz seu tamanho em 1 escala.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -2295,7 +2295,7 @@
       "_id": "vx3owhOVK0U88ytl",
       "name": "Bubble",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você dispara uma série de bolhas em movimento rápido em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano de água em caso de falha, ou metade disso em um sucesso. Se uma criatura falhar no teste por 10 ou mais, ou caso role um resultado natural de 1 ou 2 no teste, ela tem sua Velocidade reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2376,7 +2376,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2440,7 +2440,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2510,7 +2510,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

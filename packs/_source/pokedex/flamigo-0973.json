@@ -910,7 +910,7 @@
       "_id": "wu3EchXbFr0OSISv",
       "name": "Tipo Voador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Voador.</p>",
@@ -937,7 +937,7 @@
       "_id": "KfUsxeOlf5PGo8ya",
       "name": "Tipo Lutador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Lutador.</p>",
@@ -1045,7 +1045,7 @@
       "_id": "QpHluqh038ww4iM3",
       "name": "Copycat",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você imita um alvo que você pode ver dentro do alcance. Ao ativar este Move, escolha um alvo dentro do alcance e execute completamente o Move mais recente usado pela criatura, usando seus próprios valores de atributo, nível e tipo para CD de teste de resistência, ataque e dano.</p><p><strong>Observações:</strong></p><p>Copycat não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio. Além disso, o Move copiado se tornará seu respectivo Z-Move. Moves de Status</p>",
@@ -1159,7 +1159,7 @@
       "_id": "v6nN62vpxr8nzLXq",
       "name": "Peck",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você martela um alvo com um ataque de bicada. Você pode se mover imediatamente até 15 pés (4,5 metros) e fazer um ataque corpo a corpo em um alvo, causando 1d8 + MOVE de dano voador em um acerto bem-sucedido.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d10 no nível 5, 2d8 no nível 10 e 3d6 no nível 17.</p>",
@@ -1245,7 +1245,7 @@
                 {
                   "number": 1,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1310,7 +1310,7 @@
       "_id": "VPHmqlpsQ9o4TSkw",
       "name": "Double Kick",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você salta no ar e desfere dois chutes rápidos e precisos. Faça duas rolagens de ataque corpo a corpo, causando 1d6 + MOVE de dano lutador em cada acerto bem-sucedido.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d10 no nível 5, 1d12 no nível 10 e 2d8 no nível 17.</p>",
@@ -1396,7 +1396,7 @@
                 {
                   "number": 1,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1461,10 +1461,10 @@
       "_id": "DlFFu0XdC3WrQWVl",
       "name": "Detect",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Detect ou algum dos Moves Protect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Observações:</strong></p><p>Detect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
+          "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Detect ou algum dos Moves Protect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Observações:</strong></p><p>Detect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Evasão 2 estágios.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Lutador",
@@ -1557,7 +1557,7 @@
               "melee": false
             },
             "priority": 0,
-            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Detect ou algum dos Moves Protect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Detect ou algum dos Moves Protect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "<p>Detect não pode ser escolhido pelo Move Assist.</p>",
             "damage": {
@@ -1575,7 +1575,7 @@
       "_id": "XVPyJEkLdGwHZ9l2",
       "name": "Wing Attack",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/flying.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/flying.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Voador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca uma criatura alvo com suas asas. Você pode se mover imediatamente até 15 pés (4,5 metros) e fazer um ataque corpo a corpo contra uma criatura dentro do alcance, sem sofrer um ataque de oportunidade, causando 2d6 + MOVE de dano voador em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1661,7 +1661,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1726,7 +1726,7 @@
       "_id": "qXFELjjYboS4IXf5",
       "name": "Focus Energy",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você fecha os olhos e se concentra na energia dentro de você para atacar de maneira mais letal, aumentando sua Margem de Crítico em 2 estágios, podendo ser acumulado em até 6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
@@ -1840,7 +1840,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -1910,7 +1910,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

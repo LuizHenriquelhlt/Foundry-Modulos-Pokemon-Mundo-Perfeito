@@ -925,7 +925,7 @@
       "_id": "oXrD2YhOtPLTc9Ly",
       "name": "Tipo Lutador",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Lutador.</p>",
@@ -952,7 +952,7 @@
       "_id": "ctym8GmuhLQ0cE3S",
       "name": "Tipo Gelo",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Gelo.</p>",
@@ -1060,7 +1060,7 @@
       "_id": "vx3owhOVK0U88ytl",
       "name": "Bubble",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você dispara uma série de bolhas em movimento rápido em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano de água em caso de falha, ou metade disso em um sucesso. Se uma criatura falhar no teste por 10 ou mais, ou caso role um resultado natural de 1 ou 2 no teste, ela tem sua Velocidade reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1141,7 +1141,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1205,7 +1205,7 @@
       "_id": "UVc8ZiD8VvIDN7RT",
       "name": "Crabhammer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você bate com força em uma criatura com uma garra pesada. Faça um ataque corpo a corpo -1 contra um alvo, causando 2d10 + MOVE de dano do tipo água em caso de acerto. Este Move causa um golpe crítico em rolagens naturais de 18 ou mais no acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 5d6 no nível 5, 5d8 no nível 10 e 5d10 no nível 17.</p>",
@@ -1291,7 +1291,7 @@
                 {
                   "number": 2,
                   "denomination": 10,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1355,7 +1355,7 @@
       "_id": "r8nEY1KS3035Erd5",
       "name": "Ice Punch",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/ice.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/ice.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Gelo &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia com punhos infundidos de gelo. Faça um ataque corpo a corpo contra um alvo, causando 2d8 + MOVE de dano de gelo em um acerto. Em um resultado natural de 19 ou 20 no acerto, o alvo fica congelado.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d10 no nível 5, 5d6 no nível 10 e 6d6 no nível 17.</p>",
@@ -1441,7 +1441,7 @@
                 {
                   "number": 2,
                   "denomination": 8,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1506,7 +1506,7 @@
       "_id": "xjUtFxFVOnihp1Ec",
       "name": "Leer",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> SAB/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Você encara os alvos à sua frente, reduzindo suas vontades, em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de resistência de SAB contra sua CD de Move, reduzindo a Defesa em 1 estágio em caso de falha, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -1576,8 +1576,8 @@
                 "wis"
               ],
               "dc": {
-                "calculation": "",
-                "formula": "8 + @prof + {@abilities.wis.mod,@abilities.cha.mod}kh1",
+                "calculation": "wis",
+                "formula": "",
                 "bonus": ""
               }
             },
@@ -1633,7 +1633,7 @@
       "_id": "exFPHfsi7uvyJ5uA",
       "name": "Payback",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você golpeia forte em retaliação. Faça um ataque corpo a corpo, causando 1d10 + MOVE de dano sombrio em um acerto. Se o alvo tiver lhe causado dano nesta rodada ou desde o final do seu último turno, dobre os dados de dano para este Move.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1719,7 +1719,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1784,10 +1784,10 @@
       "_id": "o2rPudpmoaE0mzP8",
       "name": "Protect",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Observações:</strong></p><p>Protect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Observações:</strong></p><p>Protect não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Normal",
@@ -1880,7 +1880,7 @@
               "melee": false
             },
             "priority": 0,
-            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Se na rodada anterior você tiver usado Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, você deve rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você sente um perigo iminente e é capaz de evitá-lo rapidamente. Quando você é alvo direto do dano e/ou efeitos de um Move de alvo único, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de alvo único direcionado a você até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. Role 1d6 para cada uso consecutivo bem-sucedido de Protect ou algum dos Moves Detect, Endure, Wide Guard, Quick Guard, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct ou Silk Trap, até o máximo de 6d6. Este Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "<p>Protect não pode ser escolhido pelo Move Assist.</p>",
             "damage": {
@@ -1898,7 +1898,7 @@
       "_id": "313ljpKUbnyiHULJ",
       "name": "Pursuit",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/dark.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/dark.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Sombrio &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você é capaz de lançar um ataque sombrio e veloz que persegue os inimigos, principalmente quando tentam fugir. Você pode usar sua ação para realizar um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano sombrio em um acerto. Se alguma criatura no alcance de seu deslocamento estiver prestes a fugir ou ser trocada pelo treinador, você pode gastar sua reação para imediatamente se mover até ela em grande velocidade, sem sofrer ataques de oportunidade, e efetuar um ataque com o dobro dos dados de dano em um acerto. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno. Este ataque não impede a criatura de fugir ou ser trocada.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p><p><strong>Observações:</strong></p><p>A reação de Pursuit não ativa com os Moves Teleport, Baton Pass ou com Moves que forcem o alvo a ser trocado, e ignora redirecionamentos como Follow Me.</p>",
@@ -1984,7 +1984,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2049,7 +2049,7 @@
       "_id": "fLtmHklSZaKRbXpm",
       "name": "Rock Smash",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você ataca com um golpe esmagador de rocha que pode diminuir a defesa de um usuário. Faça um ataque corpo a corpo contra uma criatura, causando 2d4 + MOVE de dano lutador em um acerto. Em um resultado natural de 11 ou mais no acerto, a Defesa do alvo é reduzida em 1 estágio, podendo ser acumulada em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -2135,7 +2135,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -2199,7 +2199,7 @@
       "_id": "VEqgxvjGtYccw1d4",
       "name": "Vise Grip",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você esmaga uma criatura com um ataque de aperto poderoso. Faça um ataque corpo a corpo, causando 1d12 + MOVE de dano normal e agarrando o alvo em um acerto. Em cada turno sucessivo, se a criatura ainda estiver agarrada, você pode usar este Move novamente (como uma ação) e acertar automaticamente. Uma criatura pode tentar escapar do agarrão no início de seus turnos com um teste de FOR contra sua CD de Move.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 4d4 no nível 5, 2d12 no nível 10 e 3d10 no nível 17.</p>",
@@ -2285,7 +2285,7 @@
                 {
                   "number": 1,
                   "denomination": 12,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2406,7 +2406,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2476,7 +2476,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

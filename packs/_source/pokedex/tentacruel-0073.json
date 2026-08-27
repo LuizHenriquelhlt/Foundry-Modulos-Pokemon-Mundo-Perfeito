@@ -968,7 +968,7 @@
       "_id": "qDYCBSF8jk0l0AaA",
       "name": "Tipo Água",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Água.</p>",
@@ -995,7 +995,7 @@
       "_id": "k4diZE07ET5mM4nJ",
       "name": "Tipo Venenoso",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Venenoso.</p>",
@@ -1103,7 +1103,7 @@
       "_id": "PL0GgzRZXho78KOS",
       "name": "Acid",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea, Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 30 pés / 9 metros)</p><p>Você cria um fluxo de ácido quente em um cone de 30 pés (9 metros), centrado em você. Criaturas pegas no cone devem fazer um teste de DES contra sua CD de Move, sofrendo 2d4 + MOVE de dano venenoso em uma falha, além de reduzir a Defesa Especial do alvo em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17. durante o jogo, em ordem alfabética. O \"Poder do Move\" é o atributo resistência. Se um Poder do Move indicar \"Atributo 1/ Atributo 2\", isso descrições, o termo “Poder de Move”</p>",
@@ -1184,7 +1184,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1248,7 +1248,7 @@
       "_id": "lSXXSWkcKq8qxufP",
       "name": "Constrict",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você se enrola ao redor de uma criatura, tentando espremê-la. Faça um ataque corpo a corpo em uma criatura, causando 1d4 + MOVE de dano normal em caso de acerto. Em um resultado natural de 19 ou 20 no acerto, a Velocidade do alvo é reduzida em 1 estágio, podendo ser acumulado em até -6 estágios.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 10.</p>",
@@ -1334,7 +1334,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1390,7 +1390,7 @@
       "_id": "h1rKXvwKNZgyxRXT",
       "name": "Poison Sting",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você ataca uma criatura com uma rajada de espinhos venenosos. Faça um ataque à distância contra um alvo, causando 1d4 + MOVE de dano venenoso em um acerto. Em um resultado natural de 15 ou mais no acerto, a criatura é envenenada.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 1d6 no nível 10 e 1d8 no nível 17.</p>",
@@ -1476,7 +1476,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1537,7 +1537,7 @@
       "_id": "pL7EZS1BEVQrP3eu",
       "name": "Reflect Type",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Seu corpo brilha como um espelho por apenas um instante. Quando ele volta ao normal, você assume o(s) tipo(s) de uma criatura no alcance.</p><p><strong>Observações:</strong></p><p>Se o alvo tiver um tipo adicionado por Forest's Curse ou Trick-or-Treat, Reflect Type também copiará o tipo adicional Grama ou Fantasma, respectivamente. Reflect Type copia com sucesso o tipo do alvo mesmo que ele esteja disfarçado por Illusion. O Move sempre funciona, desde que você possa ver o alvo e ele esteja dentro do seu alcance. Reflect Type falhará se o alvo não tiver tipo (por exemplo, se for um Pokémon do tipo fogo puro que perdeu seu tipo devido a Burn Up). Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
@@ -1651,7 +1651,7 @@
       "_id": "4cK1Bx64T6kqIH4m",
       "name": "Supersonic",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você emite um grito agudo, ouvido apenas por uma criatura dentro do alcance. Role 1d20 + MOVE e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, o alvo fica Confuso.</p><p><strong>Observações:</strong></p><p>Supersonic é um Move baseado em som.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1783,7 +1783,7 @@
       "_id": "e96dda0pqhhUuinV",
       "name": "Water Gun",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/water.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/water.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Água &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você dispara um jato rápido de água em uma criatura dentro do alcance. Faça um ataque à distância, causando 2d4 + MOVE de dano de água em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1869,7 +1869,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1933,7 +1933,7 @@
       "_id": "HwMCG0iB4XUuaXWK",
       "name": "Wring Out",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 3 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você envolve suas mãos ou seu corpo ao redor de uma criatura para um golpe esmagador. Faça um ataque corpo a corpo contra um alvo, causando 6d4 + MOVE de dano do tipo normal, e o alvo tem direito a um teste de FOR contra sua CD de Move, ou ficar agarrado. Este Move causa dano máximo apenas quando o alvo está com 100% de seus Pontos de Vida. Se o alvo tiver perdido qualquer quantidade de vida, reduza em 1 o número de dados de dano rolados. Além disso, para cada 25% da vida máxima do alvo perdida, reduza em mais 1 dado de dano. Enquanto o alvo estiver agarrado por você em seus turnos subsequentes, este Move pode ser ativado novamente com um acerto automático.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 6d6 no nível 5, 6d8 no nível 10 e 6d10 no nível 17.</p>",
@@ -2019,7 +2019,7 @@
                 {
                   "number": 6,
                   "denomination": 4,
-                  "bonus": "@abilities.str.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2140,7 +2140,7 @@
       "_id": "gQ1fE9Z5GOwk8uEN",
       "name": "Toxic Spikes",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/poison.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/poison.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Venenoso &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você rapidamente espalha uma camada de espinhos venenosos no chão em um raio de 20 pés (6 metros), centrado em um ponto dentro do alcance. Sempre que uma criatura entrar nessa área, ou quando um Pokémon for substituído e o próximo surgir dentro dela, ela fica Envenenada. Mover-se dentro da área é considerado terreno difícil. Uma criatura pode ignorar essa penalidade ao atravessar os espinhos, mas fica Envenenada ao fazer isso. Você pode usar uma ação para fortalecer a área, aumentando seu raio em 10 pés (3 metros), e ela passa a causar a condição Gravemente Envenenado. Um mesmo Pokémon pode manter até duas áreas de Toxic Spikes ativas simultaneamente. Caso tente criar uma terceira, a mais antiga desaparece automaticamente. Qualquer Pokémon do tipo Venenoso que esteja dentro de uma área de Toxic Spikes pode usar sua ação bônus para absorver todo o veneno presente nela, desfazendo essa área completamente. Quando faz isso, se usar um Move do tipo Venenoso no mesmo turno, esse Move causa mais um dado de dano. Esse bônus não é cumulativo. Pokémon elevados não sofrem o efeito deste Move. Pokémon elevados são quaisquer Pokémon do tipo Voador, aqueles sob os efeitos de Levitate, Eelevate, Magnet Rise ou Telekinesis, ou que estejam segurando um Air Balloon.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2254,7 +2254,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -2324,7 +2324,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]

@@ -1,4 +1,5 @@
 import { registerTypeConfig, TYPES } from "./combat/type-chart.mjs";
+import { registerStatusEffects } from "./combat/status-effects.mjs";
 import * as capture from "./combat/capture.mjs";
 import * as zMoves from "./combat/z-moves.mjs";
 import * as megaEvolution from "./combat/mega-evolution.mjs";
@@ -30,6 +31,7 @@ Hooks.once("init", () => {
   CONFIG.PMP.typeLabels = TYPE_LABELS;
   registerSheetExtras();
   registerEggSheet();
+  registerStatusEffects();
 
   globalThis.game.pmp = {
     capture, zMoves, megaEvolution, TYPES,

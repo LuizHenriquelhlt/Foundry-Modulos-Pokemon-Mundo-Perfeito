@@ -1018,7 +1018,7 @@
       "_id": "EGrQcrT6xsizIXNd",
       "name": "Tipo Psíquico",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Psíquico.</p>",
@@ -1045,7 +1045,7 @@
       "_id": "GYzxrdjDxIysdE50",
       "name": "Tipo Fada",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p>Este Pokémon é do tipo Fada.</p>",
@@ -1153,7 +1153,7 @@
       "_id": "SULEfI9VmFlAIjGV",
       "name": "Barrier",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você cria um escudo transparente de energia psíquica, aumentando sua Defesa em 2 estágios, podendo ser acumulado em até 6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Remove todas as Mudanças de Status negativas.</p>",
@@ -1267,7 +1267,7 @@
       "_id": "icPQkyF4PEy6ql3q",
       "name": "Confusion",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você tenta entrar na mente de um alvo e causar confusão. Faça um ataque à distância em uma criatura dentro do alcance. Em caso de acerto, o alvo sofre 1d10 + MOVE de dano do tipo psíquico. Em um resultado natural de 19 ou 20 no acerto, o alvo fica confuso.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p>",
@@ -1353,7 +1353,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.int.mod,@abilities.wis.mod}kh1",
+                  "bonus": "@mod + floor((@details.level + 1) / 4)",
                   "types": []
                 }
               ]
@@ -1418,7 +1418,7 @@
       "_id": "zBtw55TqMf3mzNTk",
       "name": "Guard Swap",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você usa seu poder psíquico para trocar sua defesa com a de uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, você troca sua CA com a do alvo pela duração. Alterações temporárias nos atributos, seja por Habilidades ou itens, são ignoradas durante a troca.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -1550,7 +1550,7 @@
       "_id": "ivkTisQYBXaRw04z",
       "name": "Magical Leaf",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/grass.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/grass.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Grama &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você invoca uma folha mágica afiada que atinge uma criatura. Faça um ataque à distância com acerto garantido contra um alvo em alcance, causando 2d6 + MOVE de dano de grama, desde que você possa vê-lo e ele esteja dentro do seu alcance. Role um d20 para chance de golpe crítico e outros efeitos.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano deste Move mudam para 3d6 no nível 5, 3d8 no nível 10 e 5d6 no nível 17.</p>",
@@ -1636,7 +1636,7 @@
                 {
                   "number": 2,
                   "denomination": 6,
-                  "bonus": "@abilities.dex.mod",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1700,7 +1700,7 @@
       "_id": "DzMJ1knL9yvlTjNc",
       "name": "Misty Terrain",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fairy.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fairy.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Fada &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 5 rodadas &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 40 pés / 12 metros)</p><p>Você cobre o chão com uma névoa fina e curativa em um círculo ao seu redor. Durante 5 rodadas, nenhuma criatura no chão dentro da névoa pode sofrer novas Condições de Status. Criaturas no chão são aquelas que não estão utilizando sua velocidade de vôo ou sobre efeito de Levitate, Eelevate, Magnet Rise ou Telekinesis. Além disso, os Moves do tipo Dragão têm seus dados de dano reduzidos pela metade, sejam estes ativados dentro da área ou contra alvos dentro da área (caso seja uma rolagem com apenas 1 dado, role o dano duas vezes e escolha o menor resultado). Misty Terrain é uma condição de terreno e pode coexistir ao mesmo tempo que condições climáticas, mas não com outras condições de terreno. Se uma nova condição de terreno for ativada na mesma área, ela substitui a anterior.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
@@ -1814,7 +1814,7 @@
       "_id": "RTIbCRdXvEsBTIq8",
       "name": "Pound",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você esmaga uma criatura com um golpe de pancada. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
@@ -1900,7 +1900,7 @@
                 {
                   "number": 2,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -1965,7 +1965,7 @@
       "_id": "nr0PxRUjVBqMqWK8",
       "name": "Power Swap",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>ocê usa seu poder psíquico para trocar seus atributos ofensivos com os de uma criatura dentro do alcance. Role 1d20 + MOVE + 9 e compare o resultado com 10 + SAB do alvo. Em um resultado maior ou igual, a FOR, DES e SAB de vocês são trocadas durante a duração.</p><p><strong>Observações:</strong></p><p>Este Move ignora Substitute.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Velocidade em 1 estágio.</p>",
@@ -2097,10 +2097,10 @@
       "_id": "HxDVqHyuEIDgKnSf",
       "name": "Quick Guard",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/fighting.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/fighting.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+          "value": "<p><strong>Tipo:</strong> Lutador &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> 30 pés (9 metros)</p><p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas: role 1d6 para cada uso consecutivo bem-sucedido desses Moves, até o máximo de 6d6, e o Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Lutador",
@@ -2193,7 +2193,7 @@
               "melee": false
             },
             "priority": 1,
-            "description": "<p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você é capaz de erguer rapidamente uma barreira de energia para proteger aliados contra golpes rápidos. Quando você ou um aliado dentro do alcance for alvo de um Move danoso de Prioridade 1 ou 2, ou de Prioridade 3 (havendo desempate pela Destreza), você pode usar sua reação para erguer uma guarda instantânea. Até o início do seu próximo turno, você e todos os aliados dentro do alcance anulam automaticamente o dano e os efeitos de qualquer Move de Prioridade que os tenha como alvo. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Quick Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Wide Guard. No entanto, reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas: role 1d6 para cada uso consecutivo bem-sucedido desses Moves, até o máximo de 6d6, e o Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "",
             "damage": {
@@ -2211,7 +2211,7 @@
       "_id": "Y5jRx0lptCkWf5L9",
       "name": "Tickle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação bônus &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você faz cócegas em uma criatura dentro do alcance, pegando-a de surpresa. Role 1d20 + MOVE + 9 e compare o resultado com 10 + CON do alvo. Em um resultado maior ou igual, o Ataque e a Defesa do alvo são reduzidos em 1 estágio, podendo ser acumulados em até -6 estágios. Caso acerte este Move, você abre mão de sua ação padrão em seu próximo turno.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
@@ -2342,10 +2342,10 @@
       "_id": "lDHnIH3SuPUxv4Vk",
       "name": "Wide Guard",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/rock.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/rock.svg",
       "system": {
         "description": {
-          "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
+          "value": "<p><strong>Tipo:</strong> Pedra &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Até o início do próximo turno &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas: role 1d6 para cada uso consecutivo bem-sucedido desses Moves, até o máximo de 6d6, e o Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa em 1 estágio.</p>",
           "chat": ""
         },
         "requirements": "Move de Pokémon — Tipo Pedra",
@@ -2438,7 +2438,7 @@
               "melee": false
             },
             "priority": 0,
-            "description": "<p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, ele reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas, precisando rolar 5 ou 6 em um d6 para que a reação seja bem-sucedida.</p>",
+            "description": "<p>Você tem a habilidade de criar uma grande barreira para proteger seus aliados de Moves de área de efeito. Quando uma criatura ativa um Move que cause dano a vários alvos dentro do alcance, você pode usar sua reação para evitar automaticamente o dano e efeitos desse e de qualquer outro Move de múltiplos alvos dentro da área até o início de seu próximo turno. Caso faça isso, você abre mão de sua ação padrão em seu próximo turno. A precisão de Wide Guard não diminui se for usado em rodadas consecutivas após ele mesmo ou Quick Guard. No entanto, reduz a precisão de Protect, Detect, Endure, Spiky Shield, King's Shield, Baneful Bunker, Burning Bulwark, Max Guard, Obstruct e Silk Trap caso sejam usados em rodadas seguidas: role 1d6 para cada uso consecutivo bem-sucedido desses Moves, até o máximo de 6d6, e o Move só é bem-sucedido se todos os dados rolados resultarem em 5 ou 6.</p>",
             "higherLevels": "",
             "observations": "",
             "damage": {
@@ -2456,7 +2456,7 @@
       "_id": "QpHluqh038ww4iM3",
       "name": "Copycat",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 50 pés (15 metros)</p><p>Você imita um alvo que você pode ver dentro do alcance. Ao ativar este Move, escolha um alvo dentro do alcance e execute completamente o Move mais recente usado pela criatura, usando seus próprios valores de atributo, nível e tipo para CD de teste de resistência, ataque e dano.</p><p><strong>Observações:</strong></p><p>Copycat não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio. Além disso, o Move copiado se tornará seu respectivo Z-Move. Moves de Status</p>",
@@ -2570,7 +2570,7 @@
       "_id": "DmAZOkOyHzYQ286M",
       "name": "Meditate",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Você se torna um com seu eu interior, aumentando seu Ataque em 1 estágio, podendo ser acumulado em até 6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque em 1 estágio.</p>",
@@ -2684,7 +2684,7 @@
       "_id": "IH6Si3KTz4D0PMkq",
       "name": "Double Slap",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você desfere vários tapas rápidos. Faça um ataque corpo a corpo -2 em uma criatura, causando 1d4 + MOVE de dano normal em um acerto. Em um acerto, após isso, role um d8 e compare o resultado com a tabela abaixo para determinar a quantidade de golpes. Para cada golpe adicional, você pode imediatamente realizar um novo ataque contra o mesmo alvo com acerto garantido, causando 1d4 + MOVE de dano normal. Cada golpe extra deve rolar separadamente um d20 para verificar chance de crítico, mas não para efeitos secundários de habilidades ou itens.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para esse Move muda para 1d6 no nível 10 e 1d8 no nível 17. 1-3 Você realiza mais 1 ataque 4-6 Você realiza mais 2 ataques 7 Você realiza mais 3 ataques 8 Você realiza mais 4 ataques Cada golpe de Double Slap é tratado como um ataque separado: • Habilidades que ativam com o contato (como Static, Weak Armor, Iron Barbs, etc.) são ativadas para cada golpe individualmente. • Se o primeiro golpe quebrar um Substitute, o segundo golpe causará dano direto ao Pokémon alvo. • O Move Counter revida apenas o golpe final, enquanto Bide revida todo o dano acumulado</p>",
@@ -2770,7 +2770,7 @@
                 {
                   "number": 1,
                   "denomination": 4,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod,@abilities.cha.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
@@ -2832,7 +2832,7 @@
       "_id": "3Z5p8DCGBLVrkBVo",
       "name": "Mimic",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> 120 pés (36 metros)</p><p>Você copia os Moves de outra criatura, aprendendo suas maneiras de batalha. Quando uma criatura utilizar um Move dentro do alcance, você pode usar sua reação para substituir este Move (Mimic) pelo Move utilizado pela criatura. O alvo pode ser um aliado. O Move substituído sempre começará com um máximo de 3 PPs.</p><p><strong>Observações:</strong></p><p>Mimic não pode copiar os Moves Chatter, Metronome, Sketch ou Struggle. Este Move ignora Substitute. Mimic não pode ser escolhido pelo Move Assist.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Precisão em 1 estágio.</p>",
@@ -2946,7 +2946,7 @@
       "_id": "1xSA5z4jk3mBHCAC",
       "name": "Psywave",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/psychic.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/psychic.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Psíquico &nbsp;•&nbsp; <strong>Poder do Move:</strong> INT/SAB &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Você libera uma onda psíquica instável que atinge uma criatura com energia de intensidade variável. Faça um ataque à distância contra um alvo em alcance. Em um acerto, role 1d6, causando dano fixo do tipo psíquico conforme a tabela abaixo, independente do tipo do alvo (não há resistências ou super efetivos, porém não causa dano quando há imunidade). Esse dano não pode ser aumentado ou reduzido por nenhuma fonte, incluindo STAB, itens, condições, habilidades (de Pokémon ou Treinador), outros Moves ou acertos críticos. Resultado do d6 Dano Seu nível pela metade 1-2 (arredondado para baixo) 3-4 Seu nível Seu nível + metade dele 5-6 (arredondado para baixo)</p>",
@@ -3077,7 +3077,7 @@
       "_id": "puxgWuHITA1wwldj",
       "name": "Struggle",
       "type": "feat",
-      "img": "https://raw.githubusercontent.com/MissingGlitch/pokemon-images/refs/heads/main/types/normal.svg",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
       "system": {
         "description": {
           "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> Ilimitado &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo / 60 pés (18 metros)</p><p>Este Move é conhecido por todos os Pokémon e pode ser usado a qualquer momento. Você usa seus últimos esforços para atacar com um golpe desarmado ou usa uma arma improvisada de perto ou à distância para causar dano a uma criatura. Faça um ataque corpo a corpo ou à distância, causando 1d10 + MOVE de dano normal em um acerto. Em caso de acerto, você perde 1/4 de sua vida máxima.</p><p><strong>Níveis Superiores:</strong></p><p>O dado de dano para este Move muda para 2d8 no nível 5, 2d10 no nível 10 e 4d6 no nível 17.</p><p><strong>Observações:</strong></p><p>Struggle não pode ser escolhido pelo Move Assist.</p>",
@@ -3147,7 +3147,7 @@
                 {
                   "number": 1,
                   "denomination": 10,
-                  "bonus": "{@abilities.str.mod,@abilities.dex.mod}kh1",
+                  "bonus": "@mod",
                   "types": []
                 }
               ]
