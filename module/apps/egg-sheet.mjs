@@ -75,8 +75,15 @@ async function hatchEgg(item, egg) {
       speaker: ChatMessage.getSpeaker({ actor: item.parent }),
       content: `🥚✨ O ovo de ${item.parent?.name ?? "?"} chocou! Nasceu ${result.actor.link}${egg.shiny ? " ✨ (Shiny)" : ""}.`
     });
-    const eggMoves = await fetchSpeciesEggMoves(egg.species);
-    if (eggMoves.length) openEggMovesDialog(result.actor, eggMoves);
+    // O botão "Chocar Ovo" existe na visão de jogador também (renderPlayerView) — quem
+    // decide os Egg Moves é sempre o Mestre (Livro de Regras pág. 43), então só abre esse
+    // diálogo sozinho quando é o Mestre quem choca. Se for o jogador, o Mestre abre na hora
+    // que quiser depois pelo botão "Egg Moves" da própria visão dele (usa o mesmo
+    // hatchedActorUuid, então funciona a qualquer momento).
+    if (game.user.isGM) {
+      const eggMoves = await fetchSpeciesEggMoves(egg.species);
+      if (eggMoves.length) openEggMovesDialog(result.actor, eggMoves);
+    }
   } else if (firstAttempt) {
     ui.notifications.info(`${item.parent?.name ?? "O ovo"} chocou! Revelando ${egg.species}${egg.shiny ? " ✨ (Shiny)" : ""}.`);
   }

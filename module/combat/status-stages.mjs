@@ -1,6 +1,6 @@
 // Mudanças de Status (Livro de Regras, pág. 71): 8 estágios acumuláveis de -6 a +6.
 //
-// HISTÓRICO — pra não cair no mesmo buraco uma terceira vez:
+// HISTÓRICO — pra não cair no mesmo buraco uma quarta vez:
 // - v1.19 tentava interceptar o clique no HUD do Token via um hook "applyTokenStatusEffect"
 //   que não existe em nenhuma versão real do dnd5e — nunca disparava.
 // - v1.20/v1.21 tentaram usar um mecanismo de "condição com nível" (CONFIG.DND5E.
@@ -9,26 +9,22 @@
 //   no GitHub, que fica na FRENTE do que está de fato lançado. Conferido depois contra a tag
 //   real "release-5.3.3" (a versão que este mundo roda de verdade — "system:dnd5e(5.3.3)"
 //   no erro que apareceu uma vez): esse mecanismo genérico simplesmente NÃO EXISTE nela.
-//   Em 5.3.3, Exaustão é tratada por código só dela, sem nenhum gancho reaproveitável por
-//   um módulo de fora (module/documents/active-effect.mjs#_prepareExhaustionLevel e
-//   #_manageExhaustion nessa tag são bem diferentes do ConditionData genérico que só existe
-//   no branch principal). "levels" no CONFIG era só um campo extra ignorado, e
-//   Actor#toggleStatusEffect em 5.3.3 (module/documents/actor/actor.mjs) é só um liga/desliga
-//   simples baseado em existência — sem NENHUM suporte a incremento.
+// - v1.22 passou a criar o efeito na mão (sem depender de "levels"), mas ainda tentava
+//   cancelar a criação PADRÃO do Foundry via hook "preCreateActiveEffect" pra substituir por
+//   uma própria — dependia de detalhes internos de COMO Actor#toggleStatusEffect cria esse
+//   efeito por baixo (código fechado, não dá pra conferir contra nenhum repositório), e
+//   continuou não funcionando de forma confiável.
 //
-// Desenho atual (v1.22, conferido contra a tag release-5.3.3, não o branch principal): cada
-// direção (Ataque ↑ / Ataque ↓ etc.) é registrada em CONFIG.DND5E.conditionTypes só pra
-// aparecer com o ícone certo na grade do HUD do Token — sem "levels" (não faz nada nessa
-// versão). O módulo mesmo cuida de tudo o resto: um hook "preCreateActiveEffect" (esse sim
-// um hook padrão e estável do próprio Foundry, não algo específico de uma versão do dnd5e)
-// cancela a criação "crua" que o Foundry faria sozinho ao clicar no HUD (sem os nossos
-// "changes" e sem o ícone certo do estágio) e cria um efeito PRÓPRIO completo no lugar —
-// ligando aquela direção em magnitude 1, exatamente como Envenenado/Agarrado (um clique liga,
-// outro desliga — isso último já acontece sozinho, porque nessa hora o Foundry vê o efeito
-// existente de verdade e apaga ele direto, sem passar pelo hook). Estágios 2-6 só dá pra
-// alcançar pelos botões +/- da própria ficha, que gerenciam esse mesmo efeito diretamente
-// (create/update/delete na mão — sem depender de toggleStatusEffect, que não incrementa nada
-// nessa versão do dnd5e).
+// Desenho atual (v1.23): não depende mais de NADA do caminho padrão do Foundry pro clique no
+// HUD. Cada direção (Ataque ↑ / Ataque ↓ etc.) é registrada em CONFIG.DND5E.conditionTypes só
+// pra aparecer com o ícone certo na grade — mas o clique em si é interceptado direto no DOM
+// (hook "renderTokenHUD", padrão e estável em qualquer versão do Foundry), com
+// stopPropagation pra garantir que o toggle padrão do Foundry nunca chega a rodar, e o
+// próprio módulo cuida de tudo via createEmbeddedDocuments/update/delete na mão — a base mais
+// simples e estável que existe no sistema de documentos do Foundry, sem nenhuma suposição
+// sobre comportamento interno de toggleStatusEffect ou de hooks de criação. Um clique liga a
+// direção em magnitude 1 (igual Envenenado/Agarrado), outro desliga. Estágios 2-6 só dá pra
+// alcançar pelos botões +/- da própria ficha, que gerenciam esse mesmo efeito do mesmo jeito.
 const MODULE_ID = "pokemon-mundo-perfeito";
 
 export const STAGE_STATS = [
@@ -163,6 +159,18 @@ export async function clearStages(actor) {
   }
 }
 
+async function toggleFromHud(actor, statusId) {
+  const info = parseConditionId(statusId);
+  if (!info) return;
+  if (stageValue(actor, info.key, info.direction) > 0) {
+    await setStageEffect(actor, info.key, info.direction, 0);
+    return;
+  }
+  const opposite = info.direction === "up" ? "down" : "up";
+  await setStageEffect(actor, info.key, opposite, 0);
+  await setStageEffect(actor, info.key, info.direction, 1);
+}
+
 // O dnd5e RECONSTRÓI CONFIG.statusEffects inteiro (de array pra objeto por id) durante o
 // próprio hook "setup" dele, a partir de CONFIG.DND5E.conditionTypes + CONFIG.DND5E.statusEffects
 // — nosso hook "init" roda antes disso, então empilhar direto em CONFIG.statusEffects.push(...)
@@ -178,26 +186,34 @@ export function registerStatusEffects() {
       { name: `${label} ↓`, img: baseIconPath(key, "down"), pseudo: true };
   }
 
-  // Clique no HUD do Token cria um ActiveEffect "cru" (só o que está registrado em
-  // CONFIG.statusEffects — sem "changes", sem ícone por nível). "preCreateActiveEffect" é um
-  // hook padrão do próprio Foundry (não específico de nenhuma versão do dnd5e): cancela essa
-  // criação padrão (return false) e cria um efeito próprio completo no lugar. O handler
-  // precisa ser SÍNCRONO — Hooks.call olha o valor de retorno na hora pra decidir se cancela;
-  // se o handler fosse "async", o retorno seria sempre uma Promise (nunca "=== false"), e a
-  // criação padrão nunca seria cancelada de verdade. Por isso o trabalho de verdade
-  // (setStageEffect) roda à parte, sem o hook esperar por ele.
-  Hooks.on("preCreateActiveEffect", (effect, data) => {
-    if (data.flags?.[MODULE_ID]?.stageKey) return true; // já é nosso (criado por setStageEffect)
-    const statusId = data.statuses?.[0];
-    const info = parseConditionId(statusId);
-    if (!info) return true;
-    const actor = effect.parent;
-    if (actor?.documentName !== "Actor") return true;
+  // Clique no HUD do Token cria um ActiveEffect "cru" só com o que está registrado em
+  // CONFIG.statusEffects (sem "changes", sem ícone certo) — usar Actor#toggleStatusEffect ou
+  // tentar cancelar isso via hook (preCreateActiveEffect) depende de detalhes internos do
+  // Foundry/dnd5e que já se mostraram version-frágeis demais nesse projeto (duas rodadas de
+  // bugs). Em vez disso, intercepta o clique direto no DOM da grade do HUD (renderTokenHUD é
+  // um hook padrão e simples do próprio Foundry) e cuida do toggle inteiro na mão, sem passar
+  // pelo caminho padrão do Foundry em nenhum momento — só depende de criar/apagar
+  // ActiveEffect, que é a base mais estável que existe no sistema de documentos do Foundry.
+  Hooks.on("renderTokenHUD", (hud, html) => {
+    const root = html instanceof HTMLElement ? html : html?.[0];
+    const actor = hud.object?.actor ?? hud.token?.actor;
+    if (!root || !actor) return;
 
-    const opposite = info.direction === "up" ? "down" : "up";
-    setStageEffect(actor, info.key, opposite, 0)
-      .then(() => setStageEffect(actor, info.key, info.direction, 1))
-      .catch((err) => console.error(`${MODULE_ID} | Falha ao ligar ${statusId} pelo HUD do Token`, err));
-    return false;
+    for (const el of root.querySelectorAll(`[data-status-id^="${MODULE_ID}-"]`)) {
+      const statusId = el.dataset.statusId;
+      // capture (terceiro argumento "true"): roda ANTES do listener delegado que o Foundry
+      // liga na grade inteira, então stopPropagation aqui impede o toggle padrão dele de
+      // sequer começar — não é uma corrida entre os dois, o nosso sempre chega primeiro.
+      el.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleFromHud(actor, statusId)
+          .catch((err) => console.error(`${MODULE_ID} | Falha ao alternar ${statusId} pelo HUD do Token`, err));
+      }, true);
+      el.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
+    }
   });
 }
