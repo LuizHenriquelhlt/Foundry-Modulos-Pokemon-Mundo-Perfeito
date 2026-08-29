@@ -7,7 +7,6 @@ import { registerEggSheet } from "./apps/egg-sheet.mjs";
 import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
 import { openEggRollLog, refreshEggRollLogIfOpen } from "./apps/egg-roll-log.mjs";
 import { registerStatusEffects } from "./combat/status-stages.mjs";
-import { registerRollDataExtension } from "./combat/roll-data.mjs";
 import { learnMove } from "./data/move-pack.mjs";
 import { repairPokemonMoves } from "./data/repair-moves.mjs";
 
@@ -27,7 +26,6 @@ Hooks.once("init", () => {
   registerSheetExtras();
   registerEggSheet();
   registerStatusEffects();
-  registerRollDataExtension();
 
   globalThis.game.pmp = {
     capture, zMoves, megaEvolution, TYPES,

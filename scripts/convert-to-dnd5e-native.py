@@ -163,19 +163,14 @@ def build_move_activity(pmp, move_name):
     damage_part = None
     if m_dmg:
         dtype = damage_type_key(pmp.get("moveType"))
-        # Estágio de Ataque (corpo a corpo) só entra no dano de Moves de alcance corpo a
-        # corpo; Ataque Especial (à distância), só nos de alcance à distância — mesmo
-        # critério "melee" já usado pra decidir mwak/ranged na activity de ataque, então um
-        # Move nunca fica "no meio" das duas coisas. "@prof" pra continuar escalando sozinho
-        # com o nível, igual todo o resto dos bônus de estágio. Funciona tanto em Moves com
-        # activity "attack" quanto "save" — os dois usam essa mesma "bonus" no damage part,
-        # diferente do bônus global system.bonuses.mwak/rwak.damage do dnd5e, que só existe
-        # pra activities do tipo "attack" (não alcança dano de Moves com teste de resistência).
-        stage_token = "@pmpAtkStage" if melee else "@pmpSpaStage"
+        # Só dado + modificador — sem STAB nem bônus de estágio embutidos na fórmula. O
+        # jogador soma isso na hora de rolar, do jeito que preferir (o painel da ficha mostra
+        # o estágio atual, e a Pokédex/o item "Aumento de STAB" mostram a tabela de STAB por
+        # nível). Golpe "limpo" de propósito — nada escondido atrás de uma fórmula.
         damage_part = {
             "number": int(m_dmg.group(1)),
             "denomination": int(m_dmg.group(2)),
-            "bonus": f"@mod + {stage_token} * @prof",
+            "bonus": "@mod",
             "types": [dtype] if dtype else []
         }
 
@@ -441,16 +436,6 @@ PROGRESSION_BY_LEVEL = {
 }
 
 
-# Fórmula do bônus de STAB (Livro de Regras: "Bônus de Dano = MOVE (+ STAB, se aplicável)",
-# tabela de Progressão de Níveis do item "Aumento de STAB": +0 (1-2), +1 (3-6), +2 (7-10),
-# +3 (11-14), +4 (15-18), +5 (19-20)). floor((nível+1)/4) reproduz essa tabela inteira
-# (conferido nível a nível). Usar uma FÓRMULA (roll-data @details.level, que o dnd5e já
-# calcula pra Actors "npc" com Item de classe embutido) em vez de um número fixo é o que
-# torna o bônus automático: antes, o valor era travado no nível em que a ficha foi
-# importada e o item "Aumento de STAB" pedia pro Mestre atualizar cada Move na mão toda
-# vez que o Pokémon subisse de nível — a fórmula elimina essa manutenção manual.
-STAB_FORMULA = "floor((@details.level + 1) / 4)"
-
 
 def build_class_item(species_name, hit_die, level, book_hp, con_mod, move_grants, progression_ids,
                       talento_ids):
@@ -702,7 +687,6 @@ def convert_pokedex():
             known = pmp["moveTable"][0]["moves"]
         known.append("Struggle")  # todo Pokémon conhece Struggle (Livro de Regras)
 
-        actor_types = {type1} | ({type2} if type2 else set())
         seen = set()
         for move_name in known:
             if move_name in seen:
@@ -716,20 +700,6 @@ def convert_pokedex():
                                             if k in ("_id", "name", "type", "img", "system",
                                                      "effects", "flags")}))
             embed["sort"] = 100
-            # STAB automático (escala sozinho com o nível, ver STAB_FORMULA) no dano de
-            # Moves do mesmo tipo do Pokémon
-            move_type = embed.get("flags", {}).get("pokemon-mundo-perfeito", {}) \
-                              .get("move", {}).get("moveType")
-            if move_type in actor_types:
-                for act in embed.get("system", {}).get("activities", {}).values():
-                    for part in act.get("damage", {}).get("parts", []):
-                        bonus = part.get("bonus", "")
-                        # "@mod + @pmpAtkStage * @prof" (ou Spa) é o padrão desde que o bônus
-                        # de estágio passou a morar direto na fórmula do damage part — o STAB
-                        # some acrescenta em cima, não substitui mais (por isso "startswith"
-                        # em vez de comparar com "@mod" sozinho).
-                        if bonus.startswith("@mod") and STAB_FORMULA not in bonus:
-                            part["bonus"] = f"{bonus} + {STAB_FORMULA}"
             embedded.append(embed)
 
         # ItemGrants dos Moves de níveis futuros (acima do nível em que a espécie é encontrada)

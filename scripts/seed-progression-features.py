@@ -42,9 +42,9 @@ FEATURES = [
     ("Aumento de STAB", "aumento-de-stab",
      "<p>O bônus de STAB (dano extra de Moves do mesmo tipo do Pokémon) aumenta conforme a "
      "tabela de Progressão de Níveis:</p>" + STAB_TABLE_HTML +
-     "<p><em>Aplicado automaticamente: a fórmula de dano dos Moves do mesmo tipo do Pokémon "
-     "já calcula o bônus sozinha a partir do nível atual, sem precisar editar nada à mão "
-     "quando o Pokémon sobe de nível.</em></p>"),
+     "<p><em>Some esse bônus na hora de rolar o dano de qualquer Move do mesmo tipo do "
+     "Pokémon — a fórmula de dano dos Moves mostra só o dado e o modificador, de propósito, "
+     "pra você somar o que quiser (STAB, Mudança de Status etc.) do jeito que preferir.</em></p>"),
     ("Talento de Pokémon", "talento-de-pokemon",
      "<p>Escolha um Talento da lista de Talentos de Pokémon do Livro de Regras.</p>"),
     ("Aumento de Proficiência", "aumento-de-proficiencia",

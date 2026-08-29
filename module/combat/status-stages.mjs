@@ -85,11 +85,10 @@ export function getStages(actor) {
 function changesFor(key, value) {
   const add = (k, v) => (v ? [{ key: k, mode: 2, value: String(v), priority: null }] : []);
   switch (key) {
-    // Ataque/Atq. Especial não entram aqui — o bônus deles já vem embutido direto na
-    // fórmula de dano de cada Move (@pmpAtkStage/@pmpSpaStage, ver roll-data.mjs e scripts/
-    // convert-to-dnd5e-native.py): o bônus global do dnd5e por classificação de ataque
-    // (mwak/rwak) só existe pra Moves com activity "attack" — não alcança os com activity
-    // "save" (a maioria dos Moves "especiais" deste sistema).
+    // Ataque/Atq. Especial não entram aqui de propósito: os Moves foram deixados "limpos"
+    // (só dado + modificador, sem fórmula embutida) pro jogador somar o bônus de estágio na
+    // hora de rolar, do jeito que preferir — igual Defesa/Def. Especial/Marg. Crítico, só
+    // registro visível no painel, sem automação mecânica.
     case "acc":
       return [...add("system.bonuses.mwak.attack", value), ...add("system.bonuses.rwak.attack", value)];
     case "eva":
@@ -132,6 +131,15 @@ async function setStageEffect(actor, key, direction, value) {
   };
   if (existing) await existing.update(data);
   else await actor.createEmbeddedDocuments("ActiveEffect", [data]);
+
+  // Criar/atualizar/apagar um ActiveEffect no Actor nem sempre dispara sozinho um novo
+  // render da ficha a tempo (mesmo motivo pelo qual XP/Nível de Treinador em sheet-extras.mjs
+  // já precisavam de um refresh forçado) — sem isso, os botões +/- da ficha pareciam "não
+  // fazer nada": o efeito era criado certinho por baixo, só a ficha aberta continuava
+  // mostrando o valor antigo. O HUD do Token tem o mesmo problema pro ícone "selecionado".
+  if (actor.sheet?.rendered) actor.sheet.render(false);
+  const hud = canvas?.hud?.token;
+  if (hud?.rendered && hud.object?.actor?.id === actor.id) hud.render(false);
 }
 
 // Botões +/- da própria ficha: dá um passo de ±1 no estágio (-6..+6), gerenciando o efeito

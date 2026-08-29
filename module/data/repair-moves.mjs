@@ -5,26 +5,17 @@
 // está certo, mas a cópia no Pokémon não. Esta função varre os Pokémon do mundo e corrige as
 // cópias, comparando com o Move atual do compêndio "moves".
 //
-// Só mexe no que é dado "de regra" (tipo de dano, fórmula de bônus — incluindo STAB, já que
-// o compêndio "moves" sozinho nunca carrega STAB, isso só existe nas cópias que nascem
-// dentro de uma espécie da Pokédex — e template de área). NUNCA toca em "attack.ability"/
+// Só mexe no que é dado "de regra" (tipo de dano, fórmula de bônus — os Moves são "limpos"
+// de propósito, só dado + modificador, sem STAB/estágio embutido, pro jogador somar o que
+// quiser na hora de rolar — e template de área). NUNCA toca em "attack.ability"/
 // "save.ability"/"save.dc.calculation": esse campo é intencionalmente editável pelo jogador
 // (ver comentário em scripts/convert-to-dnd5e-native.py), então uma escolha que o jogador já
 // tenha feito ali é preservada.
 import { fetchMoveDocument } from "./move-pack.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
-const STAB_FORMULA = "floor((@details.level + 1) / 4)";
 
-function actorTypes(actor) {
-  const types = actor.getFlag(MODULE_ID, "species")?.types;
-  const set = new Set();
-  if (types?.type1) set.add(types.type1);
-  if (types?.type2) set.add(types.type2);
-  return set;
-}
-
-function patchActivities(currentActivities, freshActivities, stab) {
+function patchActivities(currentActivities, freshActivities) {
   let changed = false;
   for (const [id, freshAct] of Object.entries(freshActivities)) {
     const current = currentActivities[id];
@@ -42,8 +33,7 @@ function patchActivities(currentActivities, freshActivities, stab) {
         changed = true;
       }
 
-      let bonus = freshPart.bonus ?? "";
-      if (stab && bonus.startsWith("@mod") && !bonus.includes(STAB_FORMULA)) bonus += ` + ${STAB_FORMULA}`;
+      const bonus = freshPart.bonus ?? "";
       if (currentPart.bonus !== bonus) {
         currentPart.bonus = bonus;
         changed = true;
@@ -74,7 +64,6 @@ export async function repairPokemonMoves() {
 
   for (const actor of game.actors) {
     if (actor.type !== "npc" || !actor.getFlag(MODULE_ID, "species")) continue;
-    const types = actorTypes(actor);
     let touchedHere = false;
 
     for (const item of Array.from(actor.items)) {
@@ -86,8 +75,7 @@ export async function repairPokemonMoves() {
       if (!fresh) continue;
 
       const activities = foundry.utils.deepClone(item.toObject().system.activities ?? {});
-      const stab = types.has(moveFlag.moveType);
-      const changed = patchActivities(activities, fresh.toObject().system.activities ?? {}, stab);
+      const changed = patchActivities(activities, fresh.toObject().system.activities ?? {});
       const imgChanged = Boolean(fresh.img) && fresh.img !== item.img;
 
       if (changed || imgChanged) {
