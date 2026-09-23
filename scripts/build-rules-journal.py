@@ -25,7 +25,6 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "packs", "_source", "regras")
-FOLDER_ID = "RegrasFolderRoot1"
 
 
 def make_id(seed):
@@ -37,6 +36,13 @@ def make_id(seed):
         out.append(alphabet[n % len(alphabet)])
         n //= len(alphabet)
     return "".join(out)
+
+
+# Foundry exige IDs com EXATAMENTE 16 caracteres alfanuméricos — "RegrasFolderRoot1" (17
+# caracteres) passava despercebido no build, mas o Foundry rejeita o documento ao carregar o
+# compêndio e derruba o carregamento do mundo inteiro. Gerado por hash pra não repetir esse
+# erro de contagem manual (mesmo golpe em scripts/split-talentos.py).
+FOLDER_ID = make_id("regras-folder-root")
 
 
 def stats():
