@@ -9,6 +9,9 @@ import { openEggRollLog, refreshEggRollLogIfOpen } from "./apps/egg-roll-log.mjs
 import { registerStatusEffects } from "./combat/status-stages.mjs";
 import { learnMove } from "./data/move-pack.mjs";
 import { repairPokemonMoves } from "./data/repair-moves.mjs";
+import { evolveActor } from "./data/evolution.mjs";
+import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
+import { rollSpringSummer, rollFallWinter } from "./data/weather.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -30,7 +33,9 @@ Hooks.once("init", () => {
   globalThis.game.pmp = {
     capture, zMoves, megaEvolution, TYPES,
     eggs: { openCreateEggDialog, openRollLog: openEggRollLog },
-    repairMoves: repairPokemonMoves
+    repairMoves: repairPokemonMoves,
+    evolution: { evolveActor, open: openEvolutionDialog },
+    weather: { rollSpringSummer, rollFallWinter }
   };
 });
 
@@ -41,6 +46,8 @@ Hooks.once("ready", async () => {
   await ensureMacro("Criar Ovo Pokémon", "game.pmp.eggs.openCreateEggDialog();");
   await ensureMacro("Log de Incubação de Ovos", "game.pmp.eggs.openRollLog();");
   await ensureMacro("Reparar Moves dos Pokémon", "game.pmp.repairMoves();");
+  await ensureMacro("Rolar Clima (Primavera/Verão)", "game.pmp.weather.rollSpringSummer();");
+  await ensureMacro("Rolar Clima (Outono/Inverno)", "game.pmp.weather.rollFallWinter();");
 });
 
 // Cria uma macro de conveniência pro Mestre sem precisar decorar o comando — só roda uma

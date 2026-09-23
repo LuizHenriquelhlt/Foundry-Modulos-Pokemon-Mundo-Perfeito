@@ -9,6 +9,8 @@ import { computeTrainerLevelInfo } from "./data/trainer-level.mjs";
 import { STAGE_STATS, getStages, stepStage, clearStages } from "./combat/status-stages.mjs";
 import { TYPE_LABELS } from "./combat/type-chart.mjs";
 import { getLoyalty, setLoyalty, loyaltyLevel } from "./data/loyalty.mjs";
+import { canStillEvolve } from "./data/evolution.mjs";
+import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
@@ -139,6 +141,14 @@ function buildPanel(actor) {
   } catch (err) {
     console.error(`${MODULE_ID} | Falha ao montar o selo de tipo`, err);
   }
+  let evolveButton = "";
+  try {
+    if (canStillEvolve(actor)) {
+      evolveButton = `<a class="pmp-evolve-btn" role="button" title="Evoluir">🧬 Evoluir</a>`;
+    }
+  } catch (err) {
+    console.error(`${MODULE_ID} | Falha ao checar se o Pokémon pode evoluir`, err);
+  }
 
   const panel = document.createElement("div");
   panel.className = "pmp-sheet-panel";
@@ -175,6 +185,9 @@ function buildPanel(actor) {
       .pmp-inspiration, .pmp-hd-roll, .pmp-stage-btn, .pmp-stage-reset { pointer-events: auto !important; }
       .pmp-stage-btn { cursor: pointer; line-height: 1; padding: 0 3px; }
       .pmp-stage-btn-disabled { opacity: 0.3; cursor: default; pointer-events: none !important; }
+      .pmp-evolve-btn { cursor: pointer; border: 1px solid #7c3aed; color: #7c3aed; border-radius: 10px;
+        padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
+      .pmp-evolve-btn:hover { background: rgba(124,58,237,0.15); }
     </style>
     <div class="pmp-top-row">
       <span class="pmp-inspiration${inspired ? " pmp-active" : ""}" role="button"
@@ -188,6 +201,7 @@ function buildPanel(actor) {
       </span>
       ${typeBadges}
       ${loyaltyRowHtml(actor)}
+      ${evolveButton}
     </div>
     ${stageRowHtml(actor)}
   `;
@@ -209,6 +223,7 @@ function buildPanel(actor) {
     });
   });
   panel.querySelector(".pmp-stage-reset")?.addEventListener("click", () => clearStages(actor));
+  panel.querySelector(".pmp-evolve-btn")?.addEventListener("click", () => openEvolutionDialog(actor));
 
   return panel;
 }

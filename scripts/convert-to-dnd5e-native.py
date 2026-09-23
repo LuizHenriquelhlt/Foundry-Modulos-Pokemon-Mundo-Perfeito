@@ -559,6 +559,40 @@ def feat_stub(item_id, name, description, img):
     }
 
 
+# Apêndice "Experiência Pokémon por Nível e SR" (Livro de Regras, pág. 234) — usado só pra
+# mostrar, na biografia de cada espécie, o XP dado ao derrotá-la no seu Nível Mínimo
+# Encontrado. Espelha a mesma tabela em scripts/build-rules-journal.py (build_apendice_xp).
+XP_SR_COLUMNS = [0.125, 0.25, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+XP_TABLE_BY_LEVEL = [
+    [20, 40, 80, 160, 360, 560, 880, 1400, 1800, 2300, None, None, None, None, None, None, None, None],
+    [40, 80, 160, 360, 560, 880, 1400, 1800, 2300, 3100, None, None, None, None, None, None, None, None],
+    [80, 150, 340, 530, 840, 1400, 1700, 2200, 3000, 3800, None, None, None, None, None, None, None, None],
+    [140, 320, 500, 790, 1300, 1700, 2100, 2800, 3600, 4200, None, None, None, None, None, None, None, None],
+    [360, 560, 880, 1400, 1800, 2300, 3100, 4000, 4700, 5800, 6700, 8000, 9200, 10400, None, None, None, None],
+    [530, 840, 1400, 1700, 2200, 3000, 3800, 4500, 5500, 6400, 7600, 8700, 9900, 10600, None, None, None, None],
+    [820, 1300, 1700, 2200, 2900, 3700, 4400, 5400, 6200, 7400, 8600, 9700, 10400, 11000, None, None, None, None],
+    [1300, 1700, 2100, 2800, 3600, 4300, 5200, 6100, 7300, 8400, 9500, 10200, 10700, 11300, 12200, 13400, None, None],
+    [1600, 2000, 2700, 3500, 4200, 5100, 5900, 7000, 8100, 9200, 9900, 10400, 10900, 11600, 12600, 14200, None, None],
+    [2300, 3100, 4000, 4700, 5800, 6700, 8000, 9200, 10400, 11200, 11800, 12400, 13200, 14400, 15600, 16800, 18400, None],
+    [3000, 3800, 4500, 5500, 6500, 7700, 8800, 10000, 10800, 11300, 11900, 12700, 13800, 15000, 16100, 17700, 19200, None],
+    [3800, 4400, 5400, 6300, 7500, 8600, 9800, 10500, 11100, 11700, 12400, 13500, 14700, 15800, 17300, 18800, 20300, None],
+    [4300, 5300, 6200, 7400, 8500, 9600, 10300, 10900, 11400, 12100, 13200, 14400, 15500, 16900, 18400, 19900, 21700, None],
+    [5200, 6000, 7200, 8300, 9400, 10100, 10600, 11200, 11900, 13000, 14000, 15100, 16600, 18000, 19400, 21200, 23000, None],
+    [5900, 7000, 8100, 9200, 9900, 10400, 10900, 11600, 12700, 13700, 14800, 16200, 17600, 19000, 20800, 22500, 24600, 26800],
+    [6900, 7900, 8900, 9600, 10100, 10700, 11400, 12400, 13400, 14400, 15800, 17200, 18600, 20300, 22000, 24100, 26100, 28200],
+    [9200, 10400, 11200, 11800, 12400, 13200, 14400, 15600, 16800, 18400, 20000, 21600, 23600, 25600, 28000, 30400, 32800, 36000],
+    [10000, 10800, 11300, 11900, 12700, 13800, 15000, 16100, 17700, 19200, 20700, 22700, 24600, 26900, 29200, 31500, 34600, 38400],
+    [10500, 11100, 11700, 12400, 13500, 14700, 15800, 17300, 18800, 20300, 22200, 24100, 26300, 28600, 30800, 33800, 37600, 42300],
+    [10900, 11400, 12100, 13200, 14400, 15500, 16900, 18400, 19900, 21700, 23600, 25800, 28000, 30200, 33100, 36800, 41400, 46000]
+]
+
+
+def xp_for_level_and_sr(level, sr_value):
+    level = max(1, min(20, int(level)))
+    col = min(range(len(XP_SR_COLUMNS)), key=lambda i: abs(XP_SR_COLUMNS[i] - sr_value))
+    return XP_TABLE_BY_LEVEL[level - 1][col]
+
+
 def biography_html(pmp, name):
     parts = []
     if pmp.get("biography"):
@@ -576,6 +610,11 @@ def biography_html(pmp, name):
     info.append(f"<strong>Gênero:</strong> {gender}")
     stage = pmp.get("evolutionStage", {})
     info.append(f"<strong>Estágio Evolutivo:</strong> {stage.get('current', 1)}/{stage.get('max', 1)}")
+    min_level = pmp.get("minLevelFound", 1)
+    sr_value = pmp.get("speciesRank", {}).get("value", 0.5)
+    xp = xp_for_level_and_sr(min_level, sr_value)
+    if xp is not None:
+        info.append(f"<strong>XP ao derrotar (nível {min_level}):</strong> {xp:,}".replace(",", "."))
     parts.append("<p>" + " &nbsp;•&nbsp; ".join(info) + "</p>")
 
     if pmp.get("evolution"):
