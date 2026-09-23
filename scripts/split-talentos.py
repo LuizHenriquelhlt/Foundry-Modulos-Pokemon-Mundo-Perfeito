@@ -22,6 +22,7 @@ rodar de novo sem problema.
 Uso: python scripts/split-talentos.py
 """
 import glob
+import hashlib
 import json
 import os
 import unicodedata
@@ -29,8 +30,26 @@ import unicodedata
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "packs", "_source", "trainer-features")
 
-TRAINER_FOLDER_ID = "TalentosTreinFolder1"
-POKEMON_FOLDER_ID = "TalentosPokemFolder1"
+
+def make_id(seed):
+    # Foundry exige IDs com EXATAMENTE 16 caracteres alfanuméricos — os IDs "legíveis" usados
+    # antes aqui (ex.: "TalentosTreinFolder1", 20 caracteres) passavam despercebido no build
+    # (json.dump não valida tamanho de _id), mas o próprio Foundry rejeita o documento ao
+    # carregar o compêndio (DataModelValidationError: "_id: must be a valid 16-character
+    # alphanumeric ID"), derrubando o carregamento do mundo inteiro. Gerar por hash evita
+    # repetir esse erro de contagem manual de novo.
+    h = hashlib.sha1(seed.encode("utf-8")).hexdigest()
+    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    n = int(h, 16)
+    out = []
+    for _ in range(16):
+        out.append(alphabet[n % len(alphabet)])
+        n //= len(alphabet)
+    return "".join(out)
+
+
+TRAINER_FOLDER_ID = make_id("talentos-de-treinador-folder")
+POKEMON_FOLDER_ID = make_id("talentos-de-pokemon-folder")
 
 def _nfc(s):
     # Texto extraído de PDF via pdfplumber às vezes vem em NFD (acento como caractere
@@ -61,9 +80,12 @@ def write_folder(doc_id, name):
 
 
 def main():
-    old_folder = os.path.join(OUT_DIR, "folder-talentos.json")
-    if os.path.exists(old_folder):
-        os.remove(old_folder)
+    # Remove a pasta única antiga e qualquer "folder-talentos*.json" de uma rodada anterior
+    # deste script (os nomes de arquivo mudam a cada rodada, já que agora derivam de um hash
+    # em vez de um texto fixo — sem isso, arquivos órfãos de IDs antigos ficam pra trás e
+    # voltam a quebrar a validação do Foundry, como aconteceu com os IDs "legíveis" originais).
+    for path in glob.glob(os.path.join(OUT_DIR, "folder-talentos*.json")):
+        os.remove(path)
 
     write_folder(TRAINER_FOLDER_ID, "Talentos de Treinador")
     write_folder(POKEMON_FOLDER_ID, "Talentos de Pokémon")
