@@ -10,10 +10,13 @@ Combate/Batalhas em Dupla, Iniciativa e Ações em Combate, Movimento e Posiçã
 Efetividade de Tipos, Moves (Poder/PP/Alcance/Duração), Itens Seguráveis/Consumíveis (mecânica —
 o catálogo completo de itens já existe como Item de verdade no compêndio, não repetido aqui),
 Guia de Pesca, Clima, Apêndice de Experiência por Nível e SR, e Regras Opcionais (Alpha/Totem).
+Também traz uma subpasta "Homebrews" com regras não-oficiais criadas pela mesa (hoje: Sistema
+de Captura Pokémon Ajustado, e Elo Rotomi — armazenamento/troca/porte de equipe).
 
 Cada tópico é uma JournalEntry própria (facilita achar pelo nome na barra lateral do
-compêndio), todas dentro de uma pasta "Regras". Números de página citados são do Livro de
-Regras - Pokémon Mundo Perfeito.pdf.
+compêndio), dentro da pasta "Regras" (ou da subpasta "Homebrews", pro conteúdo não-oficial).
+Números de página citados são do Livro de Regras - Pokémon Mundo Perfeito.pdf; as homebrews
+não têm página de livro — vieram de PDFs próprios da mesa.
 
 Idempotente: pode rodar de novo, sempre reescreve os mesmos arquivos.
 
@@ -43,6 +46,9 @@ def make_id(seed):
 # compêndio e derruba o carregamento do mundo inteiro. Gerado por hash pra não repetir esse
 # erro de contagem manual (mesmo golpe em scripts/split-talentos.py).
 FOLDER_ID = make_id("regras-folder-root")
+# Subpasta dentro de "Regras" pra guardar homebrews de mesa (regras não-oficiais, criadas pelo
+# grupo) separadas do conteúdo oficial do Livro de Regras.
+HOMEBREW_FOLDER_ID = make_id("regras-folder-homebrews")
 
 
 def stats():
@@ -50,18 +56,19 @@ def stats():
             "compendiumSource": None, "duplicateSource": None}
 
 
-def write_folder():
+def write_folder(folder_id=FOLDER_ID, name="Regras", parent=None, filename=None, color="#88c0d0"):
     doc = {
-        "_key": f"!folders!{FOLDER_ID}",
-        "_id": FOLDER_ID, "name": "Regras", "type": "JournalEntry", "folder": None,
-        "sorting": "m", "color": "#88c0d0", "flags": {}, "_stats": {}, "sort": 0
+        "_key": f"!folders!{folder_id}",
+        "_id": folder_id, "name": name, "type": "JournalEntry", "folder": parent,
+        "sorting": "m", "color": color, "flags": {}, "_stats": {}, "sort": 0
     }
-    with open(os.path.join(OUT_DIR, "folder-regras.json"), "w", encoding="utf-8") as fh:
+    path = os.path.join(OUT_DIR, filename or f"folder-{name.lower()}.json")
+    with open(path, "w", encoding="utf-8") as fh:
         json.dump(doc, fh, ensure_ascii=False, indent=2)
         fh.write("\n")
 
 
-def journal(slug, name, sections, sort):
+def journal(slug, name, sections, sort, folder=FOLDER_ID):
     """sections: lista de (título da página|None, html). Uma JournalEntryPage por seção."""
     entry_id = make_id(f"regras-{slug}")
     pages = []
@@ -84,7 +91,7 @@ def journal(slug, name, sections, sort):
     doc = {
         "_key": f"!journal!{entry_id}",
         "_id": entry_id, "name": name, "pages": pages,
-        "folder": FOLDER_ID, "sort": sort,
+        "folder": folder, "sort": sort,
         "ownership": {"default": 2}, "flags": {}, "_stats": stats()
     }
     with open(os.path.join(OUT_DIR, f"regra-{slug}.json"), "w", encoding="utf-8") as fh:
@@ -1443,12 +1450,186 @@ def build_pesca():
     journal("guia-de-pesca", "Guia de Pesca", [(None, html)], sort=500)
 
 
+def build_homebrew_captura():
+    html = """
+    <p><em>Homebrew — substitui, se a mesa optar por usá-la, a "Arremessar Pokébola" padrão
+    (veja "Capturando Pokémon e Pokémon Brilhantes"). Troca o Teste de Captura de rolagem única
+    por uma disputa de 2 sucessos contra 2 falhas.</em></p>
+    <h2>Arremessar Pokébola</h2>
+    <p><strong>Tempo de Execução:</strong> 1 ação. <strong>Alcance:</strong> 18 metros.</p>
+    <p>Você arremessa uma Pokébola em um Pokémon selvagem na tentativa de capturá-lo.</p>
+    <h2>Teste de Captura</h2>
+    <p style="text-align:center"><strong>Adestrar Animais + Proficiência do Treinador +
+    Sabedoria do Treinador + Bônus da Pokébola</strong></p>
+    <p>O resultado deve ser igual ou maior que a CD do Pokémon.</p>
+    <h2>CD de Captura</h2>
+    <p style="text-align:center"><strong>CD = 10 + Nível do Pokémon + SR do Pokémon</strong>
+    (arredonde o valor de SR para cima)</p>
+    <h2>Captura em 2 Sucessos</h2>
+    <p>Para capturar o Pokémon, o treinador precisa conseguir 2 sucessos no Teste de Captura.</p>
+    <table>
+      <thead><tr><th>Resultado</th><th>Efeito</th></tr></thead>
+      <tbody>
+        <tr><td>Sucesso</td><td>Marque 1 sucesso.</td></tr>
+        <tr><td>Falha</td><td>Marque 1 falha.</td></tr>
+        <tr><td>2 sucessos</td><td>O Pokémon é capturado!</td></tr>
+      </tbody>
+    </table>
+    <h2>Fuga do Pokémon</h2>
+    <p>Se o treinador acumular <strong>2 falhas</strong> antes de conseguir os 2 sucessos, o
+    Pokémon tem uma chance de fugir.</p>
+    <p style="text-align:center"><strong>Teste de Fuga: 1d20 + Nível do Pokémon</strong>, contra
+    <strong>CD 10 + Nível do Treinador</strong></p>
+    <table>
+      <thead><tr><th>Resultado</th><th>Efeito</th></tr></thead>
+      <tbody>
+        <tr><td>Sucesso</td><td>O Pokémon foge da batalha.</td></tr>
+        <tr><td>Falha</td><td>O Pokémon permanece na batalha e o treinador pode tentar
+        capturá-lo novamente.</td></tr>
+      </tbody>
+    </table>
+    <h2>Captura com PV 0 — Estado de Negação</h2>
+    <p>Se um treinador capturar um Pokémon quando ele estiver com PV 0, o Pokémon entra
+    imediatamente no estado de <strong>Negação</strong> — representa a resistência do Pokémon
+    em aceitar o novo treinador após ser capturado enquanto estava incapacitado.</p>
+    <ul>
+      <li><strong>Duração:</strong> um número de dias igual ao Nível do Pokémon.</li>
+      <li><strong>Lealdade:</strong> durante esse período, o Pokémon possui o nível de Lealdade
+      Desleal.</li>
+      <li><strong>Comportamento:</strong> o Pokémon rejeita o treinador — ao agir contra ele ou
+      em situações relacionadas à sua obediência, realiza suas ações com desvantagem, conforme
+      as regras da mesa. Após o término da duração, o estado de Negação termina, salvo se outra
+      regra de Lealdade determinar o contrário.</li>
+    </ul>
+    <h2>Exemplos</h2>
+    <p>Um Pokémon Nível 5, SR 2 possui CD 10+5+2=17. O treinador tem Adestrar Animais +4,
+    Proficiência +2, Sabedoria +3 e usa uma Pokébola com +1 — o teste de captura totaliza
+    4+2+3+1=10. Como 10 é menor que a CD 17, o teste resulta em falha; pra capturá-lo, precisa
+    de 2 sucessos antes de acumular 2 falhas.</p>
+    <p>Um treinador captura um Pokémon de Nível 4 enquanto ele está com PV 0 — o Pokémon entra
+    no estado de Negação por 4 dias, com Lealdade Desleal e ações em desvantagem durante esse
+    período.</p>
+    <h2>Resumo</h2>
+    <table>
+      <thead><tr><th>Regra</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>2 sucessos</td><td>Captura</td></tr>
+        <tr><td>2 falhas</td><td>Teste de Fuga</td></tr>
+        <tr><td>Fuga — sucesso</td><td>Pokémon foge da batalha</td></tr>
+        <tr><td>Fuga — falha</td><td>Pokémon permanece e nova tentativa é possível</td></tr>
+        <tr><td>Captura com PV 0</td><td>Estado de Negação</td></tr>
+        <tr><td>Duração da Negação</td><td>Nível do Pokémon em dias</td></tr>
+        <tr><td>Lealdade durante a Negação</td><td>Desleal</td></tr>
+        <tr><td>Ações durante a Negação</td><td>Desvantagem</td></tr>
+      </tbody>
+    </table>
+    """
+    journal("homebrew-sistema-de-captura-ajustado", "Sistema de Captura Pokémon (Ajustado)",
+            [(None, html)], sort=100, folder=HOMEBREW_FOLDER_ID)
+
+
+def build_homebrew_elo_rotomi():
+    conceito = """
+    <p><em>Homebrew — regra de logística de equipe: define armazenamento, troca e porte de
+    Pokémon através da rede Rotomi.</em></p>
+    <h2>Conceito</h2>
+    <p>O Elo Rotomi permite que cada treinador licenciado mantenha seis Pokémon vinculados à
+    sua rede, enquanto o limite de porte determina quantos podem acompanhá-lo e agir
+    diretamente.</p>
+    <p><strong>Regra-chave:</strong> os seis Pokémon vinculados formam a <strong>Equipe
+    Vinculada</strong>. Em condições normais, apenas os Pokémon <strong>portados</strong> podem
+    agir.</p>
+    <h2>1. Equipe Vinculada</h2>
+    <p>Todo treinador licenciado mantém 6 Pokémon ancorados no Elo Rotomi, divididos entre
+    <strong>portados</strong> (ocupam Pokéslots — são os únicos que agem, seja em batalha,
+    exploração ou qualquer cena) e <strong>em espera</strong> (ficam ancorados no Elo; não agem,
+    não entram em combate e não recebem XP). Portados + Em espera soma sempre 6.</p>
+    <table>
+      <thead><tr><th>Nível do Treinador</th><th>Portados (Pokéslots)</th><th>Em espera</th></tr></thead>
+      <tbody>
+        <tr><td>1º a 4º</td><td>3</td><td>3</td></tr>
+        <tr><td>5º a 9º</td><td>4</td><td>2</td></tr>
+        <tr><td>10º a 14º</td><td>5</td><td>1</td></tr>
+        <tr><td>15º a 20º</td><td>6</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <h2>2. Trocas no Elo</h2>
+    <p>As trocas são declaradas ao concluir o descanso — nunca no meio de uma cena, encontro ou
+    combate.</p>
+    <table>
+      <thead><tr><th>Momento</th><th>Permitido</th></tr></thead>
+      <tbody>
+        <tr><td>Descanso longo (8h)</td><td>Reorganizar livremente a Equipe Vinculada, com
+        qualquer número de trocas.</td></tr>
+        <tr><td>Descanso curto (30 min)</td><td>Até 2 trocas entre portados e em espera.</td></tr>
+        <tr><td>Fora de descanso</td><td>Nada, salvo com Rotom Dex: 2 trocas por dia, de
+        qualquer lugar.</td></tr>
+        <tr><td>Centro Pokémon ou PC legalizado</td><td>Acesso total ao PC: depositar, retirar e
+        redefinir quais são os 6 ancorados.</td></tr>
+      </tbody>
+    </table>
+    <p><strong>No campo:</strong> você pode rearranjar os seis que já escolheu. Somente no
+    Centro Pokémon você escolhe quais seis ficam ancorados no Elo.</p>
+    """
+    limites = """
+    <h2>3. Limites do Elo</h2>
+    <ol>
+      <li><strong>Armazenar não cura.</strong> O Pokémon entra e volta com os mesmos PV, PP e
+      condições de status. Pokémon desmaiado continua desmaiado.</li>
+      <li><strong>Sem XP em espera.</strong> Só recebe XP quem participou da batalha, podendo
+      receber somente o XP de quest.</li>
+      <li><strong>Exige cobertura.</strong> O Elo depende da rede Rotomi. Em áreas sem sinal —
+      cavernas profundas, ruínas antigas, tempestades e zonas de interferência, a critério do
+      Mestre — não há troca possível.</li>
+      <li><strong>Não altera o Controle de SR.</strong> Um Pokémon acima do seu nível de
+      controle continua Desleal (ou Indiferente, no caso do talento Guru), esteja portado ou
+      ancorado.</li>
+    </ol>
+    <h2>4. Batalha Oficial — Liberação de Equipe Completa</h2>
+    <p>A exceção de porte se aplica somente aos confrontos sancionados pela Liga: Batalhas de
+    Ginásio, Provas de Kahuna, Torneios registrados, Desafios de Elite ou Campeão. Qualquer
+    outro confronto segue os Pokéslots normais.</p>
+    <p><strong>Durante o evento:</strong> a restrição de porte é suspensa pela duração do
+    evento, e o Rotomi entrega no local toda a Equipe Vinculada — o treinador enfrenta o
+    desafio com sua equipe completa, seguindo as regras estabelecidas no próprio desafio.</p>
+    """
+    referencia = """
+    <h2>5. Termo</h2>
+    <p><strong>Equipe Vinculada:</strong> os 6 Pokémon ancorados no Elo Rotomi, portados ou em
+    espera. Sempre que uma regra exigir que o treinador tenha determinado Pokémon "em sua
+    equipe" — como a condição de evolução do Pancham, que pede outro Pokémon do tipo Sombrio —,
+    considera-se a Equipe Vinculada.</p>
+    <h2>Resumo de mesa</h2>
+    <table>
+      <thead><tr><th>Situação</th><th>Regra</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Exploração / cena</td><td>Somente Pokémon portados podem agir.</td><td>Só portados</td></tr>
+        <tr><td>Descanso curto</td><td>Até 2 trocas entre portados e em espera.</td><td>2 trocas</td></tr>
+        <tr><td>Descanso longo</td><td>Reorganização livre da Equipe Vinculada.</td><td>Livre</td></tr>
+        <tr><td>Centro Pokémon / PC legalizado</td><td>Escolha e redefinição dos 6 ancorados.</td><td>Acesso total</td></tr>
+        <tr><td>Sem cobertura</td><td>Nenhuma troca pelo Elo.</td><td>Bloqueado</td></tr>
+        <tr><td>Batalha Oficial</td><td>Restrição suspensa; todos os 6 ficam disponíveis no local.</td><td>Equipe completa</td></tr>
+      </tbody>
+    </table>
+    <p><em><strong>Princípio:</strong> o Elo Rotomi amplia a gestão da equipe sem transformar
+    armazenamento em cura, experiência passiva ou substituição livre durante cenas e
+    combates.</em></p>
+    """
+    journal("homebrew-elo-rotomi", "Elo Rotomi", [
+        ("Elo Rotomi — Conceito e Equipe Vinculada", conceito),
+        ("Elo Rotomi — Limites e Batalha Oficial", limites),
+        ("Elo Rotomi — Termos e Referência Rápida", referencia)
+    ], sort=200, folder=HOMEBREW_FOLDER_ID)
+
+
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     for f in os.listdir(OUT_DIR):
         if f.endswith(".json"):
             os.remove(os.path.join(OUT_DIR, f))
     write_folder()
+    write_folder(HOMEBREW_FOLDER_ID, "Homebrews", parent=FOLDER_ID,
+                 filename="folder-homebrews.json", color="#d08770")
 
     build_bloco_estatisticas()
     build_experiencia_treinador()
@@ -1470,6 +1651,8 @@ def main():
     build_clima()
     build_apendice_xp()
     build_alpha_totem()
+    build_homebrew_captura()
+    build_homebrew_elo_rotomi()
 
     print(f"Compêndio de Regras gerado em {OUT_DIR}")
 
