@@ -2,17 +2,88 @@
   "_key": "!items!CnuYCh8opUQcPwwm",
   "_id": "CnuYCh8opUQcPwwm",
   "name": "Versátil",
-  "type": "feat",
+  "type": "subclass",
   "img": "icons/skills/melee/hand-grip-staff-yellow-brown.webp",
   "system": {
     "description": {
       "value": "<h3>Nível 2 — Versátil</h3><p>Você escolhe experimentar uma variedade de habilidades para cuidar de seus Pokémon. No 2º nível, selecione uma especialização adicional e duas novas proficiências em perícias para o seu Treinador.</p><h3>Nível 5 — Apoiador</h3><p>No 5º nível, você ganha um número de dados de habilidade (d6) igual a 1 + seu modificador de SAB (mínimo de 1). Você pode atribuir um desses dados a qualquer um de seus Pokémon para ser adicionado a um único teste de perícia ou resistência, após o resultado do teste inicial. Você repõe seu conjunto de dados de habilidade a cada descanso longo.</p><h3>Nível 9 — Muitas Faces</h3><p>No 9º nível, você pode escolher dois recursos de 2º nível ou um recurso de 5º ou 9º nível de qualquer outro caminho de Treinador.</p><h3>Nível 15 — Troca de Habilidade</h3><p>No 15º nível, você é um mestre em ensinar novas estratégias a seus Pokémon para ajudar em batalha. A cada descanso longo, escolha um talento na seção Talentos para que todos os seus Pokémon o conheçam naquele dia. O talento pode ser alterado a cada descanso longo.</p>"
     },
-    "type": {
-      "value": "class",
-      "subtype": ""
+    "identifier": "versatil",
+    "classIdentifier": "treinador",
+    "spellcasting": {
+      "progression": "none",
+      "ability": ""
     },
-    "requirements": "Escolhida no nível 2 (Caminho de Treinador)"
+    "advancement": {
+      "aFd3LHf8Df48eHhH": {
+        "_id": "aFd3LHf8Df48eHhH",
+        "type": "ItemGrant",
+        "level": 2,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.JVkiLUaKtwGEFuxf",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "pG3ML4VO8CmM5kS0": {
+        "_id": "pG3ML4VO8CmM5kS0",
+        "type": "ItemGrant",
+        "level": 5,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.TVKDnuK4pLg2iv2r",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "sKYZbXNn4Kr8FWB4": {
+        "_id": "sKYZbXNn4Kr8FWB4",
+        "type": "ItemGrant",
+        "level": 9,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.f5dTCN44OWCJ8emH",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "UJiYlHU8CQjxqZOV": {
+        "_id": "UJiYlHU8CQjxqZOV",
+        "type": "ItemGrant",
+        "level": 15,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.UAOMANKTypiCtlqy",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      }
+    }
   },
   "effects": [],
   "folder": "SorBbxsdF3FIJuq9",
@@ -24,7 +95,8 @@
         "5": "Apoiador",
         "9": "Muitas Faces",
         "15": "Troca de Habilidade"
-      }
+      },
+      "classIdentifier": "treinador"
     }
   },
   "_stats": {

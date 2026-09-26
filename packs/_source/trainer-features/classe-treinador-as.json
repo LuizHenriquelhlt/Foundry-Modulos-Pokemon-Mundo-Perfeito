@@ -2,17 +2,88 @@
   "_key": "!items!dRERerrA99EDYVKc",
   "_id": "dRERerrA99EDYVKc",
   "name": "Treinador Ás",
-  "type": "feat",
+  "type": "subclass",
   "img": "icons/skills/melee/weapons-crossed-swords-yellow.webp",
   "system": {
     "description": {
       "value": "<h3>Nível 2 — Treinador Ás</h3><p>Seu objetivo é se tornar um dos Treinadores mais fortes do mundo, e você se destaca em batalha. Começando no 2º nível, todos os seus Pokémon recebem um bônus de +1 em suas rolagens de ataque e dano.</p><h3>Nível 5 — Mestre de Batalha</h3><p>Ao atingir o nível 5, você ganha um número de dados de batalha (d6) igual a 1 + seu modificador de Sabedoria (mínimo de 1). Você pode atribuir um desses dados a qualquer um de seus Pokémon para ser adicionado a uma única rolagem de ataque ou dano, após o resultado da rolagem inicial. Você repõe seu conjunto de dados de batalha a cada descanso longo.</p><h3>Nível 9 — Ritmo de Combate</h3><p>Alguns Treinadores aperfeiçoam seus Pokémon para agir com velocidade e prontidão. Quando você alcança o 9º nível, todos os seus Pokémon ganham mais 10 pés (3 metros) em seu deslocamento. Além disso, ao realizar uma rolagem de iniciativa, você pode rolar 1d6 adicional. Essa habilidade pode ser usada uma quantidade de vezes igual a 1 + seu modificador de Sabedoria (mínimo de 1) por descanso longo.</p><h3>Nível 15 — Troca Rápida</h3><p>Ao atingir o 15º nível, você pode recolher e liberar Pokémon como uma ação bônus em vez de uma ação padrão. Você pode usar esse recurso um número de vezes igual a 1 + seu modificador de Sabedoria (mínimo de 1). Este conjunto é redefinido a cada descanso longo. Um Pokémon não pode ser trocado até o final de seu primeiro turno completo em combate (a menos que seja por meio de um item ou Move como Volt Switch, U-Turn, etc).</p>"
     },
-    "type": {
-      "value": "class",
-      "subtype": ""
+    "identifier": "treinador-as",
+    "classIdentifier": "treinador",
+    "spellcasting": {
+      "progression": "none",
+      "ability": ""
     },
-    "requirements": "Escolhida no nível 2 (Caminho de Treinador)"
+    "advancement": {
+      "CZGkuulObycD8NK5": {
+        "_id": "CZGkuulObycD8NK5",
+        "type": "ItemGrant",
+        "level": 2,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.IIkWU0MVVkX5v2mx",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "6coqaxUjDPlKvDXj": {
+        "_id": "6coqaxUjDPlKvDXj",
+        "type": "ItemGrant",
+        "level": 5,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.iMDF0bRd0gvvaKEI",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "g6CMHAr4aDWRtVVK": {
+        "_id": "g6CMHAr4aDWRtVVK",
+        "type": "ItemGrant",
+        "level": 9,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.ycAc7V4bD7pRl2ZS",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "00iyur9CeqsRNMj9": {
+        "_id": "00iyur9CeqsRNMj9",
+        "type": "ItemGrant",
+        "level": 15,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.yfUs3VhuIPBG4zvC",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      }
+    }
   },
   "effects": [],
   "folder": "SorBbxsdF3FIJuq9",
@@ -24,7 +95,8 @@
         "5": "Mestre de Batalha",
         "9": "Ritmo de Combate",
         "15": "Troca Rápida"
-      }
+      },
+      "classIdentifier": "treinador"
     }
   },
   "_stats": {
