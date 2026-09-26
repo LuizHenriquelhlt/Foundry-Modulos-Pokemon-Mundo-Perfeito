@@ -36,10 +36,16 @@ function typeFeatItem(typeKey) {
   };
 }
 
+/** Item "Fator Terastal" no inventário do Pokémon, esteja equipado ou não. */
+export function findMatchingTeraFactor(actor) {
+  if (!actor?.getFlag(MODULE_ID, "species")) return null;
+  return actor.items.find((i) => i.getFlag(MODULE_ID, "category") === "tera-factor") ?? null;
+}
+
 /** Item "Fator Terastal" equipado neste Pokémon, se houver. */
 export function findEquippedTeraFactor(actor) {
-  if (!actor?.getFlag(MODULE_ID, "species")) return null;
-  return actor.items.find((i) => i.getFlag(MODULE_ID, "category") === "tera-factor" && i.system.equipped) ?? null;
+  const factor = findMatchingTeraFactor(actor);
+  return factor && factor.system.equipped ? factor : null;
 }
 
 export function isTerastallized(actor) {
