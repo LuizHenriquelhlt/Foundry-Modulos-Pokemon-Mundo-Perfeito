@@ -5,14 +5,14 @@
   "pages": [
     {
       "_id": "aGuudZqPRJLbzIJa",
-      "name": "Mecânicas Especiais (Mega, Z-Move, Dynamax, Terastal)",
+      "name": "Mega Evolução",
       "type": "text",
       "title": {
         "show": true,
         "level": 1
       },
       "text": {
-        "content": "\n    <p>Pokémon Mundo Perfeito reúne quatro mecânicas de transformação em batalha, cada uma\n    detalhada em seu próprio livro de regras — aqui vai só um resumo de quando cada uma se\n    aplica.</p>\n    <h2>Mega Evolução</h2>\n    <p>Transforma um Pokémon numa versão muito mais poderosa de si mesmo durante a batalha. Só é\n    possível quando o Treinador possui uma <strong>Pedra-Chave</strong> e o Pokémon está\n    segurando uma <strong>Mega Pedra</strong> correspondente. É uma ação bônus, no início do\n    turno; mudanças de atributos/estatísticas são imediatas (o aumento de DES só afeta a\n    Iniciativa a partir da rodada seguinte). Sempre concede uma nova Habilidade Passiva\n    (substituindo a anterior, mesmo se for Oculta), e pode alterar tipagem e tamanho. Atributos\n    podem passar de 20, mas nunca de 30.</p>\n    <h2>Z-Moves</h2>\n    <p>Um Move especial criado pela combinação do poder de um Treinador com seu Pokémon —\n    extremamente poderoso, mas usável só uma vez por batalha. Exige que o Pokémon possua um\n    <strong>Cristal-Z</strong> e o Treinador um <strong>Bracelete-Z</strong> pra ativá-lo. Esses\n    itens são raros, geralmente distribuídos por membros da Liga Pokémon.</p>\n    <h2>Dynamax e Gigantamax</h2>\n    <p>O Fenômeno Dynamax permite que um Pokémon assuma uma forma gigantesca durante a batalha,\n    ampliando poder e resistência, e transformando seus Moves em versões muito mais impactantes.\n    Só é possível quando o Treinador possui um item capaz de canalizar a energia Dynamax (como\n    uma Pulseira Dynamax) e as condições do ambiente permitem. Gigantamax é uma variação ainda\n    mais rara, que altera a aparência e concede acesso a Moves exclusivos — só pode ser usado por\n    Pokémon que possuam essa capacidade especial.</p>\n    <h2>Efeito Terastal</h2>\n    <p>Um fenômeno raro que envolve um Pokémon em energia cristalina, fortalecendo sua ligação\n    com um Tipo Tera específico — durante a batalha, pode alterar ou reforçar a tipagem do\n    Pokémon. Só é possível quando o Treinador possui um <strong>Tera Orb</strong> carregado. Por\n    ser uma energia intensa e difícil de controlar, seu uso costuma ser limitado a um momento\n    certo da batalha.</p>\n    <p><em>Cada uma dessas mecânicas tem regras completas em seu próprio livro (Mega Evoluções,\n    Z-Moves, Geração 8 e Geração 9). Este módulo automatiza a Mega Evolução (ver\n    <code>module/combat/mega-evolution.mjs</code> e o compêndio de Mega Evoluções) — Z-Move,\n    Dynamax/Gigantamax e Terastalização ainda são conduzidos manualmente pelo Mestre.</em></p>\n    ",
+        "content": "\n    <p>A habilidade de fazer seu Pokémon se transformar numa versão muito mais poderosa de si\n    mesmo durante a batalha. <em>Este módulo já automatiza a Mega Evolução — veja\n    <code>module/combat/mega-evolution.mjs</code> e o compêndio de Mega Evoluções, que traz o\n    efeito de cada Mega Pedra pronto pra aplicar.</em></p>\n    <h2>Requisitos</h2>\n    <ul>\n      <li>O Treinador precisa ser nível 13 ou superior.</li>\n      <li>O Pokémon precisa estar no nível 10 ou superior, e em seu último estágio evolutivo.</li>\n      <li>O Pokémon precisa estar segurando a Mega Pedra específica de sua espécie, e o\n      Treinador precisa estar carregando e sintonizado com uma Pedra-Chave.</li>\n      <li>O Pokémon precisa ter Lealdade \"Leal\" com o Treinador.</li>\n      <li>Um Treinador pode Mega Evoluir 2x por descanso longo, mas só 1x por combate (a partir\n      do nível 15, um Pokémon pode Mega Evoluir 2x entre descansos, ainda 1x por combate). A\n      partir do 17º nível do Treinador, recupera-se um uso num descanso curto.</li>\n      <li>Um mesmo Pokémon não pode Mega Evoluir, usar um Z-Move, Dynamaxar, Gigantamaxar ou\n      Terastalizar no mesmo combate — só uma dessas ações especiais por Pokémon, por batalha\n      (outros Pokémon do mesmo time podem usar as próprias normalmente).</li>\n    </ul>\n    <h2>Mega Evolução em Batalha</h2>\n    <p>É uma ação bônus, no início do turno. Todas as mudanças de atributos acontecem\n    imediatamente (se aumentar Destreza, a Iniciativa só reflete isso a partir da rodada\n    seguinte). Atributos podem passar de 20, mas nunca de 30. Sempre concede uma nova Habilidade\n    Passiva, substituindo a anterior (mesmo se for Oculta) — só uma habilidade entre as opções\n    listadas na Mega Pedra. Algumas Mega Evoluções também alteram tipagem e tamanho.</p>\n    <h2>Duração</h2>\n    <p>Dura pela batalha inteira, a menos que encerrada antes — termina se o Pokémon ou o\n    Treinador chegar a 0 PV, ou se o Treinador ficar incapacitado (não precisa manter linha de\n    visão/audição com o Treinador pra permanecer Mega Evoluído, só pra Mega Evoluir). Fora de\n    combate, dura no máximo 10 minutos. O Pokémon pode reverter a transformação como uma ação\n    padrão a qualquer momento.</p>\n    <h2>Pedras-Chave e Mega Pedras</h2>\n    <p>Pedras-Chave raramente são vendidas — normalmente um especialista em Mega Evolução avalia\n    o vínculo do Treinador com o Pokémon antes de entregar uma (ou indicar onde encontrar, ou\n    exigir uma missão/batalha/prova de valor). Mega Pedras existem uma por espécie capaz de Mega\n    Evoluir (exceto Charizard, Mewtwo, Raichu, Lucario, Absol e Garchomp, que têm duas cada,\n    diferenciadas por \"X\"/\"Y\"/\"Z\") — encontradas onde a espécie vive na natureza, em cavernas,\n    guardadas por organizações vilãs, ou ocasionalmente dadas junto com a Pedra-Chave.</p>\n    <h2>O Trio do Clima (caso especial)</h2>\n    <p>Kyogre e Groudon não Mega Evoluem — passam pela <strong>Reversão Primal</strong> (mesmo\n    tipo de mudança de forma/habilidade/atributos, mas com poucos requisitos: nível 10+, 1 uso\n    por descanso — 2 a partir do nível 15 —, e segurar a Blue Orb ou Red Orb da espécie). Um\n    Pokémon Primal é tão forte que fica quase fora de controle: sem Lealdade máxima com o\n    Treinador, não obedece comandos e ataca qualquer coisa percebida como ameaça (mesmo com\n    Lealdade máxima, ainda ataca ameaças por conta própria, só aceita sugestões/direções).</p>\n    <p>Rayquaza pode Mega Evoluir sem precisar de Mega Pedra, assim que aprende o Move Dragon\n    Ascent (contanto que os outros requisitos sejam cumpridos e não esteja segurando um\n    Cristal-Z) — o Mestre pode optar por exigir um item-chave (Meteorite) ou uma Mega Pedra\n    própria (Rayquazanite) se preferir. Mega Rayquaza é um dos Pokémon mais poderosos do jogo.</p>\n    <h2>Tutorial: Criando sua Própria Mega Evolução</h2>\n    <p>Cada Mega Evolução ganha <strong>11 pontos</strong> pra distribuir:</p>\n    <ul>\n      <li>Cada aumento de CA vale 2 pontos.</li>\n      <li>Cada aumento de 1 em um Atributo vale 1 ponto.</li>\n      <li>Cada aumento de 5 pés (1,5 metro) de deslocamento vale 1 ponto.</li>\n    </ul>\n    <p>Escolha apenas uma Habilidade Passiva nova entre as disponíveis. Mudanças de tipo e\n    tamanho devem ser combinadas com o Mestre antes.</p>\n    <p><em>Exemplo: Mega Charizard X ganha +2 CA (4 pontos) + 5 FOR (5 pontos) + 2 DES (2\n    pontos) = 11. Mega Pidgeot ganha +10 pés de deslocamento (2 pontos) + 1 CA (2 pontos) + 2\n    DES (2 pontos) + 3 SAB (3 pontos) + 2 CAR (2 pontos) = 11.</em></p>\n    <p><em>Nota: nem toda Mega Evolução deste livro segue esse cálculo à risca (elas foram\n    baseadas nos status reais dos jogos) — mas é o método recomendado pra criar as suas\n    próprias de forma equilibrada.</em></p>\n    ",
         "format": 1,
         "markdown": ""
       },
@@ -31,6 +31,93 @@
         "duplicateSource": null
       },
       "_key": "!journal.pages!WyvqDI83JGmvc3Fu.aGuudZqPRJLbzIJa"
+    },
+    {
+      "_id": "jLssNW1opoQdgWcq",
+      "name": "Z-Moves",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "\n    <p>Um tipo especial de Move criado pela combinação do poder de um Treinador com seu\n    Pokémon — extremamente poderoso, mas usável só uma vez por batalha. Existem três tipos: os\n    gerais (por tipo elemental), os criados ao transformar um Move não-danoso em Z-Move, e os\n    específicos de certos Pokémon.</p>\n    <p>Só podem ser usados por um Pokémon que esteja segurando um <strong>Cristal-Z</strong>, com\n    o Treinador portando um <strong>Bracelete-Z</strong> pra ativá-lo — itens raros, geralmente\n    distribuídos por membros da Liga Pokémon.</p>\n    <h2>Mecânicas</h2>\n    <ul>\n      <li>Pra ativar, o Treinador faz uma pose especial em direção a um Pokémon que possa ver a\n      até 9 metros; o Pokémon então ativa o Z-Move.</li>\n      <li>Sempre exige Ação Padrão + Ação Bônus do Pokémon + Ação de Movimento do Treinador,\n      mesmo que o Move original tenha outro tempo de ativação. Moves de reação podem virar\n      Z-Move e ser usados no próprio turno.</li>\n      <li>Só pode ser ativado no momento em que o Move é iniciado — não dá pra usar em turnos de\n      carregamento nem em Moves que levam mais de um turno (Fly, Solar Beam, Outrage etc.).</li>\n      <li>Usa o alcance do Move base. Um Move danoso transformado em Z-Move causa só dano, sem\n      os efeitos secundários do Move original; um Move de Status mantém seus efeitos e ainda\n      ganha um Efeito de Poder-Z adicional (aplicado antes do efeito do Move base).</li>\n      <li>Sempre afeta um único alvo, mesmo que o Move base tenha área — mas toda criatura a até\n      3 metros do ponto de impacto de um Z-Move danoso faz um teste de Destreza (CD 15 + MOVE),\n      sofrendo metade do dano em falha, nada em sucesso.</li>\n      <li>Sempre acerta (exceto imunidade de tipo ou cobertura total), e Moves de proteção só\n      reduzem a um quarto do dano (não bloqueiam por completo). Struggle nunca pode virar\n      Z-Move.</li>\n      <li>Consome 1 PP do Move convertido — sem PP disponível, não dá pra transformar em Z-Move.</li>\n      <li>Um Treinador usa um Z-Move até 2x por descanso longo, mas só 1x por combate (a partir\n      do 17º nível, recupera um uso num descanso curto). Um Pokémon usa até 2x entre descansos a\n      partir do nível 15, ainda só 1x por combate.</li>\n      <li>Mesma regra de exclusividade por batalha do Mega Evolução (não combina com Mega\n      Evolução/Dynamax/Gigantamax/Terastalização no mesmo Pokémon, no mesmo combate).</li>\n    </ul>\n    <h2>Dano</h2>\n    <p>O dano do Z-Move é calculado a partir do dado de dano atual do Move base — este módulo já\n    calcula isso automaticamente (<code>game.pmp.zMoves.resolveZMoveDamage()</code>, com a\n    tabela geral e as 55 exceções de Moves com tabela própria por nível já extraídas do livro).\n    O resultado é somado ao Poder do Move e às Mudanças de Status em efeito.</p>\n    <p><em>A lista completa de Z-Moves gerais/específicos e a tabela de Efeito de Poder-Z (o que\n    cada Move de Status ganha ao virar Z-Move) ficam no Livro de Z-Moves — não duplicadas aqui\n    por serem um catálogo extenso; o cálculo de dano já é automático de qualquer forma.</em></p>\n    ",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "system": {},
+      "sort": 200,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.5",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!WyvqDI83JGmvc3Fu.jLssNW1opoQdgWcq"
+    },
+    {
+      "_id": "nN659t65k8lMveBR",
+      "name": "Dynamax e Gigantamax",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "\n    <p>O Fenômeno Dynamax faz um Pokémon crescer a proporções gigantescas durante a batalha,\n    transformando todos os seus Moves conhecidos em versões especiais chamadas\n    <strong>Max Moves</strong>, mais poderosas e com efeitos adicionais.</p>\n    <p><strong>Gigantamax</strong> é uma variação rara: além do tamanho, altera a aparência do\n    Pokémon e concede um <strong>G-Max Move</strong> exclusivo — só Pokémon com o \"Fator\n    Gigantamax\" conseguem.</p>\n    <h2>Requisitos</h2>\n    <ul>\n      <li>O Treinador precisa ter uma Pulseira Dynamax.</li>\n      <li>O Treinador precisa ser nível 13+ pra controlar o Pokémon Dynamax — caso contrário,\n      ele fica descontrolado (Lealdade -3 enquanto transformado). O mesmo vale pra um Pokémon de\n      nível inferior a 10, independente do nível do Treinador.</li>\n      <li>2x por descanso longo, 1x por combate (Treinador); 1x por descanso curto/longo, 2x\n      entre descansos a partir do nível 15 (Pokémon) — recupera 1 uso num descanso curto a\n      partir do 17º nível do Treinador.</li>\n      <li>Só um Treinador por time pode ter um Pokémon Dynamax/Gigantamax por vez.</li>\n      <li>Zacian, Zamazenta e Eternatus nunca conseguem Dynamaxar. Mesma regra de exclusividade\n      por batalha das outras mecânicas especiais.</li>\n    </ul>\n    <p>Ativa-se com Ação Livre + Ação de Movimento do Treinador, no início do turno do Pokémon.</p>\n    <h2>Efeitos em Batalha</h2>\n    <p>O Pokémon passa a ocupar uma escala de 15x15 metros, independente do tamanho original,\n    por 3 turnos (contando o atual) — revertendo antes se cair a 0 PV ou for trocado. Fora de\n    combate dura 1 minuto (vira 3 turnos se entrar em batalha nesse tempo). Itens segurados\n    continuam funcionando, exceto Choice Band/Scarf/Specs, que ficam suspensos.</p>\n    <p>PV máximo e atual aumentam de acordo com o Nível de Dynamax — o livro traz 3 opções de\n    complexidade crescente (a mais simples: dobra PV máximo e atual ao transformar, e ao reverter\n    volta ao original, ajustando o atual proporcionalmente). Efeitos calculados por % de PV\n    restante usam os PV NÃO-Dynamax (dano) ou os PV Dynamax (gatilhos como Emergency Exit),\n    conforme o efeito.</p>\n    <p>Pokémon Dynamax são imunes a Atordoamento (mas ainda sofrem dano de Fake Out), a Moves que\n    dependem de tamanho (Low Kick, Heavy Slam), a derrota instantânea (Guillotine) e a troca\n    forçada (Roar, Whirlwind — Circle Throw/Dragon Tail ainda causam dano). Não podem ser\n    afetados por Disable, Cursed Body, Encore, Torment ou Instruct.</p>\n    <h2>Max Moves e G-Max Moves</h2>\n    <ul>\n      <li>Sempre exigem Ação Padrão + Ação Bônus, alcance de 24 metros (medido da borda, não do\n      centro), acerto garantido, e sempre atingem um único alvo — mas criaturas a até 3 metros\n      do impacto de um Max Move danoso fazem teste de Destreza (CD 15 + MOVE) pra sofrer só\n      metade do dano.</li>\n      <li>Moves de Status viram Max Guard (Normal, protege de tudo até o próximo turno). Moves\n      de proteção comuns (Protect, Detect) só reduzem a 1/4 o dano de um Max Move — só Max Guard\n      bloqueia por completo.</li>\n      <li>O dano do Max Move é calculado a partir do dano MÁXIMO possível do Move base — não\n      automatizado neste módulo (consulte a tabela no Livro da Oitava Geração).</li>\n      <li>G-Max Moves substituem o Max Move do tipo correspondente por um exclusivo da espécie\n      Gigantamax, geralmente com o mesmo dano do Max Move equivalente, mas com um efeito\n      secundário próprio (ex.: G-Max Wildfire do Charizard causa dano contínuo em área). A lista\n      completa de G-Max Moves por espécie fica no Livro da Oitava Geração.</li>\n    </ul>\n    <h2>Max Raid Battles</h2>\n    <p>Encontros especiais em Pokémon Dens (Zonas de Poder na natureza): um Pokémon Dynamax ou\n    Gigantamax \"descontrolado\" enfrenta vários Treinadores ao mesmo tempo. Ele rola 2d6 a cada\n    turno (1º dado: 5-6 cria uma explosão que remove status/mudanças negativas dele e suprime\n    habilidades passivas inimigas por uma rodada; 2º dado: define 1-3 ataques naquele turno). Não\n    pode ser capturado até chegar a 0 PV — aí volta ao tamanho normal e cada jogador tem 1 turno\n    de tentativa de captura, começando por quem deu o último golpe.</p>\n    <h2>Como Obter um Pokémon Gigantamax</h2>\n    <p>Só duas formas: capturar um que já nasceu com o Fator Gigantamax numa Max Raid Battle, ou\n    usar o item Max Soup (culinária rara) num Pokémon de espécie compatível. Linhagens\n    compatíveis (Fator Gigantamax): Venusaur, Charizard, Blastoise, Butterfree, Pikachu, Meowth,\n    Machamp, Gengar, Kingler, Lapras, Eevee, Snorlax, Garbodor, Melmetal, Rillaboom, Cinderace,\n    Inteleon, Corviknight, Orbeetle, Drednaw, Coalossal, Flapple, Appletun, Sandaconda,\n    Toxtricity, Centiskorch, Hatterene, Grimmsnarl, Alcremie, Copperajah, Duraludon, Urshifu.</p>\n    ",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "system": {},
+      "sort": 300,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.5",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!WyvqDI83JGmvc3Fu.nN659t65k8lMveBR"
+    },
+    {
+      "_id": "9RF1LSHAdNuAp2qy",
+      "name": "Terastalização",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "\n    <p>O fenômeno Terastal cristaliza um Pokémon e o faz assumir um novo tipo, o\n    <strong>Tera Tipo</strong> — seus golpes ficam mais poderosos e adaptados a esse tipo. Tem\n    origem em Terapagos e na energia da Área Zero de Paldea, canalizada por dispositivos\n    chamados <strong>Orbes Tera</strong>.</p>\n    <h2>Como Obter uma Orbe Tera</h2>\n    <p>Normalmente concedida por Academias, Ligas Pokémon ou institutos de pesquisa a\n    Treinadores que completaram o treinamento necessário — também encontrada em centros de\n    pesquisa antigos ou como recompensa de missões ligadas à energia Terastal.</p>\n    <h2>Tera Tipo</h2>\n    <p>É uma assinatura energética individual e latente, separada da tipagem biológica normal.\n    A menos que indicado o contrário, o Tera Tipo de um Pokémon é igual ao seu tipo primário. Ao\n    encontrar um Pokémon selvagem comum, role 1d10 — em um 10, ele é um Pokémon Tera em\n    potencial (role 1d6: 1-2 = tipo primário, 3 = tipo secundário, 4 = tipo primário se não\n    tiver secundário, 5 = role a Tabela de Tipos completa, 6 = role de novo se bater com o\n    próprio tipo). Na Área Zero ou em Tera Raid Battles, role direto a Tabela de Tipos.</p>\n    <p>Pokémon Tera selvagens já aparecem Terastalizados e não podem ser capturados nesse\n    estado — é preciso quebrar a Joia Tera reduzindo os PV a 20% ou menos do máximo (dano\n    indireto como veneno/queimadura não quebra a joia, exceto se o Pokémon ficar com exatamente\n    1 PV).</p>\n    <h2>Requisitos pra Ativar</h2>\n    <ul>\n      <li>O Treinador precisa de uma Orbe Tera.</li>\n      <li>1x por descanso curto — pra usar de novo antes disso, recarregue a Orbe num Centro\n      Pokémon ou encostando num Cristal de Tera Raid (não precisa entrar nele). Na Área Zero, ou\n      com um Terapagos na equipe, não precisa recarregar (ainda 1x por combate).</li>\n      <li>Mesma regra de exclusividade por batalha das outras mecânicas especiais.</li>\n    </ul>\n    <p>Ativa-se com Ação Bônus, no início do turno.</p>\n    <h2>Efeitos em Batalha</h2>\n    <p>Terastalizado, o Pokémon recebe STAB tanto pro Tera Tipo quanto pros tipos originais (se\n    o Tera Tipo coincidir com um tipo original, o STAB desse tipo dobra). Defensivamente, passa a\n    ser considerado só do Tera Tipo (perde as resistências/fraquezas dos tipos originais). Dura\n    até o fim da batalha ou até desmaiar. O golpe Tera Blast sempre assume o Tera Tipo do\n    usuário.</p>\n    <h2>O Tipo Estelar (19º Tipo)</h2>\n    <p>Uma manifestação rara ligada a Terapagos: não substitui a tipagem defensiva (mantém as\n    características dos tipos originais), mas concede STAB pra TODOS os tipos — cada tipo (Tera\n    ou original) só pode receber esse bônus de STAB uma vez por Pokémon em campo (usar o mesmo\n    tipo de novo no mesmo combate não dobra de novo). Fica sempre vulnerável a Moves do próprio\n    Tipo Estelar (Tera Blast/Tera Starstorm). Só é possível através da Terastalização — nenhum\n    outro efeito (Conversion 2, Reflect Type) consegue reproduzir o Tipo Estelar.</p>\n    <h2>Tera Raid Battles</h2>\n    <p>Equivalente Tera das Max Raid Battles: Cristais de Tera Raid brotam do solo em Paldea,\n    guardando um Pokémon selvagem permanentemente Terastalizado que vários Treinadores enfrentam\n    juntos.</p>\n    ",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "system": {},
+      "sort": 400,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.5",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!WyvqDI83JGmvc3Fu.9RF1LSHAdNuAp2qy"
     }
   ],
   "folder": "QwJaWiXX6M9YNPey",
