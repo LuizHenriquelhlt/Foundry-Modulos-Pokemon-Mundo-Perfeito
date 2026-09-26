@@ -8,9 +8,10 @@
 import { computeTrainerLevelInfo } from "./data/trainer-level.mjs";
 import { STAGE_STATS, getStages, stepStage, clearStages } from "./combat/status-stages.mjs";
 import { TYPE_LABELS } from "./combat/type-chart.mjs";
-import { getAffinity, setAffinity, affinityLevel } from "./data/loyalty.mjs";
+import { getAffinity, setAffinity, affinityLevel, getAffinitySkill } from "./data/loyalty.mjs";
 import { canStillEvolve } from "./data/evolution.mjs";
 import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
+import { openAffinitySkillDialog } from "./apps/affinity-skill-dialog.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
@@ -84,13 +85,21 @@ function loyaltyRowHtml(actor) {
   const level = affinityLevel(pa);
   const cls = level.value > 0 ? "pmp-stage-pos" : level.value < 0 ? "pmp-stage-neg" : "";
   const title = [`Afinidade: ${pa} PA — Lealdade ${level.name}`, level.note].filter(Boolean).join(" — ");
+  // Satisfeito/Leal concedem uma perícia à escolha (vira especialista em Leal) — só faz
+  // sentido mostrar o botão de escolher quando o nível já dá esse benefício.
+  const skillButton = level.skillProficiency
+    ? `<a role="button" class="pmp-affinity-skill-btn" title="Escolher perícia da Afinidade">
+        🎯 ${getAffinitySkill(actor) ? game.i18n.localize(CONFIG.DND5E.skills[getAffinitySkill(actor)]?.label ?? "") : "Escolher perícia"}
+      </a>`
+    : "";
   return `
     <span class="pmp-stage pmp-loyalty ${cls}" title="${title}">
       <a role="button" class="pmp-stage-btn pmp-loyalty-btn" data-delta="-1">−</a>
       <span class="pmp-stage-label">Afinidade</span>
       <span class="pmp-stage-value">${pa > 0 ? "+" : ""}${pa} PA (${level.name})</span>
       <a role="button" class="pmp-stage-btn pmp-loyalty-btn" data-delta="1">+</a>
-    </span>`;
+    </span>
+    ${skillButton}`;
 }
 
 function stageRowHtml(actor) {
@@ -188,6 +197,9 @@ function buildPanel(actor) {
       .pmp-evolve-btn { cursor: pointer; border: 1px solid #7c3aed; color: #7c3aed; border-radius: 10px;
         padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
       .pmp-evolve-btn:hover { background: rgba(124,58,237,0.15); }
+      .pmp-affinity-skill-btn { cursor: pointer; border: 1px solid #b8860b; color: #b8860b; border-radius: 10px;
+        padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
+      .pmp-affinity-skill-btn:hover { background: rgba(184,134,11,0.15); }
     </style>
     <div class="pmp-top-row">
       <span class="pmp-inspiration${inspired ? " pmp-active" : ""}" role="button"
@@ -224,6 +236,7 @@ function buildPanel(actor) {
   });
   panel.querySelector(".pmp-stage-reset")?.addEventListener("click", () => clearStages(actor));
   panel.querySelector(".pmp-evolve-btn")?.addEventListener("click", () => openEvolutionDialog(actor));
+  panel.querySelector(".pmp-affinity-skill-btn")?.addEventListener("click", () => openAffinitySkillDialog(actor));
 
   return panel;
 }

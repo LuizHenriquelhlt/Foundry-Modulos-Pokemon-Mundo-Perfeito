@@ -1070,10 +1070,13 @@ def build_lealdade():
       </tbody>
     </table>
     <p><em>Este módulo já traz um campo de Lealdade na própria ficha do Pokémon (painel
-    superior, ao lado de Inspiração/XP), com o bônus/penalidade de teste de resistência de
-    cada nível aplicado automaticamente. O restante dos efeitos de cada nível (chance do Move
-    falhar, aumento de PV máximo, escolha de perícia) fica documentado no próprio campo — é
-    o Mestre quem aplica na hora que o nível mudar.</em></p>
+    superior, ao lado de Inspiração/XP), com TODOS os efeitos numéricos de cada nível
+    aplicados automaticamente: bônus/penalidade de teste de resistência, aumento de PV máximo
+    em Satisfeito/Leal, a perícia escolhida (proficiente em Satisfeito, especialista em Leal —
+    escolhida pelo botão "🎯" ao lado do campo) e a chance do Move falhar em
+    Indiferente/Desleal (rola 1d20 sozinho antes de qualquer Move e anuncia o resultado no
+    chat). Só a decisão de QUANDO subir/descer de nível (e trocar a perícia escolhida depois de
+    uma evolução) continua manual.</em></p>
     <p><em>Atualização: por padrão, esse campo agora segue a homebrew "Afinidade" (compêndio
     Regras > Homebrews) — em vez de ajustar o nível de Lealdade diretamente, os botões da
     ficha somam/subtraem Pontos de Afinidade (PA), e o nível acima é só um display calculado a
@@ -1634,7 +1637,10 @@ def build_homebrew_afinidade():
     total. <strong>Este módulo já implementa esta homebrew na própria ficha do Pokémon</strong>:
     o campo que antes deixava ajustar a Lealdade diretamente agora soma/subtrai Pontos de
     Afinidade, e o nome do nível (Desleal..Leal) é só um display que reflete o total — veja a
-    Escala abaixo para saber exatamente quando cada nível muda.</em></p>
+    Escala abaixo para saber exatamente quando cada nível muda. Os benefícios numéricos de cada
+    nível (bônus/penalidade de resistência, aumento de PV máximo, perícia escolhida, chance do
+    Move falhar) também já são aplicados automaticamente — veja a página "Lealdade" pra mais
+    detalhes de como.</em></p>
     <h2>Conceito</h2>
     <p>A Afinidade mede o vínculo entre o treinador e cada Pokémon. É contada em Pontos de
     Afinidade (PA), e o total define o nível de Afinidade — os mesmos níveis do Controle de SR,

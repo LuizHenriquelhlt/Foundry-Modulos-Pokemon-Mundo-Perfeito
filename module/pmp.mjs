@@ -12,6 +12,7 @@ import { repairPokemonMoves } from "./data/repair-moves.mjs";
 import { evolveActor } from "./data/evolution.mjs";
 import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
 import { rollSpringSummer, rollFallWinter } from "./data/weather.mjs";
+import { registerLoyaltyAutomation } from "./data/loyalty.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -29,6 +30,7 @@ Hooks.once("init", () => {
   registerSheetExtras();
   registerEggSheet();
   registerStatusEffects();
+  registerLoyaltyAutomation();
 
   globalThis.game.pmp = {
     capture, zMoves, megaEvolution, TYPES,
