@@ -278,9 +278,12 @@ def build_capturando_e_shiny():
 def build_mecanicas_especiais():
     mega = """
     <p>A habilidade de fazer seu Pokémon se transformar numa versão muito mais poderosa de si
-    mesmo durante a batalha. <em>Este módulo já automatiza a Mega Evolução — veja
-    <code>module/combat/mega-evolution.mjs</code> e o compêndio de Mega Evoluções, que traz o
-    efeito de cada Mega Pedra pronto pra aplicar.</em></p>
+    mesmo durante a batalha. <em>Este módulo já automatiza a Mega Evolução: assim que o
+    Pokémon estiver segurando (item equipado) a Mega Pedra da própria espécie, um botão
+    "🔷 Mega Evoluir" aparece no painel da ficha — clicar nele aplica todos os bônus da pedra
+    (atributos, CA, tipo, tamanho, deslocamento e Habilidade Passiva) de uma vez, com um botão
+    "🔷 Reverter Mega" pra desfazer depois. Veja <code>module/combat/mega-evolution.mjs</code>
+    e o compêndio de Mega Evoluções.</em></p>
     <h2>Requisitos</h2>
     <ul>
       <li>O Treinador precisa ser nível 13 ou superior.</li>
@@ -454,6 +457,13 @@ def build_mecanicas_especiais():
     <strong>Tera Tipo</strong> — seus golpes ficam mais poderosos e adaptados a esse tipo. Tem
     origem em Terapagos e na energia da Área Zero de Paldea, canalizada por dispositivos
     chamados <strong>Orbes Tera</strong>.</p>
+    <p><em>Este módulo já automatiza a troca de tipagem defensiva: arraste o item "Fator
+    Terastal" (compêndio "Itens") pro Pokémon e equipe-o (equivalente a portar uma Orbe Tera
+    sintonizada) — um botão "✨ Terastalizar" aparece no painel da ficha. Ao clicar, escolha o
+    Tipo Tera (padrão: o tipo primário do próprio Pokémon), e o módulo troca a tipagem
+    defensiva sozinho, com um botão "✨ Reverter Tera" pra desfazer. O bônus de STAB (dobrado
+    se o Tipo Tera coincidir com um tipo original) continua manual, já que o dano dos Moves é
+    deixado "limpo" de propósito neste módulo.</em></p>
     <h2>Como Obter uma Orbe Tera</h2>
     <p>Normalmente concedida por Academias, Ligas Pokémon ou institutos de pesquisa a
     Treinadores que completaram o treinamento necessário — também encontrada em centros de

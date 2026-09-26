@@ -12,6 +12,10 @@ import { getAffinity, setAffinity, affinityLevel, getAffinitySkill } from "./dat
 import { canStillEvolve } from "./data/evolution.mjs";
 import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
 import { openAffinitySkillDialog } from "./apps/affinity-skill-dialog.mjs";
+import { canMegaEvolve, isMegaEvolved, revertMegaEvolution } from "./combat/mega-evolution.mjs";
+import { openMegaEvolutionOrApply } from "./apps/mega-evolution-dialog.mjs";
+import { canTerastallize, isTerastallized, revertTerastal } from "./combat/terastal.mjs";
+import { openTerastalDialog } from "./apps/terastal-dialog.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 
@@ -158,6 +162,26 @@ function buildPanel(actor) {
   } catch (err) {
     console.error(`${MODULE_ID} | Falha ao checar se o Pokémon pode evoluir`, err);
   }
+  let megaButton = "";
+  try {
+    if (isMegaEvolved(actor)) {
+      megaButton = `<a class="pmp-mega-btn" role="button" data-action="revert" title="Reverter Mega Evolução">🔷 Reverter Mega</a>`;
+    } else if (canMegaEvolve(actor)) {
+      megaButton = `<a class="pmp-mega-btn" role="button" data-action="apply" title="Mega Evoluir">🔷 Mega Evoluir</a>`;
+    }
+  } catch (err) {
+    console.error(`${MODULE_ID} | Falha ao checar Mega Evolução`, err);
+  }
+  let terastalButton = "";
+  try {
+    if (isTerastallized(actor)) {
+      terastalButton = `<a class="pmp-terastal-btn" role="button" data-action="revert" title="Reverter Terastalização">✨ Reverter Tera</a>`;
+    } else if (canTerastallize(actor)) {
+      terastalButton = `<a class="pmp-terastal-btn" role="button" data-action="apply" title="Terastalizar">✨ Terastalizar</a>`;
+    }
+  } catch (err) {
+    console.error(`${MODULE_ID} | Falha ao checar Terastalização`, err);
+  }
 
   const panel = document.createElement("div");
   panel.className = "pmp-sheet-panel";
@@ -200,6 +224,12 @@ function buildPanel(actor) {
       .pmp-affinity-skill-btn { cursor: pointer; border: 1px solid #b8860b; color: #b8860b; border-radius: 10px;
         padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
       .pmp-affinity-skill-btn:hover { background: rgba(184,134,11,0.15); }
+      .pmp-mega-btn { cursor: pointer; border: 1px solid #1e88e5; color: #1e88e5; border-radius: 10px;
+        padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
+      .pmp-mega-btn:hover { background: rgba(30,136,229,0.15); }
+      .pmp-terastal-btn { cursor: pointer; border: 1px solid #ab47bc; color: #ab47bc; border-radius: 10px;
+        padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
+      .pmp-terastal-btn:hover { background: rgba(171,71,188,0.15); }
     </style>
     <div class="pmp-top-row">
       <span class="pmp-inspiration${inspired ? " pmp-active" : ""}" role="button"
@@ -214,6 +244,8 @@ function buildPanel(actor) {
       ${typeBadges}
       ${loyaltyRowHtml(actor)}
       ${evolveButton}
+      ${megaButton}
+      ${terastalButton}
     </div>
     ${stageRowHtml(actor)}
   `;
@@ -237,6 +269,14 @@ function buildPanel(actor) {
   panel.querySelector(".pmp-stage-reset")?.addEventListener("click", () => clearStages(actor));
   panel.querySelector(".pmp-evolve-btn")?.addEventListener("click", () => openEvolutionDialog(actor));
   panel.querySelector(".pmp-affinity-skill-btn")?.addEventListener("click", () => openAffinitySkillDialog(actor));
+  panel.querySelector(".pmp-mega-btn")?.addEventListener("click", (ev) => {
+    if (ev.currentTarget.dataset.action === "revert") revertMegaEvolution(actor);
+    else openMegaEvolutionOrApply(actor);
+  });
+  panel.querySelector(".pmp-terastal-btn")?.addEventListener("click", (ev) => {
+    if (ev.currentTarget.dataset.action === "revert") revertTerastal(actor);
+    else openTerastalDialog(actor);
+  });
 
   return panel;
 }

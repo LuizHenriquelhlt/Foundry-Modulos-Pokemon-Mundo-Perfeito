@@ -2,6 +2,7 @@ import { registerTypeConfig, TYPES } from "./combat/type-chart.mjs";
 import * as capture from "./combat/capture.mjs";
 import * as zMoves from "./combat/z-moves.mjs";
 import * as megaEvolution from "./combat/mega-evolution.mjs";
+import * as terastal from "./combat/terastal.mjs";
 import { registerSheetExtras } from "./sheet-extras.mjs";
 import { registerEggSheet } from "./apps/egg-sheet.mjs";
 import { openCreateEggDialog } from "./apps/create-egg-dialog.mjs";
@@ -33,7 +34,7 @@ Hooks.once("init", () => {
   registerLoyaltyAutomation();
 
   globalThis.game.pmp = {
-    capture, zMoves, megaEvolution, TYPES,
+    capture, zMoves, megaEvolution, terastal, TYPES,
     eggs: { openCreateEggDialog, openRollLog: openEggRollLog },
     repairMoves: repairPokemonMoves,
     evolution: { evolveActor, open: openEvolutionDialog },
