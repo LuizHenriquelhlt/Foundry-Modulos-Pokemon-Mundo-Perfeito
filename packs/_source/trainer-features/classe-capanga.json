@@ -2,17 +2,88 @@
   "_key": "!items!bBEONbbSPJQZ2XWc",
   "_id": "bBEONbbSPJQZ2XWc",
   "name": "Capanga",
-  "type": "feat",
+  "type": "subclass",
   "img": "icons/sundries/flags/banner-skull-red.webp",
   "system": {
     "description": {
       "value": "<h3>Nível 2 — Capanga</h3><p>Seja membro atual ou aspirante de uma equipe maligna, seu objetivo é derrubar todos os Treinadores certinhos e subir nos escalões! Ao atingir o nível 2, ganhe uma reserva de “Pontos Sombrios” igual ao seu nível. Sua reserva de pontos aumenta a cada nível e é redefinida a cada descanso longo. No nível 2, você ganha acesso à habilidade “Sabotagem”. Como reação, você pode gastar qualquer número de Pontos Sombrios para diminuir o resultado total de uma rolagem de ataque (incluindo modificadores) que atinge seu Pokémon, caso isso faça com que o ataque falhe. A rolagem de ataque natural não é afetada por esta habilidade para fins de efeitos secundários do Move, e os ataques com uma rolagem natural de 20 não podem ser diminuídos.</p><h3>Nível 5 — Encrenca em Dobro</h3><p>Você conhece os meandros do que significa fazer parte de uma equipe maligna! No nível 5, ganhe acesso à habilidade “Vantagem Sombria”, que permite gastar 3 Pontos Sombrios para obter vantagem em qualquer teste de perícia, rolagem de ataque ou teste de resistência feito por você ou seu Pokémon. Além disso, sempre que um inimigo obtiver 1 natural em uma jogada de ataque contra um de seus Pokémon, você recupera 1 Ponto Sombrio gasto, e até o início do próximo turno desse inimigo todos os ataques contra ele serão feitos com vantagem.</p><h3>Nível 9 — Renda-se Agora</h3><p>Você chegou aos escalões mais altos, comandando autoridade através de sua influência nas Artes das Sombras. Ao atingir o nível 9, você ganha a habilidade “Evasão Sinistra”. Como reação, você pode gastar 4 Pontos Sombrios para adicionar um nível de resistência a um Move que cause dano a um de seus Pokémon. (Vulnerável → Neutro, Neutro → Resistente, Resistente → Imune).</p><h3>Nível 15 — Prepare-se para Lutar</h3><p>Com a evolução das suas habilidades sombrias através do seu treino intenso, você e seus Pokémon aceitam a escuridão interior e a utilizam. No nível 15, ganhe acesso à habilidade “Copiar Meowth”, que permite gastar 5 Pontos Sombrios para qualquer um dos seus Pokémon invocar o Move “Me First”.</p>"
     },
-    "type": {
-      "value": "class",
-      "subtype": ""
+    "identifier": "capanga",
+    "classIdentifier": "treinador",
+    "spellcasting": {
+      "progression": "none",
+      "ability": ""
     },
-    "requirements": "Escolhida no nível 2 (Caminho de Treinador)"
+    "advancement": {
+      "hzFj9c0jtugnQJHF": {
+        "_id": "hzFj9c0jtugnQJHF",
+        "type": "ItemGrant",
+        "level": 2,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.izBFIH1C0qLtiEJc",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "XdNZAilGZN6W8Q7k": {
+        "_id": "XdNZAilGZN6W8Q7k",
+        "type": "ItemGrant",
+        "level": 5,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.CtRzEpymvHToWDOC",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "bTtE20j09X10Yq59": {
+        "_id": "bTtE20j09X10Yq59",
+        "type": "ItemGrant",
+        "level": 9,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.rb87e6FNUjt3oWD7",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      },
+      "Xk3QcP9TuR5VqRSQ": {
+        "_id": "Xk3QcP9TuR5VqRSQ",
+        "type": "ItemGrant",
+        "level": 15,
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.TthzAUpNrep9zG4p",
+              "optional": false
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "flags": {}
+      }
+    }
   },
   "effects": [],
   "folder": "SorBbxsdF3FIJuq9",
@@ -24,7 +95,8 @@
         "5": "Encrenca em Dobro",
         "9": "Renda-se Agora",
         "15": "Prepare-se para Lutar"
-      }
+      },
+      "classIdentifier": "treinador"
     }
   },
   "_stats": {
