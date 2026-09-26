@@ -13,6 +13,12 @@
  * segurando (Item "equipment" com system.equipped=true) uma Mega Pedra da própria espécie —
  * cada Mega Pedra do compêndio "mega-evolutions" já carrega os dados mecânicos prontos em
  * flags.pokemon-mundo-perfeito.mega.
+ *
+ * Quando a Mega Pedra tem um "tokenImage" (URL de arte oficial, buscada na PokeAPI por
+ * scripts/fetch-mega-sprites.py), o retrato do Actor e a textura de qualquer Token já
+ * colocado em cena trocam pra arte da forma Mega também, revertendo ao original ao desfazer.
+ * Mega Evoluções criadas pela comunidade sem arte oficial cadastrada ficam sem esse campo —
+ * a Mega Evolução continua funcionando normalmente, só sem trocar a imagem.
  */
 import { TYPE_LABELS } from "./type-chart.mjs";
 import { fetchAbilityInfo } from "../data/abilities-lookup.mjs";
@@ -71,9 +77,9 @@ function typeFeatItem(typeKey) {
   };
 }
 
-function passiveAbilityFeatItem(name, description, img) {
+function passiveAbilityFeatItem(name, description, img, prefix = "Habilidade Passiva") {
   return {
-    name: `Habilidade Passiva: ${name}`,
+    name: `${prefix}: ${name}`,
     type: "feat",
     img,
     system: {
@@ -111,7 +117,9 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
     movement: foundry.utils.deepClone(rawSys.attributes.movement),
     types: { ...species.types },
     passiveActive: species.passiveAbility?.active ?? "",
-    passiveOptions: [...(species.passiveAbility?.options ?? [])]
+    passiveOptions: [...(species.passiveAbility?.options ?? [])],
+    img: actor._source.img,
+    tokenImg: actor._source.prototypeToken?.texture?.src
   };
 
   const update = { [`flags.${MODULE_ID}.${SNAPSHOT_FLAG}`]: snapshot };
@@ -163,7 +171,22 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
     };
   }
 
+  // Arte da forma Mega (module/data/... vem de scripts/fetch-mega-sprites.py, que já busca
+  // isso na PokeAPI pra cada Mega Pedra — algumas Mega Evoluções deste módulo são criações da
+  // comunidade sem arte oficial cadastrada, e ficam sem esse campo; nesse caso o retrato e o
+  // token do Pokémon simplesmente não mudam de imagem, mas o resto da Mega Evolução continua
+  // funcionando normalmente).
+  if (mega.tokenImage) {
+    update.img = mega.tokenImage;
+    update["prototypeToken.texture.src"] = mega.tokenImage;
+  }
+
   await actor.update(update);
+  if (mega.tokenImage) {
+    for (const tokenDoc of actor.getActiveTokens(false, true)) {
+      await tokenDoc.update({ "texture.src": mega.tokenImage });
+    }
+  }
 
   const toDelete = [];
   for (const item of actor.items) {
@@ -178,7 +201,9 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
     toCreate.push(typeFeatItem(mega.types.type1));
     if (mega.types.type2) toCreate.push(typeFeatItem(mega.types.type2));
   }
-  if (passiveInfo) toCreate.push(passiveAbilityFeatItem(mega.passiveAbility, passiveInfo.description, passiveInfo.img));
+  if (passiveInfo) {
+    toCreate.push(passiveAbilityFeatItem(mega.passiveAbility, passiveInfo.description, passiveInfo.img, "Habilidade Mega"));
+  }
   if (toCreate.length) await actor.createEmbeddedDocuments("Item", toCreate);
 
   if (actor.sheet?.rendered) actor.sheet.render(false);
@@ -206,6 +231,10 @@ export async function revertMegaEvolution(actor) {
     [`flags.${MODULE_ID}.species.types`]: snapshot.types,
     [`flags.${MODULE_ID}.-=${SNAPSHOT_FLAG}`]: null
   };
+  if (snapshot.img) {
+    update.img = snapshot.img;
+    update["prototypeToken.texture.src"] = snapshot.tokenImg ?? snapshot.img;
+  }
   for (const [key, value] of Object.entries(snapshot.abilities)) {
     update[`system.abilities.${key}.value`] = value;
   }
@@ -213,7 +242,9 @@ export async function revertMegaEvolution(actor) {
   const toDelete = [];
   for (const item of actor.items) {
     if (item.type !== "feat") continue;
-    if (item.name.startsWith("Tipo ") || item.name.startsWith("Habilidade Passiva: ")) toDelete.push(item.id);
+    if (item.name.startsWith("Tipo ") || item.name.startsWith("Habilidade Passiva: ") || item.name.startsWith("Habilidade Mega: ")) {
+      toDelete.push(item.id);
+    }
   }
 
   const toCreate = [typeFeatItem(snapshot.types.type1)];
@@ -227,6 +258,11 @@ export async function revertMegaEvolution(actor) {
   }
 
   await actor.update(update);
+  if (snapshot.img) {
+    for (const tokenDoc of actor.getActiveTokens(false, true)) {
+      await tokenDoc.update({ "texture.src": snapshot.tokenImg ?? snapshot.img });
+    }
+  }
   if (toDelete.length) await actor.deleteEmbeddedDocuments("Item", toDelete);
   await actor.createEmbeddedDocuments("Item", toCreate);
 
