@@ -1074,6 +1074,11 @@ def build_lealdade():
     cada nível aplicado automaticamente. O restante dos efeitos de cada nível (chance do Move
     falhar, aumento de PV máximo, escolha de perícia) fica documentado no próprio campo — é
     o Mestre quem aplica na hora que o nível mudar.</em></p>
+    <p><em>Atualização: por padrão, esse campo agora segue a homebrew "Afinidade" (compêndio
+    Regras > Homebrews) — em vez de ajustar o nível de Lealdade diretamente, os botões da
+    ficha somam/subtraem Pontos de Afinidade (PA), e o nível acima é só um display calculado a
+    partir do total acumulado. Veja a página "Afinidade" para a escala completa de PA por
+    nível.</em></p>
     """
     journal("lealdade", "Lealdade", [(None, html)], sort=200)
 
@@ -1622,6 +1627,134 @@ def build_homebrew_elo_rotomi():
     ], sort=200, folder=HOMEBREW_FOLDER_ID)
 
 
+def build_homebrew_afinidade():
+    conceito = """
+    <p><em>Homebrew — substitui a Lealdade decidida "no olho" pelo Mestre por um contador
+    acumulativo de Pontos de Afinidade (PA), com o nível de Lealdade calculado a partir do
+    total. <strong>Este módulo já implementa esta homebrew na própria ficha do Pokémon</strong>:
+    o campo que antes deixava ajustar a Lealdade diretamente agora soma/subtrai Pontos de
+    Afinidade, e o nome do nível (Desleal..Leal) é só um display que reflete o total — veja a
+    Escala abaixo para saber exatamente quando cada nível muda.</em></p>
+    <h2>Conceito</h2>
+    <p>A Afinidade mede o vínculo entre o treinador e cada Pokémon. É contada em Pontos de
+    Afinidade (PA), e o total define o nível de Afinidade — os mesmos níveis do Controle de SR,
+    com os efeitos descritos no Livro de Regras (veja a página "Lealdade").</p>
+    <p><strong>Regra-chave:</strong> a Afinidade reflete o cuidado, a convivência e as
+    conquistas vividos juntos na mesa, não o tempo que o Pokémon passou parado.</p>
+    <h2>1. Escala</h2>
+    <table>
+      <thead><tr><th>Nível</th><th>PA acumulados</th></tr></thead>
+      <tbody>
+        <tr><td>+3 Leal</td><td>12</td></tr>
+        <tr><td>+2 Satisfeito</td><td>7</td></tr>
+        <tr><td>+1 Contente</td><td>3</td></tr>
+        <tr><td>0 Neutro</td><td>0</td></tr>
+        <tr><td>−1 Chateado</td><td>−3</td></tr>
+        <tr><td>−2 Indiferente</td><td>−7</td></tr>
+        <tr><td>−3 Desleal</td><td>−12</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Guru:</strong> um Pokémon de um Treinador com a classe/subclasse Guru nunca fica
+    abaixo de −2 Indiferente, mesmo com −12 PA ou menos (este módulo não detecta essa exceção
+    sozinho — é o Mestre quem aplica o teto manualmente para esses casos).</p>
+    <h2>2. Valores Iniciais</h2>
+    <table>
+      <thead><tr><th>Origem</th><th>PA</th><th>Nível</th></tr></thead>
+      <tbody>
+        <tr><td>Inicial do treinador</td><td>3</td><td>+1 Contente</td></tr>
+        <tr><td>Capturado normalmente</td><td>0</td><td>0 Neutro</td></tr>
+        <tr><td>Capturado de forma não merecida</td><td>−3</td><td>−1 Chateado</td></tr>
+        <tr><td>Chocado de ovo</td><td>3</td><td>+1 Contente</td></tr>
+        <tr><td>Chocado de ovo (toda a incubação na equipe)</td><td>7</td><td>+2 Satisfeito</td></tr>
+        <tr><td>Recebido em troca</td><td>0</td><td>0 Neutro</td></tr>
+        <tr><td>Comandante: inicial (pelo texto da classe)</td><td>12</td><td>+3 Leal</td></tr>
+        <tr><td>Comandante: capturado</td><td>3</td><td>+1 Contente</td></tr>
+      </tbody>
+    </table>
+    <p><em>Este módulo não define o PA inicial sozinho ao criar/capturar um Pokémon — o
+    Mestre/jogador usa os botões de Afinidade da ficha pra ajustar pro valor certo conforme a
+    origem, usando esta tabela como referência.</em></p>
+    """
+    ganhos_e_perdas = """
+    <h2>3. Ganhando PA</h2>
+    <p>O Mestre define os ganhos. No fim de cada sessão, decide quantos PA cada Pokémon
+    <strong>portado</strong> recebe, guiado por três pilares:</p>
+    <ul>
+      <li><strong>Cuidado:</strong> o treinador cuidou do Pokémon de forma ativa — curou,
+      alimentou, protegeu ou poupou de uma luta perdida.</li>
+      <li><strong>Convivência:</strong> houve uma cena real entre os dois fora do combate, como
+      treino, brincadeira, conversa ou descoberta.</li>
+      <li><strong>Conquista:</strong> o Pokémon teve papel decisivo numa vitória, desafio ou
+      objetivo.</li>
+    </ul>
+    <p><em>Referência: 0 a 2 PA por sessão é o padrão. Uma sessão muito marcante pode dar
+    mais.</em></p>
+    <h3>Marcos</h3>
+    <p>Um Marco sempre dá <strong>2 ou mais Pontos de Afinidade</strong>. O Mestre define o valor
+    e quando os Marcos acontecem. Um Marco é um momento que muda a relação entre os dois: salvar
+    o treinador, evoluir num momento-chave, vencer o rival, sobreviver junto a algo que parecia
+    impossível.</p>
+    <table>
+      <thead><tr><th>Peso do momento</th><th>PA sugeridos</th></tr></thead>
+      <tbody>
+        <tr><td>Marcante</td><td>+2</td></tr>
+        <tr><td>Decisivo para o arco</td><td>+3</td></tr>
+        <tr><td>Lendário (define a jornada)</td><td>+4 ou mais</td></tr>
+      </tbody>
+    </table>
+    <h2>4. Perdendo PA</h2>
+    <ul>
+      <li><strong>Falta:</strong> o Mestre define o que conta como Falta e quantos PA ela
+      custa.</li>
+      <li><strong>Abandono:</strong> o total vai direto para −12 PA (−3 Desleal). Se já estava
+      abaixo disso, mantém o valor. Guru: fica em −2 Indiferente.</li>
+    </ul>
+    """
+    reconciliacao_e_negacao = """
+    <h2>5. Afinidade Negativa: Reconciliação</h2>
+    <p>Com Afinidade abaixo de 0, o treinador pode tentar uma Reconciliação uma vez por descanso
+    longo, com um teste de Adestrar Animais.</p>
+    <table>
+      <thead><tr><th>Nível atual</th><th>CD</th></tr></thead>
+      <tbody>
+        <tr><td>−1 Chateado</td><td>10</td></tr>
+        <tr><td>−2 Indiferente</td><td>15</td></tr>
+        <tr><td>−3 Desleal</td><td>20</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Sucesso:</strong> o Mestre define quantos PA o Pokémon recupera.
+    <strong>Falha:</strong> nada muda — nova tentativa só no próximo descanso longo.</p>
+    <h2>6. Estado de Negação</h2>
+    <p>Um Pokémon capturado com PV 0 entra em Negação logo após a captura — a resistência dele
+    em aceitar o novo treinador.</p>
+    <table>
+      <thead><tr><th>Aspecto</th><th>Regra</th></tr></thead>
+      <tbody>
+        <tr><td>Gatilho</td><td>Captura com PV 0.</td></tr>
+        <tr><td>PA inicial</td><td>−3 PA (mesmo valor de "Capturado de forma não merecida").</td></tr>
+        <tr><td>Duração</td><td>Nível do Pokémon, em dias.</td></tr>
+        <tr><td>Nível durante a Negação</td><td>Desleal, seja qual for o total de PA (Guru: Indiferente).</td></tr>
+        <tr><td>Comportamento</td><td>Rejeita o treinador. Age com desvantagem contra ele ou quando depende da sua obediência.</td></tr>
+        <tr><td>Ganho e perda de PA</td><td>Continuam normais, mas o nível fica travado em Desleal.</td></tr>
+        <tr><td>Reconciliação</td><td>Uma vez por descanso longo, Adestrar Animais CD 20 (Guru: CD 15).</td></tr>
+        <tr><td>Sucesso na Reconciliação</td><td>O Mestre define os PA recuperados, e a Negação perde 1 dia.</td></tr>
+        <tr><td>Fim da Negação</td><td>O Pokémon passa ao nível do seu total de PA naquele momento.</td></tr>
+      </tbody>
+    </table>
+    <p><em>Exemplo: um Pokémon Nível 4 capturado com PV 0 começa com −3 PA e 4 dias de Negação.
+    O treinador passa na Reconciliação (CD 20), ganha 1 PA e a Negação cai para 3 dias. Com as
+    sessões seguintes chega a 0 PA e, ao fim da Negação, passa a 0 Neutro.</em></p>
+    <p><em>Este módulo não automatiza o Estado de Negação nem a Reconciliação (não há um
+    "gatilho de captura com PV 0" nem contador de dias na ficha) — é regra de referência pro
+    Mestre aplicar manualmente, ajustando os PA pelos botões de Afinidade da ficha.</em></p>
+    """
+    journal("homebrew-afinidade", "Afinidade", [
+        ("Afinidade — Conceito, Escala e Valores Iniciais", conceito),
+        ("Afinidade — Ganhando e Perdendo PA", ganhos_e_perdas),
+        ("Afinidade — Reconciliação e Estado de Negação", reconciliacao_e_negacao)
+    ], sort=300, folder=HOMEBREW_FOLDER_ID)
+
+
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     for f in os.listdir(OUT_DIR):
@@ -1653,6 +1786,7 @@ def main():
     build_alpha_totem()
     build_homebrew_captura()
     build_homebrew_elo_rotomi()
+    build_homebrew_afinidade()
 
     print(f"Compêndio de Regras gerado em {OUT_DIR}")
 
