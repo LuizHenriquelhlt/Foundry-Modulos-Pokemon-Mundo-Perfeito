@@ -63,7 +63,7 @@
         "custom": "Pokémon"
       },
       "biography": {
-        "value": "<p>O Pokémon Gerador. Uma antiga cultura do deserto valorizava Heliolisk, e sua chegada a Galar trouxe consigo grandes tesouros. Um único indivíduo tomando sol com a membrana aberta produz eletricidade suficiente para abastecer uma cidade.</p><p><strong>SR:</strong> 11 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 8 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Dragão, Monstro &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 2/2 &nbsp;•&nbsp; <strong>XP ao derrotar (nível 8):</strong> 11.300</p><p><strong>Evolução:</strong> Heliolisk é a evolução final de Helioptile.</p><h3>TMs</h3><p>Ally Switch, Attract, Breaking Swipe, Brutal Swing, Bulldoze, Charge Beam, Confide, Dark Pulse, Dig, Double Team, Dragon Pulse, Dragon Tail, Eerie Impulse, Electric Terrain, Electroweb, Facade, Fire Punch, Focus Blast, Frustration, Giga Impact, Grass Knot, Hidden Power, Hyper Beam, Hyper Voice, Iron Tail, Light Screen, Low Kick, Low Sweep, Magnet Rise, Mega Kick, Mega Punch, Protect, Psych Up, Rain Dance, Rest, Return, Rising Voltage, Rock Slide, Rock Tomb, Round, Sandstorm, Scale Shot, Shock Wave, Signal Beam, Sleep Talk, Snore, Solar Beam, Substitute, Sunny Day, Surf, Swagger, Swift, Thunder, Thunder Punch, Thunder Wave, Thunderbolt, Toxic, U-turn, Volt Switch, Weather Ball, Wild Charge</p>",
+        "value": "<p>O Pokémon Gerador. Uma antiga cultura do deserto valorizava Heliolisk, e sua chegada a Galar trouxe consigo grandes tesouros. Um único indivíduo tomando sol com a membrana aberta produz eletricidade suficiente para abastecer uma cidade.</p><p><strong>SR:</strong> 11 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 8 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Dragão, Monstro &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 2/2 &nbsp;•&nbsp; <strong>XP ao derrotar (nível 8):</strong> 11.300</p><p><strong>Evolução:</strong> Heliolisk é a evolução final de Helioptile.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Charge, Eerie Impulse, Electrify, Parabolic Charge, Quick Attack, Razor Wind, Thunder</td></tr></tbody></table><h3>TMs</h3><p>Ally Switch, Attract, Breaking Swipe, Brutal Swing, Bulldoze, Charge Beam, Confide, Dark Pulse, Dig, Double Team, Dragon Pulse, Dragon Tail, Eerie Impulse, Electric Terrain, Electroweb, Facade, Fire Punch, Focus Blast, Frustration, Giga Impact, Grass Knot, Hidden Power, Hyper Beam, Hyper Voice, Iron Tail, Light Screen, Low Kick, Low Sweep, Magnet Rise, Mega Kick, Mega Punch, Protect, Psych Up, Rain Dance, Rest, Return, Rising Voltage, Rock Slide, Rock Tomb, Round, Sandstorm, Scale Shot, Shock Wave, Signal Beam, Sleep Talk, Snore, Solar Beam, Substitute, Sunny Day, Surf, Swagger, Swift, Thunder, Thunder Punch, Thunder Wave, Thunderbolt, Toxic, U-turn, Volt Switch, Weather Ball, Wild Charge</p>",
         "public": ""
       },
       "alignment": ""
@@ -177,7 +177,20 @@
         },
         "hiddenAbility": "Solar Power",
         "level": 8,
-        "moveTable": [],
+        "moveTable": [
+          {
+            "level": 1,
+            "moves": [
+              "Charge",
+              "Eerie Impulse",
+              "Electrify",
+              "Parabolic Charge",
+              "Quick Attack",
+              "Razor Wind",
+              "Thunder"
+            ]
+          }
+        ],
         "knownMoves": [],
         "tms": [
           "Ally Switch",
@@ -850,6 +863,980 @@
       "flags": {},
       "sort": 0,
       "_key": "!actors.items!DiFurgwWaL9s2pL0.UbCBd3WLfRvGrdEU"
+    },
+    {
+      "_id": "Ik4quJ0AaiEc9a1M",
+      "name": "Charge",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> Nenhum &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Enquanto ativo &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal</p><p>Eletricidade percorre seu corpo, se preparando para seu próximo ataque. Você aumenta sua Defesa Especial em 1 estágio, podendo ser acumulado em até 6 estágios. Além disso, até o fim de seu próximo turno, se você usar um Move danoso do tipo elétrico, dobre os dados de dano dele.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Elétrico",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "q8QL71yFIYm4V1Ew": {
+            "_id": "q8QL71yFIYm4V1Ew",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "electric",
+            "category": "",
+            "power": "Nenhum",
+            "powerAbilities": [],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Enquanto ativo",
+            "range": {
+              "raw": "Pessoal",
+              "meters": 0.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Eletricidade percorre seu corpo, se preparando para seu próximo ataque. Você aumenta sua Defesa Especial em 1 estágio, podendo ser acumulado em até 6 estágios. Além disso, até o fim de seu próximo turno, se você usar um Move danoso do tipo elétrico, dobre os dados de dano dele.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Defesa Especial em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.Ik4quJ0AaiEc9a1M"
+    },
+    {
+      "_id": "oVJcsRl4pJKAIckS",
+      "name": "Eerie Impulse",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES/CAR &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Seu corpo gera um som pulsante estranho que pode perturbar a habilidade de atacar de uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o Ataque Especial dela é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta a Defesa Especial em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Elétrico",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "vEEOgg6gaSZAIRz4": {
+            "_id": "vEEOgg6gaSZAIRz4",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "9",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": []
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "electric",
+            "category": "",
+            "power": "DES/CAR",
+            "powerAbilities": [
+              "dex",
+              "cha"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "40 pés (12 metros)",
+              "meters": 12.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Seu corpo gera um som pulsante estranho que pode perturbar a habilidade de atacar de uma criatura. Role 1d20 + MOVE + 9 e compare o resultado com 10 + DES do alvo. Em um resultado maior ou igual, o Ataque Especial dela é reduzido em 2 estágios, podendo ser acumulado em até -6 estágios.</p>",
+            "higherLevels": "",
+            "observations": "",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta a Defesa Especial em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.oVJcsRl4pJKAIckS"
+    },
+    {
+      "_id": "P1K108WgbPtgYxkw",
+      "name": "Electrify",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 reação / ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a Corpo / 50 pés (15 metros)</p><p>Você rapidamente lança uma descarga elétrica em um atacante, transformando seu Move usado em tipo elétrico. Quando qualquer criatura utilizar um Move dentro do alcance, você pode imediatamente usar sua reação para realizar um ataque corpo a corpo ou à distância contra o alvo (com acerto garantido em um aliado, desde que você possa vê-lo e ele esteja dentro do seu alcance). Em um acerto, o tipo do Move é alterado para elétrico. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno.</p><p><strong>Observações:</strong></p><p>Electrify não afeta Struggle.</p><p><strong>Efeito de Poder-Z:</strong> Aumenta o Ataque Especial em 1 estágio.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Elétrico",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "gu7LavRtAJzscjRR": {
+            "_id": "gu7LavRtAJzscjRR",
+            "name": "",
+            "activation": {
+              "type": "reaction",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "utility",
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "electric",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "reaction",
+              "raw": "1 reação / ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a Corpo / 50 pés (15 metros)",
+              "meters": 15.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você rapidamente lança uma descarga elétrica em um atacante, transformando seu Move usado em tipo elétrico. Quando qualquer criatura utilizar um Move dentro do alcance, você pode imediatamente usar sua reação para realizar um ataque corpo a corpo ou à distância contra o alvo (com acerto garantido em um aliado, desde que você possa vê-lo e ele esteja dentro do seu alcance). Em um acerto, o tipo do Move é alterado para elétrico. Ao fazer isso, você abre mão de sua ação padrão em seu próximo turno.</p>",
+            "higherLevels": "",
+            "observations": "<p>Electrify não afeta Struggle.</p>",
+            "damage": {
+              "baseFormula": "",
+              "scaling": []
+            },
+            "zPowerEffect": "Aumenta o Ataque Especial em 1 estágio."
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.P1K108WgbPtgYxkw"
+    },
+    {
+      "_id": "GdlI3dN911MFTsEE",
+      "name": "Parabolic Charge",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 10 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (raio de 20 pés / 6 metros)</p><p>Uma carga elétrica abrangente forma um arco ao seu redor, roubando parte da energia dos alvos. Force todas as criaturas em um raio de 20 pés (6 metros), centrado em você, a fazer um teste de CON contra sua CD de Move, sofrendo 2d6 + MOVE de dano elétrico em caso de falha, ou metade em um sucesso. Recupere pontos de vida iguais à metade de todo dano causado, mas não mais que 5 vezes o seu nível.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Elétrico",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "10",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "l7GS3aT0ZPLjsusv": {
+            "_id": "l7GS3aT0ZPLjsusv",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": true,
+              "template": {
+                "type": "radius",
+                "size": "20",
+                "units": "ft"
+              }
+            },
+            "type": "save",
+            "save": {
+              "ability": [
+                "con"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": ""
+              }
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "@mod",
+                  "types": [
+                    "pmpElectric"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "electric",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 10,
+              "max": 10,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Pessoal (raio de 20 pés / 6 metros)",
+              "meters": 6.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Uma carga elétrica abrangente forma um arco ao seu redor, roubando parte da energia dos alvos. Force todas as criaturas em um raio de 20 pés (6 metros), centrado em você, a fazer um teste de CON contra sua CD de Move, sofrendo 2d6 + MOVE de dano elétrico em caso de falha, ou metade em um sucesso. Recupere pontos de vida iguais à metade de todo dano causado, mas não mais que 5 vezes o seu nível.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 1d20 no nível 5, 4d6 no nível 10 e 4d8 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d6",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "1d20"
+                },
+                {
+                  "level": 10,
+                  "formula": "4d6"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.GdlI3dN911MFTsEE"
+    },
+    {
+      "_id": "cO6gYXuRRpjOTuuQ",
+      "name": "Quick Attack",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação / reação &nbsp;•&nbsp; <strong>PP:</strong> 15 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você dispara em alta velocidade, seja para se reposicionar ou atacar. Como uma ação, você pode se mover imediatamente até 15 pés (4,5 metros) sem provocar ataques de oportunidade, e realizar um ataque corpo a corpo, causando 2d4 + MOVE de dano do tipo Normal em um acerto. Este Move também pode ser usado como reação, podendo ser ativado em qualquer momento da rodada, desde que ocorra fora do turno de outra criatura (após um turno ser encerrado e antes da próxima criatura agir) e antes do início do seu próximo turno. Se usar esta reação, você perde a ação padrão do seu próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p><p><strong>Níveis Superiores:</strong></p><p>A partir do nível 10, você também pode utilizar este Move como uma ação bônus. Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "15",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "y5Ai8iw8x107iSyV": {
+            "_id": "y5Ai8iw8x107iSyV",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "dex",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": [
+                    "pmpNormal"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "DES",
+            "powerAbilities": [
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação / reação"
+            },
+            "pp": {
+              "value": 15,
+              "max": 15,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 1,
+            "description": "<p>Você dispara em alta velocidade, seja para se reposicionar ou atacar. Como uma ação, você pode se mover imediatamente até 15 pés (4,5 metros) sem provocar ataques de oportunidade, e realizar um ataque corpo a corpo, causando 2d4 + MOVE de dano do tipo Normal em um acerto. Este Move também pode ser usado como reação, podendo ser ativado em qualquer momento da rodada, desde que ocorra fora do turno de outra criatura (após um turno ser encerrado e antes da próxima criatura agir) e antes do início do seu próximo turno. Se usar esta reação, você perde a ação padrão do seu próximo turno. Este Move é classificado como Prioridade 1. Caso outra criatura utilize um Move de Prioridade 1 no mesmo momento, a ordem de execução é determinada pela Destreza (ou por uma rolagem, em caso de empate). Moves com valores mais altos de Prioridade são sempre executados antes.</p>",
+            "higherLevels": "<p>A partir do nível 10, você também pode utilizar este Move como uma ação bônus. Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d4",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d10"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.cO6gYXuRRpjOTuuQ"
+    },
+    {
+      "_id": "QcmlhXbYbG3CE05l",
+      "name": "Razor Wind",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação, carga &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> 1 rodada, Concentração &nbsp;•&nbsp; <strong>Alcance:</strong> Pessoal (cone de 40 pés / 12 metros)</p><p>Quando você usa este Move, ventos fortes começam a circular ao seu redor. No seu próximo turno, se você mantiver sua concentração, você libera esses ventos como uma ação em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 4d4 + MOVE de dano normal em uma falha, ou metade do dano em um sucesso. Qualquer criatura que rolar um resultado natural de 3 ou menos no teste sofrerá um dano crítico.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "5",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "zGLyy4Pg8pNBy8ht": {
+            "_id": "zGLyy4Pg8pNBy8ht",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": true,
+              "template": {
+                "type": "cone",
+                "size": "40",
+                "units": "ft"
+              }
+            },
+            "type": "save",
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "str",
+                "formula": "",
+                "bonus": ""
+              }
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": [
+                {
+                  "number": 4,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": [
+                    "pmpNormal"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação, carga"
+            },
+            "pp": {
+              "value": 5,
+              "max": 5,
+              "unlimited": false
+            },
+            "duration": "1 rodada, Concentração",
+            "range": {
+              "raw": "Pessoal (cone de 40 pés / 12 metros)",
+              "meters": 12.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Quando você usa este Move, ventos fortes começam a circular ao seu redor. No seu próximo turno, se você mantiver sua concentração, você libera esses ventos como uma ação em um cone de 40 pés (12 metros). Qualquer criatura pega no cone deve ter sucesso em um teste de DES contra sua CD de Move, sofrendo 4d4 + MOVE de dano normal em uma falha, ou metade do dano em um sucesso. Qualquer criatura que rolar um resultado natural de 3 ou menos no teste sofrerá um dano crítico.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 4d6 no nível 5, 4d8 no nível 10 e 4d10 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "4d4",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "4d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "4d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "4d10"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.QcmlhXbYbG3CE05l"
+    },
+    {
+      "_id": "gmjpD9Jaen9mUjsk",
+      "name": "Thunder",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/electric.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Elétrico &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 5 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> 40 pés (12 metros)</p><p>Uma poderosa energia elétrica se arremessa para fora de você, atingindo um alvo com uma enorme descarga elétrica. Faça um ataque à distância -3 contra uma criatura ao alcance, causando 2d12 + MOVE de dano elétrico em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica paralisado. Se usado durante a chuva intensa, Thunder acerta com garantia (mas role um d20 para chance de causar dano crítico e paralisia). Por outro lado, se usado durante luz solar intensa, a penalidade na rolagem de acerto passa a ser de -5, ao invés de -3. Thunder pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Elétrico",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "5",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "MYcasEBAbcMZIi7P": {
+            "_id": "MYcasEBAbcMZIi7P",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 12,
+                  "bonus": "@mod",
+                  "types": [
+                    "pmpElectric"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "electric",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 5,
+              "max": 5,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "40 pés (12 metros)",
+              "meters": 12.0,
+              "melee": false
+            },
+            "priority": 0,
+            "description": "<p>Uma poderosa energia elétrica se arremessa para fora de você, atingindo um alvo com uma enorme descarga elétrica. Faça um ataque à distância -3 contra uma criatura ao alcance, causando 2d12 + MOVE de dano elétrico em um acerto. Em um resultado natural de 15 ou mais no acerto, o alvo fica paralisado. Se usado durante a chuva intensa, Thunder acerta com garantia (mas role um d20 para chance de causar dano crítico e paralisia). Por outro lado, se usado durante luz solar intensa, a penalidade na rolagem de acerto passa a ser de -5, ao invés de -3. Thunder pode atingir criaturas nas fases invulneráveis de Fly, Bounce e Sky Drop, desde que o alvo tenha ativado um desses Moves dentro do alcance.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 4d8 no nível 5, 4d12 no nível 10 e 7d8 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d12",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "4d8"
+                },
+                {
+                  "level": 10,
+                  "formula": "4d12"
+                },
+                {
+                  "level": 17,
+                  "formula": "7d8"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!DiFurgwWaL9s2pL0.gmjpD9Jaen9mUjsk"
     },
     {
       "_id": "puxgWuHITA1wwldj",

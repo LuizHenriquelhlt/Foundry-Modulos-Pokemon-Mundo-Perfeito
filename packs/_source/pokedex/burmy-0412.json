@@ -63,7 +63,7 @@
         "custom": "Pokémon"
       },
       "biography": {
-        "value": "<p>O Pokémon Bicho-de-Cesto. Burmy cobre o corpo com galhos e folhas para se proteger dos ventos frios do inverno. Se seu manto for destruído, ele o reconstrói imediatamente usando materiais encontrados por perto.</p><p><strong>SR:</strong> 1/4 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 1 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Inseto &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 1/2 &nbsp;•&nbsp; <strong>XP ao derrotar (nível 1):</strong> 40</p><p><strong>Evolução:</strong> Um Burmy macho pode evoluir para Mothim no nível 7 ou superior. Uma Burmy fêmea pode evoluir para Wormadam no nível 7 ou superior, assumindo um manto com base no local onde evoluiu: Manto de Grama em grama alta ou florestas, Manto de Areia em cavernas, desertos ou montanhas, e Manto de Lixo em cidades e construções. Quando um Burmy (fêmea ou macho) evolui, seus Pontos de Vida aumentam em uma quantidade igual ao dobro do seu nível, e ele recebe 9 pontos para distribuir entre seus Valores de Habilidade (máximo 20).</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Protect</td></tr><tr><td style='text-align:center'>4</td><td>Tackle</td></tr><tr><td style='text-align:center'>5</td><td>Bug Bite</td></tr><tr><td style='text-align:center'>7</td><td>Hidden Power</td></tr></tbody></table><h3>TMs</h3><p>Bug Bite, Electroweb, Hidden Power, Protect, Snore</p>",
+        "value": "<p>O Pokémon Bicho-de-Cesto. Burmy cobre o corpo com galhos e folhas para se proteger dos ventos frios do inverno. Se seu manto for destruído, ele o reconstrói imediatamente usando materiais encontrados por perto.</p><p><strong>SR:</strong> 1/4 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 1 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Inseto &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 1/2 &nbsp;•&nbsp; <strong>XP ao derrotar (nível 1):</strong> 40</p><p><strong>Evolução:</strong> Um Burmy macho pode evoluir para Mothim no nível 7 ou superior. Uma Burmy fêmea pode evoluir para Wormadam no nível 7 ou superior, assumindo um manto com base no local onde evoluiu: Manto de Grama em grama alta ou florestas, Manto de Areia em cavernas, desertos ou montanhas, e Manto de Lixo em cidades e construções. Quando um Burmy (fêmea ou macho) evolui, seus Pontos de Vida aumentam em uma quantidade igual ao dobro do seu nível, e ele recebe 9 pontos para distribuir entre seus Valores de Habilidade (máximo 20).</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Protect, Tackle</td></tr><tr><td style='text-align:center'>2</td><td></td></tr><tr><td style='text-align:center'>3</td><td></td></tr><tr><td style='text-align:center'>4</td><td></td></tr><tr><td style='text-align:center'>5</td><td>Bug Bite</td></tr><tr><td style='text-align:center'>6</td><td></td></tr><tr><td style='text-align:center'>7</td><td>Hidden Power</td></tr></tbody></table><h3>TMs</h3><p>Bug Bite, Electroweb, Hidden Power, Protect, Snore</p>",
         "public": ""
       },
       "alignment": ""
@@ -179,20 +179,31 @@
           {
             "level": 1,
             "moves": [
-              "Protect"
+              "Protect",
+              "Tackle"
             ]
           },
           {
+            "level": 2,
+            "moves": []
+          },
+          {
+            "level": 3,
+            "moves": []
+          },
+          {
             "level": 4,
-            "moves": [
-              "Tackle"
-            ]
+            "moves": []
           },
           {
             "level": 5,
             "moves": [
               "Bug Bite"
             ]
+          },
+          {
+            "level": 6,
+            "moves": []
           },
           {
             "level": 7,
@@ -317,23 +328,6 @@
               "cap": 2,
               "fixed": {},
               "locked": []
-            },
-            "value": {}
-          },
-          {
-            "type": "ItemGrant",
-            "title": "Nível 4: Moves e benefícios da tabela",
-            "_id": "IgmTLrJ0S1n5eIdn",
-            "level": 4,
-            "configuration": {
-              "items": [
-                {
-                  "uuid": "Compendium.pokemon-mundo-perfeito.moves.Item.xk9xF0JrBW2E3J4F",
-                  "optional": false
-                }
-              ],
-              "optional": false,
-              "spell": null
             },
             "value": {}
           },
@@ -1012,6 +1006,159 @@
       },
       "sort": 100,
       "_key": "!actors.items!m6KoSRW5UBmcQ7nv.o2rPudpmoaE0mzP8"
+    },
+    {
+      "_id": "xk9xF0JrBW2E3J4F",
+      "name": "Tackle",
+      "type": "feat",
+      "img": "modules/pokemon-mundo-perfeito/assets/types/normal.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Tipo:</strong> Normal &nbsp;•&nbsp; <strong>Poder do Move:</strong> FOR/DES &nbsp;•&nbsp; <strong>Tempo de Execução:</strong> 1 ação &nbsp;•&nbsp; <strong>PP:</strong> 20 &nbsp;•&nbsp; <strong>Duração:</strong> Instantânea &nbsp;•&nbsp; <strong>Alcance:</strong> Corpo a corpo</p><p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p><p><strong>Níveis Superiores:</strong></p><p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+          "chat": ""
+        },
+        "requirements": "Move de Pokémon — Tipo Normal",
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "uses": {
+          "spent": 0,
+          "max": "20",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll",
+              "formula": ""
+            }
+          ]
+        },
+        "activities": {
+          "0V2bH57xQrPuRSBe": {
+            "_id": "0V2bH57xQrPuRSBe",
+            "name": "",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [
+                {
+                  "type": "itemUses",
+                  "target": "",
+                  "value": "1",
+                  "scaling": {
+                    "mode": "",
+                    "formula": ""
+                  }
+                }
+              ],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "range": {
+              "override": false
+            },
+            "target": {
+              "override": false
+            },
+            "type": "attack",
+            "attack": {
+              "ability": "str",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": false,
+              "parts": [
+                {
+                  "number": 2,
+                  "denomination": 4,
+                  "bonus": "@mod",
+                  "types": [
+                    "pmpNormal"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "effects": [],
+      "flags": {
+        "pokemon-mundo-perfeito": {
+          "move": {
+            "moveType": "normal",
+            "category": "",
+            "power": "FOR/DES",
+            "powerAbilities": [
+              "str",
+              "dex"
+            ],
+            "activation": {
+              "type": "action",
+              "raw": "1 ação"
+            },
+            "pp": {
+              "value": 20,
+              "max": 20,
+              "unlimited": false
+            },
+            "duration": "Instantânea",
+            "range": {
+              "raw": "Corpo a corpo",
+              "meters": 0.0,
+              "melee": true
+            },
+            "priority": 0,
+            "description": "<p>Você avança e se choca contra uma criatura. Faça um ataque corpo a corpo contra um alvo, causando 2d4 + MOVE de dano normal em um acerto.</p>",
+            "higherLevels": "<p>Os dados de dano para este Move mudam para 2d6 no nível 5, 2d8 no nível 10 e 2d10 no nível 17.</p>",
+            "observations": "",
+            "damage": {
+              "baseFormula": "2d4",
+              "scaling": [
+                {
+                  "level": 5,
+                  "formula": "2d6"
+                },
+                {
+                  "level": 10,
+                  "formula": "2d8"
+                },
+                {
+                  "level": 17,
+                  "formula": "2d10"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sort": 100,
+      "_key": "!actors.items!m6KoSRW5UBmcQ7nv.xk9xF0JrBW2E3J4F"
     },
     {
       "_id": "puxgWuHITA1wwldj",

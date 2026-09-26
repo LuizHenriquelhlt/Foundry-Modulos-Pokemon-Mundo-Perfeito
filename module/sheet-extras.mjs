@@ -8,7 +8,7 @@
 import { computeTrainerLevelInfo } from "./data/trainer-level.mjs";
 import { STAGE_STATS, getStages, stepStage, clearStages } from "./combat/status-stages.mjs";
 import { TYPE_LABELS } from "./combat/type-chart.mjs";
-import { getLoyalty, setLoyalty, loyaltyLevel } from "./data/loyalty.mjs";
+import { getAffinity, setAffinity, affinityLevel } from "./data/loyalty.mjs";
 import { canStillEvolve } from "./data/evolution.mjs";
 import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
 
@@ -73,23 +73,23 @@ function typeBadgeHtml(actor) {
   return `<span class="pmp-type-badges">${chip(types.type1)}${types.type2 ? chip(types.type2) : ""}</span>`;
 }
 
-// Lealdade (pág. 37): diferente de Mudança de Status, é um traço persistente (não reseta em
-// combate) e o valor é decisão do Mestre conforme a história — não algo que o jogador ajusta
-// livremente. Mesmo assim os botões ficam visíveis pros dois (o Mestre é quem deve de fato
-// usá-los na prática; não há como restringir só a ele sem duplicar a ficha inteira).
+// Afinidade (homebrew "Afinidade", compêndio Regras > Homebrews) substitui a Lealdade
+// editável diretamente: agora o jogador/Mestre soma ou subtrai Pontos de Afinidade (PA,
+// positivos ou negativos, sem limite), e o nível de Lealdade (Desleal..Leal) é só um DISPLAY
+// calculado a partir do total — muda sozinho ao cruzar os limiares da Escala da homebrew. Os
+// botões ficam visíveis pros dois (o Mestre é quem deve de fato usá-los na prática; não há
+// como restringir só a ele sem duplicar a ficha inteira).
 function loyaltyRowHtml(actor) {
-  const value = getLoyalty(actor);
-  const level = loyaltyLevel(value);
-  const cls = value > 0 ? "pmp-stage-pos" : value < 0 ? "pmp-stage-neg" : "";
-  const minusDisabled = value <= -3 ? "pmp-stage-btn-disabled" : "";
-  const plusDisabled = value >= 3 ? "pmp-stage-btn-disabled" : "";
-  const title = [`Lealdade: ${level.name}`, level.note].filter(Boolean).join(" — ");
+  const pa = getAffinity(actor);
+  const level = affinityLevel(pa);
+  const cls = level.value > 0 ? "pmp-stage-pos" : level.value < 0 ? "pmp-stage-neg" : "";
+  const title = [`Afinidade: ${pa} PA — Lealdade ${level.name}`, level.note].filter(Boolean).join(" — ");
   return `
     <span class="pmp-stage pmp-loyalty ${cls}" title="${title}">
-      <a role="button" class="pmp-stage-btn pmp-loyalty-btn ${minusDisabled}" data-delta="-1">−</a>
-      <span class="pmp-stage-label">Lealdade</span>
-      <span class="pmp-stage-value">${value > 0 ? "+" : ""}${value} ${level.name}</span>
-      <a role="button" class="pmp-stage-btn pmp-loyalty-btn ${plusDisabled}" data-delta="1">+</a>
+      <a role="button" class="pmp-stage-btn pmp-loyalty-btn" data-delta="-1">−</a>
+      <span class="pmp-stage-label">Afinidade</span>
+      <span class="pmp-stage-value">${pa > 0 ? "+" : ""}${pa} PA (${level.name})</span>
+      <a role="button" class="pmp-stage-btn pmp-loyalty-btn" data-delta="1">+</a>
     </span>`;
 }
 
@@ -213,7 +213,7 @@ function buildPanel(actor) {
   panel.querySelector(".pmp-hd-roll").addEventListener("click", () => onRollHitDie(actor));
   panel.querySelectorAll(".pmp-loyalty-btn").forEach((btn) => {
     btn.addEventListener("click", async (ev) => {
-      await setLoyalty(actor, getLoyalty(actor) + Number(ev.currentTarget.dataset.delta));
+      await setAffinity(actor, getAffinity(actor) + Number(ev.currentTarget.dataset.delta));
     });
   });
   panel.querySelectorAll(".pmp-stage-btn:not(.pmp-loyalty-btn)").forEach((btn) => {
