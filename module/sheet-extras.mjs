@@ -12,9 +12,9 @@ import { getAffinity, setAffinity, affinityLevel, getAffinitySkill } from "./dat
 import { canStillEvolve } from "./data/evolution.mjs";
 import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
 import { openAffinitySkillDialog } from "./apps/affinity-skill-dialog.mjs";
-import { canMegaEvolve, isMegaEvolved, revertMegaEvolution } from "./combat/mega-evolution.mjs";
+import { canMegaEvolve, isMegaEvolved, revertMegaEvolution, findMatchingMegaStone } from "./combat/mega-evolution.mjs";
 import { openMegaEvolutionOrApply } from "./apps/mega-evolution-dialog.mjs";
-import { canTerastallize, isTerastallized, revertTerastal } from "./combat/terastal.mjs";
+import { canTerastallize, isTerastallized, revertTerastal, findMatchingTeraFactor } from "./combat/terastal.mjs";
 import { openTerastalDialog } from "./apps/terastal-dialog.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
@@ -168,6 +168,16 @@ function buildPanel(actor) {
       megaButton = `<a class="pmp-mega-btn" role="button" data-action="revert" title="Reverter Mega Evolução">🔷 Reverter Mega</a>`;
     } else if (canMegaEvolve(actor)) {
       megaButton = `<a class="pmp-mega-btn" role="button" data-action="apply" title="Mega Evoluir">🔷 Mega Evoluir</a>`;
+    } else {
+      // Tem a Mega Pedra certa no inventário, mas ainda não equipou — mostra uma dica em vez
+      // de simplesmente não mostrar nada (fácil de achar que o recurso não existe/não
+      // funcionou, já que "segurar" um item só conta pro dnd5e quando ele está equipado).
+      const stone = findMatchingMegaStone(actor);
+      if (stone) {
+        megaButton = `<span class="pmp-mega-hint" title="Equipe ${stone.name} no inventário pra liberar o botão">
+          🔷 Equipe ${stone.name}
+        </span>`;
+      }
     }
   } catch (err) {
     console.error(`${MODULE_ID} | Falha ao checar Mega Evolução`, err);
@@ -178,6 +188,10 @@ function buildPanel(actor) {
       terastalButton = `<a class="pmp-terastal-btn" role="button" data-action="revert" title="Reverter Terastalização">✨ Reverter Tera</a>`;
     } else if (canTerastallize(actor)) {
       terastalButton = `<a class="pmp-terastal-btn" role="button" data-action="apply" title="Terastalizar">✨ Terastalizar</a>`;
+    } else if (findMatchingTeraFactor(actor)) {
+      terastalButton = `<span class="pmp-mega-hint" title="Equipe o Fator Terastal no inventário pra liberar o botão">
+        ✨ Equipe o Fator Terastal
+      </span>`;
     }
   } catch (err) {
     console.error(`${MODULE_ID} | Falha ao checar Terastalização`, err);
@@ -230,6 +244,8 @@ function buildPanel(actor) {
       .pmp-terastal-btn { cursor: pointer; border: 1px solid #ab47bc; color: #ab47bc; border-radius: 10px;
         padding: 1px 8px; font-size: 11px; font-weight: 600; pointer-events: auto !important; }
       .pmp-terastal-btn:hover { background: rgba(171,71,188,0.15); }
+      .pmp-mega-hint { border: 1px dashed #888; color: #888; border-radius: 10px;
+        padding: 1px 8px; font-size: 11px; font-style: italic; cursor: help; }
     </style>
     <div class="pmp-top-row">
       <span class="pmp-inspiration${inspired ? " pmp-active" : ""}" role="button"

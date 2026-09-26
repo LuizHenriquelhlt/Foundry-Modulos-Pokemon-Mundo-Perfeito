@@ -26,14 +26,20 @@ function normalize(name) {
   return (name ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "").toLowerCase();
 }
 
-/** Mega Pedra equipada que corresponde à espécie deste Pokémon, se houver. */
-export function findEquippedMegaStone(actor) {
+/** Mega Pedra da própria espécie no inventário do Pokémon, esteja equipada ou não. */
+export function findMatchingMegaStone(actor) {
   const species = actor?.getFlag(MODULE_ID, "species");
   if (!species) return null;
   return actor.items.find((i) => {
     const mega = i.getFlag(MODULE_ID, "mega");
-    return mega && i.system.equipped && normalize(mega.species) === normalize(species.species);
+    return mega && normalize(mega.species) === normalize(species.species);
   }) ?? null;
+}
+
+/** Mega Pedra equipada que corresponde à espécie deste Pokémon, se houver. */
+export function findEquippedMegaStone(actor) {
+  const stone = findMatchingMegaStone(actor);
+  return stone && stone.system.equipped ? stone : null;
 }
 
 export function isMegaEvolved(actor) {
