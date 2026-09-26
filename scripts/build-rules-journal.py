@@ -282,8 +282,10 @@ def build_mecanicas_especiais():
     Pokémon estiver segurando (item equipado) a Mega Pedra da própria espécie, um botão
     "🔷 Mega Evoluir" aparece no painel da ficha — clicar nele aplica todos os bônus da pedra
     (atributos, CA, tipo, tamanho, deslocamento e Habilidade Passiva) de uma vez, com um botão
-    "🔷 Reverter Mega" pra desfazer depois. Veja <code>module/combat/mega-evolution.mjs</code>
-    e o compêndio de Mega Evoluções.</em></p>
+    "🔷 Reverter Mega" pra desfazer depois. Pra Mega Evoluções com arte oficial cadastrada
+    (a maioria — 91 de 93), o retrato do Pokémon e o token dele em cena também trocam pra
+    forma Mega automaticamente, voltando ao normal ao reverter. Veja
+    <code>module/combat/mega-evolution.mjs</code> e o compêndio de Mega Evoluções.</em></p>
     <h2>Requisitos</h2>
     <ul>
       <li>O Treinador precisa ser nível 13 ou superior.</li>
