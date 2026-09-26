@@ -23,7 +23,11 @@ const MAX_ABILITY_SCORE = 30;
 const MOVEMENT_KEYS = ["walk", "swim", "fly", "climb", "burrow"];
 
 function normalize(name) {
-  return (name ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "").toLowerCase();
+  // toLowerCase() TEM que vir antes do replace: "Alakazam".replace(/[^a-z0-9]/g, "") sozinho
+  // removeria o "A" maiúsculo (não bate com [a-z0-9]), virando "lakazam" — nunca combinando
+  // com o slug da espécie (sempre minúsculo, ex. "alakazam"). Bug real da v1.32.0/v1.32.1:
+  // isso quebrava a comparação de TODA Mega Pedra, não só a de nomes com acento.
+  return (name ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "");
 }
 
 /** Mega Pedra da própria espécie no inventário do Pokémon, esteja equipada ou não. */
