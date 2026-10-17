@@ -1279,7 +1279,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "sphere",
+                "size": "10",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1287,8 +1292,8 @@
                 "con"
               ],
               "dc": {
-                "calculation": "con",
-                "formula": "",
+                "calculation": "",
+                "formula": "@abilities.con.dc - 3",
                 "bonus": ""
               }
             },

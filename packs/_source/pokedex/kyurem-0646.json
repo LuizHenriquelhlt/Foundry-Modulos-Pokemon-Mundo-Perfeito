@@ -973,8 +973,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "dex",
-                "formula": "",
+                "calculation": "",
+                "formula": "@abilities.dex.dc - 1",
                 "bonus": ""
               }
             },
@@ -1851,7 +1851,12 @@
               "override": false
             },
             "target": {
-              "override": false
+              "override": true,
+              "template": {
+                "type": "sphere",
+                "size": "20",
+                "units": "ft"
+              }
             },
             "type": "save",
             "save": {
@@ -1859,8 +1864,8 @@
                 "str"
               ],
               "dc": {
-                "calculation": "dex",
-                "formula": "",
+                "calculation": "",
+                "formula": "@abilities.dex.dc - 1",
                 "bonus": ""
               }
             },
@@ -2427,8 +2432,8 @@
                 "dex"
               ],
               "dc": {
-                "calculation": "str",
-                "formula": "",
+                "calculation": "",
+                "formula": "@abilities.str.dc - 3",
                 "bonus": ""
               }
             },

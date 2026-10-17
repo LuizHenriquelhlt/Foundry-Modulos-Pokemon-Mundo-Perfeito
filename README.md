@@ -67,6 +67,7 @@ scripts/
   sync-gen89-moves.py       # Moves de Geração 8/9: cria os novos e atualiza os existentes pela versão atual dos suplementos
   parse-gen89-items.py      # Itens de Geração 8/9 (com os ícones extraídos do próprio livro, em assets/items/)
   sync-gen89-abilities.py   # texto das 73 Habilidades Passivas de Geração 8/9 (compêndio + cópias na Pokédex)
+  rebuild-moves.py          # regera os Moves (CD com modificador, áreas da descrição...) e as cópias na Pokédex
   parse-pokedex.py          # Pokédex completa (Livro dos Pokémon)
   parse-mega-evolutions.py  # Lista de Mega Evoluções
   seed-special-megas.py     # Mega Rayquaza / Kyogre Primal / Groudon Primal (formato de texto diferente)

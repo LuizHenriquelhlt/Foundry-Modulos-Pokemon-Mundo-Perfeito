@@ -120,14 +120,45 @@ def damage_type_key(move_type):
 # preenche "width" com 5 pés sozinho quando o tipo pede largura e ela não veio definida).
 AREA_SHAPE_MAP = {"raio": "radius", "cone": "cone", "linha": "line"}
 
+# Moves cujo Alcance é só a distância ("60 pés (18 metros)") e a área aparece na Descrição:
+# "em um raio de 10 pés (3 metros), centrado em um ponto dentro do alcance" vira "sphere" (área
+# plantada num ponto — não "radius", que é a emanação a partir do próprio usuário) e "cilindro
+# de 20 pés de raio e 80 de altura" / "raio de 20 pés de largura e 50 de altura, centrado em um
+# ponto" vira "cylinder". Só vale pra Moves de teste de resistência ou de uso: nos Moves de
+# ataque a área da descrição é efeito secundário depois do acerto (espinhos do Ceaseless Edge,
+# gás do Sludge Bomb), e um template ali faria o ataque de alvo único pedir uma área.
+TEXT_CYLINDER_RE = re.compile(
+    r"(?:cilindro|raio) de (\d+) pés(?: \([^)]*\))? de (?:raio|largura) e (\d+) pés(?: \([^)]*\))? de altura",
+    re.IGNORECASE)
+TEXT_SPHERE_RE = re.compile(r"raio de (\d+) pés(?: \([^)]*\))?,? centrad[oa] em um ponto", re.IGNORECASE)
 
-def parse_area_template(pmp):
+
+def parse_area_template(pmp, description=""):
     raw = pmp.get("range", {}).get("raw", "")
     m = re.search(r"(raio|cone|linha) de (\d+)\s*p", raw, re.IGNORECASE)
-    if not m:
+    if m:
+        shape = m.group(1).lower()
+        return {"type": AREA_SHAPE_MAP[shape], "size": m.group(2), "units": "ft"}
+    if not description:
         return None
-    shape = m.group(1).lower()
-    return {"type": AREA_SHAPE_MAP[shape], "size": m.group(2), "units": "ft"}
+    if m := TEXT_CYLINDER_RE.search(description):
+        return {"type": "cylinder", "size": m.group(1), "height": m.group(2), "units": "ft"}
+    if m := TEXT_SPHERE_RE.search(description):
+        return {"type": "sphere", "size": m.group(1), "units": "ft"}
+    return None
+
+
+def save_dc(ability, sign=None, amount=None):
+    """CD do teste de resistência de um Move. Normal: o atributo de poder do Move (o jogador
+    troca no seletor da Activity). Com modificador no texto ("contra sua CD de Move -2"), o
+    dnd5e 5.3.3 não guarda bônus de CD na Activity (save.dc.bonus é zerado a cada preparação
+    e só efeitos de encantamento mexem nele), então vira fórmula sobre a CD do próprio atributo
+    — @abilities.<x>.dc já soma proficiência e os bônus de CD do Pokémon (ex.: Precisão)."""
+    ability = ability or "str"
+    if not amount:
+        return {"calculation": ability, "formula": "", "bonus": ""}
+    op = "+" if sign == "+" else "-"
+    return {"calculation": "", "formula": f"@abilities.{ability}.dc {op} {amount}", "bonus": ""}
 
 
 def build_move_activity(pmp, move_name):
@@ -174,8 +205,8 @@ def build_move_activity(pmp, move_name):
             "types": [dtype] if dtype else []
         }
 
-    m_save = re.search(r"teste (?:de resistência )?de (FOR|DES|CON|INT|SAB|CAR)\s+contra sua CD",
-                        desc_plain)
+    m_save = re.search(r"teste (?:de resistência )?de (FOR|DES|CON|INT|SAB|CAR)\s+contra sua CD"
+                       r"(?: de Move)?(?:\s*([+\-−–])\s*(\d+))?", desc_plain)
     m_roll_vs_defense = re.search(r"[Rr]ole 1d20\s*\+\s*MOVE(?:\s*\+\s*(\d+))?", desc_plain)
     is_attack_phrase = bool(re.search(r"[Ff]aça (?:um|até \w+ rolagens? de)? ?ataque", desc_plain))
     is_attack = is_attack_phrase or bool(m_roll_vs_defense) or (bool(damage_part) and not m_save)
@@ -188,7 +219,7 @@ def build_move_activity(pmp, move_name):
     if uses_pp.get("max") and not uses_pp.get("unlimited"):
         consumption["targets"] = [{"type": "itemUses", "target": "", "value": "1", "scaling": {"mode": "", "formula": ""}}]
 
-    area = parse_area_template(pmp)
+    area = parse_area_template(pmp, "" if is_attack else desc_plain)
 
     def base_activity(suffix):
         target = {"override": True, "template": area} if area else {"override": False}
@@ -224,7 +255,7 @@ def build_move_activity(pmp, move_name):
         common = base_activity("save" if dual_attack_and_save else "act")
         save_ability = ABILITY_PT.get(m_save.group(1), "dex")
         on_save = "half" if re.search(r"metade d", desc_plain) else "none"
-        dc = {"calculation": ability or "str", "formula": "", "bonus": ""}
+        dc = save_dc(ability, m_save.group(2), m_save.group(3))
         return common["_id"], {
             **common,
             "type": "save",

@@ -51,11 +51,28 @@ async function migrateTo1() {
     }
   }
   const repair = await repairPokemonMoves({ notify: false });
-  return { ...report, moves: repair?.movesTouched ?? 0, abilities: repair?.abilitiesTouched ?? 0 };
+  return {
+    errors: report.errors,
+    lines: [
+      `${report.ac} com a CA passando a somar bônus (Evasão, Naturezas, Mega Evolução)`,
+      `${report.stages} Mudança(s) de Status ativas recalculadas`,
+      `${repair?.movesTouched ?? 0} Move(s) e ${repair?.abilitiesTouched ?? 0} Habilidade(s) sincronizados com os compêndios`
+    ]
+  };
+}
+
+/** v1.35.0 — Moves com modificador de CD no texto (-1 a -5) e áreas lidas da descrição. */
+async function migrateTo2() {
+  const repair = await repairPokemonMoves({ notify: false });
+  return {
+    errors: 0,
+    lines: [`${repair?.movesTouched ?? 0} Move(s) com a CD do livro (ex.: "CD de Move -2") ou a área de efeito ajustadas`]
+  };
 }
 
 const MIGRATIONS = [
-  { version: 1, label: "v1.34.0", run: migrateTo1 }
+  { version: 1, label: "v1.34.0", run: migrateTo1 },
+  { version: 2, label: "v1.35.0", run: migrateTo2 }
 ];
 
 export async function runMigrations() {
@@ -72,11 +89,7 @@ export async function runMigrations() {
       whisper: [game.user.id],
       speaker: { alias: "Pokémon Mundo Perfeito" },
       content: `<p><strong>Módulo atualizado (${migration.label}).</strong> Pokémon do mundo ajustados:</p>
-        <ul>
-          <li>${report.ac} com a CA passando a somar bônus (Evasão, Naturezas, Mega Evolução)</li>
-          <li>${report.stages} Mudança(s) de Status ativas recalculadas</li>
-          <li>${report.moves} Move(s) e ${report.abilities} Habilidade(s) sincronizados com os compêndios</li>
-        </ul>
+        <ul>${report.lines.map((line) => `<li>${line}</li>`).join("")}</ul>
         ${report.errors ? `<p>⚠️ ${report.errors} Pokémon não puderam ser ajustados (veja o console, F12).</p>` : ""}`
     });
     await game.settings.set(MODULE_ID, SETTING, migration.version);

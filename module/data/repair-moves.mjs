@@ -5,9 +5,9 @@
 //
 // Moves: sincroniza o que é dado "de regra" — nome (Moves renomeados por correção de
 // extração), texto, PP máximo, tempo de execução, tipo de dano, fórmula de bônus (os Moves são
-// "limpos" de propósito, só dado + modificador) e template de área. NUNCA toca em
-// "attack.ability"/"save.ability"/"save.dc.calculation" (escolha do jogador, ver
-// scripts/convert-to-dnd5e-native.py) nem nos usos já gastos.
+// "limpos" de propósito, só dado + modificador), template de área e modificador de CD do livro.
+// NUNCA troca o atributo escolhido pelo jogador ("attack.ability", "save.ability" e o atributo
+// da CD, ver scripts/convert-to-dnd5e-native.py) nem os usos já gastos.
 // Habilidades: só preenche as cópias que ainda têm o texto-marcador "Regra completa não
 // encontrada..." (Habilidades de Gen 8/9 antes da v1.34) — texto escrito à mão fica como está.
 import { fetchMoveDocument } from "./move-pack.mjs";
@@ -15,6 +15,7 @@ import { fetchAbilityInfo } from "./abilities-lookup.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 const ABILITY_STUB = "Regra completa não encontrada";
+const ABILITY_KEYS = ["str", "dex", "con", "int", "wis", "cha"];
 
 // Nome antigo (quebrado pela extração do PDF) -> nome atual no compêndio.
 const RENAMED_MOVES = {
@@ -49,6 +50,21 @@ function patchActivities(currentActivities, freshActivities) {
         changed = true;
       }
     });
+
+    // CD com modificador do livro ("contra sua CD de Move -2"): no compêndio vira fórmula sobre
+    // a CD do atributo (@abilities.<x>.dc - 2). Uma cópia antiga ainda no seletor de atributo
+    // passa pra fórmula usando o atributo que o JOGADOR já tinha escolhido ali; uma cópia que já
+    // está em fórmula (a do módulo ou uma escrita à mão) fica como está.
+    const freshDc = freshAct.save?.dc;
+    const currentDc = current.save?.dc;
+    if (freshDc?.formula && !freshDc.calculation && currentDc?.calculation) {
+      const chosen = ABILITY_KEYS.includes(currentDc.calculation) ? currentDc.calculation : null;
+      const formula = chosen
+        ? freshDc.formula.replace(/@abilities\.\w+\.dc/, `@abilities.${chosen}.dc`)
+        : freshDc.formula;
+      current.save.dc = { ...currentDc, calculation: "", formula };
+      changed = true;
+    }
 
     const activationType = freshAct.activation?.type;
     if (activationType && current.activation?.type !== activationType) {
