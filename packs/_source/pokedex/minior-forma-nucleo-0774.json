@@ -43,7 +43,7 @@
         "fly": 35,
         "climb": 0,
         "burrow": 0,
-        "hover": false,
+        "hover": true,
         "units": "ft"
       },
       "senses": {
@@ -63,7 +63,7 @@
         "custom": "Pokémon"
       },
       "biography": {
-        "value": "<p>O Pokémon Meteoro. Minior que cai no solo tenta voltar ao espaço, mas não consegue e acaba desaparecendo. Ele se alimenta da poeira atmosférica, e a composição desse material determina a cor de seu núcleo.</p><p><strong>SR:</strong> 4 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 5 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Mineral &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 1/1 &nbsp;•&nbsp; <strong>XP ao derrotar (nível 5):</strong> 3.100</p><p><strong>Evolução:</strong> Minior Forma Núcleo não possui evoluções conhecidas.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Defense Curl, Tackle</td></tr><tr><td style='text-align:center'>3</td><td>Rollout</td></tr><tr><td style='text-align:center'>4</td><td>Confuse Ray</td></tr><tr><td style='text-align:center'>5</td><td>Swift</td></tr><tr><td style='text-align:center'>6</td><td>Ancient Power</td></tr><tr><td style='text-align:center'>8</td><td>Self-Destruct, Stealth Rock</td></tr><tr><td style='text-align:center'>10</td><td>Take Down</td></tr><tr><td style='text-align:center'>11</td><td>Autotomize, Rock Polish</td></tr><tr><td style='text-align:center'>12</td><td>Cosmic Power</td></tr><tr><td style='text-align:center'>13</td><td>Power Gem</td></tr><tr><td style='text-align:center'>15</td><td>Double-Edge, Explosion, Shell Smash</td></tr></tbody></table><h3>TMs</h3><p>Acrobatics, Attract, Bulldoze, Calm Mind, Charge Beam, Confide, Confuse Ray, Dazzling Gleam, Double Team, Double-Edge, Earth Power, Earthquake, Endeavor, Endure, Explosion, Facade, Frustration, Giga Impact, Gravity, Gyro Ball, Hidden Power, Hyper Beam, Iron Head, Last Resort, Light Screen, Magnet Rise, Meteor Beam, Power Gem, Protect, Psych Up, Psychic, Reflect, Rest, Return, Rock Blast, Rock Polish, Rock Slide, Rock Tomb, Round, Safeguard, Sandstorm, Scorching Sands, Sleep Talk, Snore, Solar Beam, Stealth Rock, Stone Edge, Substitute, Swagger, Swift, Take Down, Telekinesis, Tera Blast, Toxic, U-turn, Zen Headbutt</p>",
+        "value": "<p>O Pokémon Meteoro. Minior que cai no solo tenta voltar ao espaço, mas não consegue e acaba desaparecendo. Ele se alimenta da poeira atmosférica, e a composição desse material determina a cor de seu núcleo.</p><p><strong>SR:</strong> 4 &nbsp;•&nbsp; <strong>Nível Mínimo Encontrado:</strong> 5 &nbsp;•&nbsp; <strong>Grupo de Ovos:</strong> Mineral &nbsp;•&nbsp; <strong>Gênero:</strong> 50% M / 50% F &nbsp;•&nbsp; <strong>Estágio Evolutivo:</strong> 1/1 &nbsp;•&nbsp; <strong>XP ao derrotar (nível 5):</strong> 3.100</p><p><strong>Evolução:</strong> Minior Forma Núcleo não possui evoluções conhecidas.</p><h3>Moves por Nível</h3><table><thead><tr><th>Nível</th><th>Moves adquiridos</th></tr></thead><tbody><tr><td style='text-align:center'>1</td><td>Defense Curl, Tackle</td></tr><tr><td style='text-align:center'>2</td><td></td></tr><tr><td style='text-align:center'>3</td><td>Rollout</td></tr><tr><td style='text-align:center'>4</td><td>Confuse Ray</td></tr><tr><td style='text-align:center'>5</td><td>Swift</td></tr><tr><td style='text-align:center'>6</td><td>Ancient Power</td></tr><tr><td style='text-align:center'>7</td><td></td></tr><tr><td style='text-align:center'>8</td><td>Self-Destruct, Stealth Rock</td></tr><tr><td style='text-align:center'>9</td><td></td></tr><tr><td style='text-align:center'>10</td><td>Take Down</td></tr><tr><td style='text-align:center'>11</td><td>Autotomize, Rock Polish</td></tr><tr><td style='text-align:center'>12</td><td>Cosmic Power</td></tr><tr><td style='text-align:center'>13</td><td>Power Gem</td></tr><tr><td style='text-align:center'>14</td><td></td></tr><tr><td style='text-align:center'>15</td><td>Double-Edge, Explosion, Shell Smash</td></tr></tbody></table><h3>TMs</h3><p>Acrobatics, Attract, Bulldoze, Calm Mind, Charge Beam, Confide, Confuse Ray, Dazzling Gleam, Double Team, Double-Edge, Earth Power, Earthquake, Endeavor, Endure, Explosion, Facade, Frustration, Giga Impact, Gravity, Gyro Ball, Hidden Power, Hyper Beam, Iron Head, Last Resort, Light Screen, Magnet Rise, Meteor Beam, Power Gem, Protect, Psych Up, Psychic, Reflect, Rest, Return, Rock Blast, Rock Polish, Rock Slide, Rock Tomb, Round, Safeguard, Sandstorm, Scorching Sands, Sleep Talk, Snore, Solar Beam, Stealth Rock, Stone Edge, Substitute, Swagger, Swift, Take Down, Telekinesis, Tera Blast, Toxic, U-turn, Zen Headbutt</p>",
         "public": ""
       },
       "alignment": ""
@@ -164,7 +164,7 @@
         },
         "movement": {
           "walk": 3,
-          "other": "3m de caminhada, 10,5m de voo"
+          "other": "3m de caminhada, 10,5m de voo (flutuação)"
         },
         "senses": "",
         "passiveAbility": {
@@ -182,6 +182,10 @@
               "Defense Curl",
               "Tackle"
             ]
+          },
+          {
+            "level": 2,
+            "moves": []
           },
           {
             "level": 3,
@@ -208,11 +212,19 @@
             ]
           },
           {
+            "level": 7,
+            "moves": []
+          },
+          {
             "level": 8,
             "moves": [
               "Self-Destruct",
               "Stealth Rock"
             ]
+          },
+          {
+            "level": 9,
+            "moves": []
           },
           {
             "level": 10,
@@ -238,6 +250,10 @@
             "moves": [
               "Power Gem"
             ]
+          },
+          {
+            "level": 14,
+            "moves": []
           },
           {
             "level": 15,
@@ -379,6 +395,192 @@
               "4": "avg",
               "5": "avg"
             }
+          },
+          {
+            "type": "ItemChoice",
+            "title": "Talento de Pokémon",
+            "_id": "mrDLT3OxvkEkxtMo",
+            "configuration": {
+              "allowDrops": true,
+              "choices": {
+                "8": {
+                  "count": 1,
+                  "replacement": false
+                },
+                "12": {
+                  "count": 1,
+                  "replacement": false
+                },
+                "16": {
+                  "count": 1,
+                  "replacement": false
+                },
+                "20": {
+                  "count": 1,
+                  "replacement": false
+                }
+              },
+              "pool": [
+                {
+                  "sort": 0,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.fWixoWA5isHngPfI"
+                },
+                {
+                  "sort": 10000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.AQhXiKvBwM6EDMFt"
+                },
+                {
+                  "sort": 20000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.Iw1YFty1VqzE2U8w"
+                },
+                {
+                  "sort": 30000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.OXalDDAE2Le6spjs"
+                },
+                {
+                  "sort": 40000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.sEpdDpJeAFVKXvcL"
+                },
+                {
+                  "sort": 50000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.pfGgpbMw1cXyMqfe"
+                },
+                {
+                  "sort": 60000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.037Djqum6yJBi75c"
+                },
+                {
+                  "sort": 70000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.uB1vEEjAwmo9R6uE"
+                },
+                {
+                  "sort": 80000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.n9wipLbbp33btxpH"
+                },
+                {
+                  "sort": 90000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.rgmtWYl8LiLoZ33d"
+                },
+                {
+                  "sort": 100000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.UfN6UwvroKWqVQo3"
+                },
+                {
+                  "sort": 110000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.WCTn7I2w8EZPanxq"
+                },
+                {
+                  "sort": 120000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.p3KCEBQeg8r2zCGe"
+                },
+                {
+                  "sort": 130000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.uO9LnBwP1E7UKTjG"
+                },
+                {
+                  "sort": 140000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.BMcCLT3MmECbd05d"
+                },
+                {
+                  "sort": 150000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.X1Tmd8nUnIsuGAua"
+                },
+                {
+                  "sort": 160000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.ialDF4oNCIhtTnlh"
+                },
+                {
+                  "sort": 170000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.u8fOvw3vcG1y6krI"
+                },
+                {
+                  "sort": 180000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.OFId2R8lIMbn5Eo5"
+                },
+                {
+                  "sort": 190000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.ikXTnNDlRrDoVjzZ"
+                },
+                {
+                  "sort": 200000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.vtZTJmWgXxWjg6LO"
+                },
+                {
+                  "sort": 210000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.G44B5vK9N8tsTqkQ"
+                },
+                {
+                  "sort": 220000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.04URVe8vkewNRU25"
+                },
+                {
+                  "sort": 230000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.yVQGLpxXz24tPE1P"
+                },
+                {
+                  "sort": 240000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.f4zaAJdX6Z3wWoey"
+                },
+                {
+                  "sort": 250000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.zhmoyCDAxvl0NCMy"
+                },
+                {
+                  "sort": 260000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.SsAw7RjeX1gfYPDf"
+                },
+                {
+                  "sort": 270000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.rYXvMcEpIdp9Kj90"
+                },
+                {
+                  "sort": 280000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.oOqyExpuWsHjYfO0"
+                },
+                {
+                  "sort": 290000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.NgFACWlILgjVoLDk"
+                },
+                {
+                  "sort": 300000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.Vf7yIV9g3VumdFnu"
+                },
+                {
+                  "sort": 310000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.T6AuhNqZCMDs05mz"
+                },
+                {
+                  "sort": 320000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.4RvHprxHmZWKYkb0"
+                },
+                {
+                  "sort": 330000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.oLZuafi473G6Ncr8"
+                },
+                {
+                  "sort": 340000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.I5iPFFMC6fSjrjTz"
+                },
+                {
+                  "sort": 350000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.oUD7rGmyhUrZICZ4"
+                },
+                {
+                  "sort": 360000,
+                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.WfFRl2zudPmB8aqI"
+                }
+              ],
+              "restriction": {
+                "level": "",
+                "list": [],
+                "subtype": "",
+                "type": "feat"
+              },
+              "sorting": "a",
+              "spell": null,
+              "type": "feat"
+            },
+            "value": {}
           },
           {
             "type": "AbilityScoreImprovement",
@@ -704,192 +906,6 @@
               "cap": 2,
               "fixed": {},
               "locked": []
-            },
-            "value": {}
-          },
-          {
-            "type": "ItemChoice",
-            "title": "Talento de Pokémon",
-            "_id": "mrDLT3OxvkEkxtMo",
-            "configuration": {
-              "allowDrops": true,
-              "choices": {
-                "8": {
-                  "count": 1,
-                  "replacement": false
-                },
-                "12": {
-                  "count": 1,
-                  "replacement": false
-                },
-                "16": {
-                  "count": 1,
-                  "replacement": false
-                },
-                "20": {
-                  "count": 1,
-                  "replacement": false
-                }
-              },
-              "pool": [
-                {
-                  "sort": 0,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.fWixoWA5isHngPfI"
-                },
-                {
-                  "sort": 10000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.AQhXiKvBwM6EDMFt"
-                },
-                {
-                  "sort": 20000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.Iw1YFty1VqzE2U8w"
-                },
-                {
-                  "sort": 30000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.OXalDDAE2Le6spjs"
-                },
-                {
-                  "sort": 40000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.sEpdDpJeAFVKXvcL"
-                },
-                {
-                  "sort": 50000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.pfGgpbMw1cXyMqfe"
-                },
-                {
-                  "sort": 60000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.037Djqum6yJBi75c"
-                },
-                {
-                  "sort": 70000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.uB1vEEjAwmo9R6uE"
-                },
-                {
-                  "sort": 80000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.n9wipLbbp33btxpH"
-                },
-                {
-                  "sort": 90000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.rgmtWYl8LiLoZ33d"
-                },
-                {
-                  "sort": 100000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.UfN6UwvroKWqVQo3"
-                },
-                {
-                  "sort": 110000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.WCTn7I2w8EZPanxq"
-                },
-                {
-                  "sort": 120000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.p3KCEBQeg8r2zCGe"
-                },
-                {
-                  "sort": 130000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.uO9LnBwP1E7UKTjG"
-                },
-                {
-                  "sort": 140000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.BMcCLT3MmECbd05d"
-                },
-                {
-                  "sort": 150000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.X1Tmd8nUnIsuGAua"
-                },
-                {
-                  "sort": 160000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.ialDF4oNCIhtTnlh"
-                },
-                {
-                  "sort": 170000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.u8fOvw3vcG1y6krI"
-                },
-                {
-                  "sort": 180000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.OFId2R8lIMbn5Eo5"
-                },
-                {
-                  "sort": 190000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.ikXTnNDlRrDoVjzZ"
-                },
-                {
-                  "sort": 200000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.vtZTJmWgXxWjg6LO"
-                },
-                {
-                  "sort": 210000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.G44B5vK9N8tsTqkQ"
-                },
-                {
-                  "sort": 220000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.04URVe8vkewNRU25"
-                },
-                {
-                  "sort": 230000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.yVQGLpxXz24tPE1P"
-                },
-                {
-                  "sort": 240000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.f4zaAJdX6Z3wWoey"
-                },
-                {
-                  "sort": 250000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.zhmoyCDAxvl0NCMy"
-                },
-                {
-                  "sort": 260000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.SsAw7RjeX1gfYPDf"
-                },
-                {
-                  "sort": 270000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.rYXvMcEpIdp9Kj90"
-                },
-                {
-                  "sort": 280000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.oOqyExpuWsHjYfO0"
-                },
-                {
-                  "sort": 290000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.NgFACWlILgjVoLDk"
-                },
-                {
-                  "sort": 300000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.Vf7yIV9g3VumdFnu"
-                },
-                {
-                  "sort": 310000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.T6AuhNqZCMDs05mz"
-                },
-                {
-                  "sort": 320000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.4RvHprxHmZWKYkb0"
-                },
-                {
-                  "sort": 330000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.oLZuafi473G6Ncr8"
-                },
-                {
-                  "sort": 340000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.I5iPFFMC6fSjrjTz"
-                },
-                {
-                  "sort": 350000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.oUD7rGmyhUrZICZ4"
-                },
-                {
-                  "sort": 360000,
-                  "uuid": "Compendium.pokemon-mundo-perfeito.trainer-features.Item.WfFRl2zudPmB8aqI"
-                }
-              ],
-              "restriction": {
-                "level": "",
-                "list": [],
-                "subtype": "",
-                "type": "feat"
-              },
-              "sorting": "a",
-              "spell": null,
-              "type": "feat"
             },
             "value": {}
           }

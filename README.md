@@ -68,11 +68,18 @@ scripts/
   parse-gen89-items.py      # Itens de Geração 8/9 (com os ícones extraídos do próprio livro, em assets/items/)
   sync-gen89-abilities.py   # texto das 73 Habilidades Passivas de Geração 8/9 (compêndio + cópias na Pokédex)
   rebuild-moves.py          # regera os Moves (CD com modificador, áreas da descrição...) e as cópias na Pokédex
+  fix-move-texts.py         # tira créditos de arte vazados no texto dos Moves e lê a prioridade (+N) da descrição
   parse-pokedex.py          # Pokédex completa (Livro dos Pokémon)
+  fix-pokedex-movement.py   # relê "Deslocamento:" inteiro (natação/voo/escavação da 2ª linha, "flutua")
+  sync-pokedex-move-lists.py # relê tabela de níveis, TMs e Egg Moves; refaz concessões e Moves conhecidos
+  fix-evolution-texts.py    # textos de evolução que não nomeavam a forma de destino (regionais, Froslass...)
   parse-mega-evolutions.py  # Lista de Mega Evoluções
   seed-special-megas.py     # Mega Rayquaza / Kyogre Primal / Groudon Primal (formato de texto diferente)
+  add-mega-abilities.py     # Habilidades que só existem na Mega (Desolate Land, Mega Sol, Spicy Spray...)
+  fix-mega-data.py          # relê o livro de Megas: textos misturados, habilidades a lançar, Aerodactylite/Zygardite
   parse-trainer-*.py        # Especializações, Habilidades Gerais, Regiões, Origens, Classes de Treinador
   parse-items.py            # Itens/equipamentos gerais
+  sync-rulebook-items.py    # relê o capítulo Itens com PyMuPDF: textos emendados, preços, itens que faltavam
   parse-tm-prices.py        # Tabela de preços de TM
   seed-gen89-mechanics.py   # Dynamax/Gigantamax, Terastal, Região de Paldea (texto de referência)
   build-packs.mjs           # compila packs/_source -> packs (Node, roda no Foundry/dev machine)
@@ -104,7 +111,7 @@ Depois de instalar e compilar:
 - **Sem teste em Foundry real**: o pipeline de build (`npm install && npm run build:packs`) foi testado e os compêndios compilam corretamente com dados reais — mas a primeira ativação em um mundo Foundry de verdade ainda vai revelar ajustes de sheet/CSS/Handlebars que só aparecem em execução.
 - **Ao rodar `npm install`, o npm pode avisar que bloqueou o script nativo do `classic-level`** (dependência de LevelDB do `@foundryvtt/foundryvtt-cli`) por segurança. Rode `npm approve-scripts classic-level` se quiser silenciar o aviso; na prática não afeta o resultado, já que `classic-level` traz binário pré-compilado para Windows/macOS/Linux.
 - **Regiões, Origens e Especializações** viraram Items do tipo `feat`/`background`/`race` com o texto completo (fiel ao livro); a Classe base Treinador e as 12 Classes de Treinador (subclasses) já usam o Advancement do dnd5e.
-- **Catálogo geral de itens** (~347 itens) tem ~110 linhas descartadas pelo parser de tabela por ambiguidade (fragmento de descrição vs. nome de item) — descartadas em vez de gravadas erradas; ver `scripts/parse-items.py`.
+- **Catálogo geral de itens**: o `parse-items.py` (pdfplumber) juntava linhas vizinhas em tabelas de célula centralizada e descartava ~110 linhas ambíguas. O `sync-rulebook-items.py` relê o capítulo com PyMuPDF e corrige textos, preços e itens faltantes; rode-o depois do `parse-items.py`.
 - **Dynamax/Gigantamax** ficou como texto de referência (regras + requisitos) — o próprio livro oferece três métodos alternativos de PV à escolha do Mestre. **Terastal** troca tipo e defesas pelo botão da ficha; o STAB fica manual.
 - **Mudanças de Status**: Precisão, Evasão, Velocidade e Margem de Crítico são automáticas; Defesa/Def. Especial (redução de dano por corpo a corpo/à distância) e o dano de Ataque/Atq. Especial ficam como registro no painel.
 
@@ -112,8 +119,11 @@ Depois de instalar e compilar:
 
 Os compêndios mudam a cada versão, mas um Pokémon já importado, chocado ou capturado guarda a
 cópia da versão em que entrou no mundo. Na primeira vez que o **Mestre** abre o mundo depois de
-atualizar, o módulo ajusta esses Pokémon sozinho (uma vez só) e manda um resumo no chat. A
-macro **"Reparar Moves dos Pokémon"** faz a parte de Moves/Habilidades de novo a qualquer
-momento (texto, PP, tempo de execução, tipo de dano e Habilidades ainda sem texto), sem mexer
-no atributo que o jogador escolheu para cada Move.
+atualizar, o módulo ajusta esses Pokémon sozinho (uma vez só) e manda um resumo no chat. Na
+v1.36.0 isso inclui completar deslocamentos que faltavam (só preenche modo em 0; o que foi
+mexido à mão fica) e trocar os Moves dos níveis que o Pokémon ainda não alcançou pelos da
+Pokédex. A macro **"Reparar Moves dos Pokémon"** faz a parte de Moves/Habilidades/Mega Pedras
+de novo a qualquer momento (texto, PP, tempo de execução, tipo de dano, Habilidades ainda sem
+texto e dados das Mega Pedras, inclusive no inventário de Treinadores e no diretório de Itens),
+sem mexer no atributo que o jogador escolheu para cada Move.
 - **PDFs de origem não incluídos no módulo** (grandes demais, direitos de terceiros) — os scripts esperam que você aponte para a pasta onde eles estão.

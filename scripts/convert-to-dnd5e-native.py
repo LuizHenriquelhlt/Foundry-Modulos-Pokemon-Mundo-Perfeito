@@ -138,7 +138,11 @@ def parse_area_template(pmp, description=""):
     m = re.search(r"(raio|cone|linha) de (\d+)\s*p", raw, re.IGNORECASE)
     if m:
         shape = m.group(1).lower()
-        return {"type": AREA_SHAPE_MAP[shape], "size": m.group(2), "units": "ft"}
+        template = {"type": AREA_SHAPE_MAP[shape], "size": m.group(2), "units": "ft"}
+        # linha com largura própria ("... de comprimento e 15 pés / 4,5 metros de largura")
+        if width := re.search(r"comprimento e (\d+) pés[^)]*?de largura", raw, re.IGNORECASE):
+            template["width"] = width.group(1)
+        return template
     if not description:
         return None
     if m := TEXT_CYLINDER_RE.search(description):
@@ -413,6 +417,9 @@ def parse_movement(pmp):
         elif mode == "flutuacao":
             result["fly"] = max(result["fly"], val)
             result["hover"] = True
+    # "7,5m de voo (flutuação)": o voo é por levitação — no dnd5e, deslocamento de voo com "hover"
+    if re.search(r"voo\s*\(flutua", other, re.IGNORECASE):
+        result["hover"] = True
     for key in ("walk", "swim", "fly", "climb", "burrow"):
         result[key] = meters_to_feet(result[key])
     result["units"] = "ft"

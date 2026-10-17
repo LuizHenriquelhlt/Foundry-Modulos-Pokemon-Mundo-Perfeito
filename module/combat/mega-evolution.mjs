@@ -53,13 +53,26 @@ function normalize(name) {
   return (name ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "");
 }
 
-/** Mega Pedra da própria espécie no inventário do Pokémon, esteja equipada ou não. */
+// Tamanho como o livro de Megas guarda (parse-mega-evolutions) -> chave de tamanho do dnd5e
+// (CONFIG.DND5E.actorSizes: tiny/sm/med/lg/huge/grg). Gravar "large" direto deixava a ficha
+// com um tamanho que o dnd5e não reconhece.
+const SIZE_TO_DND5E = { tiny: "tiny", small: "sm", medium: "med", large: "lg", huge: "huge", gigantic: "grg" };
+
+// "[ainda a ser lançada]": a pedra não tem habilidade definida no livro — não troca nada
+const PENDING_ABILITY = /ainda a ser lan|^\[.*\]$/i;
+
+/** Mega Pedra da própria espécie no inventário do Pokémon, esteja equipada ou não.
+ * mega.pokedexSpecies lista os nomes da Pokédex quando o do livro não bate (Meowsticite ->
+ * "Meowstic Fêmea"/"Meowstic Macho"; Zygardite -> "Zygarde Forma Completa"). */
 export function findMatchingMegaStone(actor) {
   const species = actor?.getFlag(MODULE_ID, "species");
   if (!species) return null;
+  const own = normalize(species.species);
   return actor.items.find((i) => {
     const mega = i.getFlag(MODULE_ID, "mega");
-    return mega && normalize(mega.species) === normalize(species.species);
+    if (!mega) return false;
+    const names = mega.pokedexSpecies?.length ? mega.pokedexSpecies : [mega.species];
+    return names.some((name) => normalize(name) === own);
   }) ?? null;
 }
 
@@ -159,7 +172,8 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
     update[`system.abilities.${key}.value`] = Math.min(current + delta, MAX_ABILITY_SCORE);
   }
 
-  if (mega.size) update["system.traits.size"] = mega.size;
+  const size = SIZE_TO_DND5E[mega.size] ?? (Object.values(SIZE_TO_DND5E).includes(mega.size) ? mega.size : null);
+  if (size) update["system.traits.size"] = size;
 
   // Deslocamento: bônus fixo (só nos tipos que o Pokémon já tem) + concessões de novos tipos
   // (ex.: "ganha deslocamento de voo igual ao de caminhada"). A Pokédex guarda deslocamento
@@ -187,7 +201,7 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
   }
 
   let passiveInfo = null;
-  if (mega.passiveAbility) {
+  if (mega.passiveAbility && !PENDING_ABILITY.test(mega.passiveAbility)) {
     passiveInfo = await fetchAbilityInfo(mega.passiveAbility);
     update[`flags.${MODULE_ID}.species.passiveAbility`] = {
       options: [mega.passiveAbility], active: mega.passiveAbility

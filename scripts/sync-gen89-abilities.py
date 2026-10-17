@@ -43,6 +43,8 @@ BOOKS = [
 STUB_MARK = "Regra completa não encontrada"
 HEADING_FONT = "Digitalt"
 BULLET = "•"
+# marcador de lista: "•" normal ou o da fonte Symbol em código privado (livro de Mega Evoluções)
+BULLET_GLYPHS = {"•", "", "▪", "●"}
 PARAGRAPH_GAP = 15  # distância vertical (pt) que separa uma lista do parágrafo seguinte
 
 
@@ -69,6 +71,8 @@ def page_lines(page):
             if not spans:
                 continue
             text = re.sub(r"\s+", " ", "".join(s["text"] for s in line["spans"])).strip().replace("’", "'")
+            if text in BULLET_GLYPHS:
+                text = BULLET
             fonts = {s["font"] for s in spans}
             out.append((line["bbox"][0], line["bbox"][1], text, fonts, max(s["size"] for s in spans)))
     return out
@@ -162,9 +166,11 @@ def parse_chapter(pdf_path):
         # margem do texto = alinhamento dos títulos da página (a 2ª linha em diante de cada
         # parágrafo volta para ela; a 1ª vem recuada). A posição "mais comum" não serve: numa
         # página de parágrafos curtos há mais linhas recuadas do que alinhadas.
+        # (no livro de Mega Evoluções alguns títulos vêm centralizados — por isso o menor x entre
+        # título e corpo, não só o do título)
         heading_x = [x for x, y, t, f, s in lines if all(fn.startswith(HEADING_FONT) for fn in f)]
         body_x = [x for x, y, t, f, s in lines if t != BULLET and not any(fn.startswith(HEADING_FONT) for fn in f)]
-        margin = min(heading_x) if heading_x else (min(body_x) if body_x else 28)
+        margin = min(heading_x + body_x) if heading_x or body_x else 28
         new_page = True
         for x, y, text, fonts, size in lines:
             is_heading = all(fn.startswith(HEADING_FONT) for fn in fonts)

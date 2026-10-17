@@ -65,13 +65,17 @@ def main():
             if not item.get("flags", {}).get(MODULE_ID, {}).get("move"):
                 continue
             old_system = before[item["name"]][1]["system"]
-            new_system = after[item["name"]][1]["system"]
-            if item["system"] == new_system:
+            new_doc = after[item["name"]][1]
+            new_move = new_doc["flags"][MODULE_ID]["move"]
+            item_flags = item["flags"][MODULE_ID]
+            if item["system"] == new_doc["system"] and item_flags.get("move") == new_move:
                 continue
             if item["system"] != old_system:
                 kept.append(f"{actor['name']}: {item['name']}")
                 continue
-            item["system"] = json.loads(json.dumps(new_system))
+            # cópia intocada: recebe a ficha nova e os dados do livro (texto, prioridade...)
+            item["system"] = json.loads(json.dumps(new_doc["system"]))
+            item_flags["move"] = json.loads(json.dumps(new_move))
             copies += 1
             touched = True
         if touched:

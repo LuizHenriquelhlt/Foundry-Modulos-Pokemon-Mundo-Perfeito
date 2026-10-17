@@ -163,6 +163,22 @@ def find_move_headers(lines):
     return headers
 
 
+# Crédito de arte que o layout do livro deixa colado no fim de um trecho de texto: "Arte feita
+# twarda8", "Ar te feita por Chi coConSuArte", "Arte Sweet Kiss Arte feita por (Beijo Doce)
+# megubunnii" (crédito da ilustração de OUTRO Move, que fica ao lado). Sempre fica no fim.
+ART_CREDIT_RE = re.compile(r"\s*(?:Arte [A-Z][\w' ]*?\s+)?Ar\s?te feita\b.*$", re.DOTALL)
+
+
+def strip_art_credit(text):
+    return ART_CREDIT_RE.sub("", text).rstrip()
+
+
+def move_priority(description):
+    """"prioridade 3" no texto do Move -> 3 (0 se não declara)."""
+    m = re.search(r"\bprioridade\s*\+?(\d+)", strip_accents_lower(description))
+    return int(m.group(1)) if m else 0
+
+
 def clean_move_name(raw_name):
     m = re.match(r"^(.+?)\s*\((.+)\)$", raw_name)
     name = m.group(1).strip() if m else raw_name.strip()
@@ -214,8 +230,15 @@ def parse_block(lines, header, block_end):
             fields[key] = ""
             continue
         # créditos de arte às vezes colam no fim da linha do campo (ex.: "Instantânea Arte feita")
-        fields[key] = re.sub(r"\s*Arte feita.*$", "", found[1]).strip()
-        search_from = found[0] + 1
+        value = re.sub(r"\s*Arte feita.*$", "", found[1]).strip()
+        line_idx = found[0]
+        # campo que quebrou de linha no meio de um parêntese ("cone (50 pés / 15" + "metros)")
+        while value.count("(") > value.count(")") and line_idx + 1 < header_end \
+                and not any(rx.match(lines[line_idx + 1]) for rx in FIELD_LINE_RE.values()):
+            line_idx += 1
+            value = f"{value} {lines[line_idx].strip()}"
+        fields[key] = value
+        search_from = line_idx + 1
 
     if name in FIELD_CORRECTIONS:
         for key, value in FIELD_CORRECTIONS[name].items():
@@ -231,7 +254,7 @@ def parse_block(lines, header, block_end):
         for j in range(1, len(parts), 2):
             label = parts[j]
             text = parts[j + 1].strip() if j + 1 < len(parts) else ""
-            sections[label] = text
+            sections[label] = strip_art_credit(text)
     else:
         warnings.append(f"{name}: sem Descrição/campos finais (bloco vazio)")
 
@@ -266,7 +289,7 @@ def parse_block(lines, header, block_end):
     elif "acao bonus" in act_lower or "ação bônus" in fields.get("activation", "").lower():
         activation_type = "bonus"
 
-    priority = 1 if "prioridade 1" in strip_accents_lower(sections.get("Descrição", "")) else 0
+    priority = move_priority(sections.get("Descrição", ""))
 
     base_formula = ""
     scaling = []

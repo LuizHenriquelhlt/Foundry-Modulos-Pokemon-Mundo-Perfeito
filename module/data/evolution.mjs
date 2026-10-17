@@ -7,7 +7,7 @@
 // forma confiável (Eevee sozinho tem 8 caminhos diferentes) — por isso a ferramenta sugere
 // candidatos lendo esse texto, mas quem decide se o requisito foi cumprido continua sendo
 // o jogador/Mestre na mesa.
-import { fetchSpeciesDocument, findSpeciesIndexEntry } from "./pokedex-lookup.mjs";
+import { fetchSpeciesDocument, findSpeciesIndexEntry, slugKey } from "./pokedex-lookup.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 const ABILITY_KEYS = ["str", "dex", "con", "int", "wis", "cha"];
@@ -28,6 +28,14 @@ function pokemonLevel(actor) {
   return classItem?.system?.levels ?? 1;
 }
 
+const STAGE_FIELD = `flags.${MODULE_ID}.species.evolutionStage`;
+
+/** Nome inteiro no texto: "Porygon" não bate dentro de "Porygon2" nem "Mime" dentro de "Mimic". */
+function namePattern(name, flags = "u") {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, flags);
+}
+
 /**
  * Lê o campo de texto livre "evolution" da espécie atual e sugere candidatos comparando
  * contra os nomes reais da Pokédex — cobre tanto o caso linear (Charmander → só bate com
@@ -38,26 +46,73 @@ function pokemonLevel(actor) {
  */
 export async function suggestEvolutionCandidates(actor) {
   const species = actor.getFlag(MODULE_ID, "species");
-  const text = species?.evolution ?? "";
-  const ownName = species?.species ?? "";
+  let text = species?.evolution ?? "";
   if (!text) return [];
 
   const pack = pokedexPack();
   if (!pack) return [];
-  const index = await pack.getIndex();
-  const candidates = index
-    .map((e) => e.name)
-    .filter((name) => name !== ownName && text.includes(name));
+  const index = [...(await pack.getIndex({ fields: [STAGE_FIELD] }))];
+  const known = new Set(index.map((e) => e.name));
+  const ownName = index.find((e) => slugKey(e.name) === slugKey(species.species))?.name ?? actor.name ?? "";
+  const ownStage = species.evolutionStage?.current ?? 0;
 
-  // Nomes mais longos primeiro (ex.: "Raichu de Alola" antes de "Raichu", já que o texto
-  // normalmente contém os dois — sem isso "Raichu" apareceria duas vezes na prática).
-  candidates.sort((a, b) => b.length - a.length);
-  return [...new Set(candidates)];
+  // Só espécie de estágio à frente. O texto também cita o antecessor ("Charmeleon é a
+  // evolução de Charmander…", "Mime Jr. … caso esteja em Galar") e Pokémon que são condição
+  // ("na presença de um Shelmet"). O livro numera os ramos em sequência (Eevee 1/4,
+  // Vaporeon 2/4, Jolteon 3/4), então o alvo sempre tem número maior que o de quem evolui.
+  const ahead = (entry) => {
+    const stage = foundry.utils.getProperty(entry, STAGE_FIELD)?.current;
+    return entry.name !== ownName && !(Number.isFinite(stage) && stage <= ownStage);
+  };
+
+  const candidates = new Set();
+  // Nomes inteiros, do mais longo ao mais curto; cada um sai do texto depois de achado, pra
+  // "Darmanitan de Galar" não contar também como "Darmanitan".
+  for (const entry of index.sort((a, b) => b.name.length - a.name.length)) {
+    if (!namePattern(entry.name).test(text)) continue;
+    if (ahead(entry)) candidates.add(entry.name);
+    text = text.replace(namePattern(entry.name, "gu"), " ");
+  }
+  // Nome que na Pokédex só existe como formas: "evoluir para Meowstic" -> Meowstic Fêmea e
+  // Macho; "Dudunsparce" -> os dois Segmentos.
+  for (const entry of index) {
+    if (!ahead(entry)) continue;
+    const words = entry.name.split(" ");
+    for (let k = 1; k < words.length; k++) {
+      const prefix = words.slice(0, k).join(" ");
+      if (!known.has(prefix) && namePattern(prefix).test(text)) {
+        candidates.add(entry.name);
+        break;
+      }
+    }
+  }
+
+  // Forma regional evolui pra forma regional: "Growlithe de Hisui ... evoluir para Arcanine"
+  // é o Arcanine de Hisui, quando ele existe na Pokédex.
+  const regional = [" de Alola", " de Galar", " de Hisui", " de Paldea"].find((s) => ownName.endsWith(s));
+  if (regional) {
+    for (const name of [...candidates]) {
+      if (!name.endsWith(regional) && known.has(`${name}${regional}`)) {
+        candidates.delete(name);
+        candidates.add(`${name}${regional}`);
+      }
+    }
+  }
+
+  // Nomes mais longos primeiro (ex.: "Raichu de Alola" antes de "Raichu").
+  return [...candidates].sort((a, b) => b.length - a.length);
 }
 
-/** Estágio atual/máximo da espécie — usado só pra decidir se mostra o botão "Evoluir". */
+/**
+ * Decide se mostra o botão "Evoluir". O texto de evolução vem primeiro: o livro numera os
+ * ramos em sequência (Jolteon 3/4, Hitmonchan 3/4 são evoluções finais), então o estágio
+ * sozinho mostrava o botão em 26 espécies que não evoluem. Toda espécie que evolui diz
+ * "pode evoluir" no texto; o estágio só vale pra Actor sem texto.
+ */
 export function canStillEvolve(actor) {
-  const stage = actor.getFlag(MODULE_ID, "species")?.evolutionStage;
+  const species = actor.getFlag(MODULE_ID, "species");
+  if (species?.evolution) return /\bevoluir\b/i.test(species.evolution);
+  const stage = species?.evolutionStage;
   if (!stage) return false;
   return stage.current < stage.max;
 }

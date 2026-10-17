@@ -14,6 +14,19 @@ export async function findSpeciesIndexEntry(speciesName) {
   return index.find((e) => e.name.toLowerCase() === needle) ?? null;
 }
 
+/** flags.species.species guarda o slug ("growlithe-de-hisui"), não o nome da Pokédex. */
+export function slugKey(text) {
+  return (text ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "");
+}
+
+/** Documento da Pokédex da espécie atual de um Actor (pelo slug das flags). */
+export async function fetchSpeciesDocumentBySlug(slug) {
+  const pack = pokedexPack();
+  if (!pack || !slug) return null;
+  const entry = (await pack.getIndex()).find((e) => slugKey(e.name) === slugKey(slug));
+  return entry ? pack.getDocument(entry._id) : null;
+}
+
 export async function fetchSpeciesDocument(speciesName) {
   const entry = await findSpeciesIndexEntry(speciesName);
   if (!entry) return null;

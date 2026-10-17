@@ -37,6 +37,10 @@ TYPE_LABELS = {
 ABILITY_LABELS = {"str": "FOR", "dex": "DES", "con": "CON", "int": "INT",
                    "wis": "SAB", "cha": "CAR"}
 
+# tamanho guardado nas Mega Pedras (parse-mega-evolutions.SIZE_PT_TO_EN) -> nome do livro
+SIZE_LABELS = {"tiny": "Minúsculo", "small": "Pequeno", "medium": "Médio", "large": "Grande",
+               "huge": "Enorme", "gigantic": "Gigantesco"}
+
 CONSUMABLE_KEYWORDS = [
     " berry", "hortelã", "candy", "poção", "nectar", "cookie", "milk", "soda",
     "lemonade", "fresh water", "honey", "gateau", "crunchies", "casteliacone",
@@ -187,7 +191,10 @@ def mega_description(sysdata):
         parts.append(f"<p>Permite que <strong>{sysdata['species']}</strong> Mega Evolua para "
                       f"<strong>{sysdata['megaForm']}</strong> enquanto segura esta pedra.</p>")
     bullets = []
-    if sysdata.get("passiveAbility"):
+    if re.search(r"ainda a ser lan", sysdata.get("passiveAbility") or "", re.IGNORECASE):
+        bullets.append("Habilidade da forma Mega ainda a ser lançada pelo livro — o Pokémon mantém a "
+                       "Habilidade Passiva atual.")
+    elif sysdata.get("passiveAbility"):
         bullets.append(f"Habilidade Passiva muda para <strong>{sysdata['passiveAbility']}</strong>")
     types = sysdata.get("types") or {}
     if types.get("type1"):
@@ -203,7 +210,7 @@ def mega_description(sysdata):
         opts = " ou ".join(ABILITY_LABELS.get(k, k.upper()) for k in choice.get("options", []))
         bullets.append(f"{choice.get('delta', 0):+d} em {opts} (à escolha do jogador)")
     if sysdata.get("size"):
-        bullets.append(f"Tamanho muda para {sysdata['size']}")
+        bullets.append(f"Tamanho muda para {SIZE_LABELS.get(sysdata['size'], sysdata['size'])}")
     if sysdata.get("movementBonusFeet"):
         bullets.append(f"{sysdata['movementBonusFeet']:+d} pés em todos os deslocamentos")
     for grant in sysdata.get("movementGrants") or []:

@@ -109,6 +109,30 @@ async function repairMoveItem(item, cache) {
   return true;
 }
 
+/** Mega Pedra no inventário: dados mecânicos e descrição do compêndio "mega-evolutions"
+ * (ex.: a Pinsirite antiga somava os bônus da Aerodactylite). Equipada/quantidade ficam. */
+async function repairMegaStone(item, cache) {
+  const key = `mega:${item.name}`;
+  if (!cache.has(key)) {
+    const pack = game.packs.get(`${MODULE_ID}.mega-evolutions`);
+    const entry = pack ? (await pack.getIndex()).find((e) => e.name === item.name) : null;
+    cache.set(key, entry ? await pack.getDocument(entry._id) : null);
+  }
+  const fresh = cache.get(key);
+  if (!fresh) return false;
+  const freshMega = fresh.getFlag(MODULE_ID, "mega");
+  const update = {};
+  if (JSON.stringify(freshMega) !== JSON.stringify(item.getFlag(MODULE_ID, "mega"))) {
+    update[`flags.${MODULE_ID}.mega`] = freshMega;
+  }
+  if (fresh.system.description?.value !== item.system.description?.value) {
+    update["system.description.value"] = fresh.system.description.value;
+  }
+  if (!Object.keys(update).length) return false;
+  await item.update(update);
+  return true;
+}
+
 async function repairAbilityItem(item) {
   const match = item.name.match(/^Habilidade (?:Passiva|Oculta|Mega): (.+)$/);
   if (!match || !item.system.description?.value?.includes(ABILITY_STUB)) return false;
@@ -133,13 +157,23 @@ export async function repairPokemonMoves({ notify = true } = {}) {
   let actorsTouched = 0;
   let movesTouched = 0;
   let abilitiesTouched = 0;
+  let megasTouched = 0;
   const cache = new Map();
 
   for (const actor of game.actors) {
-    if (actor.type !== "npc" || !actor.getFlag(MODULE_ID, "species")) continue;
+    // Mega Pedras também ficam no inventário de Treinadores (character), não só de Pokémon
+    const isPokemon = actor.type === "npc" && actor.getFlag(MODULE_ID, "species");
+    if (!isPokemon && actor.type !== "character") continue;
     let touchedHere = false;
 
     for (const item of Array.from(actor.items)) {
+      if (item.getFlag(MODULE_ID, "mega")) {
+        if (await repairMegaStone(item, cache)) {
+          megasTouched++;
+          touchedHere = true;
+        }
+        continue;
+      }
       if (item.type !== "feat") continue;
       if (item.getFlag(MODULE_ID, "move")) {
         if (await repairMoveItem(item, cache)) {
@@ -153,12 +187,16 @@ export async function repairPokemonMoves({ notify = true } = {}) {
     }
     if (touchedHere) actorsTouched++;
   }
+  // Mega Pedras soltas no diretório de Itens do mundo
+  for (const item of game.items ?? []) {
+    if (item.getFlag(MODULE_ID, "mega") && await repairMegaStone(item, cache)) megasTouched++;
+  }
 
   if (notify) {
-    const message = movesTouched || abilitiesTouched
-      ? `Reparo concluído: ${movesTouched} Move(s) e ${abilitiesTouched} Habilidade(s) atualizados em ${actorsTouched} Pokémon.`
-      : "Nenhum Move ou Habilidade precisava de reparo — tudo já está atualizado.";
+    const message = movesTouched || abilitiesTouched || megasTouched
+      ? `Reparo concluído: ${movesTouched} Move(s), ${abilitiesTouched} Habilidade(s) e ${megasTouched} Mega Pedra(s) atualizados em ${actorsTouched} ficha(s).`
+      : "Nenhum Move, Habilidade ou Mega Pedra precisava de reparo — tudo já está atualizado.";
     ui.notifications.info(message);
   }
-  return { actorsTouched, movesTouched, abilitiesTouched };
+  return { actorsTouched, movesTouched, abilitiesTouched, megasTouched };
 }

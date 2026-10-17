@@ -118,13 +118,13 @@ def header_columns(table):
         if cell is None or not text:
             continue
         key = norm(text)
-        if key == "item":
+        if key in ("item", "erva"):
             cols["name"] = cell[0]
-        elif key in ("efeito", "pokemon"):
+        elif key in ("efeito", "pokemon", "descricao"):
             cols["effect"] = cell[0]
         elif key.startswith("preco"):
             cols["price"] = cell[0]
-        elif key == "n":
+        elif key in ("n", "no"):  # "Nº" — o NFKD transforma o "º" em "o"
             cols["num"] = cell[0]
     return cols
 
@@ -133,15 +133,27 @@ PRICE_RE = re.compile(r"^(₽|N/A|Não\s+vendido|Não$)", re.IGNORECASE)
 NUM_RE = re.compile(r"^(\d{1,3}|—|-)$")
 
 
-def read_table(table):
-    """Itens da tabela: [{name, lines, price, bbox}] na ordem do livro."""
+def read_table(table, fallback_cols=None):
+    """Itens da tabela: [{name, lines, price, bbox}] na ordem do livro.
+
+    fallback_cols: colunas de uma tabela anterior com o mesmo layout — tabelas que continuam
+    na página seguinte não repetem o cabeçalho (Livro de Regras, Berries/Itens Seguráveis).
+
+    Quando o nome do item ocupa várias linhas, o livro centraliza o nome numa linha de tabela
+    própria, ABAIXO da linha com o efeito e o preço (Arceus Plate, Genesect Drives): por isso
+    toda linha com preço abre um item novo, e uma linha só com nome batiza o item que ainda
+    não tem nome."""
     cols = header_columns(table)
-    if "name" not in cols or "effect" not in cols:
-        return None  # não é tabela de itens (ex.: a grade de combinação dos fósseis)
+    has_header = "name" in cols and "effect" in cols
+    if not has_header:
+        if not fallback_cols:
+            return None  # não é tabela de itens (ex.: a grade de combinação dos fósseis)
+        cols = fallback_cols
     effect_x0 = cols["effect"] - 2
     items = []
     rows = table.extract()
-    for row, row_obj in zip(rows[1:], table.rows[1:]):
+    first = 1 if has_header else 0
+    for row, row_obj in zip(rows[first:], table.rows[first:]):
         num = price = None
         names, effects = [], []
         for cell, text in zip(row_obj.cells, row):
@@ -158,12 +170,19 @@ def read_table(table):
                 names.append(re.sub(r"\s+", " ", clean))
             else:
                 effects.extend(clean.split("\n"))
-        is_start = num is not None or (names and price is not None)
+        numbered = "num" in cols  # tabela com coluna "Nº": só o número abre item novo
+        is_start = num is not None or (price is not None and (names or not numbered))
         if is_start or not items:
             items.append({"name": " ".join(names), "lines": effects, "price": price,
                           "bbox": list(row_obj.bbox)})
             continue
         item = items[-1]
+        if not numbered and names and item["name"] and item["price"] and effects:
+            # nome + efeito sem preço depois de um item completo: item novo cujo preço vem numa
+            # linha de baixo (a célula de preço também fica centralizada)
+            items.append({"name": " ".join(names), "lines": effects, "price": None,
+                          "bbox": list(row_obj.bbox)})
+            continue
         if names:
             item["name"] = f"{item['name']} {' '.join(names)}".strip()
         # linha de tabela sem texto nenhum = linha em branco dentro da célula (troca de parágrafo)
