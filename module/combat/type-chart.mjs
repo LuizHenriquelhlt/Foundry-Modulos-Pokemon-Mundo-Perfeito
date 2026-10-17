@@ -77,6 +77,36 @@ export function getTypeMultiplier(attackType, defenderType1, defenderType2 = nul
   return m1 * m2;
 }
 
+/**
+ * Texto de imunidades/resistências/fraquezas de um Pokémon pelos tipos dele, no mesmo formato
+ * que scripts/convert-to-dnd5e-native.py (type_defense_traits) grava em system.traits.di/dr/dv
+ * ("custom") na Pokédex: "Tipo Fogo; Tipo Grama (x1/4); ...". Mega Evolução e Terastalização
+ * usam isto pra reescrever as defesas quando o tipo muda — sem isso a ficha continuava
+ * mostrando as fraquezas da tipagem antiga.
+ * @returns {{di: string, dr: string, dv: string}}
+ */
+export function typeDefenseTraits(type1, type2 = null) {
+  const di = [], dr = [], dv = [];
+  for (const attack of Object.keys(EFFECTIVENESS)) {
+    const mult = getTypeMultiplier(attack, type1, type2);
+    const label = `Tipo ${TYPE_LABELS[attack]}`;
+    if (mult === 0) di.push(label);
+    else if (mult < 1) dr.push(label + (mult === 0.25 ? " (x1/4)" : ""));
+    else if (mult > 1) dv.push(label + (mult === 4 ? " (x4)" : ""));
+  }
+  return { di: di.join("; "), dr: dr.join("; "), dv: dv.join("; ") };
+}
+
+/** Update parcial do Actor que troca o texto de defesas por tipo (mantém os valores nativos). */
+export function typeDefenseUpdate(type1, type2 = null) {
+  const { di, dr, dv } = typeDefenseTraits(type1, type2);
+  return {
+    "system.traits.di.custom": di,
+    "system.traits.dr.custom": dr,
+    "system.traits.dv.custom": dv
+  };
+}
+
 export function registerTypeConfig() {
   const CONFIG_PMP = (globalThis.CONFIG.PMP ??= {});
   CONFIG_PMP.types = TYPES;

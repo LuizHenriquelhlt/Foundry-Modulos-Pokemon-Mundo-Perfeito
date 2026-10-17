@@ -281,7 +281,7 @@ def build_mecanicas_especiais():
     mesmo durante a batalha. <em>Este módulo já automatiza a Mega Evolução: assim que o
     Pokémon estiver segurando (item equipado) a Mega Pedra da própria espécie, um botão
     "🔷 Mega Evoluir" aparece no painel da ficha — clicar nele aplica todos os bônus da pedra
-    (atributos, CA, tipo, tamanho, deslocamento e Habilidade Passiva) de uma vez, com um botão
+    (atributos, CA, tipo e defesas por tipo, tamanho, deslocamento e Habilidade Passiva) de uma vez, com um botão
     "🔷 Reverter Mega" pra desfazer depois. Pra Mega Evoluções com arte oficial cadastrada
     (a maioria — 91 de 93), o retrato do Pokémon e o token dele em cena também trocam pra
     forma Mega automaticamente, voltando ao normal ao reverter. Veja
@@ -463,7 +463,8 @@ def build_mecanicas_especiais():
     Terastal" (compêndio "Itens") pro Pokémon e equipe-o (equivalente a portar uma Orbe Tera
     sintonizada) — um botão "✨ Terastalizar" aparece no painel da ficha. Ao clicar, escolha o
     Tipo Tera (padrão: o tipo primário do próprio Pokémon), e o módulo troca a tipagem
-    defensiva sozinho, com um botão "✨ Reverter Tera" pra desfazer. O bônus de STAB (dobrado
+    defensiva sozinho (tipo e o quadro de imunidades, resistências e fraquezas da ficha), com
+    um botão "✨ Reverter Tera" pra desfazer. O bônus de STAB (dobrado
     se o Tipo Tera coincidir com um tipo original) continua manual, já que o dano dos Moves é
     deixado "limpo" de propósito neste módulo.</em></p>
     <h2>Como Obter uma Orbe Tera</h2>
@@ -1179,9 +1180,12 @@ def build_mudancas_de_status():
       <li>Precisão e Evasão aumentam/reduzem seus respectivos valores em 1/2/3/4/5/6.</li>
       <li>Margem de Crítico aumenta em +3/+6/+9/+12/+15/+18 — vale tanto para rolagens de acerto (abaixo de 20 no dado) quanto para testes de resistência (acima de 1 no dado).</li>
     </ul>
-    <p><em>Este módulo já aplica automaticamente o bônus de Precisão/Evasão/Velocidade
-    (Defesa, Defesa Especial e Margem de Crítico ficam só como registro visível no painel de
-    estágios da ficha — sem uma chave de efeito automática confirmada). O bônus de dano de
+    <p><em>No módulo: os botões +/− do painel de estágios da ficha (ou o HUD do Token)
+    aplicam sozinhos Precisão (rolagens de ataque e CD dos Moves), Evasão (CA e testes de
+    resistência), Velocidade (deslocamentos que o Pokémon já tem e iniciativa) e Margem de
+    Crítico (nas rolagens de ataque do próprio Pokémon). Defesa e Defesa Especial ficam como
+    registro visível no painel — a redução de dano depende de o ataque ser corpo a corpo ou à
+    distância, o que a aplicação de dano da ficha não distingue. O bônus de dano de
     Ataque/Ataque Especial fica por conta do jogador somar na hora de rolar, para manter a
     fórmula de dano do Move sempre visível e simples.</em></p>
     """
@@ -1314,10 +1318,12 @@ def build_evolucao():
       não pode aprender nenhum dos Moves de nível 10 do Pikachu.</li>
       <li>Se evoluir num nível em que ganharia Pontos de EV, adicione-os agora.</li>
     </ol>
-    <p><em>Nota de implementação: hoje esta é uma regra de referência, sem um botão que
-    execute a transformação sozinho — mas os 7 passos acima foram deixados numerados e
-    estruturados de propósito, para servir de roteiro caso uma ferramenta assistida (troca de
-    espécie + recálculo automático) seja construída no futuro.</em></p>
+    <p><em>No módulo: o botão "🧬 Evoluir" no painel da ficha do Pokémon executa os passos
+    mecânicos depois que a mesa confirma o requisito — troca atributos-base, CA, deslocamento,
+    sentidos, perícias, tipos e defesas pelos da nova espécie, soma o bônus de PV, mantém
+    nível, Moves conhecidos, Natureza, Shiny e o que o Pokémon já ganhou acima da base (como
+    Incrementos de Atributo), e troca a Habilidade Passiva só se a nova forma não tiver a atual.
+    Não funciona com uma Mega Evolução ou Terastalização ativa — reverta antes.</em></p>
     """
     example = """
     <p>Vamos acompanhar cada etapa da evolução de um Pikachu de Natureza Corajoso no nível

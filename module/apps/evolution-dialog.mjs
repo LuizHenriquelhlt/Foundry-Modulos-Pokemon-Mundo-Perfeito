@@ -86,6 +86,10 @@ export class EvolutionDialog extends foundry.applications.api.ApplicationV2 {
       ui.notifications.warn(`"${target}" não foi encontrado na Pokédex — confira o nome exato.`);
       return;
     }
+    if (result.status === "transformed") {
+      ui.notifications.warn(`${this.actor.name} está Mega Evoluído ou Terastalizado — reverta antes de evoluir.`);
+      return;
+    }
     if (result.status === "evolved") {
       ui.notifications.info(`${result.from} evoluiu para ${result.to}!`);
       this.close();

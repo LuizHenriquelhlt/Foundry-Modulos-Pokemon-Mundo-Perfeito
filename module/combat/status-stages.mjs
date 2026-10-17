@@ -78,27 +78,79 @@ export function getStages(actor) {
   return stages;
 }
 
-function changesFor(key, value) {
+// Livro de Regras, tabela "Efeito de 1 estágio" (todas as chaves conferidas no dnd5e 5.3.3):
+// - Precisão: +1 nas rolagens de ataque e na CD dos Moves. As Activities de ataque dos Moves
+//   são "weapon" corpo a corpo/à distância (bonuses.mwak/rwak.attack), e a CD de um Move vem
+//   de abilities.<x>.dc, que já soma bonuses.spell.dc (templates/common.mjs).
+// - Evasão: +1 na CA e nos testes de resistência. ac.bonus só conta porque a Pokédex usa
+//   ac.calc "natural" — no modo "flat" o dnd5e ignora qualquer bônus de CA.
+// - Velocidade: +5 pés em todos os deslocamentos e +prof na iniciativa. movement.bonus só é
+//   somado aos deslocamentos maiores que zero (prepareMovement), então um Pokémon sem nado
+//   ou voo não "ganha" esses deslocamentos — somar direto em movement.<tipo> fazia isso.
+// - Margem de Crítico: não tem chave de Active Effect que valha para Moves (Items "feat" não
+//   leem weaponCriticalThreshold), então é aplicada no hook dnd5e.preRollAttackV2 abaixo.
+// - Ataque/Atq. Especial ficam por conta do jogador somar na hora de rolar (Moves "limpos",
+//   decisão da v1.23.0), e Defesa/Def. Especial reduzem dano por corpo a corpo/à distância,
+//   distinção que a aplicação de dano do dnd5e não oferece — só registro visível no painel.
+const SPEED_STEP = { ft: 5, m: 1.5 };
+
+function changesFor(key, value, actor = null) {
   const add = (k, v) => (v ? [{ key: k, mode: 2, value: String(v), priority: null }] : []);
   switch (key) {
-    // Ataque/Atq. Especial não entram aqui de propósito: os Moves foram deixados "limpos"
-    // (só dado + modificador, sem fórmula embutida) pro jogador somar o bônus de estágio na
-    // hora de rolar, do jeito que preferir — igual Defesa/Def. Especial/Marg. Crítico, só
-    // registro visível no painel, sem automação mecânica.
     case "acc":
-      return [...add("system.bonuses.mwak.attack", value), ...add("system.bonuses.rwak.attack", value)];
+      return [
+        ...add("system.bonuses.mwak.attack", value),
+        ...add("system.bonuses.rwak.attack", value),
+        ...add("system.bonuses.spell.dc", value)
+      ];
     case "eva":
       return [...add("system.attributes.ac.bonus", value), ...add("system.bonuses.abilities.save", value)];
     case "spe": {
-      const changes = add("system.attributes.init.bonus", `${value} * @prof`);
-      for (const move of ["walk", "swim", "fly", "climb", "burrow"]) {
-        changes.push(...add(`system.attributes.movement.${move}`, value * 5));
-      }
-      return changes;
+      const units = actor?.system?.attributes?.movement?.units ?? "ft";
+      return [
+        ...add("system.attributes.init.bonus", `${value} * @prof`),
+        ...add("system.attributes.movement.bonus", value * (SPEED_STEP[units] ?? 5))
+      ];
     }
     default:
-      return []; // def, spd, crit — sem chave confirmada, só o registro visível
+      return []; // atk, spa, def, spd: registro visível; crit: hook de ataque
   }
+}
+
+/**
+ * Hook "dnd5e.preRollAttackV2" (BasicRoll.buildConfigure, release-5.3.3): a configuração da
+ * rolagem já chega com rolls[0].options.criticalSuccess preenchido pela Activity e com a
+ * própria Activity em config.subject. Cada estágio de Margem de Crítico baixa o número
+ * necessário em 3 (20 → 17 → 14...), nunca abaixo de 2. Hooks.call síncrono: só mexe na
+ * configuração, não cancela nada.
+ */
+function onPreRollAttack(config) {
+  const actor = config?.subject?.actor;
+  if (!actor) return;
+  const crit = getStages(actor).crit;
+  if (crit <= 0) return;
+  for (const roll of config.rolls ?? []) {
+    roll.options ??= {};
+    const base = roll.options.criticalSuccess ?? 20;
+    roll.options.criticalSuccess = Math.max(2, base - 3 * crit);
+  }
+}
+
+/** Recalcula os "changes" dos estágios já ativos no Actor (usado pela migração de versão). */
+export async function refreshStageEffects(actor) {
+  const updates = [];
+  for (const effect of actor.effects) {
+    const key = effect.getFlag(MODULE_ID, "stageKey");
+    const direction = effect.getFlag(MODULE_ID, "stageDirection");
+    const value = effect.getFlag(MODULE_ID, "stageValue");
+    if (!key || !direction || !value) continue;
+    const changes = changesFor(key, direction === "up" ? value : -value, actor);
+    if (JSON.stringify(changes) !== JSON.stringify(effect.changes.map((c) => ({ ...c })))) {
+      updates.push({ _id: effect.id, changes });
+    }
+  }
+  if (updates.length) await actor.updateEmbeddedDocuments("ActiveEffect", updates);
+  return updates.length;
 }
 
 // Cria/atualiza/apaga o efeito de UMA direção (ex.: só "atk"+"up") pra bater com a magnitude
@@ -119,7 +171,7 @@ async function setStageEffect(actor, key, direction, value) {
   const data = {
     name: `${meta.label} ${direction === "up" ? "+" : "-"}${clamped}`,
     img: leveledIconPath(key, direction, clamped),
-    changes: changesFor(key, signed),
+    changes: changesFor(key, signed, actor),
     disabled: false,
     transfer: false,
     statuses: [conditionId(key, direction)],
@@ -185,6 +237,8 @@ export function registerStatusEffects() {
     CONFIG.DND5E.conditionTypes[conditionId(key, "down")] =
       { name: `${label} ↓`, img: baseIconPath(key, "down"), pseudo: true };
   }
+
+  Hooks.on("dnd5e.preRollAttackV2", onPreRollAttack);
 
   // Clique no HUD do Token cria um ActiveEffect "cru" só com o que está registrado em
   // CONFIG.statusEffects (sem "changes", sem ícone certo) — usar Actor#toggleStatusEffect ou

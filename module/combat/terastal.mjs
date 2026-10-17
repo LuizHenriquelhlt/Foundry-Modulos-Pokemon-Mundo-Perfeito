@@ -8,15 +8,17 @@
  * primário do próprio Pokémon como padrão (Livro de Regras: "a menos que indicado o
  * contrário, o Tera Tipo é igual ao seu tipo primário").
  *
- * Só a troca de tipagem DEFENSIVA é automatizada (igual ao efeito de tipo da Mega Evolução).
+ * Só a troca de tipagem DEFENSIVA é automatizada (igual ao efeito de tipo da Mega Evolução):
+ * tipo, itens "Tipo X" e o texto de imunidades/resistências/fraquezas (system.traits.di/dr/dv).
  * O bônus de STAB duplicado (e a regra do Tipo Estelar de só valer 1x por tipo em campo) não
  * é automatizado — o dano dos Moves já é deixado "limpo" neste módulo de propósito (ver
  * histórico de v1.23.0), pro jogador somar o que quiser na hora de rolar.
  */
-import { TYPE_LABELS } from "./type-chart.mjs";
+import { TYPE_LABELS, typeDefenseUpdate } from "./type-chart.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 const SNAPSHOT_FLAG = "terastalSnapshot";
+const MEGA_FLAG = "megaEvolutionSnapshot";
 export const STELLAR_KEY = "stellar";
 
 function typeFeatItem(typeKey) {
@@ -60,13 +62,25 @@ export function canTerastallize(actor) {
 export async function terastallize(actor, teraType) {
   if (isTerastallized(actor)) return { status: "already" };
   if (!findEquippedTeraFactor(actor)) return { status: "no-factor" };
+  if (actor.getFlag(MODULE_ID, MEGA_FLAG)) {
+    ui.notifications.warn(`${actor.name} está Mega Evoluído — reverta a Mega Evolução antes de Terastalizar.`);
+    return { status: "mega-evolved" };
+  }
 
   const species = actor.getFlag(MODULE_ID, "species");
   const isStellar = teraType === STELLAR_KEY;
+  const traits = actor._source.system.traits;
   const update = {
-    [`flags.${MODULE_ID}.${SNAPSHOT_FLAG}`]: { types: { ...species.types }, teraType }
+    [`flags.${MODULE_ID}.${SNAPSHOT_FLAG}`]: {
+      types: { ...species.types },
+      traits: { di: traits.di?.custom ?? "", dr: traits.dr?.custom ?? "", dv: traits.dv?.custom ?? "" },
+      teraType
+    }
   };
-  if (!isStellar) update[`flags.${MODULE_ID}.species.types`] = { type1: teraType, type2: null };
+  if (!isStellar) {
+    update[`flags.${MODULE_ID}.species.types`] = { type1: teraType, type2: null };
+    Object.assign(update, typeDefenseUpdate(teraType));
+  }
 
   await actor.update(update);
 
@@ -98,7 +112,17 @@ export async function revertTerastal(actor) {
 
   const wasStellar = snapshot.teraType === STELLAR_KEY;
   const update = { [`flags.${MODULE_ID}.-=${SNAPSHOT_FLAG}`]: null };
-  if (!wasStellar) update[`flags.${MODULE_ID}.species.types`] = snapshot.types;
+  if (!wasStellar) {
+    update[`flags.${MODULE_ID}.species.types`] = snapshot.types;
+    // Terastalizações feitas antes da v1.34 não guardavam as defesas: recalcula pelos tipos.
+    if (snapshot.traits) {
+      update["system.traits.di.custom"] = snapshot.traits.di;
+      update["system.traits.dr.custom"] = snapshot.traits.dr;
+      update["system.traits.dv.custom"] = snapshot.traits.dv;
+    } else {
+      Object.assign(update, typeDefenseUpdate(snapshot.types.type1, snapshot.types.type2 ?? null));
+    }
+  }
 
   await actor.update(update);
 

@@ -417,7 +417,10 @@ export class EggItemSheet extends foundry.applications.api.DocumentSheetV2 {
 }
 
 export function registerEggSheet() {
-  Items.registerSheet(MODULE_ID, EggItemSheet, {
+  // v13+ moveu a coleção pra foundry.documents.collections.Items; o global "Items" é só um
+  // alias obsoleto (aviso no console e removido numa versão futura). v12 só tem o global.
+  const ItemsCollection = foundry.documents?.collections?.Items ?? globalThis.Items;
+  ItemsCollection.registerSheet(MODULE_ID, EggItemSheet, {
     types: ["loot"],
     makeDefault: false,
     label: "Ovo Pokémon"

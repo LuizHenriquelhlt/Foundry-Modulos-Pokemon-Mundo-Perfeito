@@ -1,6 +1,6 @@
 # Pokémon Mundo Perfeito — Módulo Foundry VTT
 
-Módulo que integra o sistema de RPG **Pokémon Mundo Perfeito (PMP)** ao Foundry VTT, rodando por cima do sistema oficial **dnd5e** (v4/v5, Foundry v12+). O PMP é um hack completo de D&D 5e — este módulo reaproveita toda a engine de rolagens/perícias/CA/PV/descansos do dnd5e e adiciona por cima: Pokémon como Actors, Moves como Items, tabela de tipos, captura, Mega Evolução, Z-Moves, Dynamax/Terastal (referência) e a Pokédex completa.
+Módulo que integra o sistema de RPG **Pokémon Mundo Perfeito (PMP)** ao Foundry VTT, rodando por cima do sistema oficial **dnd5e** (v4/v5, Foundry v12+). O PMP é um hack completo de D&D 5e — este módulo reaproveita toda a engine de rolagens/perícias/CA/PV/descansos do dnd5e e adiciona por cima: Pokémon como Actors, Moves como Items, tabela de tipos, captura, Mega Evolução, Z-Moves, Terastal, Dynamax (referência) e a Pokédex completa.
 
 **Status: conteúdo completo das 5 fases planejadas**, extraído dos 6 livros do sistema (Livro de Regras, Livro dos Pokémon, Mega Evoluções, Z-Moves, Geração 8, Geração 9) via parsers dedicados em `scripts/`. O pipeline `npm install && npm run build:packs` foi testado de ponta a ponta (Node.js instalado, compêndios compilados e conferidos por tamanho/contagem de documentos) — ainda **não foi testado dentro de um Foundry real rodando**, então ajustes de sheet/CSS podem aparecer na primeira ativação.
 
@@ -51,12 +51,13 @@ npm run clean:packs
 
 ```
 module/
-  pmp.mjs                 # entry point: registra tipos de documento, sheets, tabela de tipos
-  data/                    # DataModels (Pokémon, Move)
-  sheets/                  # fichas (Actor/Item)
-  combat/                  # tabela de tipos, captura, Z-Moves, Mega Evolução
-templates/                 # .hbs das fichas
-styles/pmp.css
+  pmp.mjs                 # entry point: tabela de tipos, painel da ficha, estágios, macros
+  migrations.mjs           # ajustes nos Pokémon do mundo ao atualizar o módulo (roda 1x, só o Mestre)
+  sheet-extras.mjs         # painel injetado na ficha nativa do dnd5e (XP, estágios, Afinidade, Mega/Tera)
+  combat/                  # tipos e defesas, captura, Z-Moves, Mega Evolução, Terastal, Mudanças de Status
+  data/                    # evolução, Afinidade, reparo de Moves/Habilidades, buscas nos compêndios
+  apps/                    # diálogos (evolução, Mega, Tera, ovos)
+styles/pmp.css             # vazio de propósito: cada painel/diálogo traz o próprio estilo
 lang/pt-BR.json
 packs/_source/              # fonte de verdade dos compêndios (JSON) — versionado no git
 packs/                     # saída compilada (gerada por build:packs, não editar, não versionada)
@@ -65,6 +66,7 @@ scripts/
   parse-moves.py            # Lista de Moves principal (Livro de Regras)
   sync-gen89-moves.py       # Moves de Geração 8/9: cria os novos e atualiza os existentes pela versão atual dos suplementos
   parse-gen89-items.py      # Itens de Geração 8/9 (com os ícones extraídos do próprio livro, em assets/items/)
+  sync-gen89-abilities.py   # texto das 73 Habilidades Passivas de Geração 8/9 (compêndio + cópias na Pokédex)
   parse-pokedex.py          # Pokédex completa (Livro dos Pokémon)
   parse-mega-evolutions.py  # Lista de Mega Evoluções
   seed-special-megas.py     # Mega Rayquaza / Kyogre Primal / Groudon Primal (formato de texto diferente)
@@ -100,7 +102,17 @@ Depois de instalar e compilar:
 
 - **Sem teste em Foundry real**: o pipeline de build (`npm install && npm run build:packs`) foi testado e os compêndios compilam corretamente com dados reais — mas a primeira ativação em um mundo Foundry de verdade ainda vai revelar ajustes de sheet/CSS/Handlebars que só aparecem em execução.
 - **Ao rodar `npm install`, o npm pode avisar que bloqueou o script nativo do `classic-level`** (dependência de LevelDB do `@foundryvtt/foundryvtt-cli`) por segurança. Rode `npm approve-scripts classic-level` se quiser silenciar o aviso; na prática não afeta o resultado, já que `classic-level` traz binário pré-compilado para Windows/macOS/Linux.
-- **Classes de Treinador, Regiões, Origens e Especializações** viraram Items do tipo `feat`/`background` com o texto completo (fiel ao livro), mas não têm a progressão de nível conectada ao sistema de Advancement do dnd5e (isso exigiria reconstruir a classe inteira nesse sistema — escopo maior, não incluído aqui).
+- **Regiões, Origens e Especializações** viraram Items do tipo `feat`/`background`/`race` com o texto completo (fiel ao livro); a Classe base Treinador e as 12 Classes de Treinador (subclasses) já usam o Advancement do dnd5e.
 - **Catálogo geral de itens** (~347 itens) tem ~110 linhas descartadas pelo parser de tabela por ambiguidade (fragmento de descrição vs. nome de item) — descartadas em vez de gravadas erradas; ver `scripts/parse-items.py`.
-- **Dynamax/Gigantamax e Terastal** ficaram como texto de referência (regras + requisitos), não como mecânica automatizada em código — o próprio livro oferece múltiplos métodos alternativos à escolha do Mestre para o cálculo de PV do Dynamax, o que não se resume a uma função determinística única.
+- **Dynamax/Gigantamax** ficou como texto de referência (regras + requisitos) — o próprio livro oferece três métodos alternativos de PV à escolha do Mestre. **Terastal** troca tipo e defesas pelo botão da ficha; o STAB fica manual.
+- **Mudanças de Status**: Precisão, Evasão, Velocidade e Margem de Crítico são automáticas; Defesa/Def. Especial (redução de dano por corpo a corpo/à distância) e o dano de Ataque/Atq. Especial ficam como registro no painel.
+
+## Atualizando um mundo que já usa o módulo
+
+Os compêndios mudam a cada versão, mas um Pokémon já importado, chocado ou capturado guarda a
+cópia da versão em que entrou no mundo. Na primeira vez que o **Mestre** abre o mundo depois de
+atualizar, o módulo ajusta esses Pokémon sozinho (uma vez só) e manda um resumo no chat. A
+macro **"Reparar Moves dos Pokémon"** faz a parte de Moves/Habilidades de novo a qualquer
+momento (texto, PP, tempo de execução, tipo de dano e Habilidades ainda sem texto), sem mexer
+no atributo que o jogador escolheu para cada Move.
 - **PDFs de origem não incluídos no módulo** (grandes demais, direitos de terceiros) — os scripts esperam que você aponte para a pasta onde eles estão.

@@ -14,6 +14,7 @@ import { evolveActor } from "./data/evolution.mjs";
 import { openEvolutionDialog } from "./apps/evolution-dialog.mjs";
 import { rollSpringSummer, rollFallWinter } from "./data/weather.mjs";
 import { registerLoyaltyAutomation } from "./data/loyalty.mjs";
+import { registerMigrationSettings, runMigrations } from "./migrations.mjs";
 
 // Os Pokémon são Actors "npc" e os Moves são Items "feat" NATIVOS do dnd5e (com
 // Activities), então rendem na ficha moderna do sistema sem nenhuma ficha custom —
@@ -21,11 +22,12 @@ import { registerLoyaltyAutomation } from "./data/loyalty.mjs";
 // documento (moveTable, TMs, SR, PP...) vivem em flags["pokemon-mundo-perfeito"].
 const MODULE_ID = "pokemon-mundo-perfeito";
 
-const ABILITY_LABELS = { str: "FOR", dex: "DES", con: "CON", int: "INT", wis: "SAB", cha: "CHA" };
+const ABILITY_LABELS = { str: "FOR", dex: "DES", con: "CON", int: "INT", wis: "SAB", cha: "CAR" };
 
 Hooks.once("init", () => {
   console.log(`${MODULE_ID} | Inicializando`);
 
+  registerMigrationSettings();
   registerTypeConfig();
   CONFIG.PMP.abilityLabels = ABILITY_LABELS;
   registerSheetExtras();
@@ -45,7 +47,9 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   if (game.system.id !== "dnd5e") {
     ui.notifications.warn(game.i18n.localize("PMP.Warnings.RequiresDnd5e"));
+    return;
   }
+  await runMigrations();
   await ensureMacro("Criar Ovo Pokémon", "game.pmp.eggs.openCreateEggDialog();");
   await ensureMacro("Log de Incubação de Ovos", "game.pmp.eggs.openRollLog();");
   await ensureMacro("Reparar Moves dos Pokémon", "game.pmp.repairMoves();");

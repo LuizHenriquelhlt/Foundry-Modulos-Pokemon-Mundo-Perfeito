@@ -62,7 +62,19 @@ export function canStillEvolve(actor) {
   return stage.current < stage.max;
 }
 
-function abilityDelta(oldSpecies, key) {
+/**
+ * Quanto o INDIVÍDUO já tem acima/abaixo da base da própria espécie num atributo: Incrementos
+ * de Atributo da classe (níveis 12/14/16/18/20), ajustes feitos à mão na ficha etc. É o que
+ * precisa passar pra forma evoluída. flags.species.abilities guarda os valores-base da
+ * espécie (Livro dos Pokémon), então a diferença sai direto do valor salvo no Actor. A
+ * Natureza não entra aqui: ela é um Item com Active Effect, que continua no Actor e segue
+ * valendo depois da evolução. Actors sem os valores-base (muito antigos) caem na conta
+ * antiga, por EVs/Natureza registrados nas flags.
+ */
+function abilityDelta(actor, oldSpecies, key) {
+  const base = oldSpecies?.abilities?.[key]?.value;
+  const current = actor._source.system.abilities?.[key]?.value;
+  if (Number.isFinite(base) && Number.isFinite(current)) return current - base;
   let delta = oldSpecies?.evs?.[key] ?? 0;
   if (oldSpecies?.nature?.increased === key) delta += 2;
   if (oldSpecies?.nature?.decreased === key) delta -= 2;
@@ -85,6 +97,11 @@ function cloneItemPlain(item) {
  */
 export async function evolveActor(actor, targetSpeciesName) {
   if (actor?.type !== "npc" || !actor.getFlag(MODULE_ID, "species")) return { status: "not-a-pokemon" };
+  // Evoluir troca atributos/tipo/defesas pelos da nova espécie; com uma Mega Evolução ou
+  // Terastalização ativa, o "reverter" depois devolveria os valores da espécie ANTIGA.
+  if (actor.getFlag(MODULE_ID, "megaEvolutionSnapshot") || actor.getFlag(MODULE_ID, "terastalSnapshot")) {
+    return { status: "transformed" };
+  }
 
   const targetIndexEntry = await findSpeciesIndexEntry(targetSpeciesName);
   const targetDoc = targetIndexEntry ? await fetchSpeciesDocument(targetSpeciesName) : null;
@@ -96,11 +113,11 @@ export async function evolveActor(actor, targetSpeciesName) {
   const level = pokemonLevel(actor);
   const hpBonus = level * 2;
 
-  // Passo 1: atributos base da nova forma + EVs/Natureza já investidos no indivíduo.
+  // Passo 1: atributos base da nova forma + o que o indivíduo já ganhou acima da base antiga.
   const abilities = {};
   for (const key of ABILITY_KEYS) {
     const base = targetSys.abilities?.[key]?.value ?? 10;
-    abilities[key] = { value: Math.max(1, base + abilityDelta(oldSpecies, key)) };
+    abilities[key] = { value: Math.max(1, base + abilityDelta(actor, oldSpecies, key)) };
   }
 
   // Passo 5: mantém a Habilidade Passiva atual se a nova forma também a tiver disponível;

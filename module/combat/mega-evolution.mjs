@@ -3,11 +3,11 @@
  *
  * Pokémon são Actors "npc" nativos do dnd5e (ver sheet-extras.mjs) — os campos que este
  * arquivo mexia antes (system.types, system.armorClass.value, system.passiveAbility.active,
- * system.size) pertenciam a um DataModel customizado antigo (module/data/pokemon-actor.mjs)
- * que nunca chegou a ser registrado; nesta versão os efeitos são aplicados nos caminhos reais
- * do schema nativo (flags.species.types, system.attributes.ac.flat, itens "feat" de
- * Tipo/Habilidade Passiva embutidos, system.traits.size) — mesmo padrão já usado em
- * module/data/evolution.mjs.
+ * system.size) pertenciam a um DataModel customizado antigo, nunca registrado (removido na
+ * v1.34.0 junto com as fichas próprias que dependiam dele); os efeitos são aplicados nos caminhos reais
+ * do schema nativo (flags.species.types, system.traits.size e as defesas por tipo em
+ * system.traits.di/dr/dv, itens "feat" de Tipo/Habilidade Passiva embutidos) — mesmo padrão
+ * já usado em module/data/evolution.mjs. O bônus de CA é um Active Effect em ac.bonus.
  *
  * O botão "Mega Evoluir" na ficha (sheet-extras.mjs) só aparece quando o Pokémon está
  * segurando (Item "equipment" com system.equipped=true) uma Mega Pedra da própria espécie —
@@ -20,13 +20,30 @@
  * Mega Evoluções criadas pela comunidade sem arte oficial cadastrada ficam sem esse campo —
  * a Mega Evolução continua funcionando normalmente, só sem trocar a imagem.
  */
-import { TYPE_LABELS } from "./type-chart.mjs";
+import { TYPE_LABELS, typeDefenseUpdate } from "./type-chart.mjs";
 import { fetchAbilityInfo } from "../data/abilities-lookup.mjs";
 
 const MODULE_ID = "pokemon-mundo-perfeito";
 const SNAPSHOT_FLAG = "megaEvolutionSnapshot";
+const TERASTAL_FLAG = "terastalSnapshot";
 const MAX_ABILITY_SCORE = 30;
 const MOVEMENT_KEYS = ["walk", "swim", "fly", "climb", "burrow"];
+const FEET_TO_UNITS = { ft: 1, m: 0.3 };
+
+// O bônus de CA da Mega Pedra vira um Active Effect em ac.bonus (e não uma soma em ac.flat):
+// vale em qualquer modo de cálculo de CA que some bônus (natural, padrão, fórmula própria),
+// aparece na aba de Efeitos da ficha e sai sozinho ao reverter. Somar em ac.flat só
+// funcionava enquanto o Actor estivesse no modo "flat"/"natural".
+function megaEffectData(mega, stone) {
+  return {
+    name: `Mega Evolução (${mega.megaForm})`,
+    img: stone.img,
+    changes: [{ key: "system.attributes.ac.bonus", mode: 2, value: String(mega.armorClassDelta), priority: null }],
+    disabled: false,
+    transfer: false,
+    flags: { [MODULE_ID]: { megaEffect: true } }
+  };
+}
 
 function normalize(name) {
   // toLowerCase() TEM que vir antes do replace: "Alakazam".replace(/[^a-z0-9]/g, "") sozinho
@@ -103,18 +120,24 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
   const stone = findEquippedMegaStone(actor);
   if (!stone) return { status: "no-stone" };
   if (isMegaEvolved(actor)) return { status: "already-evolved" };
+  if (actor.getFlag(MODULE_ID, TERASTAL_FLAG)) {
+    ui.notifications.warn(`${actor.name} está Terastalizado — desfaça a Terastalização antes de Mega Evoluir.`);
+    return { status: "terastallized" };
+  }
 
   const mega = stone.getFlag(MODULE_ID, "mega");
   const species = actor.getFlag(MODULE_ID, "species");
   const rawSys = actor._source.system;
 
-  // Snapshot pra reverter depois — abilities/AC/tamanho/deslocamento/tipo/habilidade, tudo
-  // que este método pode alterar.
+  // Snapshot pra reverter depois — abilities/tamanho/deslocamento/tipo/defesas/habilidade,
+  // tudo que este método altera no Actor. A CA não entra: o bônus é um Active Effect próprio.
   const snapshot = {
     abilities: Object.fromEntries(Object.entries(rawSys.abilities).map(([k, a]) => [k, a.value])),
-    ac: foundry.utils.deepClone(rawSys.attributes.ac),
     size: rawSys.traits.size,
     movement: foundry.utils.deepClone(rawSys.attributes.movement),
+    traits: {
+      di: rawSys.traits.di?.custom ?? "", dr: rawSys.traits.dr?.custom ?? "", dv: rawSys.traits.dv?.custom ?? ""
+    },
     types: { ...species.types },
     passiveActive: species.passiveAbility?.active ?? "",
     passiveOptions: [...(species.passiveAbility?.options ?? [])],
@@ -136,19 +159,18 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
     update[`system.abilities.${key}.value`] = Math.min(current + delta, MAX_ABILITY_SCORE);
   }
 
-  if (mega.armorClassDelta) {
-    update["system.attributes.ac.flat"] = (rawSys.attributes.ac.flat ?? 10) + mega.armorClassDelta;
-  }
-
   if (mega.size) update["system.traits.size"] = mega.size;
 
   // Deslocamento: bônus fixo (só nos tipos que o Pokémon já tem) + concessões de novos tipos
-  // (ex.: "ganha deslocamento de voo igual ao de caminhada").
+  // (ex.: "ganha deslocamento de voo igual ao de caminhada"). A Pokédex guarda deslocamento
+  // em pés (movement.units = "ft"); a versão anterior convertia o bônus pra metros antes de
+  // somar, então +10 pés virava +3.
   const movement = foundry.utils.deepClone(rawSys.attributes.movement);
   if (mega.movementBonusFeet) {
-    const bonusMeters = Math.round(mega.movementBonusFeet * 0.3 * 10) / 10;
+    const factor = FEET_TO_UNITS[movement.units ?? "ft"] ?? 1;
+    const bonus = Math.round(mega.movementBonusFeet * factor * 10) / 10;
     for (const key of MOVEMENT_KEYS) {
-      if (movement[key]) movement[key] += bonusMeters;
+      if (movement[key]) movement[key] += bonus;
     }
   }
   for (const grant of mega.movementGrants ?? []) {
@@ -161,6 +183,7 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
   const typeChanged = !!mega.types?.type1;
   if (typeChanged) {
     update[`flags.${MODULE_ID}.species.types`] = { type1: mega.types.type1, type2: mega.types.type2 ?? null };
+    Object.assign(update, typeDefenseUpdate(mega.types.type1, mega.types.type2 ?? null));
   }
 
   let passiveInfo = null;
@@ -182,6 +205,7 @@ export async function applyMegaEvolution(actor, chosenAbilities = {}) {
   }
 
   await actor.update(update);
+  if (mega.armorClassDelta) await actor.createEmbeddedDocuments("ActiveEffect", [megaEffectData(mega, stone)]);
   if (mega.tokenImage) {
     for (const tokenDoc of actor.getActiveTokens(false, true)) {
       await tokenDoc.update({ "texture.src": mega.tokenImage });
@@ -226,11 +250,21 @@ export async function revertMegaEvolution(actor) {
 
   const update = {
     "system.traits.size": snapshot.size,
-    "system.attributes.ac": snapshot.ac,
     "system.attributes.movement": snapshot.movement,
     [`flags.${MODULE_ID}.species.types`]: snapshot.types,
     [`flags.${MODULE_ID}.-=${SNAPSHOT_FLAG}`]: null
   };
+  // Mega Evoluções feitas antes da v1.34 somavam a CA em ac.flat e guardavam o objeto "ac"
+  // inteiro: restaura só a CA base — restaurar o objeto todo trazia de volta o modo "flat",
+  // que ignora os bônus de CA.
+  if (Number.isFinite(snapshot.ac?.flat)) update["system.attributes.ac.flat"] = snapshot.ac.flat;
+  if (snapshot.traits) {
+    update["system.traits.di.custom"] = snapshot.traits.di;
+    update["system.traits.dr.custom"] = snapshot.traits.dr;
+    update["system.traits.dv.custom"] = snapshot.traits.dv;
+  } else {
+    Object.assign(update, typeDefenseUpdate(snapshot.types.type1, snapshot.types.type2 ?? null));
+  }
   if (snapshot.img) {
     update.img = snapshot.img;
     update["prototypeToken.texture.src"] = snapshot.tokenImg ?? snapshot.img;
@@ -258,6 +292,8 @@ export async function revertMegaEvolution(actor) {
   }
 
   await actor.update(update);
+  const megaEffects = actor.effects.filter((e) => e.getFlag(MODULE_ID, "megaEffect")).map((e) => e.id);
+  if (megaEffects.length) await actor.deleteEmbeddedDocuments("ActiveEffect", megaEffects);
   if (snapshot.img) {
     for (const tokenDoc of actor.getActiveTokens(false, true)) {
       await tokenDoc.update({ "texture.src": snapshot.tokenImg ?? snapshot.img });

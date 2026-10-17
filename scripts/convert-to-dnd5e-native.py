@@ -775,7 +775,12 @@ def convert_pokedex():
         doc["system"] = {
             "abilities": {k: {"value": v.get("value", 10)} for k, v in pmp["abilities"].items()},
             "attributes": {
-                "ac": {"flat": pmp.get("armorClass", {}).get("value", 10), "calc": "flat"},
+                # "natural", não "flat": no dnd5e 5.3.3 o modo "flat" devolve ac.flat e sai sem
+                # somar ac.bonus/escudo/cobertura (data/actor/templates/attributes.mjs,
+                # prepareArmorClass) — Evasão, Naturezas Astuto/Tímido e a Mega Evolução
+                # mexem em ac.bonus e ficavam sem efeito nenhum. "natural" usa o mesmo
+                # ac.flat como base e soma os bônus.
+                "ac": {"flat": pmp.get("armorClass", {}).get("value", 10), "calc": "natural"},
                 # com a classe embutida, o dnd5e deriva o PV máximo dos avanços de PV da
                 # classe + mod de CON; "max" aqui vira um bônus fixo, calibrado para o
                 # total bater com os PV do livro (mesma técnica do pokemon5e)
