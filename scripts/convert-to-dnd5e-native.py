@@ -290,6 +290,25 @@ def move_description_html(pmp, name):
     return "".join(parts)
 
 
+def move_system(pmp, name):
+    """"system" do Item feat nativo de um Move a partir dos dados PMP. Também usado por
+    scripts/sync-gen89-moves.py."""
+    pp = pmp.get("pp", {})
+    uses = {"spent": 0, "max": "", "recovery": []}
+    if pp.get("max") and not pp.get("unlimited"):
+        uses = {"spent": 0, "max": str(pp["max"]),
+                "recovery": [{"period": "lr", "type": "recoverAll", "formula": ""}]}
+
+    mtype = pmp.get("moveType", "")
+    return {
+        "description": {"value": move_description_html(pmp, name), "chat": ""},
+        "requirements": f"Move de Pokémon — Tipo {TYPE_LABELS.get(mtype, mtype)}",
+        "type": {"value": "", "subtype": ""},
+        "uses": uses,
+        "activities": build_move_activity(pmp, name)
+    }
+
+
 def convert_moves():
     n = 0
     for f in glob.glob(os.path.join(SRC, "moves", "*.json")):
@@ -305,21 +324,8 @@ def convert_moves():
             pmp = doc["system"]
         name = doc["name"]
 
-        pp = pmp.get("pp", {})
-        uses = {"spent": 0, "max": "", "recovery": []}
-        if pp.get("max") and not pp.get("unlimited"):
-            uses = {"spent": 0, "max": str(pp["max"]),
-                    "recovery": [{"period": "lr", "type": "recoverAll", "formula": ""}]}
-
-        mtype = pmp.get("moveType", "")
         doc["type"] = "feat"
-        doc["system"] = {
-            "description": {"value": move_description_html(pmp, name), "chat": ""},
-            "requirements": f"Move de Pokémon — Tipo {TYPE_LABELS.get(mtype, mtype)}",
-            "type": {"value": "", "subtype": ""},
-            "uses": uses,
-            "activities": build_move_activity(pmp, name)
-        }
+        doc["system"] = move_system(pmp, name)
         doc.setdefault("flags", {}).setdefault("pokemon-mundo-perfeito", {})["move"] = pmp
         save(f, doc)
         n += 1

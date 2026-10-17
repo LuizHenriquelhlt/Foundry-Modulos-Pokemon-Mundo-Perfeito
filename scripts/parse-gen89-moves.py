@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """
+SUPERADO por scripts/sync-gen89-moves.py — mantido só como registro histórico.
+Este script grava Moves no formato antigo (subtipo "pokemon-mundo-perfeito.move", antes da
+migração para Items nativos do dnd5e) e com páginas fixas da primeira versão dos PDFs; o
+sync-gen89-moves.py lê as páginas pelo sumário, cria Moves novos já nativos e também
+ATUALIZA os existentes quando o suplemento muda.
+
 Fase 5 — "Moves da Oitava Geração" (Livro da Geração 8, pág. 16-28) e "Moves da Nona
 Geração" (Livro da Geração 9, pág. 23-34). Mesmo template e mesmo parser da Fase 2
 (scripts/parse-moves.py), reaproveitado aqui via import. Só grava Moves cujo nome

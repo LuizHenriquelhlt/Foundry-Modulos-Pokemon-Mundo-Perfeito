@@ -47,11 +47,13 @@ CONSUMABLE_EXACT = {
     "X Attack", "X Defense", "X Special Attack", "X Special Defense", "X Speed",
     "X Accuracy", "Dire Hit", "Guard Spec", "Ability Capsule", "Ability Patch",
     "PP Up", "PP Max", "HP Up", "Protein", "Iron", "Calcium", "Zinc", "Carbos",
-    "Candy Bar", "Sacred Ash", "Pomeg", "Rare Candy"
+    "Candy Bar", "Sacred Ash", "Pomeg", "Rare Candy",
+    # Expansão da 8ª Geração (scripts/parse-gen89-items.py)
+    "Max Mushroom", "Max Soup"
 }
 FOOD_KEYWORDS = [" berry", "hortelã", "candy", "nectar", "cookie", "milk", "soda",
                   "lemonade", "honey", "gateau", "crunchies", "ração", "malasada",
-                  "juice", "mint"]
+                  "juice", "mint", "soup"]
 
 
 def make_id(seed):
@@ -119,6 +121,43 @@ def description_of(doc):
     return desc if isinstance(desc, str) else ""
 
 
+def catalog_item(name, desc, price, consumable):
+    """(tipo, system) de um item do catálogo: consumível com botão Usar ou acessório
+    equipável. Também usado por scripts/parse-gen89-items.py, pra que os itens dos
+    suplementos saiam idênticos aos do Livro de Regras."""
+    base_system = {
+        "description": {"value": desc, "chat": ""},
+        "price": {"value": price, "denomination": "gp"},
+        "weight": {"value": 0, "units": "lb"},
+        "quantity": 1,
+        "rarity": "",
+        "identified": True,
+        "attunement": "",
+        "attuned": False,
+        "equipped": False
+    }
+    if consumable:
+        subtype = "trinket"
+        low = name.lower()
+        if low.startswith("poção") or "heal" in low or "revive" in low or "restore" in low:
+            subtype = "potion"
+        elif any(k in low for k in FOOD_KEYWORDS):
+            subtype = "food"
+        return "consumable", {
+            **base_system,
+            "type": {"value": subtype, "subtype": ""},
+            "uses": {"spent": 0, "max": "1", "recovery": [], "autoDestroy": True},
+            "activities": utility_activity(name, consume=True),
+            "properties": []
+        }
+    return "equipment", {
+        **base_system,
+        "type": {"value": "trinket", "subtype": ""},
+        "armor": {"value": None, "dex": None, "magicalBonus": None},
+        "properties": []
+    }
+
+
 def fix_catalog_and_consumables():
     n_cons = n_equip = 0
     targets = glob.glob(os.path.join(SRC, "trainer-features", "item-*.json")) \
@@ -129,47 +168,14 @@ def fix_catalog_and_consumables():
             continue
         doc = json.load(open(f, encoding="utf-8"))
         name = doc["name"]
-        desc = description_of(doc)
-        price = price_number(doc)
         is_ball = os.sep + "pokeballs" + os.sep in f or "/pokeballs/" in f.replace("\\", "/")
         is_tm = "/tms/" in f.replace("\\", "/")
 
-        base_system = {
-            "description": {"value": desc, "chat": ""},
-            "price": {"value": price, "denomination": "gp"},
-            "weight": {"value": 0, "units": "lb"},
-            "quantity": 1,
-            "rarity": "",
-            "identified": True,
-            "attunement": "",
-            "attuned": False,
-            "equipped": False
-        }
-
-        if is_ball or is_tm or is_consumable(name):
-            doc["type"] = "consumable"
-            subtype = "trinket"
-            low = name.lower()
-            if low.startswith("poção") or "heal" in low or "revive" in low or "restore" in low:
-                subtype = "potion"
-            elif any(k in low for k in FOOD_KEYWORDS):
-                subtype = "food"
-            doc["system"] = {
-                **base_system,
-                "type": {"value": subtype, "subtype": ""},
-                "uses": {"spent": 0, "max": "1", "recovery": [], "autoDestroy": True},
-                "activities": utility_activity(name, consume=True),
-                "properties": []
-            }
+        consumable = is_ball or is_tm or is_consumable(name)
+        doc["type"], doc["system"] = catalog_item(name, description_of(doc), price_number(doc), consumable)
+        if consumable:
             n_cons += 1
         else:
-            doc["type"] = "equipment"
-            doc["system"] = {
-                **base_system,
-                "type": {"value": "trinket", "subtype": ""},
-                "armor": {"value": None, "dex": None, "magicalBonus": None},
-                "properties": []
-            }
             n_equip += 1
         save(f, doc)
     print(f"catálogo: {n_cons} consumíveis com botão Usar, {n_equip} equipamentos equipáveis")

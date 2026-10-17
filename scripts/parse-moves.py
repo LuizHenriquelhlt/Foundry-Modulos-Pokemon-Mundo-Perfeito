@@ -165,9 +165,10 @@ def find_move_headers(lines):
 
 def clean_move_name(raw_name):
     m = re.match(r"^(.+?)\s*\((.+)\)$", raw_name)
-    if m:
-        return m.group(1).strip()
-    return raw_name.strip()
+    name = m.group(1).strip() if m else raw_name.strip()
+    # letra inicial separada do resto da palavra pela extração ("S urging Strikes" no livro
+    # da Geração 8) — nenhum nome de Move começa com uma letra solta seguida de minúscula
+    return re.sub(r"^([A-Z]) (?=[a-z])", r"\1", name)
 
 
 def parse_block(lines, header, block_end):
@@ -259,7 +260,8 @@ def parse_block(lines, header, block_end):
 
     activation_type = "action"
     act_lower = strip_accents_lower(fields.get("activation", ""))
-    if act_lower.startswith("1 reacao") or act_lower.startswith("1 reação"):
+    # "1 reação", "1 reação / ação" e também "Reação" sem o número (Obstruct, Burning Bulwark)
+    if re.match(r"(1 )?reacao", act_lower):
         activation_type = "reaction"
     elif "acao bonus" in act_lower or "ação bônus" in fields.get("activation", "").lower():
         activation_type = "bonus"

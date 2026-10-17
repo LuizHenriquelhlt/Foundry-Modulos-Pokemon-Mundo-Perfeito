@@ -9,11 +9,11 @@ Módulo que integra o sistema de RPG **Pokémon Mundo Perfeito (PMP)** ao Foundr
 | Compêndio | Itens | Fonte |
 |---|---|---|
 | Pokédex | 1.149 espécies/formas | Livro dos Pokémon (596 páginas, ~2 por página) |
-| Moves | 832 Moves (674 da lista principal + 158 exclusivos de Gen 8/9) | Livro de Regras + Geração 8/9 |
+| Moves | 833 Moves (675 da lista principal + 158 de Gen 8/9: 89 da Oitava e 69 da Nona Geração) | Livro de Regras + Geração 8/9 |
 | TMs | 321 | Livro de Regras (tabela de preços) |
 | Pokébolas | 20 | Livro de Regras |
 | Mega Evoluções | 93 (90 padrão + Mega Rayquaza/Kyogre Primal/Groudon Primal) | Livro de Mega Evoluções |
-| Recursos de Treinador | 401 (Especializações, Habilidades Gerais, Regiões de Origem inc. Paldea, Origens de Jornada, Classes de Treinador, mecânicas de Dynamax/Terastal, itens/equipamentos) | Livro de Regras + Geração 8/9 |
+| Recursos de Treinador | 584 (Especializações, Habilidades Gerais, Regiões de Origem inc. Paldea, Origens de Jornada, Classes de Treinador, Talentos, Naturezas, mecânicas de Dynamax/Terastal, itens/equipamentos — incluindo os 77 itens dos suplementos: 34 de Galar e 43 de Paldea, com 19 Tera Shards numa subpasta própria) | Livro de Regras + Geração 8/9 |
 
 Cada Move traz, quando aplicável, o **Efeito de Poder-Z** (bônus ao converter o Move de Status em Z-Move) e a fórmula de dano/escala por nível já estruturada. A tabela de tipos, o cálculo de Teste de Captura e a tabela de dano de Z-Move (geral + as 55 exceções por Move) estão implementadas em código (`module/combat/`), não só como referência de texto.
 
@@ -63,7 +63,8 @@ packs/                     # saída compilada (gerada por build:packs, não edit
 scripts/
   lib/pdf_text.py           # extração de texto "column-aware" via pdfplumber (ver nota abaixo)
   parse-moves.py            # Lista de Moves principal (Livro de Regras)
-  parse-gen89-moves.py      # Moves exclusivos de Geração 8/9
+  sync-gen89-moves.py       # Moves de Geração 8/9: cria os novos e atualiza os existentes pela versão atual dos suplementos
+  parse-gen89-items.py      # Itens de Geração 8/9 (com os ícones extraídos do próprio livro, em assets/items/)
   parse-pokedex.py          # Pokédex completa (Livro dos Pokémon)
   parse-mega-evolutions.py  # Lista de Mega Evoluções
   seed-special-megas.py     # Mega Rayquaza / Kyogre Primal / Groudon Primal (formato de texto diferente)

@@ -44,6 +44,7 @@ FOLDERS = [
     ("hortelas", "Hortelãs (Natureza)", "#6b8e23", "itens"),
     ("doces", "Doces (Candy)", "#ff8c00", "itens"),
     ("pocoes", "Poções", "#9370db", "itens"),
+    ("tera-shards", "Tera Shards", "#40b5c9", "itens"),
 ]
 
 CATEGORY_TO_FOLDER = {
@@ -67,6 +68,8 @@ def item_subfolder(name):
         return "doces"
     if name.startswith("Poção"):
         return "pocoes"
+    if name.startswith("Tera Shard"):
+        return "tera-shards"
     return "itens"
 
 
